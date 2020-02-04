@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/CleaningAgencyProject">
+    <Resource
+            name="jdbc/cleaning_agency"
+            author="Container"
+            type="javax.sql.DataSource"
+            maxActive="20"
+            maxIdle="10"
+            maxWait="10000"
+            validationQuery="/* ping */"
+            username="root"
+            password="root"
+            driverClassName="com.mysql.jdbc.Driver"
+            url="jdbc:mysql://localhost/cleaning_agency
+            ?serverTimezone=Europe/Minsk&amp;useSSL=false&amp;autoReconnect=true"
+    />
+</Context>
