@@ -1,16 +1,24 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Администратор
-  Date: 02.02.2020
-  Time: 1:01
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="ctg" uri="/WEB-INF/tld/custom.tld" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Confirmation</title>
 </head>
 <body>
-
+    <ctg:info-time/>
+    <hr/>
+    <h3>Do you really want to log out?</h3>
+    <br/>
+    <a href="${pageContext.request.contextPath}/jsp/main.jsp">Back to Main Page.</a>
+    <form name="logoutForm" method="POST" action="controller">
+        <input type="hidden" name="command" value="logout" />
+        <br/>
+        ${errorLogoutMessage}
+        <br/>
+        ${wrongAction}
+        <br/>
+        ${nullPage}
+        <input type="submit" value="Logout"/>
+    </form>
 </body>
 </html>

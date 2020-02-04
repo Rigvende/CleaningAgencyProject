@@ -8,10 +8,10 @@
     <hr/>
         Hello! What do you want to do now?
     <hr/>
-    <a href="controller?command=profile">Profile</a>
-    <a href="controller?command=catalogue">Catalogue</a>
-    <a href="controller?command=info">Info</a>
+    <a href="controller?command=profile">Go to Profile</a>
+    <a href="${pageContext.request.contextPath}/jsp/catalogue.jsp">Look into Catalogue</a>
+    <a href="${pageContext.request.contextPath}/jsp/basket.jsp">See Info</a>
     <hr/>
-    <a href="controller?command=logout">Logout</a>
+    <a href="${pageContext.request.contextPath}/jsp/logout/logoutConfirm.jsp">Logout</a>
 </body>
 </html>

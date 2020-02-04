@@ -2,9 +2,9 @@
 <%@ taglib prefix="ctg" uri="/WEB-INF/tld/custom.tld" %>
 <html><head><title>Login</title></head>
 <body>
-<a href="controller?command=registration">Register now!</a>
+<a href="${pageContext.request.contextPath}/jsp/registration/registrationForm.jsp">Register now!</a>
 <ctg:info-time/>
-</hr>
+<hr/>
 <form name="loginForm" method="POST" action="controller">
     <input type="hidden" name="command" value="login" />
     <br/>Login:<br/>
@@ -23,5 +23,6 @@
     ${nullPage}
     <br/>
     <input type="submit" value="Login"/>
-</form><hr/>
+</form>
+<hr/>
 </body></html>

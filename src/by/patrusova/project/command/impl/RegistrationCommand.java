@@ -22,7 +22,7 @@ public class RegistrationCommand implements ActionCommand {
             } else {
                 request.setAttribute("errorRegistrationMessage",
                         MessageManager.getProperty("message.registrationerror"));
-                page = ConfigurationManager.getProperty("page.registrationfalse");
+                page = ConfigurationManager.getProperty("page.registration");
             }
         } catch (ServiceException e) {
             throw new CommandException(e);

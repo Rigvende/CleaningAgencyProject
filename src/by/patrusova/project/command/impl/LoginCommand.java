@@ -29,7 +29,7 @@ public class LoginCommand implements ActionCommand {
             } else  {
                 request.setAttribute("errorLoginPassMessage",
                         MessageManager.getProperty("message.loginerror"));
-                page = ConfigurationManager.getProperty("page.loginfalse");
+                page = ConfigurationManager.getProperty("page.login");
             }
         } catch (ServiceException e) {
             throw new CommandException(e);
