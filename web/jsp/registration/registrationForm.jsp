@@ -6,7 +6,6 @@
     </head>
     <body>
     <ctg:info-time/>
-    <hr/>
     <form name="registrationForm" method="POST" action="controller">
         Fill the registration form below. All fields marked by * are necessary.
         <hr/>

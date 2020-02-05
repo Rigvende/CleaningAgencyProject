@@ -6,13 +6,13 @@
 </head>
 <body>
     <h1>Welcome</h1>
-    <hr/>
-        <ctg:info-time/>
-    <hr/>
-        Hello! What do you want to do now?
+    <ctg:info-time/>
+    <h3>Hello! What do you want to do now?</h3>
     <br/>
     <a href="controller?command=profile">Go to Profile</a>
+    <br/>
     <a href="${pageContext.request.contextPath}/jsp/catalogue.jsp">Look into Catalogue</a>
+    <br/>
     <a href="${pageContext.request.contextPath}/jsp/basket.jsp">See Info</a>
     <hr/>
     <a href="${pageContext.request.contextPath}/jsp/logout/logoutConfirm.jsp">Logout</a>

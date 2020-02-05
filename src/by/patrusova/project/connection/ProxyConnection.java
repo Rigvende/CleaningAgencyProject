@@ -36,7 +36,7 @@ public class ProxyConnection implements Connection {
             String pass = properties.getProperty("pass");
             String url = properties.getProperty("url");
             connection = DriverManager.getConnection(url, user, pass);
-        } catch (IOException | SQLException e) {
+        } catch (SQLException e) {
             LOGGER.log(Level.ERROR, "Connection's creation failed");
             throw new DaoException(e);
         }

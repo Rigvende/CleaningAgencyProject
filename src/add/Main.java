@@ -4,6 +4,7 @@ import by.patrusova.project.connection.ProxyConnection;
 import by.patrusova.project.dao.impl.UserDao;
 import by.patrusova.project.entity.AbstractEntity;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
@@ -17,7 +18,7 @@ public class Main {
     public static void main(String[] args) throws IOException, SQLException {
         Properties property = new Properties();
         try (FileInputStream fis = new FileInputStream
-                ("./src/resources/connectionDB.properties")) {
+                ("src" + File.separator + "resources" + File.separator + "connectionDB.properties")) {
             property.load(fis);
         }
         String user = property.getProperty("user");

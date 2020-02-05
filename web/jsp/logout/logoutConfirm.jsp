@@ -6,7 +6,6 @@
 </head>
 <body>
     <ctg:info-time/>
-    <hr/>
     <h3>Do you really want to log out?</h3>
     <br/>
     <a href="${pageContext.request.contextPath}/jsp/main.jsp">Back to Main Page.</a>

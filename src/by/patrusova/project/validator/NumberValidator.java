@@ -21,6 +21,6 @@ public class NumberValidator {
     }
 
     public static boolean isValidPhone(long phone) {
-        return ((phone >= 0) && (phone < Long.MAX_VALUE));
+        return ((phone >= 5) && (phone < Long.MAX_VALUE));
     }
 }

@@ -4,7 +4,6 @@
 <body>
 <a href="${pageContext.request.contextPath}/jsp/registration/registrationForm.jsp">Register now!</a>
 <ctg:info-time/>
-<hr/>
 <form name="loginForm" method="POST" action="controller">
     <input type="hidden" name="command" value="login" />
     <br/>Login:<br/>

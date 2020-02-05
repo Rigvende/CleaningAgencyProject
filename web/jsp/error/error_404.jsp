@@ -6,7 +6,6 @@
     </head>
     <body>
     <ctg:info-time/>
-    <hr/>
     Sorry, page does not found.
     <br/>
     </body>

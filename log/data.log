@@ -7,3 +7,5 @@
 14:07 INFO  project.connection.ConnectionPool - Registering jdbc driver.
 14:29 INFO  project.connection.ConnectionPool - Registering jdbc driver.
 14:29 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15:25 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15:29 INFO  project.connection.ConnectionPool - Registering jdbc driver.
