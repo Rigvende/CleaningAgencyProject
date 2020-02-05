@@ -1,6 +1,10 @@
 package by.patrusova.project.util;
 
 import by.patrusova.project.exception.CommandException;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Session;
@@ -11,6 +15,7 @@ import java.util.Properties;
 
 public class MailThread extends Thread {
 
+    private final static Logger LOGGER = LogManager.getLogger();
     private MimeMessage message;
     private String sendToEmail;
     private String mailSubject;
@@ -34,7 +39,7 @@ public class MailThread extends Thread {
             message.setContent(mailText, "text/html");
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(sendToEmail));
         } catch (MessagingException e) {
-            System.err.print("Ошибка формирования сообщения" + e);
+            LOGGER.log(Level.FATAL, "Fail to form message.");
             throw new CommandException(e);
         }
     }
@@ -48,7 +53,7 @@ public class MailThread extends Thread {
         try {
             Transport.send(message);
         } catch (MessagingException e) {
-            System.err.print("Ошибка при отправлении сообщения" + e);
+            LOGGER.log(Level.FATAL, "Fail to send message.");
         }
     }
 }

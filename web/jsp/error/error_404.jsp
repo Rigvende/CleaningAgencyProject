@@ -9,6 +9,5 @@
     <hr/>
     Sorry, page does not found.
     <br/>
-    <a href="${pageContext.request.contextPath}/jsp/main.jsp">Return to Main Page</a>|
     </body>
 </html>

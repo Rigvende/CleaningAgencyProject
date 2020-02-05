@@ -6,7 +6,7 @@
         </property>
     </properties>
     <appenders>
-        <file name="TxtFile" fileName="/META-INF/log/data.log" bufferedIO="true">
+        <file name="TxtFile" fileName="log/data.log" bufferedIO="true">
             <patternLayout pattern="${pattern}"/>
         </file>
         <console name="Console" target="SYSTEM_OUT">
@@ -16,8 +16,8 @@
     <loggers>
         <logger name= "by.patrusova.project" additivity="true"/>
         <root level="debug">
-            <appenderRef ref="TxtFile" level="debug"/>
-            <appenderRef ref="Console" level="debug"/>
+            <appenderRef ref="TxtFile"/>
+            <appenderRef ref="Console"/>
         </root>
     </loggers>
 </configuration>

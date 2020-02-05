@@ -14,6 +14,6 @@
         <br/>
         Message from exception: ${pageContext.exception.message}
         <br/>
-        <a href="${pageContext.request.contextPath}/jsp/main.jsp">Return to Main Page</a>|
+        <hr/>
     </body>
 </html>

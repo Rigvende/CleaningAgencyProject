@@ -2,6 +2,7 @@ package by.patrusova.project.command.impl;
 
 import by.patrusova.project.command.ActionCommand;
 import by.patrusova.project.exception.CommandException;
+import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.util.MailThread;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +23,7 @@ public class MailCommand implements ActionCommand {
                                                      request.getParameter("subject"),
                                                      request.getParameter("body"), properties);
             mailOperator.start();
-            page = "/jsp/profile/admin/send.jsp";
+            page = ConfigurationManager.getProperty("page.sendmail");;
         } catch (IOException e) {
             throw new CommandException(e);
         }

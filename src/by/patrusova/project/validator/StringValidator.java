@@ -11,21 +11,21 @@ public class StringValidator {
         switch (column.toLowerCase()) {
             case "notes":
             case "email":
-                return (data.length() <= 255);
+                return (data.length() >= 10 && data.length() <= 255);
             case "location":
             case "address":
-                return (data.length() <= 200);
+                return (data.length() >= 20 && data.length() <= 200);
             case "relative":
-                return (data.length() <= 80);
+                return (data.length() >= 20 && data.length() <= 80);
             case "service":
-                return (data.length() <= 50);
+                return (data.length() >= 5 && data.length() <= 50);
             case "user":
             case "password":
-                return (data.length() <= 45);
+                return (data.length() >= 5 && data.length() <= 15);
             case "name":
-                return (data.length() <= 20);
+                return (data.length() >= 2 && data.length() <= 20);
             case "lastname":
-                return (data.length() <= 40);
+                return (data.length() >= 1 && data.length() <= 40);
             default:
                 return false;
         }

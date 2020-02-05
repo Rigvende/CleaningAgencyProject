@@ -15,18 +15,17 @@ import java.util.Properties;
 public class Main {
 
     public static void main(String[] args) throws IOException, SQLException {
-        //todo провалидировать сеттеры в энтитях
         Properties property = new Properties();
         try (FileInputStream fis = new FileInputStream
-                ("src/resources/connectionDB.properties")) {
+                ("./src/resources/connectionDB.properties")) {
             property.load(fis);
         }
         String user = property.getProperty("user");
         String pass = property.getProperty("pass");
         String url = property.getProperty("url");
         DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
-        try (Connection conn = ProxyConnection.createProxyConnection()) {
-            UserDao dao = new UserDao((ProxyConnection) conn);
+        try (ProxyConnection conn = ProxyConnection.createProxyConnection()) {
+            UserDao dao = new UserDao(conn);
             List<AbstractEntity> list = dao.findAll();
             for (AbstractEntity entity : list) {
                 System.out.println(entity);

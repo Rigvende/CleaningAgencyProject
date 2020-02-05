@@ -11,7 +11,7 @@ import java.util.Properties;
 class PropertyLoader {
 
     private final static Logger LOGGER = LogManager.getLogger();
-    private final static String CONNECTION_DB = "src/resources/connectionDB.properties";
+    private final static String CONNECTION_DB = "./src/resources/connectionDB.properties";
 
     private PropertyLoader() {
     }
@@ -21,7 +21,7 @@ class PropertyLoader {
         try (FileInputStream fis = new FileInputStream(CONNECTION_DB)) {
             property.load(fis);
         } catch (FileNotFoundException e) {
-            LOGGER.log(Level.FATAL, "File does not exist: " + CONNECTION_DB);
+            LOGGER.log(Level.FATAL, "Cannot find database driver's configuration file.");
             throw new RuntimeException(e);
         }
         return property;
