@@ -1,3 +1,4 @@
+<jsp:useBean id="userName" scope="request" type="java.lang.String"/>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="ctg" uri="/WEB-INF/tld/custom.tld" %>
 <html><head>
@@ -5,7 +6,7 @@
     <link href="${pageContext.request.contextPath}/css/h1.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Welcome</h1>
+    <h1>Welcome, ${userName}!</h1>
     <ctg:info-time/>
     <h3>Hello! What do you want to do now?</h3>
     <br/>

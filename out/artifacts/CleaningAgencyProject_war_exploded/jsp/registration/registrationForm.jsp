@@ -6,16 +6,15 @@
     </head>
     <body>
     <ctg:info-time/>
-    <hr/>
     <form name="registrationForm" method="POST" action="controller">
         Fill the registration form below. All fields marked by * are necessary.
         <hr/>
         <input type="hidden" name="command" value="registration" />
-        <br/>Login*:<br/>
+        <br/>Login (from 5 to 15 symbols; only latin symbols, _ or digits)*:<br/>
         <label>
             <input type="text" name="login" value=""/>
         </label>
-        <br/>Password*:<br/>
+        <br/>Password (from 5 to 15 symbols; only latin symbols, _ or digits)*:<br/>
         <label>
             <input type="password" name="password" value=""/>
         </label>

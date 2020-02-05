@@ -9,3 +9,31 @@
 14:29 INFO  project.connection.ConnectionPool - Registering jdbc driver.
 15:25 INFO  project.connection.ConnectionPool - Registering jdbc driver.
 15:29 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15:53 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+16:29 FATAL project.connection.PropertyLoader - Cannot find database driver's configuration file.
+16:30 FATAL project.connection.PropertyLoader - Cannot find database driver's configuration file.
+16:30 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+16:36 FATAL project.connection.PropertyLoader - Cannot find database driver's configuration file.
+16:39 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+16:47 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+16:54 FATAL project.connection.PropertyLoader - Cannot find database driver's configuration file.
+17:15 FATAL project.connection.PropertyLoader - Cannot find database driver's configuration file.
+17:15 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+19:15 FATAL project.connection.PropertyLoader - Cannot find database driver's configuration file.
+19:15 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+19:22 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+19:22 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+19:31 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+19:32 FATAL project.connection.PropertyLoader - Cannot find database driver's configuration file.
+19:32 FATAL project.connection.PropertyLoader - Cannot find database driver's configuration file.
+19:33 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+19:37 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+19:39 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+19:40 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+19:49 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+20:04 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+20:09 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+20:14 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+20:15 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+20:17 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+20:18 INFO  project.connection.ConnectionPool - Registering jdbc driver.

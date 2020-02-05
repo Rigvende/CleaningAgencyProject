@@ -3,7 +3,6 @@
 <html><title>Error Page</title>
     <body>
         <ctg:info-time/>
-        <hr/>
         Request from ${pageContext.errorData.requestURI} is failed
         <br/>
         Servlet name : ${pageContext.errorData.servletName}

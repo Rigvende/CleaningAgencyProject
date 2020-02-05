@@ -13,7 +13,7 @@ import java.sql.SQLException;
 
 public class LoginService {
 
-    public static boolean checkLogin(User user) throws ServiceException {
+    public static User checkLogin(User user) throws ServiceException {
         DaoFactory factory = new DaoFactory();
         try {
             ProxyConnection connection = (ProxyConnection) factory.getConnection();
@@ -25,6 +25,6 @@ public class LoginService {
         } catch (DaoException | SQLException e) {
             throw new ServiceException(e);
         }
-        return (user != null);
+        return user;
     }
 }

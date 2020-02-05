@@ -8,7 +8,7 @@
     <ctg:info-time/>
     <h3>Do you really want to log out?</h3>
     <br/>
-    <a href="${pageContext.request.contextPath}/jsp/main.jsp">Back to Main Page.</a>
+    <a href="${pageContext.request.contextPath}/jsp/mainAdmin.jsp">Back to Main Page.</a>
     <form name="logoutForm" method="POST" action="controller">
         <input type="hidden" name="command" value="logout" />
         <br/>

@@ -4,7 +4,8 @@
     <title>Mail response to user</title>
 </head>
 <body>
-<form action="${pageContext.request.contextPath}/controller" method="POST">
+<form name="mailForm" method="POST" action="controller">
+    <input type="hidden" name="command" value="mail" />
     <table>
         <tr>
             <td>Send to:< /td>

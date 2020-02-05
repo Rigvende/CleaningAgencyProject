@@ -5,10 +5,11 @@ import by.patrusova.project.exception.DaoException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import java.io.IOException;
 import java.sql.*;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Properties;
+import java.util.ResourceBundle;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
 
@@ -31,10 +32,11 @@ public class ProxyConnection implements Connection {
     public static Connection createConnection() throws DaoException {
         Connection connection;
         try {
-            Properties properties = PropertyLoader.loadProperties();
-            String user = properties.getProperty("user");
-            String pass = properties.getProperty("pass");
-            String url = properties.getProperty("url");
+            Locale current = Locale.getDefault(); //todo нужна ли локаль здесь?
+            ResourceBundle bundle = ResourceBundle.getBundle("resources.connectionDB", current);
+            String user = bundle.getString("user");
+            String pass = bundle.getString("pass");
+            String url = bundle.getString("url");
             connection = DriverManager.getConnection(url, user, pass);
         } catch (SQLException e) {
             LOGGER.log(Level.ERROR, "Connection's creation failed");

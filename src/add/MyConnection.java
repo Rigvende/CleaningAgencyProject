@@ -24,20 +24,20 @@ public class MyConnection {
 
         try { //todo ssl в url должен применяться(см.файл коннекшн.пропертис)?
             //используем пропертис для выборки текстовых значений для коннекшна
-            Properties property = new Properties();
-            try (FileInputStream fis = new FileInputStream
-                    ("src/resources/connectionDB.properties")) {
-                property.load(fis);
-            }
-            String user = property.getProperty("user");
-            String pass = property.getProperty("pass");
-            String url = property.getProperty("url");
+//            Properties property = new Properties();
+//            try (FileInputStream fis = new FileInputStream
+//                    ("src/resources/connectionDB.properties")) {
+//                property.load(fis);
+//            }
+//            String user = property.getProperty("user");
+//            String pass = property.getProperty("pass");
+//            String url = property.getProperty("url");
             //используем ресурсбандл для выборки текстовых значений для коннекшна
-//            Locale current = Locale.getDefault();
-//            ResourceBundle bundle = ResourceBundle.getBundle("resources.connectionDB", current);
-//            String user = bundle.getString("user");
-//            String pass = bundle.getString("pass");
-//            String url = bundle.getString("url");
+            Locale current = Locale.getDefault();
+            ResourceBundle bundle = ResourceBundle.getBundle("resources.connectionDB", current);
+            String user = bundle.getString("user");
+            String pass = bundle.getString("pass");
+            String url = bundle.getString("url");
 //            String driver = bundle.getString("driver"); //рефлексия нежелательна
 //            Class.forName(driver).getDeclaredConstructor().newInstance();
             DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());

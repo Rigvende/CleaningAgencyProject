@@ -23,9 +23,28 @@ public class LoginCommand implements ActionCommand {
         user.setLogin(login);
         user.setPassword(pass);
         try {
-            if (LoginService.checkLogin(user)) {
+            user = LoginService.checkLogin(user);
+            if (user != null) {
                 request.setAttribute("user", user);
-                page = ConfigurationManager.getProperty("page.main");
+                String name = user.getName();
+                request.setAttribute("userName", name);
+                String role = user.getRole();
+                switch (role) {
+                    case "admin":
+                        page = ConfigurationManager.getProperty("page.mainadmin");
+                        break;
+                    case "client":
+                        page = ConfigurationManager.getProperty("page.mainclient");
+                        break;
+                    case "cleaner":
+                        page = ConfigurationManager.getProperty("page.maincleaner");
+                        break;
+                    default:
+                        request.setAttribute("errorLoginPassMessage",
+                                MessageManager.getProperty("message.notregistered"));
+                        page = ConfigurationManager.getProperty("page.login");
+                        break;
+                }
             } else  {
                 request.setAttribute("errorLoginPassMessage",
                         MessageManager.getProperty("message.loginerror"));

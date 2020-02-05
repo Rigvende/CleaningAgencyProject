@@ -6,6 +6,10 @@
       <w>lastname</w>
       <w>loginerror</w>
       <w>loginfalse</w>
+      <w>mainadmin</w>
+      <w>maincleaner</w>
+      <w>mainclient</w>
+      <w>notregistered</w>
       <w>nullpage</w>
       <w>patrusova</w>
       <w>registrationerror</w>
