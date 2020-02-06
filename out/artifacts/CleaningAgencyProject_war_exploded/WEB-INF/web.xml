@@ -15,6 +15,27 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/styles/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.gif</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.jpg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.jpeg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.png</url-pattern>
+    </servlet-mapping>
+
     <description>MySQL</description>
     <resource-ref>
         <description>MySQL DB Connection Pool</description>
