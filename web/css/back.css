@@ -1,7 +1,0 @@
-html {
-    height: 100%;
-}
-body {
-    background: url(/data/back.png) right -webkit-calc(100% + 40px) no-repeat;
-    margin-right: 200px;
-}

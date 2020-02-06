@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="ctg" uri="/WEB-INF/tld/custom.tld" %>
 <html><head><title>Login</title></head>
 <body>
+<jsp:include page="/jsp/header.jsp"/>
 <a href="${pageContext.request.contextPath}/jsp/registration/registrationForm.jsp">Register now!</a>
-<ctg:info-time/>
 <form name="loginForm" method="POST" action="controller">
     <input type="hidden" name="command" value="login" />
     <br/>Login:<br/>
@@ -23,5 +22,5 @@
     <br/>
     <input type="submit" value="Login"/>
 </form>
-<hr/>
+<jsp:include page="/jsp/footer.jsp"/>
 </body></html>

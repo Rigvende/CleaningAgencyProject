@@ -34,7 +34,7 @@ public class CommandProvider {
     }
 
     public static Optional<ActionCommand> defineCommand(String commandName)
-                                                  throws CommandException {
+            throws CommandException {
         Optional<ActionCommand> current;
         if (commandName == null || commandName.isBlank()) {
             return Optional.empty();
