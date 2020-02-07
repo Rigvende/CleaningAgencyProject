@@ -10,25 +10,32 @@ import java.sql.SQLException;
 
 public class RegistrationService {
 
-    public static boolean registerUser(User user) throws ServiceException {
-        DaoFactory factory = new DaoFactory();
-        ProxyConnection connection;
+    private static boolean isExist(User user, UserDao dao) throws ServiceException {
+        boolean exist;
         try {
-            connection = (ProxyConnection) factory.getConnection();
+            exist = dao.findLogin(user.getLogin());
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
+        return exist;
+    }
+
+    public static User registerUser(User user) throws ServiceException {
+        DaoFactory factory = new DaoFactory();
+        try {
+            ProxyConnection connection = (ProxyConnection) factory.getConnection();
             connection.setAutoCommit(false);
             UserDao dao = factory.createUserDao(connection);
-            boolean exist = dao.findLogin(user.getLogin());
-            if (!exist) {
-                boolean check = dao.addUserToDB(user);
-                connection.commit();
-                connection.close();
-                return check;
+            if (!isExist(user, dao)) {
+                if (dao.addUserToDB(user)) {
+                    user = null;
+                }
             }
             connection.commit();
             connection.close();
         } catch (DaoException | SQLException e) {
             throw new ServiceException(e);
         }
-        return false;
+        return user;
     }
 }

@@ -3,17 +3,18 @@ package by.patrusova.project.entity;
 import by.patrusova.project.dao.column.*;
 import by.patrusova.project.entity.impl.*;
 import by.patrusova.project.exception.DaoException;
+
 import javax.servlet.http.HttpServletRequest;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Enumeration;
 import java.util.Optional;
 
 public class EntityFactory {
 
     private static final String PARAM_NAME_LOGIN = "login";
     private static final String PARAM_NAME_PASSWORD = "password";
-    private static final String PARAM_NAME_ROLE = "role";
-    private static final String PARAM_NAME_NAME = "name";
+    private static final String PARAM_NAME_NAME = "firstname";
     private static final String PARAM_NAME_LASTNAME = "lastname";
     private static final String PARAM_NAME_PHONE = "phone";
     private static final String PARAM_NAME_ADDRESS = "address";
@@ -149,6 +150,35 @@ public class EntityFactory {
         newUser.setPhone(Long.parseLong(request.getParameter(PARAM_NAME_PHONE)));
         newUser.setAddress(request.getParameter(PARAM_NAME_ADDRESS));
         newUser.setEmail(request.getParameter(PARAM_NAME_EMAIL));
+        newUser.setId(0);
+//        newUser.setRole(String.valueOf(Role.GUEST)); //пока админ не подтвердит регистрацию
+//        if (enumeration.hasMoreElements()) {
+//            newUser.setLogin(enumeration.nextElement());
+//        }
+//        if (enumeration.hasMoreElements()) {
+//            newUser.setPassword(enumeration.nextElement());
+//        }
+//        if (enumeration.hasMoreElements()) {
+//            newUser.setName(enumeration.nextElement());
+//        }
+//        if (enumeration.hasMoreElements()) {
+//            newUser.setLastname(enumeration.nextElement());
+//        }
+//        if (enumeration.hasMoreElements()) {
+//            newUser.setPhone(Long.parseLong(enumeration.nextElement()));
+//        } else {
+//            newUser.setPhone(0);
+//        }
+//        if (enumeration.hasMoreElements()) {
+//            newUser.setAddress(enumeration.nextElement());
+//        } else {
+//            newUser.setAddress(null);
+//        }
+//        if (enumeration.hasMoreElements()) {
+//            newUser.setEmail(enumeration.nextElement());
+//        } else {
+//            newUser.setEmail(null);
+//        }
         return newUser;
     }
 }

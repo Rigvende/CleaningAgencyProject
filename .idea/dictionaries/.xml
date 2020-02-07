@@ -3,12 +3,15 @@
     <words>
       <w>customtags</w>
       <w>deregistering</w>
+      <w>firstname</w>
       <w>lastname</w>
+      <w>logined</w>
       <w>loginerror</w>
       <w>loginfalse</w>
       <w>mainadmin</w>
       <w>maincleaner</w>
       <w>mainclient</w>
+      <w>newuser</w>
       <w>notregistered</w>
       <w>nullpage</w>
       <w>patrusova</w>

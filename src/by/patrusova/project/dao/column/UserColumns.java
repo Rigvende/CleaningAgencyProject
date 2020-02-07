@@ -6,7 +6,7 @@ public enum UserColumns {
     LOGIN("login"),
     PASSWORD("password"),
     ROLE("role"),
-    NAME("name"),
+    NAME("firstname"),
     LASTNAME("lastname"),
     PHONE("phone"),
     ADDRESS("address"),

@@ -13,7 +13,9 @@ import org.apache.logging.log4j.Logger;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class UserDao extends AbstractDao<AbstractEntity> {
 
@@ -23,14 +25,14 @@ public class UserDao extends AbstractDao<AbstractEntity> {
                     "lastname, phone, address, email FROM users";
     private final static String SQL_SELECT_LOGIN =
             "SELECT login FROM users";
-    private static List<User> users = new ArrayList<>();
+    private static Map<Long, User> loginedUsers = new HashMap<>();
 
     public UserDao(ProxyConnection connection) {
         super(connection);
     }
 
-    public static List<User> getUsers() {
-        return users;
+    public static Map<Long, User> getLoginedUsers() {
+        return loginedUsers;
     }
 
     public Connection getConnection() {
@@ -103,14 +105,14 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 user = EntityFactory.createUser(resultSet);
-                users.add(user);
+                loginedUsers.put(user.getId(), user);
             }
         } catch (SQLException e) {
             LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
-            returnConnectionInPool();
+//            returnConnectionInPool(); todo конекшн возвращается в пул вызывающим методом логинсервис
         }
         return user;
     }
@@ -129,7 +131,7 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             throw new DaoException(e);
         } finally {
             closeStatement(statement);
-            returnConnectionInPool();
+//            returnConnectionInPool();todo конекшн возвращается в пул вызывающим методом логинсервис
         }
         return false;
     }
@@ -154,7 +156,7 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
-            returnConnectionInPool();
+//            returnConnectionInPool();todo конекшн возвращается в пул вызывающим методом логинсервис
         }
         return isAdded;
     }

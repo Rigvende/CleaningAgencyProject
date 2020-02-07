@@ -14,7 +14,7 @@
     </div>
 </div>
 <br/>
-<form name="registration" method="post" action="controller">
+<form name="registration" method="get" action="controller">
     <input type="hidden" name="command" value="regredirect" />
     ${errorLogoutMessage}
     ${wrongAction}
@@ -35,6 +35,7 @@
     ${errorLoginPassMessage}
     ${wrongAction}
     ${nullPage}
+    <br/>
     <input type="submit" value="Login"/>
 </form>
 <jsp:include page="/jsp/footer.jsp"/>

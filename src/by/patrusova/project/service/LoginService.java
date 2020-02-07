@@ -3,12 +3,10 @@ package by.patrusova.project.service;
 import by.patrusova.project.connection.ProxyConnection;
 import by.patrusova.project.dao.DaoFactory;
 import by.patrusova.project.dao.impl.UserDao;
-import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 
 public class LoginService {
@@ -21,7 +19,7 @@ public class LoginService {
             UserDao dao = factory.createUserDao(connection);
             user = dao.findEntityByLoginPass(user.getLogin(), user.getPassword());
             if (user != null) {
-                UserDao.getUsers().add(user);
+                UserDao.getLoginedUsers().put(user.getId(), user);
             }
             connection.commit();
             connection.close();
