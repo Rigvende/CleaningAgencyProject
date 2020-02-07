@@ -4,7 +4,12 @@
     <title>Info Page</title>
 </head>
 <body>
-<jsp:include page="/jsp/header.jsp"/>
+<div style="background: #E0E0E0; height: 100px; padding: 5px;">
+    <div style="float: left">
+        <h1> Rest-in-Cleanliness </h1>
+        <h4>Cleaning Agency</h4>
+    </div>
+</div>
 <p>We are glad that you have chosen our agency.</p>
 <p>The company is engaged in cleaning and restoration of burial places of your friends and relatives.</p>
 <p><i>You can get acquainted with our services and prices

@@ -5,6 +5,17 @@
         <h4>Cleaning Agency</h4>
     </div>
     <div style="float: right; padding: 10px; text-align: right;">
-        <a href="${pageContext.request.contextPath}/jsp/logoutConfirm.jsp">Logout</a>
+        <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
+        <div style="margin-right: 70px">
+
+        <form name="logoutForm" method="get" action="controller">
+            <input type="hidden" name="command" value="logout" />
+            ${errorLogoutMessage}
+            ${wrongAction}
+            ${nullPage}
+            <input type="submit" value="Logout"/>
+        </form>
+
+        </div>
     </div>
 </div>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<html><head><title>Login</title></head>
+<html><head><title>Login</title>
 <body>
 <div style="background: #E0E0E0; height: 100px; padding: 5px;">
     <div style="float: left">
@@ -20,13 +20,9 @@
     <label>
         <input type="password" name="password" value=""/>
     </label>
-    <br/>
     ${errorLoginPassMessage}
-    <br/>
     ${wrongAction}
-    <br/>
     ${nullPage}
-    <br/>
     <input type="submit" value="Login"/>
 </form>
 <jsp:include page="/jsp/footer.jsp"/>

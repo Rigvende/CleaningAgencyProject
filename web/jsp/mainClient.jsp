@@ -4,8 +4,7 @@
 </head>
 <body>
 <jsp:include page="/jsp/header.jsp"/>
-<h1 style="color: olivedrab">Welcome, ${userName}!</h1>
-<br/>
+<h2 style="color: olivedrab">Welcome, ${user.name}!</h2>
 <h3>Hello! What do you want to do now?</h3>
 <br/>
 <jsp:include page="/jsp/menu.jsp"/>

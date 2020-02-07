@@ -34,6 +34,11 @@ public enum CommandEnum {
             this.command = new InfoCommand();
         }
     },
+     BASKET {
+        {
+            this.command = new BasketCommand();
+        }
+    },
     MAIL {
         {
             this.command = new MailCommand();

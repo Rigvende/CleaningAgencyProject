@@ -20,7 +20,7 @@ class PropertyLoader {
         Properties property = new Properties();
 
         try (FileInputStream inputStream = new FileInputStream(CONNECTION_DB)) {
-            property.load(inputStream); //fixme томкат не видит ресурсы, а проект видит
+            property.load(inputStream);
         } catch (IOException e) {
             LOGGER.log(Level.FATAL, "Cannot find database driver's configuration file.");
             throw new RuntimeException(e);
