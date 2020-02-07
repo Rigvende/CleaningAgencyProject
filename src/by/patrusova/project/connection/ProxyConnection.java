@@ -21,12 +21,7 @@ public class ProxyConnection implements Connection {
 
     protected ProxyConnection(Connection connection) throws DaoException {
         this.connection = connection;
-        try {
-            this.statements = PreparedStatements.useStatements(connection);
-        } catch (SQLException e) {
-            LOGGER.log(Level.ERROR, "Connection failed");
-            throw new DaoException(e);
-        }
+        this.statements = PreparedStatements.useStatements(connection);
     }
 
     public static Connection createConnection() throws DaoException {

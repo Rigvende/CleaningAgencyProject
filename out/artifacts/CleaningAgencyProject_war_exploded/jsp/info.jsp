@@ -12,8 +12,7 @@
 </div>
 <p>We are glad that you have chosen our agency.</p>
 <p>The company is engaged in cleaning and restoration of burial places of your friends and relatives.</p>
-<p><i>You can get acquainted with our services and prices
-    in the <a href="${pageContext.request.contextPath}/jsp/catalogue.jsp">"Catalogue"</a> section.</i></p>
+<p><i>You can get acquainted with our services and prices in the "Catalogue" section after registration.</i></p>
 <br/>
 <b>Our contact information:</b>
 <br/>

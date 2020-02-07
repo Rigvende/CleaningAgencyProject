@@ -1,5 +1,6 @@
 package by.patrusova.project.dao.impl;
 
+import add.PreparedStatements;
 import by.patrusova.project.connection.ProxyConnection;
 import by.patrusova.project.dao.AbstractDao;
 import by.patrusova.project.entity.AbstractEntity;
@@ -17,22 +18,19 @@ import java.util.List;
 public class UserDao extends AbstractDao<AbstractEntity> {
 
     private final static Logger LOGGER = LogManager.getLogger();
-    private static final String SQL_SELECT_USER_BY_LOGIN_PASS =
-            "SELECT id_user, login, password, role, name, lastname, phone, " +
-                    "address, email FROM users WHERE login = ? AND password = ?";
     private static final String SQL_SELECT_ALL_USERS =
             "SELECT id_user, login, password, role, name, " +
                     "lastname, phone, address, email FROM users";
-    private static final String SQL_SELECT_USER_BY_ID =
-            "SELECT id_user, login, password, role, name, lastname, phone, " +
-                    "address, email FROM users WHERE id_user = ?";
     private final static String SQL_SELECT_LOGIN =
             "SELECT login FROM users";
-    private final static String SQL_ADD_USER =
-            "INSERT INTO users VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    private static List<User> users = new ArrayList<>();
 
     public UserDao(ProxyConnection connection) {
         super(connection);
+    }
+
+    public static List<User> getUsers() {
+        return users;
     }
 
     public Connection getConnection() {
@@ -63,7 +61,6 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             ResultSet resultSet = statement.executeQuery(SQL_SELECT_ALL_USERS);
             while (resultSet.next()) {
                 User user = EntityFactory.createUser(resultSet);
-                users.add(user);
             }
         } catch (SQLException e) {
             LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
@@ -78,11 +75,11 @@ public class UserDao extends AbstractDao<AbstractEntity> {
     @Override
     public AbstractEntity findEntityById(long id) throws DaoException {
         User user = null;
-        PreparedStatement statement = null;
+        PreparedStatement preparedStatement = null;
         try {
-            statement = connection.prepareStatement(SQL_SELECT_USER_BY_ID);
-            statement.setLong(1, id);
-            ResultSet resultSet = statement.executeQuery();
+            preparedStatement = PreparedStatements.useStatements(connection).get("find_user_id");
+            preparedStatement.setLong(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 user = EntityFactory.createUser(resultSet);
             }
@@ -90,7 +87,7 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
             throw new DaoException(e);
         } finally {
-            closeStatement(statement);
+            closeStatement(preparedStatement);
             returnConnectionInPool();
         }
         return user;
@@ -98,20 +95,21 @@ public class UserDao extends AbstractDao<AbstractEntity> {
 
     public User findEntityByLoginPass(String login, String pass) throws DaoException {
         User user = null;
-        PreparedStatement statement = null;
+        PreparedStatement preparedStatement = null;
         try {
-            statement = connection.prepareStatement(SQL_SELECT_USER_BY_LOGIN_PASS);
-            statement.setString(1, login);
-            statement.setString(2, pass);
-            ResultSet resultSet = statement.executeQuery();
+            preparedStatement = PreparedStatements.useStatements(connection).get("check_login");
+            preparedStatement.setString(1, login);
+            preparedStatement.setString(2, pass);
+            ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 user = EntityFactory.createUser(resultSet);
+                users.add(user);
             }
         } catch (SQLException e) {
             LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
             throw new DaoException(e);
         } finally {
-            closeStatement(statement);
+            closeStatement(preparedStatement);
             returnConnectionInPool();
         }
         return user;
@@ -140,7 +138,7 @@ public class UserDao extends AbstractDao<AbstractEntity> {
         boolean isAdded;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = connection.prepareStatement(SQL_ADD_USER);
+            preparedStatement = PreparedStatements.useStatements(connection).get("add_user");
             preparedStatement.setLong(1, 0);
             preparedStatement.setString(2, user.getLogin());
             preparedStatement.setString(3, user.getPassword());

@@ -1,5 +1,6 @@
 package by.patrusova.project.validator;
 
+import by.patrusova.project.entity.Role;
 import by.patrusova.project.entity.impl.Order;
 import by.patrusova.project.entity.impl.User;
 
@@ -33,8 +34,8 @@ public class StringValidator {
 
     public static boolean isValidRole(String data) {
         boolean flag = false;
-        User.Role[] roles = User.Role.values();
-        for(User.Role role : roles) {
+        Role[] roles = Role.values();
+        for(Role role : roles) {
             if (role.getValue().equals(data.toLowerCase())) {
                 flag = true;
                 break;

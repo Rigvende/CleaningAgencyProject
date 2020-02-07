@@ -16,19 +16,7 @@ public class User extends AbstractEntity {
     private String address;
     private String email;
 
-    public enum Role {
-        ADMIN("admin"),
-        CLIENT("client"),
-        CLEANER("cleaner"),
-        GUEST("guest");
-        private String value;
-        Role(String value) {
-            this.value = value;
-        }
-        public String getValue() {
-            return value;
-        }
-    }
+
 
     public User() {}
     public User(long id, String login, String password, String role, String name,

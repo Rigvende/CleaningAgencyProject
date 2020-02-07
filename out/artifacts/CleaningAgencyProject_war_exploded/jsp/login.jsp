@@ -6,9 +6,21 @@
         <h1> Rest-in-Cleanliness </h1>
         <h4>Cleaning Agency</h4>
     </div>
+    <div style="float: right; padding: 10px; text-align: right;">
+        <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
+        <div style="margin-right: 85px">
+            <a href="${pageContext.request.contextPath}/jsp/info.jsp">Info</a>
+        </div>
+    </div>
 </div>
 <br/>
-<a href="${pageContext.request.contextPath}/jsp/registration/registrationForm.jsp">Register now!</a>
+<form name="registration" method="post" action="controller">
+    <input type="hidden" name="command" value="regredirect" />
+    ${errorLogoutMessage}
+    ${wrongAction}
+    ${nullPage}
+    <input type="submit" value="Register now!"/>
+</form>
 <hr/>
 <form name="loginForm" method="POST" action="controller">
     <input type="hidden" name="command" value="login" />

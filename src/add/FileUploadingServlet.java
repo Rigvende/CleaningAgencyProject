@@ -22,13 +22,10 @@ public class FileUploadingServlet extends HttpServlet {
     private static final String UPLOAD_DIR = "uploads";
 
     @Override
-    protected void doPost(HttpServletRequest request,
-                          HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String applicationDir = request.getServletContext().getRealPath("");
-
         String uploadFileDir = applicationDir + File.separator + UPLOAD_DIR + File.separator;
-
         File fileSaveDir = new File(uploadFileDir);
         if(!fileSaveDir.exists()){
             fileSaveDir.mkdirs();

@@ -39,6 +39,11 @@ public enum CommandEnum {
             this.command = new BasketCommand();
         }
     },
+    REGREDIRECT {
+        {
+            this.command = new RegistrationRedirectCommand();
+        }
+    },
     MAIL {
         {
             this.command = new MailCommand();

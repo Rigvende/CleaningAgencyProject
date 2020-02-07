@@ -20,6 +20,9 @@ public class LoginService {
             connection.setAutoCommit(false);
             UserDao dao = factory.createUserDao(connection);
             user = dao.findEntityByLoginPass(user.getLogin(), user.getPassword());
+            if (user != null) {
+                UserDao.getUsers().add(user);
+            }
             connection.commit();
             connection.close();
         } catch (DaoException | SQLException e) {

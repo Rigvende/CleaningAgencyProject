@@ -143,7 +143,7 @@ public class EntityFactory {
         newUser.setId(0);
         newUser.setLogin(request.getParameter(PARAM_NAME_LOGIN));
         newUser.setPassword(request.getParameter(PARAM_NAME_PASSWORD));
-        newUser.setRole(String.valueOf(User.Role.GUEST)); //пока админ не подтвердит регистрацию
+        newUser.setRole(String.valueOf(Role.GUEST)); //пока админ не подтвердит регистрацию
         newUser.setName(request.getParameter(PARAM_NAME_NAME));
         newUser.setLastname(request.getParameter(PARAM_NAME_LASTNAME));
         newUser.setPhone(Long.parseLong(request.getParameter(PARAM_NAME_PHONE)));
