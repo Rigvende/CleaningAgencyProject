@@ -1,8 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html><head><title>Login</title></head>
 <body>
-<jsp:include page="/jsp/header.jsp"/>
+<div style="background: #E0E0E0; height: 100px; padding: 5px;">
+    <div style="float: left">
+        <h1> Rest-in-Cleanliness </h1>
+        <h4>Cleaning Agency</h4>
+    </div>
+</div>
+<br/>
 <a href="${pageContext.request.contextPath}/jsp/registration/registrationForm.jsp">Register now!</a>
+<hr/>
 <form name="loginForm" method="POST" action="controller">
     <input type="hidden" name="command" value="login" />
     <br/>Login:<br/>

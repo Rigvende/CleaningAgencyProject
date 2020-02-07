@@ -7,7 +7,8 @@
 <jsp:include page="/jsp/header.jsp"/>
 <p>We are glad that you have chosen our agency.</p>
 <p>The company is engaged in cleaning and restoration of burial places of your friends and relatives.</p>
-<p><i>You can get acquainted with our services and prices in the "Catalogue" section.</i></p>
+<p><i>You can get acquainted with our services and prices
+    in the <a href="${pageContext.request.contextPath}/jsp/catalogue.jsp">"Catalogue"</a> section.</i></p>
 <br/>
 <b>Our contact information:</b>
 <br/>
@@ -25,6 +26,5 @@ Minsk, Lenin St., Building 1.
 <br/>
 # 123456789 issued by the Ministry of Justice of the Republic of Belarus 01-01-2020
 <jsp:include page="/jsp/footer.jsp"/>
-<img src="${pageContext.request.contextPath}/data/fon.jpg" alt="back">
 </body>
 </html>
