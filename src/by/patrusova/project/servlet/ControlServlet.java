@@ -42,6 +42,8 @@ public class ControlServlet extends HttpServlet {
         String page;
         CommandProvider client = new CommandProvider();
         try {
+            request.setCharacterEncoding("UTF-8");
+            response.setCharacterEncoding("UTF-8");
             ActionCommand command = client.defineCommand(request);
             page = command.execute(request);
             if (page != null) {

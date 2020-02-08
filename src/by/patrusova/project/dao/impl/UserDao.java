@@ -1,6 +1,6 @@
 package by.patrusova.project.dao.impl;
 
-import add.PreparedStatements;
+import by.patrusova.project.util.PreparedStatements;
 import by.patrusova.project.connection.ProxyConnection;
 import by.patrusova.project.dao.AbstractDao;
 import by.patrusova.project.entity.AbstractEntity;

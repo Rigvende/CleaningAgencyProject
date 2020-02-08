@@ -28,31 +28,8 @@ public class CommandProvider {
             request.setAttribute("wrongAction", action
                     + MessageManager.getProperty("message.wrongaction"));
             LOGGER.log(Level.ERROR, "Cannot define current command.");
-            throw new CommandException(e); //todo нужно ли бросать CommandException
+            throw new CommandException(e);
         }
         return current;
     }
-
-//    public static Optional<ActionCommand> defineCommand(String commandName)
-//            throws CommandException {
-//        Optional<ActionCommand> current;
-//        if (commandName == null || commandName.isBlank()) {
-//            return Optional.empty();
-//        }
-//        try {
-//            CommandEnum type = CommandEnum.valueOf(commandName.toUpperCase());
-//            current = Optional.of(type.getCurrentCommand());
-//        } catch (IllegalArgumentException e) {
-//            LOGGER.log(Level.ERROR, "Cannot find command.");
-//            throw new CommandException(e);
-//        }
-//        return current;
-//    }
-//
-//    public static Optional<ActionCommand> takeCommand(String commandName) {
-//        return Arrays.stream(CommandEnum.values())
-//                .filter(o -> o.name().equalsIgnoreCase(commandName))
-//                .map(CommandEnum::getCurrentCommand)
-//                .findAny();
-//    }
 }

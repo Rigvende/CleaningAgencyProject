@@ -1,6 +1,6 @@
 package by.patrusova.project.connection;
 
-import add.PreparedStatements;
+import by.patrusova.project.util.PreparedStatements;
 import by.patrusova.project.exception.DaoException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;

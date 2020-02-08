@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf8" pageEncoding="utf8"%>
 <html>
     <head>
         <title>Registration</title>
@@ -23,16 +23,16 @@
         <input type="hidden" name="command" value="registration" />
         <br/>Login* (from 5 to 15 symbols; only latin symbols, _ or digits):<br/>
         <label>
-            <input type="text" name="login" value=""/>
+            <input type="text" name="loginreg" value=""/>
         </label>
         <br/>Password* (from 5 to 15 symbols; only latin symbols, _ or digits):<br/>
         <label>
-            <input type="password" name="password" value=""/>
+            <input type="password" name="passwordreg" value=""/>
         </label>
-<%--        <br/>Repeat password*:<br/>--%>
-<%--        <label>--%>
-<%--            <input type="password" name="password_repeat" value=""/>--%>
-<%--        </label>--%>
+        <br/>Repeat password*:<br/>
+        <label>
+            <input type="password" name="passwordagain" value=""/>
+        </label>
         <br/>Name*:<br/>
         <label>
             <input type="text" name="firstname" value=""/>

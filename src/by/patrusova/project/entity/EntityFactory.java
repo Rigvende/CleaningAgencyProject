@@ -12,8 +12,8 @@ import java.util.Optional;
 
 public class EntityFactory {
 
-    private static final String PARAM_NAME_LOGIN = "login";
-    private static final String PARAM_NAME_PASSWORD = "password";
+    private static final String PARAM_NAME_LOGIN = "loginreg";
+    private static final String PARAM_NAME_PASSWORD = "passwordreg";
     private static final String PARAM_NAME_NAME = "firstname";
     private static final String PARAM_NAME_LASTNAME = "lastname";
     private static final String PARAM_NAME_PHONE = "phone";
@@ -150,7 +150,7 @@ public class EntityFactory {
         newUser.setPhone(Long.parseLong(request.getParameter(PARAM_NAME_PHONE)));
         newUser.setAddress(request.getParameter(PARAM_NAME_ADDRESS));
         newUser.setEmail(request.getParameter(PARAM_NAME_EMAIL));
-        newUser.setId(0);
+//        newUser.setId(0);
 //        newUser.setRole(String.valueOf(Role.GUEST)); //пока админ не подтвердит регистрацию
 //        if (enumeration.hasMoreElements()) {
 //            newUser.setLogin(enumeration.nextElement());
@@ -178,7 +178,7 @@ public class EntityFactory {
 //            newUser.setEmail(enumeration.nextElement());
 //        } else {
 //            newUser.setEmail(null);
-//        }
+//        }todo sessionrequestdispatcher
         return newUser;
     }
 }

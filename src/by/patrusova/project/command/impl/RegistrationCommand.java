@@ -15,7 +15,7 @@ public class RegistrationCommand implements ActionCommand {
 
     public String execute(HttpServletRequest request) throws CommandException {
         String page;
-        SessionRequestContent content = new SessionRequestContent();
+//        SessionRequestContent content = new SessionRequestContent();
 //        User user = EntityFactory.createNewUser(content.extractValues(request));//todo через извлеченные данные
         User user = EntityFactory.createNewUser(request);
         try {

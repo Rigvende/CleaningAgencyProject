@@ -9,9 +9,9 @@
         <br/>
         Status code : ${pageContext.errorData.statusCode}
         <br/>
-        Exception: ${pageContext.exception}
+        Exception : ${pageContext.exception}
         <br/>
-        Message from exception: ${pageContext.exception.message}
+        Message from exception : ${pageContext.exception.message}
         <br/>
         <hr/>
     </body>

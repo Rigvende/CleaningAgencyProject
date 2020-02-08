@@ -6,7 +6,7 @@
 </head>
 <body>
 <ctg:info-time/>
-Oops. Server has problems.
+Oops. Server has problems. Try to reload page or wait.
 <br/>
 </body>
 </html>
