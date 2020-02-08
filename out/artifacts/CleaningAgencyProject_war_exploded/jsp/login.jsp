@@ -3,7 +3,7 @@
 <body>
 <div style="background: #E0E0E0; height: 100px; padding: 5px;">
     <div style="float: left">
-        <h1> Rest-in-Cleanliness </h1>
+        <h1> <u>Rest-in-Cleanliness</u> </h1>
         <h4>Cleaning Agency</h4>
     </div>
     <div style="float: right; padding: 10px; text-align: right;">
@@ -32,7 +32,8 @@
     <label>
         <input type="password" name="password" value=""/>
     </label>
-    ${errorLoginPassMessage}
+    <br/>
+    <div style="color: crimson">${errorLoginPassMessage}</div>
     ${wrongAction}
     ${nullPage}
     <br/>
