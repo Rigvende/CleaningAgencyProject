@@ -53,7 +53,7 @@
         <label>
             <input type="text" name="address" value=""/>
         </label>
-        ${errorRegistrationMessage}
+        <div style="color: crimson">${errorRegistrationMessage}</div>
         ${wrongAction}
         ${nullPage}
         <br/>

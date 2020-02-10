@@ -15,6 +15,7 @@ public class LogoutCommand implements ActionCommand {
         String page = null;
         if (LogoutService.logoutUser(user)) {
             page = ConfigurationManager.getProperty("page.login");
+            request.getSession().removeAttribute("user");
             request.getSession().invalidate();
             request.setAttribute("logoutMessage",
                     MessageManager.getProperty("message.logout"));//fixme почему не выводится сообщение?

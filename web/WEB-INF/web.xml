@@ -8,7 +8,7 @@
     <display-name>Cleaning Agency Project</display-name>
 
     <session-config>
-        <session-timeout>15</session-timeout>
+        <session-timeout>30</session-timeout>
     </session-config>
 
     <welcome-file-list>
@@ -21,15 +21,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>default</servlet-name>
-        <url-pattern>*.gif</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
         <url-pattern>*.jpg</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>*.jpeg</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>default</servlet-name>
@@ -58,7 +50,7 @@
         <location>/jsp/error/error_500.jsp</location>
     </error-page>
     <error-page>
-    <exception-type>java.lang.RuntimeException</exception-type>
+    <exception-type>java.lang.Exception</exception-type>
     <location>/jsp/error/error.jsp</location>
     </error-page>
     <error-page>

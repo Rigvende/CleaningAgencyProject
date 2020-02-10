@@ -12,8 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 @WebServlet(urlPatterns = "/controller")
 public class ControlServlet extends HttpServlet {
@@ -40,11 +38,12 @@ public class ControlServlet extends HttpServlet {
     private void processRequest(HttpServletRequest request,
                                 HttpServletResponse response) throws CommandException {
         String page;
-        CommandProvider client = new CommandProvider();
+        CommandProvider provider = new CommandProvider();
         try {
             request.setCharacterEncoding("UTF-8");
             response.setCharacterEncoding("UTF-8");
-            ActionCommand command = client.defineCommand(request);
+//            request.setAttribute("text", new TextMap()); todo как подгрузить мап для интернационализации
+            ActionCommand command = provider.defineCommand(request);
             page = command.execute(request);
             if (page != null) {
                 RequestDispatcher dispatcher

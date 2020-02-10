@@ -44,6 +44,11 @@ public enum CommandEnum {
             this.command = new RegistrationRedirectCommand();
         }
     },
+    BACKTOMAIN {
+        {
+            this.command = new BackToMainCommand();
+        }
+    },
     MAIL {
         {
             this.command = new MailCommand();

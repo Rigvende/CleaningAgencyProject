@@ -20,9 +20,6 @@ public class StringValidator {
                 return (data.length() >= 20 && data.length() <= 80);
             case "service":
                 return (data.length() >= 5 && data.length() <= 50);
-            case "user":
-            case "password":
-                return (data.length() >= 5 && data.length() <= 15);
             case "name":
                 return (data.length() >= 2 && data.length() <= 20);
             case "lastname":

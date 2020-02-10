@@ -6,11 +6,13 @@ import java.util.regex.Pattern;
 public class RegistrationDataValidator {
 
     private final static String CHECK_LOGIN
-            = "^[a-zA-Z][a-zA-Z0-9-_]{4,15}$";
+            = "^[A-z0-9_]{5,15}$";
     private final static String CHECK_PASSWORD
-            = "(?=^.{5,15}$)((?=.*\\d)|(?=.*[_]))(?![.\\n])(?=.*[A-Z])(?=.*[a-z]).*$";
+            = "^[A-z0-9_]{5,15}$";
     private final static String CHECK_EMAIL
             = "^[-\\w.]+@([A-z0-9][-A-z0-9]+\\.)+[A-z]{2,4}$";
+    private final static String CHECK_PHONE
+            = "^[\\d]$";
 
     public static boolean isValidLogin(String login) {
         Pattern pattern = Pattern.compile(CHECK_LOGIN);
@@ -21,6 +23,16 @@ public class RegistrationDataValidator {
     public static boolean isValidPassword(String password) {
         Pattern pattern = Pattern.compile(CHECK_PASSWORD);
         Matcher matcher = pattern.matcher(password);
+        return matcher.find();
+    }
+
+    public static boolean isPasswordRepeated(String password, String repeatedPassword) {
+        return password.equals(repeatedPassword);
+    }
+
+    public static boolean isValidPhone(String phone) {
+        Pattern pattern = Pattern.compile(CHECK_PHONE);
+        Matcher matcher = pattern.matcher(phone);
         return matcher.find();
     }
 

@@ -8,6 +8,7 @@ import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.service.LoginService;
 import by.patrusova.project.util.MessageManager;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 public class LoginCommand implements ActionCommand {
 
@@ -26,19 +27,24 @@ public class LoginCommand implements ActionCommand {
             user = LoginService.checkLogin(user);
             if (user != null) {
                 request.setAttribute("user", user);
-                request.getSession().setAttribute("user", user);//todo правильно сессия установлена?
+                HttpSession session = request.getSession(true);
+                session.setAttribute("user", user);//todo правильно сессия установлена?
                 String role = user.getRole();
                 switch (role) {
                     case "admin":
+                        session.setAttribute("role", "admin");
                         page = ConfigurationManager.getProperty("page.mainadmin");
                         break;
                     case "client":
+                        session.setAttribute("role", "client");
                         page = ConfigurationManager.getProperty("page.mainclient");
                         break;
                     case "cleaner":
+                        session.setAttribute("role", "cleaner");
                         page = ConfigurationManager.getProperty("page.maincleaner");
                         break;
                     default:
+                        session.setAttribute("role", "guest");
                         request.setAttribute("errorLoginPassMessage",
                                 MessageManager.getProperty("message.notregistered"));
                         page = ConfigurationManager.getProperty("page.login");

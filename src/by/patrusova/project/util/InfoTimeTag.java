@@ -3,6 +3,7 @@ package by.patrusova.project.util;
 import javax.servlet.jsp.tagext.TagSupport;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.GregorianCalendar;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
@@ -11,8 +12,13 @@ import javax.servlet.jsp.JspWriter;
 public class InfoTimeTag extends TagSupport {
     @Override
     public int doStartTag() throws JspException {
-        GregorianCalendar gc = new GregorianCalendar();
-        String time = "<hr/>Time : <b> " + gc.getTime() + " </b><hr/>";
+        LocalDateTime dateTime = LocalDateTime.now();
+        StringBuilder builder = new StringBuilder();
+        builder.append("<hr/>Time : <b> ").append(dateTime.getDayOfWeek()).append(" || ")
+                .append(dateTime.getDayOfMonth()).append(" ").append(dateTime.getMonth()).append(" ")
+                .append(dateTime.getYear()).append(" || ").append(dateTime.getHour())
+                .append(":").append(dateTime.getMinute()).append(" </b><hr/>");
+        String time = builder.toString();
         try {
             JspWriter out = pageContext.getOut();
             out.write(time);
@@ -22,7 +28,7 @@ public class InfoTimeTag extends TagSupport {
         return SKIP_BODY;
     }
     @Override
-    public int doEndTag() throws JspException {
+    public int doEndTag() {
         return EVAL_PAGE;
     }
 }

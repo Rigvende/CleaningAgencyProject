@@ -16,7 +16,7 @@
 <br/>
 <form name="registration" method="get" action="controller">
     <input type="hidden" name="command" value="regredirect" />
-    ${errorLogoutMessage}
+    <div style="color: crimson">${errorLogoutMessage}</div>
     ${wrongAction}
     ${nullPage}
     <input type="submit" value="Register now!"/>
@@ -24,7 +24,7 @@
 <hr/>
 <form name="loginForm" method="POST" action="controller">
     <input type="hidden" name="command" value="login" />
-    <br/>Login:<br/>
+    <br/>${text[0]}<br/>
     <label>
         <input type="text" name="login" value=""/>
     </label>

@@ -3,22 +3,16 @@ package by.patrusova.project.entity;
 import by.patrusova.project.dao.column.*;
 import by.patrusova.project.entity.impl.*;
 import by.patrusova.project.exception.DaoException;
+import by.patrusova.project.validator.NumberValidator;
+import by.patrusova.project.validator.RegistrationDataValidator;
+import by.patrusova.project.validator.StringValidator;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Enumeration;
-import java.util.Optional;
+import java.util.*;
 
 public class EntityFactory {
-
-    private static final String PARAM_NAME_LOGIN = "loginreg";
-    private static final String PARAM_NAME_PASSWORD = "passwordreg";
-    private static final String PARAM_NAME_NAME = "firstname";
-    private static final String PARAM_NAME_LASTNAME = "lastname";
-    private static final String PARAM_NAME_PHONE = "phone";
-    private static final String PARAM_NAME_ADDRESS = "address";
-    private static final String PARAM_NAME_EMAIL = "email";
 
     public static BasketPosition createBasketPosition(ResultSet resultSet)
             throws DaoException {
@@ -77,10 +71,10 @@ public class EntityFactory {
         try {
             order.setId(resultSet.getLong
                     (String.valueOf(OrderColumns.ID_ORDER)));
-            order.setOrderTime(resultSet.getDate
-                    (String.valueOf(OrderColumns.ORDER_TIME)));
-            order.setDeadline(resultSet.getDate
-                    (String.valueOf(OrderColumns.DEADLINE)));
+            order.setOrderTime(new java.sql.Date(resultSet.getDate
+                    (String.valueOf(OrderColumns.ORDER_TIME)).getTime()).toLocalDate());
+            order.setDeadline(new java.sql.Date(resultSet.getDate
+                    (String.valueOf(OrderColumns.DEADLINE)).getTime()).toLocalDate());
             order.setOrderStatus(resultSet.getString
                     (String.valueOf(OrderColumns.ORDER_STATUS)));
             order.setMark(resultSet.getInt
@@ -137,48 +131,5 @@ public class EntityFactory {
             throw new DaoException(e);
         }
         return user;
-    }
-
-    public static User createNewUser(HttpServletRequest request) {
-        User newUser = new User();
-        newUser.setId(0);
-        newUser.setLogin(request.getParameter(PARAM_NAME_LOGIN));
-        newUser.setPassword(request.getParameter(PARAM_NAME_PASSWORD));
-        newUser.setRole(String.valueOf(Role.GUEST)); //пока админ не подтвердит регистрацию
-        newUser.setName(request.getParameter(PARAM_NAME_NAME));
-        newUser.setLastname(request.getParameter(PARAM_NAME_LASTNAME));
-        newUser.setPhone(Long.parseLong(request.getParameter(PARAM_NAME_PHONE)));
-        newUser.setAddress(request.getParameter(PARAM_NAME_ADDRESS));
-        newUser.setEmail(request.getParameter(PARAM_NAME_EMAIL));
-//        newUser.setId(0);
-//        newUser.setRole(String.valueOf(Role.GUEST)); //пока админ не подтвердит регистрацию
-//        if (enumeration.hasMoreElements()) {
-//            newUser.setLogin(enumeration.nextElement());
-//        }
-//        if (enumeration.hasMoreElements()) {
-//            newUser.setPassword(enumeration.nextElement());
-//        }
-//        if (enumeration.hasMoreElements()) {
-//            newUser.setName(enumeration.nextElement());
-//        }
-//        if (enumeration.hasMoreElements()) {
-//            newUser.setLastname(enumeration.nextElement());
-//        }
-//        if (enumeration.hasMoreElements()) {
-//            newUser.setPhone(Long.parseLong(enumeration.nextElement()));
-//        } else {
-//            newUser.setPhone(0);
-//        }
-//        if (enumeration.hasMoreElements()) {
-//            newUser.setAddress(enumeration.nextElement());
-//        } else {
-//            newUser.setAddress(null);
-//        }
-//        if (enumeration.hasMoreElements()) {
-//            newUser.setEmail(enumeration.nextElement());
-//        } else {
-//            newUser.setEmail(null);
-//        }todo sessionrequestdispatcher
-        return newUser;
     }
 }

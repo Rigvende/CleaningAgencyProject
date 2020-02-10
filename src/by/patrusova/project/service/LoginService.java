@@ -17,7 +17,7 @@ public class LoginService {
             ProxyConnection connection = (ProxyConnection) factory.getConnection();
             connection.setAutoCommit(false);
             UserDao dao = factory.createUserDao(connection);
-            user = dao.findEntityByLoginPass(user.getLogin(), user.getPassword());
+            user = (User)dao.findEntityByLoginPass(user.getLogin(), user.getPassword());
             if (user != null) {
                 UserDao.getLoginedUsers().put(user.getId(), user);
             }

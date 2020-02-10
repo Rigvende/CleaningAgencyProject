@@ -1,6 +1,7 @@
 <component name="ProjectDictionaryState">
   <dictionary name="Администратор">
     <words>
+      <w>backtomain</w>
       <w>customtags</w>
       <w>deregistering</w>
       <w>firstname</w>
@@ -18,11 +19,14 @@
       <w>passwordagain</w>
       <w>passwordreg</w>
       <w>patrusova</w>
+      <w>reginfo</w>
       <w>registrationerror</w>
       <w>registrationfalse</w>
       <w>registrationform</w>
       <w>registrationtrue</w>
+      <w>regproposal</w>
       <w>regredirect</w>
+      <w>sendto</w>
       <w>wrongaction</w>
     </words>
   </dictionary>

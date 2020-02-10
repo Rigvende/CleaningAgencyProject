@@ -1,15 +1,14 @@
 package by.patrusova.project.entity.impl;
 
 import by.patrusova.project.entity.AbstractEntity;
-import java.util.Date;
-import java.util.Objects;
+import java.time.LocalDate;
 
 public class Order extends AbstractEntity {
 
     private static final long serialVersionUID = 5L;
     private long id;
-    private Date orderTime;
-    private Date deadline;
+    private LocalDate orderTime;
+    private LocalDate deadline;
     private String orderStatus;
     private int mark;
     private long idClient;
@@ -31,7 +30,7 @@ public class Order extends AbstractEntity {
     }
 
     public Order() {}
-    public Order(long id, Date orderTime, Date deadline, String orderStatus,
+    public Order(long id, LocalDate orderTime, LocalDate deadline, String orderStatus,
                  int mark, long idClient, long idCleaner) {
         this.id = id;
         this.orderTime = orderTime;
@@ -51,16 +50,16 @@ public class Order extends AbstractEntity {
     public void setId(long id) {
         this.id = id;
     }
-    public Date getOrderTime() {
+    public LocalDate getOrderTime() {
         return orderTime;
     }
-    public void setOrderTime(Date orderTime) {
+    public void setOrderTime(LocalDate orderTime) {
         this.orderTime = orderTime;
     }
-    public Date getDeadline() {
+    public LocalDate getDeadline() {
         return deadline;
     }
-    public void setDeadline(Date deadline) {
+    public void setDeadline(LocalDate deadline) {
         this.deadline = deadline;
     }
     public String getOrderStatus() {

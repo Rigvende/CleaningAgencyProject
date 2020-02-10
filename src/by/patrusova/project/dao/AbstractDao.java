@@ -22,9 +22,9 @@ public abstract class AbstractDao<T extends AbstractEntity> {
         this.connection = connection;
     }
 
-    public abstract boolean create(T entity);
-    public abstract boolean delete(T entity);
-    public abstract T update(T entity);
+    public abstract boolean create(T entity) throws DaoException;
+    public abstract boolean delete(T entity) throws DaoException;
+    public abstract boolean update(T entity) throws DaoException;
     public abstract List<T> findAll() throws DaoException;
     public abstract T findEntityById(long id) throws DaoException;
 

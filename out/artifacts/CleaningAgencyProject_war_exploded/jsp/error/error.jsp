@@ -1,8 +1,10 @@
 <%@ page isErrorPage="true" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="ctg" uri="/WEB-INF/tld/custom.tld" %>
-<html><title>Error Page</title>
+<html>
+<head>
+<title>Error Page</title>
+</head>
     <body>
-        <ctg:info-time/>
+    <jsp:include page="/jsp/header.jsp"/>
         Request from ${pageContext.errorData.requestURI} is failed
         <br/>
         Servlet name : ${pageContext.errorData.servletName}
@@ -10,9 +12,22 @@
         Status code : ${pageContext.errorData.statusCode}
         <br/>
         Exception : ${pageContext.exception}
-        <br/>
-        Message from exception : ${pageContext.exception.message}
-        <br/>
-        <hr/>
+    <br/>
+
+    </div>
+    <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
+    <div style="margin-left: 60px">
+
+        <form name="backForm" method="get" action="controller">
+            <input type="hidden" name="command" value="backtomain"/>
+            ${errorLogoutMessage}
+            ${wrongAction}
+            ${nullPage}
+            <input type="submit" value="Back to Main Page"/>
+        </form>
+
+    </div>
+    <br/>
+    <jsp:include page="/jsp/footer.jsp"/>
     </body>
 </html>

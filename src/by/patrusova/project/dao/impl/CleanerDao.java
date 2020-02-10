@@ -6,6 +6,7 @@ import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.EntityFactory;
 import by.patrusova.project.entity.impl.Cleaner;
 import by.patrusova.project.exception.DaoException;
+import by.patrusova.project.util.PreparedStatements;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,9 +19,6 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
     private final static Logger LOGGER = LogManager.getLogger();
     private static final String SQL_SELECT_ALL_CLEANERS =
                     "SELECT id_cleaner, id_user, commission FROM cleaners";
-    private static final String SQL_SELECT_CLEANER_BY_ID =
-                    "SELECT id_cleaner, id_user, commission " +
-                    "FROM cleaners WHERE id_cleaner = ?";
 
     public CleanerDao(ProxyConnection connection) {
         super(connection);
@@ -31,17 +29,63 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public boolean create(AbstractEntity entity) {
-        return false;
+    public boolean create(AbstractEntity entity) throws DaoException {
+        Cleaner cleaner = (Cleaner) entity;
+        boolean isAdded;
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = PreparedStatements.useStatements(connection).get("create_cleaner");
+            preparedStatement.setLong(1, 0);
+            preparedStatement.setLong(2, cleaner.getIdUser());
+            preparedStatement.setString(3, null);
+            preparedStatement.setString(4, null);
+            isAdded = preparedStatement.execute();
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR, "Cannot add cleaner. Request to table failed.");
+            throw new DaoException(e);
+        } finally {
+            closeStatement(preparedStatement);
+            returnConnectionInPool();
+        }
+        return isAdded;
     }
+
     @Override
-    public boolean delete(AbstractEntity entity) {
-        return false;
+    public boolean delete(AbstractEntity entity) throws DaoException {
+        Cleaner cleaner = (Cleaner) entity;
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = PreparedStatements.useStatements(connection).get("delete_cleaner");
+            preparedStatement.setLong(1, cleaner.getIdUser());
+            return preparedStatement.execute();
+        } catch (SQLException | DaoException e) {
+            LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
+            throw new DaoException(e);
+        } finally {
+            closeStatement(preparedStatement);
+            returnConnectionInPool();
+        }
     }
+
     @Override
-    public AbstractEntity update(AbstractEntity entity) {
-        return null;
+    public boolean update(AbstractEntity entity) throws DaoException {
+        Cleaner cleaner = (Cleaner) entity;
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = PreparedStatements.useStatements(connection).get("update_cleaner_admin");
+            preparedStatement.setBigDecimal(1, cleaner.getCommission());
+            preparedStatement.setString(2, cleaner.getNotes());
+            preparedStatement.setLong(3, cleaner.getIdUser());
+            return preparedStatement.execute();
+        } catch (SQLException | DaoException e) {
+            LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
+            throw new DaoException(e);
+        } finally {
+            closeStatement(preparedStatement);
+            returnConnectionInPool();
+        }
     }
+
     @Override
     public List<AbstractEntity> findAll() throws DaoException {
         List<AbstractEntity> cleaners = new ArrayList<>();
@@ -62,21 +106,22 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
         }
         return cleaners;
     }
+
     @Override
-    public Cleaner findEntityById(long id) throws DaoException {
-        Cleaner cleaner = new Cleaner();
-        PreparedStatement statement = null;
+    public AbstractEntity findEntityById(long id) throws DaoException {
+        Cleaner cleaner;
+        PreparedStatement preparedStatement = null;
         try {
-            statement = connection.prepareStatement(SQL_SELECT_CLEANER_BY_ID);
-            statement.setDouble(1, id);
-            ResultSet resultSet = statement.executeQuery();
+            preparedStatement = PreparedStatements.useStatements(connection).get("find_cleaner");
+            preparedStatement.setDouble(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
             cleaner = EntityFactory.createCleaner(resultSet);
         } catch (SQLException e) {
             LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
             throw new DaoException(e);
         } finally {
-            closeStatement(statement);
+            closeStatement(preparedStatement);
             returnConnectionInPool();
         }
         return cleaner;

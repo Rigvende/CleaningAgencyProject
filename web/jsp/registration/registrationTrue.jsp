@@ -9,6 +9,12 @@
         <h1> <u>Rest-in-Cleanliness</u> </h1>
         <h4>Cleaning Agency</h4>
     </div>
+    <div style="float: right; padding: 10px; text-align: right;">
+        <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
+        <div style="margin-right: 50px">
+            <a href="${pageContext.request.contextPath}/">Back to login</a>
+        </div>
+    </div>
 </div>
 <p>Thank you for registration, ${newuser.name}</p>
 <p>You can enter in system after your registration will be confirmed.
