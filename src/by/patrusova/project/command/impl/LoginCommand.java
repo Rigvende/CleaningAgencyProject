@@ -8,10 +8,10 @@ import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.CleanerService;
 import by.patrusova.project.service.ClientService;
+import by.patrusova.project.util.AttributesEnum;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.service.LoginService;
 import by.patrusova.project.util.MessageManager;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
@@ -33,45 +33,45 @@ public class LoginCommand implements ActionCommand {
             user = LoginService.checkLogin(user);
             if (user != null) {
                 HttpSession session = request.getSession(true);
-                session.setAttribute("user", user);
+                session.setAttribute(AttributesEnum.USER.getValue(), user);
                 String role = user.getRole();
                 switch (role) {
                     case "admin":
-                        session.setAttribute("role", "admin");
-                        page = ConfigurationManager.getProperty("page.mainadmin");
+                        session.setAttribute(AttributesEnum.ROLE.getValue(), AttributesEnum.ADMIN.getValue());
+                        page = ConfigurationManager.getProperty(AttributesEnum.PAGE_MAIN_ADMIN.getValue());
                         break;
                     case "cleaner":
-                        session.setAttribute("role", "cleaner");
+                        session.setAttribute(AttributesEnum.ROLE.getValue(), AttributesEnum.CLEANER.getValue());
                         Cleaner cleaner = new Cleaner();
                         cleaner.setIdUser(user.getId());
                         cleaner = CleanerService.getCleaner(cleaner);
-                        request.setAttribute("cleaner", cleaner);
-                        page = ConfigurationManager.getProperty("page.maincleaner");
+                        session.setAttribute(AttributesEnum.CLEANER.getValue(), cleaner);
+                        page = ConfigurationManager.getProperty(AttributesEnum.PAGE_MAIN_CLEANER.getValue());
                         break;
                     case "client":
-                        session.setAttribute("role", "client");
+                        session.setAttribute(AttributesEnum.ROLE.getValue(), AttributesEnum.CLIENT.getValue());
                         Client client = new Client();
                         client.setIdUser(user.getId());
                         client = ClientService.getClient(client);
-                        request.setAttribute("client", client);
-                        page = ConfigurationManager.getProperty("page.mainclient");
+                        session.setAttribute(AttributesEnum.CLIENT.getValue(), client);
+                        page = ConfigurationManager.getProperty(AttributesEnum.PAGE_MAIN_CLIENT.getValue());
                         break;
+                    case "guest":
                     default:
-                        session.setAttribute("role", "guest");
-                        request.setAttribute("errorLoginPassMessage",
-                                MessageManager.getProperty("message.notregistered"));
-                        page = ConfigurationManager.getProperty("page.login");
+                        session.setAttribute(AttributesEnum.ROLE.getValue(), AttributesEnum.GUEST.getValue());
+                        request.setAttribute(AttributesEnum.ERROR_LOGIN.getValue(),
+                                MessageManager.getProperty(AttributesEnum.MESSAGE_NOT_REG.getValue()));
+                        page = ConfigurationManager.getProperty(AttributesEnum.PAGE_LOGIN.getValue());
                         break;
                 }
             } else {
-                request.setAttribute("errorLoginPassMessage",
-                        MessageManager.getProperty("message.loginerror"));
-                page = ConfigurationManager.getProperty("page.login");
+                request.setAttribute(AttributesEnum.ERROR_LOGIN.getValue(),
+                        MessageManager.getProperty(AttributesEnum.MESSAGE_ERROR_LOGIN.getValue()));
+                page = ConfigurationManager.getProperty(AttributesEnum.PAGE_LOGIN.getValue());
             }
         } catch (ServiceException | SQLException e) {
-            throw new CommandException(e);
+            throw new CommandException(e);//todo logger
         }
         return page;
     }
 }
-//todo убрать в константы строки

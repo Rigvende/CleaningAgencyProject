@@ -5,6 +5,7 @@ import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.RegistrationService;
+import by.patrusova.project.util.AttributesEnum;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.util.MessageManager;
 import javax.servlet.http.HttpServletRequest;
@@ -17,21 +18,21 @@ public class ChangeInfoCommand implements ActionCommand {
         String page;
         User user = RegistrationService.createNewUser(request);
         if (user == null) {
-            request.setAttribute("errorRegistrationMessage",
-                    MessageManager.getProperty("message.registrationerror"));
-            page = ConfigurationManager.getProperty("page.registrationform");
+            request.setAttribute(AttributesEnum.ERROR_REG.getValue(),
+                    MessageManager.getProperty(AttributesEnum.MESSAGE_ERROR_REG.getValue()));
+            page = ConfigurationManager.getProperty(AttributesEnum.PAGE_REG.getValue());
             return page;
         }
         try {
             if (RegistrationService.registerUser(user) != null) {//todo changeservice для внесения изменений в бд
-                page = ConfigurationManager.getProperty("page.profile");
+                page = ConfigurationManager.getProperty(AttributesEnum.PAGE_PROFILE.getValue());
             } else {
-                request.setAttribute("errorChangeMessage",
-                        MessageManager.getProperty("message.changeerror"));
-                page = ConfigurationManager.getProperty("page.changeform");
+                request.setAttribute(AttributesEnum.ERROR_CHANGE.getValue(),
+                        MessageManager.getProperty(AttributesEnum.MESSAGE_ERROR_CHANGE.getValue()));
+                page = ConfigurationManager.getProperty(AttributesEnum.PAGE_CHANGE.getValue());
             }
         } catch (ServiceException | SQLException e) {
-            throw new CommandException(e);
+            throw new CommandException(e);//todo logger
         }
         return page;
     }

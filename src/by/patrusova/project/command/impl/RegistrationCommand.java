@@ -5,9 +5,9 @@ import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.RegistrationService;
+import by.patrusova.project.util.AttributesEnum;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.util.MessageManager;
-
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 
@@ -17,25 +17,24 @@ public class RegistrationCommand implements ActionCommand {
         String page;
         User user = RegistrationService.createNewUser(request);
         if (user == null) {
-            request.setAttribute("errorRegistrationMessage",
-                    MessageManager.getProperty("message.registrationerror"));
-            page = ConfigurationManager.getProperty("page.registrationform");
+            request.setAttribute(AttributesEnum.ERROR_REG.getValue(),
+                    MessageManager.getProperty(AttributesEnum.MESSAGE_ERROR_REG.getValue()));
+            page = ConfigurationManager.getProperty(AttributesEnum.PAGE_REG.getValue());
             return page;
         } else {
             try {
                 if (RegistrationService.registerUser(user) != null) {
-                    request.setAttribute("newuser", user);
-                    page = ConfigurationManager.getProperty("page.registrationtrue");
+//                    request.setAttribute("newuser", user);
+                    page = ConfigurationManager.getProperty(AttributesEnum.PAGE_REG_TRUE.getValue());
                 } else {
-                    request.setAttribute("errorRegistrationMessage",
-                            MessageManager.getProperty("message.registrationerror"));
-                    page = ConfigurationManager.getProperty("page.registrationform");
+                    request.setAttribute(AttributesEnum.ERROR_REG.getValue(),
+                            MessageManager.getProperty(AttributesEnum.MESSAGE_ERROR_REG.getValue()));
+                    page = ConfigurationManager.getProperty(AttributesEnum.PAGE_REG.getValue());
                 }
             } catch (ServiceException | SQLException e) {
-                throw new CommandException(e);
+                throw new CommandException(e);//todo logger
             }
         }
         return page;
     }
 }
-//todo убрать в константы строки

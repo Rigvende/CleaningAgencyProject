@@ -13,26 +13,23 @@
 //
 //public class RoleCommand implements ActionCommand {
 //
-//    private static final String PARAM_NAME_ROLE = "role";
-//
 //    @Override
 //    public String execute(HttpServletRequest request) throws CommandException {
 //        String page;
-//        String role = request.getParameter(PARAM_NAME_ROLE);
-//        User user = (User)request.getAttribute("user");
+//        String role = request.getParameter(AttributesEnum.ROLE.getValue());
+//        User user = (User)request.getAttribute(AttributesEnum.USER.getValue());
 //        user.setRole(role);
 //        try {
 //            if (RoleService.updateRole(user)) {
-//                request.setAttribute("client", user);
-//                request.getSession().setAttribute("client", user);
+//                request.getSession().setAttribute(AttributesEnum.CLIENT.getValue(), user);
 //
 //            } else  {
-//                request.setAttribute("errorLoginPassMessage",
-//                        MessageManager.getProperty("message.loginerror"));
-//                page = ConfigurationManager.getProperty("page.mainAdmin");
+//                request.setAttribute(AttributesEnum.ERROR_LOGIN.getValue(),
+//                        MessageManager.getProperty(AttributesEnum.MESSAGE_ERROR_LOGIN.getValue()));
+//                page = ConfigurationManager.getProperty(AttributesEnum.PAGE_MAIN_ADMIN.getValue());
 //            }
 //        } catch (ServiceException e) {
-//            throw new CommandException(e);
+//            throw new CommandException(e);//todo logger
 //        }
 //        return page;
 //    }

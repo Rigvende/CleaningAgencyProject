@@ -1,6 +1,7 @@
 package by.patrusova.project.servlet;
 
 import by.patrusova.project.command.ActionCommand;
+import by.patrusova.project.util.AttributesEnum;
 import by.patrusova.project.command.CommandProvider;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.util.ConfigurationManager;
@@ -19,7 +20,11 @@ public class ControlServlet extends HttpServlet {
     public void init() {
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)  throws IOException{
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
+        processRequest(request, response);
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
             processRequest(request, response);
     }
 
@@ -28,9 +33,6 @@ public class ControlServlet extends HttpServlet {
         String page;
         CommandProvider provider = new CommandProvider();
         try {
-            request.setCharacterEncoding("UTF-8"); //todo  в фильтр
-            response.setCharacterEncoding("UTF-8");
-//            request.setAttribute("text", new TextMap()); todo как подгрузить мап для интернационализации
             ActionCommand command = provider.defineCommand(request);
             page = command.execute(request);
             if (page != null) {
@@ -38,9 +40,9 @@ public class ControlServlet extends HttpServlet {
                         = getServletContext().getRequestDispatcher(page);
                 dispatcher.forward(request, response);
             } else {
-                page = ConfigurationManager.getProperty("page.index");
-                request.getSession().setAttribute("nullpage",
-                        MessageManager.getProperty("message.nullpage"));
+                page = ConfigurationManager.getProperty(AttributesEnum.PAGE_INDEX.getValue());
+                request.getSession().setAttribute(AttributesEnum.NULLPAGE.getValue(),
+                        MessageManager.getProperty(AttributesEnum.MESSAGE_EMPTY.getValue()));
                 response.sendRedirect(request.getContextPath() + page);
             }
         } catch (ServletException | IOException | CommandException  e) {
