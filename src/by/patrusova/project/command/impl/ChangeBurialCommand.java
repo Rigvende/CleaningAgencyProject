@@ -8,6 +8,6 @@ public class ChangeBurialCommand implements ActionCommand {
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-        return null;
+        return null;//todo расписать команду по аналогии с changeinfocommand
     }
 }

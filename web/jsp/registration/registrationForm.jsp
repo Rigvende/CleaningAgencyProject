@@ -1,59 +1,63 @@
 <%@ page language="java" contentType="text/html; charset=utf8" pageEncoding="utf8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<fmt:setBundle basename="message"/>
 
 <html>
     <head>
-        <title>Registration</title>
+        <title><fmt:message key="title.registration"/></title>
     </head>
 
     <body>
     <div style="background: #E0E0E0; height: 100px; padding: 5px;">
         <div style="float: left">
-            <h1> Rest-in-Cleanliness </h1>
-            <h4>Cleaning Agency</h4>
+            <h1> <fmt:message key="text.company"/> </h1>
+            <h4><fmt:message key="text.company2"/></h4>
         </div>
 
         <div style="float: right; padding: 10px; text-align: right;">
             <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
             <div style="margin-right: 85px">
-                <a href="controller?command=info">Info</a>
+                <a href="controller?command=info"><fmt:message key="button.info"/></a>
             </div>
         </div>
     </div>
 
     <br/>
     <form name="registrationForm" method="POST" action="controller">
-        Fill the registration form below. All fields marked by * are necessary.
+        <fmt:message key="text.registration"/>
         <hr/>
         <input type="hidden" name="command" value="registration" />
-        <br/>Login* (from 5 to 15 symbols; only latin symbols, _ or digits):<br/>
+        <br/><fmt:message key="field.loginreg"/><br/>
         <label>
             <input type="text" name="loginreg" value=""/>
         </label>
-        <br/>Password* (from 5 to 15 symbols; only latin symbols, _ or digits):<br/>
+        <br/><fmt:message key="field.passwordreg"/><br/>
         <label>
             <input type="password" name="passwordreg" value=""/>
         </label>
-        <br/>Repeat password*:<br/>
+        <br/><fmt:message key="field.passwordagain"/><br/>
         <label>
             <input type="password" name="passwordagain" value=""/>
         </label>
-        <br/>Name*:<br/>
+        <br/><fmt:message key="field.name"/><br/>
         <label>
             <input type="text" name="firstname" value=""/>
         </label>
-        <br/>Lastname*:<br/>
+        <br/><fmt:message key="field.lastname"/><br/>
         <label>
             <input type="text" name="lastname" value=""/>
         </label>
-        <br/>Phone* (only digits):<br/>
+        <br/><fmt:message key="field.phone"/><br/>
         <label>
             <input type="text" name="phone" value=""/>
         </label>
-        <br/>E-mail*:<br/>
+        <br/><fmt:message key="field.email"/><br/>
         <label>
             <input type="text" name="email" value=""/>
         </label>
-        <br/>Address:<br/>
+        <br/><fmt:message key="field.address"/><br/>
         <label>
             <input type="text" name="address" value=""/>
         </label>
@@ -62,7 +66,7 @@
         ${nullPage}
         <br/>
         <br/>
-        <input type="submit" value="Register"/>
+        <input type="submit" value="<fmt:message key="button.registration"/>"/>
     </form>
 
     <jsp:include page="/WEB-INF/view/footer.jsp"/>

@@ -1,8 +1,12 @@
 <%@ page isErrorPage="true" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<fmt:setBundle basename="message"/>
 
 <html>
 <head>
-<title>Error Page</title>
+<title><fmt:message key="title.error"/></title>
 </head>
 
 <body>
@@ -11,13 +15,13 @@
     <jsp:include page="/WEB-INF/view/backToMain.jsp"/>
 
         <br/>
-        <b>Request from</b> ${pageContext.errorData.requestURI} is failed
+        <b><fmt:message key="text.error1"/></b> ${pageContext.errorData.requestURI} <fmt:message key="text.error2"/>
         <br/>
-        <b>Servlet name :</b> ${pageContext.errorData.servletName}
+        <b><fmt:message key="text.error3"/></b> ${pageContext.errorData.servletName}
         <br/>
-        <b>Status code :</b> ${pageContext.errorData.statusCode}
+        <b><fmt:message key="text.error4"/></b> ${pageContext.errorData.statusCode}
         <br/>
-        <b>Exception :</b> ${pageContext.exception}
+        <b><fmt:message key="text.error5"/></b> ${pageContext.exception}
         <hr/>
         <br/>
 

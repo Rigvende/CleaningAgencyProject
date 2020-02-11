@@ -1,4 +1,4 @@
-//package by.patrusova.project.service;
+//package by.patrusova.project.service; todo
 //
 //import by.patrusova.project.connection.ProxyConnection;
 //import by.patrusova.project.dao.DaoFactory;

@@ -1,4 +1,4 @@
-//package by.patrusova.project.command.impl;
+//package by.patrusova.project.command.impl; todo при регистрации роли параллельно должны добавляться в бд записи клиент\клинер
 //
 //import by.patrusova.project.command.ActionCommand;
 //import by.patrusova.project.entity.impl.User;

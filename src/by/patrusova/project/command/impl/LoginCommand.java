@@ -14,6 +14,7 @@ import by.patrusova.project.util.MessageManager;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.sql.SQLException;
 
 public class LoginCommand implements ActionCommand {
 
@@ -68,7 +69,7 @@ public class LoginCommand implements ActionCommand {
                         MessageManager.getProperty("message.loginerror"));
                 page = ConfigurationManager.getProperty("page.login");
             }
-        } catch (ServiceException e) {
+        } catch (ServiceException | SQLException e) {
             throw new CommandException(e);
         }
         return page;

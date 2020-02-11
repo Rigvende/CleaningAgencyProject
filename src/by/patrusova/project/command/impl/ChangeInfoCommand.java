@@ -8,6 +8,7 @@ import by.patrusova.project.service.RegistrationService;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.util.MessageManager;
 import javax.servlet.http.HttpServletRequest;
+import java.sql.SQLException;
 
 public class ChangeInfoCommand implements ActionCommand {
 
@@ -29,7 +30,7 @@ public class ChangeInfoCommand implements ActionCommand {
                         MessageManager.getProperty("message.changeerror"));
                 page = ConfigurationManager.getProperty("page.changeform");
             }
-        } catch (ServiceException e) {
+        } catch (ServiceException | SQLException e) {
             throw new CommandException(e);
         }
         return page;

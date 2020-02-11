@@ -9,6 +9,7 @@ import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.util.MessageManager;
 
 import javax.servlet.http.HttpServletRequest;
+import java.sql.SQLException;
 
 public class RegistrationCommand implements ActionCommand {
 
@@ -30,7 +31,7 @@ public class RegistrationCommand implements ActionCommand {
                             MessageManager.getProperty("message.registrationerror"));
                     page = ConfigurationManager.getProperty("page.registrationform");
                 }
-            } catch (ServiceException e) {
+            } catch (ServiceException | SQLException e) {
                 throw new CommandException(e);
             }
         }

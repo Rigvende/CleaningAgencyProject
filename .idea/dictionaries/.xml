@@ -2,11 +2,13 @@
   <dictionary name="Администратор">
     <words>
       <w>backtomain</w>
+      <w>changeburial</w>
       <w>changeburialform</w>
       <w>changeburialredirect</w>
       <w>changeerror</w>
       <w>changeform</w>
       <w>changeinfo</w>
+      <w>changeloc</w>
       <w>changeredirect</w>
       <w>customtags</w>
       <w>deregistering</w>

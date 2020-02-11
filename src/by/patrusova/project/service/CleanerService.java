@@ -13,16 +13,20 @@ import java.sql.SQLException;
 
 public class CleanerService {
 
-    public static Cleaner getCleaner(Cleaner cleaner) throws ServiceException {
+    public static Cleaner getCleaner(Cleaner cleaner) throws ServiceException, SQLException {
         DaoFactory factory = new DaoFactory();
+        ProxyConnection connection = null;
         try {
-            ProxyConnection connection = (ProxyConnection) factory.getConnection();
+            connection = (ProxyConnection) factory.getConnection();
             connection.setAutoCommit(false);
             CleanerDao dao = factory.createCleanerDao(connection);
             cleaner = (Cleaner) dao.findEntityById(cleaner.getIdUser());
             connection.commit();
             connection.close();
         } catch (DaoException | SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
             throw new ServiceException(e);
         }
         return cleaner;

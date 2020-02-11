@@ -28,20 +28,11 @@ public class RegistrationService {
     private RegistrationService() {
     }
 
-    static boolean isExist(User user, UserDao dao) throws ServiceException {
-        boolean exist;
-        try {
-            exist = dao.findLogin(user.getLogin());
-        } catch (DaoException e) {
-            throw new ServiceException(e);
-        }
-        return exist;
-    }
-
-    public static User registerUser(User user) throws ServiceException {
+    public static User registerUser(User user) throws ServiceException, SQLException {
         DaoFactory factory = new DaoFactory();
+        ProxyConnection connection = null;
         try {
-            ProxyConnection connection = (ProxyConnection) factory.getConnection();
+            connection = (ProxyConnection) factory.getConnection();
             connection.setAutoCommit(false);
             UserDao dao = factory.createUserDao(connection);
             if (!isExist(user, dao)) {
@@ -52,6 +43,9 @@ public class RegistrationService {
             connection.commit();
             connection.close();
         } catch (DaoException | SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
             throw new ServiceException(e);
         }
         return user;
@@ -75,6 +69,15 @@ public class RegistrationService {
         }
     }
 
+    private static boolean isExist(User user, UserDao dao) throws ServiceException {
+        boolean exist;
+        try {
+            exist = dao.findLogin(user.getLogin());
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
+        return exist;
+    }
     private static Map<String, Boolean> validateRegistration(HttpServletRequest request) {
         Map<String, Boolean> validationMap = new HashMap<>();
         String login = request.getParameter("loginreg");
