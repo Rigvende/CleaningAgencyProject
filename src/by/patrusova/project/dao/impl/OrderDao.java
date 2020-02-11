@@ -26,10 +26,6 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
         super(connection);
     }
 
-    public Connection getConnection() {
-        return connection;
-    }
-
     @Override
     public boolean create(AbstractEntity entity) throws DaoException {
         Order order = (Order)entity;

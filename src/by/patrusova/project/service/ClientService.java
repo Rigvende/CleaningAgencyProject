@@ -19,12 +19,15 @@ public class ClientService {
             ClientDao dao = factory.createClientDao(connection);
             client = (Client) dao.findEntityById(client.getIdUser());
             connection.commit();
-            connection.close();
         } catch (DaoException | SQLException e) {
             if (connection != null) {
                 connection.rollback();
             }
             throw new ServiceException(e);
+        } finally {
+            if (connection != null) {
+                connection.close();
+            }
         }
         return client;
     }

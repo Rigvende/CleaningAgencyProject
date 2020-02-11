@@ -24,9 +24,12 @@
 //                check = true;
 //            }
 //            connection.commit();
-//            connection.close();
 //        } catch (DaoException | SQLException e) {
 //            throw new ServiceException(e);
+//        } finally {
+//            if (connection != null) {
+//                connection.close();
+//            }
 //        }
 //        return check;
 //    }
@@ -41,9 +44,12 @@
 //            dao.create(user);
 //            check = true;
 //            connection.commit();
-//            connection.close();
 //        } catch (DaoException | SQLException e) {
 //            throw new ServiceException(e);
+//        } finally {
+//            if (connection != null) {
+//                connection.close();
+//            }
 //        }
 //        return check;
 //    }

@@ -1,4 +1,6 @@
-package by.patrusova.project.util;
+package add;
+
+import by.patrusova.project.util.MessageManager;
 
 import java.util.HashMap;
 

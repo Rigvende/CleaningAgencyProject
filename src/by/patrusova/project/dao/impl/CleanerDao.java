@@ -24,10 +24,6 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
         super(connection);
     }
 
-    public Connection getConnection() {
-        return connection;
-    }
-
     @Override
     public boolean create(AbstractEntity entity) throws DaoException {
         Cleaner cleaner = (Cleaner) entity;

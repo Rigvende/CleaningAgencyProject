@@ -22,6 +22,10 @@ public abstract class AbstractDao<T extends AbstractEntity> {
         this.connection = connection;
     }
 
+    public ProxyConnection getConnection() {
+        return connection;
+    }
+
     public abstract boolean create(T entity) throws DaoException;
     public abstract boolean delete(T entity) throws DaoException;
     public abstract boolean update(T entity) throws DaoException;

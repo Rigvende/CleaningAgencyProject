@@ -26,10 +26,6 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
         super(connection);
     }
 
-    public Connection getConnection() {
-        return connection;
-    }
-
     @Override
     public boolean create(AbstractEntity entity) throws DaoException {
         Client client = (Client) entity;

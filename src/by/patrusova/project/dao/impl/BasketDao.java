@@ -5,7 +5,6 @@ import by.patrusova.project.dao.AbstractDao;
 import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.EntityFactory;
 import by.patrusova.project.entity.impl.BasketPosition;
-import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.util.PreparedStatements;
 import org.apache.logging.log4j.Level;
@@ -21,13 +20,8 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
     private static final String SQL_SELECT_ALL_BASKET_POSITIONS =
                     "SELECT id_basket, id_order, id_service FROM basket_position";
 
-
     public BasketDao(ProxyConnection connection) {
         super(connection);
-    }
-
-    public Connection getConnection() {
-        return connection;
     }
 
     @Override

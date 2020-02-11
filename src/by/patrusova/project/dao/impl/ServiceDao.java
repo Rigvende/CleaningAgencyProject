@@ -24,10 +24,6 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
         super(connection);
     }
 
-    public Connection getConnection() {
-        return connection;
-    }
-
     @Override
     public boolean create(AbstractEntity entity) throws DaoException {
         Service service = (Service)entity;

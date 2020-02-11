@@ -25,19 +25,11 @@ public class UserDao extends AbstractDao<AbstractEntity> {
                     "lastname, phone, address, email FROM users";
     private final static String SQL_SELECT_LOGIN =
             "SELECT login FROM users";
-    private static Map<Long, User> loginedUsers = new HashMap<>();
 
     public UserDao(ProxyConnection connection) {
         super(connection);
     }
 
-    public static Map<Long, User> getLoginedUsers() {
-        return loginedUsers;
-    }
-
-    public Connection getConnection() {
-        return connection;
-    }
     @Override
     public boolean create(AbstractEntity entity) throws DaoException {
         User user = (User) entity;
@@ -155,7 +147,6 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 user = EntityFactory.createUser(resultSet);
-                loginedUsers.put(user.getId(), user);
             }
         } catch (SQLException e) {
             LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);

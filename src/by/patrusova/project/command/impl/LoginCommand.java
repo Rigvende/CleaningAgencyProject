@@ -32,9 +32,8 @@ public class LoginCommand implements ActionCommand {
         try {
             user = LoginService.checkLogin(user);
             if (user != null) {
-                request.setAttribute("user", user);
                 HttpSession session = request.getSession(true);
-                session.setAttribute("user", user);//todo правильно сессия установлена?
+                session.setAttribute("user", user);
                 String role = user.getRole();
                 switch (role) {
                     case "admin":

@@ -19,28 +19,16 @@ public class ControlServlet extends HttpServlet {
     public void init() {
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
-        try {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)  throws IOException{
             processRequest(request, response);
-        } catch (CommandException e) {
-            e.printStackTrace();
-        }
-    }
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-        try {
-            processRequest(request, response);
-        } catch (CommandException e) {
-            e.printStackTrace();
-        }
     }
 
     private void processRequest(HttpServletRequest request,
-                                HttpServletResponse response) throws CommandException {
+                                HttpServletResponse response) throws IOException {
         String page;
         CommandProvider provider = new CommandProvider();
         try {
-            request.setCharacterEncoding("UTF-8");
+            request.setCharacterEncoding("UTF-8"); //todo  в фильтр
             response.setCharacterEncoding("UTF-8");
 //            request.setAttribute("text", new TextMap()); todo как подгрузить мап для интернационализации
             ActionCommand command = provider.defineCommand(request);
@@ -55,8 +43,8 @@ public class ControlServlet extends HttpServlet {
                         MessageManager.getProperty("message.nullpage"));
                 response.sendRedirect(request.getContextPath() + page);
             }
-        } catch (ServletException | IOException e) {
-            throw new CommandException(e);
+        } catch (ServletException | IOException | CommandException  e) {
+            response.sendError(500);
         }
     }
 

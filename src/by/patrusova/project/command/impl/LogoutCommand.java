@@ -1,28 +1,16 @@
 package by.patrusova.project.command.impl;
 
 import by.patrusova.project.command.ActionCommand;
-import by.patrusova.project.entity.impl.User;
-import by.patrusova.project.service.LogoutService;
 import by.patrusova.project.util.ConfigurationManager;
-import by.patrusova.project.util.MessageManager;
-
 import javax.servlet.http.HttpServletRequest;
 
 public class LogoutCommand implements ActionCommand {
 
     @Override
     public String execute(HttpServletRequest request) {
-        User user = (User) request.getSession().getAttribute("user");
-        String page = null;
-        try {
-            if (LogoutService.logoutUser(user)) {
-                page = ConfigurationManager.getProperty("page.login");
-                request.getSession().removeAttribute("user");
-                request.getSession().invalidate();
-            }
-        } catch (RuntimeException e) {
-            request.setAttribute("errorLogoutMessage", MessageManager.getProperty("message.logouterror"));
-        }
+        String page = ConfigurationManager.getProperty("page.login");
+        request.getSession().removeAttribute("user");
+        request.getSession().invalidate();
         return page;
     }
 }

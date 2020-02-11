@@ -41,12 +41,15 @@ public class RegistrationService {
                 }
             }
             connection.commit();
-            connection.close();
         } catch (DaoException | SQLException e) {
             if (connection != null) {
                 connection.rollback();
             }
             throw new ServiceException(e);
+        } finally {
+            if (connection != null) {
+                connection.close();
+            }
         }
         return user;
     }
@@ -97,6 +100,6 @@ public class RegistrationService {
         validationMap.put("email", RegistrationDataValidator.isValidEmail(email)
                 && StringValidator.isValidStringSize("email", email));
         validationMap.put("address", StringValidator.isValidStringSize("address", address));
-        return validationMap;//todo придумать как вернуть эти данные в реквест для указания конкретных неправильных полей
+        return validationMap;
     }
 }
