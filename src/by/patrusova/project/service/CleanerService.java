@@ -1,0 +1,30 @@
+package by.patrusova.project.service;
+
+import by.patrusova.project.connection.ProxyConnection;
+import by.patrusova.project.dao.DaoFactory;
+import by.patrusova.project.dao.impl.CleanerDao;
+import by.patrusova.project.dao.impl.UserDao;
+import by.patrusova.project.entity.impl.Cleaner;
+import by.patrusova.project.entity.impl.User;
+import by.patrusova.project.exception.DaoException;
+import by.patrusova.project.exception.ServiceException;
+
+import java.sql.SQLException;
+
+public class CleanerService {
+
+    public static Cleaner getCleaner(Cleaner cleaner) throws ServiceException {
+        DaoFactory factory = new DaoFactory();
+        try {
+            ProxyConnection connection = (ProxyConnection) factory.getConnection();
+            connection.setAutoCommit(false);
+            CleanerDao dao = factory.createCleanerDao(connection);
+            cleaner = (Cleaner) dao.findEntityById(cleaner.getIdUser());
+            connection.commit();
+            connection.close();
+        } catch (DaoException | SQLException e) {
+            throw new ServiceException(e);
+        }
+        return cleaner;
+    }
+}

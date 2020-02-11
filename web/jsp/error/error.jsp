@@ -3,31 +3,23 @@
 <head>
 <title>Error Page</title>
 </head>
-    <body>
-    <jsp:include page="/jsp/header.jsp"/>
-        Request from ${pageContext.errorData.requestURI} is failed
-        <br/>
-        Servlet name : ${pageContext.errorData.servletName}
-        <br/>
-        Status code : ${pageContext.errorData.statusCode}
-        <br/>
-        Exception : ${pageContext.exception}
-    <br/>
 
-    </div>
-    <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
-    <div style="margin-left: 60px">
+<body>
+    <jsp:include page="/WEB-INF/view/header.jsp"/>
 
-        <form name="backForm" method="get" action="controller">
-            <input type="hidden" name="command" value="backtomain"/>
-            ${errorLogoutMessage}
-            ${wrongAction}
-            ${nullPage}
-            <input type="submit" value="Back to Main Page"/>
-        </form>
+    <jsp:include page="/WEB-INF/view/backToMain.jsp"/>
 
-    </div>
-    <br/>
-    <jsp:include page="/jsp/footer.jsp"/>
-    </body>
+        <br/>
+        <b>Request from</b> ${pageContext.errorData.requestURI} is failed
+        <br/>
+        <b>Servlet name :</b> ${pageContext.errorData.servletName}
+        <br/>
+        <b>Status code :</b> ${pageContext.errorData.statusCode}
+        <br/>
+        <b>Exception :</b> ${pageContext.exception}
+        <hr/>
+        <br/>
+
+    <jsp:include page="/WEB-INF/view/footer.jsp"/>
+</body>
 </html>

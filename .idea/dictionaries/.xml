@@ -2,6 +2,11 @@
   <dictionary name="Администратор">
     <words>
       <w>backtomain</w>
+      <w>changeburialredirect</w>
+      <w>changeerror</w>
+      <w>changeform</w>
+      <w>changeinfo</w>
+      <w>changeredirect</w>
       <w>customtags</w>
       <w>deregistering</w>
       <w>firstname</w>
@@ -10,6 +15,7 @@
       <w>loginerror</w>
       <w>loginfalse</w>
       <w>loginreg</w>
+      <w>logouterror</w>
       <w>mainadmin</w>
       <w>maincleaner</w>
       <w>mainclient</w>

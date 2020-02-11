@@ -3,25 +3,15 @@
 <head>
     <title>500</title>
 </head>
+
 <body>
-<jsp:include page="/jsp/header.jsp"/>
-Oops. Server has problems. Try to reload page or wait.
+<jsp:include page="/WEB-INF/view/header.jsp"/>
+Oops. Server has problems. Try to reload page or return to Main Page.
 <br/>
 
-</div>
-<img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
-<div style="margin-left: 30px">
+<jsp:include page="/WEB-INF/view/backToMain.jsp"/>
+<br/><br/><br/>
 
-    <form name="backForm" method="get" action="controller">
-        <input type="hidden" name="command" value="backtomain"/>
-        ${errorLogoutMessage}
-        ${wrongAction}
-        ${nullPage}
-        <input type="submit" value="Back to Main Page"/>
-    </form>
-
-</div>
-<br/>
-<jsp:include page="/jsp/footer.jsp"/>
+<jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>
 </html>

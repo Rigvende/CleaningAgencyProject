@@ -3,12 +3,14 @@
     <head>
         <title>Registration</title>
     </head>
+
     <body>
     <div style="background: #E0E0E0; height: 100px; padding: 5px;">
         <div style="float: left">
             <h1> Rest-in-Cleanliness </h1>
             <h4>Cleaning Agency</h4>
         </div>
+
         <div style="float: right; padding: 10px; text-align: right;">
             <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
             <div style="margin-right: 85px">
@@ -16,6 +18,7 @@
             </div>
         </div>
     </div>
+
     <br/>
     <form name="registrationForm" method="POST" action="controller">
         Fill the registration form below. All fields marked by * are necessary.
@@ -60,6 +63,7 @@
         <br/>
         <input type="submit" value="Register"/>
     </form>
-    <jsp:include page="/jsp/footer.jsp"/>
+
+    <jsp:include page="/WEB-INF/view/footer.jsp"/>
     </body>
 </html>

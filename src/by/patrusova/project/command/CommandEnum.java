@@ -49,6 +49,26 @@ public enum CommandEnum {
             this.command = new BackToMainCommand();
         }
     },
+    CHANGEREDIRECT {
+        {
+            this.command = new ChangeRedirectCommand();
+        }
+    },
+    CHANGEBURIALREDIRECT {
+        {
+            this.command = new ChangeBurialRedirectCommand();
+        }
+    },
+    CHANGEINFO {
+        {
+            this.command = new ChangeInfoCommand();
+        }
+    },
+    CHANGEBURIAL {
+        {
+            this.command = new ChangeBurialCommand();
+        }
+    },
     MAIL {
         {
             this.command = new MailCommand();

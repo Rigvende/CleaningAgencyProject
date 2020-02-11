@@ -3,7 +3,10 @@
 <head>
     <title>Mail response to user</title>
 </head>
+
 <body>
+<jsp:include page="/WEB-INF/view/header.jsp"/>
+
 <form name="mailForm" method="POST" action="controller">
     <input type="hidden" name="command" value="mail" />
     <table>
@@ -27,5 +30,7 @@
     <br/><br/>
     <input type="submit" value="Send message"/>
 </form>
+
+<jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>
 </html>

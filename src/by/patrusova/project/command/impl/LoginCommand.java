@@ -1,12 +1,17 @@
 package by.patrusova.project.command.impl;
 
 import by.patrusova.project.command.ActionCommand;
+import by.patrusova.project.entity.impl.Cleaner;
+import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
+import by.patrusova.project.service.CleanerService;
+import by.patrusova.project.service.ClientService;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.service.LoginService;
 import by.patrusova.project.util.MessageManager;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -35,13 +40,21 @@ public class LoginCommand implements ActionCommand {
                         session.setAttribute("role", "admin");
                         page = ConfigurationManager.getProperty("page.mainadmin");
                         break;
-                    case "client":
-                        session.setAttribute("role", "client");
-                        page = ConfigurationManager.getProperty("page.mainclient");
-                        break;
                     case "cleaner":
                         session.setAttribute("role", "cleaner");
+                        Cleaner cleaner = new Cleaner();
+                        cleaner.setIdUser(user.getId());
+                        cleaner = CleanerService.getCleaner(cleaner);
+                        request.setAttribute("cleaner", cleaner);
                         page = ConfigurationManager.getProperty("page.maincleaner");
+                        break;
+                    case "client":
+                        session.setAttribute("role", "client");
+                        Client client = new Client();
+                        client.setIdUser(user.getId());
+                        client = ClientService.getClient(client);
+                        request.setAttribute("client", client);
+                        page = ConfigurationManager.getProperty("page.mainclient");
                         break;
                     default:
                         session.setAttribute("role", "guest");
@@ -50,7 +63,7 @@ public class LoginCommand implements ActionCommand {
                         page = ConfigurationManager.getProperty("page.login");
                         break;
                 }
-            } else  {
+            } else {
                 request.setAttribute("errorLoginPassMessage",
                         MessageManager.getProperty("message.loginerror"));
                 page = ConfigurationManager.getProperty("page.login");

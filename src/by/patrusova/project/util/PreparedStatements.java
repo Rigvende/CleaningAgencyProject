@@ -24,9 +24,9 @@ public class PreparedStatements {
             "SELECT id_user, login, password, role, name, lastname, phone, " +
                     "address, email FROM users WHERE id_user = ?";
     private static final String SQL_SELECT_CLEANER_BY_ID =
-            "SELECT id_cleaner, id_user, commission, notes FROM cleaners WHERE id_cleaner = ?";
+            "SELECT id_cleaner, id_user, commission, notes FROM cleaners WHERE id_user = ?";
     private static final String SQL_SELECT_CLIENT_BY_ID =
-            "SELECT id_client, id_user, discount, location, relative, notes FROM clients WHERE id_client = ?";
+            "SELECT id_client, id_user, discount, location, relative, notes FROM clients WHERE id_user = ?";
     private final static String SQL_ADD_USER =
             "INSERT INTO users VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     private final static String SQL_DELETE_USER_BY_LOGIN = "DELETE FROM users WHERE login = ?";

@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=utf8" pageEncoding="utf8"%>
 <html>
     <head>
         <title>Service Catalog</title>

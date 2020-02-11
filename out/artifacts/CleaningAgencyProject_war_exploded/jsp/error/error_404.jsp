@@ -3,26 +3,15 @@
 <head>
     <title>404</title>
 </head>
+
 <body>
-<jsp:include page="/jsp/header.jsp"/>
-Sorry, page does not found.
+<jsp:include page="/WEB-INF/view/header.jsp"/>
+Sorry, page does not found. Try to reload page or return to Main Page.
 <br/>
 
-</div>
-<img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
-<div style="margin-left: 60px">
+<jsp:include page="/WEB-INF/view/backToMain.jsp"/>
+<br/><br/><br/>
 
-    <form name="backForm" method="get" action="controller">
-        <input type="hidden" name="command" value="backtomain"/>
-        ${errorLogoutMessage}
-        ${wrongAction}
-        ${nullPage}
-        <input type="submit" value="Back to Main Page"/>
-    </form>
-
-</div>
-<br/>
-<br/>
-<jsp:include page="/jsp/footer.jsp"/>
+<jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>
 </html>
