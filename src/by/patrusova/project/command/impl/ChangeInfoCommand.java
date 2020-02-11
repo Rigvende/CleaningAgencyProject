@@ -15,7 +15,7 @@ public class ChangeInfoCommand implements ActionCommand {
     public String execute(HttpServletRequest request) throws CommandException {
         String page;
         User user = RegistrationService.createNewUser(request);
-        if (user == null) {//todo validation не проходит Т_Т
+        if (user == null) {
             request.setAttribute("errorRegistrationMessage",
                     MessageManager.getProperty("message.registrationerror"));
             page = ConfigurationManager.getProperty("page.registrationform");

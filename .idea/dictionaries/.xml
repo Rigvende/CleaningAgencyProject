@@ -2,6 +2,7 @@
   <dictionary name="Администратор">
     <words>
       <w>backtomain</w>
+      <w>changeburialform</w>
       <w>changeburialredirect</w>
       <w>changeerror</w>
       <w>changeform</w>
@@ -19,6 +20,7 @@
       <w>mainadmin</w>
       <w>maincleaner</w>
       <w>mainclient</w>
+      <w>mimokrokodil</w>
       <w>newuser</w>
       <w>notregistered</w>
       <w>nullpage</w>

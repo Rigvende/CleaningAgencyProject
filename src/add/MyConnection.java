@@ -22,7 +22,7 @@ public class MyConnection {
 
     public static void main(String[] args) {
 
-        try { //todo ssl в url должен применяться(см.файл коннекшн.пропертис)?
+        try {
             //используем пропертис для выборки текстовых значений для коннекшна
 //            Properties property = new Properties();
 //            try (FileInputStream fis = new FileInputStream

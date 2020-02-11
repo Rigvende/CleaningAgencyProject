@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <div style="padding: 5px;">
     <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
 

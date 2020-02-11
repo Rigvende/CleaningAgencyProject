@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <html>
 <head>
     <title>Login</title>
@@ -15,7 +16,7 @@
     <div style="float: right; padding: 10px; text-align: right;">
         <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
         <div style="margin-right: 85px">
-    <a href="controller?command=info">Info</a>
+            <a href="controller?command=info">Info</a>
         </div>
     </div>
 

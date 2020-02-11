@@ -24,7 +24,7 @@
 //        try {
 //            if (RoleService.updateRole(user)) {
 //                request.setAttribute("client", user);
-//                request.getSession().setAttribute("client", user);//todo правильно сессия установлена?
+//                request.getSession().setAttribute("client", user);
 //
 //            } else  {
 //                request.setAttribute("errorLoginPassMessage",

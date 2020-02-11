@@ -2,7 +2,7 @@ package by.patrusova.project.validator;
 
 public class NumberValidator {
 
-    private NumberValidator(){}
+    private NumberValidator() {}
 
     public static boolean isValidDecimal(String column, double decimal) {
         switch (column.toLowerCase()) {
@@ -18,9 +18,5 @@ public class NumberValidator {
 
     public static boolean isValidMark(int mark) {
         return (mark > 0 && mark < 10);
-    }
-
-    public static boolean isValidPhone(long phone) {
-        return ((phone >= 5) && (phone < Long.MAX_VALUE));
     }
 }

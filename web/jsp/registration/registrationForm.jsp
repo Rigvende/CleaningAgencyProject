@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf8" pageEncoding="utf8"%>
+
 <html>
     <head>
         <title>Registration</title>
@@ -14,7 +15,7 @@
         <div style="float: right; padding: 10px; text-align: right;">
             <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
             <div style="margin-right: 85px">
-                <a href="${pageContext.request.contextPath}/jsp/info.jsp">Info</a>
+                <a href="controller?command=info">Info</a>
             </div>
         </div>
     </div>
@@ -46,7 +47,7 @@
         </label>
         <br/>Phone* (only digits):<br/>
         <label>
-            <input type="number" name="phone" value=""/>
+            <input type="text" name="phone" value=""/>
         </label>
         <br/>E-mail*:<br/>
         <label>

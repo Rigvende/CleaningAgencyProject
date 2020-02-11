@@ -27,8 +27,7 @@ public class ProxyConnection implements Connection {
     public static Connection createConnection() throws DaoException {
         Connection connection;
         try {
-            Locale current = Locale.getDefault(); //todo нужна ли локаль здесь?
-            ResourceBundle bundle = ResourceBundle.getBundle("resources.connectionDB", current);
+            ResourceBundle bundle = ResourceBundle.getBundle("resources.connectionDB");
             String user = bundle.getString("user");
             String pass = bundle.getString("pass");
             String url = bundle.getString("url");

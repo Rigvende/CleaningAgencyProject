@@ -17,7 +17,7 @@ public class InfoTimeTag extends TagSupport {
         builder.append("<hr/>Time : <b> ").append(dateTime.getDayOfWeek()).append(" || ")
                 .append(dateTime.getDayOfMonth()).append(" ").append(dateTime.getMonth()).append(" ")
                 .append(dateTime.getYear()).append(" || ").append(dateTime.getHour())
-                .append(":").append(dateTime.getMinute()).append(" </b><hr/>");
+                .append("h:").append(dateTime.getMinute()).append("min </b><hr/>");
         String time = builder.toString();
         try {
             JspWriter out = pageContext.getOut();

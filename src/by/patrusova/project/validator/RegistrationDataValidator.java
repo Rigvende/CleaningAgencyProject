@@ -12,7 +12,7 @@ public class RegistrationDataValidator {
     private final static String CHECK_EMAIL
             = "^[-\\w.]+@([A-z0-9][-A-z0-9]+\\.)+[A-z]{2,4}$";
     private final static String CHECK_PHONE
-            = "^[\\d]$";
+            = "^[\\d]{5,20}$";
 
     public static boolean isValidLogin(String login) {
         Pattern pattern = Pattern.compile(CHECK_LOGIN);

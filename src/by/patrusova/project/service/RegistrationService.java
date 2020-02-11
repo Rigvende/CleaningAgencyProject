@@ -59,7 +59,7 @@ public class RegistrationService {
 
     public static User createNewUser(HttpServletRequest request) {
         User newUser = new User();
-        if (!validateRegistration(request).containsValue(false)) {//fixme с ! выдает налпойнтерэкс, а без регистрирует неправильно
+        if (!validateRegistration(request).containsValue(false)) {
             newUser.setId(0);
             newUser.setLogin(request.getParameter(PARAM_NAME_LOGIN));
             newUser.setPassword(request.getParameter(PARAM_NAME_PASSWORD));
@@ -82,19 +82,18 @@ public class RegistrationService {
         String passwordRepeated = request.getParameter("passwordagain");
         String name = request.getParameter("firstname");
         String lastname = request.getParameter("lastname");
-        long phone = Long.parseLong(request.getParameter("phone"));
+        String phone = request.getParameter("phone");
         String email = request.getParameter("email");
         String address = request.getParameter("address");
         validationMap.put("loginreg", RegistrationDataValidator.isValidLogin(login));
-        validationMap.put("passwordreg", RegistrationDataValidator.isValidPassword(password));
-        validationMap.put("passwordagain", RegistrationDataValidator.isPasswordRepeated(password, passwordRepeated));
+        validationMap.put("passwordreg", (RegistrationDataValidator.isValidPassword(password)
+                && RegistrationDataValidator.isPasswordRepeated(password, passwordRepeated)));
         validationMap.put("firstname", StringValidator.isValidStringSize("name", name));
         validationMap.put("lastname", StringValidator.isValidStringSize("lastname", lastname));
-        validationMap.put("phone", NumberValidator.isValidPhone(phone)
-                && RegistrationDataValidator.isValidPhone(request.getParameter("phone")));
+        validationMap.put("phone", RegistrationDataValidator.isValidPhone(phone));
         validationMap.put("email", RegistrationDataValidator.isValidEmail(email)
                 && StringValidator.isValidStringSize("email", email));
         validationMap.put("address", StringValidator.isValidStringSize("address", address));
-        return validationMap;
+        return validationMap;//todo придумать как вернуть эти данные в реквест для указания конкретных неправильных полей
     }
 }

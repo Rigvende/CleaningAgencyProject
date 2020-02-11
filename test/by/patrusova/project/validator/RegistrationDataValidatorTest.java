@@ -1,0 +1,62 @@
+package by.patrusova.project.validator;
+
+import org.testng.annotations.Test;
+import static org.testng.Assert.*;
+
+public class RegistrationDataValidatorTest {
+
+    @Test
+    public void testIsValidLogin() {
+        boolean actual = RegistrationDataValidator.isValidLogin("qwerty");
+        assertTrue(actual);
+    }
+    @Test
+    public void testIsValidLoginNegative() {
+        boolean actual = RegistrationDataValidator.isValidLogin("qwek");
+        assertFalse(actual);
+    }
+
+    @Test
+    public void testIsValidPassword() {
+        boolean actual = RegistrationDataValidator.isValidPassword("qwerty");
+        assertTrue(actual);
+    }
+    @Test
+    public void testIsValidPasswordNegative() {
+        boolean actual = RegistrationDataValidator.isValidPassword("jhffgjh=");
+        assertFalse(actual);
+    }
+
+    @Test
+    public void testIsPasswordRepeated() {
+        boolean actual = RegistrationDataValidator.isPasswordRepeated("qwerty", "qwerty");
+        assertTrue(actual);
+    }
+    @Test
+    public void testIsPasswordRepeatedNegative() {
+        boolean actual = RegistrationDataValidator.isPasswordRepeated("qwerty", "qazwsx");
+        assertFalse(actual);
+    }
+
+    @Test
+    public void testIsValidPhone() {
+        boolean actual = RegistrationDataValidator.isValidPhone("80291616573");
+        assertTrue(actual);
+    }
+    @Test
+    public void testIsValidPhoneNegative() {
+        boolean actual = RegistrationDataValidator.isValidPhone("80k29");
+        assertFalse(actual);
+    }
+
+    @Test
+    public void testIsValidEmail() {
+        boolean actual = RegistrationDataValidator.isValidEmail("blinov@gmail.com");
+        assertTrue(actual);
+    }
+    @Test
+    public void testIsValidEmailNegative() {
+        boolean actual = RegistrationDataValidator.isValidEmail("blinov");
+        assertFalse(actual);
+    }
+}
