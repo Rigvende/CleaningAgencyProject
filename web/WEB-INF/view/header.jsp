@@ -11,10 +11,4 @@
     </div>
 
     <jsp:include page="/WEB-INF/view/logout.jsp"/>
-
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <jsp:include page="/WEB-INF/view/locale.jsp"/>
 </div>

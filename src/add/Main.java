@@ -21,6 +21,9 @@ public class Main {
     public static void main(String[] args) throws IOException, SQLException {
 
         System.out.println(Locale.getDefault());
+        Locale locale = new Locale("en", "EN");
+        Locale.setDefault(locale);
+        System.out.println(Locale.getDefault());
 
 
 //        File f = new File("src/resources/connectionDB.properties");

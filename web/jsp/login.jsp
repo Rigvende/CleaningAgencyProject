@@ -2,27 +2,18 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="locale"
-       value="${not empty param.language ? param.language : not empty locale ? locale : pageContext.request.locale}"
+       value="${not empty locale ? locale : 'en_EN'}"
        scope="session"/>
 
 <fmt:setLocale value="${locale}" scope="session"/>
 <fmt:setBundle basename="message"/>
 
-<html lang="${locale}">
+<html>
 <head>
     <title><fmt:message key="title.login"/></title>
 </head>
 
 <body>
-<form>
-    <label for="locale"></label>
-    <select id="locale" name="locale" onchange="submit()">
-        <option value="en" ${locale == 'en' ? 'selected' : ''}>Русский</option>
-        <option value="ru" ${locale == 'ru' ? 'selected' : ''}>English</option>
-    </select>
-</form>
-
-
 <div style="background: #E0E0E0; height: 100px; padding: 5px;">
 
     <div style="float: left">
@@ -36,12 +27,6 @@
             <a href="controller?command=info"><fmt:message key="button.info"/></a>
         </div>
     </div>
-
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <jsp:include page="/WEB-INF/view/locale.jsp"/>
 </div>
 
 <br/>

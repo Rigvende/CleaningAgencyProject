@@ -17,12 +17,6 @@
     </div>
 
     <jsp:include page="/WEB-INF/view/backToMain.jsp"/>
-
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <jsp:include page="/WEB-INF/view/locale.jsp"/>
 </div>
 
 <p><fmt:message key="text.info1"/></p>

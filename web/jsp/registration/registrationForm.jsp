@@ -22,12 +22,6 @@
                 <a href="${pageContext.request.contextPath}/controller?command=info"><fmt:message key="button.info"/></a>
             </div>
         </div>
-
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <jsp:include page="/WEB-INF/view/locale.jsp"/>
     </div>
 
     <br/>

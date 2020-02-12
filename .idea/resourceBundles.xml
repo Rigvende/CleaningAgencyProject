@@ -5,6 +5,7 @@
     <custom-resource-bundle>
       <file value="file://$PROJECT_DIR$/src/resources/message.properties" />
       <file value="file://$PROJECT_DIR$/src/resources/message_en_EN.properties" />
+      <file value="file://$PROJECT_DIR$/src/resources/message_en_US.properties" />
       <base-name>message</base-name>
     </custom-resource-bundle>
   </component>
