@@ -11,16 +11,16 @@ public class StringValidator {
     public static boolean isValidStringSize(String column, String data) {
         switch (column.toLowerCase()) {
             case "notes":
-                return (data.length() >= 3 && data.length() <= 255);
+                return (data.length() <= 255);
             case "email":
                 return (data.length() >= 10 && data.length() <= 50);
             case "location":
             case "address":
-                return (data.length() >= 20 && data.length() <= 200);
+                return data.length() <= 200;
             case "relative":
-                return (data.length() >= 20 && data.length() <= 80);
+                return (data.length() <= 80);
             case "service":
-                return (data.length() >= 5 && data.length() <= 50);
+                return (data.length() <= 50);
             case "name":
                 return (data.length() >= 2 && data.length() <= 20);
             case "lastname":

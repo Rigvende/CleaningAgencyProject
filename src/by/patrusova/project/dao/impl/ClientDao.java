@@ -11,7 +11,6 @@ import by.patrusova.project.util.PreparedStatements;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +18,11 @@ import java.util.List;
 public class ClientDao extends AbstractDao<AbstractEntity> {
 
     private final static Logger LOGGER = LogManager.getLogger();
+    private final static String CREATE = "create_client";
+    private final static String DELETE = "delete_client";
+    private final static String UPDATE = "update_client_admin";
+    private final static String FIND_ENTITY = "find_client";
+    private final static String UPDATE_CLIENT = "update_user_client";
     private static final String SQL_SELECT_ALL_CLIENTS =
             "SELECT id_client, id_user, discount, location, " +
                     "relative, notes FROM clients";
@@ -34,7 +38,7 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
         boolean isAdded;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get("create_client");
+            preparedStatement = PreparedStatements.useStatements(connection).get(CREATE);
             preparedStatement.setLong(1, 0);
             preparedStatement.setLong(2, client.getIdUser());
             preparedStatement.setString(3, null);
@@ -62,7 +66,7 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
         Client client = (Client) entity;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get("delete_client");
+            preparedStatement = PreparedStatements.useStatements(connection).get(DELETE);
             preparedStatement.setLong(1, client.getIdUser());
             isDeleted = preparedStatement.execute();
             connection.commit();
@@ -85,7 +89,7 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
         Client client = (Client) entity;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get("update_client_admin");
+            preparedStatement = PreparedStatements.useStatements(connection).get(UPDATE);
             preparedStatement.setBigDecimal(1, client.getDiscount());
             preparedStatement.setString(2, client.getNotes());
             preparedStatement.setLong(3, client.getIdUser());
@@ -134,7 +138,7 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
         Client client;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get("find_client");
+            preparedStatement = PreparedStatements.useStatements(connection).get(FIND_ENTITY);
             preparedStatement.setLong(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
@@ -159,7 +163,7 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
         Client client = (Client) entity2;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get("update_user_client");
+            preparedStatement = PreparedStatements.useStatements(connection).get(UPDATE_CLIENT);
             preparedStatement.setString(1, user.getName());
             preparedStatement.setString(2, user.getLastname());
             preparedStatement.setLong(3, user.getPhone());

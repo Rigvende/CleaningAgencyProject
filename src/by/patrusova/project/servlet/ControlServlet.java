@@ -36,8 +36,10 @@ public class ControlServlet extends HttpServlet {
             ActionCommand command = provider.defineCommand(request);
             page = command.execute(request);
             if (page != null) {
-                RequestDispatcher dispatcher
-                        = getServletContext().getRequestDispatcher(page);
+//                response.setStatus(HttpServletResponse.SC_TEMPORARY_REDIRECT);
+//                response.addHeader("Location", request.getContextPath() + page); //todo что сработает как защита от f5?
+//                response.sendRedirect(request.getContextPath() + page);
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
                 dispatcher.forward(request, response);
             } else {
                 page = ConfigurationManager.getProperty(AttributesEnum.PAGE_INDEX.getValue());
@@ -45,7 +47,7 @@ public class ControlServlet extends HttpServlet {
                         MessageManager.getProperty(AttributesEnum.MESSAGE_EMPTY.getValue()));
                 response.sendRedirect(request.getContextPath() + page);
             }
-        } catch (ServletException | IOException | CommandException  e) {
+        } catch (IOException | CommandException | ServletException e) {
             response.sendError(500);
         }
     }

@@ -1,15 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="locale"
+       value="${not empty param.language ? param.language : not empty locale ? locale : pageContext.request.locale}"
+       scope="session"/>
 
+<fmt:setLocale value="${locale}" scope="session"/>
 <fmt:setBundle basename="message"/>
 
-<html>
+<html lang="${locale}">
 <head>
     <title><fmt:message key="title.login"/></title>
 </head>
 
 <body>
+<form>
+    <label for="locale"></label>
+    <select id="locale" name="locale" onchange="submit()">
+        <option value="en" ${locale == 'en' ? 'selected' : ''}>Русский</option>
+        <option value="ru" ${locale == 'ru' ? 'selected' : ''}>English</option>
+    </select>
+</form>
+
+
 <div style="background: #E0E0E0; height: 100px; padding: 5px;">
 
     <div style="float: left">
@@ -24,10 +37,15 @@
         </div>
     </div>
 
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <jsp:include page="/WEB-INF/view/locale.jsp"/>
 </div>
 
 <br/>
-<form name="registration" method="post" action="controller">
+<form name="registration" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="regredirect" />
     <div style="color: crimson">${errorLogoutMessage}</div>
     ${wrongAction}
@@ -36,13 +54,13 @@
 </form>
 
 <hr/>
-<form name="loginForm" method="POST" action="controller">
+<form name="loginForm" method="POST" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="login" />
-    <br/>Login:<br/>
+    <br/><fmt:message key="field.login"/><br/>
     <label>
         <input type="text" name="login" value=""/>
     </label>
-    <br/>Password:<br/>
+    <br/><fmt:message key="field.password"/><br/>
     <label>
         <input type="password" name="password" value=""/>
     </label>

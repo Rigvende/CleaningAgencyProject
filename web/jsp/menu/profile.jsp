@@ -32,7 +32,7 @@
 <br/>
 
 <br/>
-<form name="changeProfile" method="post" action="controller">
+<form name="changeProfile" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="changeredirect"/>
     <div style="color: crimson">${errorLogoutMessage}</div>
     ${wrongAction}
@@ -50,7 +50,7 @@
     <b><fmt:message key="field.relative"/></b> ${client.relative}
     <br/>
     <br/>
-    <form name="changeBurial" method="post" action="controller">
+    <form name="changeBurial" method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="changeburialredirect"/>
         <div style="color: crimson">${errorLogoutMessage}</div>
             ${wrongAction}

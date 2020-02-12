@@ -12,7 +12,7 @@
 <body>
 <jsp:include page="/WEB-INF/view/header.jsp"/>
 
-<form name="mailForm" method="POST" action="controller">
+<form name="mailForm" method="POST" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="mail" />
     <table>
         <tr>

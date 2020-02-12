@@ -65,7 +65,7 @@ public class RegistrationService {
         boolean exist;
         try {
             exist = dao.findLogin(user.getLogin());
-        } catch (DaoException e) {
+        } catch (DaoException | SQLException e) {
             throw new ServiceException(e);
         }
         return exist;

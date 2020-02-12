@@ -9,7 +9,7 @@
 <jsp:include page="/WEB-INF/view/header.jsp"/>
 <br/>
 
-<form name="changeBurialForm" method="POST" action="controller">
+<form name="changeBurialForm" method="POST" action="${pageContext.request.contextPath}/controller">
     Change all fields below you want.
     <hr/>
     <input type="hidden" name="command" value="changeburial" />

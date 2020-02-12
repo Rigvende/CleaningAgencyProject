@@ -69,6 +69,11 @@ public enum CommandEnum {
             this.command = new ChangeBurialCommand();
         }
     },
+    LOCALE {
+        {
+            this.command = new LocaleCommand();
+        }
+    },
     MAIL {
         {
             this.command = new MailCommand();

@@ -7,6 +7,8 @@ import java.io.IOException;
 @WebFilter("/*")
 public class CharsetFilter implements Filter {
 
+    private final static String UTF_8 = "UTF-8";
+
     @Override
     public void init(FilterConfig filterConfig) {
     }
@@ -14,8 +16,8 @@ public class CharsetFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse,
                          FilterChain filterChain) throws IOException, ServletException {
-        servletRequest.setCharacterEncoding("UTF-8"); //todo  в фильтр
-        servletResponse.setCharacterEncoding("UTF-8");
+        servletRequest.setCharacterEncoding(UTF_8);
+        servletResponse.setCharacterEncoding(UTF_8);
         filterChain.doFilter(servletRequest, servletResponse);
     }
 

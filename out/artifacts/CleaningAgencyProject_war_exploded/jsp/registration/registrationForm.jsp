@@ -12,20 +12,26 @@
     <body>
     <div style="background: #E0E0E0; height: 100px; padding: 5px;">
         <div style="float: left">
-            <h1> <fmt:message key="text.company"/> </h1>
+            <h1> <u><fmt:message key="text.company"/></u> </h1>
             <h4><fmt:message key="text.company2"/></h4>
         </div>
 
         <div style="float: right; padding: 10px; text-align: right;">
             <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
-            <div style="margin-right: 85px">
-                <a href="controller?command=info"><fmt:message key="button.info"/></a>
+            <div style="margin-right: 82px">
+                <a href="${pageContext.request.contextPath}/controller?command=info"><fmt:message key="button.info"/></a>
             </div>
         </div>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <jsp:include page="/WEB-INF/view/locale.jsp"/>
     </div>
 
     <br/>
-    <form name="registrationForm" method="POST" action="controller">
+    <form name="registrationForm" method="POST" action="${pageContext.request.contextPath}/controller">
         <fmt:message key="text.registration"/>
         <hr/>
         <input type="hidden" name="command" value="registration" />

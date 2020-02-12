@@ -8,6 +8,6 @@
     <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
 
     <div style="margin-right: 35px">
-        <a href="controller?command=backtomain"><fmt:message key="link.main"/></a>
+        <a href="${pageContext.request.contextPath}/controller?command=backtomain"><fmt:message key="link.main"/></a>
     </div>
 </div>

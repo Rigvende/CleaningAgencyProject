@@ -17,6 +17,9 @@ import java.util.List;
 public class BasketDao extends AbstractDao<AbstractEntity> {
 
     private final static Logger LOGGER = LogManager.getLogger();
+    private final static String CREATE = "create_client";
+    private final static String DELETE = "delete_client";
+    private final static String FIND_ENTITY = "select_position";
     private static final String SQL_SELECT_ALL_BASKET_POSITIONS =
                     "SELECT id_basket, id_order, id_service FROM basket_position";
 
@@ -31,7 +34,7 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
         boolean isAdded;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get("create_client");
+            preparedStatement = PreparedStatements.useStatements(connection).get(CREATE);
             preparedStatement.setLong(1, 0);
             preparedStatement.setLong(2, position.getIdOrder());
             preparedStatement.setLong(3, position.getIdService());
@@ -56,7 +59,7 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
         BasketPosition position = (BasketPosition) entity;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get("delete_position");
+            preparedStatement = PreparedStatements.useStatements(connection).get(DELETE);
             preparedStatement.setLong(1, position.getId());
             isDeleted = preparedStatement.execute();
             connection.commit();
@@ -108,7 +111,7 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
         BasketPosition position;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get("select_position");
+            preparedStatement = PreparedStatements.useStatements(connection).get(FIND_ENTITY);
             preparedStatement.setLong(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();

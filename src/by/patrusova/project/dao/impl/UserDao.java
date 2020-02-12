@@ -10,7 +10,6 @@ import by.patrusova.project.exception.DaoException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +17,11 @@ import java.util.List;
 public class UserDao extends AbstractDao<AbstractEntity> {
 
     private final static Logger LOGGER = LogManager.getLogger();
+    private final static String CREATE = "add_user";
+    private final static String DELETE = "delete_user";
+    private final static String UPDATE = "update_user";
+    private final static String FIND_ENTITY = "find_user";
+    private final static String CHECK_LOGIN = "check_login";
     private static final String SQL_SELECT_ALL_USERS =
             "SELECT id_user, login, password, role, name, " +
                     "lastname, phone, address, email FROM users";
@@ -35,7 +39,7 @@ public class UserDao extends AbstractDao<AbstractEntity> {
         boolean isAdded;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get("add_user");
+            preparedStatement = PreparedStatements.useStatements(connection).get(CREATE);
             preparedStatement.setLong(1, 0);
             preparedStatement.setString(2, user.getLogin());
             preparedStatement.setString(3, user.getPassword());
@@ -66,7 +70,7 @@ public class UserDao extends AbstractDao<AbstractEntity> {
         User user = (User) entity;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get("delete_user");
+            preparedStatement = PreparedStatements.useStatements(connection).get(DELETE);
             preparedStatement.setString(1, user.getLogin());
             isDeleted = preparedStatement.execute();
             connection.commit();
@@ -89,7 +93,7 @@ public class UserDao extends AbstractDao<AbstractEntity> {
         User user = (User) entity;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get("update_user");
+            preparedStatement = PreparedStatements.useStatements(connection).get(UPDATE);
             preparedStatement.setString(1, user.getName());
             preparedStatement.setString(2, user.getLastname());
             preparedStatement.setLong(3, user.getPhone());
@@ -141,7 +145,7 @@ public class UserDao extends AbstractDao<AbstractEntity> {
         User user = null;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get("find_user");
+            preparedStatement = PreparedStatements.useStatements(connection).get(FIND_ENTITY);
             preparedStatement.setLong(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
@@ -165,7 +169,7 @@ public class UserDao extends AbstractDao<AbstractEntity> {
         User user = null;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get("check_login");
+            preparedStatement = PreparedStatements.useStatements(connection).get(CHECK_LOGIN);
             preparedStatement.setString(1, login);
             preparedStatement.setString(2, pass);
             ResultSet resultSet = preparedStatement.executeQuery();

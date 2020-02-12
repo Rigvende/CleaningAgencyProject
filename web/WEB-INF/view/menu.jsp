@@ -8,7 +8,7 @@
     <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
 
     <div style="margin-left: 70px">
-    <form name="profileForm" method="post" action="controller">
+    <form name="profileForm" method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="profile" />
         ${wrongAction}
         ${nullPage}
@@ -18,8 +18,8 @@
 
     <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
 
-    <div style="margin-left: 60px">
-    <form name="catalogueForm" method="post" action="controller">
+    <div style="margin-left: 70px">
+    <form name="catalogueForm" method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="catalogue" />
         ${wrongAction}
         ${nullPage}
@@ -30,7 +30,7 @@
     <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
 
     <div style="margin-left: 70px">
-    <form name="basketForm" method="post" action="controller">
+    <form name="basketForm" method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="basket" />
         ${wrongAction}
         ${nullPage}
@@ -40,8 +40,8 @@
 
     <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
 
-    <div style="margin-left: 80px">
-    <form name="infoForm" method="get" action="controller">
+    <div style="margin-left: 77px">
+    <form name="infoForm" method="get" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="info" />
         ${wrongAction}
         ${nullPage}
