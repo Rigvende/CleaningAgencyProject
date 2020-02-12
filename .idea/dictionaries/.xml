@@ -29,6 +29,7 @@
       <w>passwordagain</w>
       <w>passwordreg</w>
       <w>patrusova</w>
+      <w>quitwait</w>
       <w>reginfo</w>
       <w>registrationerror</w>
       <w>registrationfalse</w>
@@ -37,6 +38,7 @@
       <w>regproposal</w>
       <w>regredirect</w>
       <w>sendto</w>
+      <w>smtp</w>
       <w>wrongaction</w>
     </words>
   </dictionary>

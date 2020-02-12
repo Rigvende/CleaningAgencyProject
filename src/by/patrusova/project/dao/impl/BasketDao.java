@@ -25,7 +25,8 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public boolean create(AbstractEntity entity) throws DaoException {
+    public boolean create(AbstractEntity entity) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
         BasketPosition position = (BasketPosition) entity;
         boolean isAdded;
         PreparedStatement preparedStatement = null;
@@ -35,31 +36,40 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
             preparedStatement.setLong(2, position.getIdOrder());
             preparedStatement.setLong(3, position.getIdService());
             isAdded = preparedStatement.execute();
+            connection.commit();
         } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
             LOGGER.log(Level.ERROR, "Cannot add position to the basket. Request to table failed.");
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
-            returnConnectionInPool();
         }
         return isAdded;
     }
 
     @Override
-    public boolean delete(AbstractEntity entity) throws DaoException {
+    public boolean delete(AbstractEntity entity) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
+        boolean isDeleted;
         BasketPosition position = (BasketPosition) entity;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = PreparedStatements.useStatements(connection).get("delete_position");
             preparedStatement.setLong(1, position.getId());
-            return preparedStatement.execute();
+            isDeleted = preparedStatement.execute();
+            connection.commit();
         } catch (SQLException | DaoException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
             LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
-            returnConnectionInPool();
         }
+        return isDeleted;
     }
 
     @Override
@@ -68,7 +78,8 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public List<AbstractEntity> findAll() throws DaoException {
+    public List<AbstractEntity> findAll() throws DaoException, SQLException {
+        connection.setAutoCommit(false);
         List<AbstractEntity> positions = new ArrayList<>();
         Statement statement = null;
         try {
@@ -78,19 +89,23 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
                 BasketPosition position = EntityFactory.createBasketPosition(resultSet);
                 positions.add(position);
             }
+            connection.commit();
         } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
             LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(statement);
-            returnConnectionInPool();
         }
         return positions;
     }
 
     @Override
-    public AbstractEntity findEntityById(long id) throws DaoException {
-        BasketPosition position = null;
+    public AbstractEntity findEntityById(long id) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
+        BasketPosition position;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = PreparedStatements.useStatements(connection).get("select_position");
@@ -98,12 +113,15 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
             position = EntityFactory.createBasketPosition(resultSet);
+            connection.commit();
         } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
             LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
-            returnConnectionInPool();
         }
         return position;
     }

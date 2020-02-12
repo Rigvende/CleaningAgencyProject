@@ -25,7 +25,8 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public boolean create(AbstractEntity entity) throws DaoException {
+    public boolean create(AbstractEntity entity) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
         Service service = (Service)entity;
         boolean isAdded;
         PreparedStatement preparedStatement = null;
@@ -36,35 +37,46 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
             preparedStatement.setBigDecimal(3, service.getCost());
             preparedStatement.setBigDecimal(4, service.getDiscount());
             isAdded = preparedStatement.execute();
+            connection.commit();
         } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
             LOGGER.log(Level.ERROR, "Cannot add service. Request to table failed.");
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
-            returnConnectionInPool();
         }
         return isAdded;
     }
 
     @Override
-    public boolean delete(AbstractEntity entity) throws DaoException {
+    public boolean delete(AbstractEntity entity) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
+        boolean isDeleted;
         Service service = (Service)entity;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = PreparedStatements.useStatements(connection).get("delete_service");
             preparedStatement.setLong(1, service.getId());
-            return preparedStatement.execute();
+            isDeleted = preparedStatement.execute();
+            connection.commit();
         } catch (SQLException | DaoException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
             LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
-            returnConnectionInPool();
         }
+        return isDeleted;
     }
 
     @Override
-    public boolean update(AbstractEntity entity) throws DaoException {
+    public boolean update(AbstractEntity entity) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
+        boolean isUpdated;
         Service service = (Service)entity;
         PreparedStatement preparedStatement = null;
         try {
@@ -72,18 +84,23 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
             preparedStatement.setString(1, service.getService());
             preparedStatement.setBigDecimal(2, service.getCost());
             preparedStatement.setBigDecimal(3, service.getDiscount());
-            return preparedStatement.execute();
+            isUpdated = preparedStatement.execute();
+            connection.commit();
         } catch (SQLException | DaoException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
             LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
-            returnConnectionInPool();
         }
+        return isUpdated;
     }
 
     @Override
-    public List<AbstractEntity> findAll() throws DaoException {
+    public List<AbstractEntity> findAll() throws DaoException, SQLException {
+        connection.setAutoCommit(false);
         List<AbstractEntity> services = new ArrayList<>();
         Statement statement = null;
         try {
@@ -93,18 +110,22 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
                 Service service = EntityFactory.createService(resultSet);
                 services.add(service);
             }
+            connection.commit();
         } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
             LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(statement);
-            returnConnectionInPool();
         }
         return services;
     }
 
     @Override
-    public AbstractEntity findEntityById(long id) throws DaoException {
+    public AbstractEntity findEntityById(long id) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
         Service service;
         PreparedStatement preparedStatement = null;
         try {
@@ -113,12 +134,15 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
             service = EntityFactory.createService(resultSet);
+            connection.commit();
         } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
             LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
-            returnConnectionInPool();
         }
         return service;
     }

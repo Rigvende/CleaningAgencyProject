@@ -1,10 +1,12 @@
 package by.patrusova.project.util;
 
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class MessageManager {
 
-    private static ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle("resources.message_en_US");//todo
+    private static ResourceBundle RESOURCE_BUNDLE
+            = ResourceBundle.getBundle("resources.message");//todo locale
 
     private MessageManager() { }
 

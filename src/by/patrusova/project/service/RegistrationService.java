@@ -1,13 +1,11 @@
 package by.patrusova.project.service;
 
-import by.patrusova.project.connection.ProxyConnection;
 import by.patrusova.project.dao.DaoFactory;
 import by.patrusova.project.dao.impl.UserDao;
 import by.patrusova.project.entity.Role;
 import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
-import by.patrusova.project.validator.NumberValidator;
 import by.patrusova.project.validator.RegistrationDataValidator;
 import by.patrusova.project.validator.StringValidator;
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +17,8 @@ public class RegistrationService {
 
     private static final String PARAM_NAME_LOGIN = "loginreg";
     private static final String PARAM_NAME_PASSWORD = "passwordreg";
+    private static final String PARAM_NAME_PASSWORD_AGAIN = "passwordagain";
+    private static final String PARAM_NAME_NAME2 = "name";
     private static final String PARAM_NAME_NAME = "firstname";
     private static final String PARAM_NAME_LASTNAME = "lastname";
     private static final String PARAM_NAME_PHONE = "phone";
@@ -30,26 +30,15 @@ public class RegistrationService {
 
     public static User registerUser(User user) throws ServiceException, SQLException {
         DaoFactory factory = new DaoFactory();
-        ProxyConnection connection = null;
         try {
-            connection = (ProxyConnection) factory.getConnection();
-            connection.setAutoCommit(false);
-            UserDao dao = factory.createUserDao(connection);
+            UserDao dao = factory.createUserDao();
             if (!isExist(user, dao)) {
                 if (dao.create(user)) {
                     user = null;
                 }
             }
-            connection.commit();
-        } catch (DaoException | SQLException e) {
-            if (connection != null) {
-                connection.rollback();
-            }
+        } catch (DaoException e) {
             throw new ServiceException(e);
-        } finally {
-            if (connection != null) {
-                connection.close();
-            }
         }
         return user;
     }
@@ -83,23 +72,23 @@ public class RegistrationService {
     }
     private static Map<String, Boolean> validateRegistration(HttpServletRequest request) {
         Map<String, Boolean> validationMap = new HashMap<>();
-        String login = request.getParameter("loginreg");
-        String password = request.getParameter("passwordreg");
-        String passwordRepeated = request.getParameter("passwordagain");
-        String name = request.getParameter("firstname");
-        String lastname = request.getParameter("lastname");
-        String phone = request.getParameter("phone");
-        String email = request.getParameter("email");
-        String address = request.getParameter("address");
-        validationMap.put("loginreg", RegistrationDataValidator.isValidLogin(login));
-        validationMap.put("passwordreg", (RegistrationDataValidator.isValidPassword(password)
+        String login = request.getParameter(PARAM_NAME_LOGIN);
+        String password = request.getParameter(PARAM_NAME_PASSWORD);
+        String passwordRepeated = request.getParameter(PARAM_NAME_PASSWORD_AGAIN);
+        String name = request.getParameter(PARAM_NAME_NAME);
+        String lastname = request.getParameter(PARAM_NAME_LASTNAME);
+        String phone = request.getParameter(PARAM_NAME_PHONE);
+        String email = request.getParameter(PARAM_NAME_EMAIL);
+        String address = request.getParameter(PARAM_NAME_ADDRESS);
+        validationMap.put(PARAM_NAME_LOGIN, RegistrationDataValidator.isValidLogin(login));
+        validationMap.put(PARAM_NAME_PASSWORD, (RegistrationDataValidator.isValidPassword(password)
                 && RegistrationDataValidator.isPasswordRepeated(password, passwordRepeated)));
-        validationMap.put("firstname", StringValidator.isValidStringSize("name", name));
-        validationMap.put("lastname", StringValidator.isValidStringSize("lastname", lastname));
-        validationMap.put("phone", RegistrationDataValidator.isValidPhone(phone));
-        validationMap.put("email", RegistrationDataValidator.isValidEmail(email)
-                && StringValidator.isValidStringSize("email", email));
-        validationMap.put("address", StringValidator.isValidStringSize("address", address));
+        validationMap.put(PARAM_NAME_NAME, StringValidator.isValidStringSize(PARAM_NAME_NAME2, name));
+        validationMap.put(PARAM_NAME_LASTNAME, StringValidator.isValidStringSize(PARAM_NAME_LASTNAME, lastname));
+        validationMap.put(PARAM_NAME_PHONE, RegistrationDataValidator.isValidPhone(phone));
+        validationMap.put(PARAM_NAME_EMAIL, RegistrationDataValidator.isValidEmail(email)
+                && StringValidator.isValidStringSize(PARAM_NAME_EMAIL, email));
+        validationMap.put(PARAM_NAME_ADDRESS, StringValidator.isValidStringSize(PARAM_NAME_ADDRESS, address));
         return validationMap;
     }
 }

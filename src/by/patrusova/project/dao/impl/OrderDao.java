@@ -4,7 +4,6 @@ import by.patrusova.project.connection.ProxyConnection;
 import by.patrusova.project.dao.AbstractDao;
 import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.EntityFactory;
-import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.entity.impl.Order;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.util.PreparedStatements;
@@ -27,7 +26,8 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public boolean create(AbstractEntity entity) throws DaoException {
+    public boolean create(AbstractEntity entity) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
         Order order = (Order)entity;
         boolean isAdded;
         PreparedStatement preparedStatement = null;
@@ -41,35 +41,46 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             preparedStatement.setLong(6, order.getIdClient());
             preparedStatement.setLong(6, 0);
             isAdded = preparedStatement.execute();
+            connection.commit();
         } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
             LOGGER.log(Level.ERROR, "Cannot add order. Request to table failed.");
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
-            returnConnectionInPool();
         }
         return isAdded;
     }
 
     @Override
-    public boolean delete(AbstractEntity entity) throws DaoException {
+    public boolean delete(AbstractEntity entity) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
+        boolean isDeleted;
         Order order = (Order)entity;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = PreparedStatements.useStatements(connection).get("delete_order");
             preparedStatement.setLong(1, order.getId());
-            return preparedStatement.execute();
+            isDeleted = preparedStatement.execute();
+            connection.commit();
         } catch (SQLException | DaoException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
             LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
-            returnConnectionInPool();
         }
+        return isDeleted;
     }
 
     @Override
-    public boolean update(AbstractEntity entity) throws DaoException {
+    public boolean update(AbstractEntity entity) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
+        boolean isUpdated;
         Order order = (Order)entity;
         PreparedStatement preparedStatement = null;
         try {
@@ -78,18 +89,23 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             preparedStatement.setString(2, order.getOrderStatus());
             preparedStatement.setLong(3, order.getIdCleaner());
             preparedStatement.setLong(4, order.getId());
-            return preparedStatement.execute();
+            isUpdated = preparedStatement.execute();
+            connection.commit();
         } catch (SQLException | DaoException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
             LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
-            returnConnectionInPool();
         }
+        return isUpdated;
     }
 
     @Override
-    public List<AbstractEntity> findAll() throws DaoException {
+    public List<AbstractEntity> findAll() throws DaoException, SQLException {
+        connection.setAutoCommit(false);
         List<AbstractEntity> orders = new ArrayList<>();
         Statement statement = null;
         try {
@@ -99,18 +115,22 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
                 Order order = EntityFactory.createOrder(resultSet);
                 orders.add(order);
             }
+            connection.commit();
         } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
             LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(statement);
-            returnConnectionInPool();
         }
         return orders;
     }
 
     @Override
-    public AbstractEntity findEntityById(long id) throws DaoException {
+    public AbstractEntity findEntityById(long id) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
         Order order;
         PreparedStatement preparedStatement = null;
         try {
@@ -119,12 +139,15 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
             order = EntityFactory.createOrder(resultSet);
+            connection.commit();
         } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
             LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
-            returnConnectionInPool();
         }
         return order;
     }

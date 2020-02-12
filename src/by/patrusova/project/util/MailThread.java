@@ -39,7 +39,7 @@ public class MailThread extends Thread {
             message.setContent(mailText, "text/html");
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(sendToEmail));
         } catch (MessagingException e) {
-            LOGGER.log(Level.FATAL, "Fail to form message.");
+            LOGGER.log(Level.ERROR, "Fail to form message.");
             throw new CommandException(e);
         }
     }
@@ -53,7 +53,7 @@ public class MailThread extends Thread {
         try {
             Transport.send(message);
         } catch (MessagingException e) {
-            LOGGER.log(Level.FATAL, "Fail to send message.");
+            LOGGER.log(Level.ERROR, "Fail to send message.");
         }
     }
 }

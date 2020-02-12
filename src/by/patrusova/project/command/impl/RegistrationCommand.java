@@ -24,7 +24,7 @@ public class RegistrationCommand implements ActionCommand {
         } else {
             try {
                 if (RegistrationService.registerUser(user) != null) {
-//                    request.setAttribute("newuser", user);
+                    request.setAttribute(AttributesEnum.NEW_USER.getValue(), user);
                     page = ConfigurationManager.getProperty(AttributesEnum.PAGE_REG_TRUE.getValue());
                 } else {
                     request.setAttribute(AttributesEnum.ERROR_REG.getValue(),

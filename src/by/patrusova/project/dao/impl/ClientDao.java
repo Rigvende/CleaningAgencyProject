@@ -11,6 +11,7 @@ import by.patrusova.project.util.PreparedStatements;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +28,8 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public boolean create(AbstractEntity entity) throws DaoException {
+    public boolean create(AbstractEntity entity) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
         Client client = (Client) entity;
         boolean isAdded;
         PreparedStatement preparedStatement = null;
@@ -40,35 +42,46 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
             preparedStatement.setString(5, null);
             preparedStatement.setString(6, null);
             isAdded = preparedStatement.execute();
+            connection.commit();
         } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
             LOGGER.log(Level.ERROR, "Cannot add client. Request to table failed.");
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
-            returnConnectionInPool();
         }
         return isAdded;
     }
 
     @Override
-    public boolean delete(AbstractEntity entity) throws DaoException {
+    public boolean delete(AbstractEntity entity) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
+        boolean isDeleted;
         Client client = (Client) entity;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = PreparedStatements.useStatements(connection).get("delete_client");
             preparedStatement.setLong(1, client.getIdUser());
-            return preparedStatement.execute();
+            isDeleted = preparedStatement.execute();
+            connection.commit();
         } catch (SQLException | DaoException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
             LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
-            returnConnectionInPool();
         }
+        return isDeleted;
     }
 
     @Override
-    public boolean update(AbstractEntity entity) throws DaoException {
+    public boolean update(AbstractEntity entity) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
+        boolean isUpdated;
         Client client = (Client) entity;
         PreparedStatement preparedStatement = null;
         try {
@@ -76,18 +89,23 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
             preparedStatement.setBigDecimal(1, client.getDiscount());
             preparedStatement.setString(2, client.getNotes());
             preparedStatement.setLong(3, client.getIdUser());
-            return preparedStatement.execute();
+            isUpdated = preparedStatement.execute();
+            connection.commit();
         } catch (SQLException | DaoException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
             LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
-            returnConnectionInPool();
         }
+        return isUpdated;
     }
 
     @Override
-    public List<AbstractEntity> findAll() throws DaoException {
+    public List<AbstractEntity> findAll() throws DaoException, SQLException {
+        connection.setAutoCommit(false);
         List<AbstractEntity> clients = new ArrayList<>();
         Statement statement = null;
         try {
@@ -97,18 +115,22 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
                 Client client = EntityFactory.createClient(resultSet);
                 clients.add(client);
             }
+            connection.commit();
         } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
             LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(statement);
-            returnConnectionInPool();
         }
         return clients;
     }
 
     @Override
-    public AbstractEntity findEntityById(long id) throws DaoException {
+    public AbstractEntity findEntityById(long id) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
         Client client;
         PreparedStatement preparedStatement = null;
         try {
@@ -117,19 +139,24 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
             client = EntityFactory.createClient(resultSet);
+            connection.commit();
         } catch (SQLException e) {
             LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
+            if (connection != null) {
+                connection.rollback();
+            }
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
-            returnConnectionInPool();
         }
         return client;
     }
 
-    public boolean updateByUser(AbstractEntity entity1, AbstractEntity entity2) throws DaoException {
-        User user = (User)entity1;
-        Client client = (Client)entity2;
+    public boolean updateByUser(AbstractEntity entity1, AbstractEntity entity2) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
+        boolean isUpdated;
+        User user = (User) entity1;
+        Client client = (Client) entity2;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = PreparedStatements.useStatements(connection).get("update_user_client");
@@ -141,13 +168,17 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
             preparedStatement.setString(6, client.getLocation());
             preparedStatement.setString(7, client.getRelative());
             preparedStatement.setString(8, user.getLogin());
-            return preparedStatement.execute();
+            isUpdated = preparedStatement.execute();
+            connection.commit();
         } catch (SQLException | DaoException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
             LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
-            returnConnectionInPool();
         }
+        return isUpdated;
     }
 }
