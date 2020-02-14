@@ -1,11 +1,8 @@
 package by.patrusova.project.command.impl;
 
 import by.patrusova.project.command.ActionCommand;
-import by.patrusova.project.entity.impl.Client;
-import by.patrusova.project.service.ClientService;
-import by.patrusova.project.util.AttributesEnum;
+import by.patrusova.project.util.stringholder.Attributes;
 import by.patrusova.project.util.ConfigurationManager;
-import by.patrusova.project.util.MessageManager;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -21,7 +18,7 @@ public class ChangeBurialCommand implements ActionCommand {
 //                    MessageManager.getProperty(AttributesEnum.MESSAGE_ERROR_CHANGE.getValue()));
 //        }
 //            page = ConfigurationManager.getProperty(AttributesEnum.PAGE_PROFILE.getValue());
-        page = ConfigurationManager.getProperty(AttributesEnum.PAGE_LOGIN.getValue());
+        page = ConfigurationManager.getProperty(Attributes.PAGE_LOGIN.getValue());
         return page;
     }
 }

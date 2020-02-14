@@ -1,4 +1,4 @@
-package by.patrusova.project.service;
+package by.patrusova.project.service.impl;
 
 import by.patrusova.project.dao.DaoFactory;
 import by.patrusova.project.dao.impl.CleanerDao;

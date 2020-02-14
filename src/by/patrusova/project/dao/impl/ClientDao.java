@@ -7,7 +7,7 @@ import by.patrusova.project.entity.EntityFactory;
 import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.DaoException;
-import by.patrusova.project.util.PreparedStatements;
+import by.patrusova.project.util.stringholder.PreparedStatements;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

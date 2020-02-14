@@ -1,4 +1,4 @@
-package by.patrusova.project.service;
+package by.patrusova.project.service.impl;
 
 import by.patrusova.project.dao.DaoFactory;
 import by.patrusova.project.dao.impl.ClientDao;
@@ -29,7 +29,7 @@ public class ClientService {
         return client;
     }
 
-//    public static Client createNewClient(HttpServletRequest request) {
+//    public static AbstractEntity createEntity(HttpServletRequest request) {
 //        Client newClient = new Client();
 //        if (!validate(request).containsValue(false)) {
 //            newClient.setId(0);

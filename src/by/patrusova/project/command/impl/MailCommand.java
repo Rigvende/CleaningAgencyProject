@@ -2,7 +2,7 @@ package by.patrusova.project.command.impl;
 
 import by.patrusova.project.command.ActionCommand;
 import by.patrusova.project.exception.CommandException;
-import by.patrusova.project.util.AttributesEnum;
+import by.patrusova.project.util.stringholder.Attributes;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.util.MailThread;
 import javax.servlet.ServletContext;
@@ -18,13 +18,13 @@ public class MailCommand implements ActionCommand {
         try {
             Properties properties = new Properties();
             ServletContext context = request.getServletContext();
-            String filename = context.getInitParameter(AttributesEnum.MAIL.getValue());
+            String filename = context.getInitParameter(Attributes.MAIL.getValue());
             properties.load(context.getResourceAsStream(filename));
             MailThread mailOperator = new MailThread(request.getParameter("to"),
                                                      request.getParameter("subject"),
                                                      request.getParameter("body"), properties);
             mailOperator.start();
-            page = ConfigurationManager.getProperty(AttributesEnum.PAGE_MAIL.getValue());
+            page = ConfigurationManager.getProperty(Attributes.PAGE_MAIL.getValue());
         } catch (IOException e) {
             throw new CommandException(e);//todo logger
         }

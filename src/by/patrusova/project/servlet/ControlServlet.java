@@ -1,11 +1,11 @@
 package by.patrusova.project.servlet;
 
 import by.patrusova.project.command.ActionCommand;
-import by.patrusova.project.util.AttributesEnum;
+import by.patrusova.project.util.stringholder.Attributes;
 import by.patrusova.project.command.CommandProvider;
 import by.patrusova.project.exception.CommandException;
-import by.patrusova.project.util.ConfigurationManager;
-import by.patrusova.project.util.MessageManager;
+import by.patrusova.project.util.stringholder.Parameters;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -30,14 +30,11 @@ public class ControlServlet extends HttpServlet {
 
     private void processRequest(HttpServletRequest request,
                                 HttpServletResponse response) throws IOException {
-        String page;
         CommandProvider provider = new CommandProvider();
         try {
             ActionCommand command = provider.defineCommand(request);
-            page = command.execute(request);
-            if (request.getMethod().toLowerCase().equals(AttributesEnum.POST.getValue())) {
-//                response.setStatus(HttpServletResponse.SC_TEMPORARY_REDIRECT);
-//                response.addHeader("Location", request.getContextPath() + page); //todo что сработает как защита от f5?
+            String page = command.execute(request);
+            if (request.getMethod().toLowerCase().equals(Parameters.POST.getValue())) {
                 response.sendRedirect(request.getContextPath() + page);
             } else {
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);

@@ -148,3 +148,6 @@
 //                .map(CommandEnum::getCurrentCommand)
 //                .findAny();
 //    }
+
+//                response.setStatus(HttpServletResponse.SC_TEMPORARY_REDIRECT);
+//                response.addHeader("Location", request.getContextPath() + page);

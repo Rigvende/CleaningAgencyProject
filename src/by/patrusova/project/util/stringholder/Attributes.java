@@ -1,6 +1,6 @@
-package by.patrusova.project.util;
+package by.patrusova.project.util.stringholder;
 
-public enum AttributesEnum {
+public enum Attributes {
 
     PAGE_INDEX("page.index"),
     PAGE_INFO("page.info"),
@@ -28,7 +28,6 @@ public enum AttributesEnum {
     ERROR_CHANGE("errorChangeMessage"),
     MAIL("mail"),
     NEW_USER("newuser"),
-    POST("post"),
 
     MESSAGE_EMPTY("message.nullpage"),
     MESSAGE_ERROR_REG("message.registrationerror"),
@@ -39,7 +38,7 @@ public enum AttributesEnum {
 
     private String value;
 
-    AttributesEnum(String value) {
+    Attributes(String value) {
         this.value = value;
     }
 

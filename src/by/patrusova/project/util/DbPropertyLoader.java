@@ -1,4 +1,4 @@
-package by.patrusova.project.connection;
+package by.patrusova.project.util;
 
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -8,12 +8,12 @@ import java.io.*;
 import java.util.Objects;
 import java.util.Properties;
 
-class PropertyLoader {
+class DbPropertyLoader {
 
     private final static Logger LOGGER = LogManager.getLogger();
     private final static String CONNECTION_DB = "src/resources/connectionDB.properties";
 
-    private PropertyLoader() {
+    private DbPropertyLoader() {
     }
 
     static Properties loadProperties() {

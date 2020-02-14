@@ -1,4 +1,4 @@
-package by.patrusova.project.util;
+package by.patrusova.project.util.stringholder;
 
 import by.patrusova.project.exception.DaoException;
 import java.sql.Connection;

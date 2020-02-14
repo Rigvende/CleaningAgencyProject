@@ -1,12 +1,11 @@
 package by.patrusova.project.connection;
 
-import by.patrusova.project.util.PreparedStatements;
+import by.patrusova.project.util.stringholder.PreparedStatements;
 import by.patrusova.project.exception.DaoException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.sql.*;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Properties;
 import java.util.ResourceBundle;

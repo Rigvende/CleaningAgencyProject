@@ -1,15 +1,11 @@
 package by.patrusova.project.command.impl;
 
 import by.patrusova.project.command.ActionCommand;
-import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.CommandException;
-import by.patrusova.project.exception.ServiceException;
-import by.patrusova.project.service.UserService;
-import by.patrusova.project.util.AttributesEnum;
+import by.patrusova.project.util.stringholder.Attributes;
 import by.patrusova.project.util.ConfigurationManager;
-import by.patrusova.project.util.MessageManager;
+
 import javax.servlet.http.HttpServletRequest;
-import java.sql.SQLException;
 
 public class ChangeInfoCommand implements ActionCommand {
 
@@ -34,7 +30,7 @@ public class ChangeInfoCommand implements ActionCommand {
 //        } catch (ServiceException | SQLException e) {
 //            throw new CommandException(e);//todo logger
 //        }
-        page = ConfigurationManager.getProperty(AttributesEnum.PAGE_LOGIN.getValue());
+        page = ConfigurationManager.getProperty(Attributes.PAGE_LOGIN.getValue());
         return page;
     }
 }

@@ -1,20 +1,22 @@
-package by.patrusova.project.service;
+package by.patrusova.project.service.impl;
 
 import by.patrusova.project.dao.DaoFactory;
 import by.patrusova.project.dao.impl.UserDao;
+import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.Role;
 import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
+import by.patrusova.project.service.EntityBuilder;
+import by.patrusova.project.service.ServiceMaker;
 import by.patrusova.project.validator.RegistrationDataValidator;
 import by.patrusova.project.validator.StringValidator;
-
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UserService {
+public class UserService implements EntityBuilder, ServiceMaker {
 
     private static final String PARAM_NAME_LOGIN = "loginreg";
     private static final String PARAM_NAME_PASSWORD = "passwordreg";
@@ -26,11 +28,14 @@ public class UserService {
     private static final String PARAM_NAME_ADDRESS = "address";
     private static final String PARAM_NAME_EMAIL = "email";
 
-    private UserService() {
+    public UserService() {
     }
 
-    public static User registerUser(User user) throws ServiceException, SQLException {
+    //регистрация юзера
+    @Override
+    public AbstractEntity doService(AbstractEntity entity) throws ServiceException, SQLException {
         DaoFactory factory = new DaoFactory();
+        User user = (User) entity;
         try {
             UserDao dao = factory.createUserDao();
             if (!isExist(user, dao)) {
@@ -44,7 +49,8 @@ public class UserService {
         return user;
     }
 
-    public static User createNewUser(HttpServletRequest request) {
+    @Override
+    public AbstractEntity createEntity(HttpServletRequest request) {
         User newUser = new User();
         if (!validate(request).containsValue(false)) {
             newUser.setId(0);
@@ -62,7 +68,7 @@ public class UserService {
         }
     }
 
-    private static boolean isExist(User user, UserDao dao) throws ServiceException {
+    private boolean isExist(User user, UserDao dao) throws ServiceException {
         boolean exist;
         try {
             exist = dao.findLogin(user.getLogin());
@@ -71,7 +77,7 @@ public class UserService {
         }
         return exist;
     }
-    private static Map<String, Boolean> validate(HttpServletRequest request) {
+    private Map<String, Boolean> validate(HttpServletRequest request) {
         Map<String, Boolean> validationMap = new HashMap<>();
         String login = request.getParameter(PARAM_NAME_LOGIN);
         String password = request.getParameter(PARAM_NAME_PASSWORD);

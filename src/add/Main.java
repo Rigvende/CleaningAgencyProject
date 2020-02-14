@@ -1,18 +1,6 @@
 package add;
 
-import by.patrusova.project.command.impl.LogoutCommand;
-import by.patrusova.project.connection.ProxyConnection;
-import by.patrusova.project.dao.impl.UserDao;
-import by.patrusova.project.entity.AbstractEntity;
-import by.patrusova.project.entity.impl.User;
-import by.patrusova.project.service.LoginService;
-
-import javax.servlet.*;
-import javax.servlet.http.*;
 import java.io.*;
-import java.security.Principal;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.*;
 

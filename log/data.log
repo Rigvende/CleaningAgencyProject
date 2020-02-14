@@ -116,3 +116,34 @@
 014 14-02 23:37 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainCleaner.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainCleaner.jsp
 014 14-02 23:37 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainCleaner.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainCleaner.jsp
 014 14-02 23:37 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+015 15-02 00:17 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+015 15-02 00:17 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+015 15-02 00:17 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+015 15-02 00:17 INFO  project.filter.LogFilter -  - ServletPath :/jsp/registration/registrationForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/registration/registrationForm.jsp
+015 15-02 00:17 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+015 15-02 00:17 INFO  project.filter.LogFilter -  - ServletPath :/jsp/registration/registrationForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/registration/registrationForm.jsp
+015 15-02 00:18 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+015 15-02 00:18 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+015 15-02 00:18 INFO  project.filter.LogFilter -  - ServletPath :/jsp/registration/registrationTrue.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/registration/registrationTrue.jsp
+015 15-02 00:18 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
