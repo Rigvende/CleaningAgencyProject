@@ -9,7 +9,7 @@ public class LogoutCommand implements ActionCommand {
 
     @Override
     public String execute(HttpServletRequest request) {
-        String page = ConfigurationManager.getProperty(AttributesEnum.PAGE_LOGIN.getValue());
+        String page = ConfigurationManager.getProperty(AttributesEnum.PAGE_INDEX.getValue());
         request.getSession().removeAttribute(AttributesEnum.USER.getValue());
         request.getSession().invalidate();
         return page;

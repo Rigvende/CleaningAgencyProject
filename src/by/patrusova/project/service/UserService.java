@@ -8,12 +8,13 @@ import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.validator.RegistrationDataValidator;
 import by.patrusova.project.validator.StringValidator;
+
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RegistrationService {
+public class UserService {
 
     private static final String PARAM_NAME_LOGIN = "loginreg";
     private static final String PARAM_NAME_PASSWORD = "passwordreg";
@@ -25,7 +26,7 @@ public class RegistrationService {
     private static final String PARAM_NAME_ADDRESS = "address";
     private static final String PARAM_NAME_EMAIL = "email";
 
-    private RegistrationService() {
+    private UserService() {
     }
 
     public static User registerUser(User user) throws ServiceException, SQLException {
@@ -45,7 +46,7 @@ public class RegistrationService {
 
     public static User createNewUser(HttpServletRequest request) {
         User newUser = new User();
-        if (!validateRegistration(request).containsValue(false)) {
+        if (!validate(request).containsValue(false)) {
             newUser.setId(0);
             newUser.setLogin(request.getParameter(PARAM_NAME_LOGIN));
             newUser.setPassword(request.getParameter(PARAM_NAME_PASSWORD));
@@ -70,7 +71,7 @@ public class RegistrationService {
         }
         return exist;
     }
-    private static Map<String, Boolean> validateRegistration(HttpServletRequest request) {
+    private static Map<String, Boolean> validate(HttpServletRequest request) {
         Map<String, Boolean> validationMap = new HashMap<>();
         String login = request.getParameter(PARAM_NAME_LOGIN);
         String password = request.getParameter(PARAM_NAME_PASSWORD);

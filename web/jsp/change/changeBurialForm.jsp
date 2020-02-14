@@ -1,8 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=utf8" pageEncoding="utf8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<fmt:setBundle basename="message"/>
 
 <html>
 <head>
-    <title>Change Location</title>
+    <title><fmt:message key="title.changeloc"/></title>
 </head>
 
 <body>
@@ -10,14 +14,14 @@
 <br/>
 
 <form name="changeBurialForm" method="POST" action="${pageContext.request.contextPath}/controller">
-    Change all fields below you want.
+    <fmt:message key="text.change1"/>
     <hr/>
     <input type="hidden" name="command" value="changeburial" />
-    <br/>Location:<br/>
+    <br/><fmt:message key="field.location"/><br/>
     <label>
         <input type="text" name="location" value=""/>
     </label>
-    <br/>Relative:<br/>
+    <br/><fmt:message key="field.relative"/><br/>
     <label>
         <input type="text" name="relative" value=""/>
     </label>
@@ -26,7 +30,7 @@
     ${nullPage}
     <br/>
     <br/>
-    <input type="submit" value="Change location"/>
+    <input type="submit" value="<fmt:message key="button.changeloc"/>"/>
 </form>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>

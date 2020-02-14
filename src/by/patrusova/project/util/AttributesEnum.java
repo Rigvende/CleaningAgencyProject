@@ -28,6 +28,7 @@ public enum AttributesEnum {
     ERROR_CHANGE("errorChangeMessage"),
     MAIL("mail"),
     NEW_USER("newuser"),
+    POST("post"),
 
     MESSAGE_EMPTY("message.nullpage"),
     MESSAGE_ERROR_REG("message.registrationerror"),

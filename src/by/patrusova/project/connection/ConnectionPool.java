@@ -53,6 +53,7 @@ public class ConnectionPool {
                 lock.lock();
                 if (instance == null) {
                     instance = new ConnectionPool();
+                    LOGGER.log(Level.INFO, "Connection pool instance has been created successful.");
                     flag.set(true);
                 }
             } finally {

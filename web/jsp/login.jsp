@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <c:set var="locale"
-       value="${not empty locale ? locale : 'en_EN'}"
+       value="${not empty locale ? pageContext.request.locale : 'ru_RU'}"
        scope="session"/>
 
 <fmt:setLocale value="${locale}" scope="session"/>
@@ -24,7 +25,7 @@
     <div style="float: right; padding: 10px; text-align: right;">
         <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
         <div style="margin-right: 85px">
-            <a href="controller?command=info"><fmt:message key="button.info"/></a>
+            <a href="${pageContext.request.contextPath}/controller?command=info"><fmt:message key="button.info"/></a>
         </div>
     </div>
 </div>

@@ -14,10 +14,11 @@ public class LocaleCommand implements ActionCommand {
 
     @Override
     public String execute(HttpServletRequest request) {
-        String referer = request.getHeader( "referer" );
+        String referer = request.getHeader( "referer" );//todo как передать эту же страницу?
 ////        String page = request.getRequestURL().toString();
+
 //        HttpSession session = request.getSession();
-//        String language = request.getParameter("language");
+//        String language = request.getParameter("locale");
 //        Locale locale;
 //        switch (language) {
 //            case "ENGLISH":
@@ -41,6 +42,6 @@ public class LocaleCommand implements ActionCommand {
 //            String s = bundle.getString(key);
 //            session.setAttribute(key, s);
 //        }
-        return referer;
+        return referer.substring(3);
     }
 }

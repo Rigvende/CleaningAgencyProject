@@ -28,6 +28,15 @@
         <url-pattern>*.png</url-pattern>
     </servlet-mapping>
 
+    <filter>
+        <filter-name>XSSFilter</filter-name>
+        <filter-class>com.cj.xss.XSSFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>XSSFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
     <description>MySQL</description>
     <resource-ref>
         <description>MySQL DB Connection Pool</description>

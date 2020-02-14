@@ -2,11 +2,13 @@
 <configuration monitorInterval="3600" status="WARN">
     <properties>
         <property name="pattern">
-            %d{HH:mm} %-5level %logger{3} - %msg%n
+            %d{ddd dd-MM HH:mm} %-5level %logger{3} - %msg%n
         </property>
     </properties>
     <appenders>
-        <file name="TxtFile" fileName="log/data.log" bufferedIO="true">
+        <file name="TxtFile"
+              fileName="C:\Users\Администратор.000\IdeaProjects\CleaningAgencyProject\log\data.log"
+              bufferedIO="true">
             <patternLayout pattern="${pattern}"/>
         </file>
         <console name="Console" target="SYSTEM_OUT">

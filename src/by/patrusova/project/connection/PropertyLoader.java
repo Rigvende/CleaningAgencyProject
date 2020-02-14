@@ -18,7 +18,6 @@ class PropertyLoader {
 
     static Properties loadProperties() {
         Properties property = new Properties();
-
         try (FileInputStream inputStream = new FileInputStream(CONNECTION_DB)) {
             property.load(inputStream);
         } catch (IOException e) {

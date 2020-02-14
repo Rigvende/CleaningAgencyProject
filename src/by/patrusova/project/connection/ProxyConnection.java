@@ -32,6 +32,7 @@ public class ProxyConnection implements Connection {
             String pass = bundle.getString("pass");
             String url = bundle.getString("url");
             connection = DriverManager.getConnection(url, user, pass);
+            LOGGER.log(Level.INFO, "Proxy connection to DB has been created successful.");
         } catch (SQLException e) {
             LOGGER.log(Level.ERROR, "Connection's creation failed");
             throw new DaoException(e);

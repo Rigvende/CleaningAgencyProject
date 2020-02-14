@@ -141,8 +141,7 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
             preparedStatement = PreparedStatements.useStatements(connection).get(FIND_ENTITY);
             preparedStatement.setLong(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
-            resultSet.next();
-            client = EntityFactory.createClient(resultSet);
+            client = resultSet.next() ? EntityFactory.createClient(resultSet) : null;
             connection.commit();
         } catch (SQLException e) {
             LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
