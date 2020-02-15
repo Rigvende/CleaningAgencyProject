@@ -117,10 +117,10 @@ public class EntityFactory {
                     (String.valueOf(UserColumns.LASTNAME)));
             user.setPhone(resultSet.getLong
                     (String.valueOf(UserColumns.PHONE)));
-            user.setAddress(resultSet.getString
-                    (String.valueOf(UserColumns.ADDRESS)));
             user.setEmail(resultSet.getString
                     (String.valueOf(UserColumns.EMAIL)));
+            user.setAddress(resultSet.getString
+                    (String.valueOf(UserColumns.ADDRESS)));
         } catch (SQLException e) {
             throw new DaoException(e);
         }

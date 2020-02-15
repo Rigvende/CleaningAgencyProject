@@ -4,7 +4,7 @@ import by.patrusova.project.command.ActionCommand;
 import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
-import by.patrusova.project.service.impl.ClientService;
+import by.patrusova.project.service.impl.ClientInfoService;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.util.MessageManager;
 import by.patrusova.project.util.stringholder.Attributes;
@@ -22,16 +22,16 @@ public class ChangeBurialCommand implements ActionCommand {
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
         String page;
-        ClientService clientService = new ClientService();
+        ClientInfoService clientInfoService = new ClientInfoService();
         try {
-            Client client = clientService.createEntity(request);
+            Client client = clientInfoService.createEntity(request);
             if (client == null) {
                 request.getSession().setAttribute(Attributes.ERROR_CHANGE.getValue(),
                         MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE.getValue()));
                 page = ConfigurationManager.getProperty(Pages.PAGE_CHANGE_BURIAL.getValue());
                 return page;
             } else {
-                client = clientService.doService(client);
+                client = clientInfoService.doService(client);
                 if (client != null) {
                     page = ConfigurationManager.getProperty(Pages.PAGE_PROFILE.getValue());
                 } else {

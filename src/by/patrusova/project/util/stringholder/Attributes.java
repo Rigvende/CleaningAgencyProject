@@ -3,6 +3,7 @@ package by.patrusova.project.util.stringholder;
 public enum Attributes {
 
     NULLPAGE("nullpage"),
+    EMPTY_LIST("emptyList"),
     WRONG_ACTION("wrongAction"),
     ERROR_LOGIN("errorLoginPassMessage"),
     ROLE("role"),
@@ -14,7 +15,8 @@ public enum Attributes {
     ERROR_REG("errorRegistrationMessage"),
     ERROR_CHANGE("errorChangeMessage"),
     MAIL("mail"),
-    NEW_USER("newuser");
+    NEW_USER("newuser"),
+    GUEST_LIST("guestList");
 
     private String value;
 

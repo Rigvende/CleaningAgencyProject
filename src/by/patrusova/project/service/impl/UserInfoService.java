@@ -22,7 +22,7 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UserService implements Serviceable, EntityCreator {
+public class UserInfoService implements Serviceable, EntityCreator {
     private final static Logger LOGGER = LogManager.getLogger();
 
     //внесение изменений в юзер-инфо

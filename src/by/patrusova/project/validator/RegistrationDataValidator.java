@@ -1,5 +1,10 @@
 package by.patrusova.project.validator;
 
+import by.patrusova.project.dao.DaoFactory;
+import by.patrusova.project.dao.impl.UserDao;
+import by.patrusova.project.exception.DaoException;
+
+import java.sql.SQLException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -14,10 +19,13 @@ public class RegistrationDataValidator {
     private final static String CHECK_PHONE
             = "^[\\d]{5,20}$";
 
-    public static boolean isValidLogin(String login) {
+    public static boolean isValidLogin(String login) throws DaoException, SQLException {
         Pattern pattern = Pattern.compile(CHECK_LOGIN);
         Matcher matcher = pattern.matcher(login);
-        return matcher.find();
+        DaoFactory factory = new DaoFactory();
+        UserDao dao = factory.createUserDao();
+        boolean check = dao.findLogin(login);
+        return matcher.find() && !check;
     }
 
     public static boolean isValidPassword(String password) {

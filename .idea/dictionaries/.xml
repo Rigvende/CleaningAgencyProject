@@ -7,6 +7,7 @@
       <w>changeburialredirect</w>
       <w>changeerror</w>
       <w>changeform</w>
+      <w>changeguest</w>
       <w>changeinfo</w>
       <w>changeloc</w>
       <w>changeredirect</w>
@@ -14,7 +15,9 @@
       <w>deregistered</w>
       <w>deregistering</w>
       <w>firstname</w>
+      <w>guestlist</w>
       <w>lastname</w>
+      <w>listerror</w>
       <w>logined</w>
       <w>loginerror</w>
       <w>loginfalse</w>
@@ -38,7 +41,10 @@
       <w>registrationtrue</w>
       <w>regproposal</w>
       <w>regredirect</w>
+      <w>resultset</w>
       <w>sendto</w>
+      <w>showguest</w>
+      <w>showguests</w>
       <w>smtp</w>
       <w>wrongaction</w>
     </words>

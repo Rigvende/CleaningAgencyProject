@@ -9,6 +9,6 @@ public class CatalogueCommand implements ActionCommand {
 
     @Override
     public String execute(HttpServletRequest request) {
-        return ConfigurationManager.getProperty(Pages.PAGE_LOGIN.getValue());
+        return ConfigurationManager.getProperty(Pages.PAGE_CATALOGUE.getValue());
     }
 }

@@ -12,7 +12,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.sql.SQLException;
 
-public class CleanerService implements Serviceable {
+public class CleanerInfoService implements Serviceable {
 
     private final static Logger LOGGER = LogManager.getLogger();
 

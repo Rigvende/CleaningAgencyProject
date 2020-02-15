@@ -13,7 +13,11 @@ public enum Pages {
     PAGE_REG("page.registrationform"),
     PAGE_REG_TRUE("page.registrationtrue"),
     PAGE_PROFILE("page.profile"),
-    PAGE_MAIL("page.sendmail");
+    PAGE_MAIL("page.sendmail"),
+    PAGE_CATALOGUE("page.catalogue"),
+    PAGE_BASKET("page.basket"),
+    PAGE_GUESTLIST("page.guestlist"),
+    PAGE_CHANGE_GUEST("page.changeguest");
 
     private String value;
 

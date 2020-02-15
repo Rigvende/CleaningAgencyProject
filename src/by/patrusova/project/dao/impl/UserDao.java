@@ -27,6 +27,9 @@ public class UserDao extends AbstractDao<AbstractEntity> {
                     "lastname, phone, address, email FROM users";
     private final static String SQL_SELECT_LOGIN =
             "SELECT login FROM users";
+    private final static String SQL_FIND_GUESTS =
+            "SELECT id_user, login, password, role, name, lastname, " +
+                    "phone, address, email FROM users WHERE role = 'guest'";
 
     public UserDao(ProxyConnection connection) {
         super(connection);
@@ -210,5 +213,29 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             closeStatement(statement);
         }
         return false;
+    }
+
+    public List<User> findGuests() throws DaoException, SQLException {
+        connection.setAutoCommit(false);
+        List<User> users = new ArrayList<>();
+        Statement statement = null;
+        try {
+            statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(SQL_FIND_GUESTS);
+            while (resultSet.next()) {
+                User user = EntityFactory.createUser(resultSet);
+                users.add(user);
+            }
+            connection.commit();
+        } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
+            LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
+            throw new DaoException(e);
+        } finally {
+            closeStatement(statement);
+        }
+        return users;
     }
 }

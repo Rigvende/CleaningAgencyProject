@@ -34,7 +34,7 @@ public enum CommandEnum {
             this.command = new InfoCommand();
         }
     },
-     BASKET {
+    BASKET {
         {
             this.command = new BasketCommand();
         }
@@ -72,6 +72,16 @@ public enum CommandEnum {
     LOCALE {
         {
             this.command = new LocaleCommand();
+        }
+    },
+    SHOWGUESTS {
+        {
+            this.command = new ShowGuestsCommand();
+        }
+    },
+    CHANGEGUEST {
+        {
+            this.command = new ChangeGuestCommand();
         }
     },
     MAIL {

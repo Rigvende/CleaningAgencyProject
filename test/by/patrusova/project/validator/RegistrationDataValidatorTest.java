@@ -1,17 +1,21 @@
 package by.patrusova.project.validator;
 
+import by.patrusova.project.exception.DaoException;
 import org.testng.annotations.Test;
+
+import java.sql.SQLException;
+
 import static org.testng.Assert.*;
 
 public class RegistrationDataValidatorTest {
 
     @Test
-    public void testIsValidLogin() {
+    public void testIsValidLogin() throws SQLException, DaoException {
         boolean actual = RegistrationDataValidator.isValidLogin("qwerty");
         assertTrue(actual);
     }
     @Test
-    public void testIsValidLoginNegative() {
+    public void testIsValidLoginNegative() throws SQLException, DaoException {
         boolean actual = RegistrationDataValidator.isValidLogin("qwek");
         assertFalse(actual);
     }

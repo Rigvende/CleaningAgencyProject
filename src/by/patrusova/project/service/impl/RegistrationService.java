@@ -45,7 +45,7 @@ public class RegistrationService implements EntityCreator, Serviceable {
     }
 
     @Override
-    public User createEntity(HttpServletRequest request) {
+    public User createEntity(HttpServletRequest request) throws ServiceException {
         User newUser = new User();
         if (!validate(request).containsValue(false)) {
             newUser.setId(0);
@@ -55,8 +55,8 @@ public class RegistrationService implements EntityCreator, Serviceable {
             newUser.setName(request.getParameter(Parameters.FIRSTNAME.getValue()));
             newUser.setLastname(request.getParameter(Parameters.LASTNAME.getValue()));
             newUser.setPhone(Long.parseLong(request.getParameter(Parameters.PHONE.getValue())));
-            newUser.setAddress(request.getParameter(Parameters.ADDRESS.getValue()));
             newUser.setEmail(request.getParameter(Parameters.EMAIL.getValue()));
+            newUser.setAddress(request.getParameter(Parameters.ADDRESS.getValue()));
             return newUser;
         } else {
             return null;
@@ -71,12 +71,13 @@ public class RegistrationService implements EntityCreator, Serviceable {
         try {
             exist = userDao.findLogin(user.getLogin());
         } catch (DaoException | SQLException e) {
+            LOGGER.log(Level.ERROR, "Cannot check user in DB, exception has occurred.");
             throw new ServiceException(e);
         }
         return exist;
     }
 
-    public Map<String, Boolean> validate(HttpServletRequest request) {
+    public Map<String, Boolean> validate(HttpServletRequest request) throws ServiceException {
         Map<String, Boolean> validationMap = new HashMap<>();
         String login = request.getParameter(Parameters.LOGINREG.getValue());
         String password = request.getParameter(Parameters.PASSWORDREG.getValue());
@@ -86,8 +87,13 @@ public class RegistrationService implements EntityCreator, Serviceable {
         String phone = request.getParameter(Parameters.PHONE.getValue());
         String email = request.getParameter(Parameters.EMAIL.getValue());
         String address = request.getParameter(Parameters.ADDRESS.getValue());
-        validationMap.put(Parameters.LOGINREG.getValue(),
-                RegistrationDataValidator.isValidLogin(login));
+        try {
+            validationMap.put(Parameters.LOGINREG.getValue(),
+                    RegistrationDataValidator.isValidLogin(login));
+        } catch (DaoException | SQLException e) {
+            LOGGER.log(Level.ERROR, "Cannot validate user, exception has occurred.");
+            throw new ServiceException(e);
+        }
         validationMap.put(Parameters.PASSWORDREG.getValue(),
                 (RegistrationDataValidator.isValidPassword(password)
                 && RegistrationDataValidator.isPasswordRepeated(password, passwordRepeated)));

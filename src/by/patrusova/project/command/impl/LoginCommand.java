@@ -6,8 +6,8 @@ import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
-import by.patrusova.project.service.impl.CleanerService;
-import by.patrusova.project.service.impl.ClientService;
+import by.patrusova.project.service.impl.CleanerInfoService;
+import by.patrusova.project.service.impl.ClientInfoService;
 import by.patrusova.project.util.stringholder.Attributes;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.service.impl.LoginService;
@@ -53,19 +53,19 @@ public class LoginCommand implements ActionCommand {
                         break;
                     case "cleaner":
                         session.setAttribute(Attributes.ROLE.getValue(), Attributes.CLEANER.getValue());
-                        CleanerService cleanerService = new CleanerService();
+                        CleanerInfoService cleanerInfoService = new CleanerInfoService();
                         Cleaner cleaner = new Cleaner();
                         cleaner.setIdUser(user.getId());
-                        cleaner = cleanerService.doService(cleaner);
+                        cleaner = cleanerInfoService.doService(cleaner);
                         session.setAttribute(Attributes.CLEANER.getValue(), cleaner);
                         page = ConfigurationManager.getProperty(Pages.PAGE_MAIN_CLEANER.getValue());
                         break;
                     case "client":
                         session.setAttribute(Attributes.ROLE.getValue(), Attributes.CLIENT.getValue());
-                        ClientService clientService = new ClientService();
+                        ClientInfoService clientInfoService = new ClientInfoService();
                         Client client = new Client();
                         client.setIdUser(user.getId());
-                        client = clientService.getClient(client); //ищем по айди клиента в бд
+                        client = clientInfoService.getClient(client); //ищем по айди клиента в бд
                         session.setAttribute(Attributes.CLIENT.getValue(), client);
                         page = ConfigurationManager.getProperty(Pages.PAGE_MAIN_CLIENT.getValue());
                         break;

@@ -2,10 +2,17 @@ package add;
 
 import by.patrusova.project.dao.DaoFactory;
 import by.patrusova.project.dao.impl.ClientDao;
+import by.patrusova.project.dao.impl.UserDao;
+import by.patrusova.project.entity.AbstractEntity;
+import by.patrusova.project.entity.Role;
 import by.patrusova.project.entity.impl.Client;
+import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.DaoException;
+import by.patrusova.project.service.impl.ShowGuestsService;
 import by.patrusova.project.util.stringholder.Attributes;
 import by.patrusova.project.util.stringholder.Parameters;
+import by.patrusova.project.validator.RegistrationDataValidator;
+import by.patrusova.project.validator.StringValidator;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.*;
@@ -13,22 +20,60 @@ import java.sql.SQLException;
 import java.util.*;
 
 public class Main {
-    public Client createEntity(String s, String v) {
-        Client updateClient = new Client();
-        updateClient.setIdUser(4);
-            updateClient.setLocation(s);
-            updateClient.setRelative(v);
 
-        return updateClient;
+    public User createEntity(Map<String, Boolean> map) {
+        User newUser = new User();
+        if (!map.containsValue(false)) {
+            newUser.setId(0);
+            newUser.setLogin("ghhhhhhhh");
+            newUser.setPassword("qwerty");
+            newUser.setRole(String.valueOf(Role.GUEST)); //пока админ не подтвердит регистрацию
+            newUser.setName("qwerty");
+            newUser.setLastname("qwerty");
+            newUser.setPhone(Long.parseLong("1111111111"));
+            newUser.setEmail("ivanov@tut.by");
+            newUser.setAddress("");
+            return newUser;
+        } else {
+            return null;
+        }
     }
-    public static void main(String[] args) throws IOException, SQLException, DaoException {
 
-        Main main = new Main();
-        Client client = main.createEntity("nn", "nn");
-        System.out.println(client);
-        DaoFactory factory = new DaoFactory();
-        ClientDao dao = factory.createClientDao();
-        dao.updateByUser(client);
+    public static void main(String[] args) throws IOException, SQLException, DaoException {
+//        ShowGuestsService service = new ShowGuestsService();
+//        List<User> list = service.doService();
+//        for (User user : list) {
+//            System.out.println(user.getId() + " " + user.getName() + " " + user.getLastname());
+//        }
+
+        Map<String, Boolean> validationMap = new HashMap<>();
+        String login = "ghhhhhhhh";
+        String password = "qwerty";
+        String passwordRepeated = "qwerty";
+        String name = "qwerty";
+        String lastname = "qwerty";
+        String phone = "1111111111";
+        String email = "ivanov@tut.by";
+        String address = "";
+        validationMap.put(Parameters.LOGINREG.getValue(),
+                RegistrationDataValidator.isValidLogin(login));
+        validationMap.put(Parameters.PASSWORDREG.getValue(),
+                (RegistrationDataValidator.isValidPassword(password)
+                        && RegistrationDataValidator.isPasswordRepeated(password, passwordRepeated)));
+        validationMap.put(Parameters.FIRSTNAME.getValue(),
+                StringValidator.isValidStringSize(Parameters.NAME.getValue(), name));
+        validationMap.put(Parameters.LASTNAME.getValue(),
+                StringValidator.isValidStringSize(Parameters.LASTNAME.getValue(), lastname));
+        validationMap.put(Parameters.PHONE.getValue(),
+                RegistrationDataValidator.isValidPhone(phone));
+        validationMap.put(Parameters.EMAIL.getValue(),
+                RegistrationDataValidator.isValidEmail(email)
+                        && StringValidator.isValidStringSize(Parameters.EMAIL.getValue(), email));
+        validationMap.put(Parameters.ADDRESS.getValue(),
+                StringValidator.isValidStringSize(Parameters.ADDRESS.getValue(), address));
+        System.out.println(new Main().createEntity(validationMap));
+
+
 //        System.out.println(Locale.getDefault());
 //        Locale locale = new Locale("en", "EN");
 //        Locale.setDefault(locale);

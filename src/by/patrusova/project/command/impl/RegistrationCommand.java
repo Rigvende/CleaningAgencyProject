@@ -23,14 +23,14 @@ public class RegistrationCommand implements ActionCommand {
     public String execute(HttpServletRequest request) throws CommandException {
         String page;
         RegistrationService service = new RegistrationService();
-        User user = service.createEntity(request);
-        if (user == null) {
-            request.getSession().setAttribute(Attributes.ERROR_REG.getValue(),
-                    MessageManager.getProperty(Messages.MESSAGE_ERROR_REG.getValue()));
-            page = ConfigurationManager.getProperty(Pages.PAGE_REG.getValue());
-            return page;
-        } else {
-            try {
+        try {
+            User user = service.createEntity(request);
+            if (user == null) {
+                request.getSession().setAttribute(Attributes.ERROR_REG.getValue(),
+                        MessageManager.getProperty(Messages.MESSAGE_ERROR_REG.getValue()));
+                page = ConfigurationManager.getProperty(Pages.PAGE_REG.getValue());
+                return page;
+            } else {
                 if (service.doService(user) != null) {
                     request.getSession().setAttribute(Attributes.NEW_USER.getValue(), user);
                     page = ConfigurationManager.getProperty(Pages.PAGE_REG_TRUE.getValue());
@@ -39,10 +39,10 @@ public class RegistrationCommand implements ActionCommand {
                             MessageManager.getProperty(Messages.MESSAGE_ERROR_REG.getValue()));
                     page = ConfigurationManager.getProperty(Pages.PAGE_REG.getValue());
                 }
-            } catch (ServiceException | SQLException e) {
-                LOGGER.log(Level.ERROR, "Exception has occurred while registration was processing.");
-                throw new CommandException(e);
             }
+        } catch (ServiceException | SQLException e) {
+            LOGGER.log(Level.ERROR, "Exception has occurred while registration was processing.");
+            throw new CommandException(e);
         }
         return page;
     }

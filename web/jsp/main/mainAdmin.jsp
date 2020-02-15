@@ -15,7 +15,14 @@
 <h3><fmt:message key="text.main2"/></h3>
 <br/>
 <%--    добавить форму посмотреть заказы с инфой о клиенте, вывести юзеров, вывсести всех клинеров, вывести всех клиентов,
-отправить сообщение, вставить страничку редактирования инфы (удалить, изменить), форму поменять роль --%>
+отправить сообщение, вставить страничку редактирования инфы (удалить, изменить), --%>
+
+<div style="float: right">
+<form name="guestForm" method="post" action="${pageContext.request.contextPath}/controller">
+    <input type="hidden" name="command" value="showguests" />
+    <input type="submit" value="<fmt:message key="button.showguests"/>"/>
+</form>
+</div>
 
 <jsp:include page="/WEB-INF/view/menu.jsp"/>
 <jsp:include page="/WEB-INF/view/footer.jsp"/>

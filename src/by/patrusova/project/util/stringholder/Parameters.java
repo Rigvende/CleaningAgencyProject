@@ -1,7 +1,5 @@
 package by.patrusova.project.util.stringholder;
 
-import javax.xml.stream.Location;
-
 public enum Parameters {
 
     COMMAND("command"),
