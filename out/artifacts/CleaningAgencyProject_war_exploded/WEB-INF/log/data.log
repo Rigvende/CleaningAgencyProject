@@ -1,0 +1,1454 @@
+13:27 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+13:35 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+13:49 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+13:49 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+13:55 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+14:00 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+14:07 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+14:29 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+14:29 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15:25 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15:29 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15:53 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+16:29 FATAL project.connection.PropertyLoader - Cannot find database driver's configuration file.
+16:30 FATAL project.connection.PropertyLoader - Cannot find database driver's configuration file.
+16:30 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+16:36 FATAL project.connection.PropertyLoader - Cannot find database driver's configuration file.
+16:39 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+16:47 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+16:54 FATAL project.connection.PropertyLoader - Cannot find database driver's configuration file.
+17:15 FATAL project.connection.PropertyLoader - Cannot find database driver's configuration file.
+17:15 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+19:15 FATAL project.connection.PropertyLoader - Cannot find database driver's configuration file.
+19:15 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+19:22 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+19:22 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+19:31 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+19:32 FATAL project.connection.PropertyLoader - Cannot find database driver's configuration file.
+19:32 FATAL project.connection.PropertyLoader - Cannot find database driver's configuration file.
+19:33 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+19:37 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+19:39 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+19:40 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+19:49 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+20:04 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+20:09 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+20:14 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+20:15 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+20:17 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+20:18 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+10:22 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+14-02 22:17 INFO  project.filter.LogFilter - Fri Feb 14 22:17:16 MSK 2020 - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+14-02 22:17 INFO  project.filter.LogFilter - Fri Feb 14 22:17:29 MSK 2020 - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+14-02 22:17 INFO  project.filter.LogFilter - Fri Feb 14 22:17:35 MSK 2020 - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+14-02 22:17 INFO  project.filter.LogFilter - Fri Feb 14 22:17:38 MSK 2020 - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+014 14-02 23:21 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+014 14-02 23:21 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+014 14-02 23:21 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+014 14-02 23:21 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+014 14-02 23:21 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+014 14-02 23:21 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+014 14-02 23:21 INFO  project.connection.ProxyConnection - Connection to BD is successful.
+014 14-02 23:21 INFO  project.connection.ProxyConnection - Connection to BD is successful.
+014 14-02 23:21 INFO  project.connection.ProxyConnection - Connection to BD is successful.
+014 14-02 23:21 INFO  project.connection.ProxyConnection - Connection to BD is successful.
+014 14-02 23:21 INFO  project.connection.ProxyConnection - Connection to BD is successful.
+014 14-02 23:21 INFO  project.connection.ProxyConnection - Connection to BD is successful.
+014 14-02 23:21 INFO  project.connection.ProxyConnection - Connection to BD is successful.
+014 14-02 23:21 INFO  project.connection.ProxyConnection - Connection to BD is successful.
+014 14-02 23:21 INFO  project.connection.ProxyConnection - Connection to BD is successful.
+014 14-02 23:21 INFO  project.connection.ProxyConnection - Connection to BD is successful.
+014 14-02 23:21 INFO  project.connection.ProxyConnection - Connection to BD is successful.
+014 14-02 23:21 INFO  project.connection.ProxyConnection - Connection to BD is successful.
+014 14-02 23:21 INFO  project.connection.ProxyConnection - Connection to BD is successful.
+014 14-02 23:21 INFO  project.connection.ProxyConnection - Connection to BD is successful.
+014 14-02 23:21 INFO  project.connection.ProxyConnection - Connection to BD is successful.
+014 14-02 23:21 INFO  project.connection.ProxyConnection - Connection to BD is successful.
+014 14-02 23:21 INFO  project.connection.ProxyConnection - Connection to BD is successful.
+014 14-02 23:21 INFO  project.connection.ProxyConnection - Connection to BD is successful.
+014 14-02 23:21 INFO  project.connection.ProxyConnection - Connection to BD is successful.
+014 14-02 23:21 INFO  project.connection.ProxyConnection - Connection to BD is successful.
+014 14-02 23:21 INFO  project.filter.LogFilter -  - ServletPath :/jsp/login.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/login.jsp
+014 14-02 23:29 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+014 14-02 23:30 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+014 14-02 23:30 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+014 14-02 23:30 INFO  project.filter.LogFilter -  - ServletPath :/jsp/login.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/login.jsp
+014 14-02 23:31 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+014 14-02 23:31 INFO  project.filter.LogFilter -  - ServletPath :/jsp/registration/registrationForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/registration/registrationForm.jsp
+014 14-02 23:31 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+014 14-02 23:31 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+014 14-02 23:32 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+014 14-02 23:32 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+014 14-02 23:32 INFO  project.connection.ProxyConnection - Connection to DB is created successful.
+014 14-02 23:32 INFO  project.connection.ProxyConnection - Connection to DB is created successful.
+014 14-02 23:32 INFO  project.connection.ProxyConnection - Connection to DB is created successful.
+014 14-02 23:32 INFO  project.connection.ProxyConnection - Connection to DB is created successful.
+014 14-02 23:32 INFO  project.connection.ProxyConnection - Connection to DB is created successful.
+014 14-02 23:32 INFO  project.connection.ProxyConnection - Connection to DB is created successful.
+014 14-02 23:32 INFO  project.connection.ProxyConnection - Connection to DB is created successful.
+014 14-02 23:32 INFO  project.connection.ProxyConnection - Connection to DB is created successful.
+014 14-02 23:32 INFO  project.connection.ProxyConnection - Connection to DB is created successful.
+014 14-02 23:32 INFO  project.connection.ProxyConnection - Connection to DB is created successful.
+014 14-02 23:32 INFO  project.connection.ProxyConnection - Connection to DB is created successful.
+014 14-02 23:32 INFO  project.connection.ProxyConnection - Connection to DB is created successful.
+014 14-02 23:32 INFO  project.connection.ProxyConnection - Connection to DB is created successful.
+014 14-02 23:32 INFO  project.connection.ProxyConnection - Connection to DB is created successful.
+014 14-02 23:32 INFO  project.connection.ProxyConnection - Connection to DB is created successful.
+014 14-02 23:32 INFO  project.connection.ProxyConnection - Connection to DB is created successful.
+014 14-02 23:32 INFO  project.connection.ProxyConnection - Connection to DB is created successful.
+014 14-02 23:32 INFO  project.connection.ProxyConnection - Connection to DB is created successful.
+014 14-02 23:32 INFO  project.connection.ProxyConnection - Connection to DB is created successful.
+014 14-02 23:32 INFO  project.connection.ProxyConnection - Connection to DB is created successful.
+014 14-02 23:32 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainCleaner.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainCleaner.jsp
+014 14-02 23:32 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+014 14-02 23:32 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+014 14-02 23:32 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+014 14-02 23:32 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+014 14-02 23:32 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+014 14-02 23:32 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+014 14-02 23:37 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+014 14-02 23:37 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+014 14-02 23:37 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+014 14-02 23:37 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+014 14-02 23:37 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+014 14-02 23:37 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainCleaner.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainCleaner.jsp
+014 14-02 23:37 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+014 14-02 23:37 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainCleaner.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainCleaner.jsp
+014 14-02 23:37 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainCleaner.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainCleaner.jsp
+014 14-02 23:37 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+015 15-02 00:17 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+015 15-02 00:17 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+015 15-02 00:17 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+015 15-02 00:17 INFO  project.filter.LogFilter -  - ServletPath :/jsp/registration/registrationForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/registration/registrationForm.jsp
+015 15-02 00:17 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+015 15-02 00:17 INFO  project.filter.LogFilter -  - ServletPath :/jsp/registration/registrationForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/registration/registrationForm.jsp
+015 15-02 00:18 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+015 15-02 00:18 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 00:18 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+015 15-02 00:18 INFO  project.filter.LogFilter -  - ServletPath :/jsp/registration/registrationTrue.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/registration/registrationTrue.jsp
+015 15-02 00:18 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+015 15-02 09:28 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+015 15-02 09:28 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+015 15-02 09:29 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+015 15-02 09:29 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+015 15-02 09:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 09:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 09:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 09:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 09:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 09:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 09:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 09:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 09:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 09:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 09:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 09:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 09:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 09:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 09:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 09:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 09:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 09:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 09:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 09:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 09:29 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+015 15-02 09:29 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainCleaner.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainCleaner.jsp
+015 15-02 09:29 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+015 15-02 09:29 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+015 15-02 09:29 INFO  project.filter.LogFilter -  - ServletPath :/jsp/login.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/login.jsp
+015 15-02 10:31 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+015 15-02 10:32 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+015 15-02 10:32 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+015 15-02 10:32 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:32 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:32 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:32 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:32 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:32 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:32 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:32 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:32 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:32 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:32 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:32 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:32 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:32 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:32 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:32 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:32 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:32 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:32 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:32 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:32 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+015 15-02 10:32 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+015 15-02 10:32 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+015 15-02 10:34 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@436de1ad
+015 15-02 10:34 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@1a4092c5
+015 15-02 10:38 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+015 15-02 10:38 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+015 15-02 10:38 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+015 15-02 10:38 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:38 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:38 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:38 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:38 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:38 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:38 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:38 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:38 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:38 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:38 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:38 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:38 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:38 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:38 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:38 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:38 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:38 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:38 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:38 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:38 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+015 15-02 10:38 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+015 15-02 10:38 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@62a16a6a
+015 15-02 10:38 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@1c3a056b
+015 15-02 10:38 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+015 15-02 10:54 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+015 15-02 10:54 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+015 15-02 10:54 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+015 15-02 10:55 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+015 15-02 10:55 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+015 15-02 10:55 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+015 15-02 10:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:55 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+015 15-02 10:55 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+015 15-02 10:55 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+015 15-02 10:55 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@45a7a87c
+015 15-02 10:55 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@2085272c
+015 15-02 10:55 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+015 15-02 10:56 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+015 15-02 10:56 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+015 15-02 10:58 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+015 15-02 10:58 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+015 15-02 10:59 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+015 15-02 10:59 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:59 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:59 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:59 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:59 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:59 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:59 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:59 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:59 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:59 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:59 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:59 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:59 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:59 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:59 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:59 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:59 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:59 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:59 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:59 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+015 15-02 10:59 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+015 15-02 10:59 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+015 15-02 10:59 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+015 15-02 14:54 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@44c234ac
+015 15-02 14:54 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@6a124d24
+015 15-02 14:54 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+15-02 14:55 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 14:55 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 14:55 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 14:55 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 14:55 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15-02 14:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 14:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 14:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 14:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 14:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 14:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 14:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 14:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 14:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 14:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 14:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 14:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 14:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 14:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 14:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 14:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 14:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 14:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 14:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 14:55 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 14:55 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+15-02 14:55 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 14:55 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainClient.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainClient.jsp
+15-02 14:55 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 14:55 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 14:55 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 14:55 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeBurialForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeBurialForm.jsp
+15-02 14:55 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 14:55 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:06 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15-02 15:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:06 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+15-02 15:12 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4330ed5b
+15-02 15:12 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@640b3b1e
+15-02 15:12 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+15-02 15:12 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 15:12 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 15:12 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15-02 15:12 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:12 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:12 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:12 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:12 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:12 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:12 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:12 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:12 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:12 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:12 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:12 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:12 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:12 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:12 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:12 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:12 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:12 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:12 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:12 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:12 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+15-02 15:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:12 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainClient.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainClient.jsp
+15-02 15:13 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:13 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:13 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:13 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeBurialForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeBurialForm.jsp
+15-02 15:13 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:13 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:14 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4330ed5b
+15-02 15:14 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@640b3b1e
+15-02 15:14 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+15-02 15:15 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 15:15 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 15:15 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15-02 15:15 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:15 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:15 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:15 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:15 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:15 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:15 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:15 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:15 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:15 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:15 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:15 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:15 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:15 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:15 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:15 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:15 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:15 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:15 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:15 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:15 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+15-02 15:15 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:15 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainClient.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainClient.jsp
+15-02 15:15 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:15 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:15 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:15 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeBurialForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeBurialForm.jsp
+15-02 15:16 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:16 WARN  service.impl.ClientService - createentityClient{id=8, idUser=4, discount=0.00, location='df', relative='fg', notes='глуховата, говорить громче'}
+15-02 15:16 WARN  command.impl.ChangeBurialCommand - client command after createClient{id=8, idUser=4, discount=0.00, location='df', relative='fg', notes='глуховата, говорить громче'}
+15-02 15:16 WARN  dao.impl.ClientDao - daoClient{id=8, idUser=4, discount=0.00, location='df', relative='fg', notes='глуховата, говорить громче'}
+15-02 15:16 WARN  service.impl.ClientService - doserviceClient{id=8, idUser=4, discount=0.00, location='df', relative='fg', notes='глуховата, говорить громче'}
+15-02 15:16 WARN  command.impl.ChangeBurialCommand - client command after doserviceClient{id=8, idUser=4, discount=0.00, location='df', relative='fg', notes='глуховата, говорить громче'}
+15-02 15:16 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:19 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:20 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:20 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:20 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:20 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:20 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:20 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:23 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:23 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:23 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:24 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:24 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:24 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:24 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:24 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:24 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:24 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:24 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:24 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:24 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:24 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:24 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:24 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:24 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:24 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:24 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:24 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:24 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:24 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:24 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:24 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:24 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:24 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:24 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:25 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:25 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeBurialForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeBurialForm.jsp
+15-02 15:25 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:25 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 15:25 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 15:28 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@243fb836
+15-02 15:28 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@519be57b
+15-02 15:28 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+15-02 15:29 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 15:29 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 15:29 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15-02 15:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:29 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:29 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+15-02 15:29 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:29 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainClient.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainClient.jsp
+15-02 15:29 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:29 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:29 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:29 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeBurialForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeBurialForm.jsp
+15-02 15:29 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:29 WARN  service.impl.ClientService - createentityClient{id=8, idUser=4, discount=0.00, location='df', relative='fg', notes='глуховата, говорить громче'}
+15-02 15:29 WARN  command.impl.ChangeBurialCommand - client command after createClient{id=8, idUser=4, discount=0.00, location='df', relative='fg', notes='глуховата, говорить громче'}
+15-02 15:29 WARN  dao.impl.ClientDao - daoClient{id=8, idUser=4, discount=0.00, location='df', relative='fg', notes='глуховата, говорить громче'}
+15-02 15:29 WARN  service.impl.ClientService - doserviceClient{id=8, idUser=4, discount=0.00, location='df', relative='fg', notes='глуховата, говорить громче'}
+15-02 15:29 WARN  command.impl.ChangeBurialCommand - client command after doserviceClient{id=8, idUser=4, discount=0.00, location='df', relative='fg', notes='глуховата, говорить громче'}
+15-02 15:29 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:29 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:29 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeBurialForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeBurialForm.jsp
+15-02 15:33 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15-02 15:33 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:33 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:33 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:33 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:33 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:33 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:33 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:33 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:33 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:33 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:33 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:33 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:33 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:33 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:33 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:33 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:33 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:33 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:33 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:33 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:33 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+15-02 15:33 WARN  dao.impl.ClientDao - daoClient{id=0, idUser=4, discount=null, location='nn', relative='nn', notes='null'}
+15-02 15:39 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4eaaf18d
+15-02 15:39 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@2182ed99
+15-02 15:39 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+15-02 15:39 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 15:39 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 15:40 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15-02 15:40 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:40 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:40 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:40 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:40 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:40 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:40 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:40 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:40 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:40 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:40 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:40 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:40 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:40 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:40 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:40 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:40 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:40 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:40 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:40 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:40 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+15-02 15:40 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:40 INFO  project.filter.LogFilter -  - ServletPath :/jsp/login.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/login.jsp
+15-02 15:40 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:40 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainClient.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainClient.jsp
+15-02 15:40 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:40 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:40 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:40 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeBurialForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeBurialForm.jsp
+15-02 15:40 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:43 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@6bbc4a49
+15-02 15:43 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@19e65b03
+15-02 15:43 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+15-02 15:43 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 15:43 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 15:43 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15-02 15:43 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:43 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:43 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:43 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:43 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:43 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:43 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:43 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:43 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:43 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:43 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:43 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:43 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:43 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:43 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:43 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:43 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:43 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:43 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:43 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:43 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+15-02 15:43 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:43 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainClient.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainClient.jsp
+15-02 15:43 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:43 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:43 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:43 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeBurialForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeBurialForm.jsp
+15-02 15:43 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:43 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:43 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:43 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:47 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4af04c9d
+15-02 15:47 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@2e1749b0
+15-02 15:47 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+15-02 15:48 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 15:48 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 15:48 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15-02 15:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:48 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+15-02 15:48 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:48 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainClient.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainClient.jsp
+15-02 15:48 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:48 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:48 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:48 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeBurialForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeBurialForm.jsp
+15-02 15:48 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:48 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:51 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@2fd715e7
+15-02 15:51 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@61e264b9
+15-02 15:51 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+15-02 15:52 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 15:52 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 15:52 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15-02 15:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:52 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+15-02 15:52 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:52 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainClient.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainClient.jsp
+15-02 15:52 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:52 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:52 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:52 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeBurialForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeBurialForm.jsp
+15-02 15:52 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:52 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:52 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:54 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@11066023
+15-02 15:54 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@57882294
+15-02 15:54 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+15-02 15:54 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 15:54 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 15:54 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15-02 15:54 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:54 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:54 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:54 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:54 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:54 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:54 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:54 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:54 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:54 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:54 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:54 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:54 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:54 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:54 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:54 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:54 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:54 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:54 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:54 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 15:54 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+15-02 15:54 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:54 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainClient.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainClient.jsp
+15-02 15:54 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:54 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:54 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:54 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeBurialForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeBurialForm.jsp
+15-02 15:55 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:55 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:55 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:55 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeBurialForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeBurialForm.jsp
+15-02 15:55 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:55 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 15:55 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 15:55 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 16:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 16:13 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 16:19 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:19 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainCleaner.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainCleaner.jsp
+15-02 16:19 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:19 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:19 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:19 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 16:20 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:20 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:20 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 16:20 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainCleaner.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainCleaner.jsp
+15-02 16:21 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:21 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:21 INFO  project.filter.LogFilter -  - ServletPath :/jsp/login.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/login.jsp
+15-02 16:21 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:21 INFO  project.filter.LogFilter -  - ServletPath :/jsp/login.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/login.jsp
+15-02 16:21 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:21 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:21 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 16:21 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:21 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:21 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:22 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4330ed5b
+15-02 16:22 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@640b3b1e
+15-02 16:22 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+15-02 16:23 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 16:23 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 16:24 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15-02 16:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:24 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+15-02 16:24 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:24 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainCleaner.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainCleaner.jsp
+15-02 16:24 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:24 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainCleaner.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainCleaner.jsp
+15-02 16:30 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@9ce8d22
+15-02 16:30 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@2ea8f463
+15-02 16:30 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+15-02 16:30 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 16:30 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 16:30 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15-02 16:30 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:30 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:30 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:30 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:30 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:30 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:30 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:30 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:30 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:30 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:30 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:30 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:30 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:30 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:30 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:30 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:30 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:30 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:30 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:30 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:30 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+15-02 16:30 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:30 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainCleaner.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainCleaner.jsp
+15-02 16:30 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:31 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainCleaner.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainCleaner.jsp
+15-02 16:31 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:31 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 16:31 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:31 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:31 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainCleaner.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainCleaner.jsp
+15-02 16:31 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:31 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:31 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 16:31 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:31 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeForm.jsp
+15-02 16:31 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:31 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:31 INFO  project.filter.LogFilter -  - ServletPath :/jsp/registration/registrationForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/registration/registrationForm.jsp
+15-02 16:32 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:32 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:32 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:32 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:32 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:32 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:32 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:32 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:32 INFO  project.filter.LogFilter -  - ServletPath :/jsp/registration/registrationForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/registration/registrationForm.jsp
+15-02 16:32 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:32 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:40 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@6c07e362
+15-02 16:40 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@5510664f
+15-02 16:40 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+15-02 16:41 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 16:41 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 16:41 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15-02 16:41 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:41 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:41 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:41 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:41 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:41 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:41 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:41 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:41 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:41 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:41 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:41 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:41 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:41 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:41 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:41 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:41 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:41 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:41 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:41 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:41 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+15-02 16:41 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:41 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:41 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 16:42 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@7f259e17
+15-02 16:42 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@2648b27a
+15-02 16:42 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+15-02 16:42 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 16:42 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 16:44 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 16:44 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 16:47 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 16:47 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 16:47 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15-02 16:47 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:47 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:47 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:47 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:47 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:47 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:47 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:47 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:47 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:47 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:47 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:47 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:47 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:47 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:47 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:47 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:47 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:47 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:47 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:47 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:47 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+15-02 16:47 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:47 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:47 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:47 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:47 INFO  project.filter.LogFilter -  - ServletPath :/jsp/registration/registrationForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/registration/registrationForm.jsp
+15-02 16:48 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:48 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainCleaner.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainCleaner.jsp
+15-02 16:48 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:48 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainCleaner.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainCleaner.jsp
+15-02 16:48 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainCleaner.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainCleaner.jsp
+15-02 16:48 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@1fd2ec70
+15-02 16:48 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@1bfdd73c
+15-02 16:48 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+15-02 16:49 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 16:49 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 16:49 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15-02 16:49 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:49 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:49 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:49 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:49 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:49 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:49 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:49 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:49 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:49 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:49 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:49 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:49 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:49 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:49 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:49 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:49 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:49 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:49 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:49 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 16:49 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+15-02 16:49 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:49 INFO  project.filter.LogFilter -  - ServletPath :/jsp/registration/registrationForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/registration/registrationForm.jsp
+15-02 16:49 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 16:49 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:02 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@3b2449f9
+15-02 17:02 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@8d1df88
+15-02 17:02 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+15-02 17:02 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 17:02 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 17:03 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15-02 17:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:03 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+15-02 17:03 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:03 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainAdmin.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainAdmin.jsp
+15-02 17:03 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:03 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 17:03 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:03 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeForm.jsp
+15-02 17:03 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:04 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:04 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 17:04 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:04 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeForm.jsp
+15-02 17:07 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@11066023
+15-02 17:07 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@57882294
+15-02 17:07 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+15-02 17:07 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 17:07 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 17:07 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15-02 17:07 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:07 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:07 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:07 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:07 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:07 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:07 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:07 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:07 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:07 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:07 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:07 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:07 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:07 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:07 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:07 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:07 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:07 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:07 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:07 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:07 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+15-02 17:07 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:07 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainAdmin.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainAdmin.jsp
+15-02 17:08 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:08 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 17:08 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:08 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeInfoForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeInfoForm.jsp
+15-02 17:08 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeInfoForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeInfoForm.jsp
+15-02 17:08 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:08 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:08 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:08 ERROR dao.impl.UserDao - Cannot add user. Request to table failed.
+15-02 17:08 ERROR service.impl.UserService - Cannot update user's info, exception has occurred.
+15-02 17:08 ERROR command.impl.ChangeInfoCommand - Exception has occurred while changing client info was processing.
+15-02 17:08 ERROR project.servlet.ControlServlet - Processing request failed.
+15-02 17:08 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:08 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:08 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 17:08 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:08 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeInfoForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeInfoForm.jsp
+15-02 17:09 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeInfoForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeInfoForm.jsp
+15-02 17:09 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:09 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:09 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:09 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeInfoForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeInfoForm.jsp
+15-02 17:09 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 17:09 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:09 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:09 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:09 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeInfoForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeInfoForm.jsp
+15-02 17:10 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:10 ERROR dao.impl.UserDao - Cannot add user. Request to table failed.
+15-02 17:10 ERROR service.impl.UserService - Cannot update user's info, exception has occurred.
+15-02 17:10 ERROR command.impl.ChangeInfoCommand - Exception has occurred while changing client info was processing.
+15-02 17:10 ERROR project.servlet.ControlServlet - Processing request failed.
+15-02 17:10 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:10 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:10 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:10 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:11 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:13 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:13 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:13 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:13 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:13 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:13 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:13 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:13 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 17:13 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 17:13 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:13 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 17:13 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:13 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeInfoForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeInfoForm.jsp
+15-02 17:13 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:13 ERROR dao.impl.UserDao - Cannot add user. Request to table failed.
+15-02 17:13 ERROR service.impl.UserService - Cannot update user's info, exception has occurred.
+15-02 17:13 ERROR command.impl.ChangeInfoCommand - Exception has occurred while changing client info was processing.
+15-02 17:13 ERROR project.servlet.ControlServlet - Processing request failed.
+15-02 17:13 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:18 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:18 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 17:19 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4b2bcba3
+15-02 17:19 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@6a28e4b5
+15-02 17:19 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+15-02 17:20 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 17:20 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 17:20 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15-02 17:20 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:20 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:20 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:20 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:20 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:20 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:20 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:20 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:20 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:20 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:20 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:20 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:20 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:20 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:20 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:20 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:20 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:20 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:20 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:20 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:20 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+15-02 17:20 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:20 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainAdmin.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainAdmin.jsp
+15-02 17:20 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:20 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 17:20 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:20 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeInfoForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeInfoForm.jsp
+15-02 17:21 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:21 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 17:23 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@6c07e362
+15-02 17:23 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@5510664f
+15-02 17:23 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+15-02 17:23 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 17:23 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 17:24 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15-02 17:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:24 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:24 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+15-02 17:24 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:24 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainAdmin.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainAdmin.jsp
+15-02 17:24 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:24 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 17:24 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:24 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeInfoForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeInfoForm.jsp
+15-02 17:24 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:24 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 17:24 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:24 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:44 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:44 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainCleaner.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainCleaner.jsp
+15-02 17:45 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:45 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 17:45 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:45 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeInfoForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeInfoForm.jsp
+15-02 17:45 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:45 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 17:45 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:45 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeInfoForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeInfoForm.jsp
+15-02 17:46 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@72657349
+15-02 17:46 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@1fb3820c
+15-02 17:46 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+15-02 17:46 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 17:48 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 17:48 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 17:48 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15-02 17:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:48 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:48 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+15-02 17:48 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:48 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainCleaner.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainCleaner.jsp
+15-02 17:48 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:48 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 17:48 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:48 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeInfoForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeInfoForm.jsp
+15-02 17:48 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:48 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 17:51 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@6a5ed304
+15-02 17:51 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@5c730f70
+15-02 17:51 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+15-02 17:52 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 17:52 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 17:52 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15-02 17:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:52 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 17:52 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+15-02 17:52 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:52 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainCleaner.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainCleaner.jsp
+15-02 17:52 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:52 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainCleaner.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainCleaner.jsp
+15-02 17:52 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:52 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 17:52 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:52 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeInfoForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeInfoForm.jsp
+15-02 17:52 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:52 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 17:52 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:52 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeInfoForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeInfoForm.jsp
+15-02 17:52 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 17:52 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 18:02 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@70a03bc1
+15-02 18:02 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@e656d20
+15-02 18:02 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+15-02 18:02 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 18:03 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 18:03 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15-02 18:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 18:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 18:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 18:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 18:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 18:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 18:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 18:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 18:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 18:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 18:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 18:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 18:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 18:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 18:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 18:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 18:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 18:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 18:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 18:03 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+15-02 18:03 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+15-02 18:03 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 18:03 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainCleaner.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainCleaner.jsp
+15-02 18:03 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 18:03 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 18:03 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 18:03 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeInfoForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeInfoForm.jsp
+15-02 18:03 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 18:03 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 18:03 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 18:03 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeInfoForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeInfoForm.jsp
+15-02 18:03 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 18:03 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeInfoForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeInfoForm.jsp
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeInfoForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeInfoForm.jsp
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeInfoForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeInfoForm.jsp
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 18:04 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeInfoForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeInfoForm.jsp
+15-02 18:05 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+15-02 18:12 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@423d754e
+15-02 18:12 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@2f6922fa
+15-02 18:12 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+15-02 18:12 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+15-02 18:12 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/

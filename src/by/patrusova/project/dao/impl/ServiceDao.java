@@ -3,7 +3,7 @@ package by.patrusova.project.dao.impl;
 import by.patrusova.project.connection.ProxyConnection;
 import by.patrusova.project.dao.AbstractDao;
 import by.patrusova.project.entity.AbstractEntity;
-import by.patrusova.project.entity.EntityFactory;
+import by.patrusova.project.dao.EntityFactory;
 import by.patrusova.project.entity.impl.Service;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.util.stringholder.PreparedStatements;

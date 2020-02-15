@@ -38,11 +38,9 @@ public class PreparedStatements {
     private final static String SQL_CREATE_CLEANER_BY_ADMIN = "INSERT INTO cleaners " +
             "VALUES (0, ?, null, null)";
     private final static String SQL_UPDATE_USER = "UPDATE users SET name = ?, lastname = ?, phone = ?, " +
-            "email = ?, address = ? WHERE login = ?";
-    private final static String SQL_UPDATE_USER_CLIENT = "UPDATE users JOIN clients " +
-            "ON users.id_user = clients.id_user SET users.name = ?, users.lastname = ?, " +
-            "users.phone = ?, users.email = ?, users.address = ?, clients.location = ?, " +
-            "clients.relative = ? WHERE users.login = ?";
+            "email = ?, address = ? WHERE id_user = ?";
+    private final static String SQL_UPDATE_CLIENT_BY_USER = "UPDATE clients " +
+            "SET location = ?, relative = ? WHERE id_user = ?";
     private final static String SQL_UPDATE_CLEANER_BY_ADMIN = "UPDATE cleaners " +
             "SET commission = ?, notes = ? WHERE id_user = ?";
     private final static String SQL_UPDATE_CLIENT_BY_ADMIN = "UPDATE clients " +
@@ -81,7 +79,7 @@ public class PreparedStatements {
             PreparedStatement statement9 = connection.prepareStatement(SQL_CREATE_CLIENT_BY_ADMIN);
             PreparedStatement statement10= connection.prepareStatement(SQL_CREATE_CLEANER_BY_ADMIN);
             PreparedStatement statement11 = connection.prepareStatement(SQL_UPDATE_USER);
-            PreparedStatement statement12 = connection.prepareStatement(SQL_UPDATE_USER_CLIENT);
+            PreparedStatement statement12 = connection.prepareStatement(SQL_UPDATE_CLIENT_BY_USER);
             PreparedStatement statement13 = connection.prepareStatement(SQL_UPDATE_CLEANER_BY_ADMIN);
             PreparedStatement statement14 = connection.prepareStatement(SQL_UPDATE_CLIENT_BY_ADMIN);
             PreparedStatement statement15 = connection.prepareStatement(SQL_DELETE_CLEANER);
@@ -111,7 +109,7 @@ public class PreparedStatements {
             statements.put("create_client", statement9);
             statements.put("create_cleaner", statement10);
             statements.put("update_user", statement11);
-            statements.put("update_user_client", statement12);
+            statements.put("update_client_user", statement12);
             statements.put("update_cleaner_admin", statement13);
             statements.put("update_client_admin", statement14);
             statements.put("delete_cleaner", statement15);

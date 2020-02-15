@@ -3,7 +3,7 @@ package by.patrusova.project.dao.impl;
 import by.patrusova.project.connection.ProxyConnection;
 import by.patrusova.project.dao.AbstractDao;
 import by.patrusova.project.entity.AbstractEntity;
-import by.patrusova.project.entity.EntityFactory;
+import by.patrusova.project.dao.EntityFactory;
 import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.DaoException;
@@ -22,7 +22,7 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
     private final static String DELETE = "delete_client";
     private final static String UPDATE = "update_client_admin";
     private final static String FIND_ENTITY = "find_client";
-    private final static String UPDATE_CLIENT = "update_user_client";
+    private final static String UPDATE_CLIENT = "update_client_user";
     private static final String SQL_SELECT_ALL_CLIENTS =
             "SELECT id_client, id_user, discount, location, " +
                     "relative, notes FROM clients";
@@ -155,22 +155,16 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
         return client;
     }
 
-    public boolean updateByUser(AbstractEntity entity1, AbstractEntity entity2) throws DaoException, SQLException {
+    public boolean updateByUser(AbstractEntity entity) throws DaoException, SQLException {
         connection.setAutoCommit(false);
         boolean isUpdated;
-        User user = (User) entity1;
-        Client client = (Client) entity2;
+        Client client = (Client) entity;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = PreparedStatements.useStatements(connection).get(UPDATE_CLIENT);
-            preparedStatement.setString(1, user.getName());
-            preparedStatement.setString(2, user.getLastname());
-            preparedStatement.setLong(3, user.getPhone());
-            preparedStatement.setString(4, user.getEmail());
-            preparedStatement.setString(5, user.getAddress());
-            preparedStatement.setString(6, client.getLocation());
-            preparedStatement.setString(7, client.getRelative());
-            preparedStatement.setString(8, user.getLogin());
+            preparedStatement.setString(1, client.getLocation());
+            preparedStatement.setString(2, client.getRelative());
+            preparedStatement.setLong(3, client.getIdUser());
             isUpdated = preparedStatement.execute();
             connection.commit();
         } catch (SQLException | DaoException e) {

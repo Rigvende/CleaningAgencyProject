@@ -2,7 +2,6 @@ package by.patrusova.project.validator;
 
 import by.patrusova.project.entity.Role;
 import by.patrusova.project.entity.impl.Order;
-import by.patrusova.project.entity.impl.User;
 
 public class StringValidator {
 

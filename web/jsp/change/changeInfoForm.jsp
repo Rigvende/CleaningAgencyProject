@@ -1,8 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=utf8" pageEncoding="utf8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<fmt:setBundle basename="message"/>
 
 <html>
 <head>
-    <title>Change Info</title>
+    <title><fmt:message key="title.change"/></title>
 </head>
 
 <body>
@@ -10,36 +14,41 @@
 
 <br/>
 <form name="changeForm" method="POST" action="${pageContext.request.contextPath}/controller">
-    Change all fields below you want.
+    <fmt:message key="text.change1"/>
     <hr/>
     <input type="hidden" name="command" value="changeinfo" />
-    <br/>Name:<br/>
+    <br/><fmt:message key="field.name1"/><br/>
     <label>
-        <input type="text" name="firstname" value=""/>
+        <input type="text" name="firstname" value="${user.name}"/>
     </label>
-    <br/>Lastname:<br/>
+    <br/><fmt:message key="field.lastname1"/><br/>
     <label>
-        <input type="password" name="lastname" value=""/>
+        <input type="text" name="lastname" value="${user.lastname}"/>
     </label>
-    <br/>Phone:<br/>
+    <br/><fmt:message key="field.phone1"/><br/>
     <label>
-        <input type="number" name="phone" value=""/>
+        <input type="number" name="phone" value="${user.phone}"/>
     </label>
-    <br/>E-mail:<br/>
+    <br/><fmt:message key="field.email1"/><br/>
     <label>
-        <input type="text" name="email" value=""/>
+        <input type="text" name="email" value="${user.email}"/>
     </label>
-    <br/>Address:<br/>
+    <br/><fmt:message key="field.address"/><br/>
     <label>
-        <input type="text" name="address" value=""/>
+        <input type="text" name="address" value="${user.address}"/>
     </label>
     <div style="color: crimson">${errorChangeMessage}</div>
     ${wrongAction}
     ${nullPage}
     <br/>
     <br/>
-    <input type="submit" value="Change info"/>
+    <input type="submit" value="<fmt:message key="button.change"/>"/>
 </form>
+
+<jsp:include page="/WEB-INF/view/backToMain.jsp"/>
+<br/>
+<br/>
+<br/>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

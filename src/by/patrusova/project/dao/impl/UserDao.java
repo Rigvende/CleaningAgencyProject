@@ -4,7 +4,7 @@ import by.patrusova.project.util.stringholder.PreparedStatements;
 import by.patrusova.project.connection.ProxyConnection;
 import by.patrusova.project.dao.AbstractDao;
 import by.patrusova.project.entity.AbstractEntity;
-import by.patrusova.project.entity.EntityFactory;
+import by.patrusova.project.dao.EntityFactory;
 import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.DaoException;
 import org.apache.logging.log4j.Level;
@@ -97,9 +97,9 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             preparedStatement.setString(1, user.getName());
             preparedStatement.setString(2, user.getLastname());
             preparedStatement.setLong(3, user.getPhone());
-            preparedStatement.setString(4, user.getEmail());
             preparedStatement.setString(5, user.getAddress());
-            preparedStatement.setString(6, user.getLogin());
+            preparedStatement.setString(4, user.getEmail());
+            preparedStatement.setLong(6, user.getId());
             isUpdated = preparedStatement.execute();
             connection.commit();
         } catch (SQLException | DaoException e) {

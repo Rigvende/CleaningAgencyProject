@@ -1,19 +1,40 @@
 package add;
 
+import by.patrusova.project.dao.DaoFactory;
+import by.patrusova.project.dao.impl.ClientDao;
+import by.patrusova.project.entity.impl.Client;
+import by.patrusova.project.exception.DaoException;
+import by.patrusova.project.util.stringholder.Attributes;
+import by.patrusova.project.util.stringholder.Parameters;
+
+import javax.servlet.http.HttpServletRequest;
 import java.io.*;
 import java.sql.SQLException;
 import java.util.*;
 
 public class Main {
+    public Client createEntity(String s, String v) {
+        Client updateClient = new Client();
+        updateClient.setIdUser(4);
+            updateClient.setLocation(s);
+            updateClient.setRelative(v);
 
-    public static void main(String[] args) throws IOException, SQLException {
+        return updateClient;
+    }
+    public static void main(String[] args) throws IOException, SQLException, DaoException {
 
-        System.out.println(Locale.getDefault());
+        Main main = new Main();
+        Client client = main.createEntity("nn", "nn");
+        System.out.println(client);
+        DaoFactory factory = new DaoFactory();
+        ClientDao dao = factory.createClientDao();
+        dao.updateByUser(client);
+//        System.out.println(Locale.getDefault());
 //        Locale locale = new Locale("en", "EN");
 //        Locale.setDefault(locale);
 //        System.out.println(Locale.getDefault());
-        String s = "Hello";
-        System.out.println(s.substring(3));
+//        String s = "Hello";
+//        System.out.println(s.substring(3));
 
 
 //        File f = new File("src/resources/connectionDB.properties");

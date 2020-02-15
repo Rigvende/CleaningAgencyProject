@@ -19,11 +19,11 @@
     <input type="hidden" name="command" value="changeburial" />
     <br/><fmt:message key="field.location"/><br/>
     <label>
-        <input type="text" name="location" value=""/>
+        <input type="text" name="location" value="${client.location}"/>
     </label>
     <br/><fmt:message key="field.relative"/><br/>
     <label>
-        <input type="text" name="relative" value=""/>
+        <input type="text" name="relative" value="${client.relative}"/>
     </label>
     <div style="color: crimson">${errorChangeMessage}</div>
     ${wrongAction}
@@ -32,6 +32,11 @@
     <br/>
     <input type="submit" value="<fmt:message key="button.changeloc"/>"/>
 </form>
+
+<jsp:include page="/WEB-INF/view/backToMain.jsp"/>
+<br/>
+<br/>
+<br/>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

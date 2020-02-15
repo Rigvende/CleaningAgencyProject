@@ -1,16 +1,10 @@
-package by.patrusova.project.entity;
+package by.patrusova.project.dao;
 
 import by.patrusova.project.dao.column.*;
 import by.patrusova.project.entity.impl.*;
 import by.patrusova.project.exception.DaoException;
-import by.patrusova.project.validator.NumberValidator;
-import by.patrusova.project.validator.RegistrationDataValidator;
-import by.patrusova.project.validator.StringValidator;
-
-import javax.servlet.http.HttpServletRequest;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.*;
 
 public class EntityFactory {
 

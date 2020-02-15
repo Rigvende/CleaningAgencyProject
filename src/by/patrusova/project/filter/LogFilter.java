@@ -4,7 +4,6 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.io.IOException;
-import java.util.Date;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -19,15 +18,8 @@ public class LogFilter implements Filter {
 
     private final static Logger LOGGER = LogManager.getLogger();
 
-    public LogFilter() {
-    }
-
     @Override
     public void init(FilterConfig fConfig) {
-    }
-
-    @Override
-    public void destroy() {
     }
 
     @Override
@@ -37,5 +29,9 @@ public class LogFilter implements Filter {
         String servletPath = request.getServletPath();
         LOGGER.log(Level.INFO, " - ServletPath :" + servletPath + ", URL =" + request.getRequestURL());
         filterChain.doFilter(servletRequest, servletResponse);
+    }
+
+    @Override
+    public void destroy() {
     }
 }
