@@ -5,8 +5,7 @@ import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.DaoException;
-import by.patrusova.project.exception.ServiceException;
-import by.patrusova.project.service.impl.ShowGuestsService;
+import by.patrusova.project.service.impl.ShowService;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.util.MessageManager;
 import by.patrusova.project.util.stringholder.Attributes;
@@ -17,6 +16,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ShowGuestsCommand implements ActionCommand {
@@ -26,11 +26,15 @@ public class ShowGuestsCommand implements ActionCommand {
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
         String page;
-        ShowGuestsService service = new ShowGuestsService();
+        ShowService service = new ShowService();
         try {
-            List<User> list = service.doService();
+            List<AbstractEntity> list = service.doService(Attributes.GUEST.getValue());
             if (list.size() != 0) {
-                request.getSession().setAttribute(Attributes.GUEST_LIST.getValue(), list);
+                List<User> users = new ArrayList<>();
+                for (AbstractEntity entity : list) {
+                    users.add((User) entity);
+                }
+                request.getSession().setAttribute(Attributes.GUEST_LIST.getValue(), users);
                 page = ConfigurationManager.getProperty(Pages.PAGE_GUESTLIST.getValue());
             } else {
                 request.getSession().setAttribute(Attributes.EMPTY_LIST.getValue(),

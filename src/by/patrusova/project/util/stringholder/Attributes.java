@@ -12,11 +12,18 @@ public enum Attributes {
     CLIENT("client"),
     GUEST("guest"),
     USER("user"),
+    ORDER("order"),
+    CATALOGUE("catalogue"),
     ERROR_REG("errorRegistrationMessage"),
     ERROR_CHANGE("errorChangeMessage"),
     MAIL("mail"),
     NEW_USER("newuser"),
-    GUEST_LIST("guestList");
+    GUEST_LIST("guestList"),
+    ADMIN_LIST("adminList"),
+    CLIENT_LIST("clientList"),
+    CLEANER_LIST("cleanerList"),
+    ORDER_LIST("orderList"),
+    CATALOGUE_LIST("catalogueList");
 
     private String value;
 

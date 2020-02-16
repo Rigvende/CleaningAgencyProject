@@ -79,9 +79,64 @@ public enum CommandEnum {
             this.command = new ShowGuestsCommand();
         }
     },
+    SHOWADMINS {
+        {
+            this.command = new ShowAdminsCommand();
+        }
+    },
+    SHOWCATALOGUE {
+        {
+            this.command = new ShowCatalogueCommand();
+        }
+    },
+    SHOWCLEANERS {
+        {
+            this.command = new ShowCleanersCommand();
+        }
+    },
+    SHOWCLIENTS {
+        {
+            this.command = new ShowClientsCommand();
+        }
+    },
+    SHOWORDERS {
+        {
+            this.command = new ShowOrdersCommand();
+        }
+    },
     CHANGEGUEST {
         {
             this.command = new ChangeGuestCommand();
+        }
+    },
+    CHANGECLIENT {
+        {
+            this.command = new ChangeClientCommand();
+        }
+    },
+    CHANGECLEANER {
+        {
+            this.command = new ChangeCleanerCommand();
+        }
+    },
+    CHANGEORDER {
+        {
+            this.command = new ChangeOrderCommand();
+        }
+    },
+    CHANGESERVICE {
+        {
+            this.command = new ChangeServiceCommand();
+        }
+    },
+    DELETEENTITY {
+        {
+            this.command = new DeleteEntityCommand();
+        }
+    },
+    ADDENTITY{
+        {
+            this.command = new AddEntityCommand();
         }
     },
     MAIL {

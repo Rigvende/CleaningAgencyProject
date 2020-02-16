@@ -1,17 +1,33 @@
 <component name="ProjectDictionaryState">
   <dictionary name="Администратор">
     <words>
+      <w>addcost</w>
+      <w>adddiscount</w>
+      <w>addentity</w>
+      <w>addservice</w>
+      <w>adminlist</w>
       <w>backtomain</w>
+      <w>cataloguelist</w>
       <w>changeburial</w>
       <w>changeburialform</w>
       <w>changeburialredirect</w>
+      <w>changecleaner</w>
+      <w>changeclient</w>
       <w>changeerror</w>
       <w>changeform</w>
       <w>changeguest</w>
       <w>changeinfo</w>
       <w>changeloc</w>
+      <w>changeorder</w>
       <w>changeredirect</w>
+      <w>changeservice</w>
+      <w>cleanerlist</w>
+      <w>clientlist</w>
       <w>customtags</w>
+      <w>deletecleaner</w>
+      <w>deleteclient</w>
+      <w>deleteentity</w>
+      <w>deletservice</w>
       <w>deregistered</w>
       <w>deregistering</w>
       <w>firstname</w>
@@ -30,6 +46,7 @@
       <w>newuser</w>
       <w>notregistered</w>
       <w>nullpage</w>
+      <w>orderlist</w>
       <w>passwordagain</w>
       <w>passwordreg</w>
       <w>patrusova</w>
@@ -43,8 +60,14 @@
       <w>regredirect</w>
       <w>resultset</w>
       <w>sendto</w>
+      <w>showadmines</w>
+      <w>showadmins</w>
+      <w>showcleaners</w>
+      <w>showclients</w>
       <w>showguest</w>
       <w>showguests</w>
+      <w>showorders</w>
+      <w>showservices</w>
       <w>smtp</w>
       <w>wrongaction</w>
     </words>

@@ -10,6 +10,7 @@ import by.patrusova.project.exception.DaoException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,14 +23,14 @@ public class UserDao extends AbstractDao<AbstractEntity> {
     private final static String UPDATE = "update_user";
     private final static String FIND_ENTITY = "find_user";
     private final static String CHECK_LOGIN = "check_login";
+    private final static String FIND_USERS = "find_role";
+    private final static String FIND_CLIENTS = "find_role_client";
+    private final static String FIND_CLEANERS = "find_role_cleaner";
     private static final String SQL_SELECT_ALL_USERS =
             "SELECT id_user, login, password, role, name, " +
                     "lastname, phone, address, email FROM users";
     private final static String SQL_SELECT_LOGIN =
             "SELECT login FROM users";
-    private final static String SQL_FIND_GUESTS =
-            "SELECT id_user, login, password, role, name, lastname, " +
-                    "phone, address, email FROM users WHERE role = 'guest'";
 
     public UserDao(ProxyConnection connection) {
         super(connection);
@@ -215,13 +216,26 @@ public class UserDao extends AbstractDao<AbstractEntity> {
         return false;
     }
 
-    public List<User> findGuests() throws DaoException, SQLException {
+    public List<AbstractEntity> findUsersByRole(String role) throws DaoException, SQLException {
         connection.setAutoCommit(false);
-        List<User> users = new ArrayList<>();
-        Statement statement = null;
+        List<AbstractEntity> users = new ArrayList<>();
+        PreparedStatement preparedStatement = null;
         try {
-            statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(SQL_FIND_GUESTS);
+            switch (role) {
+                case "cleaner":
+                    preparedStatement = PreparedStatements.useStatements(connection).get(FIND_CLEANERS);
+                    break;
+                case "client":
+                    preparedStatement = PreparedStatements.useStatements(connection).get(FIND_CLIENTS);
+                    break;
+                case "guest":
+                case "admin":
+                default:
+                    preparedStatement = PreparedStatements.useStatements(connection).get(FIND_USERS);
+                    break;
+            }
+            preparedStatement.setString(1, role);
+            ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 User user = EntityFactory.createUser(resultSet);
                 users.add(user);
@@ -234,7 +248,7 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
             throw new DaoException(e);
         } finally {
-            closeStatement(statement);
+            closeStatement(preparedStatement);
         }
         return users;
     }

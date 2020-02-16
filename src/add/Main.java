@@ -1,43 +1,35 @@
 package add;
 
-import by.patrusova.project.dao.DaoFactory;
-import by.patrusova.project.dao.impl.ClientDao;
-import by.patrusova.project.dao.impl.UserDao;
-import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.Role;
-import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.DaoException;
-import by.patrusova.project.service.impl.ShowGuestsService;
-import by.patrusova.project.util.stringholder.Attributes;
 import by.patrusova.project.util.stringholder.Parameters;
 import by.patrusova.project.validator.RegistrationDataValidator;
 import by.patrusova.project.validator.StringValidator;
 
-import javax.servlet.http.HttpServletRequest;
 import java.io.*;
 import java.sql.SQLException;
 import java.util.*;
 
 public class Main {
 
-    public User createEntity(Map<String, Boolean> map) {
-        User newUser = new User();
-        if (!map.containsValue(false)) {
-            newUser.setId(0);
-            newUser.setLogin("ghhhhhhhh");
-            newUser.setPassword("qwerty");
-            newUser.setRole(String.valueOf(Role.GUEST)); //пока админ не подтвердит регистрацию
-            newUser.setName("qwerty");
-            newUser.setLastname("qwerty");
-            newUser.setPhone(Long.parseLong("1111111111"));
-            newUser.setEmail("ivanov@tut.by");
-            newUser.setAddress("");
-            return newUser;
-        } else {
-            return null;
-        }
-    }
+//    public User createEntity(Map<String, Boolean> map) {
+//        User newUser = new User();
+//        if (!map.containsValue(false)) {
+//            newUser.setId(0);
+//            newUser.setLogin("ghhhhhhhh");
+//            newUser.setPassword("qwerty");
+//            newUser.setRole(String.valueOf(Role.GUEST)); //пока админ не подтвердит регистрацию
+//            newUser.setName("qwerty");
+//            newUser.setLastname("qwerty");
+//            newUser.setPhone(Long.parseLong("1111111111"));
+//            newUser.setEmail("ivanov@tut.by");
+//            newUser.setAddress("");
+//            return newUser;
+//        } else {
+//            return null;
+//        }
+//    }
 
     public static void main(String[] args) throws IOException, SQLException, DaoException {
 //        ShowGuestsService service = new ShowGuestsService();
@@ -46,40 +38,43 @@ public class Main {
 //            System.out.println(user.getId() + " " + user.getName() + " " + user.getLastname());
 //        }
 
-        Map<String, Boolean> validationMap = new HashMap<>();
-        String login = "ghhhhhhhh";
-        String password = "qwerty";
-        String passwordRepeated = "qwerty";
-        String name = "qwerty";
-        String lastname = "qwerty";
-        String phone = "1111111111";
-        String email = "ivanov@tut.by";
-        String address = "";
-        validationMap.put(Parameters.LOGINREG.getValue(),
-                RegistrationDataValidator.isValidLogin(login));
-        validationMap.put(Parameters.PASSWORDREG.getValue(),
-                (RegistrationDataValidator.isValidPassword(password)
-                        && RegistrationDataValidator.isPasswordRepeated(password, passwordRepeated)));
-        validationMap.put(Parameters.FIRSTNAME.getValue(),
-                StringValidator.isValidStringSize(Parameters.NAME.getValue(), name));
-        validationMap.put(Parameters.LASTNAME.getValue(),
-                StringValidator.isValidStringSize(Parameters.LASTNAME.getValue(), lastname));
-        validationMap.put(Parameters.PHONE.getValue(),
-                RegistrationDataValidator.isValidPhone(phone));
-        validationMap.put(Parameters.EMAIL.getValue(),
-                RegistrationDataValidator.isValidEmail(email)
-                        && StringValidator.isValidStringSize(Parameters.EMAIL.getValue(), email));
-        validationMap.put(Parameters.ADDRESS.getValue(),
-                StringValidator.isValidStringSize(Parameters.ADDRESS.getValue(), address));
-        System.out.println(new Main().createEntity(validationMap));
+//        Map<String, Boolean> validationMap = new HashMap<>();
+//        String login = "ghhhhhhhh";
+//        String password = "qwerty";
+//        String passwordRepeated = "qwerty";
+//        String name = "qwerty";
+//        String lastname = "qwerty";
+//        String phone = "1111111111";
+//        String email = "ivanov@tut.by";
+//        String address = "";
+//        validationMap.put(Parameters.LOGINREG.getValue(),
+//                RegistrationDataValidator.isValidLogin(login));
+//        validationMap.put(Parameters.PASSWORDREG.getValue(),
+//                (RegistrationDataValidator.isValidPassword(password)
+//                        && RegistrationDataValidator.isPasswordRepeated(password, passwordRepeated)));
+//        validationMap.put(Parameters.FIRSTNAME.getValue(),
+//                StringValidator.isValidStringSize(Parameters.NAME.getValue(), name));
+//        validationMap.put(Parameters.LASTNAME.getValue(),
+//                StringValidator.isValidStringSize(Parameters.LASTNAME.getValue(), lastname));
+//        validationMap.put(Parameters.PHONE.getValue(),
+//                RegistrationDataValidator.isValidPhone(phone));
+//        validationMap.put(Parameters.EMAIL.getValue(),
+//                RegistrationDataValidator.isValidEmail(email)
+//                        && StringValidator.isValidStringSize(Parameters.EMAIL.getValue(), email));
+//        validationMap.put(Parameters.ADDRESS.getValue(),
+//                StringValidator.isValidStringSize(Parameters.ADDRESS.getValue(), address));
+//        System.out.println(new Main().createEntity(validationMap));
+//
+//List<User> list = new ArrayList<>();
+//for (User user : list){
+//    System.out.println(user);
+//}
 
 
-//        System.out.println(Locale.getDefault());
-//        Locale locale = new Locale("en", "EN");
-//        Locale.setDefault(locale);
-//        System.out.println(Locale.getDefault());
-//        String s = "Hello";
-//        System.out.println(s.substring(3));
+        System.out.println(Locale.getDefault());
+        Locale locale = new Locale("en", "EN");
+        Locale.setDefault(locale);
+        System.out.println(locale.toString());
 
 
 //        File f = new File("src/resources/connectionDB.properties");

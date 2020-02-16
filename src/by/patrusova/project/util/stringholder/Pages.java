@@ -17,6 +17,11 @@ public enum Pages {
     PAGE_CATALOGUE("page.catalogue"),
     PAGE_BASKET("page.basket"),
     PAGE_GUESTLIST("page.guestlist"),
+    PAGE_ADMINLIST("page.adminlist"),
+    PAGE_CLEANERLIST("page.cleanerlist"),
+    PAGE_CLIENTLIST("page.clientlist"),
+    PAGE_ORDERLIST("page.orderlist"),
+    PAGE_CATALOGUELIST("page.cataloguelist"),
     PAGE_CHANGE_GUEST("page.changeguest");
 
     private String value;

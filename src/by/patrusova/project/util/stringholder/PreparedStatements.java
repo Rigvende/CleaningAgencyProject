@@ -63,6 +63,19 @@ public class PreparedStatements {
     private final static String SQL_UPDATE_ORDER = "UPDATE orders " +
             "SET deadline = ?, order_status = ?, id_cleaner = ? WHERE id_order = ?";
     private final static String SQL_SET_MARK = "UPDATE orders SET mark = ? WHERE id_order = ?";
+    private final static String SQL_FIND_USERS_BY_ROLE =
+            "SELECT id_user, login, password, role, name, lastname, " +
+                    "phone, address, email FROM users WHERE role = ?";
+    private final static String SQL_FIND_CLEANERS_BY_ROLE =
+            "SELECT users.id_user, users.login, users.password, users.role, users.name, " +
+                    "users.lastname, users.phone, users.address, users.email, cleaners.id_cleaner, " +
+                    "cleaners.id_user, cleaners.commission, cleaners.notes " +
+                    "FROM cleaners JOIN users ON cleaners.id_user = users.id_user WHERE users.role = ?";
+    private final static String SQL_FIND_CLIENTS_BY_ROLE =
+            "SELECT users.id_user, users.login, users.password, users.role, users.name, " +
+                    "users.lastname, users.phone, users.address, users.email, clients.id_client, " +
+                    "clients.id_user, clients.discount, clients.location, clients.relative, clients.notes " +
+                    "FROM clients JOIN users ON clients.id_user = users.id_user WHERE users.role = ?";
 
     public static ConcurrentHashMap<String, PreparedStatement>
                                     useStatements(Connection connection) throws DaoException {
@@ -98,6 +111,9 @@ public class PreparedStatements {
             PreparedStatement statement28 = connection.prepareStatement(SQL_DELETE_ORDER);
             PreparedStatement statement29 = connection.prepareStatement(SQL_UPDATE_ORDER);
             PreparedStatement statement30 = connection.prepareStatement(SQL_SET_MARK);
+            PreparedStatement statement31 = connection.prepareStatement(SQL_FIND_USERS_BY_ROLE);
+            PreparedStatement statement32 = connection.prepareStatement(SQL_FIND_CLEANERS_BY_ROLE);
+            PreparedStatement statement33 = connection.prepareStatement(SQL_FIND_CLIENTS_BY_ROLE);
             statements.put("total_cost", statement1);
             statements.put("show_cleaner", statement2);
             statements.put("show_client", statement3);
@@ -128,6 +144,9 @@ public class PreparedStatements {
             statements.put("delete_order", statement28);
             statements.put("update_order", statement29);
             statements.put("set_mark", statement30);
+            statements.put("find_role", statement31);
+            statements.put("find_role_cleaner", statement32);
+            statements.put("find_role_client", statement33);
         } catch (SQLException e) {
             throw new DaoException(e);
         }
