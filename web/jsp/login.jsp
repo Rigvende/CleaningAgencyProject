@@ -3,7 +3,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <c:set var="locale"
-       value="${not empty locale ? pageContext.request.locale : 'ru_RU'}"
+       value="${not empty locale ? pageContext.session.getAttribute('locale') : 'ru_RU'}"
        scope="session"/>
 
 <fmt:setLocale value="${locale}" scope="session"/>
@@ -15,6 +15,7 @@
 </head>
 
 <body>
+
 <div style="background: #E0E0E0; height: 100px; padding: 5px;">
 
     <div style="float: left">
@@ -24,18 +25,17 @@
 
     <div style="float: right; padding: 10px; text-align: right;">
         <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
-        <div style="margin-right: 85px">
+        <div style="margin-right: 82px">
             <a href="${pageContext.request.contextPath}/controller?command=info"><fmt:message key="button.info"/></a>
         </div>
     </div>
 </div>
 
+<div style="float: right"><jsp:include page="/WEB-INF/view/locale.jsp"/></div>
+
 <br/>
 <form name="registration" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="regredirect" />
-    <div style="color: crimson">${errorLogoutMessage}</div>
-    ${wrongAction}
-    ${nullPage}
     <input type="submit" value="<fmt:message key="button.regproposal"/>"/>
 </form>
 

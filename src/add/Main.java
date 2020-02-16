@@ -75,6 +75,8 @@ public class Main {
         Locale locale = new Locale("en", "EN");
         Locale.setDefault(locale);
         System.out.println(locale.toString());
+        System.out.println(locale.toString());
+        System.out.println(locale.toString());
 
 
 //        File f = new File("src/resources/connectionDB.properties");

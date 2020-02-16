@@ -13,21 +13,6 @@
 <jsp:include page="/WEB-INF/view/header.jsp"/>
 <br/>
 
-<c:set var="orders" scope="session" value="${orderList}"/>
-<c:set var="totalCount" scope="session" value="${orderList.size()}"/>
-<c:set var="perPage" scope="session" value="${5}"/>
-<c:set var="pageStart" value="${param.start}"/>
-<c:if test="${empty pageStart or pageStart < 0}">
-    <c:set var="pageStart" value="0"/>
-</c:if>
-<c:if test="${totalCount < pageStart}">
-    <c:set var="pageStart" value="${pageStart - perPage}"/>
-</c:if>
-
-<div style="float: right">
-    <jsp:include page="/WEB-INF/view/backToMain.jsp"/>
-</div>
-
 <form name="changeOrderForm" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="changeorder" />
     <fmt:message key="field.id"/>
@@ -46,27 +31,13 @@
 <br/>
 
 <div style="float: left">
-    <h5><u><fmt:message key="text.orders"/></u></h5>
+    <fmt:message key="text.orders"/>
 </div>
-<br/>
-<br/>
 <br/>
 <br/>
 
 <div style="float: left">
-    <table border="1" cellpadding="5" cellspacing="5">
-        <tr>
-            <th><fmt:message key="field.id"/></th>
-            <th><fmt:message key="field.ordertime"/></th>
-            <th><fmt:message key="field.deadline"/></th>
-            <th><fmt:message key="field.status"/></th>
-            <th><fmt:message key="field.mark"/></th>
-            <th><fmt:message key="field.isclient"/></th>
-            <th><fmt:message key="field.idcleaner"/></th>
-        </tr>
-
-    <c:forEach var="order" items="${orderList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
-            ${order}
+    <c:forEach var="order" items="${orderList}">
         <tr>
             <td><c:out value="${order.id}" /></td>
             <td><c:out value="${order.orderTime}" /></td>
@@ -76,30 +47,17 @@
             <td><c:out value="${order.idClient}" /></td>
             <td><c:out value="${order.idCleaner}" /></td>
         </tr>
+        <br/>
     </c:forEach>
-    </table>
-    <br/>
-
-    <a href="?start=${pageStart - perPage}"><<</a>
-    ${pageStart + 1} - ${pageStart + perPage}
-    <a href="?start=${pageStart + perPage}">>></a>
 </div>
 
+<div style="float: right">
+    <jsp:include page="/WEB-INF/view/backToMain.jsp"/>
+</div>
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>
 </html>

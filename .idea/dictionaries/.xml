@@ -32,6 +32,9 @@
       <w>deregistering</w>
       <w>firstname</w>
       <w>guestlist</w>
+      <w>idcleaner</w>
+      <w>iduser</w>
+      <w>isclient</w>
       <w>lastname</w>
       <w>listerror</w>
       <w>logined</w>
