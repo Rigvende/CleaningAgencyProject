@@ -41,6 +41,7 @@
     <label>
         <input type="text" name="discount" value=""/>
     </label>
+    <br/>
     <fmt:message key="field.notes"/>
     <br/>
     <label>
@@ -48,7 +49,6 @@
     </label>
     <input type="submit" value="<fmt:message key="button.changeclient"/>"/>
 </form>
-<br/>
 
 <form name="deleteClientForm" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="deleteentity" />
@@ -59,33 +59,41 @@
     </label>
     <input type="submit" value="<fmt:message key="button.deleteclient"/>"/>
 </form>
-<br/>
 
 <div style="float: left">
     <h5><u><fmt:message key="text.clients"/></u></h5>
 </div>
 <br/>
 <br/>
-<br/>
-<br/>
+
 
 <div style="float: left">
     <table border="1" cellpadding="5" cellspacing="5">
         <tr>
             <th><fmt:message key="field.id"/></th>
+            <th><fmt:message key="field.name1"/></th>
+            <th><fmt:message key="field.lastname1"/></th>
+            <th><fmt:message key="field.phone1"/></th>
+            <th><fmt:message key="field.email1"/></th>
             <th><fmt:message key="field.discount"/></th>
             <th><fmt:message key="field.location"/></th>
             <th><fmt:message key="field.relative"/></th>
             <th><fmt:message key="field.notes"/></th>
+            <th><fmt:message key="field.isclient"/></th>
         </tr>
 
-    <c:forEach var="client" items="${clientList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
+    <c:forEach var="clie" items="${clientList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
         <tr>
-            <td><c:out value="${client.id}" /></td>
-            <td><c:out value="${client.discount}" /></td>
-            <td><c:out value="${client.location}" /></td>
-            <td><c:out value="${client.relative}" /></td>
-            <td><c:out value="${client.notes}" /></td>
+            <td><c:out value="${clie.id}" /></td>
+            <td><c:out value="${clie.name}" /></td>
+            <td><c:out value="${clie.lastname}" /></td>
+            <td><c:out value="${clie.phone}" /></td>
+            <td><c:out value="${clie.email}" /></td>
+            <td><c:out value="${clie.client.discount}" /></td>
+            <td><c:out value="${clie.client.location}" /></td>
+            <td><c:out value="${clie.client.relative}" /></td>
+            <td><c:out value="${clie.client.notes}" /></td>
+            <td><c:out value="${clie.client.id}" /></td>
         <</tr>
     </c:forEach>
     </table>
@@ -111,6 +119,14 @@
 <br/>
 <br/>
 <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>
 </html>

@@ -41,9 +41,14 @@
     <label>
         <input type="text" name="commission" value=""/>
     </label>
+    <br/>
+    <fmt:message key="field.notes"/>
+    <br/>
+    <label>
+        <input type="text" name="notes" value=""/>
+    </label>
     <input type="submit" value="<fmt:message key="button.changecleaner"/>"/>
 </form>
-<br/>
 
 <form name="deleteCleanerForm" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="deleteentity" />
@@ -54,7 +59,6 @@
     </label>
     <input type="submit" value="<fmt:message key="button.deletecleaner"/>"/>
 </form>
-<br/>
 
 <div style="float: left">
     <h5><u><fmt:message key="text.cleaners"/></u></h5>
@@ -68,17 +72,25 @@
     <table border="1" cellpadding="5" cellspacing="5">
         <tr>
             <th><fmt:message key="field.id"/></th>
+            <th><fmt:message key="field.name1"/></th>
+            <th><fmt:message key="field.lastname1"/></th>
+            <th><fmt:message key="field.phone1"/></th>
+            <th><fmt:message key="field.email1"/></th>
             <th><fmt:message key="field.commission"/></th>
             <th><fmt:message key="field.notes"/></th>
-            <th><fmt:message key="field.iduser"/></th>
+            <th><fmt:message key="field.idcleaner"/></th>
         </tr>
 
-    <c:forEach var="cleaner" items="${cleanerList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
+    <c:forEach var="clean" items="${cleanerList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
         <tr>
-            <td><c:out value="${cleaner.id}" /></td>
-            <td><c:out value="${cleaner.commission}" /></td>
-            <td><c:out value="${cleaner.notes}" /></td>
-            <td><c:out value="${cleaner.idUser}" /></td>
+            <td><c:out value="${clean.id}" /></td>
+            <td><c:out value="${clean.name}" /></td>
+            <td><c:out value="${clean.lastname}" /></td>
+            <td><c:out value="${clean.phone}" /></td>
+            <td><c:out value="${clean.email}" /></td>
+            <td><c:out value="${clean.cleaner.commission}" /></td>
+            <td><c:out value="${clean.cleaner.notes}" /></td>
+            <td><c:out value="${clean.cleaner.id}" /></td>
         </tr>
     </c:forEach>
     </table>

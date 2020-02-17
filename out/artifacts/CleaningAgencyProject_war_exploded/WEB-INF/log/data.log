@@ -5516,3 +5516,293 @@ Caused by: com.sun.mail.smtp.SMTPAddressFailedException: 553 5.1.3 The recipient
 17-02 13:10 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
 17-02 13:10 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
 17-02 13:11 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 13:14 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+17-02 13:14 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+17-02 13:14 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+17-02 13:14 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 13:14 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 13:14 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 13:14 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 13:14 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 13:14 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 13:14 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 13:14 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 13:14 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 13:14 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 13:14 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 13:14 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 13:14 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 13:14 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 13:14 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 13:14 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 13:14 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 13:14 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 13:14 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 13:14 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 13:14 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+17-02 13:14 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 13:14 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainAdmin.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainAdmin.jsp
+17-02 13:14 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 13:14 INFO  project.filter.LogFilter -  - ServletPath :/jsp/resultset/guestList.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/resultset/guestList.jsp
+17-02 13:14 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 13:14 INFO  project.filter.LogFilter -  - ServletPath :/jsp/mail/mailForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/mail/mailForm.jsp
+17-02 13:14 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 13:15 INFO  project.filter.LogFilter -  - ServletPath :/jsp/mail/send.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/mail/send.jsp
+17-02 13:15 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 17:58 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@2e1749b0
+17-02 17:58 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4b2e5b17
+17-02 17:58 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+17-02 17:59 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+17-02 17:59 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+17-02 18:00 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+17-02 18:00 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 18:00 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 18:00 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 18:00 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 18:00 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 18:00 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 18:00 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 18:00 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 18:00 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 18:00 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 18:00 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 18:00 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 18:00 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 18:00 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 18:00 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 18:00 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 18:00 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 18:00 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 18:00 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 18:00 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+17-02 18:00 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+17-02 18:00 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:00 INFO  command.impl.LocaleCommand - ru_RU
+17-02 18:00 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:00 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainAdmin.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainAdmin.jsp
+17-02 18:00 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:00 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+17-02 18:00 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:00 INFO  project.filter.LogFilter -  - ServletPath :/jsp/change/changeInfoForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/change/changeInfoForm.jsp
+17-02 18:00 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:00 INFO  project.filter.LogFilter -  - ServletPath :/jsp/menu/profile.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/menu/profile.jsp
+17-02 18:00 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:00 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:00 INFO  project.filter.LogFilter -  - ServletPath :/jsp/resultset/guestList.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/resultset/guestList.jsp
+17-02 18:00 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:00 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:00 INFO  project.filter.LogFilter -  - ServletPath :/jsp/resultset/adminList.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/resultset/adminList.jsp
+17-02 18:00 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:00 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:00 ERROR dao.impl.UserDao - DAO exception (request or table failed): 
+java.sql.SQLException: Column 'firstname' not found.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.findColumn(ResultSetImpl.java:548) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:852) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at by.patrusova.project.dao.impl.UserDao.findUsersByRole(UserDao.java:261) [classes/:?]
+	at by.patrusova.project.service.impl.ShowService.doService(ShowService.java:28) [classes/:?]
+	at by.patrusova.project.command.impl.ShowClientsCommand.execute(ShowClientsCommand.java:31) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.processRequest(ControlServlet.java:47) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.doPost(ControlServlet.java:39) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at by.patrusova.project.filter.LogFilter.doFilter(LogFilter.java:31) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at by.patrusova.project.filter.CharsetFilter.doFilter(CharsetFilter.java:20) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at com.cj.xss.XSSFilter.doFilter(Unknown Source) [xssflt.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.12.1.jar:2.12.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.17]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:678) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.17]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.17]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.17]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.17]
+	at java.lang.Thread.run(Thread.java:835) [?:?]
+17-02 18:00 ERROR command.impl.ShowClientsCommand - Exception has occurred while finding guests was processing.
+17-02 18:00 ERROR project.servlet.ControlServlet - Processing request failed.
+17-02 18:00 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:06 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:06 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:09 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:09 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:09 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:09 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:09 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:09 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:09 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:09 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:09 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:09 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:09 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:09 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:09 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:09 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:09 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:09 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:09 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:09 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:09 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:09 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:09 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:10 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:10 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:10 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:10 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:10 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:10 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:10 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:10 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:10 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:10 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:10 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:10 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:10 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:10 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:10 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:10 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:10 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:10 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:10 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:10 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:10 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:11 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:12 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:12 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:12 ERROR dao.impl.UserDao - DAO exception (request or table failed): 
+java.sql.SQLException: Column 'firstname' not found.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.findColumn(ResultSetImpl.java:548) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:852) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at by.patrusova.project.dao.impl.UserDao.findUsersByRole(UserDao.java:240) [classes/:?]
+	at by.patrusova.project.service.impl.ShowService.doService(ShowService.java:28) [classes/:?]
+	at by.patrusova.project.command.impl.ShowCleanersCommand.execute(ShowCleanersCommand.java:31) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.processRequest(ControlServlet.java:47) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.doPost(ControlServlet.java:39) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at by.patrusova.project.filter.LogFilter.doFilter(LogFilter.java:31) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at by.patrusova.project.filter.CharsetFilter.doFilter(CharsetFilter.java:20) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at com.cj.xss.XSSFilter.doFilter(Unknown Source) [xssflt.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.12.1.jar:2.12.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.17]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:678) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.17]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.17]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.17]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.17]
+	at java.lang.Thread.run(Thread.java:835) [?:?]
+17-02 18:12 ERROR command.impl.ShowCleanersCommand - Exception has occurred while finding cleaners was processing.
+17-02 18:12 ERROR project.servlet.ControlServlet - Processing request failed.
+17-02 18:12 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:13 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:13 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:13 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:13 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:13 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:13 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:13 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:13 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:13 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:13 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:13 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:13 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:13 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+17-02 18:13 INFO  project.filter.LogFilter -  - ServletPath :/data/line.png, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/line.png
+17-02 18:13 INFO  project.filter.LogFilter -  - ServletPath :/data/fon.jpg, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/data/fon.jpg
+17-02 18:16 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4f82fa49
+17-02 18:16 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@3f0f4e5b
+17-02 18:16 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.

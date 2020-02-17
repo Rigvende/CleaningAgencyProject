@@ -15,6 +15,8 @@ public class User extends AbstractEntity {
     private long phone;
     private String address;
     private String email;
+    private transient Client client;
+    private transient Cleaner cleaner;
 
     public User() {}
     public User(long id, String login, String password, String role, String name,
@@ -28,6 +30,24 @@ public class User extends AbstractEntity {
         this.phone = phone;
         this.address = address;
         this.email = email;
+    }
+
+    public User(long id, String login, String password, String role, String name,
+                String lastname, long phone, String address, String email, AbstractEntity entity) {
+        this.id = id;
+        this.login = login;
+        this.password = password;
+        this.role = role.toLowerCase();
+        this.name = name;
+        this.lastname = lastname;
+        this.phone = phone;
+        this.address = address;
+        this.email = email;
+        if (entity instanceof Cleaner) {
+            this.cleaner = (Cleaner) entity;
+        } else {
+            this.client = (Client) entity;
+        }
     }
 
     public long getId() {
@@ -83,6 +103,18 @@ public class User extends AbstractEntity {
     }
     public void setEmail(String email) {
         this.email = email;
+    }
+    public Client getClient() {
+        return client;
+    }
+    public void setClient(Client client) {
+        this.client = client;
+    }
+    public Cleaner getCleaner() {
+        return cleaner;
+    }
+    public void setCleaner(Cleaner cleaner) {
+        this.cleaner = cleaner;
     }
 
     @Override

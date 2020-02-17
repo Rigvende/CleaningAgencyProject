@@ -1,5 +1,10 @@
 package by.patrusova.project.dao.impl;
 
+import by.patrusova.project.dao.column.CleanerColumns;
+import by.patrusova.project.dao.column.ClientColumns;
+import by.patrusova.project.dao.column.UserColumns;
+import by.patrusova.project.entity.impl.Cleaner;
+import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.util.stringholder.PreparedStatements;
 import by.patrusova.project.connection.ProxyConnection;
 import by.patrusova.project.dao.AbstractDao;
@@ -10,7 +15,6 @@ import by.patrusova.project.exception.DaoException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -225,21 +229,59 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             switch (role) {
                 case "cleaner":
                     preparedStatement = PreparedStatements.useStatements(connection).get(FIND_CLEANERS);
+                    preparedStatement.setString(1, role);
+                    ResultSet resultSet1 = preparedStatement.executeQuery();
+                    while (resultSet1.next()) {
+                        User user = new User(resultSet1.getLong(UserColumns.ID_USER.getValue()),
+                                resultSet1.getString(UserColumns.LOGIN.getValue()),
+                                resultSet1.getString(UserColumns.PASSWORD.getValue()),
+                                resultSet1.getString(UserColumns.ROLE.getValue()),
+                                resultSet1.getString(UserColumns.NAME.getValue()),
+                                resultSet1.getString(UserColumns.LASTNAME.getValue()),
+                                resultSet1.getLong(UserColumns.PHONE.getValue()),
+                                resultSet1.getString(UserColumns.ADDRESS.getValue()),
+                                resultSet1.getString(UserColumns.EMAIL.getValue()),
+                                new Cleaner(resultSet1.getLong(CleanerColumns.ID_CLEANER.getValue()),
+                                        resultSet1.getBigDecimal(CleanerColumns.COMMISSION.getValue()),
+                                        resultSet1.getString(CleanerColumns.NOTES.getValue()),
+                                        resultSet1.getLong(CleanerColumns.ID_USER.getValue())));
+                        users.add(user);
+                    }
                     break;
                 case "client":
                     preparedStatement = PreparedStatements.useStatements(connection).get(FIND_CLIENTS);
+                    preparedStatement.setString(1, role);
+                    ResultSet resultSet2 = preparedStatement.executeQuery();
+                    while (resultSet2.next()) {
+                        User user = new User(resultSet2.getLong(UserColumns.ID_USER.getValue()),
+                                resultSet2.getString(UserColumns.LOGIN.getValue()),
+                                resultSet2.getString(UserColumns.PASSWORD.getValue()),
+                                resultSet2.getString(UserColumns.ROLE.getValue()),
+                                resultSet2.getString(UserColumns.NAME.getValue()),
+                                resultSet2.getString(UserColumns.LASTNAME.getValue()),
+                                resultSet2.getLong(UserColumns.PHONE.getValue()),
+                                resultSet2.getString(UserColumns.ADDRESS.getValue()),
+                                resultSet2.getString(UserColumns.EMAIL.getValue()),
+                                new Client(resultSet2.getLong(ClientColumns.ID_CLIENT.getValue()),
+                                        resultSet2.getLong(ClientColumns.ID_USER.getValue()),
+                                        resultSet2.getBigDecimal(ClientColumns.DISCOUNT.getValue()),
+                                        resultSet2.getString(ClientColumns.LOCATION.getValue()),
+                                        resultSet2.getString(ClientColumns.RELATIVE.getValue()),
+                                        resultSet2.getString(ClientColumns.NOTES.getValue())));
+                        users.add(user);
+                    }
                     break;
                 case "guest":
                 case "admin":
                 default:
                     preparedStatement = PreparedStatements.useStatements(connection).get(FIND_USERS);
+                    preparedStatement.setString(1, role);
+                    ResultSet resultSet3 = preparedStatement.executeQuery();
+                    while (resultSet3.next()) {
+                        User user = EntityFactory.createUser(resultSet3);
+                        users.add(user);
+                    }
                     break;
-            }
-            preparedStatement.setString(1, role);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                User user = EntityFactory.createUser(resultSet);
-                users.add(user);
             }
             connection.commit();
         } catch (SQLException e) {

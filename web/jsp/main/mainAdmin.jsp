@@ -42,7 +42,7 @@
     </form>
 
     <form name="serviceForm" method="post" action="${pageContext.request.contextPath}/controller">
-        <input type="hidden" name="command" value="showservices" />
+        <input type="hidden" name="command" value="showcatalogue" />
         <input type="submit" value="<fmt:message key="button.showservices"/>"/>
     </form>
 </div>

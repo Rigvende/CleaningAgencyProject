@@ -12,12 +12,9 @@ public class EntityFactory {
             throws DaoException {
         BasketPosition position = new BasketPosition();
         try {
-            position.setId(resultSet.getLong
-                    (String.valueOf(BasketColumns.ID_BASKET)));
-            position.setIdOrder(resultSet.getLong
-                    (String.valueOf(BasketColumns.ID_ORDER)));
-            position.setIdService(resultSet.getLong
-                    (String.valueOf(BasketColumns.ID_SERVICE)));
+            position.setId(resultSet.getLong(BasketColumns.ID_BASKET.getValue()));
+            position.setIdOrder(resultSet.getLong(BasketColumns.ID_ORDER.getValue()));
+            position.setIdService(resultSet.getLong(BasketColumns.ID_SERVICE.getValue()));
         } catch (SQLException e) {
             throw new DaoException(e);
         }
@@ -27,12 +24,10 @@ public class EntityFactory {
     public static Cleaner createCleaner(ResultSet resultSet) throws DaoException {
         Cleaner cleaner = new Cleaner();
         try {
-            cleaner.setId(resultSet.getLong
-                    (String.valueOf(CleanerColumns.ID_CLEANER)));
-            cleaner.setIdUser(resultSet.getLong
-                    (String.valueOf(CleanerColumns.ID_USER)));
-            cleaner.setCommission(resultSet.getBigDecimal
-                    (String.valueOf(CleanerColumns.COMMISSION)));
+            cleaner.setId(resultSet.getLong(CleanerColumns.ID_CLEANER.getValue()));
+            cleaner.setIdUser(resultSet.getLong(CleanerColumns.ID_USER.getValue()));
+            cleaner.setCommission(resultSet.getBigDecimal(CleanerColumns.COMMISSION.getValue()));
+            cleaner.setNotes(resultSet.getString(CleanerColumns.NOTES.getValue()));
         } catch (SQLException e) {
             throw new DaoException(e);
         }
@@ -42,18 +37,12 @@ public class EntityFactory {
     public static Client createClient(ResultSet resultSet) throws DaoException {
         Client client = new Client();
         try {
-            client.setId(resultSet.getLong
-                    (String.valueOf(ClientColumns.ID_CLIENT)));
-            client.setIdUser(resultSet.getLong
-                    (String.valueOf(ClientColumns.ID_USER)));
-            client.setDiscount(resultSet.getBigDecimal
-                    (String.valueOf(ClientColumns.DISCOUNT)));
-            client.setLocation(resultSet.getString
-                    (String.valueOf(ClientColumns.LOCATION)));
-            client.setRelative(resultSet.getString
-                    (String.valueOf(ClientColumns.RELATIVE)));
-            client.setNotes(resultSet.getString
-                    (String.valueOf(ClientColumns.NOTES)));
+            client.setId(resultSet.getLong(ClientColumns.ID_CLIENT.getValue()));
+            client.setIdUser(resultSet.getLong(ClientColumns.ID_USER.getValue()));
+            client.setDiscount(resultSet.getBigDecimal(ClientColumns.DISCOUNT.getValue()));
+            client.setLocation(resultSet.getString(ClientColumns.LOCATION.getValue()));
+            client.setRelative(resultSet.getString(ClientColumns.RELATIVE.getValue()));
+            client.setNotes(resultSet.getString(ClientColumns.NOTES.getValue()));
         } catch (SQLException e) {
             throw new DaoException(e);
         }
@@ -63,20 +52,15 @@ public class EntityFactory {
     public static Order createOrder(ResultSet resultSet) throws DaoException {
         Order order = new Order();
         try {
-            order.setId(resultSet.getLong
-                    (String.valueOf(OrderColumns.ID_ORDER)));
+            order.setId(resultSet.getLong(OrderColumns.ID_ORDER.getValue()));
             order.setOrderTime(new java.sql.Date(resultSet.getDate
-                    (String.valueOf(OrderColumns.ORDER_TIME)).getTime()).toLocalDate());
+                    (OrderColumns.ORDER_TIME.getValue()).getTime()).toLocalDate());
             order.setDeadline(new java.sql.Date(resultSet.getDate
-                    (String.valueOf(OrderColumns.DEADLINE)).getTime()).toLocalDate());
-            order.setOrderStatus(resultSet.getString
-                    (String.valueOf(OrderColumns.ORDER_STATUS)));
-            order.setMark(resultSet.getInt
-                    (String.valueOf(OrderColumns.MARK)));
-            order.setIdCleaner(resultSet.getLong
-                    (String.valueOf(OrderColumns.ID_CLEANER)));
-            order.setIdClient(resultSet.getLong
-                    (String.valueOf(OrderColumns.ID_CLIENT)));
+                    (OrderColumns.DEADLINE.getValue()).getTime()).toLocalDate());
+            order.setOrderStatus(resultSet.getString(OrderColumns.ORDER_STATUS.getValue()));
+            order.setMark(resultSet.getInt(OrderColumns.MARK.getValue()));
+            order.setIdCleaner(resultSet.getLong(OrderColumns.ID_CLEANER.getValue()));
+            order.setIdClient(resultSet.getLong(OrderColumns.ID_CLIENT.getValue()));
         } catch (SQLException e) {
             throw new DaoException(e);
         }
@@ -86,14 +70,10 @@ public class EntityFactory {
     public static Service createService(ResultSet resultSet) throws DaoException {
         Service service = new Service();
         try {
-            service.setId(resultSet.getLong
-                    (String.valueOf(ServiceColumns.ID_SERVICE)));
-            service.setService(resultSet.getString
-                    (String.valueOf(ServiceColumns.SERVICE)));
-            service.setCost(resultSet.getBigDecimal
-                    (String.valueOf(ServiceColumns.COST)));
-            service.setDiscount(resultSet.getBigDecimal
-                    (String.valueOf(ServiceColumns.DISCOUNT)));
+            service.setId(resultSet.getLong(ServiceColumns.ID_SERVICE.getValue()));
+            service.setService(resultSet.getString(ServiceColumns.SERVICE.getValue()));
+            service.setCost(resultSet.getBigDecimal(ServiceColumns.COST.getValue()));
+            service.setDiscount(resultSet.getBigDecimal(ServiceColumns.DISCOUNT.getValue()));
         } catch (SQLException e) {
             throw new DaoException(e);
         }
@@ -103,24 +83,15 @@ public class EntityFactory {
     public static User createUser(ResultSet resultSet) throws DaoException {
         User user = new User();
         try {
-            user.setId(resultSet.getLong
-                    (String.valueOf(UserColumns.ID_USER)));
-            user.setLogin(resultSet.getString
-                    (String.valueOf(UserColumns.LOGIN)));
-            user.setPassword(resultSet.getString
-                    (String.valueOf(UserColumns.PASSWORD)));
-            user.setRole(resultSet.getString
-                    (String.valueOf(UserColumns.ROLE)));
-            user.setName(resultSet.getString
-                    (String.valueOf(UserColumns.NAME)));
-            user.setLastname(resultSet.getString
-                    (String.valueOf(UserColumns.LASTNAME)));
-            user.setPhone(resultSet.getLong
-                    (String.valueOf(UserColumns.PHONE)));
-            user.setEmail(resultSet.getString
-                    (String.valueOf(UserColumns.EMAIL)));
-            user.setAddress(resultSet.getString
-                    (String.valueOf(UserColumns.ADDRESS)));
+            user.setId(resultSet.getLong(UserColumns.ID_USER.getValue()));
+            user.setLogin(resultSet.getString(UserColumns.LOGIN.getValue()));
+            user.setPassword(resultSet.getString(UserColumns.PASSWORD.getValue()));
+            user.setRole(resultSet.getString(UserColumns.ROLE.getValue()));
+            user.setName(resultSet.getString(UserColumns.NAME.getValue()));
+            user.setLastname(resultSet.getString(UserColumns.LASTNAME.getValue()));
+            user.setPhone(resultSet.getLong(UserColumns.PHONE.getValue()));
+            user.setEmail(resultSet.getString(UserColumns.EMAIL.getValue()));
+            user.setAddress(resultSet.getString(UserColumns.ADDRESS.getValue()));
         } catch (SQLException e) {
             throw new DaoException(e);
         }
