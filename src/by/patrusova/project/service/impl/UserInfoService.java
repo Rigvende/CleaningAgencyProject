@@ -49,6 +49,7 @@ public class UserInfoService implements Serviceable, EntityCreator {
         if (!validate(request).containsValue(false)) {
             updatedUser.setName(request.getParameter(Parameters.FIRSTNAME.getValue()));
             updatedUser.setLastname(request.getParameter(Parameters.LASTNAME.getValue()));
+            updatedUser.setRole(updatedUser.getRole());
             updatedUser.setPhone(Long.parseLong(request.getParameter(Parameters.PHONE.getValue())));
             updatedUser.setAddress(request.getParameter(Parameters.ADDRESS.getValue()));
             updatedUser.setEmail(request.getParameter(Parameters.EMAIL.getValue()));

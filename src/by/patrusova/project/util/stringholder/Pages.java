@@ -13,7 +13,8 @@ public enum Pages {
     PAGE_REG("page.registrationform"),
     PAGE_REG_TRUE("page.registrationtrue"),
     PAGE_PROFILE("page.profile"),
-    PAGE_MAIL("page.sendmail"),
+    PAGE_MAIL("page.mail"),
+    PAGE_SEND("page.sendmail"),
     PAGE_CATALOGUE("page.catalogue"),
     PAGE_BASKET("page.basket"),
     PAGE_GUESTLIST("page.guestlist"),
@@ -21,8 +22,7 @@ public enum Pages {
     PAGE_CLEANERLIST("page.cleanerlist"),
     PAGE_CLIENTLIST("page.clientlist"),
     PAGE_ORDERLIST("page.orderlist"),
-    PAGE_CATALOGUELIST("page.cataloguelist"),
-    PAGE_CHANGE_GUEST("page.changeguest");
+    PAGE_CATALOGUELIST("page.cataloguelist");
 
     private String value;
 

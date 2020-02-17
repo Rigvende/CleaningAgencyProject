@@ -100,10 +100,11 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             preparedStatement = PreparedStatements.useStatements(connection).get(UPDATE);
             preparedStatement.setString(1, user.getName());
             preparedStatement.setString(2, user.getLastname());
-            preparedStatement.setLong(3, user.getPhone());
+            preparedStatement.setString(3, user.getRole());
+            preparedStatement.setLong(4, user.getPhone());
             preparedStatement.setString(5, user.getAddress());
-            preparedStatement.setString(4, user.getEmail());
-            preparedStatement.setLong(6, user.getId());
+            preparedStatement.setString(6, user.getEmail());
+            preparedStatement.setLong(7, user.getId());
             isUpdated = preparedStatement.execute();
             connection.commit();
         } catch (SQLException | DaoException e) {

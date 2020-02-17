@@ -16,8 +16,6 @@ public class User extends AbstractEntity {
     private String address;
     private String email;
 
-
-
     public User() {}
     public User(long id, String login, String password, String role, String name,
                 String lastname, long phone, String address, String email) {

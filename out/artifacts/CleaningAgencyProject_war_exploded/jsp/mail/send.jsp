@@ -9,7 +9,21 @@
     <title><fmt:message key="title.send"/></title>
 </head>
 
+
 <body>
-    <p><fmt:message key="text.send"/></p>
+<jsp:include page="/WEB-INF/view/header.jsp"/>
+
+<div style="float: right">
+    <jsp:include page="/WEB-INF/view/backToMain.jsp"/>
+</div>
+<br/>
+<br/>
+
+<div style="color: olivedrab;"><h3> <fmt:message key="text.send"/></h3></div>
+<br/>
+<br/>
+
+
+<jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>
 </html>

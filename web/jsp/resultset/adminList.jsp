@@ -47,7 +47,6 @@
         </tr>
 
     <c:forEach var="admin" items="${adminList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
-            ${admin}
         <tr>
             <td><c:out value="${admin.id}" /></td>
             <td><c:out value="${admin.name}" /></td>
@@ -66,7 +65,12 @@
 <br/>
 <br/>
 <br/>
-
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>
 </html>

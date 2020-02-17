@@ -13,6 +13,21 @@
 <jsp:include page="/WEB-INF/view/header.jsp"/>
 <br/>
 
+<c:set var="cleaners" scope="session" value="${cleanerList}"/>
+<c:set var="totalCount" scope="session" value="${cleanerList.size()}"/>
+<c:set var="perPage" scope="session" value="${5}"/>
+<c:set var="pageStart" value="${param.start}"/>
+<c:if test="${empty pageStart or pageStart < 0}">
+    <c:set var="pageStart" value="0"/>
+</c:if>
+<c:if test="${totalCount < pageStart}">
+    <c:set var="pageStart" value="${pageStart - perPage}"/>
+</c:if>
+
+<div style="float: right">
+    <jsp:include page="/WEB-INF/view/backToMain.jsp"/>
+</div>
+
 <form name="changeCleanerForm" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="changecleaner" />
     <fmt:message key="field.id"/>
@@ -42,30 +57,53 @@
 <br/>
 
 <div style="float: left">
-    <fmt:message key="text.cleaners"/>
+    <h5><u><fmt:message key="text.cleaners"/></u></h5>
 </div>
+<br/>
+<br/>
 <br/>
 <br/>
 
 <div style="float: left">
-    <c:forEach var="cleaner" items="${cleanerList}">
+    <table border="1" cellpadding="5" cellspacing="5">
+        <tr>
+            <th><fmt:message key="field.id"/></th>
+            <th><fmt:message key="field.commission"/></th>
+            <th><fmt:message key="field.notes"/></th>
+            <th><fmt:message key="field.iduser"/></th>
+        </tr>
+
+    <c:forEach var="cleaner" items="${cleanerList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
         <tr>
             <td><c:out value="${cleaner.id}" /></td>
             <td><c:out value="${cleaner.commission}" /></td>
             <td><c:out value="${cleaner.notes}" /></td>
             <td><c:out value="${cleaner.idUser}" /></td>
         </tr>
-        <br/>
     </c:forEach>
+    </table>
+    <br/>
+
+    <a href="?start=${pageStart - perPage}"><<</a>
+    ${pageStart + 1} - ${pageStart + perPage}
+    <a href="?start=${pageStart + perPage}">>></a>
 </div>
 
-<div style="float: right">
-    <jsp:include page="/WEB-INF/view/backToMain.jsp"/>
-</div>
 <br/>
 <br/>
 <br/>
-
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>
 </html>

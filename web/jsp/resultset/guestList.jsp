@@ -63,7 +63,7 @@
     </tr>
 
     <c:forEach var="guest" items="${guestList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
-        ${guest}
+
     <tr>
         <td><c:out value="${guest.id}" /></td>
         <td><c:out value="${guest.name}" /></td>

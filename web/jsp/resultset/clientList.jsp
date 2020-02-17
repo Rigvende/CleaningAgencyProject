@@ -80,7 +80,6 @@
         </tr>
 
     <c:forEach var="client" items="${clientList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
-            ${client}
         <tr>
             <td><c:out value="${client.id}" /></td>
             <td><c:out value="${client.discount}" /></td>

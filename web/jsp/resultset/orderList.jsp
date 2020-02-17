@@ -66,7 +66,6 @@
         </tr>
 
     <c:forEach var="order" items="${orderList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
-            ${order}
         <tr>
             <td><c:out value="${order.id}" /></td>
             <td><c:out value="${order.orderTime}" /></td>

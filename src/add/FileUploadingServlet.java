@@ -30,10 +30,8 @@ public class FileUploadingServlet extends HttpServlet {
         if(!fileSaveDir.exists()){
             fileSaveDir.mkdirs();
         }
-        //    System.out.println("Upload File Directory ="+fileSaveDir.getAbsolutePath());
         request.getParts().stream().forEach(part -> {
             try {
-                // part.write(uploadFilePath + File.separator + part.getSubmittedFileName());//.substring(2)
                 String path = part.getSubmittedFileName();
                 String randFilename = UUID.randomUUID()+path.substring(path.lastIndexOf("."));
                 part.write(uploadFileDir  + randFilename);
@@ -43,35 +41,5 @@ public class FileUploadingServlet extends HttpServlet {
             }
         });
         request.getRequestDispatcher("/jsp/upload_res.jsp").forward(request, response);
-//        try {
-//            for(Part part : request.getParts()) {
-//                if (part.getSubmittedFileName() != null) {
-//                   System.out.println(part.getSubmittedFileName());
-//                   part.write(uploadFilePath + File.separator + part.getSubmittedFileName());
-//                  // part.write("d:\\tmp\\" + part. getSubmittedFileName());
-//                   response.getWriter().print(part.getSubmittedFileName() + " upload successfully");
-//                }
-//            }
-//        } catch (IOException e) {
-//            System.out.println( "------>>>>" + e);;
-//        }
-//        InputStream in = null;
-//        try {
-//            in = request.getInputStream();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        InputSource is = new InputSource(in);
-//
-//        File file = new File(uploadFilePath + File.separator + part.getSubmittedFileName().substring(2));
-//        OutputStream out = new FileOutputStream(file);
-//        byte[] buffer = new byte[1024];
-//
-//        int len = 0;
-//        while((len=in.read(buffer))!=-1){
-//            out.write(buffer, 0, len);
-//        }
-//        out.close();
-//        in.close();
     }
 }

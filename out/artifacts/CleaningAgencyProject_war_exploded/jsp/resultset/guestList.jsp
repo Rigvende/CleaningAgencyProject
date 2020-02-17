@@ -12,6 +12,7 @@
 <body>
 <jsp:include page="/WEB-INF/view/header.jsp"/>
 <br/>
+
 <c:set var="guests" scope="session" value="${guestList}"/>
 <c:set var="totalCount" scope="session" value="${guestList.size()}"/>
 <c:set var="perPage" scope="session" value="${5}"/>
@@ -52,7 +53,6 @@
 <br/>
 
 <div style="float: left">
-
     <table border="1" cellpadding="5" cellspacing="5">
     <tr>
         <th><fmt:message key="field.id"/></th>
@@ -63,7 +63,7 @@
     </tr>
 
     <c:forEach var="guest" items="${guestList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
-        ${letter}
+
     <tr>
         <td><c:out value="${guest.id}" /></td>
         <td><c:out value="${guest.name}" /></td>
@@ -71,15 +71,13 @@
         <td><c:out value="${guest.phone}" /></td>
         <td><c:out value="${guest.email}" /></td>
     </tr>
-
     </c:forEach>
     </table>
     <br/>
 
-        <a href="?start=${pageStart - perPage}"><<</a>
-        ${pageStart + 1} - ${pageStart + perPage}
-        <a href="?start=${pageStart + perPage}">>></a>
-
+    <a href="?start=${pageStart - perPage}"><<</a>
+    ${pageStart + 1} - ${pageStart + perPage}
+    <a href="?start=${pageStart + perPage}">>></a>
 </div>
 
 <br/>

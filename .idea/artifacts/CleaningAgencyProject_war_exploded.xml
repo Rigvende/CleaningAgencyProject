@@ -17,6 +17,7 @@
           <element id="library" level="project" name="log4j-web-2.12.1" />
           <element id="library" level="project" name="testng-6.10" />
           <element id="library" level="project" name="xssflt" />
+          <element id="library" level="project" name="activation" />
         </element>
       </element>
     </root>

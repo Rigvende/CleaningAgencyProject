@@ -34,11 +34,11 @@ public class PreparedStatements {
     private final static String SQL_DELETE_CLIENT = "DELETE FROM clients WHERE id_user = ?";
     private final static String SQL_UPDATE_ROLE_BY_ADMIN = "UPDATE users SET role = ? WHERE id_user = ?";
     private final static String SQL_CREATE_CLIENT_BY_ADMIN = "INSERT INTO clients " +
-            "VALUES (0, ?, null, null, null, null)";
+            "VALUES (?, ?, ?, ?, ?, ?)";
     private final static String SQL_CREATE_CLEANER_BY_ADMIN = "INSERT INTO cleaners " +
-            "VALUES (0, ?, null, null)";
-    private final static String SQL_UPDATE_USER = "UPDATE users SET name = ?, lastname = ?, phone = ?, " +
-            "email = ?, address = ? WHERE id_user = ?";
+            "VALUES (?, ?, ?, ?)";
+    private final static String SQL_UPDATE_USER = "UPDATE users SET name = ?, lastname = ?, " +
+            "role = ?, phone = ?, address = ?, email = ?  WHERE id_user = ?";
     private final static String SQL_UPDATE_CLIENT_BY_USER = "UPDATE clients " +
             "SET location = ?, relative = ? WHERE id_user = ?";
     private final static String SQL_UPDATE_CLEANER_BY_ADMIN = "UPDATE cleaners " +

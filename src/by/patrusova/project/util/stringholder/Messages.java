@@ -8,6 +8,7 @@ public enum Messages {
     MESSAGE_WRONG("message.wrongaction"),
     MESSAGE_ERROR_LOGIN("message.loginerror"),
     MESSAGE_ERROR_LIST("message.listerror"),
+    MESSAGE_ERROR_MAIL("message.mailerror"),
     MESSAGE_NOT_REG("message.notregistered");
 
     private String value;

@@ -31,8 +31,11 @@
       <w>deregistered</w>
       <w>deregistering</w>
       <w>firstname</w>
+      <w>formerguest</w>
+      <w>gmail</w>
       <w>guestlist</w>
       <w>idcleaner</w>
+      <w>idservice</w>
       <w>iduser</w>
       <w>isclient</w>
       <w>lastname</w>
@@ -42,6 +45,7 @@
       <w>loginfalse</w>
       <w>loginreg</w>
       <w>logouterror</w>
+      <w>mailerror</w>
       <w>mainadmin</w>
       <w>maincleaner</w>
       <w>mainclient</w>
@@ -50,6 +54,7 @@
       <w>notregistered</w>
       <w>nullpage</w>
       <w>orderlist</w>
+      <w>ordertime</w>
       <w>passwordagain</w>
       <w>passwordreg</w>
       <w>patrusova</w>
@@ -72,6 +77,7 @@
       <w>showorders</w>
       <w>showservices</w>
       <w>smtp</w>
+      <w>starttls</w>
       <w>wrongaction</w>
     </words>
   </dictionary>

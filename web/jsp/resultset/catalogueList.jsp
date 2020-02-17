@@ -105,7 +105,6 @@
         </tr>
 
     <c:forEach var="catalogue" items="${catalogueList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
-            ${catalogue}
         <tr>
             <td><c:out value="${catalogue.id}" /></td>
             <td><c:out value="${catalogue.service}" /></td>

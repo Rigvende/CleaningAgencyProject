@@ -1,5 +1,7 @@
 package add;
 
+import by.patrusova.project.dao.DaoFactory;
+import by.patrusova.project.dao.impl.UserDao;
 import by.patrusova.project.entity.Role;
 import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.DaoException;
@@ -32,6 +34,15 @@ public class Main {
 //    }
 
     public static void main(String[] args) throws IOException, SQLException, DaoException {
+
+        DaoFactory factory = new DaoFactory();
+
+            UserDao userDao = factory.createUserDao();
+            User user = (User) userDao.findEntityById(32);
+            user.setRole("client");
+            System.out.println(user);
+        System.out.println(userDao.update(user));
+
 //        ShowGuestsService service = new ShowGuestsService();
 //        List<User> list = service.doService();
 //        for (User user : list) {
@@ -71,12 +82,12 @@ public class Main {
 //}
 
 
-        System.out.println(Locale.getDefault());
-        Locale locale = new Locale("en", "EN");
-        Locale.setDefault(locale);
-        System.out.println(locale.toString());
-        System.out.println(locale.toString());
-        System.out.println(locale.toString());
+//        System.out.println(Locale.getDefault());
+//        Locale locale = new Locale("en", "EN");
+//        Locale.setDefault(locale);
+//        System.out.println(locale.toString());
+//        System.out.println(locale.toString());
+//        System.out.println(locale.toString());
 
 
 //        File f = new File("src/resources/connectionDB.properties");

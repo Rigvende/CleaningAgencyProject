@@ -74,7 +74,6 @@
         </tr>
 
     <c:forEach var="cleaner" items="${cleanerList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
-            ${cleaner}
         <tr>
             <td><c:out value="${cleaner.id}" /></td>
             <td><c:out value="${cleaner.commission}" /></td>
