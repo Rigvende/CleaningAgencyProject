@@ -27,7 +27,7 @@ public class CommandProvider {
         } catch (IllegalArgumentException e) {
             request.setAttribute(Attributes.WRONG_ACTION.getValue(), action
                     + MessageManager.getProperty(Messages.MESSAGE_WRONG.getValue()));
-            LOGGER.log(Level.ERROR, "Cannot define current command.");
+            LOGGER.log(Level.ERROR, "Cannot define current command. ", e);
             throw new CommandException(e);
         }
         return current;

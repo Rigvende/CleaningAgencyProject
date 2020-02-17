@@ -15,6 +15,8 @@ public enum Pages {
     PAGE_PROFILE("page.profile"),
     PAGE_MAIL("page.mail"),
     PAGE_SEND("page.sendmail"),
+    PAGE_CONFIRM("page.confirm"),
+    PAGE_CONFIRMFALSE("page.confirmfalse"),
     PAGE_CATALOGUE("page.catalogue"),
     PAGE_BASKET("page.basket"),
     PAGE_GUESTLIST("page.guestlist"),

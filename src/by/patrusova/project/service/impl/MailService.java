@@ -39,18 +39,19 @@ public class MailService implements Serviceable {
             message.setText(messageToSend);
             Transport.send(message);
         } catch (MessagingException e) {
-            LOGGER.log(Level.ERROR, "Error while sending e-mail has occurred.");
+            LOGGER.log(Level.ERROR, "Error while sending e-mail has occurred. ", e);
             throw new CommandException(e);
         }
         return true;
     }
     private Properties loadProperties(){
         Properties properties = new Properties();
-        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream(MailService.PATH_CONFIG)) {
+        try (InputStream inputStream = getClass().getClassLoader()
+                                       .getResourceAsStream(MailService.PATH_CONFIG)) {
             assert inputStream != null;
             properties.load(inputStream);
         } catch (IOException e) {
-            LOGGER.log(Level.FATAL, "Error while reading properties file for e-mail sending has occurred.");
+            LOGGER.log(Level.FATAL, "Error while reading properties for e-mail has occurred. ", e);
             throw new RuntimeException(e);
         }
         return properties;

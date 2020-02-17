@@ -41,7 +41,7 @@ public class ChangeBurialCommand implements ActionCommand {
                 }
             }
         } catch (ServiceException e) {
-            LOGGER.log(Level.ERROR, "Exception has occurred while changing client info was processing.");
+            LOGGER.log(Level.ERROR, "Exception has occurred while changing client info was processing. ", e);
             throw new CommandException(e);
         }
         return page;

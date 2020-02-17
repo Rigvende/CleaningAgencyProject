@@ -44,7 +44,7 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "Cannot add position to the basket. Request to table failed.");
+            LOGGER.log(Level.ERROR, "Cannot add position to the basket. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
@@ -67,7 +67,7 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
+            LOGGER.log(Level.ERROR, "Cannot delete position to the basket. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
@@ -97,7 +97,7 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
+            LOGGER.log(Level.ERROR, "Cannot find all positions of the basket. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(statement);
@@ -121,7 +121,7 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
+            LOGGER.log(Level.ERROR, "Cannot find basket position by ID. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);

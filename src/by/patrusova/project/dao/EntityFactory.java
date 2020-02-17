@@ -1,12 +1,18 @@
 package by.patrusova.project.dao;
 
-import by.patrusova.project.dao.column.*;
+import by.patrusova.project.util.column.*;
 import by.patrusova.project.entity.impl.*;
 import by.patrusova.project.exception.DaoException;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class EntityFactory {
+
+    private final static Logger LOGGER = LogManager.getLogger();
 
     public static BasketPosition createBasketPosition(ResultSet resultSet)
             throws DaoException {
@@ -16,6 +22,7 @@ public class EntityFactory {
             position.setIdOrder(resultSet.getLong(BasketColumns.ID_ORDER.getValue()));
             position.setIdService(resultSet.getLong(BasketColumns.ID_SERVICE.getValue()));
         } catch (SQLException e) {
+            LOGGER.log(Level.ERROR, "Cannot create basket position. Error has occurred. ", e);
             throw new DaoException(e);
         }
         return position;
@@ -29,6 +36,7 @@ public class EntityFactory {
             cleaner.setCommission(resultSet.getBigDecimal(CleanerColumns.COMMISSION.getValue()));
             cleaner.setNotes(resultSet.getString(CleanerColumns.NOTES.getValue()));
         } catch (SQLException e) {
+            LOGGER.log(Level.ERROR, "Cannot create cleaner. Error has occurred. ", e);
             throw new DaoException(e);
         }
         return cleaner;
@@ -44,6 +52,7 @@ public class EntityFactory {
             client.setRelative(resultSet.getString(ClientColumns.RELATIVE.getValue()));
             client.setNotes(resultSet.getString(ClientColumns.NOTES.getValue()));
         } catch (SQLException e) {
+            LOGGER.log(Level.ERROR, "Cannot create client. Error has occurred. ", e);
             throw new DaoException(e);
         }
         return client;
@@ -62,6 +71,7 @@ public class EntityFactory {
             order.setIdCleaner(resultSet.getLong(OrderColumns.ID_CLEANER.getValue()));
             order.setIdClient(resultSet.getLong(OrderColumns.ID_CLIENT.getValue()));
         } catch (SQLException e) {
+            LOGGER.log(Level.ERROR, "Cannot create order. Error has occurred. ", e);
             throw new DaoException(e);
         }
         return order;
@@ -75,6 +85,7 @@ public class EntityFactory {
             service.setCost(resultSet.getBigDecimal(ServiceColumns.COST.getValue()));
             service.setDiscount(resultSet.getBigDecimal(ServiceColumns.DISCOUNT.getValue()));
         } catch (SQLException e) {
+            LOGGER.log(Level.ERROR, "Cannot create service. Error has occurred. ", e);
             throw new DaoException(e);
         }
         return service;
@@ -93,6 +104,7 @@ public class EntityFactory {
             user.setEmail(resultSet.getString(UserColumns.EMAIL.getValue()));
             user.setAddress(resultSet.getString(UserColumns.ADDRESS.getValue()));
         } catch (SQLException e) {
+            LOGGER.log(Level.ERROR, "Cannot create user. Error has occurred. ", e);
             throw new DaoException(e);
         }
         return user;

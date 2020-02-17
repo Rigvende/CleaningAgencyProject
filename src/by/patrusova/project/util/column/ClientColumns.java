@@ -1,4 +1,4 @@
-package by.patrusova.project.dao.column;
+package by.patrusova.project.util.column;
 
 public enum  ClientColumns {
 

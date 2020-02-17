@@ -23,7 +23,7 @@ public class CleanerInfoService implements Serviceable {
             CleanerDao dao = factory.createCleanerDao();
             cleaner = (Cleaner) dao.findEntityById(cleaner.getIdUser());
         } catch (DaoException | SQLException e) {
-            LOGGER.log(Level.ERROR, "Exception while finding cleaner has occurred.");
+            LOGGER.log(Level.ERROR, "Exception while finding cleaner has occurred. ", e);
             throw new ServiceException(e);
         }
         return cleaner;

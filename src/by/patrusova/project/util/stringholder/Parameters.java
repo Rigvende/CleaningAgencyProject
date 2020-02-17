@@ -20,6 +20,8 @@ public enum Parameters {
     BODY("body"),
     UTF_8("UTF-8"),
     POST("post"),
+    ENTITITYPE("entitytype"),
+    ID("id"),
     LOCATION("location"),
     RELATIVE("relative");
 

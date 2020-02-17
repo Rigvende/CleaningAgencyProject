@@ -36,7 +36,7 @@ public class UserInfoService implements Serviceable, EntityCreator {
                 user = null;
             }
         } catch (DaoException e) {
-            LOGGER.log(Level.ERROR, "Cannot update user's info, exception has occurred.");
+            LOGGER.log(Level.ERROR, "Cannot update user's info, exception has occurred. ", e);
             throw new ServiceException(e);
         }
         return user;

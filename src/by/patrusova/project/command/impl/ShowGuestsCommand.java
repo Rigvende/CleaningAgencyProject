@@ -42,7 +42,7 @@ public class ShowGuestsCommand implements ActionCommand {
                 page = ConfigurationManager.getProperty(Pages.PAGE_MAIN_ADMIN.getValue());
             }
         } catch (SQLException | DaoException e) {
-            LOGGER.log(Level.ERROR, "Exception has occurred while finding guests was processing.");
+            LOGGER.log(Level.ERROR, "Exception has occurred while finding guests was processing. ", e);
             throw new CommandException(e);
         }
         return page;

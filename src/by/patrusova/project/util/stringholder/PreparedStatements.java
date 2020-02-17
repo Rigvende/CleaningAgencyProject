@@ -30,6 +30,7 @@ public class PreparedStatements {
     private final static String SQL_ADD_USER =
             "INSERT INTO users VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     private final static String SQL_DELETE_USER_BY_LOGIN = "DELETE FROM users WHERE login = ?";
+    private final static String SQL_DELETE_USER = "DELETE FROM users WHERE id_user = ?";
     private final static String SQL_DELETE_CLEANER = "DELETE FROM cleaners WHERE id_user = ?";
     private final static String SQL_DELETE_CLIENT = "DELETE FROM clients WHERE id_user = ?";
     private final static String SQL_UPDATE_ROLE_BY_ADMIN = "UPDATE users SET role = ? WHERE id_user = ?";
@@ -59,7 +60,6 @@ public class PreparedStatements {
             "SELECT id_order, order_time, deadline, order_status, " +
                     "mark, id_client, id_cleaner FROM orders WHERE id_order = ?";
     private static final String SQL_ADD_ORDER = "INSERT INTO orders VALUES (?, ?, ?, ?, ?, ?, ?)";
-    private final static String SQL_DELETE_ORDER = "DELETE FROM orders WHERE id_order = ?";
     private final static String SQL_UPDATE_ORDER = "UPDATE orders " +
             "SET deadline = ?, order_status = ?, id_cleaner = ? WHERE id_order = ?";
     private final static String SQL_SET_MARK = "UPDATE orders SET mark = ? WHERE id_order = ?";
@@ -108,7 +108,7 @@ public class PreparedStatements {
             PreparedStatement statement25 = connection.prepareStatement(SQL_UPDATE_SERVICE);
             PreparedStatement statement26 = connection.prepareStatement(SQL_SELECT_ORDER_BY_ID);
             PreparedStatement statement27 = connection.prepareStatement(SQL_ADD_ORDER);
-            PreparedStatement statement28 = connection.prepareStatement(SQL_DELETE_ORDER);
+            PreparedStatement statement28 = connection.prepareStatement(SQL_DELETE_USER);
             PreparedStatement statement29 = connection.prepareStatement(SQL_UPDATE_ORDER);
             PreparedStatement statement30 = connection.prepareStatement(SQL_SET_MARK);
             PreparedStatement statement31 = connection.prepareStatement(SQL_FIND_USERS_BY_ROLE);
@@ -141,7 +141,7 @@ public class PreparedStatements {
             statements.put("update_service", statement25);
             statements.put("find_order", statement26);
             statements.put("add_order", statement27);
-            statements.put("delete_order", statement28);
+            statements.put("delete_user_id", statement28);
             statements.put("update_order", statement29);
             statements.put("set_mark", statement30);
             statements.put("find_role", statement31);

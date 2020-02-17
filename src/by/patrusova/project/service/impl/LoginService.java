@@ -23,7 +23,7 @@ public class LoginService implements Serviceable {
             UserDao dao = factory.createUserDao();
             user = (User) dao.findEntityByLoginPass(user.getLogin(), user.getPassword());
         } catch (SQLException | DaoException e) {
-            LOGGER.log(Level.ERROR, "Cannot log in, exception has occurred.");
+            LOGGER.log(Level.ERROR, "Cannot log in, exception has occurred. ", e);
             throw new ServiceException(e);
         }
         return user;

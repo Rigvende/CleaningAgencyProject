@@ -50,7 +50,7 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "Cannot add order. Request to table failed.");
+            LOGGER.log(Level.ERROR, "Cannot add order. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
@@ -59,26 +59,8 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public boolean delete(AbstractEntity entity) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
-        boolean isDeleted;
-        Order order = (Order)entity;
-        PreparedStatement preparedStatement = null;
-        try {
-            preparedStatement = PreparedStatements.useStatements(connection).get(DELETE);
-            preparedStatement.setLong(1, order.getId());
-            isDeleted = preparedStatement.execute();
-            connection.commit();
-        } catch (SQLException | DaoException e) {
-            if (connection != null) {
-                connection.rollback();
-            }
-            LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
-            throw new DaoException(e);
-        } finally {
-            closeStatement(preparedStatement);
-        }
-        return isDeleted;
+    public boolean delete(AbstractEntity entity) {
+        return false;
     }
 
     @Override
@@ -99,7 +81,7 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
+            LOGGER.log(Level.ERROR, "Cannot update order. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
@@ -124,7 +106,7 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
+            LOGGER.log(Level.ERROR, "Cannot find all orders. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(statement);
@@ -148,7 +130,7 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
+            LOGGER.log(Level.ERROR, "Cannot find order by ID. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);

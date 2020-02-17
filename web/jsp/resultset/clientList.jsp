@@ -1,4 +1,4 @@
-<<%@ page language="java" contentType="text/html; charset=utf8" pageEncoding="utf8"%>
+<%@ page language="java" contentType="text/html; charset=utf8" pageEncoding="utf8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -30,28 +30,34 @@
 
 <form name="changeClientForm" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="changeclient" />
+
     <fmt:message key="field.id"/>
     <br/>
     <label>
         <input type="number" name="id" value=""/>
     </label>
     <br/>
+
     <fmt:message key="field.discount"/>
     <br/>
     <label>
         <input type="text" name="discount" value=""/>
     </label>
     <br/>
+
     <fmt:message key="field.notes"/>
     <br/>
     <label>
         <input type="text" name="notes" value=""/>
     </label>
+
     <input type="submit" value="<fmt:message key="button.changeclient"/>"/>
 </form>
 
 <form name="deleteClientForm" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="deleteentity" />
+    <input type="hidden" name="entitytype" value="client" />
+
     <fmt:message key="field.id"/>
     <br/>
     <label>
@@ -65,7 +71,6 @@
 </div>
 <br/>
 <br/>
-
 
 <div style="float: left">
     <table border="1" cellpadding="5" cellspacing="5">
@@ -94,7 +99,7 @@
             <td><c:out value="${clie.client.relative}" /></td>
             <td><c:out value="${clie.client.notes}" /></td>
             <td><c:out value="${clie.client.id}" /></td>
-        <</tr>
+        </tr>
     </c:forEach>
     </table>
     <br/>
@@ -103,9 +108,6 @@
     ${pageStart + 1} - ${pageStart + perPage}
     <a href="?start=${pageStart + perPage}">>></a>
 </div>
-
-<br/>
-<br/>
 <br/>
 <br/>
 <br/>

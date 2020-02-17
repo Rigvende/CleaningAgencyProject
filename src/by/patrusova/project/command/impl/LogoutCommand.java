@@ -17,8 +17,6 @@ public class LogoutCommand implements ActionCommand {
         while (iterator.hasNext()) {
             request.getSession().removeAttribute(iterator.next());
         }
-//        request.getSession().removeAttribute(Attributes.USER.getValue());//todo достаточно удалить только это?
-//        request.getSession().removeAttribute(Attributes.ROLE.getValue());
         request.getSession().invalidate();
         return page;
     }

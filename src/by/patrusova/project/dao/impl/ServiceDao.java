@@ -46,7 +46,7 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "Cannot add service. Request to table failed.");
+            LOGGER.log(Level.ERROR, "Cannot add service. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
@@ -69,7 +69,7 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
+            LOGGER.log(Level.ERROR, "Cannot delete service. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
@@ -94,7 +94,7 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
+            LOGGER.log(Level.ERROR, "Cannot update service. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
@@ -119,7 +119,7 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
+            LOGGER.log(Level.ERROR, "Cannot find all services. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(statement);
@@ -143,7 +143,7 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
+            LOGGER.log(Level.ERROR, "Cannot find service by ID. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);

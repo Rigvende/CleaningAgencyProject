@@ -28,6 +28,19 @@
     <jsp:include page="/WEB-INF/view/backToMain.jsp"/>
 </div>
 
+<form name="deleteAdminForm" method="post" action="${pageContext.request.contextPath}/controller">
+    <input type="hidden" name="command" value="deleteentity" />
+    <input type="hidden" name="entitytype" value="admin" />
+
+    <fmt:message key="field.id"/>
+    <br/>
+    <label>
+        <input type="number" name="id" value=""/>
+    </label>
+
+    <input type="submit" value="<fmt:message key="button.deleteadmin"/>"/>
+</form>
+
 <div style="float: left">
     <h5><u><fmt:message key="text.admins"/></u></h5>
 </div>
@@ -71,6 +84,7 @@
 <br/>
 <br/>
 <br/>
+
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>
 </html>

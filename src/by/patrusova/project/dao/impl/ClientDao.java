@@ -51,7 +51,7 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "Cannot add client. Request to table failed.");
+            LOGGER.log(Level.ERROR, "Cannot add client. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
@@ -74,7 +74,7 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
+            LOGGER.log(Level.ERROR, "Cannot delete client. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
@@ -99,7 +99,7 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
+            LOGGER.log(Level.ERROR, "Cannot update client. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
@@ -124,7 +124,7 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
+            LOGGER.log(Level.ERROR, "Cannot find all clients. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(statement);
@@ -144,7 +144,7 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
             client = resultSet.next() ? EntityFactory.createClient(resultSet) : null;
             connection.commit();
         } catch (SQLException e) {
-            LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
+            LOGGER.log(Level.ERROR, "Cannot find client by ID. Request to table failed. ", e);
             if (connection != null) {
                 connection.rollback();
             }
@@ -171,7 +171,7 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
+            LOGGER.log(Level.ERROR, "Cannot update client by user. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);

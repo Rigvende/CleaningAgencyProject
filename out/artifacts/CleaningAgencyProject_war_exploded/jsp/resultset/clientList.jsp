@@ -1,4 +1,4 @@
-<<%@ page language="java" contentType="text/html; charset=utf8" pageEncoding="utf8"%>
+<%@ page language="java" contentType="text/html; charset=utf8" pageEncoding="utf8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -66,7 +66,6 @@
 <br/>
 <br/>
 
-
 <div style="float: left">
     <table border="1" cellpadding="5" cellspacing="5">
         <tr>
@@ -94,7 +93,7 @@
             <td><c:out value="${clie.client.relative}" /></td>
             <td><c:out value="${clie.client.notes}" /></td>
             <td><c:out value="${clie.client.id}" /></td>
-        <</tr>
+        </tr>
     </c:forEach>
     </table>
     <br/>
@@ -124,9 +123,6 @@
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
-
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>
 </html>

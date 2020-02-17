@@ -36,13 +36,13 @@ public abstract class AbstractDao<T extends AbstractEntity> {
             try {
                 statement.close();
             } catch (SQLException e) {
-                LOGGER.log(Level.ERROR, "Statement closing failed.");
+                LOGGER.log(Level.ERROR, "Statement closing failed. ", e);
                 throw new DaoException(e);
             } finally {
                 if (connection != null) {
                     returnConnectionInPool();
                 } else {
-                    LOGGER.log(Level.ERROR, "Connection is null. ");
+                    LOGGER.log(Level.WARN, "Connection is null. ");
                 }
             }
         }

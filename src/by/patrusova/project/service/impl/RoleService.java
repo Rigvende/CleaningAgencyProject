@@ -56,7 +56,7 @@ public class RoleService implements Serviceable {
                 }
             }
         } catch (DaoException | SQLException e) {
-            LOGGER.log(Level.ERROR, "Exception while setting role has occurred.");
+            LOGGER.log(Level.ERROR, "Exception while setting role has occurred. ", e);
             throw new ServiceException(e);
         }
         return user;

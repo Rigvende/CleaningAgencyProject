@@ -13,8 +13,15 @@
 
 <h2 style="color: olivedrab"><fmt:message key="text.main1"/> ${user.name}!</h2>
 <h3><fmt:message key="text.main2"/></h3>
-<br/>
 
+</div>
+<div style="float: right" >
+    <div style="margin-right: 45px">
+    <b>ФУНКЦИИ:</b>
+</div>
+</div>
+<br/>
+<br/>
 <div style="float: right">
     <form name="guestForm" method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="showguests" />
@@ -46,7 +53,10 @@
         <input type="submit" value="<fmt:message key="button.showservices"/>"/>
     </form>
 </div>
-
+<div style="margin-left: 77px">
+    <b>МЕНЮ:</b>
+</div>
+<br/>
 <jsp:include page="/WEB-INF/view/menu.jsp"/>
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

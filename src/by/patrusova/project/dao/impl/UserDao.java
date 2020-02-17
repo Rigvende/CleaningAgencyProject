@@ -1,8 +1,8 @@
 package by.patrusova.project.dao.impl;
 
-import by.patrusova.project.dao.column.CleanerColumns;
-import by.patrusova.project.dao.column.ClientColumns;
-import by.patrusova.project.dao.column.UserColumns;
+import by.patrusova.project.util.column.CleanerColumns;
+import by.patrusova.project.util.column.ClientColumns;
+import by.patrusova.project.util.column.UserColumns;
 import by.patrusova.project.entity.impl.Cleaner;
 import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.util.stringholder.PreparedStatements;
@@ -23,7 +23,7 @@ public class UserDao extends AbstractDao<AbstractEntity> {
 
     private final static Logger LOGGER = LogManager.getLogger();
     private final static String CREATE = "add_user";
-    private final static String DELETE = "delete_user";
+    private final static String DELETE = "delete_user_id";
     private final static String UPDATE = "update_user";
     private final static String FIND_ENTITY = "find_user";
     private final static String CHECK_LOGIN = "check_login";
@@ -60,7 +60,7 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             isAdded = preparedStatement.execute();
             connection.commit();
         } catch (SQLException e) {
-            LOGGER.log(Level.ERROR, "Cannot add user. Request to table failed.");
+            LOGGER.log(Level.ERROR, "Cannot add user. Request to table failed. ", e);
             if (connection != null) {
                 connection.rollback();
             }
@@ -79,14 +79,14 @@ public class UserDao extends AbstractDao<AbstractEntity> {
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = PreparedStatements.useStatements(connection).get(DELETE);
-            preparedStatement.setString(1, user.getLogin());
+            preparedStatement.setLong(1, user.getId());
             isDeleted = preparedStatement.execute();
             connection.commit();
         } catch (SQLException | DaoException e) {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
+            LOGGER.log(Level.ERROR, "Cannot delete user. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
@@ -115,7 +115,7 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
+            LOGGER.log(Level.ERROR, "Cannot update user. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
@@ -140,7 +140,7 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
+            LOGGER.log(Level.ERROR, "Cannot find all users. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(statement);
@@ -165,7 +165,7 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
+            LOGGER.log(Level.ERROR, "Cannot find user by ID. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
@@ -190,7 +190,7 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
+            LOGGER.log(Level.ERROR, "Cannot find user by login/password. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
@@ -213,7 +213,7 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "Request to table failed.");
+            LOGGER.log(Level.ERROR, "Cannot find login in DB. Request to table failed.", e);
             throw new DaoException(e);
         } finally {
             closeStatement(statement);
@@ -288,7 +288,7 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "DAO exception (request or table failed): ", e);
+            LOGGER.log(Level.ERROR, "Cannot find users by role. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);

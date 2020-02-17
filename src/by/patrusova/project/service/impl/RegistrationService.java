@@ -38,7 +38,7 @@ public class RegistrationService implements EntityCreator, Serviceable {
                 }
             }
         } catch (DaoException e) {
-            LOGGER.log(Level.ERROR, "Cannot register user, exception has occurred.");
+            LOGGER.log(Level.ERROR, "Cannot register user, exception has occurred. ", e);
             throw new ServiceException(e);
         }
         return user;
@@ -71,7 +71,7 @@ public class RegistrationService implements EntityCreator, Serviceable {
         try {
             exist = userDao.findLogin(user.getLogin());
         } catch (DaoException | SQLException e) {
-            LOGGER.log(Level.ERROR, "Cannot check user in DB, exception has occurred.");
+            LOGGER.log(Level.ERROR, "Cannot check user in DB, exception has occurred. ", e);
             throw new ServiceException(e);
         }
         return exist;
@@ -91,7 +91,7 @@ public class RegistrationService implements EntityCreator, Serviceable {
             validationMap.put(Parameters.LOGINREG.getValue(),
                     RegistrationDataValidator.isValidLogin(login));
         } catch (DaoException | SQLException e) {
-            LOGGER.log(Level.ERROR, "Cannot validate user, exception has occurred.");
+            LOGGER.log(Level.ERROR, "Cannot validate user, exception has occurred. ", e);
             throw new ServiceException(e);
         }
         validationMap.put(Parameters.PASSWORDREG.getValue(),

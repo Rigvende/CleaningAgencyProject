@@ -83,7 +83,7 @@ public class LoginCommand implements ActionCommand {
                 page = ConfigurationManager.getProperty(Pages.PAGE_LOGIN.getValue());
             }
         } catch (ServiceException e) {
-            LOGGER.log(Level.ERROR, "Exception while logged in.");
+            LOGGER.log(Level.ERROR, "Exception while logged in. ", e);
             throw new CommandException(e);
         }
         return page;

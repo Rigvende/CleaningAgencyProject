@@ -33,7 +33,7 @@ public class ProxyConnection implements Connection {
             connection = DriverManager.getConnection(url, user, pass);
             LOGGER.log(Level.INFO, "Proxy connection to DB has been created successful.");
         } catch (SQLException e) {
-            LOGGER.log(Level.ERROR, "Connection's creation failed");
+            LOGGER.log(Level.ERROR, "Connection's creation failed. ", e);
             throw new DaoException(e);
         }
         return connection;
@@ -51,7 +51,7 @@ public class ProxyConnection implements Connection {
                 statement = connection.createStatement();
             }
         } catch (SQLException e) {
-            LOGGER.log(Level.ERROR, "Connection is null (or try to get null statement).");
+            LOGGER.log(Level.ERROR, "Connection is null (or try to get null statement). ", e);
             try {
                 throw new DaoException(e);
             } catch (DaoException ex) {
@@ -73,7 +73,7 @@ public class ProxyConnection implements Connection {
                 }
             }
         } catch (SQLException e) {
-            LOGGER.log(Level.ERROR, "Connection is null. ");
+            LOGGER.log(Level.ERROR, "Connection is null. ", e);
             try {
                 throw new DaoException(e);
             } catch (DaoException ex) {

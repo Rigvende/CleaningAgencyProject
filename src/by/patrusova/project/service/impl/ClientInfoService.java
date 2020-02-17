@@ -35,7 +35,7 @@ public class ClientInfoService implements Serviceable, EntityCreator {
                 client = null;
             }
         } catch (DaoException | SQLException e) {
-            LOGGER.log(Level.ERROR, "Exception while updating client's info has occurred.");
+            LOGGER.log(Level.ERROR, "Exception while updating client's info has occurred. ", e);
             throw new ServiceException(e);
         }
         return client;

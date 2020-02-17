@@ -13,6 +13,7 @@ import java.io.*;
 import java.sql.SQLException;
 import java.util.*;
 
+
 public class Main {
 
 //    public User createEntity(Map<String, Boolean> map) {
@@ -35,13 +36,15 @@ public class Main {
 
     public static void main(String[] args) throws IOException, SQLException, DaoException {
 
-        DaoFactory factory = new DaoFactory();
 
-            UserDao userDao = factory.createUserDao();
-            User user = (User) userDao.findEntityById(32);
-            user.setRole("client");
-            System.out.println(user);
-        System.out.println(userDao.update(user));
+
+//        DaoFactory factory = new DaoFactory();
+//
+//        UserDao userDao = factory.createUserDao();
+//        User user = (User) userDao.findEntityById(32);
+//        user.setRole("client");
+//        System.out.println(user);
+//        System.out.println(userDao.update(user));
 
 //        ShowGuestsService service = new ShowGuestsService();
 //        List<User> list = service.doService();
@@ -458,3 +461,4 @@ public class Main {
 //        }
     }
 }
+

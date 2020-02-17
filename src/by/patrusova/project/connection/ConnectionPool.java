@@ -29,7 +29,7 @@ public class ConnectionPool {
 
     private ConnectionPool() throws DaoException {
         if (instance != null) {
-            LOGGER.log(Level.ERROR, "Attempt to create one more class instance");
+            LOGGER.log(Level.ERROR, "Attempt to create one more class instance. ");
             throw new RuntimeException("Cannot create another pool's instance.");
         }
         try {
@@ -69,7 +69,7 @@ public class ConnectionPool {
             connection = pool.take();
             usedConnections.put(connection);
         } catch (InterruptedException e) {
-            LOGGER.log(Level.ERROR, "Cannot take connection from pool.");
+            LOGGER.log(Level.ERROR, "Cannot take connection from pool. ", e);
             Thread.currentThread().interrupt();
         }
         return connection;
@@ -80,7 +80,7 @@ public class ConnectionPool {
             usedConnections.remove(connection);
             pool.offer((ProxyConnection) connection);
         } else {
-            LOGGER.log(Level.ERROR, "Wrong type connection.");
+            LOGGER.log(Level.WARN, "Wrong type connection. ");
             throw new DaoException();
         }
     }
@@ -93,7 +93,7 @@ public class ConnectionPool {
                 }
                 connection.close();
             } catch (SQLException e) {
-                LOGGER.log(Level.ERROR, "Connection closing failed. " + e);
+                LOGGER.log(Level.ERROR, "Connection closing failed. ", e);
                 throw new DaoException(e);
             }
         }

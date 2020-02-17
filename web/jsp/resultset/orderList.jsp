@@ -30,17 +30,20 @@
 
 <form name="changeOrderForm" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="changeorder" />
+
     <fmt:message key="field.id"/>
     <br/>
     <label>
         <input type="number" name="id" value=""/>
     </label>
     <br/>
+
     <fmt:message key="field.status"/>
     <br/>
     <label>
         <input type="text" name="status" value=""/>
     </label>
+
     <input type="submit" value="<fmt:message key="button.changeorder"/>"/>
 </form>
 <br/>
@@ -83,22 +86,22 @@
     ${pageStart + 1} - ${pageStart + perPage}
     <a href="?start=${pageStart + perPage}">>></a>
 </div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>
 </html>

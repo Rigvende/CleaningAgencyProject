@@ -23,13 +23,19 @@
       <w>changeservice</w>
       <w>cleanerlist</w>
       <w>clientlist</w>
+      <w>comfirm</w>
+      <w>confirmfalse</w>
       <w>customtags</w>
+      <w>deleteadmin</w>
       <w>deletecleaner</w>
       <w>deleteclient</w>
       <w>deleteentity</w>
+      <w>deleteerror</w>
       <w>deletservice</w>
       <w>deregistered</w>
       <w>deregistering</w>
+      <w>entititype</w>
+      <w>entitytype</w>
       <w>firstname</w>
       <w>formerguest</w>
       <w>gmail</w>
@@ -51,6 +57,7 @@
       <w>mainclient</w>
       <w>mimokrokodil</w>
       <w>newuser</w>
+      <w>notconfirm</w>
       <w>notregistered</w>
       <w>nullpage</w>
       <w>orderlist</w>

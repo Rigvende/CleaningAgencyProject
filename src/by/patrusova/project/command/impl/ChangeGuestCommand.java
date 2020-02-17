@@ -29,7 +29,7 @@ public class ChangeGuestCommand implements ActionCommand {
         try {
             entity = roleService.doService(id, role);
         } catch (ServiceException e) {
-            LOGGER.log(Level.ERROR, "Exception has occurred while changing role was processing.");
+            LOGGER.log(Level.ERROR, "Exception has occurred while changing role was processing. ", e);
             throw new CommandException(e);
         }
         if (entity == null) {

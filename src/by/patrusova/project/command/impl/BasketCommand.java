@@ -9,7 +9,6 @@ public class BasketCommand implements ActionCommand {
 
     @Override
     public String execute(HttpServletRequest request) {
-
         return ConfigurationManager.getProperty(Pages.PAGE_BASKET.getValue());
     }
 }

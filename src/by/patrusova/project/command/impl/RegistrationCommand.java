@@ -41,7 +41,7 @@ public class RegistrationCommand implements ActionCommand {
                 }
             }
         } catch (ServiceException | SQLException e) {
-            LOGGER.log(Level.ERROR, "Exception has occurred while registration was processing.");
+            LOGGER.log(Level.ERROR, "Exception has occurred while registration was processing. ", e);
             throw new CommandException(e);
         }
         return page;
