@@ -20,8 +20,7 @@
     <b><fmt:message key="text.main4"/></b>
     </div>
 </div>
-<br/>
-<br/>
+<br/><br/>
 
 <div style="float: right">
     <form name="guestForm" method="post" action="${pageContext.request.contextPath}/controller">

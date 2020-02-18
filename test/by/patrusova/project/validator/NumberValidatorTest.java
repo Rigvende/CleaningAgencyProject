@@ -27,4 +27,16 @@ public class NumberValidatorTest {
         boolean actual = NumberValidator.isValidMark(10);
         assertFalse(actual);
     }
+
+    @Test
+    public void testSecondIsValidDecimal() {
+        boolean actual = NumberValidator.isValidDecimal("0.15");
+        assertTrue(actual);
+    }
+
+    @Test
+    public void testSecondIsValidDecimalNegative() {
+        boolean actual = NumberValidator.isValidDecimal("0.dd");
+        assertFalse(actual);
+    }
 }

@@ -17,9 +17,11 @@
 <c:set var="totalCount" scope="session" value="${orderList.size()}"/>
 <c:set var="perPage" scope="session" value="${5}"/>
 <c:set var="pageStart" value="${param.start}"/>
+
 <c:if test="${empty pageStart or pageStart < 0}">
     <c:set var="pageStart" value="0"/>
 </c:if>
+
 <c:if test="${totalCount < pageStart}">
     <c:set var="pageStart" value="${pageStart - perPage}"/>
 </c:if>
@@ -34,7 +36,7 @@
     <fmt:message key="field.id"/>
     <br/>
     <label>
-        <input type="number" name="id" value=""/>
+        <input type="text" name="id" value=""/>
     </label>
     <br/>
 
@@ -44,6 +46,11 @@
         <input type="text" name="status" value=""/>
     </label>
 
+    <div style="color: crimson">${errorChangeOrderMessage}</div>
+    ${wrongAction}
+    ${nullPage}
+    <br/><br/>
+
     <input type="submit" value="<fmt:message key="button.changeorder"/>"/>
 </form>
 <br/>
@@ -51,10 +58,7 @@
 <div style="float: left">
     <h5><u><fmt:message key="text.orders"/></u></h5>
 </div>
-<br/>
-<br/>
-<br/>
-<br/>
+<br/><br/><br/><br/>
 
 <div style="float: left">
     <table border="1" cellpadding="5" cellspacing="5">
@@ -86,21 +90,7 @@
     ${pageStart + 1} - ${pageStart + perPage}
     <a href="?start=${pageStart + perPage}">>></a>
 </div>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

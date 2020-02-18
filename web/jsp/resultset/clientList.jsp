@@ -35,8 +35,13 @@
 
     <fmt:message key="field.id"/>
     <label>
-        <input type="number" name="id" value=""/>
+        <input type="text" name="id" value=""/>
     </label>
+
+    <div style="color: crimson">${errorChangeClientIdMessage}</div>
+    ${wrongAction}
+    ${nullPage}
+    <br/><br/>
 
     <input type="submit" value="<fmt:message key="button.changeclient"/>"/>
 </form>
@@ -47,8 +52,13 @@
 
     <fmt:message key="field.id"/>
     <label>
-        <input type="number" name="id" value=""/>
+        <input type="text" name="id" value=""/>
     </label>
+
+    <div style="color: crimson">${errorDelete}</div>
+    ${wrongAction}
+    ${nullPage}
+    <br/><br/>
 
     <input type="submit" value="<fmt:message key="button.deleteclient"/>"/>
 </form>
@@ -94,7 +104,7 @@
     ${pageStart + 1} - ${pageStart + perPage}
     <a href="?start=${pageStart + perPage}">>></a>
 </div>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

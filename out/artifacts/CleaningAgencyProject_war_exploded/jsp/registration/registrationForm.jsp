@@ -27,45 +27,61 @@
     <br/>
     <form name="registrationForm" method="POST" action="${pageContext.request.contextPath}/controller">
         <fmt:message key="text.registration"/>
-        <hr/>
-        <input type="hidden" name="command" value="registration" />
-        <br/><fmt:message key="field.loginreg"/><br/>
+        <hr/><input type="hidden" name="command" value="registration" />
+        <br/>
+
+        <fmt:message key="field.loginreg"/><br/>
         <label>
             <input type="text" name="loginreg" value=""/>
         </label>
-        <br/><fmt:message key="field.passwordreg"/><br/>
+        <br/>
+
+        <fmt:message key="field.passwordreg"/><br/>
         <label>
             <input type="password" name="passwordreg" value=""/>
         </label>
-        <br/><fmt:message key="field.passwordagain"/><br/>
+        <br/>
+
+        <fmt:message key="field.passwordagain"/><br/>
         <label>
             <input type="password" name="passwordagain" value=""/>
         </label>
-        <br/><fmt:message key="field.name"/><br/>
+        <br/>
+
+        <fmt:message key="field.name"/><br/>
         <label>
             <input type="text" name="firstname" value=""/>
         </label>
-        <br/><fmt:message key="field.lastname"/><br/>
+        <br/>
+
+        <fmt:message key="field.lastname"/><br/>
         <label>
             <input type="text" name="lastname" value=""/>
         </label>
-        <br/><fmt:message key="field.phone"/><br/>
+        <br/>
+
+        <fmt:message key="field.phone"/><br/>
         <label>
             <input type="text" name="phone" value=""/>
         </label>
-        <br/><fmt:message key="field.email"/><br/>
+        <br/>
+
+        <fmt:message key="field.email"/><br/>
         <label>
             <input type="text" name="email" value=""/>
         </label>
-        <br/><fmt:message key="field.address"/><br/>
+        <br/>
+
+        <fmt:message key="field.address"/><br/>
         <label>
             <input type="text" name="address" value=""/>
         </label>
+
         <div style="color: crimson">${errorRegistrationMessage}</div>
         ${wrongAction}
         ${nullPage}
-        <br/>
-        <br/>
+        <br/><br/>
+
         <input type="submit" value="<fmt:message key="button.registration"/>"/>
     </form>
 

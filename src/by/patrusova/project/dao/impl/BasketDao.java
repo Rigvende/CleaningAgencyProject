@@ -6,7 +6,7 @@ import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.dao.EntityFactory;
 import by.patrusova.project.entity.impl.BasketPosition;
 import by.patrusova.project.exception.DaoException;
-import by.patrusova.project.util.stringholder.PreparedStatements;
+import by.patrusova.project.util.stringholder.Statements;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,9 +17,6 @@ import java.util.List;
 public class BasketDao extends AbstractDao<AbstractEntity> {
 
     private final static Logger LOGGER = LogManager.getLogger();
-    private final static String CREATE = "create_client";
-    private final static String DELETE = "delete_client";
-    private final static String FIND_ENTITY = "select_position";
     private static final String SQL_SELECT_ALL_BASKET_POSITIONS =
                     "SELECT id_basket, id_order, id_service FROM basket_position";
 
@@ -34,7 +31,8 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
         boolean isAdded;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get(CREATE);
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_ADD_POSITION.getValue());
             preparedStatement.setLong(1, 0);
             preparedStatement.setLong(2, position.getIdOrder());
             preparedStatement.setLong(3, position.getIdService());
@@ -44,7 +42,8 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "Cannot add position to the basket. Request to table failed. ", e);
+            LOGGER.log(Level.ERROR,
+                    "Cannot add position to the basket. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
@@ -59,11 +58,11 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
         BasketPosition position = (BasketPosition) entity;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get(DELETE);
-            preparedStatement.setLong(1, position.getId());
+            preparedStatement = connection.prepareStatement(Statements.SQL_DELETE_POSITION.getValue());
+            preparedStatement.setLong(1, position.getIdService());
             isDeleted = preparedStatement.execute();
             connection.commit();
-        } catch (SQLException | DaoException e) {
+        } catch (SQLException e) {
             if (connection != null) {
                 connection.rollback();
             }
@@ -97,7 +96,8 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "Cannot find all positions of the basket. Request to table failed. ", e);
+            LOGGER.log(Level.ERROR,
+                    "Cannot find all positions of the basket. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(statement);
@@ -111,7 +111,8 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
         BasketPosition position;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get(FIND_ENTITY);
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_SELECT_BASKET_POSITION_BY_ID.getValue());
             preparedStatement.setLong(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
@@ -121,7 +122,8 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
             if (connection != null) {
                 connection.rollback();
             }
-            LOGGER.log(Level.ERROR, "Cannot find basket position by ID. Request to table failed. ", e);
+            LOGGER.log(Level.ERROR,
+                    "Cannot find basket position by ID. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);

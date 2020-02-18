@@ -59,10 +59,10 @@ public class CleanerInfoService implements Serviceable, EntityCreator {
     //валидация введенных данных
     private Map<String, Boolean> validate(HttpServletRequest request) {
         Map<String, Boolean> validationMap = new HashMap<>();
-        double commission = Double.parseDouble(request.getParameter(Parameters.COMMISSION.getValue()));
+        String commission = request.getParameter(Parameters.COMMISSION.getValue());
         String notes = request.getParameter(Parameters.NOTES.getValue());
         validationMap.put(Parameters.COMMISSION.getValue(),
-                NumberValidator.isValidDecimal(Parameters.COMMISSION.getValue(), commission));
+                NumberValidator.isValidDecimal(commission));
         validationMap.put(Parameters.NOTES.getValue(),
                 StringValidator.isValidStringSize(Parameters.NOTES.getValue(), notes));
         return validationMap;

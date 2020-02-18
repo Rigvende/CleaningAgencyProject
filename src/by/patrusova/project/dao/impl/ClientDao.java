@@ -5,9 +5,8 @@ import by.patrusova.project.dao.AbstractDao;
 import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.dao.EntityFactory;
 import by.patrusova.project.entity.impl.Client;
-import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.DaoException;
-import by.patrusova.project.util.stringholder.PreparedStatements;
+import by.patrusova.project.util.stringholder.Statements;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,11 +17,6 @@ import java.util.List;
 public class ClientDao extends AbstractDao<AbstractEntity> {
 
     private final static Logger LOGGER = LogManager.getLogger();
-    private final static String CREATE = "create_client";
-    private final static String DELETE = "delete_client";
-    private final static String UPDATE = "update_client_admin";
-    private final static String FIND_ENTITY = "find_client";
-    private final static String UPDATE_CLIENT = "update_client_user";
     private static final String SQL_SELECT_ALL_CLIENTS =
             "SELECT id_client, id_user, discount, location, " +
                     "relative, notes FROM clients";
@@ -38,7 +32,8 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
         boolean isAdded;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get(CREATE);
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_CREATE_CLIENT_BY_ADMIN.getValue());
             preparedStatement.setLong(1, 0);
             preparedStatement.setLong(2, client.getIdUser());
             preparedStatement.setString(3, null);
@@ -66,11 +61,12 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
         Client client = (Client) entity;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get(DELETE);
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_DELETE_CLIENT.getValue());
             preparedStatement.setLong(1, client.getIdUser());
             isDeleted = preparedStatement.execute();
             connection.commit();
-        } catch (SQLException | DaoException e) {
+        } catch (SQLException e) {
             if (connection != null) {
                 connection.rollback();
             }
@@ -89,13 +85,14 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
         Client client = (Client) entity;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get(UPDATE);
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_UPDATE_CLIENT_BY_ADMIN.getValue());
             preparedStatement.setBigDecimal(1, client.getDiscount());
             preparedStatement.setString(2, client.getNotes());
             preparedStatement.setLong(3, client.getIdUser());
             isUpdated = preparedStatement.execute();
             connection.commit();
-        } catch (SQLException | DaoException e) {
+        } catch (SQLException e) {
             if (connection != null) {
                 connection.rollback();
             }
@@ -138,7 +135,8 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
         Client client;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get(FIND_ENTITY);
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_SELECT_CLIENT_BY_ID.getValue());
             preparedStatement.setLong(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             client = resultSet.next() ? EntityFactory.createClient(resultSet) : null;
@@ -161,13 +159,14 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
         Client client = (Client) entity;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get(UPDATE_CLIENT);
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_UPDATE_CLIENT_BY_USER.getValue());
             preparedStatement.setString(1, client.getLocation());
             preparedStatement.setString(2, client.getRelative());
             preparedStatement.setLong(3, client.getIdUser());
             isUpdated = preparedStatement.execute();
             connection.commit();
-        } catch (SQLException | DaoException e) {
+        } catch (SQLException e) {
             if (connection != null) {
                 connection.rollback();
             }

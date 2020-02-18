@@ -34,7 +34,7 @@
     <fmt:message key="field.id"/>
 
     <label>
-        <input type="number" name="id" value=""/>
+        <input type="text" name="id" value=""/>
     </label>
 
     <input type="submit" value="<fmt:message key="button.changecleaner"/>"/>
@@ -46,7 +46,7 @@
 
     <fmt:message key="field.id"/>
     <label>
-        <input type="number" name="id" value=""/>
+        <input type="text" name="id" value=""/>
     </label>
 
     <input type="submit" value="<fmt:message key="button.deletecleaner"/>"/>
@@ -55,10 +55,7 @@
 <div style="float: left">
     <h5><u><fmt:message key="text.cleaners"/></u></h5>
 </div>
-<br/>
-<br/>
-<br/>
-<br/>
+<br/><br/><br/><br/>
 
 <div style="float: left">
     <table border="1" cellpadding="5" cellspacing="5">
@@ -92,21 +89,7 @@
     ${pageStart + 1} - ${pageStart + perPage}
     <a href="?start=${pageStart + perPage}">>></a>
 </div>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

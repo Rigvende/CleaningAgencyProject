@@ -1,11 +1,9 @@
 package by.patrusova.project.command.impl.change;
 
 import by.patrusova.project.command.ActionCommand;
-import by.patrusova.project.entity.impl.Cleaner;
 import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
-import by.patrusova.project.service.impl.CleanerInfoService;
 import by.patrusova.project.service.impl.ClientInfoService;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.util.MessageManager;
@@ -15,6 +13,7 @@ import by.patrusova.project.util.stringholder.Pages;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import javax.servlet.http.HttpServletRequest;
 
 public class ChangeClientCommand implements ActionCommand {
@@ -27,17 +26,16 @@ public class ChangeClientCommand implements ActionCommand {
         try {
             Client client = clientInfoService.createEntity(request);
             if (client == null) {
-                request.getSession().setAttribute(Attributes.ERROR_CHANGE.getValue(),
-                        MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE.getValue()));
+                request.getSession().setAttribute(Attributes.ERROR_CHANGE_CLIENT.getValue(),
+                        MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_CLIENT.getValue()));
                 page = ConfigurationManager.getProperty(Pages.PAGE_CHANGE_CLIENT.getValue());
                 return page;
             } else {
-                client = clientInfoService.doServiceByAdmin(client);
-                if (client != null) {
+                if (clientInfoService.doServiceByAdmin(client) != null) {
                     page = ConfigurationManager.getProperty(Pages.PAGE_CONFIRM.getValue());
                 } else {
-                    request.getSession().setAttribute(Attributes.ERROR_CHANGE.getValue(),
-                            MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE.getValue()));
+                    request.getSession().setAttribute(Attributes.ERROR_CHANGE_CLIENT.getValue(),
+                            MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_CLIENT.getValue()));
                     page = ConfigurationManager.getProperty(Pages.PAGE_CHANGE_CLIENT.getValue());
                 }
             }

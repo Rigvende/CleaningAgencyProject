@@ -1,6 +1,6 @@
 package by.patrusova.project.connection;
 
-import by.patrusova.project.util.stringholder.PreparedStatements;
+import by.patrusova.project.util.stringholder.Statements;
 import by.patrusova.project.exception.DaoException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -16,11 +16,9 @@ public class ProxyConnection implements Connection {
 
     private final static Logger LOGGER = LogManager.getLogger();
     private Connection connection;
-    private ConcurrentHashMap<String, PreparedStatement> statements;
 
     protected ProxyConnection(Connection connection) throws DaoException {
         this.connection = connection;
-        this.statements = PreparedStatements.useStatements(connection);
     }
 
     public static Connection createConnection() throws DaoException {
@@ -66,11 +64,7 @@ public class ProxyConnection implements Connection {
         PreparedStatement statement = null;
         try {
             if (connection != null) {
-                statement = statements.get(s);
-                if (statement == null) {
                     statement = connection.prepareStatement(s);
-                    statements.put(s, statement);
-                }
             }
         } catch (SQLException e) {
             LOGGER.log(Level.ERROR, "Connection is null. ", e);
@@ -80,7 +74,6 @@ public class ProxyConnection implements Connection {
                 ex.printStackTrace();
             }
         }
-
         return statement;
     }
 

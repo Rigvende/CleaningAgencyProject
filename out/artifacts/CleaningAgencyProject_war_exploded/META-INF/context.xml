@@ -7,7 +7,6 @@
             maxTotal="20"
             maxIdle="10"
             maxWaitMillis="10000"
-            validationQuery="/* ping */"
             username="root"
             password="root"
             driverClassName="com.mysql.jdbc.Driver"

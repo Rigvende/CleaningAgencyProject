@@ -16,6 +16,7 @@ import by.patrusova.project.validator.StringValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
 import java.sql.SQLException;
@@ -62,9 +63,9 @@ public class ClientInfoService implements Serviceable, EntityCreator {
     @Override
     public Client createEntity(HttpServletRequest request) {
         if (request.getSession().getAttribute(Attributes.ROLE.getValue()) //сам клиент вносит изменения
-                   .equals(Attributes.CLIENT.getValue())) {
+                .equals(Attributes.CLIENT.getValue())) {
             Client updatedClient = (Client) request.getSession()
-                                   .getAttribute(Attributes.CLIENT.getValue());
+                    .getAttribute(Attributes.CLIENT.getValue());
             if (!validate(request).containsValue(false)) {
                 updatedClient.setLocation(request.getParameter(Parameters.LOCATION.getValue()));
                 updatedClient.setRelative(request.getParameter(Parameters.RELATIVE.getValue()));
@@ -74,10 +75,10 @@ public class ClientInfoService implements Serviceable, EntityCreator {
             }
         } else {                                                            //изменения вносит админ
             Client updatedClient = (Client) request.getSession()
-                                   .getAttribute(Attributes.CLIENT.getValue());
+                    .getAttribute(Attributes.CLIENT.getValue());
             if (!validate(request).containsValue(false)) {
-                updatedClient.setDiscount(BigDecimal.valueOf(Double.parseDouble
-                             (request.getParameter(Parameters.DISCOUNT.getValue()))));
+                String discount = request.getParameter(Parameters.DISCOUNT.getValue());
+                updatedClient.setDiscount(BigDecimal.valueOf(Double.parseDouble(discount)));
                 updatedClient.setNotes(request.getParameter(Parameters.NOTES.getValue()));
                 return updatedClient;
             } else {
@@ -98,10 +99,10 @@ public class ClientInfoService implements Serviceable, EntityCreator {
             validationMap.put(Parameters.RELATIVE.getValue(),
                     StringValidator.isValidStringSize(Parameters.RELATIVE.getValue(), relative));
         } else {                                                                //изменения вносит админ
-            double discount = Double.parseDouble(request.getParameter(Parameters.DISCOUNT.getValue()));
+            String discount = request.getParameter(Parameters.DISCOUNT.getValue());
             String notes = request.getParameter(Parameters.NOTES.getValue());
             validationMap.put(Parameters.DISCOUNT.getValue(),
-                    NumberValidator.isValidDecimal(Parameters.DISCOUNT.getValue(), discount));
+                    NumberValidator.isValidDecimal(discount));
             validationMap.put(Parameters.NOTES.getValue(),
                     StringValidator.isValidStringSize(Parameters.NOTES.getValue(), notes));
         }

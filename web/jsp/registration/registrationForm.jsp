@@ -27,8 +27,7 @@
     <br/>
     <form name="registrationForm" method="POST" action="${pageContext.request.contextPath}/controller">
         <fmt:message key="text.registration"/>
-        <hr/>
-        <input type="hidden" name="command" value="registration" />
+        <hr/><input type="hidden" name="command" value="registration" />
         <br/>
 
         <fmt:message key="field.loginreg"/><br/>

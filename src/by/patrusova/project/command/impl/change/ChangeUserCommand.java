@@ -27,8 +27,8 @@ public class ChangeUserCommand implements ActionCommand {
         try {
             User user = userInfoService.createEntity(request);
             if (user == null) {
-                request.getSession().setAttribute(Attributes.ERROR_CHANGE.getValue(),
-                        MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE.getValue()));
+                request.getSession().setAttribute(Attributes.ERROR_CHANGE_USER.getValue(),
+                        MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_USER.getValue()));
                 page = ConfigurationManager.getProperty(Pages.PAGE_CHANGE.getValue());
                 return page;
             } else {
@@ -36,8 +36,8 @@ public class ChangeUserCommand implements ActionCommand {
                 if (user != null) {
                     page = ConfigurationManager.getProperty(Pages.PAGE_PROFILE.getValue());
                 } else {
-                    request.getSession().setAttribute(Attributes.ERROR_CHANGE.getValue(),
-                            MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE.getValue()));
+                    request.getSession().setAttribute(Attributes.ERROR_CHANGE_USER.getValue(),
+                            MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_USER.getValue()));
                     page = ConfigurationManager.getProperty(Pages.PAGE_CHANGE.getValue());
                 }
             }

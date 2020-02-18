@@ -27,7 +27,7 @@
         <input type="text" name="relative" value="${client.relative}"/>
     </label>
 
-    <div style="color: crimson">${errorChangeMessage}</div>
+    <div style="color: crimson">${errorChangeBurialMessage}</div>
     ${wrongAction}
     ${nullPage}
     <br/>    <br/>

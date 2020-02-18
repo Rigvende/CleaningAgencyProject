@@ -26,8 +26,8 @@ public class ChangeBurialCommand implements ActionCommand {
         try {
             Client client = clientInfoService.createEntity(request);
             if (client == null) {
-                request.getSession().setAttribute(Attributes.ERROR_CHANGE.getValue(),
-                        MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE.getValue()));
+                request.getSession().setAttribute(Attributes.ERROR_CHANGE_BURIAL.getValue(),
+                        MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_BURIAL.getValue()));
                 page = ConfigurationManager.getProperty(Pages.PAGE_CHANGE_BURIAL.getValue());
                 return page;
             } else {
@@ -35,8 +35,8 @@ public class ChangeBurialCommand implements ActionCommand {
                 if (client != null) {
                     page = ConfigurationManager.getProperty(Pages.PAGE_PROFILE.getValue());
                 } else {
-                    request.getSession().setAttribute(Attributes.ERROR_CHANGE.getValue(),
-                            MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE.getValue()));
+                    request.getSession().setAttribute(Attributes.ERROR_CHANGE_BURIAL.getValue(),
+                            MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_BURIAL.getValue()));
                     page = ConfigurationManager.getProperty(Pages.PAGE_CHANGE_BURIAL.getValue());
                 }
             }

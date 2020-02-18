@@ -6,4 +6,5 @@
         <ctg:info-time/>
     </div>
 </div>
+
 <img src="${pageContext.request.contextPath}/data/fon.jpg" alt="back" width="100%">

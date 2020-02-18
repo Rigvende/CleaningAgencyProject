@@ -8,8 +8,11 @@ import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.CleanerInfoService;
 import by.patrusova.project.service.impl.ClientInfoService;
 import by.patrusova.project.util.ConfigurationManager;
+import by.patrusova.project.util.MessageManager;
 import by.patrusova.project.util.stringholder.Attributes;
+import by.patrusova.project.util.stringholder.Messages;
 import by.patrusova.project.util.stringholder.Pages;
+import by.patrusova.project.validator.NumberValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,7 +27,9 @@ public class ChangeClientRedirectCommand implements ActionCommand {
     public String execute(HttpServletRequest request) throws CommandException {
         ClientInfoService service = new ClientInfoService();
         Client client = new Client();
-        client.setIdUser(Long.parseLong(request.getParameter(Attributes.ID.getValue())));
+        String id = request.getParameter(Attributes.ID.getValue());
+        if (NumberValidator.isValidID(id)) {
+            client.setIdUser(Long.parseLong(id));
         try {
             client = service.getClient(client);
             request.getSession().setAttribute(Attributes.CLIENT.getValue(), client);
@@ -33,5 +38,10 @@ public class ChangeClientRedirectCommand implements ActionCommand {
             throw new CommandException(e);
         }
         return ConfigurationManager.getProperty(Pages.PAGE_CHANGE_CLIENT.getValue());
+        } else {
+            request.getSession().setAttribute(Attributes.ERROR_CHANGE_CLIENT_ID.getValue(),
+                    MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_CLIENT_ID.getValue()));
+            return ConfigurationManager.getProperty(Pages.PAGE_CLIENTLIST.getValue());
+        }
     }
 }

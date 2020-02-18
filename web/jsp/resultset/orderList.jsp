@@ -36,7 +36,7 @@
     <fmt:message key="field.id"/>
     <br/>
     <label>
-        <input type="number" name="id" value=""/>
+        <input type="text" name="id" value=""/>
     </label>
     <br/>
 
@@ -46,7 +46,7 @@
         <input type="text" name="status" value=""/>
     </label>
 
-    <div style="color: crimson">${errorChangeMessage}</div>
+    <div style="color: crimson">${errorChangeOrderMessage}</div>
     ${wrongAction}
     ${nullPage}
     <br/><br/>

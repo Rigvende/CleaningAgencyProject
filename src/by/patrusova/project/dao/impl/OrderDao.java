@@ -6,7 +6,7 @@ import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.dao.EntityFactory;
 import by.patrusova.project.entity.impl.Order;
 import by.patrusova.project.exception.DaoException;
-import by.patrusova.project.util.stringholder.PreparedStatements;
+import by.patrusova.project.util.stringholder.Statements;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,10 +17,6 @@ import java.util.List;
 public class OrderDao extends AbstractDao<AbstractEntity> {
 
     private final static Logger LOGGER = LogManager.getLogger();
-    private final static String CREATE = "add_order";
-    private final static String DELETE = "delete_order";
-    private final static String UPDATE = "update_order";
-    private final static String FIND_ENTITY = "find_order";
     private static final String SQL_SELECT_ALL_ORDERS =
                     "SELECT id_order, order_time, deadline, order_status, " +
                     "mark, id_client, id_cleaner FROM orders";
@@ -36,7 +32,8 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
         boolean isAdded;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get(CREATE);
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_ADD_ORDER.getValue());
             preparedStatement.setLong(1, 0);
             preparedStatement.setDate(2, Date.valueOf(order.getOrderTime()));
             preparedStatement.setDate(3, Date.valueOf(order.getDeadline()));
@@ -70,14 +67,15 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
         Order order = (Order)entity;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get(UPDATE);
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_UPDATE_ORDER.getValue());
             preparedStatement.setDate(1, Date.valueOf(order.getDeadline()));
             preparedStatement.setString(2, order.getOrderStatus());
             preparedStatement.setLong(3, order.getIdCleaner());
             preparedStatement.setLong(4, order.getId());
             isUpdated = preparedStatement.execute();
             connection.commit();
-        } catch (SQLException | DaoException e) {
+        } catch (SQLException e) {
             if (connection != null) {
                 connection.rollback();
             }
@@ -120,7 +118,8 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
         Order order;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get(FIND_ENTITY);
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_SELECT_ORDER_BY_ID.getValue());
             preparedStatement.setLong(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();

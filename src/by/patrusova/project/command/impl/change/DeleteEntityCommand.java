@@ -9,8 +9,12 @@ import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.DeleteEntityService;
 import by.patrusova.project.util.ConfigurationManager;
+import by.patrusova.project.util.MessageManager;
+import by.patrusova.project.util.stringholder.Attributes;
+import by.patrusova.project.util.stringholder.Messages;
 import by.patrusova.project.util.stringholder.Pages;
 import by.patrusova.project.util.stringholder.Parameters;
+import by.patrusova.project.validator.NumberValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,7 +28,13 @@ public class DeleteEntityCommand implements ActionCommand {
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
         String page;
-        long id = Long.parseLong(request.getParameter(Parameters.ID.getValue()));
+        String Id = request.getParameter(Parameters.ID.getValue());
+        if (!NumberValidator.isValidID(Id)){
+            request.getSession().setAttribute(Attributes.ERROR_DELETE.getValue(),
+                    MessageManager.getProperty(Messages.MESSAGE_ERROR_DELETE.getValue()));
+            return ConfigurationManager.getProperty(Pages.PAGE_CONFIRMFALSE.getValue());
+        }
+        long id = Long.parseLong(Id);
         DeleteEntityService entityService = new DeleteEntityService();
         String type = request.getParameter(Parameters.ENTITITYPE.getValue());
         try {

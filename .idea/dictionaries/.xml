@@ -16,6 +16,7 @@
       <w>changeclient</w>
       <w>changeclientredirect</w>
       <w>changeerror</w>
+      <w>changeerrorid</w>
       <w>changeform</w>
       <w>changeguest</w>
       <w>changeinfo</w>

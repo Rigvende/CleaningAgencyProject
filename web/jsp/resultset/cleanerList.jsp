@@ -34,8 +34,13 @@
     <fmt:message key="field.id"/>
 
     <label>
-        <input type="number" name="id" value=""/>
+        <input type="text" name="id" value=""/>
     </label>
+
+    <div style="color: crimson">${errorChangeCleanerIdMessage}</div>
+    ${wrongAction}
+    ${nullPage}
+    <br/><br/>
 
     <input type="submit" value="<fmt:message key="button.changecleaner"/>"/>
 </form>
@@ -46,8 +51,13 @@
 
     <fmt:message key="field.id"/>
     <label>
-        <input type="number" name="id" value=""/>
+        <input type="text" name="id" value=""/>
     </label>
+
+    <div style="color: crimson">${errorDelete}</div>
+    ${wrongAction}
+    ${nullPage}
+    <br/><br/>
 
     <input type="submit" value="<fmt:message key="button.deletecleaner"/>"/>
 </form>

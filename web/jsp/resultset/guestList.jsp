@@ -36,20 +36,20 @@
     <fmt:message key="field.id"/>
     <br/>
     <label>
-        <input type="number" name="id" value=""/>
+        <input type="text" name="id" value=""/>
     </label>
     <br/>
 
-    <fmt:message key="field.role"/>
+    <fmt:message key="field.guest"/>
     <br/>
     <label>
-        <input type="text" name="role" value=""/>
+        <input type="text" name="role" value="<fmt:message key="text.guest"/>"/>
     </label>
 
-    <div style="color: crimson">${errorChangeMessage}</div>
+    <div style="color: crimson">${errorChangeGuestMessage}</div>
     ${wrongAction}
     ${nullPage}
-    <br/><br/>
+    <br/>
 
     <input type="submit" value="<fmt:message key="button.changeguest"/>"/>
 </form>

@@ -5,7 +5,7 @@ import by.patrusova.project.util.column.ClientColumns;
 import by.patrusova.project.util.column.UserColumns;
 import by.patrusova.project.entity.impl.Cleaner;
 import by.patrusova.project.entity.impl.Client;
-import by.patrusova.project.util.stringholder.PreparedStatements;
+import by.patrusova.project.util.stringholder.Statements;
 import by.patrusova.project.connection.ProxyConnection;
 import by.patrusova.project.dao.AbstractDao;
 import by.patrusova.project.entity.AbstractEntity;
@@ -22,14 +22,6 @@ import java.util.List;
 public class UserDao extends AbstractDao<AbstractEntity> {
 
     private final static Logger LOGGER = LogManager.getLogger();
-    private final static String CREATE = "add_user";
-    private final static String DELETE = "delete_user_id";
-    private final static String UPDATE = "update_user";
-    private final static String FIND_ENTITY = "find_user";
-    private final static String CHECK_LOGIN = "check_login";
-    private final static String FIND_USERS = "find_role";
-    private final static String FIND_CLIENTS = "find_role_client";
-    private final static String FIND_CLEANERS = "find_role_cleaner";
     private static final String SQL_SELECT_ALL_USERS =
             "SELECT id_user, login, password, role, name, " +
                     "lastname, phone, address, email FROM users";
@@ -47,7 +39,8 @@ public class UserDao extends AbstractDao<AbstractEntity> {
         boolean isAdded;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get(CREATE);
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_ADD_USER.getValue());
             preparedStatement.setLong(1, 0);
             preparedStatement.setString(2, user.getLogin());
             preparedStatement.setString(3, user.getPassword());
@@ -78,11 +71,12 @@ public class UserDao extends AbstractDao<AbstractEntity> {
         User user = (User) entity;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get(DELETE);
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_DELETE_USER.getValue());
             preparedStatement.setLong(1, user.getId());
             isDeleted = preparedStatement.execute();
             connection.commit();
-        } catch (SQLException | DaoException e) {
+        } catch (SQLException e) {
             if (connection != null) {
                 connection.rollback();
             }
@@ -101,7 +95,8 @@ public class UserDao extends AbstractDao<AbstractEntity> {
         User user = (User) entity;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get(UPDATE);
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_UPDATE_USER.getValue());
             preparedStatement.setString(1, user.getName());
             preparedStatement.setString(2, user.getLastname());
             preparedStatement.setString(3, user.getRole());
@@ -111,7 +106,7 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             preparedStatement.setLong(7, user.getId());
             isUpdated = preparedStatement.execute();
             connection.commit();
-        } catch (SQLException | DaoException e) {
+        } catch (SQLException e) {
             if (connection != null) {
                 connection.rollback();
             }
@@ -154,7 +149,8 @@ public class UserDao extends AbstractDao<AbstractEntity> {
         User user = null;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get(FIND_ENTITY);
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_SELECT_USER_BY_ID.getValue());
             preparedStatement.setLong(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
@@ -178,7 +174,8 @@ public class UserDao extends AbstractDao<AbstractEntity> {
         User user = null;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get(CHECK_LOGIN);
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_SELECT_USER_BY_LOGIN_PASS.getValue());
             preparedStatement.setString(1, login);
             preparedStatement.setString(2, pass);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -228,7 +225,8 @@ public class UserDao extends AbstractDao<AbstractEntity> {
         try {
             switch (role) {
                 case "cleaner":
-                    preparedStatement = PreparedStatements.useStatements(connection).get(FIND_CLEANERS);
+                    preparedStatement = connection.prepareStatement
+                            (Statements.SQL_FIND_CLEANERS_BY_ROLE.getValue());
                     preparedStatement.setString(1, role);
                     ResultSet resultSet1 = preparedStatement.executeQuery();
                     while (resultSet1.next()) {
@@ -249,7 +247,8 @@ public class UserDao extends AbstractDao<AbstractEntity> {
                     }
                     break;
                 case "client":
-                    preparedStatement = PreparedStatements.useStatements(connection).get(FIND_CLIENTS);
+                    preparedStatement = connection.prepareStatement
+                            (Statements.SQL_FIND_CLIENTS_BY_ROLE.getValue());
                     preparedStatement.setString(1, role);
                     ResultSet resultSet2 = preparedStatement.executeQuery();
                     while (resultSet2.next()) {
@@ -274,7 +273,8 @@ public class UserDao extends AbstractDao<AbstractEntity> {
                 case "guest":
                 case "admin":
                 default:
-                    preparedStatement = PreparedStatements.useStatements(connection).get(FIND_USERS);
+                    preparedStatement = connection.prepareStatement
+                            (Statements.SQL_FIND_USERS_BY_ROLE.getValue());
                     preparedStatement.setString(1, role);
                     ResultSet resultSet3 = preparedStatement.executeQuery();
                     while (resultSet3.next()) {

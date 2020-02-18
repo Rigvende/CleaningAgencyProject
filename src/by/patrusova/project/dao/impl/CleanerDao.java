@@ -6,7 +6,7 @@ import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.dao.EntityFactory;
 import by.patrusova.project.entity.impl.Cleaner;
 import by.patrusova.project.exception.DaoException;
-import by.patrusova.project.util.stringholder.PreparedStatements;
+import by.patrusova.project.util.stringholder.Statements;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,10 +17,6 @@ import java.util.List;
 public class CleanerDao extends AbstractDao<AbstractEntity> {
 
     private final static Logger LOGGER = LogManager.getLogger();
-    private final static String CREATE = "create_cleaner";
-    private final static String DELETE = "delete_cleaner";
-    private final static String UPDATE = "update_cleaner_admin";
-    private final static String FIND_ENTITY = "find_cleaner";
     private static final String SQL_SELECT_ALL_CLEANERS =
             "SELECT id_cleaner, id_user, commission FROM cleaners";
 
@@ -35,7 +31,8 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
         boolean isAdded;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get(CREATE);
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_CREATE_CLEANER_BY_ADMIN.getValue());
             preparedStatement.setLong(1, 0);
             preparedStatement.setLong(2, cleaner.getIdUser());
             preparedStatement.setString(3, null);
@@ -61,11 +58,12 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
         Cleaner cleaner = (Cleaner) entity;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get(DELETE);
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_DELETE_CLEANER.getValue());
             preparedStatement.setLong(1, cleaner.getIdUser());
             isDeleted = preparedStatement.execute();
             connection.commit();
-        } catch (SQLException | DaoException e) {
+        } catch (SQLException e) {
             if (connection != null) {
                 connection.rollback();
             }
@@ -84,13 +82,14 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
         Cleaner cleaner = (Cleaner) entity;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get(UPDATE);
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_UPDATE_CLEANER_BY_ADMIN.getValue());
             preparedStatement.setBigDecimal(1, cleaner.getCommission());
             preparedStatement.setString(2, cleaner.getNotes());
             preparedStatement.setLong(3, cleaner.getIdUser());
             isUpdated = preparedStatement.execute();
             connection.commit();
-        } catch (SQLException | DaoException e) {
+        } catch (SQLException e) {
             if (connection != null) {
                 connection.rollback();
             }
@@ -133,7 +132,8 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
         Cleaner cleaner;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = PreparedStatements.useStatements(connection).get(FIND_ENTITY);
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_SELECT_CLEANER_BY_ID.getValue());
             preparedStatement.setDouble(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();

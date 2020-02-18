@@ -26,17 +26,16 @@ public class ChangeCleanerCommand implements ActionCommand {
         try {
             Cleaner cleaner = cleanerInfoService.createEntity(request);
             if (cleaner == null) {
-                request.getSession().setAttribute(Attributes.ERROR_CHANGE.getValue(),
-                        MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE.getValue()));
+                request.getSession().setAttribute(Attributes.ERROR_CHANGE_CLEANER.getValue(),
+                        MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_CLEANER.getValue()));
                 page = ConfigurationManager.getProperty(Pages.PAGE_CHANGE_CLEANER.getValue());
                 return page;
             } else {
-                cleaner = cleanerInfoService.doService(cleaner);
-                if (cleaner != null) {
+                if (cleanerInfoService.doService(cleaner) != null) {
                     page = ConfigurationManager.getProperty(Pages.PAGE_CONFIRM.getValue());
                 } else {
-                    request.getSession().setAttribute(Attributes.ERROR_CHANGE.getValue(),
-                            MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE.getValue()));
+                    request.getSession().setAttribute(Attributes.ERROR_CHANGE_CLEANER.getValue(),
+                            MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_CLEANER.getValue()));
                     page = ConfigurationManager.getProperty(Pages.PAGE_CHANGE_CLEANER.getValue());
                 }
             }

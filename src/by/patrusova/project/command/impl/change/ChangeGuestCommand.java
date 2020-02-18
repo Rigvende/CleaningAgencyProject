@@ -11,6 +11,8 @@ import by.patrusova.project.util.MessageManager;
 import by.patrusova.project.util.stringholder.Attributes;
 import by.patrusova.project.util.stringholder.Messages;
 import by.patrusova.project.util.stringholder.Pages;
+import by.patrusova.project.util.stringholder.Parameters;
+import by.patrusova.project.validator.NumberValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,8 +24,14 @@ public class ChangeGuestCommand implements ActionCommand {
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
+        String Id = request.getParameter(Parameters.ID.getValue());
+        if (!NumberValidator.isValidID(Id)){
+            request.getSession().setAttribute(Attributes.ERROR_CHANGE_GUEST_ID.getValue(),
+                    MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_GUEST_ID.getValue()));
+            return ConfigurationManager.getProperty(Pages.PAGE_GUESTLIST.getValue());
+        }
         RoleService roleService = new RoleService();
-        long id = Long.parseLong(request.getParameter(Attributes.ID.getValue()));
+        long id = Long.parseLong(Id);
         String role = request.getParameter(Attributes.ROLE.getValue());
         AbstractEntity entity;
         try {
@@ -33,8 +41,8 @@ public class ChangeGuestCommand implements ActionCommand {
             throw new CommandException(e);
         }
         if (entity == null) {
-            request.getSession().setAttribute(Attributes.ERROR_CHANGE.getValue(),
-                    MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE.getValue()));
+            request.getSession().setAttribute(Attributes.ERROR_CHANGE_GUEST.getValue(),
+                    MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_GUEST.getValue()));
             return ConfigurationManager.getProperty(Pages.PAGE_GUESTLIST.getValue());
         } else {
             User user = (User) entity;

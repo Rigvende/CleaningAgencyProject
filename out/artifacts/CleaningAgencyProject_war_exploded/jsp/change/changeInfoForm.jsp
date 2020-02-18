@@ -15,40 +15,43 @@
 <br/>
 <form name="changeForm" method="POST" action="${pageContext.request.contextPath}/controller">
     <fmt:message key="text.change1"/>
-    <hr/>
-    <input type="hidden" name="command" value="changeuser" />
+    <hr/><input type="hidden" name="command" value="changeuser" />
+
     <br/><fmt:message key="field.name1"/><br/>
     <label>
         <input type="text" name="firstname" value="${user.name}"/>
     </label>
+
     <br/><fmt:message key="field.lastname1"/><br/>
     <label>
         <input type="text" name="lastname" value="${user.lastname}"/>
     </label>
+
     <br/><fmt:message key="field.phone1"/><br/>
     <label>
         <input type="number" name="phone" value="${user.phone}"/>
     </label>
+
     <br/><fmt:message key="field.email1"/><br/>
     <label>
         <input type="text" name="email" value="${user.email}"/>
     </label>
+
     <br/><fmt:message key="field.address"/><br/>
     <label>
         <input type="text" name="address" value="${user.address}"/>
     </label>
-    <div style="color: crimson">${errorChangeMessage}</div>
+
+    <div style="color: crimson">${errorChangeUserMessage}</div>
     ${wrongAction}
     ${nullPage}
-    <br/>
-    <br/>
+    <br/>    <br/>
+
     <input type="submit" value="<fmt:message key="button.change"/>"/>
 </form>
 
 <jsp:include page="/WEB-INF/view/backToMain.jsp"/>
-<br/>
-<br/>
-<br/>
+<br/><br/><br/>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

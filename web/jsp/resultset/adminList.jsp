@@ -37,7 +37,7 @@
     <fmt:message key="field.id"/>
     <br/>
     <label>
-        <input type="number" name="id" value=""/>
+        <input type="text" name="id" value=""/>
     </label>
 
     <input type="submit" value="<fmt:message key="button.deleteadmin"/>"/>
