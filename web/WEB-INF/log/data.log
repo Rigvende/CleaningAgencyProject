@@ -5604,7 +5604,7 @@ java.sql.SQLException: Column 'firstname' not found.
 	at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:852) ~[mysql-connector-java-8.0.19.jar:8.0.19]
 	at by.patrusova.project.dao.impl.UserDao.findUsersByRole(UserDao.java:261) [classes/:?]
 	at by.patrusova.project.service.impl.ShowService.doService(ShowService.java:28) [classes/:?]
-	at by.patrusova.project.command.impl.ShowClientsCommand.execute(ShowClientsCommand.java:31) [classes/:?]
+	at by.patrusova.project.command.impl.show.ShowClientsCommand.execute(ShowClientsCommand.java:31) [classes/:?]
 	at by.patrusova.project.servlet.ControlServlet.processRequest(ControlServlet.java:47) [classes/:?]
 	at by.patrusova.project.servlet.ControlServlet.doPost(ControlServlet.java:39) [classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [servlet-api.jar:?]
@@ -5746,7 +5746,7 @@ java.sql.SQLException: Column 'firstname' not found.
 	at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:852) ~[mysql-connector-java-8.0.19.jar:8.0.19]
 	at by.patrusova.project.dao.impl.UserDao.findUsersByRole(UserDao.java:240) [classes/:?]
 	at by.patrusova.project.service.impl.ShowService.doService(ShowService.java:28) [classes/:?]
-	at by.patrusova.project.command.impl.ShowCleanersCommand.execute(ShowCleanersCommand.java:31) [classes/:?]
+	at by.patrusova.project.command.impl.show.ShowCleanersCommand.execute(ShowCleanersCommand.java:31) [classes/:?]
 	at by.patrusova.project.servlet.ControlServlet.processRequest(ControlServlet.java:47) [classes/:?]
 	at by.patrusova.project.servlet.ControlServlet.doPost(ControlServlet.java:39) [classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [servlet-api.jar:?]
@@ -8017,3 +8017,37 @@ Caused by: com.mysql.cj.exceptions.StatementIsClosedException: No operations all
 18-02 16:30 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
 18-02 16:30 INFO  project.filter.LogFilter -  - ServletPath :/jsp/resultset/clientList.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/resultset/clientList.jsp
 18-02 16:31 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+18-02 17:00 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@73f9b50b
+18-02 17:00 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@329576a4
+18-02 17:00 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+18-02 17:01 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+18-02 17:01 INFO  project.filter.LogFilter -  - ServletPath :/index.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/
+18-02 17:01 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+18-02 17:01 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+18-02 17:01 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+18-02 17:01 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+18-02 17:01 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+18-02 17:01 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+18-02 17:01 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+18-02 17:01 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+18-02 17:01 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+18-02 17:01 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+18-02 17:01 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+18-02 17:01 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+18-02 17:01 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+18-02 17:01 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+18-02 17:01 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+18-02 17:01 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+18-02 17:01 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+18-02 17:01 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+18-02 17:01 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+18-02 17:01 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+18-02 17:01 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+18-02 17:01 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+18-02 17:01 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+18-02 17:01 INFO  project.filter.LogFilter -  - ServletPath :/jsp/main/mainAdmin.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/main/mainAdmin.jsp
+18-02 17:02 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+18-02 17:02 INFO  project.filter.LogFilter -  - ServletPath :/jsp/resultset/clientList.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/resultset/clientList.jsp
+18-02 17:08 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+18-02 17:08 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/controller
+18-02 17:08 INFO  command.impl.LocaleCommand - ru_RU

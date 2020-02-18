@@ -23,20 +23,21 @@
 <p><fmt:message key="text.info2"/></p>
 <p><i><fmt:message key="text.info3"/></i></p>
 <br/>
+
 <b><fmt:message key="text.info4"/></b>
 <br/>
     <fmt:message key="text.info5"/>
-<br/>
+    <br/>
     <fmt:message key="text.info6"/>
-<br/>
+    <br/>
     <fmt:message key="text.info7"/>
-<br/>
+    <br/>
     <fmt:message key="text.info8"/>
-<br/>
+    <br/>
     <fmt:message key="text.info9"/>
-<br/>
+    <br/>
     <fmt:message key="text.info10"/>
-<br/>
+    <br/>
     <fmt:message key="text.info11"/>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>

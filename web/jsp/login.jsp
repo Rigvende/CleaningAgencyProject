@@ -42,19 +42,24 @@
 <hr/>
 <form name="loginForm" method="POST" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="login" />
+
     <br/><fmt:message key="field.login"/><br/>
     <label>
         <input type="text" name="login" value=""/>
     </label>
-    <br/><fmt:message key="field.password"/><br/>
+    <br/>
+
+    <fmt:message key="field.password"/><br/>
     <label>
         <input type="password" name="password" value=""/>
     </label>
     <br/>
+
     <div style="color: crimson">${errorLoginPassMessage}</div>
     ${wrongAction}
     ${nullPage}
     <br/>
+
     <input type="submit" value="<fmt:message key="button.login"/>"/>
 </form>
 

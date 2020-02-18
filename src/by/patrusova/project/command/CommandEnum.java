@@ -1,6 +1,12 @@
 package by.patrusova.project.command;
 
 import by.patrusova.project.command.impl.*;
+import by.patrusova.project.command.impl.change.*;
+import by.patrusova.project.command.impl.menu.BasketCommand;
+import by.patrusova.project.command.impl.menu.CatalogueCommand;
+import by.patrusova.project.command.impl.menu.InfoCommand;
+import by.patrusova.project.command.impl.menu.ProfileCommand;
+import by.patrusova.project.command.impl.show.*;
 
 public enum CommandEnum {
 

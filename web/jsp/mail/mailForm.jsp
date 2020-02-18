@@ -15,8 +15,7 @@
 <div style="float: right">
     <jsp:include page="/WEB-INF/view/backToMain.jsp"/>
 </div>
-<br/>
-<br/>
+<br/><br/>
 
 <form name="mailForm" method="POST" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="mail" />
@@ -48,6 +47,12 @@
         </textarea>
     </label>
     <br/><br/>
+
+    <div style="color: crimson">${errorMail}</div>
+    ${wrongAction}
+    ${nullPage}
+    <br/>    <br/>
+
     <input type="submit" value="<fmt:message key="button.send"/>"/>
 </form>
 

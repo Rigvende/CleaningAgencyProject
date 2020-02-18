@@ -17,11 +17,12 @@
 </div>
 <div style="float: right" >
     <div style="margin-right: 45px">
-    <b>ФУНКЦИИ:</b>
-</div>
+    <b><fmt:message key="text.main4"/></b>
+    </div>
 </div>
 <br/>
 <br/>
+
 <div style="float: right">
     <form name="guestForm" method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="showguests" />
@@ -53,10 +54,12 @@
         <input type="submit" value="<fmt:message key="button.showservices"/>"/>
     </form>
 </div>
+
 <div style="margin-left: 77px">
-    <b>МЕНЮ:</b>
+    <b><fmt:message key="text.main3"/></b>
 </div>
 <br/>
+
 <jsp:include page="/WEB-INF/view/menu.jsp"/>
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

@@ -24,7 +24,6 @@ public enum Attributes {
     ERROR_REG("errorRegistrationMessage"),
     ERROR_CHANGE("errorChangeMessage"),
     ERROR_MAIL("errorMail"),
-    ERROR_DELETE("errorDelete"),
     NEW_USER("newuser"),
     GUEST_LIST("guestList"),
     ADMIN_LIST("adminList"),

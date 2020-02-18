@@ -34,27 +34,23 @@
 <br/>
 <form name="changeProfile" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="changeredirect"/>
-    <div style="color: crimson">${errorLogoutMessage}</div>
-    ${wrongAction}
-    ${nullPage}
+
     <input type="submit" value="<fmt:message key="button.change"/>"/>
 </form>
 
 <c:if test="${ not empty user and user.role eq 'client' }">
     <b><fmt:message key="field.discount"/></b> ${client.discount}
-    <br/>
-    <hr/>
-    <br/>
+    <br/><hr/><br/>
+
     <b><fmt:message key="field.location"/></b> ${client.location}
     <br/>
+
     <b><fmt:message key="field.relative"/></b> ${client.relative}
-    <br/>
-    <br/>
+    <br/><br/>
+
     <form name="changeBurial" method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="changeburialredirect"/>
-        <div style="color: crimson">${errorLogoutMessage}</div>
-            ${wrongAction}
-            ${nullPage}
+
         <input type="submit" value="<fmt:message key="button.changeloc"/>"/>
     </form>
 </c:if>
@@ -66,9 +62,7 @@
 <br/>
 
 <jsp:include page="/WEB-INF/view/backToMain.jsp"/>
-<br/>
-<br/>
-<br/>
+<br/><br/><br/>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

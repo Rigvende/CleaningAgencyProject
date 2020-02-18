@@ -17,9 +17,11 @@
 <c:set var="totalCount" scope="session" value="${catalogueList.size()}"/>
 <c:set var="perPage" scope="session" value="${5}"/>
 <c:set var="pageStart" value="${param.start}"/>
+
 <c:if test="${empty pageStart or pageStart < 0}">
     <c:set var="pageStart" value="0"/>
 </c:if>
+
 <c:if test="${totalCount < pageStart}">
     <c:set var="pageStart" value="${pageStart - perPage}"/>
 </c:if>
@@ -57,6 +59,11 @@
     <label>
         <input type="text" name="discount" value=""/>
     </label>
+
+    <div style="color: crimson">${errorChangeMessage}</div>
+    ${wrongAction}
+    ${nullPage}
+    <br/><br/>
 
     <input type="submit" value="<fmt:message key="button.changeservice"/>"/>
 </form>
@@ -106,10 +113,7 @@
 <div style="float: left">
     <h5><u><fmt:message key="text.services"/></u></h5>
 </div>
-<br/>
-<br/>
-<br/>
-<br/>
+<br/><br/><br/><br/>
 
 <div style="float: left">
     <table border="1" cellpadding="5" cellspacing="5">
@@ -135,21 +139,7 @@
     ${pageStart + 1} - ${pageStart + perPage}
     <a href="?start=${pageStart + perPage}">>></a>
 </div>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

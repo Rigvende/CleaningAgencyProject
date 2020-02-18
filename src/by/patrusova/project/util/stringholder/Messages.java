@@ -9,7 +9,6 @@ public enum Messages {
     MESSAGE_ERROR_LOGIN("message.loginerror"),
     MESSAGE_ERROR_LIST("message.listerror"),
     MESSAGE_ERROR_MAIL("message.mailerror"),
-    MESSAGE_ERROR_DELETE("message.deleteerror"),
     MESSAGE_NOT_REG("message.notregistered");
 
     private String value;

@@ -30,16 +30,13 @@
     <div style="color: crimson">${errorChangeMessage}</div>
     ${wrongAction}
     ${nullPage}
-    <br/>
-    <br/>
+    <br/>    <br/>
 
     <input type="submit" value="<fmt:message key="button.changeclient"/>"/>
 </form>
 
 <jsp:include page="/WEB-INF/view/backToMain.jsp"/>
-<br/>
-<br/>
-<br/>
+<br/><br/><br/>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

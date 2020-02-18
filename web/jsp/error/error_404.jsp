@@ -11,6 +11,8 @@
 
 <body>
 <jsp:include page="/WEB-INF/view/header.jsp"/>
+<br/>
+
 <fmt:message key="text.error7"/>
 <br/>
 

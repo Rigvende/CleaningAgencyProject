@@ -16,6 +16,11 @@
 <br/>
 <%--    добавить форму посмотреть свои заказы, форму поставить оценку --%>
 
+<div style="margin-left: 77px">
+    <b><fmt:message key="text.main3"/></b>
+</div>
+<br/>
+
 <jsp:include page="/WEB-INF/view/menu.jsp"/>
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

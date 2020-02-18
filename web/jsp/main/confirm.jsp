@@ -16,12 +16,10 @@
 <div style="float: right">
     <jsp:include page="/WEB-INF/view/backToMain.jsp"/>
 </div>
-<br/>
-<br/>
+<br/><br/>
 
 <div style="color: olivedrab;"><h3> <fmt:message key="text.confirm"/></h3></div>
-<br/>
-<br/>
+<br/><br/>
 
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>

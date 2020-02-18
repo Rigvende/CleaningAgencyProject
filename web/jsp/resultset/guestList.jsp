@@ -17,9 +17,11 @@
 <c:set var="totalCount" scope="session" value="${guestList.size()}"/>
 <c:set var="perPage" scope="session" value="${5}"/>
 <c:set var="pageStart" value="${param.start}"/>
+
 <c:if test="${empty pageStart or pageStart < 0}">
     <c:set var="pageStart" value="0"/>
 </c:if>
+
 <c:if test="${totalCount < pageStart}">
     <c:set var="pageStart" value="${pageStart - perPage}"/>
 </c:if>
@@ -44,16 +46,18 @@
         <input type="text" name="role" value=""/>
     </label>
 
+    <div style="color: crimson">${errorChangeMessage}</div>
+    ${wrongAction}
+    ${nullPage}
+    <br/><br/>
+
     <input type="submit" value="<fmt:message key="button.changeguest"/>"/>
 </form>
 
 <div style="float: left">
     <h5><u><fmt:message key="text.guests"/></u></h5>
 </div>
-<br/>
-<br/>
-<br/>
-<br/>
+<br/><br/><br/><br/>
 
 <div style="float: left">
     <table border="1" cellpadding="5" cellspacing="5">
@@ -82,21 +86,7 @@
     ${pageStart + 1} - ${pageStart + perPage}
     <a href="?start=${pageStart + perPage}">>></a>
 </div>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>
