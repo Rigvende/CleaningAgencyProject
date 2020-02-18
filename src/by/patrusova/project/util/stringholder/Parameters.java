@@ -15,6 +15,7 @@ public enum Parameters {
     PHONE("phone"),
     ADDRESS("address"),
     EMAIL("email"),
+    DISCOUNT("discount"),
     TO("to"),
     SUBJECT("subject"),
     BODY("body"),
@@ -22,6 +23,8 @@ public enum Parameters {
     POST("post"),
     ENTITITYPE("entitytype"),
     ID("id"),
+    COMMISSION("commission"),
+    NOTES("notes"),
     LOCATION("location"),
     RELATIVE("relative");
 

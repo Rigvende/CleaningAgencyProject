@@ -1,15 +1,21 @@
 package add;
 
 import by.patrusova.project.dao.DaoFactory;
+import by.patrusova.project.dao.impl.CleanerDao;
 import by.patrusova.project.dao.impl.UserDao;
 import by.patrusova.project.entity.Role;
+import by.patrusova.project.entity.impl.Cleaner;
 import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.DaoException;
+import by.patrusova.project.exception.ServiceException;
+import by.patrusova.project.service.impl.CleanerInfoService;
 import by.patrusova.project.util.stringholder.Parameters;
+import by.patrusova.project.validator.NumberValidator;
 import by.patrusova.project.validator.RegistrationDataValidator;
 import by.patrusova.project.validator.StringValidator;
 
 import java.io.*;
+import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.*;
 
@@ -34,9 +40,29 @@ public class Main {
 //        }
 //    }
 
-    public static void main(String[] args) throws IOException, SQLException, DaoException {
+    public static void main(String[] args) throws IOException, SQLException, DaoException, ServiceException {
+//        Map<String, Boolean> validationMap = new HashMap<>();
+//        double discount = 0.05;
+//        String notes = "";
+//        validationMap.put(Parameters.DISCOUNT.getValue(),
+//                NumberValidator.isValidDecimal(Parameters.DISCOUNT.getValue(), discount));
+//        validationMap.put(Parameters.NOTES.getValue(),
+//                StringValidator.isValidStringSize(Parameters.NOTES.getValue(), notes));
+//        System.out.println(validationMap);
 
-
+        CleanerInfoService cleanerInfoService = new CleanerInfoService();
+        Cleaner cleaner = new Cleaner();
+        cleaner.setIdUser(50);
+        cleaner = cleanerInfoService.getCleaner(cleaner);
+        System.out.println(cleaner);
+        DaoFactory factory = new DaoFactory();
+        cleaner.setCommission(BigDecimal.valueOf(Double.parseDouble("0.05")));
+        cleaner.setNotes("");
+            CleanerDao dao = factory.createCleanerDao();
+            if (dao.update(cleaner)) {
+                cleaner = null;
+            }
+            System.out.println(cleaner);
 
 //        DaoFactory factory = new DaoFactory();
 //

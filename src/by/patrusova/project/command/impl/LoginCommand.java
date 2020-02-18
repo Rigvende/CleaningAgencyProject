@@ -56,7 +56,7 @@ public class LoginCommand implements ActionCommand {
                         CleanerInfoService cleanerInfoService = new CleanerInfoService();
                         Cleaner cleaner = new Cleaner();
                         cleaner.setIdUser(user.getId());
-                        cleaner = cleanerInfoService.doService(cleaner);
+                        cleaner = cleanerInfoService.getCleaner(cleaner);
                         session.setAttribute(Attributes.CLEANER.getValue(), cleaner);
                         page = ConfigurationManager.getProperty(Pages.PAGE_MAIN_CLEANER.getValue());
                         break;

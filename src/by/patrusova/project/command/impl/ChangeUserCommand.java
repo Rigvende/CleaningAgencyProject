@@ -16,7 +16,7 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 
-public class ChangeInfoCommand implements ActionCommand {
+public class ChangeUserCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();
 

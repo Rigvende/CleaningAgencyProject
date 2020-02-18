@@ -29,34 +29,25 @@
 </div>
 
 <form name="changeClientForm" method="post" action="${pageContext.request.contextPath}/controller">
-    <input type="hidden" name="command" value="changeclient" />
+    <input type="hidden" name="command" value="changeclientredirect" />
+
     <fmt:message key="field.id"/>
-    <br/>
     <label>
         <input type="number" name="id" value=""/>
     </label>
-    <br/>
-    <fmt:message key="field.discount"/>
-    <br/>
-    <label>
-        <input type="text" name="discount" value=""/>
-    </label>
-    <br/>
-    <fmt:message key="field.notes"/>
-    <br/>
-    <label>
-        <input type="text" name="notes" value=""/>
-    </label>
+
     <input type="submit" value="<fmt:message key="button.changeclient"/>"/>
 </form>
 
 <form name="deleteClientForm" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="deleteentity" />
+    <input type="hidden" name="entitytype" value="client" />
+
     <fmt:message key="field.id"/>
-    <br/>
     <label>
         <input type="number" name="id" value=""/>
     </label>
+
     <input type="submit" value="<fmt:message key="button.deleteclient"/>"/>
 </form>
 
@@ -102,27 +93,27 @@
     ${pageStart + 1} - ${pageStart + perPage}
     <a href="?start=${pageStart + perPage}">>></a>
 </div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>
 </html>

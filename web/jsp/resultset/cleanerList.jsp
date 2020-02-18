@@ -29,26 +29,12 @@
 </div>
 
 <form name="changeCleanerForm" method="post" action="${pageContext.request.contextPath}/controller">
-    <input type="hidden" name="command" value="changecleaner" />
+    <input type="hidden" name="command" value="changecleanerredirect" />
 
     <fmt:message key="field.id"/>
-    <br/>
+
     <label>
         <input type="number" name="id" value=""/>
-    </label>
-    <br/>
-
-    <fmt:message key="field.commission"/>
-    <br/>
-    <label>
-        <input type="text" name="commission" value=""/>
-    </label>
-    <br/>
-
-    <fmt:message key="field.notes"/>
-    <br/>
-    <label>
-        <input type="text" name="notes" value=""/>
     </label>
 
     <input type="submit" value="<fmt:message key="button.changecleaner"/>"/>
@@ -59,7 +45,6 @@
     <input type="hidden" name="entitytype" value="cleaner" />
 
     <fmt:message key="field.id"/>
-    <br/>
     <label>
         <input type="number" name="id" value=""/>
     </label>

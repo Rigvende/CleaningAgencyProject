@@ -30,17 +30,20 @@
 
 <form name="changeGuestForm" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="changeguest" />
+
     <fmt:message key="field.id"/>
     <br/>
     <label>
         <input type="number" name="id" value=""/>
     </label>
     <br/>
+
     <fmt:message key="field.role"/>
     <br/>
     <label>
         <input type="text" name="role" value=""/>
     </label>
+
     <input type="submit" value="<fmt:message key="button.changeguest"/>"/>
 </form>
 
@@ -79,22 +82,22 @@
     ${pageStart + 1} - ${pageStart + perPage}
     <a href="?start=${pageStart + perPage}">>></a>
 </div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>
 </html>

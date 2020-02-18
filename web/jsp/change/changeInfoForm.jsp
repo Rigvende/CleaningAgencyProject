@@ -16,7 +16,7 @@
 <form name="changeForm" method="POST" action="${pageContext.request.contextPath}/controller">
     <fmt:message key="text.change1"/>
     <hr/>
-    <input type="hidden" name="command" value="changeinfo" />
+    <input type="hidden" name="command" value="changeuser" />
     <br/><fmt:message key="field.name1"/><br/>
     <label>
         <input type="text" name="firstname" value="${user.name}"/>

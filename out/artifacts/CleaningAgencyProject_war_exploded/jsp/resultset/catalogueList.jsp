@@ -30,59 +30,75 @@
 
 <form name="changeServiceForm" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="changeservice" />
+
     <fmt:message key="field.id"/>
     <br/>
     <label>
         <input type="number" name="id" value=""/>
     </label>
     <br/>
+
     <fmt:message key="field.service"/>
     <br/>
     <label>
         <input type="text" name="service" value=""/>
     </label>
     <br/>
+
     <fmt:message key="field.cost"/>
     <br/>
     <label>
         <input type="text" name="cost" value=""/>
     </label>
     <br/>
+
     <fmt:message key="field.discount2"/>
     <br/>
     <label>
         <input type="text" name="discount" value=""/>
     </label>
+
     <input type="submit" value="<fmt:message key="button.changeservice"/>"/>
 </form>
 <br/>
 
 <form name="deleteServiceForm" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="deleteentity" />
+    <input type="hidden" name="entitytype" value="service" />
+
     <fmt:message key="field.id"/>
     <br/>
     <label>
         <input type="number" name="id" value=""/>
     </label>
+
     <input type="submit" value="<fmt:message key="button.deletservice"/>"/>
 </form>
 <br/>
 
 <form name="addServiceForm" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="addentity" />
-    <fmt:message key="field.id"/>
+
+    <fmt:message key="field.idservice"/>
     <br/>
     <label>
         <input type="text" name="addservice" value=""/>
     </label>
     <br/>
+
+    <fmt:message key="field.cost"/>
+    <br/>
     <label>
         <input type="text" name="addcost" value=""/>
     </label>
     <br/>
+
+    <fmt:message key="field.discount2"/>
+    <br/>
     <label>
         <input type="text" name="adddiscount" value=""/>
     </label>
+
     <input type="submit" value="<fmt:message key="button.addservice"/>"/>
 </form>
 <br/>
@@ -119,22 +135,22 @@
     ${pageStart + 1} - ${pageStart + perPage}
     <a href="?start=${pageStart + perPage}">>></a>
 </div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>
 </html>

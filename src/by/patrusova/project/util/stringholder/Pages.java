@@ -10,6 +10,8 @@ public enum Pages {
     PAGE_LOGIN("page.login"),
     PAGE_CHANGE("page.changeform"),
     PAGE_CHANGE_BURIAL("page.changeburialform"),
+    PAGE_CHANGE_CLEANER("page.changecleaner"),
+    PAGE_CHANGE_CLIENT("page.changeclient"),
     PAGE_REG("page.registrationform"),
     PAGE_REG_TRUE("page.registrationtrue"),
     PAGE_PROFILE("page.profile"),

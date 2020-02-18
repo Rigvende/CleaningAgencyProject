@@ -59,9 +59,19 @@ public enum CommandEnum {
             this.command = new ChangeBurialRedirectCommand();
         }
     },
-    CHANGEINFO {
+    CHANGECLEANERREDIRECT {
         {
-            this.command = new ChangeInfoCommand();
+            this.command = new ChangeCleanerRedirectCommand();
+        }
+    },
+    CHANGECLIENTREDIRECT {
+        {
+            this.command = new ChangeClientRedirectCommand();
+        }
+    },
+    CHANGEUSER {
+        {
+            this.command = new ChangeUserCommand();
         }
     },
     CHANGEBURIAL {

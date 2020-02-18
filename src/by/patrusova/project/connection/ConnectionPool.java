@@ -45,6 +45,9 @@ public class ConnectionPool {
         for (int i = 0; i < MAX_POOL_SIZE; i++) {
             pool.offer(ProxyConnection.createProxyConnection());
         }
+        if (pool.size() == 0) {
+            throw new RuntimeException("Connection pool is empty");
+        }
     }
 
     public static ConnectionPool getInstance() throws DaoException {

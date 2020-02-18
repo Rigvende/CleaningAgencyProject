@@ -12,7 +12,9 @@
       <w>changeburialform</w>
       <w>changeburialredirect</w>
       <w>changecleaner</w>
+      <w>changecleanerredirect</w>
       <w>changeclient</w>
+      <w>changeclientredirect</w>
       <w>changeerror</w>
       <w>changeform</w>
       <w>changeguest</w>
@@ -21,6 +23,7 @@
       <w>changeorder</w>
       <w>changeredirect</w>
       <w>changeservice</w>
+      <w>changeuser</w>
       <w>cleanerlist</w>
       <w>clientlist</w>
       <w>comfirm</w>

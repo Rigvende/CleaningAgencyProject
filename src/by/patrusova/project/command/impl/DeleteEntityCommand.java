@@ -1,7 +1,6 @@
 package by.patrusova.project.command.impl;
 
 import by.patrusova.project.command.ActionCommand;
-import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.impl.Cleaner;
 import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.entity.impl.Service;
@@ -9,17 +8,12 @@ import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.DeleteEntityService;
-import by.patrusova.project.service.impl.MailService;
 import by.patrusova.project.util.ConfigurationManager;
-import by.patrusova.project.util.MessageManager;
-import by.patrusova.project.util.stringholder.Attributes;
-import by.patrusova.project.util.stringholder.Messages;
 import by.patrusova.project.util.stringholder.Pages;
 import by.patrusova.project.util.stringholder.Parameters;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 

@@ -29,26 +29,11 @@
 </div>
 
 <form name="changeClientForm" method="post" action="${pageContext.request.contextPath}/controller">
-    <input type="hidden" name="command" value="changeclient" />
+    <input type="hidden" name="command" value="changeclientredirect" />
 
     <fmt:message key="field.id"/>
-    <br/>
     <label>
         <input type="number" name="id" value=""/>
-    </label>
-    <br/>
-
-    <fmt:message key="field.discount"/>
-    <br/>
-    <label>
-        <input type="text" name="discount" value=""/>
-    </label>
-    <br/>
-
-    <fmt:message key="field.notes"/>
-    <br/>
-    <label>
-        <input type="text" name="notes" value=""/>
     </label>
 
     <input type="submit" value="<fmt:message key="button.changeclient"/>"/>
@@ -59,10 +44,10 @@
     <input type="hidden" name="entitytype" value="client" />
 
     <fmt:message key="field.id"/>
-    <br/>
     <label>
         <input type="number" name="id" value=""/>
     </label>
+
     <input type="submit" value="<fmt:message key="button.deleteclient"/>"/>
 </form>
 
