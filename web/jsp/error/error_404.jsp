@@ -7,6 +7,7 @@
 <html>
 <head>
     <title>404</title>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/css/background.css"/>" />
 </head>
 
 <body>

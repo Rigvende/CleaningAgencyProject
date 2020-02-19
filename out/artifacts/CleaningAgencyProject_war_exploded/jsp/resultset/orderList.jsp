@@ -31,27 +31,18 @@
 </div>
 
 <form name="changeOrderForm" method="post" action="${pageContext.request.contextPath}/controller">
-    <input type="hidden" name="command" value="changeorder" />
+    <input type="hidden" name="command" value="changeorderredirect" />
 
     <fmt:message key="field.id"/>
-    <br/>
     <label>
         <input type="text" name="id" value=""/>
     </label>
-    <br/>
-
-    <fmt:message key="field.status"/>
-    <br/>
-    <label>
-        <input type="text" name="status" value=""/>
-    </label>
-
-    <div style="color: crimson">${errorChangeOrderMessage}</div>
-    ${wrongAction}
-    ${nullPage}
-    <br/><br/>
 
     <input type="submit" value="<fmt:message key="button.changeorder"/>"/>
+
+    <div style="color: crimson">${errorChangeOrderIdMessage}</div>
+    ${wrongAction}
+    ${nullPage}
 </form>
 <br/>
 

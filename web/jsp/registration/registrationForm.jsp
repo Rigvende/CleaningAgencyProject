@@ -7,21 +7,21 @@
 <html>
     <head>
         <title><fmt:message key="title.registration"/></title>
+        <link rel="stylesheet" type="text/css" href="<c:url value="/css/background.css"/>" />
     </head>
 
     <body>
-    <div style="background: #E0E0E0; height: 100px; padding: 5px;">
-        <div style="float: left">
-            <h1> <u><fmt:message key="text.company"/></u> </h1>
-            <h4><fmt:message key="text.company2"/></h4>
+    <div style="float: right; padding: 10px; text-align: right;">
+        <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
+        <div style="margin-right: 82px">
+            <a href="${pageContext.request.contextPath}/controller?command=info"><fmt:message key="button.info"/></a>
         </div>
+    </div>
 
-        <div style="float: right; padding: 10px; text-align: right;">
-            <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
-            <div style="margin-right: 82px">
-                <a href="${pageContext.request.contextPath}/controller?command=info"><fmt:message key="button.info"/></a>
-            </div>
-        </div>
+    <div class="blr" style="padding: 30px; background: #E0E0E0; height: 150px; width: auto; font-size:20px;
+    font-family:'Papyrus', cursive; color: darkgoldenrod; margin-right:150px; min-width: 1920px">
+        <h1> <u><fmt:message key="text.company"/></u> </h1>
+        <h5><fmt:message key="text.company2"/></h5>
     </div>
 
     <br/>

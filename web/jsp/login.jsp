@@ -12,37 +12,38 @@
 <html>
 <head>
     <title><fmt:message key="title.login"/></title>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/css/background.css"/>" />
 </head>
 
 <body>
-
-<div style="background: #E0E0E0; height: 100px; padding: 5px;">
-
-    <div style="float: left">
-        <h1> <u><fmt:message key="text.company"/></u> </h1>
-        <h4><fmt:message key="text.company2"/></h4>
-    </div>
-
     <div style="float: right; padding: 10px; text-align: right;">
-        <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
-        <div style="margin-right: 82px">
-            <a href="${pageContext.request.contextPath}/controller?command=info"><fmt:message key="button.info"/></a>
-        </div>
+    <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
+    <div style="margin-right: 82px">
+        <a href="${pageContext.request.contextPath}/controller?command=info"><fmt:message key="button.info"/></a>
     </div>
-</div>
+    </div>
 
-<div style="float: right"><jsp:include page="/WEB-INF/view/locale.jsp"/></div>
+    <div class="blr" style="padding: 30px; background: #E0E0E0; height: 150px; width: auto; font-size:20px;
+    font-family:'Papyrus', cursive; color: darkgoldenrod; margin-right:150px; min-width: 1920px">
+        <h1> <u><fmt:message key="text.company"/></u> </h1>
+        <h5><fmt:message key="text.company2"/></h5>
+    </div>
 
-<br/>
+    <div style="float: right"><jsp:include page="/WEB-INF/view/locale.jsp"/></div>
+
+    <div style="float: left; padding: 30px">
 <form name="registration" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="regredirect" />
     <input type="submit" value="<fmt:message key="button.regproposal"/>"/>
+    <br/>
 </form>
+    </div>
+<br/><br/><br/><br/><br/><hr/><br/>
 
-<hr/>
+
 <form name="loginForm" method="POST" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="login" />
-
+    <div style="margin-left: 50px">
     <br/><fmt:message key="field.login"/><br/>
     <label>
         <input type="text" name="login" value=""/>
@@ -61,7 +62,9 @@
     <br/>
 
     <input type="submit" value="<fmt:message key="button.login"/>"/>
+    </div>
 </form>
+
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

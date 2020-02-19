@@ -6,6 +6,7 @@
 
 <html><head>
     <title><fmt:message key="title.maincleaner"/></title>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/css/background.css"/>" />
 </head>
 
 <body>

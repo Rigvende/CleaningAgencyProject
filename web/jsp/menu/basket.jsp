@@ -7,9 +7,19 @@
 <html>
     <head>
         <title><fmt:message key="title.basket"/></title>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/css/background.css"/>" />
     </head>
 
     <body>
+    <jsp:include page="/WEB-INF/view/header.jsp"/>
+
+    <div style="float: right">
+    <jsp:include page="/WEB-INF/view/backToMain.jsp"/>
+    </div>
+    <br/><br/>
+
 Ваша корзина пуста :(
+
+    <jsp:include page="/WEB-INF/view/footer.jsp"/>
     </body>
 </html>

@@ -40,6 +40,9 @@
     </label>
     <br/>
 
+    <div style="color: crimson">${errorChangeGuestIdMessage}</div>
+    <br/>
+
     <fmt:message key="field.guest"/>
     <br/>
     <label>

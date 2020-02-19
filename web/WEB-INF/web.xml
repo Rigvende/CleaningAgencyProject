@@ -8,13 +8,17 @@
     <display-name>Cleaning Agency Project</display-name>
 
     <session-config>
-        <session-timeout>60</session-timeout>
+        <session-timeout>120</session-timeout>
     </session-config>
 
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.css</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>default</servlet-name>
         <url-pattern>/styles/*</url-pattern>
