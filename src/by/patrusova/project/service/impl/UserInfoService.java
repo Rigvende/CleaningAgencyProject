@@ -59,19 +59,6 @@ public class UserInfoService implements Serviceable, EntityCreator {
         }
     }
 
-    @Override
-    public boolean isExist(AbstractEntity entity, AbstractDao<AbstractEntity> dao) throws ServiceException {
-        boolean exist;
-        UserDao userDao = (UserDao) dao;
-        User user = (User) entity;
-        try {
-            exist = userDao.findLogin(user.getLogin());
-        } catch (DaoException | SQLException e) {
-            throw new ServiceException(e);
-        }
-        return exist;
-    }
-
     private Map<String, Boolean> validate(HttpServletRequest request) {
         Map<String, Boolean> validationMap = new HashMap<>();
         String name = request.getParameter(Parameters.FIRSTNAME.getValue());

@@ -87,6 +87,7 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
             preparedStatement.setString(1, service.getService());
             preparedStatement.setBigDecimal(2, service.getCost());
             preparedStatement.setBigDecimal(3, service.getDiscount());
+            preparedStatement.setLong(4, service.getId());
             isUpdated = preparedStatement.execute();
             connection.commit();
         } catch (SQLException e) {

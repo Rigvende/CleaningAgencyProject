@@ -42,6 +42,20 @@ public class Main {
 
     public static void main(String[] args) throws IOException, SQLException, DaoException, ServiceException {
 //        Map<String, Boolean> validationMap = new HashMap<>();
+//        String id = "0";
+//        String status = "done";
+//        validationMap.put(Parameters.ID_CLEANER.getValue(), NumberValidator.isValidExistedID(id));
+//        validationMap.put(Parameters.STATUS.getValue(), StringValidator.isValidStatus(status));
+//        System.out.println(validationMap);
+
+
+
+//        DaoFactory factory = new DaoFactory();
+//        CleanerDao dao = factory.createCleanerDao();
+//        System.out.println(dao.findId(0));
+//        System.out.println(NumberValidator.isValidExistedID("0"));
+
+//        Map<String, Boolean> validationMap = new HashMap<>();
 //        double discount = 0.05;
 //        String notes = "";
 //        validationMap.put(Parameters.DISCOUNT.getValue(),
@@ -49,20 +63,20 @@ public class Main {
 //        validationMap.put(Parameters.NOTES.getValue(),
 //                StringValidator.isValidStringSize(Parameters.NOTES.getValue(), notes));
 //        System.out.println(validationMap);
-
-        CleanerInfoService cleanerInfoService = new CleanerInfoService();
-        Cleaner cleaner = new Cleaner();
-        cleaner.setIdUser(50);
-        cleaner = cleanerInfoService.getCleaner(cleaner);
-        System.out.println(cleaner);
-        DaoFactory factory = new DaoFactory();
-        cleaner.setCommission(BigDecimal.valueOf(Double.parseDouble("0.05")));
-        cleaner.setNotes("");
-            CleanerDao dao = factory.createCleanerDao();
-            if (dao.update(cleaner)) {
-                cleaner = null;
-            }
-            System.out.println(cleaner);
+//
+//        CleanerInfoService cleanerInfoService = new CleanerInfoService();
+//        Cleaner cleaner = new Cleaner();
+//        cleaner.setIdUser(50);
+//        cleaner = cleanerInfoService.getCleaner(cleaner);
+//        System.out.println(cleaner);
+//        DaoFactory factory = new DaoFactory();
+//        cleaner.setCommission(BigDecimal.valueOf(Double.parseDouble("0.05")));
+//        cleaner.setNotes("");
+//            CleanerDao dao = factory.createCleanerDao();
+//            if (dao.update(cleaner)) {
+//                cleaner = null;
+//            }
+//            System.out.println(cleaner);
 
 //        DaoFactory factory = new DaoFactory();
 //

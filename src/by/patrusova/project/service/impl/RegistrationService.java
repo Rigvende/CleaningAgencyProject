@@ -63,7 +63,6 @@ public class RegistrationService implements EntityCreator, Serviceable {
         }
     }
 
-    @Override
     public boolean isExist(AbstractEntity entity, AbstractDao<AbstractEntity> dao) throws ServiceException {
         boolean exist;
         UserDao userDao = (UserDao) dao;

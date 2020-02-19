@@ -3,6 +3,7 @@ package by.patrusova.project.util.stringholder;
 public enum Pages {
 
     PAGE_INDEX("page.index"),
+    PAGE_ADD_SERVICE("page.addservice"),
     PAGE_INFO("page.info"),
     PAGE_MAIN_ADMIN("page.mainadmin"),
     PAGE_MAIN_CLIENT("page.mainclient"),
@@ -12,6 +13,8 @@ public enum Pages {
     PAGE_CHANGE_BURIAL("page.changeburialform"),
     PAGE_CHANGE_CLEANER("page.changecleaner"),
     PAGE_CHANGE_CLIENT("page.changeclient"),
+    PAGE_CHANGE_SERVICE("page.changeservice"),
+    PAGE_CHANGE_ORDER("page.changeorder"),
     PAGE_REG("page.registrationform"),
     PAGE_REG_TRUE("page.registrationtrue"),
     PAGE_PROFILE("page.profile"),

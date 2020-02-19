@@ -69,10 +69,9 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
         try {
             preparedStatement = connection.prepareStatement
                     (Statements.SQL_UPDATE_ORDER.getValue());
-            preparedStatement.setDate(1, Date.valueOf(order.getDeadline()));
-            preparedStatement.setString(2, order.getOrderStatus());
-            preparedStatement.setLong(3, order.getIdCleaner());
-            preparedStatement.setLong(4, order.getId());
+            preparedStatement.setString(1, order.getOrderStatus());
+            preparedStatement.setLong(2, order.getIdCleaner());
+            preparedStatement.setLong(3, order.getId());
             isUpdated = preparedStatement.execute();
             connection.commit();
         } catch (SQLException e) {

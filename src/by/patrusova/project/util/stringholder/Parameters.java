@@ -16,6 +16,7 @@ public enum Parameters {
     ADDRESS("address"),
     EMAIL("email"),
     DISCOUNT("discount"),
+    STATUS("status"),
     TO("to"),
     SUBJECT("subject"),
     BODY("body"),
@@ -25,6 +26,13 @@ public enum Parameters {
     ID("id"),
     COMMISSION("commission"),
     NOTES("notes"),
+    COST("cost"),
+    ID_CLEANER("id_cleaner"),
+    ID_CLIENT("id_client"),
+    ID_SERVICE("id_service"),
+    MARK("mark"),
+    SERVICE("service"),
+    SERVICECHANGE("servicechange"),
     LOCATION("location"),
     RELATIVE("relative");
 

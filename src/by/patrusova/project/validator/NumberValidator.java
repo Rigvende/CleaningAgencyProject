@@ -1,33 +1,34 @@
 package by.patrusova.project.validator;
 
+import by.patrusova.project.dao.DaoFactory;
+import by.patrusova.project.dao.impl.CleanerDao;
+import by.patrusova.project.dao.impl.UserDao;
+import by.patrusova.project.exception.DaoException;
+
+import java.sql.SQLException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class NumberValidator {
 
-    private final static String CHECK_DECIMAL
-            = "^0.[\\d]{1,2}$";
-    private final static String CHECK_ID
-            = "^[\\d]{1,18}$";
+    private final static String CHECK_DECIMAL = "^0.[\\d]{1,2}$";
+    private final static String CHECK_ID = "^[\\d]{1,18}$";
+    private final static String CHECK_COST = "^[\\d]{1,3}((.[\\d]{1,2})?)$";
+    private final static String CHECK_MARK = "^\\d$";
 
     private NumberValidator() {}
-
-    public static boolean isValidDecimal(String column, double decimal) {
-        switch (column.toLowerCase()) {
-            case "commission":
-            case "discount":
-                return (decimal >= 0 && decimal < 1);
-            case "cost":
-                return (decimal >= 0 && decimal < 1000);
-            default:
-                return false;
-        }
-    }
 
     public static boolean isValidDecimal(String decimal) {
         Pattern pattern = Pattern.compile(CHECK_DECIMAL);
         Matcher matcher = pattern.matcher(decimal);
         return matcher.find();
+    }
+
+    public static boolean isValidExistedID(String id) throws DaoException, SQLException {
+        DaoFactory factory = new DaoFactory();
+        CleanerDao dao = factory.createCleanerDao();
+        boolean check = dao.findId(Long.parseLong(id));
+        return isValidID(id) && check;
     }
 
     public static boolean isValidID(String id) {
@@ -36,7 +37,15 @@ public class NumberValidator {
         return matcher.find();
     }
 
-    public static boolean isValidMark(int mark) {
-        return (mark >= 0 && mark < 10);
+    public static boolean isValidCost(String id) {
+        Pattern pattern = Pattern.compile(CHECK_COST);
+        Matcher matcher = pattern.matcher(id);
+        return matcher.find();
+    }
+
+    public static boolean isValidMark(String mark) {
+        Pattern pattern = Pattern.compile(CHECK_MARK);
+        Matcher matcher = pattern.matcher(mark);
+        return matcher.find();
     }
 }

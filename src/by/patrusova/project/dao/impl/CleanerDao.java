@@ -19,6 +19,7 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
     private final static Logger LOGGER = LogManager.getLogger();
     private static final String SQL_SELECT_ALL_CLEANERS =
             "SELECT id_cleaner, id_user, commission FROM cleaners";
+    private final static String SQL_SELECT_ID = "SELECT id_cleaner FROM cleaners";
 
     public CleanerDao(ProxyConnection connection) {
         super(connection);
@@ -149,5 +150,28 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
             closeStatement(preparedStatement);
         }
         return cleaner;
+    }
+
+    public boolean findId(long id) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
+        Statement statement = connection.createStatement();
+        try {
+            ResultSet resultSet = statement.executeQuery(SQL_SELECT_ID); //проверка при регистрации
+            while (resultSet.next()) {
+                if (Long.parseLong(resultSet.getString(1)) == id) {
+                    connection.commit();
+                    return true;
+                }
+            }
+        } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
+            LOGGER.log(Level.ERROR, "Cannot find id_cleaner in DB. Request to table failed.", e);
+            throw new DaoException(e);
+        } finally {
+            closeStatement(statement);
+        }
+        return false;
     }
 }

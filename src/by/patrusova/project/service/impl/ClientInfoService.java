@@ -109,18 +109,6 @@ public class ClientInfoService implements Serviceable, EntityCreator {
         return validationMap;
     }
 
-    //проверка на наличие клиента в бд
-    @Override
-    public boolean isExist(AbstractEntity entity, AbstractDao<AbstractEntity> dao) throws ServiceException {
-        try {
-            Client client = (Client) entity;
-            return dao.findEntityById(client.getIdUser()) != null;
-        } catch (DaoException | SQLException e) {
-            LOGGER.log(Level.ERROR, "Exception while checking client has occurred.");
-            throw new ServiceException(e);
-        }
-    }
-
     //получить клиента из бд
     public Client getClient(AbstractEntity entity) throws ServiceException {
         DaoFactory factory = new DaoFactory();

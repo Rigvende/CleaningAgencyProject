@@ -75,6 +75,21 @@ public enum CommandEnum {
             this.command = new ChangeClientRedirectCommand();
         }
     },
+    CHANGESERVICEREDIRECT {
+        {
+            this.command = new ChangeServiceRedirectCommand();
+        }
+    },
+    ADDSERVICEREDIRECT {
+        {
+            this.command = new AddServiceRedirectCommand();
+        }
+    },
+    CHANGEORDERREDIRECT {
+        {
+            this.command = new ChangeOrderRedirectCommand();
+        }
+    },
     CHANGEUSER {
         {
             this.command = new ChangeUserCommand();

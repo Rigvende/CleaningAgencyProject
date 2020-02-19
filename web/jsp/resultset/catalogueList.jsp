@@ -31,41 +31,18 @@
 </div>
 
 <form name="changeServiceForm" method="post" action="${pageContext.request.contextPath}/controller">
-    <input type="hidden" name="command" value="changeservice" />
+    <input type="hidden" name="command" value="changeserviceredirect" />
 
-    <fmt:message key="field.id"/>
-    <br/>
+    <fmt:message key="field.idservice"/>
     <label>
         <input type="text" name="id" value=""/>
     </label>
-    <br/>
-
-    <fmt:message key="field.service"/>
-    <br/>
-    <label>
-        <input type="text" name="service" value=""/>
-    </label>
-    <br/>
-
-    <fmt:message key="field.cost"/>
-    <br/>
-    <label>
-        <input type="text" name="cost" value=""/>
-    </label>
-    <br/>
-
-    <fmt:message key="field.discount2"/>
-    <br/>
-    <label>
-        <input type="text" name="discount" value=""/>
-    </label>
-
-    <div style="color: crimson">${errorChangeServiceMessage}</div>
-    ${wrongAction}
-    ${nullPage}
-    <br/><br/>
 
     <input type="submit" value="<fmt:message key="button.changeservice"/>"/>
+
+    <div style="color: crimson">${errorChangeServiceIdMessage}</div>
+    ${wrongAction}
+    ${nullPage}
 </form>
 <br/>
 
@@ -73,10 +50,9 @@
     <input type="hidden" name="command" value="deleteentity" />
     <input type="hidden" name="entitytype" value="service" />
 
-    <fmt:message key="field.id"/>
-    <br/>
+    <fmt:message key="field.idservice"/>
     <label>
-        <input type="number" name="id" value=""/>
+        <input type="text" name="id" value=""/>
     </label>
 
     <input type="submit" value="<fmt:message key="button.deletservice"/>"/>
@@ -84,31 +60,10 @@
 <br/>
 
 <form name="addServiceForm" method="post" action="${pageContext.request.contextPath}/controller">
-    <input type="hidden" name="command" value="addentity" />
-
-    <fmt:message key="field.idservice"/>
-    <br/>
-    <label>
-        <input type="text" name="addservice" value=""/>
-    </label>
-    <br/>
-
-    <fmt:message key="field.cost"/>
-    <br/>
-    <label>
-        <input type="text" name="addcost" value=""/>
-    </label>
-    <br/>
-
-    <fmt:message key="field.discount2"/>
-    <br/>
-    <label>
-        <input type="text" name="adddiscount" value=""/>
-    </label>
+    <input type="hidden" name="command" value="addserviceredirect" />
 
     <input type="submit" value="<fmt:message key="button.addservice"/>"/>
 </form>
-<br/>
 
 <div style="float: left">
     <h5><u><fmt:message key="text.services"/></u></h5>

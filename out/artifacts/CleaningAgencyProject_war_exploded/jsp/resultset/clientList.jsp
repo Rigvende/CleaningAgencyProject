@@ -38,7 +38,11 @@
         <input type="text" name="id" value=""/>
     </label>
 
-    <input type="submit" value="<fmt:message key="button.changeclient"/>"/>
+    <input type="submit" value="<fmt:message key="button.changeclient"/>"/><div style="color: crimson">
+
+    <div style="color: crimson">${errorChangeClientIdMessage}</div>
+    ${wrongAction}
+    ${nullPage}
 </form>
 
 <form name="deleteClientForm" method="post" action="${pageContext.request.contextPath}/controller">
@@ -51,6 +55,7 @@
     </label>
 
     <input type="submit" value="<fmt:message key="button.deleteclient"/>"/>
+
 </form>
 
 <div style="float: left">

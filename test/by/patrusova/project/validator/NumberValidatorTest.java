@@ -8,35 +8,37 @@ public class NumberValidatorTest {
 
     @Test
     public void testIsValidDecimal() {
-        boolean actual = NumberValidator.isValidDecimal("commission", 0.15);
-        assertTrue(actual);
-    }
-    @Test
-    public void testIsValidDecimalNegative() {
-        boolean actual = NumberValidator.isValidDecimal("cost", 1000.15);
-        assertFalse(actual);
-    }
-
-    @Test
-    public void testIsValidMark() {
-        boolean actual = NumberValidator.isValidMark(7);
-        assertTrue(actual);
-    }
-    @Test
-    public void testIsValidMarkNegative() {
-        boolean actual = NumberValidator.isValidMark(10);
-        assertFalse(actual);
-    }
-
-    @Test
-    public void testSecondIsValidDecimal() {
         boolean actual = NumberValidator.isValidDecimal("0.15");
         assertTrue(actual);
     }
 
     @Test
-    public void testSecondIsValidDecimalNegative() {
+    public void testIsValidDecimalNegative() {
         boolean actual = NumberValidator.isValidDecimal("0.dd");
+        assertFalse(actual);
+    }
+
+    @Test
+    public void testIsValidCost() {
+        boolean actual = NumberValidator.isValidCost("99.9");
+        assertTrue(actual);
+    }
+
+    @Test
+    public void testIsValidCostNegative() {
+        boolean actual = NumberValidator.isValidCost("999.a");
+        assertFalse(actual);
+    }
+
+    @Test
+    public void testTestIsValidMark() {
+        boolean actual = NumberValidator.isValidCost("9");
+        assertTrue(actual);
+    }
+
+    @Test
+    public void testTestIsValidMarkNegative() {
+        boolean actual = NumberValidator.isValidCost("");
         assertFalse(actual);
     }
 }

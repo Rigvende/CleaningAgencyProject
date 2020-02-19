@@ -8,5 +8,4 @@ import javax.servlet.http.HttpServletRequest;
 public interface EntityCreator {
 
     AbstractEntity createEntity(HttpServletRequest request) throws ServiceException;
-    boolean isExist(AbstractEntity entity, AbstractDao<AbstractEntity> dao) throws ServiceException;
 }

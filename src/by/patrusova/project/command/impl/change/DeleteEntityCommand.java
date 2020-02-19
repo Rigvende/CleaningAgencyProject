@@ -30,8 +30,6 @@ public class DeleteEntityCommand implements ActionCommand {
         String page;
         String Id = request.getParameter(Parameters.ID.getValue());
         if (!NumberValidator.isValidID(Id)){
-            request.getSession().setAttribute(Attributes.ERROR_DELETE.getValue(),
-                    MessageManager.getProperty(Messages.MESSAGE_ERROR_DELETE.getValue()));
             return ConfigurationManager.getProperty(Pages.PAGE_CONFIRMFALSE.getValue());
         }
         long id = Long.parseLong(Id);

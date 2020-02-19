@@ -38,6 +38,10 @@
     </label>
 
     <input type="submit" value="<fmt:message key="button.changecleaner"/>"/>
+
+    <div style="color: crimson">${errorChangeCleanerIdMessage}</div>
+    ${wrongAction}
+    ${nullPage}
 </form>
 
 <form name="deleteCleanerForm" method="post" action="${pageContext.request.contextPath}/controller">
@@ -50,6 +54,7 @@
     </label>
 
     <input type="submit" value="<fmt:message key="button.deletecleaner"/>"/>
+
 </form>
 
 <div style="float: left">

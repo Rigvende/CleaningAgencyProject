@@ -5,6 +5,7 @@ public enum Messages {
     MESSAGE_EMPTY("message.nullpage"),
     MESSAGE_ERROR_REG("message.registrationerror"),
     MESSAGE_ERROR_DELETE("message.deleteerror"),
+    MESSAGE_ERROR_ADD_SERVICE("message.adderror"),
     MESSAGE_ERROR_CHANGE_CLIENT("message.changeerror"),
     MESSAGE_ERROR_CHANGE_CLEANER("message.changeerror"),
     MESSAGE_ERROR_CHANGE_GUEST("message.changeerror"),

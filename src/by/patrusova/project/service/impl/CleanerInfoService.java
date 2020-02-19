@@ -68,18 +68,6 @@ public class CleanerInfoService implements Serviceable, EntityCreator {
         return validationMap;
     }
 
-    //проверка на наличие клинера в бд
-    @Override
-    public boolean isExist(AbstractEntity entity, AbstractDao<AbstractEntity> dao) throws ServiceException {
-        try {
-            Cleaner cleaner = (Cleaner) entity;
-            return dao.findEntityById(cleaner.getIdUser()) != null;
-        } catch (DaoException | SQLException e) {
-            LOGGER.log(Level.ERROR, "Exception while checking client has occurred.");
-            throw new ServiceException(e);
-        }
-    }
-
     //находим клинера в бд и возвращаем
     public Cleaner getCleaner(AbstractEntity entity) throws ServiceException {
         DaoFactory factory = new DaoFactory();

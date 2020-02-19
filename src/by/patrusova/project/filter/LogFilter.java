@@ -27,7 +27,7 @@ public class LogFilter implements Filter {
                          FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         String servletPath = request.getServletPath();
-        LOGGER.log(Level.INFO, " - ServletPath :" + servletPath + ", URL =" + request.getRequestURL());
+        LOGGER.log(Level.INFO, " - ServletPath :" + servletPath + ", URL =" + request.getHeader("referer"));
         filterChain.doFilter(servletRequest, servletResponse);
     }
 

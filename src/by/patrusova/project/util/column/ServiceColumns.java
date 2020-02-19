@@ -2,7 +2,7 @@ package by.patrusova.project.util.column;
 
 public enum  ServiceColumns {
 
-    ID_SERVICE("is_service"),
+    ID_SERVICE("id_service"),
     SERVICE("service"),
     COST("cost"),
     DISCOUNT("discount");

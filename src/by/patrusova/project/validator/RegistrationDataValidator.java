@@ -10,16 +10,10 @@ import java.util.regex.Pattern;
 
 public class RegistrationDataValidator {
 
-    private final static String CHECK_LOGIN
-            = "^[A-z0-9_]{5,15}$";
-    private final static String CHECK_PASSWORD
-            = "^[A-z0-9_]{5,15}$";
-    private final static String CHECK_EMAIL
-            = "^[-\\w.]+@([A-z0-9][-A-z0-9]+\\.)+[A-z]{2,4}$";
-    private final static String CHECK_PHONE
-            = "^[\\d]{5,20}$";
-    private final static String CHECK_DECIMAL
-            = "^0.[\\d]{1,2}$";
+    private final static String CHECK_LOGIN = "^[A-z0-9_]{5,15}$";
+    private final static String CHECK_PASSWORD = "^[A-z0-9_]{5,15}$";
+    private final static String CHECK_EMAIL = "^[-\\w.]+@([A-z0-9][-A-z0-9]+\\.)+[A-z]{2,4}$";
+    private final static String CHECK_PHONE = "^[\\d]{5,20}$";
 
     public static boolean isValidLogin(String login) throws DaoException, SQLException {
         Pattern pattern = Pattern.compile(CHECK_LOGIN);
