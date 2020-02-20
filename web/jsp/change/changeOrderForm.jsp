@@ -13,35 +13,43 @@
 <body>
 <jsp:include page="/WEB-INF/view/header.jsp"/>
 
+<jsp:include page="/WEB-INF/view/backToMain.jsp"/>
+<br/><br/><br/><br/>
+
 <form name="changeOrderForm" method="post" action="${pageContext.request.contextPath}/controller">
-    <h3><fmt:message key="text.change1"/></h3>
     <input type="hidden" name="command" value="changeorder" />
 
+    <div style="text-align: center; color: #0c4f5b; font-family: 'Palatino Linotype', serif; font-size: 18px; margin-left: 50px"><b>
+    <fmt:message key="text.change1"/>
+    <hr/>
+
     <fmt:message key="field.status"/>
-    <br/>
+        <br/>
     <label>
-        <input type="text" name="status" value="${not empty order.orderStatus ? order.orderStatus : ''}"/>
+        <input style="width: 250px" type="text" name="status"
+               value="${not empty order.orderStatus ? order.orderStatus : ''}"/>
     </label>
-    <br/>
+    <br/><br/>
 
     <fmt:message key="field.idcleaner"/>
-    <br/>
+        <br/>
     <label>
-        <input type="text" name="id_cleaner" value="${not empty order.idCleaner ? order.idCleaner : ''}"/>
+        <input style="width: 250px" type="text" name="id_cleaner"
+               value="${not empty order.idCleaner ? order.idCleaner : ''}"/>
     </label>
     <br/>
+    </b>
 
     <div style="color: crimson">${errorChangeOrderMessage}</div>
     ${wrongAction}
     ${nullPage}
     <br/><br/>
 
-    <input type="submit" value="<fmt:message key="button.changeorder"/>"/>
+    <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 200px; font-size: 18px;
+    height: 40px" type="submit" value="<fmt:message key="button.changeorder"/>"/>
+    </div>
 </form>
 <br/>
-
-<jsp:include page="/WEB-INF/view/backToMain.jsp"/>
-<br/><br/><br/>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

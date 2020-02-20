@@ -34,7 +34,7 @@ public class EntityFactory {
             cleaner.setId(resultSet.getLong(CleanerColumns.ID_CLEANER.getValue()));
             cleaner.setIdUser(resultSet.getLong(CleanerColumns.ID_USER.getValue()));
             cleaner.setCommission(resultSet.getBigDecimal(CleanerColumns.COMMISSION.getValue()));
-            cleaner.setNotes(resultSet.getString(CleanerColumns.NOTES.getValue()));
+            cleaner.setNotes(resultSet.getString(CleanerColumns.CLEANER_NOTES.getValue()));
         } catch (SQLException e) {
             LOGGER.log(Level.ERROR, "Cannot create cleaner. Error has occurred. ", e);
             throw new DaoException(e);
@@ -50,7 +50,7 @@ public class EntityFactory {
             client.setDiscount(resultSet.getBigDecimal(ClientColumns.DISCOUNT.getValue()));
             client.setLocation(resultSet.getString(ClientColumns.LOCATION.getValue()));
             client.setRelative(resultSet.getString(ClientColumns.RELATIVE.getValue()));
-            client.setNotes(resultSet.getString(ClientColumns.NOTES.getValue()));
+            client.setNotes(resultSet.getString(ClientColumns.CLIENT_NOTES.getValue()));
         } catch (SQLException e) {
             LOGGER.log(Level.ERROR, "Cannot create client. Error has occurred. ", e);
             throw new DaoException(e);
@@ -101,12 +101,30 @@ public class EntityFactory {
             user.setName(resultSet.getString(UserColumns.NAME.getValue()));
             user.setLastname(resultSet.getString(UserColumns.LASTNAME.getValue()));
             user.setPhone(resultSet.getLong(UserColumns.PHONE.getValue()));
-            user.setEmail(resultSet.getString(UserColumns.EMAIL.getValue()));
             user.setAddress(resultSet.getString(UserColumns.ADDRESS.getValue()));
+            user.setEmail(resultSet.getString(UserColumns.EMAIL.getValue()));
         } catch (SQLException e) {
             LOGGER.log(Level.ERROR, "Cannot create user. Error has occurred. ", e);
             throw new DaoException(e);
         }
         return user;
     }
+
+    public static OrderComplex createOrderComplex(ResultSet resultSet) throws DaoException {
+        User user = EntityFactory.createUser(resultSet);
+        Client client = EntityFactory.createClient(resultSet);
+        Cleaner cleaner = EntityFactory.createCleaner(resultSet);
+        Order order = EntityFactory.createOrder(resultSet);
+        return new OrderComplex(user, cleaner, client, order);
+    }
 }
+
+//                        User user = new User(resultSet1.getLong(UserColumns.ID_USER.getValue()),
+//                                resultSet1.getString(UserColumns.LOGIN.getValue()),
+//                                resultSet1.getString(UserColumns.PASSWORD.getValue()),
+//                                resultSet1.getString(UserColumns.ROLE.getValue()),
+//                                resultSet1.getString(UserColumns.NAME.getValue()),
+//                                resultSet1.getString(UserColumns.LASTNAME.getValue()),
+//                                resultSet1.getLong(UserColumns.PHONE.getValue()),
+//                                resultSet1.getString(UserColumns.ADDRESS.getValue()),
+//                                resultSet1.getString(UserColumns.EMAIL.getValue()));

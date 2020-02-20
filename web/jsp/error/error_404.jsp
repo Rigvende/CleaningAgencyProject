@@ -14,8 +14,9 @@
 <jsp:include page="/WEB-INF/view/header.jsp"/>
 <br/>
 
-<fmt:message key="text.error7"/>
-<br/>
+    <div style="text-align: center; color: #0c4f5b; font-family: 'Palatino Linotype', serif; font-size: 18px; margin-left: 50px"><b>
+    <fmt:message key="text.error7"/>
+    <br/></b></div>
 
 <jsp:include page="/WEB-INF/view/backToMain.jsp"/>
 <br/><br/><br/>

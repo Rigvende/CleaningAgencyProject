@@ -12,36 +12,43 @@
 
 <body>
 <jsp:include page="/WEB-INF/view/header.jsp"/>
-<br/>
+
+<jsp:include page="/WEB-INF/view/backToMain.jsp"/>
+<br/><br/><br/><br/>
 
 <form name="changeClientForm" method="POST" action="${pageContext.request.contextPath}/controller">
-    <h3><fmt:message key="text.change1"/></h3>
-    <hr/><input type="hidden" name="command" value="changecleaner" />
+    <input type="hidden" name="command" value="changecleaner" />
+
+    <div style="text-align: center; color: #0c4f5b; font-family: 'Palatino Linotype', serif; font-size: 18px; margin-left: 50px"><b>
+    <fmt:message key="text.change1"/>
+    <hr/>
 
     <br/>
     <fmt:message key="field.commission"/>
     <br/>
     <label>
-        <input type="text" name="commission" value="${not empty cleaner.commission ? cleaner.commission : '0.00'}"/>
+        <input style="width: 250px" type="text" name="commission" value="${not empty cleaner.commission ? cleaner.commission : '0.00'}"/>
     </label>
+        <br/>
 
     <br/>
     <fmt:message key="field.notes"/>
     <br/>
     <label>
-        <input type="text" name="notes" value="${cleaner.notes}"/>
+        <input style="width: 250px" type="text" name="notes" value="${cleaner.notes}"/>
     </label>
+    </b>
 
     <div style="color: crimson">${errorChangeCleanerMessage}</div>
     ${wrongAction}
     ${nullPage}
-    <br/>    <br/>
+    <br/>
 
-    <input type="submit" value="<fmt:message key="button.changecleaner"/>"/>
+    <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 200px; font-size: 18px;
+    height: 40px" type="submit" value="<fmt:message key="button.changecleaner"/>"/>
+    </div>
 </form>
-
-<jsp:include page="/WEB-INF/view/backToMain.jsp"/>
-<br/><br/><br/>
+<br/>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

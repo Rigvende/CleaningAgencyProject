@@ -13,41 +13,47 @@
 <body>
 <jsp:include page="/WEB-INF/view/header.jsp"/>
 
+<jsp:include page="/WEB-INF/view/backToMain.jsp"/>
+<br/><br/><br/><br/>
+
 <form name="addServiceForm" method="post" action="${pageContext.request.contextPath}/controller">
-    <h3><fmt:message key="text.add"/></h3>
     <input type="hidden" name="command" value="addentity" />
+
+    <div style="text-align: center; color: #0c4f5b; font-family: 'Palatino Linotype', serif; font-size: 18px; margin-left: 50px"><b>
+    <fmt:message key="text.add"/>
+        <hr/>
 
     <fmt:message key="field.service"/>
     <br/>
     <label>
-        <input type="text" name="servicechange" value=""/>
+        <input style="width: 250px" type="text" name="servicechange" value=""/>
     </label>
-    <br/>
+    <br/><br/>
 
     <fmt:message key="field.cost"/>
     <br/>
     <label>
-        <input type="text" name="cost" value=""/>
+        <input style="width: 250px" type="text" name="cost" value=""/>
     </label>
-    <br/>
+    <br/><br/>
 
     <fmt:message key="field.discount2"/>
     <br/>
     <label>
-        <input type="text" name="discount" value=""/>
+        <input style="width: 250px" type="text" name="discount" value=""/>
     </label>
+    </b>
 
     <div style="color: crimson">${errorAddServiceMessage}</div>
     ${wrongAction}
     ${nullPage}
     <br/><br/>
 
-    <input type="submit" value="<fmt:message key="button.addservice"/>"/>
+    <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 200px; font-size: 18px;
+    height: 40px" type="submit" value="<fmt:message key="button.addservice"/>"/>
+    </div>
 </form>
 <br/>
-
-<jsp:include page="/WEB-INF/view/backToMain.jsp"/>
-<br/><br/><br/>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

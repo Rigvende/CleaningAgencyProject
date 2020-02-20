@@ -7,6 +7,8 @@
 <div style="float: right; padding: 10px; text-align: right;">
         <form name="localeForm" method="get" action="${pageContext.request.contextPath}/controller">
                 <input type="hidden" name="command" value="locale" />
-                <input type="submit" name = "language" value="<fmt:message key="button.locale"/>"/>
+                <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif;
+                       font-size: 14px;  height: 30px"
+                       type="submit" name = "language" value="<fmt:message key="button.locale"/>"/>
         </form>
 </div>

@@ -13,46 +13,56 @@
 <body>
 <jsp:include page="/WEB-INF/view/header.jsp"/>
 
-<br/>
-<form name="changeForm" method="POST" action="${pageContext.request.contextPath}/controller">
-    <fmt:message key="text.change1"/>
-    <hr/><input type="hidden" name="command" value="changeuser" />
+<jsp:include page="/WEB-INF/view/backToMain.jsp"/>
+<br/><br/><br/><br/>
 
-    <br/><fmt:message key="field.name1"/><br/>
+<form name="changeForm" method="POST" action="${pageContext.request.contextPath}/controller">
+    <input type="hidden" name="command" value="changeuser" />
+
+    <div style="text-align: center; color: #0c4f5b; font-family: 'Palatino Linotype', serif; font-size: 18px; margin-left: 50px"><b>
+        <fmt:message key="text.change1"/>
+    <hr/>
+
+    <fmt:message key="field.name1"/><br/>
     <label>
-        <input type="text" name="firstname" value="${user.name}"/>
+        <input style="width: 250px" type="text" name="firstname" value="${user.name}"/>
     </label>
+        <br/>
 
     <br/><fmt:message key="field.lastname1"/><br/>
     <label>
-        <input type="text" name="lastname" value="${user.lastname}"/>
+        <input style="width: 250px" type="text" name="lastname" value="${user.lastname}"/>
     </label>
+        <br/>
 
     <br/><fmt:message key="field.phone1"/><br/>
     <label>
-        <input type="number" name="phone" value="${user.phone}"/>
+        <input style="width: 250px" type="number" name="phone" value="${user.phone}"/>
     </label>
+        <br/>
 
     <br/><fmt:message key="field.email1"/><br/>
     <label>
-        <input type="text" name="email" value="${user.email}"/>
+        <input style="width: 250px" type="text" name="email" value="${user.email}"/>
     </label>
+        <br/>
 
     <br/><fmt:message key="field.address"/><br/>
     <label>
-        <input type="text" name="address" value="${user.address}"/>
+        <input style="width: 250px" type="text" name="address" value="${user.address}"/>
     </label>
+    </b>
 
     <div style="color: crimson">${errorChangeUserMessage}</div>
     ${wrongAction}
     ${nullPage}
-    <br/>    <br/>
+    <br/>
 
-    <input type="submit" value="<fmt:message key="button.change"/>"/>
+    <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 200px; font-size: 18px;
+    height: 40px" type="submit" value="<fmt:message key="button.change"/>"/>
+    </div>
+    <br/>
 </form>
-
-<jsp:include page="/WEB-INF/view/backToMain.jsp"/>
-<br/><br/><br/>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

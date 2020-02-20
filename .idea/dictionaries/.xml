@@ -4,8 +4,11 @@
       <w>addcost</w>
       <w>adddiscount</w>
       <w>addentity</w>
+      <w>adderror</w>
       <w>addservice</w>
+      <w>addserviceredirect</w>
       <w>adminlist</w>
+      <w>antiqua</w>
       <w>backtomain</w>
       <w>cataloguelist</w>
       <w>changeburial</w>
@@ -22,13 +25,17 @@
       <w>changeinfo</w>
       <w>changeloc</w>
       <w>changeorder</w>
+      <w>changeorderredirect</w>
       <w>changeredirect</w>
       <w>changeservice</w>
+      <w>changeserviceredirect</w>
       <w>changeuser</w>
+      <w>checkmark</w>
       <w>cleanerlist</w>
       <w>clientlist</w>
       <w>comfirm</w>
       <w>confirmfalse</w>
+      <w>corsiva</w>
       <w>customtags</w>
       <w>deleteadmin</w>
       <w>deletecleaner</w>
@@ -38,6 +45,7 @@
       <w>deletservice</w>
       <w>deregistered</w>
       <w>deregistering</w>
+      <w>emptybasket</w>
       <w>entititype</w>
       <w>entitytype</w>
       <w>firstname</w>
@@ -59,13 +67,16 @@
       <w>mainadmin</w>
       <w>maincleaner</w>
       <w>mainclient</w>
+      <w>makeorder</w>
       <w>mimokrokodil</w>
+      <w>monotype</w>
       <w>newuser</w>
       <w>notconfirm</w>
       <w>notregistered</w>
       <w>nullpage</w>
       <w>orderlist</w>
       <w>ordertime</w>
+      <w>palatino</w>
       <w>passwordagain</w>
       <w>passwordreg</w>
       <w>patrusova</w>
@@ -79,6 +90,10 @@
       <w>regredirect</w>
       <w>resultset</w>
       <w>sendto</w>
+      <w>servicechange</w>
+      <w>servicenew</w>
+      <w>setmark</w>
+      <w>setnotes</w>
       <w>showadmines</w>
       <w>showadmins</w>
       <w>showcatalogue</w>
@@ -87,6 +102,8 @@
       <w>showguest</w>
       <w>showguests</w>
       <w>showorders</w>
+      <w>showorderscleaner</w>
+      <w>showordersclient</w>
       <w>showservices</w>
       <w>smtp</w>
       <w>starttls</w>

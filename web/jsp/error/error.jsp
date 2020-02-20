@@ -15,6 +15,8 @@
 
     <jsp:include page="/WEB-INF/view/backToMain.jsp"/>
 
+    <div style="text-align: center; color: #0c4f5b; font-family: 'Palatino Linotype', serif;
+    font-size: 18px; margin-left: 50px"><b>
         <br/>
         <b><fmt:message key="text.error1"/></b> ${pageContext.errorData.requestURI} <fmt:message key="text.error2"/>
         <br/>
@@ -25,6 +27,7 @@
         <b><fmt:message key="text.error5"/></b> ${pageContext.exception}
         <hr/>
         <br/>
+    </b></div>
 
     <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

@@ -7,38 +7,50 @@
 <html>
 <head>
     <title><fmt:message key="title.info"/></title>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/css/background.css"/>" />
 </head>
 
 <body>
-<div style="background: #E0E0E0; height: 100px; padding: 5px;">
-    <div style="float: left">
-        <h1> <u><fmt:message key="text.company"/> </u> </h1>
-        <h4><fmt:message key="text.company2"/></h4>
+    <jsp:include page="/WEB-INF/view/backToMain.jsp"/>
+
+    <div class="blr" style="padding: 30px; background: #E0E0E0; height: 140px; width: auto; font-size:18px;
+    font-family:'Papyrus', cursive; color: darkgoldenrod; margin-right:150px; min-width: 1920px">
+    <u style="font-size: 50px"><fmt:message key="text.company"/></u>
+    <br/>
+    <b style="font-family: 'Palatino Linotype',serif; margin-left: 145px"><fmt:message key="text.company2"/></b>
+    <br/><br/>
+    <div style="text-align: left; margin-left: 30px; font-size: 15px; font-family: 'Palatino Linotype',sans-serif">
+    <fmt:message key="text.company3"/>
+    </div>
     </div>
 
-    <jsp:include page="/WEB-INF/view/backToMain.jsp"/>
-</div>
+    <div style="text-align: center; font-family: 'Palatino Linotype', sans-serif; font-size: 18px">
+    <p><fmt:message key="text.info1"/></p>
+    <p><fmt:message key="text.info"/></p>
+    <p><fmt:message key="text.info3"/></p>
+    </div>
 
-<p><fmt:message key="text.info1"/></p>
-<p><fmt:message key="text.info2"/></p>
-<p><i><fmt:message key="text.info3"/></i></p>
-<br/>
+    <div style="padding: 30px; background: royalblue; font-family: 'Book Antiqua', sans-serif; font-size: 20px">
+    <b><fmt:message key="text.info4"/></b>
+    </div>
 
-<b><fmt:message key="text.info4"/></b>
-<br/>
-    <fmt:message key="text.info5"/>
+    <ul>
+    <li style="background: royalblue; width: max-content"><fmt:message key="text.info5"/></li>
     <br/>
     <fmt:message key="text.info6"/>
     <br/>
-    <fmt:message key="text.info7"/>
+    <br/>
+    <li style="background: royalblue; width: max-content"><fmt:message key="text.info7"/></li>
     <br/>
     <fmt:message key="text.info8"/>
     <br/>
     <fmt:message key="text.info9"/>
     <br/>
-    <fmt:message key="text.info10"/>
+    <br/>
+    <li style="background: royalblue; width: max-content"><fmt:message key="text.info10"/></li>
     <br/>
     <fmt:message key="text.info11"/>
+    </ul>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

@@ -7,6 +7,7 @@ public enum  ClientColumns {
     DISCOUNT("discount"),
     LOCATION("location"),
     RELATIVE("relative"),
+    CLIENT_NOTES("client_notes"),
     NOTES("notes");
 
     private String value;

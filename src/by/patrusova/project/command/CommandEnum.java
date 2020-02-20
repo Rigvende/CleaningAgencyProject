@@ -135,6 +135,16 @@ public enum CommandEnum {
             this.command = new ShowOrdersCommand();
         }
     },
+    SHOWORDERSCLEANER {
+        {
+            this.command = new ShowOrdersCleanerCommand();
+        }
+    },
+    SHOWORDERSCLIENT {
+        {
+            this.command = new ShowOrdersClientCommand();
+        }
+    },
     CHANGEGUEST {
         {
             this.command = new ChangeGuestCommand();
@@ -165,9 +175,24 @@ public enum CommandEnum {
             this.command = new DeleteEntityCommand();
         }
     },
-    ADDENTITY{
+    ADDENTITY {
         {
             this.command = new AddEntityCommand();
+        }
+    },
+    SETMARK {
+        {
+            this.command = new SetMarkCommand();
+        }
+    },
+    SETNOTES {
+        {
+            this.command = new SetNotesCommand();
+        }
+    },
+    CANCEL {
+        {
+            this.command = new CancelCommand();
         }
     },
     MAIL {

@@ -1,10 +1,8 @@
 package by.patrusova.project.util;
 
 import javax.servlet.jsp.tagext.TagSupport;
-
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.GregorianCalendar;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 
@@ -14,7 +12,7 @@ public class InfoTimeTag extends TagSupport {
     public int doStartTag() throws JspException {
         LocalDateTime dateTime = LocalDateTime.now();
         StringBuilder builder = new StringBuilder();
-        builder.append("<hr/>Time : <b> ").append(dateTime.getDayOfWeek()).append(" || ")
+        builder.append("<hr/><b> ").append(dateTime.getDayOfWeek()).append(" || ")
                 .append(dateTime.getDayOfMonth()).append(" ").append(dateTime.getMonth()).append(" ")
                 .append(dateTime.getYear()).append(" || ").append(dateTime.getHour())
                 .append("h:").append(dateTime.getMinute()).append("min </b><hr/>");

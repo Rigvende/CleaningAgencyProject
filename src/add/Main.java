@@ -1,21 +1,28 @@
 package add;
 
+import by.patrusova.project.connection.ProxyConnection;
 import by.patrusova.project.dao.DaoFactory;
 import by.patrusova.project.dao.impl.CleanerDao;
 import by.patrusova.project.dao.impl.UserDao;
+import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.Role;
 import by.patrusova.project.entity.impl.Cleaner;
 import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.CleanerInfoService;
+import by.patrusova.project.util.column.CleanerColumns;
+import by.patrusova.project.util.column.UserColumns;
 import by.patrusova.project.util.stringholder.Parameters;
+import by.patrusova.project.util.stringholder.Statements;
 import by.patrusova.project.validator.NumberValidator;
 import by.patrusova.project.validator.RegistrationDataValidator;
 import by.patrusova.project.validator.StringValidator;
 
 import java.io.*;
 import java.math.BigDecimal;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 
@@ -41,13 +48,38 @@ public class Main {
 //    }
 
     public static void main(String[] args) throws IOException, SQLException, DaoException, ServiceException {
+        List<AbstractEntity> users = new ArrayList<>();
+        PreparedStatement preparedStatement = null;
+        ProxyConnection conn = ProxyConnection.createProxyConnection();
+        preparedStatement = conn.prepareStatement
+                (Statements.SQL_FIND_CLEANERS_BY_ROLE.getValue());
+        preparedStatement.setString(1, "cleaner");
+        ResultSet resultSet1 = preparedStatement.executeQuery();
+        while (resultSet1.next()) {
+            User user = new User(resultSet1.getLong(UserColumns.ID_USER.getValue()),
+                    resultSet1.getString(UserColumns.LOGIN.getValue()),
+                    resultSet1.getString(UserColumns.PASSWORD.getValue()),
+                    resultSet1.getString(UserColumns.ROLE.getValue()),
+                    resultSet1.getString(UserColumns.NAME.getValue()),
+                    resultSet1.getString(UserColumns.LASTNAME.getValue()),
+                    resultSet1.getLong(UserColumns.PHONE.getValue()),
+                    resultSet1.getString(UserColumns.ADDRESS.getValue()),
+                    resultSet1.getString(UserColumns.EMAIL.getValue()),
+                    new Cleaner(resultSet1.getLong(CleanerColumns.ID_CLEANER.getValue()),
+                            resultSet1.getBigDecimal(CleanerColumns.COMMISSION.getValue()),
+                            resultSet1.getString(CleanerColumns.NOTES.getValue()),
+                            resultSet1.getLong(CleanerColumns.ID_USER.getValue())));
+            users.add(user);
+        }
+        System.out.println(users);
+
+
 //        Map<String, Boolean> validationMap = new HashMap<>();
 //        String id = "0";
 //        String status = "done";
 //        validationMap.put(Parameters.ID_CLEANER.getValue(), NumberValidator.isValidExistedID(id));
 //        validationMap.put(Parameters.STATUS.getValue(), StringValidator.isValidStatus(status));
 //        System.out.println(validationMap);
-
 
 
 //        DaoFactory factory = new DaoFactory();

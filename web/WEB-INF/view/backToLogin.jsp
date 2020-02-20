@@ -8,6 +8,9 @@
     <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
 
     <div style="margin-right: 50px">
-        <a href="${pageContext.request.contextPath}/"><fmt:message key="link.login"/></a>
+        <a style="font-size: 20px; font-family: 'Book Antiqua',serif"
+           href="${pageContext.request.contextPath}/">
+            <fmt:message key="link.login"/>
+        </a>
     </div>
 </div>

@@ -32,15 +32,18 @@
 <form name="changeCleanerForm" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="changecleanerredirect" />
 
+    <b style="color: #0c4f5b; font-size: 16px; font-family: 'Palatino Linotype', serif; margin-left: 50px">
     <fmt:message key="field.id"/>
+    </b>
 
     <label>
         <input type="text" name="id" value=""/>
     </label>
 
-    <input type="submit" value="<fmt:message key="button.changecleaner"/>"/>
+    <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 150px; font-size: 15px;
+            height: 25px; " type="submit" value="<fmt:message key="button.changecleaner"/>"/>
 
-    <div style="color: crimson">${errorChangeCleanerIdMessage}</div>
+    <div style="color: crimson; margin-left: 80px">${errorChangeCleanerIdMessage}</div>
     ${wrongAction}
     ${nullPage}
 </form>
@@ -49,23 +52,28 @@
     <input type="hidden" name="command" value="deleteentity" />
     <input type="hidden" name="entitytype" value="cleaner" />
 
+    <b style="color: #0c4f5b; font-size: 16px; font-family: 'Palatino Linotype', serif; margin-left: 50px">
     <fmt:message key="field.id"/>
+    </b>
+
     <label>
         <input type="text" name="id" value=""/>
     </label>
 
-    <input type="submit" value="<fmt:message key="button.deletecleaner"/>"/>
-
+    <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 150px; font-size: 15px;
+            height: 25px; " type="submit" value="<fmt:message key="button.deletecleaner"/>"/>
 </form>
 
-<div style="float: left">
-    <h5><u><fmt:message key="text.cleaners"/></u></h5>
+<div style="text-align: center">
+    <h5><u style="color: #0c4f5b; font-size: 16px; font-family: 'Palatino Linotype', serif">
+        <fmt:message key="text.cleaners"/>
+    </u></h5>
 </div>
-<br/><br/><br/><br/>
+<br/>
 
-<div style="float: left">
-    <table border="1" cellpadding="5" cellspacing="5">
-        <tr>
+<div style="text-align: center">
+    <table border="1" cellpadding="5" cellspacing="5" align="center">
+        <tr style="background-color: royalblue">
             <th><fmt:message key="field.id"/></th>
             <th><fmt:message key="field.name1"/></th>
             <th><fmt:message key="field.lastname1"/></th>
@@ -73,19 +81,19 @@
             <th><fmt:message key="field.email1"/></th>
             <th><fmt:message key="field.commission"/></th>
             <th><fmt:message key="field.notes"/></th>
-            <th><fmt:message key="field.idcleaner"/></th>
+            <th><fmt:message key="field.idcleaner2"/></th>
         </tr>
 
-    <c:forEach var="clean" items="${cleanerList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
+    <c:forEach var="cleaner" items="${cleanerList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
         <tr>
-            <td><c:out value="${clean.id}" /></td>
-            <td><c:out value="${clean.name}" /></td>
-            <td><c:out value="${clean.lastname}" /></td>
-            <td><c:out value="${clean.phone}" /></td>
-            <td><c:out value="${clean.email}" /></td>
-            <td><c:out value="${clean.cleaner.commission}" /></td>
-            <td><c:out value="${clean.cleaner.notes}" /></td>
-            <td><c:out value="${clean.cleaner.id}" /></td>
+            <td><c:out value="${cleaner.id}" /></td>
+            <td><c:out value="${cleaner.name}" /></td>
+            <td><c:out value="${cleaner.lastname}" /></td>
+            <td><c:out value="${cleaner.phone}" /></td>
+            <td><c:out value="${cleaner.email}" /></td>
+            <td><c:out value="${cleaner.cleaner.commission}" /></td>
+            <td><c:out value="${cleaner.cleaner.notes}" /></td>
+            <td><c:out value="${cleaner.cleaner.id}" /></td>
         </tr>
     </c:forEach>
     </table>
@@ -95,7 +103,7 @@
     ${pageStart + 1} - ${pageStart + perPage}
     <a href="?start=${pageStart + perPage}">>></a>
 </div>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

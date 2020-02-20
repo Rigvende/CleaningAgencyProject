@@ -13,41 +13,47 @@
 <body>
 <jsp:include page="/WEB-INF/view/header.jsp"/>
 
+<jsp:include page="/WEB-INF/view/backToMain.jsp"/>
+<br/><br/><br/><br/>
+
 <form name="changeServiceForm" method="post" action="${pageContext.request.contextPath}/controller">
-    <h3><fmt:message key="text.change1"/></h3>
     <input type="hidden" name="command" value="changeservice" />
+
+    <div style="text-align: center; color: #0c4f5b; font-family: 'Palatino Linotype', serif; font-size: 18px; margin-left: 50px"><b>
+    <fmt:message key="text.change1"/>
+    <hr/>
 
     <fmt:message key="field.service"/>
     <br/>
     <label>
-        <input type="text" name="servicechange" value="${not empty service.service ? service.service : ''}"/>
+        <input style="width: 250px" type="text" name="servicechange" value="${not empty service.service ? service.service : ''}"/>
     </label>
-    <br/>
+    <br/> <br/>
 
     <fmt:message key="field.cost"/>
     <br/>
     <label>
-        <input type="text" name="cost" value="${not empty service.cost ? service.cost : '0.00'}"/>
+        <input style="width: 250px" type="text" name="cost" value="${not empty service.cost ? service.cost : '0.00'}"/>
     </label>
-    <br/>
+    <br/> <br/>
 
     <fmt:message key="field.discount2"/>
     <br/>
     <label>
-        <input type="text" name="discount" value="${not empty service.discount ? service.discount : '0.00'}"/>
+        <input style="width: 250px" type="text" name="discount" value="${not empty service.discount ? service.discount : '0.00'}"/>
     </label>
+    </b>
 
     <div style="color: crimson">${errorChangeServiceMessage}</div>
     ${wrongAction}
     ${nullPage}
     <br/><br/>
 
-    <input type="submit" value="<fmt:message key="button.changeservice"/>"/>
+    <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 200px; font-size: 18px;
+    height: 40px" type="submit" value="<fmt:message key="button.changeservice"/>"/>
+    </div>
 </form>
 <br/>
-
-<jsp:include page="/WEB-INF/view/backToMain.jsp"/>
-<br/><br/><br/>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

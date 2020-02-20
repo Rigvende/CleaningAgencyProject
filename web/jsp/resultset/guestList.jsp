@@ -34,38 +34,47 @@
 <form name="changeGuestForm" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="changeguest" />
 
-    <fmt:message key="field.id"/>
+    <b style="color: #0c4f5b; font-size: 16px; font-family: 'Palatino Linotype', serif; margin-left: 50px">
+        <fmt:message key="field.id"/>
+    </b>
     <br/>
     <label>
-        <input type="text" name="id" value=""/>
+        <input style="margin-left: 50px" type="text" name="id" value=""/>
     </label>
     <br/>
 
-    <div style="color: crimson">${errorChangeGuestIdMessage}</div>
-    <br/>
-
-    <fmt:message key="field.guest"/>
-    <br/>
-    <label>
-        <input type="text" name="role" value="<fmt:message key="text.guest"/>"/>
-    </label>
-
-    <div style="color: crimson">${errorChangeGuestMessage}</div>
+    <div style="color: crimson; margin-left: 50px">${errorChangeGuestIdMessage}</div>
     ${wrongAction}
     ${nullPage}
     <br/>
 
-    <input type="submit" value="<fmt:message key="button.changeguest"/>"/>
+    <b style="color: #0c4f5b; font-size: 16px; font-family: 'Palatino Linotype', serif; margin-left: 50px">
+        <fmt:message key="field.guest"/>
+    </b>
+    <br/>
+    <label>
+        <input style="margin-left: 50px" type="text" name="role" value="<fmt:message key="text.guest"/>"/>
+    </label>
+
+    <div style="color: crimson; margin-left: 50px">${errorChangeGuestMessage}</div>
+    ${wrongAction}
+    ${nullPage}
+    <br/>
+
+    <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 250px; font-size: 18px;
+            height: 30px; margin-left: 50px" type="submit" value="<fmt:message key="button.changeguest"/>"/>
 </form>
+<br/>
 
-<div style="float: left">
-    <h5><u><fmt:message key="text.guests"/></u></h5>
+<div style="text-align: center">
+    <h5><u style="color: #0c4f5b; font-size: 16px; font-family: 'Palatino Linotype', serif">
+        <fmt:message key="text.guests"/>
+    </u></h5>
 </div>
-<br/><br/><br/><br/>
 
-<div style="float: left">
-    <table border="1" cellpadding="5" cellspacing="5">
-    <tr>
+<div style="text-align: center">
+    <table border="1" cellpadding="5" cellspacing="5" align="center">
+    <tr style="background-color: royalblue">
         <th><fmt:message key="field.id"/></th>
         <th><fmt:message key="field.name1"/></th>
         <th><fmt:message key="field.lastname1"/></th>
@@ -90,7 +99,7 @@
     ${pageStart + 1} - ${pageStart + perPage}
     <a href="?start=${pageStart + perPage}">>></a>
 </div>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

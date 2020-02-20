@@ -18,7 +18,8 @@
     </div>
     <br/><br/>
 
-Ваша корзина пуста :(
+    <div style="color: #0c4f5b; margin-left: 50px"><h3> <fmt:message key="text.emptybasket"/></h3></div>
+    <br/><br/>
 
     <jsp:include page="/WEB-INF/view/footer.jsp"/>
     </body>
