@@ -7,6 +7,7 @@
 <html>
 <head>
     <title><fmt:message key="title.clientlist"/></title>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/css/background.css"/>" />
 </head>
 
 <body>
@@ -33,39 +34,47 @@
 <form name="changeClientForm" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="changeclientredirect" />
 
+    <b style="color: #0c4f5b; font-size: 16px; font-family: 'Palatino Linotype', serif; margin-left: 50px">
     <fmt:message key="field.id"/>
+    </b>
     <label>
         <input type="text" name="id" value=""/>
     </label>
 
-    <input type="submit" value="<fmt:message key="button.changeclient"/>"/><div style="color: crimson">
+    <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 150px; font-size: 15px;
+            height: 25px; " type="submit" value="<fmt:message key="button.changeclient"/>"/>
 
-    <div style="color: crimson">${errorChangeClientIdMessage}</div>
+    <div style="color: crimson; margin-left: 75px">${errorChangeClientIdMessage}</div>
     ${wrongAction}
     ${nullPage}
+    <%request.getSession(true); session.removeAttribute("errorChangeClientIdMessage");%>
 </form>
 
 <form name="deleteClientForm" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="deleteentity" />
     <input type="hidden" name="entitytype" value="client" />
 
+    <b style="color: #0c4f5b; font-size: 16px; font-family: 'Palatino Linotype', serif; margin-left: 50px">
     <fmt:message key="field.id"/>
+    </b>
     <label>
         <input type="text" name="id" value=""/>
     </label>
 
-    <input type="submit" value="<fmt:message key="button.deleteclient"/>"/>
+    <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 150px; font-size: 15px;
+            height: 25px; " type="submit" value="<fmt:message key="button.deleteclient"/>"/>
 
 </form>
 
-<div style="float: left">
-    <h5><u><fmt:message key="text.clients"/></u></h5>
+<div style="text-align: center">
+    <h5><u style="color: #0c4f5b; font-size: 16px; font-family: 'Palatino Linotype', serif">
+        <fmt:message key="text.clients"/>
+    </u></h5>
 </div>
-<br/><br/>
 
-<div style="float: left">
-    <table border="1" cellpadding="5" cellspacing="5">
-        <tr>
+<div style="text-align: center">
+    <table border="1" cellpadding="5" cellspacing="5" align="center">
+        <tr style="background-color: royalblue">
             <th><fmt:message key="field.id"/></th>
             <th><fmt:message key="field.name1"/></th>
             <th><fmt:message key="field.lastname1"/></th>
@@ -78,18 +87,18 @@
             <th><fmt:message key="field.isclient"/></th>
         </tr>
 
-    <c:forEach var="clie" items="${clientList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
+    <c:forEach var="client" items="${clientList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
         <tr>
-            <td><c:out value="${clie.id}" /></td>
-            <td><c:out value="${clie.name}" /></td>
-            <td><c:out value="${clie.lastname}" /></td>
-            <td><c:out value="${clie.phone}" /></td>
-            <td><c:out value="${clie.email}" /></td>
-            <td><c:out value="${clie.client.discount}" /></td>
-            <td><c:out value="${clie.client.location}" /></td>
-            <td><c:out value="${clie.client.relative}" /></td>
-            <td><c:out value="${clie.client.notes}" /></td>
-            <td><c:out value="${clie.client.id}" /></td>
+            <td><c:out value="${client.id}" /></td>
+            <td><c:out value="${client.name}" /></td>
+            <td><c:out value="${client.lastname}" /></td>
+            <td><c:out value="${client.phone}" /></td>
+            <td><c:out value="${client.email}" /></td>
+            <td><c:out value="${client.client.discount}" /></td>
+            <td><c:out value="${client.client.location}" /></td>
+            <td><c:out value="${client.client.relative}" /></td>
+            <td><c:out value="${client.client.notes}" /></td>
+            <td><c:out value="${client.client.id}" /></td>
         </tr>
     </c:forEach>
     </table>
@@ -99,7 +108,7 @@
     ${pageStart + 1} - ${pageStart + perPage}
     <a href="?start=${pageStart + perPage}">>></a>
 </div>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

@@ -7,6 +7,7 @@
 <html>
 <head>
     <title><fmt:message key="title.cataloguelist"/></title>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/css/background.css"/>" />
 </head>
 
 <body>
@@ -15,7 +16,7 @@
 
 <c:set var="services" scope="session" value="${catalogueList}"/>
 <c:set var="totalCount" scope="session" value="${catalogueList.size()}"/>
-<c:set var="perPage" scope="session" value="${5}"/>
+<c:set var="perPage" scope="session" value="${15}"/>
 <c:set var="pageStart" value="${param.start}"/>
 
 <c:if test="${empty pageStart or pageStart < 0}">
@@ -33,46 +34,62 @@
 <form name="changeServiceForm" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="changeserviceredirect" />
 
+    <b style="color: #0c4f5b; font-size: 16px; font-family: 'Palatino Linotype', serif; margin-left: 50px">
     <fmt:message key="field.idservice"/>
+    </b>
     <label>
         <input type="text" name="id" value=""/>
     </label>
 
-    <input type="submit" value="<fmt:message key="button.changeservice"/>"/>
+    <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 150px; font-size: 15px;
+            height: 25px; " type="submit" value="<fmt:message key="button.changeservice"/>"/>
 
-    <div style="color: crimson">${errorChangeServiceIdMessage}</div>
+    <div style="color: crimson; margin-left: 100px">${errorChangeServiceIdMessage}</div>
     ${wrongAction}
     ${nullPage}
+    <%request.getSession(true); session.removeAttribute("errorChangeServiceIdMessage");%>
 </form>
-<br/>
 
 <form name="deleteServiceForm" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="deleteentity" />
     <input type="hidden" name="entitytype" value="service" />
 
+    <b style="color: #0c4f5b; font-size: 16px; font-family: 'Palatino Linotype', serif; margin-left: 50px">
     <fmt:message key="field.idservice"/>
+    </b>
     <label>
         <input type="text" name="id" value=""/>
     </label>
 
-    <input type="submit" value="<fmt:message key="button.deletservice"/>"/>
+    <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 150px; font-size: 15px;
+            height: 25px; " type="submit" value="<fmt:message key="button.deletservice"/>"/>
 </form>
-<br/>
 
 <form name="addServiceForm" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="addserviceredirect" />
 
-    <input type="submit" value="<fmt:message key="button.addservice"/>"/>
+    <div style="text-align: right">
+    <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 200px; font-size: 18px;
+            height: 40px; margin-right: 15px" type="submit" value="<fmt:message key="button.addservice"/>"/>
+    </div>
 </form>
 
-<div style="float: left">
-    <h5><u><fmt:message key="text.services"/></u></h5>
+<div style="text-align: center">
+    <h5><u style="color: #0c4f5b; font-size: 16px; font-family: 'Palatino Linotype', serif">
+        <fmt:message key="text.services"/>
+    </u></h5>
 </div>
-<br/><br/><br/><br/>
 
-<div style="float: left">
-    <table border="1" cellpadding="5" cellspacing="5">
-        <tr>
+<div style="text-align: center">
+<a href="?start=${pageStart - perPage}"><<</a>
+${pageStart + 1} - ${pageStart + perPage}
+<a href="?start=${pageStart + perPage}">>></a>
+</div>
+<br/>
+
+<div style="text-align: center">
+    <table border="1" cellpadding="5" cellspacing="5" align="center">
+        <tr style="background-color: royalblue">
             <th><fmt:message key="field.id"/></th>
             <th><fmt:message key="field.service"/></th>
             <th><fmt:message key="field.cost"/></th>
@@ -94,7 +111,7 @@
     ${pageStart + 1} - ${pageStart + perPage}
     <a href="?start=${pageStart + perPage}">>></a>
 </div>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

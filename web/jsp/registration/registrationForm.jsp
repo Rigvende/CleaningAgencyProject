@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf8" pageEncoding="utf8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="ctg" uri="/WEB-INF/tld/removeattr.tld" %>
 
 <fmt:setBundle basename="message"/>
 
@@ -32,80 +33,79 @@
         </div>
     </div>
 
-    <h3 style="color: #0c4f5b; float: left; margin-left: 45px"><fmt:message key="text.registration"/></h3>
-    <br/><br/><br/><br/><hr/><br/>
-
     <form name="registrationForm" method="POST" action="${pageContext.request.contextPath}/controller">
-        <div style="float: left; margin-left: 45px">
        <input type="hidden" name="command" value="registration" />
 
-            <div style="color: crimson">${errorRegistrationMessage}</div>
+        <div style="text-align: center; color: #0c4f5b; font-family: 'Palatino Linotype', serif;
+        font-size: 18px; margin-left: 50px"><b>
+            <br/><fmt:message key="text.registration"/>
+            <br/><br/><hr/>
+
+            <div style="color: crimson; font-size: 14px">${errorRegistrationMessage}</div>
             ${wrongAction}
             ${nullPage}
+            <ctg:remove-attr/>
 
-            <h4 style="color: #0c4f5b">
-                <fmt:message key="field.loginreg"/>
-            </h4>
+            <br/><fmt:message key="field.loginreg"/>
+            <br/>
             <label>
-            <input type="text" name="loginreg" value=""/>
+            <input style="width: 250px" type="text" name="loginreg" value=""/>
             </label>
+            <br/><br/>
 
-            <h4 style="color: #0c4f5b">
-                <fmt:message key="field.passwordreg"/>
-            </h4>
+            <fmt:message key="field.passwordreg"/>
+            <br/>
             <label>
-            <input type="password" name="passwordreg" value="" />
+            <input style="width: 250px" type="password" name="passwordreg" value="" />
             </label>
+            <br/><br/>
 
-            <h4 style="color: #0c4f5b">
-                <fmt:message key="field.passwordagain"/>
-            </h4>
+            <fmt:message key="field.passwordagain"/>
+            <br/>
             <label>
-            <input type="password" name="passwordagain" value=""/>
+            <input style="width: 250px" type="password" name="passwordagain" value=""/>
             </label>
+            <br/><br/>
 
-            <h4 style="color: #0c4f5b">
-                <fmt:message key="field.name"/>
-            </h4>
+            <fmt:message key="field.name"/>
+            <br/>
             <label>
-            <input type="text" name="firstname" value=""/>
+            <input style="width: 250px" type="text" name="firstname" value=""/>
             </label>
+            <br/><br/>
 
-            <h4 style="color: #0c4f5b">
-                <fmt:message key="field.lastname"/>
-            </h4>
+            <fmt:message key="field.lastname"/>
+            <br/>
             <label>
-            <input type="text" name="lastname" value=""/>
+            <input style="width: 250px" type="text" name="lastname" value=""/>
             </label>
+            <br/><br/>
 
-            <h4 style="color: #0c4f5b">
-                <fmt:message key="field.phone"/>
-            </h4>
+            <fmt:message key="field.phone"/>
+            <br/>
             <label>
-            <input type="text" name="phone" value=""/>
+            <input style="width: 250px" type="text" name="phone" value=""/>
             </label>
+            <br/><br/>
 
-            <h4 style="color: #0c4f5b">
-                <fmt:message key="field.email"/>
-            </h4>
+            <fmt:message key="field.email"/>
+            <br/>
             <label>
-            <input type="text" name="email" value=""/>
+            <input style="width: 250px" type="text" name="email" value=""/>
             </label>
+            <br/><br/>
 
-            <h4 style="color: #0c4f5b">
-                <fmt:message key="field.address"/>
-            </h4>
+            <fmt:message key="field.address"/>
+            <br/>
             <label>
-            <input type="text" name="address" value=""/>
+            <input style="width: 250px" type="text" name="address" value=""/>
             </label>
-            <br/><br/><br/>
+            <br/><br/></b>
 
             <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 150px; font-size: 20px;
             height: 40px" type="submit" value="<fmt:message key="button.registration"/>"/></div>
     </form>
-
-    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <br/>
 
     <jsp:include page="/WEB-INF/view/footer.jsp"/>
     </body>

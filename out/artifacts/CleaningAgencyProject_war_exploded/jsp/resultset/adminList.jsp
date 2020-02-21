@@ -7,6 +7,7 @@
 <html>
 <head>
     <title><fmt:message key="title.adminlist"/></title>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/css/background.css"/>" />
 </head>
 
 <body>
@@ -34,23 +35,28 @@
     <input type="hidden" name="command" value="deleteentity" />
     <input type="hidden" name="entitytype" value="admin" />
 
+    <b style="color: #0c4f5b; font-size: 16px; font-family: 'Palatino Linotype', serif; margin-left: 50px">
     <fmt:message key="field.id"/>
-    <br/>
+    </b>
     <label>
         <input type="text" name="id" value=""/>
     </label>
 
-    <input type="submit" value="<fmt:message key="button.deleteadmin"/>"/>
+    <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 150px; font-size: 15px;
+            height: 25px;" type="submit" value="<fmt:message key="button.deleteadmin"/>"/>
 </form>
+<br/>
 
-<div style="float: left">
-    <h5><u><fmt:message key="text.admins"/></u></h5>
+<div style="text-align: center">
+    <h5><u style="color: #0c4f5b; font-size: 16px; font-family: 'Palatino Linotype', serif">
+        <fmt:message key="text.admins"/>
+    </u></h5>
 </div>
-<br/><br/><br/><br/>
+<br/>
 
-<div style="float: left">
-    <table border="1" cellpadding="5" cellspacing="5">
-        <tr>
+<div style="text-align: center">
+    <table border="1" cellpadding="5" cellspacing="5" align="center">
+        <tr style="background-color: royalblue">
             <th><fmt:message key="field.id"/></th>
             <th><fmt:message key="field.name1"/></th>
             <th><fmt:message key="field.lastname1"/></th>
@@ -74,7 +80,7 @@
     ${pageStart + 1} - ${pageStart + perPage}
     <a href="?start=${pageStart + perPage}">>></a>
 </div>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

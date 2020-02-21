@@ -7,6 +7,7 @@
 <html>
 <head>
     <title><fmt:message key="title.notconfirm"/></title>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/css/background.css"/>" />
 </head>
 
 
@@ -18,7 +19,7 @@
 </div>
 <br/><br/>
 
-<div style="color: olivedrab;"><h3> <fmt:message key="text.notconfirm"/></h3></div>
+<div style="color: crimson; margin-left: 50px"><h3> <fmt:message key="text.notconfirm"/></h3></div>
 <br/><br/>
 
 

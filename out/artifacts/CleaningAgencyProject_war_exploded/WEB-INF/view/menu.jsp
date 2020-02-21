@@ -7,53 +7,45 @@
 <div style="padding: 5px;">
     <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
 
-    <div style="margin-left: 70px">
+    <div style="margin-left: 30px">
     <form name="profileForm" method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="profile" />
 
-        ${wrongAction}
-        ${nullPage}
-
-        <input type="submit" value="<fmt:message key="button.profile"/>"/>
+        <input style="color: sienna; font-family: 'Book Antiqua',Serif; width: 150px; font-size: 18px;
+            height: 30px" type="submit" value="<fmt:message key="button.profile"/>"/>
     </form>
     </div>
 
     <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
 
-    <div style="margin-left: 70px">
+    <div style="margin-left: 30px">
     <form name="catalogueForm" method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="catalogue" />
 
-        ${wrongAction}
-        ${nullPage}
-
-        <input type="submit" value="<fmt:message key="button.catalogue"/>"/>
+        <input style="color: sienna; font-family: 'Book Antiqua',Serif; width: 150px; font-size: 18px;
+            height: 30px" type="submit" value="<fmt:message key="button.catalogue"/>"/>
     </form>
     </div>
 
     <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
 
-    <div style="margin-left: 70px">
+    <div style="margin-left: 30px">
     <form name="basketForm" method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="basket" />
 
-        ${wrongAction}
-        ${nullPage}
-
-        <input type="submit" value="<fmt:message key="button.basket"/>"/>
+        <input style="color: sienna; font-family: 'Book Antiqua',Serif; width: 150px; font-size: 18px;
+            height: 30px" type="submit" value="<fmt:message key="button.basket"/>"/>
     </form>
     </div>
 
     <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
 
-    <div style="margin-left: 77px">
+    <div style="margin-left: 30px">
     <form name="infoForm" method="get" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="info" />
 
-        ${wrongAction}
-        ${nullPage}
-
-        <input type="submit" value="<fmt:message key="button.info"/>"/>
+        <input style="color: sienna; font-family: 'Book Antiqua',Serif; width: 150px; font-size: 18px;
+            height: 30px" type="submit" value="<fmt:message key="button.info"/>"/>
     </form>
     </div>
 </div>

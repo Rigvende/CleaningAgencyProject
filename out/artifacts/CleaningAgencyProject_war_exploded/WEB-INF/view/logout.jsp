@@ -8,6 +8,9 @@
     <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
 
     <div style="margin-right: 75px">
-        <a href="${pageContext.request.contextPath}/controller?command=logout"><fmt:message key="button.logout"/></a>
+        <a style="font-size: 20px; font-family: 'Book Antiqua',serif;"
+        href="${pageContext.request.contextPath}/controller?command=logout">
+        <fmt:message key="button.logout"/>
+        </a>
     </div>
 </div>

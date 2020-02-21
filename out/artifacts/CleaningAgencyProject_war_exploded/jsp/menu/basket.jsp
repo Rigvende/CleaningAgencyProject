@@ -7,9 +7,20 @@
 <html>
     <head>
         <title><fmt:message key="title.basket"/></title>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/css/background.css"/>" />
     </head>
 
     <body>
-Ваша корзина пуста :(
+    <jsp:include page="/WEB-INF/view/header.jsp"/>
+
+    <div style="float: right">
+    <jsp:include page="/WEB-INF/view/backToMain.jsp"/>
+    </div>
+    <br/><br/>
+
+    <div style="color: #0c4f5b; margin-left: 50px"><h3> <fmt:message key="text.emptybasket"/></h3></div>
+    <br/><br/>
+
+    <jsp:include page="/WEB-INF/view/footer.jsp"/>
     </body>
 </html>

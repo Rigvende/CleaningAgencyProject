@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf8" pageEncoding="utf8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="ctg" uri="/WEB-INF/tld/removeattr.tld" %>
 
 <fmt:setBundle basename="message"/>
 
@@ -19,7 +20,8 @@
 <form name="changeServiceForm" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="changeservice" />
 
-    <div style="text-align: center; color: #0c4f5b; font-family: 'Palatino Linotype', serif; font-size: 18px; margin-left: 50px"><b>
+    <div style="text-align: center; color: #0c4f5b; font-family: 'Palatino Linotype', serif;
+    font-size: 18px; margin-left: 50px"><b>
     <fmt:message key="text.change1"/>
     <hr/>
 
@@ -47,7 +49,7 @@
     <div style="color: crimson">${errorChangeServiceMessage}</div>
     ${wrongAction}
     ${nullPage}
-    <br/><br/>
+    <br/><br/><ctg:remove-attr/>
 
     <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 200px; font-size: 18px;
     height: 40px" type="submit" value="<fmt:message key="button.changeservice"/>"/>

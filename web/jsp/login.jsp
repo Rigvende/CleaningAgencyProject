@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="ctg" uri="/WEB-INF/tld/removeattr.tld" %>
 
 <c:set var="locale"
        value="${not empty locale ? pageContext.session.getAttribute('locale') : 'ru_RU'}"
@@ -70,14 +71,12 @@
     <div style="color: crimson; font-family: 'Palatino Linotype', sans-serif">${errorLoginPassMessage}</div>
     ${wrongAction}
     ${nullPage}
-    <br/>
+    <br/><ctg:remove-attr/>
 
     <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 170px;
             font-size: 18px;  height: 30px" type="submit" value="<fmt:message key="button.login"/>"/>
         </div>
-
 </form>
-
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

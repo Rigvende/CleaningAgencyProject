@@ -6,60 +6,78 @@
 
 <html><head>
     <title><fmt:message key="title.mainadmin"/></title>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/css/background.css"/>" />
 </head>
 
 <body>
 <jsp:include page="/WEB-INF/view/header.jsp"/>
 
-<h2 style="color: olivedrab"><fmt:message key="text.main1"/> ${user.name}!</h2>
-<h3><fmt:message key="text.main2"/></h3>
+<h2 style="color: #0c4f5b; text-align: center">
+    <fmt:message key="text.main1"/> ${user.name}!
+</h2>
+<h3 style="color: #0c4f5b; font-family: 'Palatino Linotype',serif; text-align: center">
+    <fmt:message key="text.main2"/>
+</h3>
 
-</div>
-<div style="float: right" >
-    <div style="margin-right: 45px">
-    <b><fmt:message key="text.main4"/></b>
+<div style="float: right; " >
+    <div style="margin-right: 120px;">
+    <b style="color: #0c4f5b; font-family: 'Palatino Linotype',serif; background-color: lightgoldenrodyellow">
+        <fmt:message key="text.main4"/>
+    </b>
     </div>
 </div>
 <br/><br/>
 
-<div style="float: right">
+<div style="float: right; margin-right: 50px">
     <form name="guestForm" method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="showguests" />
-        <input type="submit" value="<fmt:message key="button.showguests"/>"/>
+        <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 250px; font-size: 20px;
+            height: 40px" type="submit" value="<fmt:message key="button.showguests"/>"/>
     </form>
 
     <form name="adminForm" method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="showadmins" />
-        <input type="submit" value="<fmt:message key="button.showadmines"/>"/>
+        <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 250px; font-size: 20px;
+            height: 40px" type="submit" type="submit" value="<fmt:message key="button.showadmines"/>"/>
     </form>
 
     <form name="clientForm" method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="showclients" />
-        <input type="submit" value="<fmt:message key="button.showclients"/>"/>
+        <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 250px; font-size: 20px;
+            height: 40px" type="submit" type="submit" value="<fmt:message key="button.showclients"/>"/>
     </form>
 
     <form name="cleanerForm" method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="showcleaners" />
-        <input type="submit" value="<fmt:message key="button.showcleaners"/>"/>
+        <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 250px; font-size: 20px;
+            height: 40px" type="submit" type="submit" value="<fmt:message key="button.showcleaners"/>"/>
     </form>
 
     <form name="orderForm" method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="showorders" />
-        <input type="submit" value="<fmt:message key="button.showorders"/>"/>
+        <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 250px; font-size: 20px;
+            height: 40px" type="submit" type="submit" value="<fmt:message key="button.showorders"/>"/>
     </form>
 
     <form name="serviceForm" method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="showcatalogue" />
-        <input type="submit" value="<fmt:message key="button.showservices"/>"/>
+        <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 250px; font-size: 20px;
+            height: 40px" type="submit" type="submit" value="<fmt:message key="button.showservices"/>"/>
     </form>
 </div>
 
-<div style="margin-left: 77px">
-    <b><fmt:message key="text.main3"/></b>
+<div style="margin-left: 125px">
+    <b style="color: #0c4f5b; font-family: 'Palatino Linotype',serif; background-color: lightgoldenrodyellow">
+        <fmt:message key="text.main3"/>
+    </b>
 </div>
 <br/>
 
+<div style="margin-left: 50px">
 <jsp:include page="/WEB-INF/view/menu.jsp"/>
+</div>
+<br/><br/><br/><br/>
+
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>
 </html>

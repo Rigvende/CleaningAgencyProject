@@ -7,14 +7,16 @@
 <html>
 <head>
     <title>500</title>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/css/background.css"/>" />
 </head>
 
 <body>
 <jsp:include page="/WEB-INF/view/header.jsp"/>
 <br/>
 
-<fmt:message key="text.error8"/>
-<br/>
+    <div style="text-align: center; color: #0c4f5b; font-family: 'Palatino Linotype', serif; font-size: 18px; margin-left: 50px"><b>
+    <fmt:message key="text.error8"/>
+    <br/></b></div>
 
 <jsp:include page="/WEB-INF/view/backToMain.jsp"/>
 <br/><br/><br/>
