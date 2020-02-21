@@ -19,6 +19,7 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
     private final static Logger LOGGER = LogManager.getLogger();
     private static final String SQL_SELECT_ALL_SERVICES =
                     "SELECT id_service, service, cost, discount FROM services";
+    private final static String SQL_SELECT_ID = "SELECT id_service FROM services";
 
     public ServiceDao(ProxyConnection connection) {
         super(connection);
@@ -62,6 +63,9 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
                     (Statements.SQL_DELETE_SERVICE.getValue());
             preparedStatement.setLong(1, service.getId());
             isDeleted = preparedStatement.execute();
+            if (!findId(service.getId())) {
+                isDeleted = true;
+            }
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
@@ -150,5 +154,28 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
             closeStatement(preparedStatement);
         }
         return service;
+    }
+
+    public boolean findId(long id) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
+        Statement statement = connection.createStatement();
+        try {
+            ResultSet resultSet = statement.executeQuery(SQL_SELECT_ID);
+            while (resultSet.next()) {
+                if (Long.parseLong(resultSet.getString(1)) == id) {
+                    connection.commit();
+                    return true;
+                }
+            }
+        } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
+            LOGGER.log(Level.ERROR, "Cannot find id_service in DB. Request to table failed.", e);
+            throw new DaoException(e);
+        } finally {
+            closeStatement(statement);
+        }
+        return false;
     }
 }

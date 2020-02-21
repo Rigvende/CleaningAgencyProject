@@ -36,24 +36,28 @@ public class RoleService implements Serviceable {
         try {
             UserDao userDao = factory.createUserDao();
             user = (User) userDao.findEntityById(id);
-            user.setRole(role);
-            if(!userDao.update(user)) {
-                switch (role) {
-                    case "admin":
-                        return user;
-                    case "client":
-                        ClientDao clientDao = factory.createClientDao();
-                        Client client = new Client();
-                        client.setIdUser(id);
-                        return clientDao.create(client) ? null : user;
-                    case "cleaner":
-                        CleanerDao cleanerDao = factory.createCleanerDao();
-                        Cleaner cleaner = new Cleaner();
-                        cleaner.setIdUser(id);
-                        return cleanerDao.create(cleaner) ? null : user;
-                    default:
-                        return null;
+            if (user.getRole().equals(Attributes.GUEST.getValue())) {
+                user.setRole(role);
+                if (!userDao.update(user)) {
+                    switch (role) {
+                        case "admin":
+                            return user;
+                        case "client":
+                            ClientDao clientDao = factory.createClientDao();
+                            Client client = new Client();
+                            client.setIdUser(id);
+                            return clientDao.create(client) ? null : user;
+                        case "cleaner":
+                            CleanerDao cleanerDao = factory.createCleanerDao();
+                            Cleaner cleaner = new Cleaner();
+                            cleaner.setIdUser(id);
+                            return cleanerDao.create(cleaner) ? null : user;
+                        default:
+                            return null;
+                    }
                 }
+            } else {
+                return null;
             }
         } catch (DaoException | SQLException e) {
             LOGGER.log(Level.ERROR, "Exception while setting role has occurred. ", e);

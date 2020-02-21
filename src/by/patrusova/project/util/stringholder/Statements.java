@@ -7,6 +7,7 @@ public enum Statements {
     SQL_AVERAGE_MARK("SELECT AVG(mark) AS average_mark FROM orders, cleaners " +
                     "WHERE id_cleaner = ? AND orders.id_cleaner = cleaners.id_cleaner"),
     SQL_SET_MARK("UPDATE orders SET mark = ? WHERE id_order = ?"),
+    SQL_CANCEL_ORDER("UPDATE orders SET order_status = 'declined' WHERE id_order = ?"),
     SQL_SELECT_USER_BY_LOGIN_PASS("SELECT id_user, login, password, role, name, lastname, phone, " +
                     "address, email FROM users WHERE login = ? AND password = ?"),
     SQL_SELECT_USER_BY_ID("SELECT id_user, login, password, role, name, lastname, phone, " +
@@ -16,7 +17,7 @@ public enum Statements {
     SQL_SELECT_CLIENT_BY_ID("SELECT id_client, id_user, discount, location, relative, " +
                     "notes AS client_notes FROM clients WHERE id_user = ?"),
     SQL_ADD_USER("INSERT INTO users VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"),
-    SQL_DELETE_USER("DELETE FROM users WHERE id_user = ?"),
+    SQL_DELETE_USER("DELETE FROM users WHERE id_user = ? AND role = ?"),
     SQL_DELETE_CLEANER("DELETE FROM cleaners WHERE id_user = ?"),
     SQL_DELETE_CLIENT("DELETE FROM clients WHERE id_user = ?"),
     SQL_CREATE_CLIENT_BY_ADMIN("INSERT INTO clients VALUES (?, ?, ?, ?, ?, ?)"),

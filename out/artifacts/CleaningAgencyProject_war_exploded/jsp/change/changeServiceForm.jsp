@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf8" pageEncoding="utf8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="ctg" uri="/WEB-INF/tld/removeattr.tld" %>
 
 <fmt:setBundle basename="message"/>
 
@@ -48,7 +49,7 @@
     <div style="color: crimson">${errorChangeServiceMessage}</div>
     ${wrongAction}
     ${nullPage}
-    <br/><br/><%request.getSession(true); session.removeAttribute("errorChangeServiceMessage");%>
+    <br/><br/><ctg:remove-attr/>
 
     <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 200px; font-size: 18px;
     height: 40px" type="submit" value="<fmt:message key="button.changeservice"/>"/>

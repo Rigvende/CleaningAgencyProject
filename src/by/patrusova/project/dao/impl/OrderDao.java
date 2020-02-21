@@ -21,6 +21,7 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
     private static final String SQL_SELECT_ALL_ORDERS =
             "SELECT id_order, order_time, deadline, order_status, " +
                     "mark, id_client, id_cleaner FROM orders";
+    private final static String SQL_SELECT_ID = "SELECT id_order FROM orders";
 
     public OrderDao(ProxyConnection connection) {
         super(connection);
@@ -173,5 +174,51 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             closeStatement(preparedStatement);
         }
         return result;
+    }
+
+    public boolean cancelOrder(AbstractEntity entity) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
+        boolean isUpdated;
+        Order order = (Order) entity;
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_CANCEL_ORDER.getValue());
+            preparedStatement.setLong(1, order.getId());
+            isUpdated = preparedStatement.execute();
+            connection.commit();
+        } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
+            LOGGER.log(Level.ERROR, "Cannot update order. Request to table failed. ", e);
+            throw new DaoException(e);
+        } finally {
+            closeStatement(preparedStatement);
+        }
+        return isUpdated;
+    }
+
+    public boolean findId(long id) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
+        Statement statement = connection.createStatement();
+        try {
+            ResultSet resultSet = statement.executeQuery(SQL_SELECT_ID);
+            while (resultSet.next()) {
+                if (Long.parseLong(resultSet.getString(1)) == id) {
+                    connection.commit();
+                    return true;
+                }
+            }
+        } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
+            LOGGER.log(Level.ERROR, "Cannot find id_order in DB. Request to table failed.", e);
+            throw new DaoException(e);
+        } finally {
+            closeStatement(statement);
+        }
+        return false;
     }
 }

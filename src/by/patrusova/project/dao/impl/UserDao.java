@@ -27,6 +27,7 @@ public class UserDao extends AbstractDao<AbstractEntity> {
                     "lastname, phone, address, email FROM users";
     private final static String SQL_SELECT_LOGIN =
             "SELECT login FROM users";
+    private final static String SQL_SELECT_ID = "SELECT id_user FROM users";
 
     public UserDao(ProxyConnection connection) {
         super(connection);
@@ -74,7 +75,11 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             preparedStatement = connection.prepareStatement
                     (Statements.SQL_DELETE_USER.getValue());
             preparedStatement.setLong(1, user.getId());
+            preparedStatement.setString(2, user.getRole());
             isDeleted = preparedStatement.execute();
+            if (!findId(user.getId())) {
+                isDeleted = true;
+            }
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
@@ -294,5 +299,28 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             closeStatement(preparedStatement);
         }
         return users;
+    }
+
+    public boolean findId(long id) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
+        Statement statement = connection.createStatement();
+        try {
+            ResultSet resultSet = statement.executeQuery(SQL_SELECT_ID);
+            while (resultSet.next()) {
+                if (Long.parseLong(resultSet.getString(1)) == id) {
+                    connection.commit();
+                    return true;
+                }
+            }
+        } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
+            LOGGER.log(Level.ERROR, "Cannot find id_user in DB. Request to table failed.", e);
+            throw new DaoException(e);
+        } finally {
+            closeStatement(statement);
+        }
+        return false;
     }
 }

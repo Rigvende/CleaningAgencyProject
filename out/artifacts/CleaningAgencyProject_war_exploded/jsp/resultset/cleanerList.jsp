@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf8" pageEncoding="utf8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="ctg" uri="/WEB-INF/tld/removeattr.tld" %>
 
 <fmt:setBundle basename="message"/>
 
@@ -46,7 +47,7 @@
     <div style="color: crimson; margin-left: 80px">${errorChangeCleanerIdMessage}</div>
     ${wrongAction}
     ${nullPage}
-    <%request.getSession(true); session.removeAttribute("errorChangeCleanerIdMessage");%>
+    <ctg:remove-attr/>
 </form>
 
 <form name="deleteCleanerForm" method="post" action="${pageContext.request.contextPath}/controller">

@@ -26961,3 +26961,7 @@ Caused by: java.sql.SQLException: Column 'cleaner_notes' not found.
 21-02 12:56 INFO  project.filter.LogFilter -  - ServletPath :/controller, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/registration/registrationForm.jsp
 21-02 12:56 INFO  project.filter.LogFilter -  - ServletPath :/jsp/registration/registrationForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/registration/registrationForm.jsp
 21-02 12:56 INFO  project.filter.LogFilter -  - ServletPath :/jsp/registration/registrationForm.jsp, URL =http://localhost:8189/CleaningAgencyProject_war_exploded/jsp/registration/registrationForm.jsp
+21-02 13:56 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+21-02 15:28 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@423d754e
+21-02 15:28 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@2f6922fa
+21-02 15:28 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.

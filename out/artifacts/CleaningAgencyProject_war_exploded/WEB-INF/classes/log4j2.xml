@@ -7,7 +7,7 @@
     </properties>
     <appenders>
         <file name="TxtFile"
-              fileName="C:\Users\Администратор.000\IdeaProjects\CleaningAgencyProject\web\WEB-INF\log\data.log"
+              fileName="C:\Users\Администратор.000\IdeaProjects\CleaningAgencyProject\web\WEB-INF\log\data1.log"
               bufferedIO="true">
             <patternLayout pattern="${pattern}"/>
         </file>

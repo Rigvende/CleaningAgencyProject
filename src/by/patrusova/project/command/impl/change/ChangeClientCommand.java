@@ -13,10 +13,10 @@ import by.patrusova.project.util.stringholder.Pages;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import javax.servlet.http.HttpServletRequest;
 
 public class ChangeClientCommand implements ActionCommand {
+
     private final static Logger LOGGER = LogManager.getLogger();
 
     @Override

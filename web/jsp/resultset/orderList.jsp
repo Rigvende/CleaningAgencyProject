@@ -122,7 +122,6 @@
         <div style="color: crimson; margin-left: 80px">${errorChangeOrderIdMessage}</div>
             ${wrongAction}
             ${nullPage}
-        <ctg:remove-attr/>
     </form>
     <br/>
 

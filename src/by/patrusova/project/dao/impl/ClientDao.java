@@ -20,6 +20,7 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
     private static final String SQL_SELECT_ALL_CLIENTS =
             "SELECT id_client, id_user, discount, location, " +
                     "relative, notes FROM clients";
+    private final static String SQL_SELECT_ID = "SELECT id_client FROM clients";
 
     public ClientDao(ProxyConnection connection) {
         super(connection);
@@ -65,6 +66,9 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
                     (Statements.SQL_DELETE_CLIENT.getValue());
             preparedStatement.setLong(1, client.getIdUser());
             isDeleted = preparedStatement.execute();
+            if (!findId(client.getIdUser())) {
+                isDeleted = true;
+            }
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
@@ -176,5 +180,28 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
             closeStatement(preparedStatement);
         }
         return isUpdated;
+    }
+
+    public boolean findId(long id) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
+        Statement statement = connection.createStatement();
+        try {
+            ResultSet resultSet = statement.executeQuery(SQL_SELECT_ID);
+            while (resultSet.next()) {
+                if (Long.parseLong(resultSet.getString(1)) == id) {
+                    connection.commit();
+                    return true;
+                }
+            }
+        } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
+            LOGGER.log(Level.ERROR, "Cannot find id_client in DB. Request to table failed.", e);
+            throw new DaoException(e);
+        } finally {
+            closeStatement(statement);
+        }
+        return false;
     }
 }

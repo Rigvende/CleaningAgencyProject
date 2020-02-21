@@ -7,10 +7,14 @@ import by.patrusova.project.dao.impl.UserDao;
 import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.Role;
 import by.patrusova.project.entity.impl.Cleaner;
+import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.CleanerInfoService;
+import by.patrusova.project.service.impl.ClientInfoService;
+import by.patrusova.project.service.impl.DeleteEntityService;
+import by.patrusova.project.service.impl.RoleService;
 import by.patrusova.project.util.column.CleanerColumns;
 import by.patrusova.project.util.column.UserColumns;
 import by.patrusova.project.util.stringholder.Parameters;
@@ -48,30 +52,78 @@ public class Main {
 //    }
 
     public static void main(String[] args) throws IOException, SQLException, DaoException, ServiceException {
-        List<AbstractEntity> users = new ArrayList<>();
-        PreparedStatement preparedStatement = null;
-        ProxyConnection conn = ProxyConnection.createProxyConnection();
-        preparedStatement = conn.prepareStatement
-                (Statements.SQL_FIND_CLEANERS_BY_ROLE.getValue());
-        preparedStatement.setString(1, "cleaner");
-        ResultSet resultSet1 = preparedStatement.executeQuery();
-        while (resultSet1.next()) {
-            User user = new User(resultSet1.getLong(UserColumns.ID_USER.getValue()),
-                    resultSet1.getString(UserColumns.LOGIN.getValue()),
-                    resultSet1.getString(UserColumns.PASSWORD.getValue()),
-                    resultSet1.getString(UserColumns.ROLE.getValue()),
-                    resultSet1.getString(UserColumns.NAME.getValue()),
-                    resultSet1.getString(UserColumns.LASTNAME.getValue()),
-                    resultSet1.getLong(UserColumns.PHONE.getValue()),
-                    resultSet1.getString(UserColumns.ADDRESS.getValue()),
-                    resultSet1.getString(UserColumns.EMAIL.getValue()),
-                    new Cleaner(resultSet1.getLong(CleanerColumns.ID_CLEANER.getValue()),
-                            resultSet1.getBigDecimal(CleanerColumns.COMMISSION.getValue()),
-                            resultSet1.getString(CleanerColumns.NOTES.getValue()),
-                            resultSet1.getLong(CleanerColumns.ID_USER.getValue())));
-            users.add(user);
-        }
-        System.out.println(users);
+
+
+        Client client = new Client();
+        client.setIdUser(86);
+        ClientInfoService service = new ClientInfoService();
+        System.out.println(service.getClient(client));
+
+//        DeleteEntityService service = new DeleteEntityService();
+//        User user = new User();
+//        user.setId(68);
+//        user.setRole("admin");
+//        System.out.println(service.doService(user) == null);
+//        User user2 = new User();
+//        user2.setId(80);
+//        user2.setRole("admin");
+//        System.out.println(service.doService(user2) == null);
+//        User user3 = new User();
+//        user3.setId(83);
+//        user3.setRole("admin");
+//        System.out.println(service.doService(user3) == null);
+
+//        DeleteEntityService service = new DeleteEntityService();
+//        Cleaner cleaner = new Cleaner();
+//        cleaner.setIdUser(52);
+//        System.out.println(service.doService(cleaner) == null);
+//        Cleaner cleaner2 = new Cleaner();
+//        cleaner2.setIdUser(150);
+//        System.out.println(service.doService(cleaner2) == null);
+//        Cleaner cleaner3 = new Cleaner();
+//        cleaner3.setIdUser(59);
+//        System.out.println(service.doService(cleaner3) == null);
+
+//        System.out.println(StringValidator.isValidRole("admin"));
+
+//        RoleService service = new RoleService();
+//        System.out.println(service.doService(74, "client"));
+
+
+//        DaoFactory factory = new DaoFactory();
+//        UserDao dao = factory.createUserDao();
+//        boolean check = false;
+//        if(NumberValidator.isValidID("") ) {
+//            check = dao.findId(Long.parseLong(""));
+//        }
+//        System.out.println(check);
+
+
+
+//        List<AbstractEntity> users = new ArrayList<>();
+//        PreparedStatement preparedStatement = null;
+//        ProxyConnection conn = ProxyConnection.createProxyConnection();
+//        preparedStatement = conn.prepareStatement
+//                (Statements.SQL_FIND_CLEANERS_BY_ROLE.getValue());
+//        preparedStatement.setString(1, "cleaner");
+//        ResultSet resultSet1 = preparedStatement.executeQuery();
+//        while (resultSet1.next()) {
+//            User user = new User(resultSet1.getLong(UserColumns.ID_USER.getValue()),
+//                    resultSet1.getString(UserColumns.LOGIN.getValue()),
+//                    resultSet1.getString(UserColumns.PASSWORD.getValue()),
+//                    resultSet1.getString(UserColumns.ROLE.getValue()),
+//                    resultSet1.getString(UserColumns.NAME.getValue()),
+//                    resultSet1.getString(UserColumns.LASTNAME.getValue()),
+//                    resultSet1.getLong(UserColumns.PHONE.getValue()),
+//                    resultSet1.getString(UserColumns.ADDRESS.getValue()),
+//                    resultSet1.getString(UserColumns.EMAIL.getValue()),
+//                    new Cleaner(resultSet1.getLong(CleanerColumns.ID_CLEANER.getValue()),
+//                            resultSet1.getBigDecimal(CleanerColumns.COMMISSION.getValue()),
+//                            resultSet1.getString(CleanerColumns.NOTES.getValue()),
+//                            resultSet1.getLong(CleanerColumns.ID_USER.getValue())));
+//            users.add(user);
+//        }
+//        System.out.println(users);
 
 
 //        Map<String, Boolean> validationMap = new HashMap<>();

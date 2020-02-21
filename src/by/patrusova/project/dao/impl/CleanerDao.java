@@ -63,6 +63,9 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
                     (Statements.SQL_DELETE_CLEANER.getValue());
             preparedStatement.setLong(1, cleaner.getIdUser());
             isDeleted = preparedStatement.execute();
+            if (!findId(cleaner.getIdUser())) {
+                isDeleted = true;
+            }
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
@@ -135,10 +138,9 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
         try {
             preparedStatement = connection.prepareStatement
                     (Statements.SQL_SELECT_CLEANER_BY_ID.getValue());
-            preparedStatement.setDouble(1, id);
+            preparedStatement.setLong(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
-            resultSet.next();
-            cleaner = EntityFactory.createCleaner(resultSet);
+            cleaner = resultSet.next() ? EntityFactory.createCleaner(resultSet) : null;
             connection.commit();
         } catch (SQLException e) {
             LOGGER.log(Level.ERROR, "Cannot find cleaner by ID. Request to table failed. ", e);

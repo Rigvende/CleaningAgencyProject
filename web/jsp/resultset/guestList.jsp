@@ -44,11 +44,6 @@
     </label>
     <br/>
 
-    <div style="color: crimson; margin-left: 50px">${errorChangeGuestIdMessage}</div>
-    ${wrongAction}
-    ${nullPage}
-    <br/><ctg:remove-attr/>
-
     <b style="color: #0c4f5b; font-size: 16px; font-family: 'Palatino Linotype', serif; margin-left: 50px">
         <fmt:message key="field.guest"/>
     </b>

@@ -12,13 +12,12 @@
     </head>
 
     <body>
+
     <div style="float: right; padding: 10px; text-align: right;">
         <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
-        <div style="margin-right: 75px">
-            <a style="font-size: 20px; font-family: 'Book Antiqua',serif"
-               href="${pageContext.request.contextPath}/controller?command=info">
-                <fmt:message key="button.info"/>
-            </a>
+
+        <div style="margin-right: 40px">
+            <a style="font-size: 20px; font-family: 'Book Antiqua',serif" href="${pageContext.request.contextPath}/"><fmt:message key="link.login"/></a>
         </div>
     </div>
 
@@ -26,15 +25,26 @@
     font-family:'Papyrus', cursive; color: darkgoldenrod; margin-right:150px; min-width: 1920px">
         <u style="font-size: 50px"><fmt:message key="text.company"/></u>
         <br/>
-        <b style="font-family: 'Palatino Linotype',serif; margin-left: 145px"><fmt:message key="text.company2"/></b>
+        <b style="font-family: 'Palatino Linotype',serif; margin-left: 145px">
+            <u><fmt:message key="text.company2"/></u></b>
         <br/><br/>
         <div style="text-align: left; margin-left: 30px; font-size: 15px; font-family: 'Palatino Linotype',sans-serif">
-            <fmt:message key="text.company3"/>
+            <b><fmt:message key="text.company3"/></b>
         </div>
     </div>
 
     <form name="registrationForm" method="POST" action="${pageContext.request.contextPath}/controller">
        <input type="hidden" name="command" value="registration" />
+
+        <div style="float: right; padding: 10px; text-align: right;">
+            <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
+            <div style="margin-right: 75px">
+                <a style="font-size: 20px; font-family: 'Book Antiqua',serif"
+                   href="${pageContext.request.contextPath}/controller?command=info">
+                    <fmt:message key="button.info"/>
+                </a>
+            </div>
+        </div><br/><br/><br/>
 
         <div style="text-align: center; color: #0c4f5b; font-family: 'Palatino Linotype', serif;
         font-size: 18px; margin-left: 50px"><b>

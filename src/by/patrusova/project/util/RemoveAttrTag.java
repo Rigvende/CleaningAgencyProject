@@ -1,8 +1,6 @@
 package by.patrusova.project.util;
 
 import by.patrusova.project.util.stringholder.Attributes;
-
-import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.TagSupport;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +11,7 @@ public class RemoveAttrTag extends TagSupport {
     @Override
     public int doStartTag() {
         List<String> list = new ArrayList<>();
+        list.add(Attributes.EMPTY_LIST.getValue());
         list.add(Attributes.ERROR_LOGIN.getValue());
         list.add(Attributes.ERROR_REG.getValue());
         list.add(Attributes.ERROR_ADD_SERVICE.getValue());

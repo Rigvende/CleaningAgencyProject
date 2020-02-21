@@ -45,10 +45,11 @@ public class CleanerInfoService implements Serviceable, EntityCreator {
     //создание экземпляра клинера с изменениями, внесёнными админом
     @Override
     public Cleaner createEntity(HttpServletRequest request) {
-        Cleaner updatedCleaner = (Cleaner) request.getSession().getAttribute(Attributes.CLEANER.getValue());
+        Cleaner updatedCleaner = (Cleaner) request.getSession()
+                .getAttribute(Attributes.CLEANER.getValue());
         if (!validate(request).containsValue(false)) {
-            updatedCleaner.setCommission(BigDecimal.valueOf(Double.parseDouble
-                    (request.getParameter(Parameters.COMMISSION.getValue()))));
+            String commission = request.getParameter(Parameters.COMMISSION.getValue());
+            updatedCleaner.setCommission(BigDecimal.valueOf(Double.parseDouble(commission)));
             updatedCleaner.setNotes(request.getParameter(Parameters.NOTES.getValue()));
             return updatedCleaner;
         } else {

@@ -1,8 +1,7 @@
 package by.patrusova.project.validator;
 
 import by.patrusova.project.dao.DaoFactory;
-import by.patrusova.project.dao.impl.CleanerDao;
-import by.patrusova.project.dao.impl.UserDao;
+import by.patrusova.project.dao.impl.*;
 import by.patrusova.project.exception.DaoException;
 
 import java.sql.SQLException;
@@ -16,7 +15,8 @@ public class NumberValidator {
     private final static String CHECK_COST = "^[\\d]{1,3}((.[\\d]{1,2})?)$";
     private final static String CHECK_MARK = "^\\d$";
 
-    private NumberValidator() {}
+    private NumberValidator() {
+    }
 
     public static boolean isValidDecimal(String decimal) {
         Pattern pattern = Pattern.compile(CHECK_DECIMAL);
@@ -24,11 +24,64 @@ public class NumberValidator {
         return matcher.find();
     }
 
-    public static boolean isValidExistedID(String id) throws DaoException, SQLException {
+    public static boolean isValidCleanerID(String id) throws DaoException, SQLException {
         DaoFactory factory = new DaoFactory();
         CleanerDao dao = factory.createCleanerDao();
-        boolean check = dao.findId(Long.parseLong(id));
-        return isValidID(id) && check;
+        boolean check = false;
+        if(isValidID(id) ) {
+            check = dao.findId(Long.parseLong(id));
+        }
+        return check;
+    }
+
+    public static boolean isValidClientID(String id) throws DaoException, SQLException {
+        DaoFactory factory = new DaoFactory();
+        ClientDao dao = factory.createClientDao();
+        boolean check = false;
+        if (isValidID(id)) {
+            check = dao.findId(Long.parseLong(id));
+        }
+        return check;
+    }
+
+    public static boolean isValidUserID(String id) throws DaoException, SQLException {
+        DaoFactory factory = new DaoFactory();
+        UserDao dao = factory.createUserDao();
+        boolean check = false;
+        if (isValidID(id)) {
+            check = dao.findId(Long.parseLong(id));
+        }
+        return check;
+    }
+
+    public static boolean isValidOrderID(String id) throws DaoException, SQLException {
+        DaoFactory factory = new DaoFactory();
+        OrderDao dao = factory.createOrderDao();
+        boolean check = false;
+        if(isValidID(id) ) {
+            check = dao.findId(Long.parseLong(id));
+        }
+        return check;
+    }
+
+    public static boolean isValidServiceID(String id) throws DaoException, SQLException {
+        DaoFactory factory = new DaoFactory();
+        ServiceDao dao = factory.createServiceDao();
+        boolean check = false;
+        if(isValidID(id) ) {
+            check = dao.findId(Long.parseLong(id));
+        }
+        return check;
+    }
+
+    public static boolean isValidBasketID(String id) throws DaoException, SQLException {
+        DaoFactory factory = new DaoFactory();
+        BasketDao dao = factory.createBasketDao();
+        boolean check = false;
+        if(isValidID(id) ) {
+            check = dao.findId(Long.parseLong(id));
+        }
+        return check;
     }
 
     public static boolean isValidID(String id) {

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="ctg" uri="/WEB-INF/tld/removeattr.tld" %>
 
 <c:set var="locale"
        value="${not empty locale ? pageContext.session.getAttribute('locale') : 'ru_RU'}"
@@ -31,10 +32,10 @@
     font-family:'Papyrus', cursive; color: darkgoldenrod; margin-right:150px; min-width: 1920px">
         <u style="font-size: 50px"><fmt:message key="text.company"/></u>
         <br/>
-        <b style="font-family: 'Palatino Linotype',serif; margin-left: 145px"><fmt:message key="text.company2"/></b>
+        <b style="font-family: 'Palatino Linotype',serif; margin-left: 145px"><u><fmt:message key="text.company2"/></u></b>
         <br/><br/>
         <div style="text-align: left; margin-left: 30px; font-size: 15px; font-family: 'Palatino Linotype',sans-serif">
-            <fmt:message key="text.company3"/>
+            <b><fmt:message key="text.company3"/></b>
         </div>
     </div>
 
@@ -70,14 +71,12 @@
     <div style="color: crimson; font-family: 'Palatino Linotype', sans-serif">${errorLoginPassMessage}</div>
     ${wrongAction}
     ${nullPage}
-    <br/>
+    <br/><ctg:remove-attr/>
 
     <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 170px;
             font-size: 18px;  height: 30px" type="submit" value="<fmt:message key="button.login"/>"/>
         </div>
-
 </form>
-
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

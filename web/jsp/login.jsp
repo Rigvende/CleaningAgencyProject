@@ -32,10 +32,10 @@
     font-family:'Papyrus', cursive; color: darkgoldenrod; margin-right:150px; min-width: 1920px">
         <u style="font-size: 50px"><fmt:message key="text.company"/></u>
         <br/>
-        <b style="font-family: 'Palatino Linotype',serif; margin-left: 145px"><fmt:message key="text.company2"/></b>
+        <b style="font-family: 'Palatino Linotype',serif; margin-left: 145px"><u><fmt:message key="text.company2"/></u></b>
         <br/><br/>
         <div style="text-align: left; margin-left: 30px; font-size: 15px; font-family: 'Palatino Linotype',sans-serif">
-            <fmt:message key="text.company3"/>
+            <b><fmt:message key="text.company3"/></b>
         </div>
     </div>
 

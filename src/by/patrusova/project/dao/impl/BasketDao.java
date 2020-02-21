@@ -19,6 +19,7 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
     private final static Logger LOGGER = LogManager.getLogger();
     private static final String SQL_SELECT_ALL_BASKET_POSITIONS =
                     "SELECT id_basket, id_order, id_service FROM basket_position";
+    private final static String SQL_SELECT_ID = "SELECT id_basket FROM basket_position";
 
     public BasketDao(ProxyConnection connection) {
         super(connection);
@@ -129,5 +130,28 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
             closeStatement(preparedStatement);
         }
         return position;
+    }
+
+    public boolean findId(long id) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
+        Statement statement = connection.createStatement();
+        try {
+            ResultSet resultSet = statement.executeQuery(SQL_SELECT_ID);
+            while (resultSet.next()) {
+                if (Long.parseLong(resultSet.getString(1)) == id) {
+                    connection.commit();
+                    return true;
+                }
+            }
+        } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
+            LOGGER.log(Level.ERROR, "Cannot find id_basket in DB. Request to table failed.", e);
+            throw new DaoException(e);
+        } finally {
+            closeStatement(statement);
+        }
+        return false;
     }
 }

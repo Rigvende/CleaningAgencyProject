@@ -3,6 +3,7 @@ package by.patrusova.project.command.impl.change;
 import by.patrusova.project.command.ActionCommand;
 import by.patrusova.project.entity.impl.Cleaner;
 import by.patrusova.project.exception.CommandException;
+import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.CleanerInfoService;
 import by.patrusova.project.util.ConfigurationManager;
@@ -15,6 +16,7 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
+import java.sql.SQLException;
 
 public class ChangeCleanerRedirectCommand implements ActionCommand {
 
@@ -25,20 +27,26 @@ public class ChangeCleanerRedirectCommand implements ActionCommand {
         CleanerInfoService service = new CleanerInfoService();
         Cleaner cleaner = new Cleaner();
         String id = request.getParameter(Attributes.ID.getValue());
-        if (NumberValidator.isValidID(id)) {
-            cleaner.setIdUser(Long.parseLong(id));
-            try {
+        try {
+            if (NumberValidator.isValidUserID(id)) {
+                cleaner.setIdUser(Long.parseLong(id));
                 cleaner = service.getCleaner(cleaner);
-                request.getSession().setAttribute(Attributes.CLEANER.getValue(), cleaner);
-            } catch (ServiceException e) {
-                LOGGER.log(Level.ERROR, "Exception has occurred while redirecting cleaner was processing. ", e);
-                throw new CommandException(e);
+                if (cleaner != null) {
+                    request.getSession().setAttribute(Attributes.CLEANER.getValue(), cleaner);
+                    return ConfigurationManager.getProperty(Pages.PAGE_CHANGE_CLEANER.getValue());
+                } else {
+                    request.getSession().setAttribute(Attributes.ERROR_CHANGE_CLEANER_ID.getValue(),
+                            MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_CLEANER_ID.getValue()));
+                    return ConfigurationManager.getProperty(Pages.PAGE_CLEANERLIST.getValue());
+                }
+            } else {
+                request.getSession().setAttribute(Attributes.ERROR_CHANGE_CLEANER_ID.getValue(),
+                        MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_CLEANER_ID.getValue()));
+                return ConfigurationManager.getProperty(Pages.PAGE_CLEANERLIST.getValue());
             }
-            return ConfigurationManager.getProperty(Pages.PAGE_CHANGE_CLEANER.getValue());
-        } else {
-            request.getSession().setAttribute(Attributes.ERROR_CHANGE_CLEANER_ID.getValue(),
-                    MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_CLEANER_ID.getValue()));
-            return ConfigurationManager.getProperty(Pages.PAGE_CLEANERLIST.getValue());
+        } catch (ServiceException | DaoException | SQLException e) {
+            LOGGER.log(Level.ERROR, "Exception has occurred while redirecting cleaner was processing. ", e);
+            throw new CommandException(e);
         }
     }
 }

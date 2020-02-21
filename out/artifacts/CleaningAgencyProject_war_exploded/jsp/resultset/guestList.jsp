@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf8" pageEncoding="utf8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="ctg" uri="/WEB-INF/tld/removeattr.tld" %>
 
 <fmt:setBundle basename="message"/>
 
@@ -43,11 +44,6 @@
     </label>
     <br/>
 
-    <div style="color: crimson; margin-left: 50px">${errorChangeGuestIdMessage}</div>
-    ${wrongAction}
-    ${nullPage}
-    <br/><%request.getSession(true); session.removeAttribute("errorChangeGuestIdMessage");%>
-
     <b style="color: #0c4f5b; font-size: 16px; font-family: 'Palatino Linotype', serif; margin-left: 50px">
         <fmt:message key="field.guest"/>
     </b>
@@ -59,7 +55,7 @@
     <div style="color: crimson; margin-left: 50px">${errorChangeGuestMessage}</div>
     ${wrongAction}
     ${nullPage}
-    <br/><%request.getSession(true); session.removeAttribute("errorChangeGuestMessage");%>
+    <br/><ctg:remove-attr/>
 
     <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 250px; font-size: 18px;
             height: 30px; margin-left: 50px" type="submit" value="<fmt:message key="button.changeguest"/>"/>

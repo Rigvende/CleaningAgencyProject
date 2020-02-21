@@ -62,7 +62,7 @@ public class OrderInfoService implements Serviceable, EntityCreator {
         Map<String, Boolean> validationMap = new HashMap<>();
         String id = request.getParameter(Parameters.ID_CLEANER.getValue());
         String status = request.getParameter(Parameters.STATUS.getValue());
-        validationMap.put(Parameters.ID_CLEANER.getValue(), NumberValidator.isValidExistedID(id));
+        validationMap.put(Parameters.ID_CLEANER.getValue(), NumberValidator.isValidCleanerID(id));
         validationMap.put(Parameters.STATUS.getValue(), StringValidator.isValidStatus(status));
         return validationMap;
     }
