@@ -6,6 +6,9 @@ import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.dao.EntityFactory;
 import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.exception.DaoException;
+import by.patrusova.project.util.column.ClientColumns;
+import by.patrusova.project.util.stringholder.Attributes;
+import by.patrusova.project.util.stringholder.Parameters;
 import by.patrusova.project.util.stringholder.Statements;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -203,5 +206,59 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
             closeStatement(statement);
         }
         return false;
+    }
+
+    public long findIdUser(long id) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_FIND_ID_USER.getValue());
+            preparedStatement.setLong(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                    long idUser = resultSet.getLong(ClientColumns.ID_USER.getValue());
+                    connection.commit();
+                    return idUser;
+            }
+        } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
+            LOGGER.log(Level.ERROR, "Cannot find id_client in DB. Request to table failed.", e);
+            throw new DaoException(e);
+        } finally {
+            closeStatement(preparedStatement);
+        }
+        return 0;
+    }
+
+    public boolean setNotes(AbstractEntity entity) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
+        boolean isUpdated;
+        Client client = (Client) entity;
+        String notes = client.getNotes();
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_SET_NOTES.getValue());
+            preparedStatement.setString(1, client.getNotes());
+            preparedStatement.setLong(2, client.getId());
+            isUpdated = preparedStatement.execute();
+            Client client1 = (Client) findEntityById(findIdUser(client.getId()));
+            if (client1.getNotes().equals(notes)) {
+                isUpdated = true;
+            }
+            connection.commit();
+        } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
+            LOGGER.log(Level.ERROR, "Cannot update client. Request to table failed. ", e);
+            throw new DaoException(e);
+        } finally {
+            closeStatement(preparedStatement);
+        }
+        return isUpdated;
     }
 }

@@ -6,6 +6,7 @@ public enum Statements {
                     "WHERE basket_position.id_order = ? AND basket_position.id_service = services.id_service"),
     SQL_AVERAGE_MARK("SELECT AVG(mark) AS average_mark FROM orders, cleaners " +
                     "WHERE id_cleaner = ? AND orders.id_cleaner = cleaners.id_cleaner"),
+    SQL_FIND_ID_USER("SELECT id_user FROM clients WHERE id_client = ?"),
     SQL_SET_NOTES("UPDATE clients SET notes = ? WHERE id_client = ?"),
     SQL_SET_MARK("UPDATE orders SET mark = ? WHERE id_order = ? && id_client = ?"),
     SQL_CANCEL_ORDER("UPDATE orders SET order_status = 'declined' WHERE id_order = ?"),

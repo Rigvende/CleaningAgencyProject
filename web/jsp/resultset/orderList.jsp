@@ -211,14 +211,14 @@
         <fmt:message key="field.notes"/>
         </b><br/>
         <label>
-            <input style="margin-left: 50px" type="text" name="id" value=""/>
+            <input style="margin-left: 50px" type="text" name="notes" value=""/>
         </label>
-        <br/>
+        <br/><br/>
 
         <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 250px; font-size: 15px;
             height: 25px; margin-left: 50px" type="submit" value="<fmt:message key="button.setnotes"/>"/>
 
-        <div style="color: crimson; margin-left: 80px">${errorChangeOrderIdMessage}</div>
+        <div style="color: crimson; margin-left: 80px">${errorChangeClientMessage}</div>
             ${wrongAction}
             ${nullPage}
         <ctg:remove-attr/>

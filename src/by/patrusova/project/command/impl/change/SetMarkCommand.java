@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 
 public class SetMarkCommand implements ActionCommand {
+
     private final static Logger LOGGER = LogManager.getLogger();
 
     @Override

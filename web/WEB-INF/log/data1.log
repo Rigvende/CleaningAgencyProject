@@ -4277,3 +4277,144 @@ Caused by: java.sql.SQLException: Illegal operation on empty result set.
 22-02 14:22 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
 22-02 14:22 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
 22-02 14:22 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+22-02 16:36 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@a090959
+22-02 16:36 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@1571f327
+22-02 16:36 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+22-02 16:37 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+22-02 16:37 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:37 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:37 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:37 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:37 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:37 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:37 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:37 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:37 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:37 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:37 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:37 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:37 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:37 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:37 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:37 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:37 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:37 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:37 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:37 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:37 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+22-02 16:50 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+22-02 16:50 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:50 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:50 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:50 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:50 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:50 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:50 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:50 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:50 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:50 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:50 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:50 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:50 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:50 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:50 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:50 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:50 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:50 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:50 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:50 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 16:50 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+22-02 17:04 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+22-02 17:04 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:04 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:04 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:04 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:04 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:04 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:04 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:04 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:04 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:04 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:04 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:04 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:04 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:04 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:04 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:04 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:04 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:04 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:04 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:04 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:04 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+22-02 17:05 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+22-02 17:05 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:05 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:05 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:05 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:05 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:05 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:05 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:05 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:05 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:05 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:05 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:05 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:05 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:05 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:05 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:05 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:05 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:05 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:05 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:05 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:05 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+22-02 17:06 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@6a28e4b5
+22-02 17:06 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@139b48ad
+22-02 17:06 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+22-02 17:06 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+22-02 17:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:06 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:06 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+22-02 17:09 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@742be48f
+22-02 17:09 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@43ebbd09
+22-02 17:09 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+22-02 17:09 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+22-02 17:09 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:09 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:09 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:09 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:09 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:09 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:09 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:09 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:09 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:09 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:09 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:09 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:09 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:09 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:09 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:09 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:09 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:09 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:09 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:09 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+22-02 17:09 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.

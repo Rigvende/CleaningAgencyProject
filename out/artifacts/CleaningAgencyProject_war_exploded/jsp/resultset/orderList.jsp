@@ -103,28 +103,30 @@
 
         <b style="color: #0c4f5b; font-size: 16px; font-family: 'Palatino Linotype', serif; margin-left: 50px">
         <fmt:message key="field.id"/>
-        </b>
+        </b><br/>
         <label>
-            <input style="margin-left: 95px" type="text" name="id" value=""/>
+            <input style="margin-left: 50px" type="text" name="id" value=""/>
         </label>
         <br/>
 
         <b style="color: #0c4f5b; font-size: 16px; font-family: 'Palatino Linotype', serif; margin-left: 50px">
         <fmt:message key="field.mark"/>
-        </b>
+        </b><br/>
         <label>
-            <input type="text" name="mark" value=""/>
+            <input style="margin-left: 50px" type="text" name="mark" value=""/>
         </label>
+        <br/>
 
         <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 150px; font-size: 15px;
-            height: 25px; " type="submit" value="<fmt:message key="button.setmark"/>"/>
-
-        <div style="color: crimson; margin-left: 80px">${errorChangeOrderIdMessage}</div>
-            ${wrongAction}
-            ${nullPage}
-<%--        <ctg:remove-attr/>--%>
+            height: 25px; margin-left: 50px" type="submit" value="<fmt:message key="button.setmark"/>"/>
     </form>
     <br/>
+
+    <div style="color: crimson; margin-left: 80px">
+    ${errorChangeOrderMessage}</div>
+    ${wrongAction}
+    ${nullPage}
+    <ctg:remove-attr/>
 
     <form name="changeOrderForm" method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="cancel" />
@@ -143,10 +145,7 @@
         <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 150px; font-size: 15px;
             height: 25px; " type="submit" value="<fmt:message key="button.cancel"/>"/>
 
-        <div style="color: crimson; margin-left: 80px">${errorCancelOrderIdMessage}</div>
-            ${wrongAction}
-            ${nullPage}
-        <ctg:remove-attr/>
+
     </form>
     <br/>
 
@@ -202,23 +201,24 @@
 
         <b style="color: #0c4f5b; font-size: 16px; font-family: 'Palatino Linotype', serif; margin-left: 50px">
         <fmt:message key="field.id"/>
-        </b>
+        </b><br/>
         <label>
-            <input style="margin-left: 75px" type="text" name="id" value=""/>
+            <input style="margin-left: 50px" type="text" name="id" value=""/>
         </label>
         <br/>
 
         <b style="color: #0c4f5b; font-size: 16px; font-family: 'Palatino Linotype', serif; margin-left: 50px">
         <fmt:message key="field.notes"/>
-        </b>
+        </b><br/>
         <label>
-            <input type="text" name="id" value=""/>
+            <input style="margin-left: 50px" type="text" name="notes" value=""/>
         </label>
+        <br/>
 
         <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 250px; font-size: 15px;
-            height: 25px;" type="submit" value="<fmt:message key="button.setnotes"/>"/>
+            height: 25px; margin-left: 50px" type="submit" value="<fmt:message key="button.setnotes"/>"/>
 
-        <div style="color: crimson; margin-left: 80px">${errorChangeOrderIdMessage}</div>
+        <div style="color: crimson; margin-left: 80px">${errorChangeClientMessage}</div>
             ${wrongAction}
             ${nullPage}
         <ctg:remove-attr/>

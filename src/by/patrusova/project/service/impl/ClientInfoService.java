@@ -1,10 +1,11 @@
 package by.patrusova.project.service.impl;
 
-import by.patrusova.project.dao.AbstractDao;
 import by.patrusova.project.dao.DaoFactory;
 import by.patrusova.project.dao.impl.ClientDao;
+import by.patrusova.project.dao.impl.OrderDao;
 import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.impl.Client;
+import by.patrusova.project.entity.impl.Order;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.EntityCreator;
@@ -16,7 +17,6 @@ import by.patrusova.project.validator.StringValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
 import java.sql.SQLException;
@@ -57,6 +57,29 @@ public class ClientInfoService implements Serviceable, EntityCreator {
             throw new ServiceException(e);
         }
         return client;
+    }
+
+    //внесение изменений в данные клиента клинером
+    public Client doService(long id, long idCleaner, String notes) throws ServiceException {
+        DaoFactory factory = new DaoFactory();
+        try {
+            OrderDao orderDao = factory.createOrderDao();
+            Order order = (Order) orderDao.findEntityById(id);
+            if (order.getIdCleaner() == idCleaner) {
+                ClientDao clientDao = factory.createClientDao();
+                long idClient = order.getIdClient();
+                long idUser = clientDao.findIdUser(idClient);
+                if (idUser != 0) {
+                    Client client = (Client) clientDao.findEntityById(idUser);
+                    client.setNotes(notes);
+                    return clientDao.setNotes(client) ? client : null;
+                }
+            }
+            return null;
+        } catch (DaoException | SQLException e) {
+            LOGGER.log(Level.ERROR, "Exception while updating client has occurred. ", e);
+            throw new ServiceException(e);
+        }
     }
 
     //создание экземпляра клиента с изменениями
@@ -109,7 +132,7 @@ public class ClientInfoService implements Serviceable, EntityCreator {
         return validationMap;
     }
 
-    //получить клиента из бд
+    //получить клиента из бд по данным из пришедшего экземпляра клиента
     public Client getClient(AbstractEntity entity) throws ServiceException {
         DaoFactory factory = new DaoFactory();
         Client client = (Client) entity;
