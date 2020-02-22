@@ -1,6 +1,7 @@
 package by.patrusova.project.command.impl.change;
 
 import by.patrusova.project.command.ActionCommand;
+import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.entity.impl.Order;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.DaoException;
@@ -25,22 +26,25 @@ public class CancelCommand implements ActionCommand {
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-        String Id = request.getParameter(Parameters.ID.getValue());
+        String orderId = request.getParameter(Parameters.ID.getValue());
         try {
-            if (!NumberValidator.isValidOrderID(Id)) {
-                request.getSession().setAttribute(Attributes.ERROR_CHANGE_ORDER_ID.getValue(),
-                        MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_ORDER_ID.getValue()));
+            if (!NumberValidator.isValidOrderID(orderId)) {
+                request.getSession().setAttribute(Attributes.ERROR_CHANGE_ORDER.getValue(),
+                        MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_ORDER.getValue()));
                 return ConfigurationManager.getProperty(Pages.PAGE_ORDERLIST.getValue());
             }
-            long id = Long.parseLong(Id);
+            long id = Long.parseLong(orderId);
+            Client client = (Client)request.getSession().getAttribute(Attributes.CLIENT.getValue());
+            long clientId = client.getId();
             CancelOrderService service = new CancelOrderService();
             Order order = new Order();
             order.setId(id);
-            if (service.doService(order) == null) {
+            order.setIdClient(clientId);
+            if (service.doService(order) != null) {
                 return ConfigurationManager.getProperty(Pages.PAGE_CONFIRM.getValue());
             } else {
-                request.getSession().setAttribute(Attributes.ERROR_CHANGE_ORDER_ID.getValue(),
-                        MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_ORDER_ID.getValue()));
+                request.getSession().setAttribute(Attributes.ERROR_CHANGE_ORDER.getValue(),
+                        MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_ORDER.getValue()));
                 return ConfigurationManager.getProperty(Pages.PAGE_ORDERLIST.getValue());
             }
         } catch (ServiceException | DaoException | SQLException e) {

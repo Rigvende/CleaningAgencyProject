@@ -44,16 +44,23 @@
     <br/>
     <fmt:message key="text.info6"/>
     <br/><br/>
-    <li style="background: royalblue; width: max-content"><fmt:message key="text.info7"/></li>
+    <li style="background: royalblue; width: max-content">
+    <fmt:message key="text.info7"/></li>
     <br/>
     <fmt:message key="text.info8"/>
     <br/>
     <fmt:message key="text.info9"/>
     <br/>
     <br/>
+    <li style="background: royalblue; width: max-content"><fmt:message key="text.info12"/></li>
+    <br/>
+    <fmt:message key="text.info13"/>
+    <br/>
+    <br/>
     <li style="background: royalblue; width: max-content"><fmt:message key="text.info10"/></li>
     <br/>
     <fmt:message key="text.info11"/>
+
     </ul>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>

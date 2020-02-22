@@ -18,8 +18,7 @@ public class Order extends AbstractEntity {
         REGISTERED("registered"),
         DONE("done"),
         IN_PROCESS("in process"),
-        DECLINED("declined"),
-        EXTENDED("extended");
+        DECLINED("declined");
         private String value;
         Status(String value) {
             this.value = value;

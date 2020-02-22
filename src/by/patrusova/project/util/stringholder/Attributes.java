@@ -44,6 +44,7 @@ public enum Attributes {
     CLEANER_LIST("cleanerList"),
     ORDER_LIST("orderList"),
     LOCALE("locale"),
+    FORMERGUEST("formerguest"),
     CATALOGUE_LIST("catalogueList");
 
     private String value;

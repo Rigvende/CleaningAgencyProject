@@ -22,9 +22,11 @@ public class CancelOrderService implements Serviceable {
         order = (Order) entity;
         DaoFactory factory = new DaoFactory();
         try {
+            long idClient = order.getIdClient();
             OrderDao dao = factory.createOrderDao();
             order = (Order) dao.findEntityById(order.getId());
-            if (order != null && order.getOrderStatus().equals(Order.Status.REGISTERED.getValue())) {
+            if ((order != null) && (order.getIdClient() == idClient)
+                    && (order.getOrderStatus().equals(Order.Status.REGISTERED.getValue()))) {
                 return dao.cancelOrder(order) ? order : null;
             } else {
                 return null;

@@ -32,7 +32,25 @@ public class OrderInfoService implements Serviceable, EntityCreator {
             OrderDao dao = factory.createOrderDao();
             return dao.update(order) ? null : order;
         } catch (DaoException | SQLException e) {
-            LOGGER.log(Level.ERROR, "Exception while updating service has occurred. ", e);
+            LOGGER.log(Level.ERROR, "Exception while updating order has occurred. ", e);
+            throw new ServiceException(e);
+        }
+    }
+
+    public Order doService(long id, long clientId, int mark) throws ServiceException {
+        DaoFactory factory = new DaoFactory();
+        try {
+            OrderDao dao = factory.createOrderDao();
+            Order order = (Order) dao.findEntityById(id);
+            if (order.getIdClient() == clientId) {
+                if (order.getOrderStatus().equals(Order.Status.DONE.getValue())) {
+                    order.setMark(mark);
+                    return dao.setMark(order) ? order : null;
+                }
+            }
+            return null;
+        } catch (DaoException | SQLException e) {
+            LOGGER.log(Level.ERROR, "Exception while updating order has occurred. ", e);
             throw new ServiceException(e);
         }
     }
@@ -41,13 +59,13 @@ public class OrderInfoService implements Serviceable, EntityCreator {
     @Override
     public Order createEntity(HttpServletRequest request) throws ServiceException {
         Order updatedOrder = (Order) request.getSession()
-                             .getAttribute(Attributes.ORDER.getValue());
+                .getAttribute(Attributes.ORDER.getValue());
         try {
             if (!validate(request).containsValue(false)) {
                 updatedOrder.setIdCleaner(Long.parseLong(request
-                            .getParameter(Parameters.ID_CLEANER.getValue())));
+                        .getParameter(Parameters.ID_CLEANER.getValue())));
                 updatedOrder.setOrderStatus(request
-                            .getParameter(Parameters.STATUS.getValue()));
+                        .getParameter(Parameters.STATUS.getValue()));
                 return updatedOrder;
             }
         } catch (SQLException | DaoException e) {

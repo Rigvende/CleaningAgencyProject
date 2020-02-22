@@ -3,7 +3,6 @@ package by.patrusova.project.validator;
 import by.patrusova.project.dao.DaoFactory;
 import by.patrusova.project.dao.impl.*;
 import by.patrusova.project.exception.DaoException;
-
 import java.sql.SQLException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -13,7 +12,7 @@ public class NumberValidator {
     private final static String CHECK_DECIMAL = "^0.[\\d]{1,2}$";
     private final static String CHECK_ID = "^[\\d]{1,18}$";
     private final static String CHECK_COST = "^[\\d]{1,3}((.[\\d]{1,2})?)$";
-    private final static String CHECK_MARK = "^\\d$";
+    private final static String CHECK_MARK = "^[\\d]$";
 
     private NumberValidator() {
     }

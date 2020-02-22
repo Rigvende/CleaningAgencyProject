@@ -10,7 +10,6 @@ import by.patrusova.project.util.stringholder.Statements;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -123,8 +122,7 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
                     (Statements.SQL_SELECT_ORDER_BY_ID.getValue());
             preparedStatement.setLong(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
-            resultSet.next();
-            order = EntityFactory.createOrder(resultSet);
+            order = resultSet.next() ? EntityFactory.createOrder(resultSet) : null;
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
@@ -186,6 +184,10 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
                     (Statements.SQL_CANCEL_ORDER.getValue());
             preparedStatement.setLong(1, order.getId());
             isUpdated = preparedStatement.execute();
+            Order order1 = (Order) findEntityById(order.getId());
+            if (order1.getOrderStatus().equals(Order.Status.DECLINED.getValue())) {
+                isUpdated = true;
+            }
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
@@ -220,5 +222,35 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             closeStatement(statement);
         }
         return false;
+    }
+
+    public boolean setMark(AbstractEntity entity) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
+        boolean isUpdated;
+        Order order = (Order) entity;
+        int mark = order.getMark();
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_SET_MARK.getValue());
+            preparedStatement.setInt(1, order.getMark());
+            preparedStatement.setLong(2, order.getId());
+            preparedStatement.setLong(3, order.getIdClient());
+            isUpdated = preparedStatement.execute();
+            Order order1 = (Order) findEntityById(order.getId());
+            if (order1.getMark() == mark) {
+                isUpdated = true;
+            }
+            connection.commit();
+        } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
+            LOGGER.log(Level.ERROR, "Cannot update order. Request to table failed. ", e);
+            throw new DaoException(e);
+        } finally {
+            closeStatement(preparedStatement);
+        }
+        return isUpdated;
     }
 }

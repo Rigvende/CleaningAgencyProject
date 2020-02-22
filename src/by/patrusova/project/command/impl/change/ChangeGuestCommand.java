@@ -54,7 +54,7 @@ public class ChangeGuestCommand implements ActionCommand {
             return ConfigurationManager.getProperty(Pages.PAGE_GUESTLIST.getValue());
         } else {
             User user = (User) entity;
-            request.getSession().setAttribute("formerguest", user);
+            request.getSession().setAttribute(Attributes.FORMERGUEST.getValue(), user);
             return ConfigurationManager.getProperty(Pages.PAGE_MAIL.getValue());
         }
     }

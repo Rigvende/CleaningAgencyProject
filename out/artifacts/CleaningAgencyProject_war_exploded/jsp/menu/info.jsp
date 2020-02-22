@@ -17,14 +17,15 @@
     font-family:'Papyrus', cursive; color: darkgoldenrod; margin-right:150px; min-width: 1920px">
     <u style="font-size: 50px"><fmt:message key="text.company"/></u>
     <br/>
-    <b style="font-family: 'Palatino Linotype',serif; margin-left: 145px"><fmt:message key="text.company2"/></b>
+    <b style="font-family: 'Palatino Linotype',serif; margin-left: 145px">
+    <u><fmt:message key="text.company2"/></u></b>
     <br/><br/>
     <div style="text-align: left; margin-left: 30px; font-size: 15px; font-family: 'Palatino Linotype',sans-serif">
-    <fmt:message key="text.company3"/>
+    <b><fmt:message key="text.company3"/></b>
     </div>
     </div>
 
-    <div style="text-align: center; font-family: 'Palatino Linotype', sans-serif; font-size: 18px">
+    <div style="text-align: center; margin-left: 100px; margin-right: 100px; font-family: 'Palatino Linotype', sans-serif; font-size: 18px">
     <p><fmt:message key="text.info1"/></p>
     <p><fmt:message key="text.info"/></p>
     <p><fmt:message key="text.info3"/></p>
@@ -34,22 +35,32 @@
     <b><fmt:message key="text.info4"/></b>
     </div>
 
-    <ul>
+    <ul style="font-size: 18px; font-family: 'Book Antiqua', serif">
     <li style="background: royalblue; width: max-content"><fmt:message key="text.info5"/></li>
     <br/>
     <fmt:message key="text.info6"/>
+    <br/><br>
+    <li style="background: royalblue; width: max-content"><fmt:message key="text.info5"/></li>
     <br/>
-    <br/>
-    <li style="background: royalblue; width: max-content"><fmt:message key="text.info7"/></li>
+    <fmt:message key="text.info6"/>
+    <br/><br/>
+    <li style="background: royalblue; width: max-content">
+    <fmt:message key="text.info7"/></li>
     <br/>
     <fmt:message key="text.info8"/>
     <br/>
     <fmt:message key="text.info9"/>
     <br/>
     <br/>
+    <li style="background: royalblue; width: max-content"><fmt:message key="text.info12"/></li>
+    <br/>
+    <fmt:message key="text.info13"/>
+    <br/>
+    <br/>
     <li style="background: royalblue; width: max-content"><fmt:message key="text.info10"/></li>
     <br/>
     <fmt:message key="text.info11"/>
+
     </ul>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>

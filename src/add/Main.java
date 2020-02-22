@@ -8,13 +8,11 @@ import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.Role;
 import by.patrusova.project.entity.impl.Cleaner;
 import by.patrusova.project.entity.impl.Client;
+import by.patrusova.project.entity.impl.Order;
 import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
-import by.patrusova.project.service.impl.CleanerInfoService;
-import by.patrusova.project.service.impl.ClientInfoService;
-import by.patrusova.project.service.impl.DeleteEntityService;
-import by.patrusova.project.service.impl.RoleService;
+import by.patrusova.project.service.impl.*;
 import by.patrusova.project.util.column.CleanerColumns;
 import by.patrusova.project.util.column.UserColumns;
 import by.patrusova.project.util.stringholder.Parameters;
@@ -53,11 +51,29 @@ public class Main {
 
     public static void main(String[] args) throws IOException, SQLException, DaoException, ServiceException {
 
+        CancelOrderService service = new CancelOrderService();
+        Order order1 = new Order();
+        order1.setId(6);
+        order1.setIdClient(8);
+        System.out.println(service.doService(order1));
+        Order order2 = new Order();
+        order2.setId(6);
+        order2.setIdClient(8);
+        System.out.println(service.doService(order2));
+        Order order3 = new Order();
+        order3.setId(7);
+        order3.setIdClient(8);
+        System.out.println(service.doService(order3));
+        Order order4 = new Order();
+        order4.setId(78);
+        order4.setIdClient(8);
+        System.out.println(service.doService(order4));
 
-        Client client = new Client();
-        client.setIdUser(86);
-        ClientInfoService service = new ClientInfoService();
-        System.out.println(service.getClient(client));
+
+//        Client client = new Client();
+//        client.setIdUser(86);
+//        ClientInfoService service = new ClientInfoService();
+//        System.out.println(service.getClient(client));
 
 //        DeleteEntityService service = new DeleteEntityService();
 //        User user = new User();
