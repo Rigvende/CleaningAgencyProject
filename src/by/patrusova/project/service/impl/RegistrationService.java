@@ -45,6 +45,19 @@ public class RegistrationService implements EntityCreator, Serviceable {
         return user != null ? Optional.of(user) : Optional.empty();
     }
 
+    private boolean isExist(AbstractEntity entity, AbstractDao<AbstractEntity> dao) throws ServiceException {
+        boolean exist;
+        UserDao userDao = (UserDao) dao;
+        User user = (User) entity;
+        try {
+            exist = userDao.findLogin(user.getLogin());
+        } catch (DaoException | SQLException e) {
+            LOGGER.log(Level.ERROR, "Cannot check user in DB, exception has occurred. ", e);
+            throw new ServiceException(e);
+        }
+        return exist;
+    }
+
     @Override
     public Optional<AbstractEntity> createEntity(HttpServletRequest request) throws ServiceException {
         User newUser = new User();
@@ -62,19 +75,6 @@ public class RegistrationService implements EntityCreator, Serviceable {
         } else {
             return Optional.empty();
         }
-    }
-
-    public boolean isExist(AbstractEntity entity, AbstractDao<AbstractEntity> dao) throws ServiceException {
-        boolean exist;
-        UserDao userDao = (UserDao) dao;
-        User user = (User) entity;
-        try {
-            exist = userDao.findLogin(user.getLogin());
-        } catch (DaoException | SQLException e) {
-            LOGGER.log(Level.ERROR, "Cannot check user in DB, exception has occurred. ", e);
-            throw new ServiceException(e);
-        }
-        return exist;
     }
 
     public Map<String, Boolean> validate(HttpServletRequest request) throws ServiceException {

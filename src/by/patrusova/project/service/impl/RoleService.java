@@ -28,7 +28,7 @@ public class RoleService implements Serviceable {
         return Optional.empty();
     }
 
-    public AbstractEntity doService(long id, String role) throws ServiceException {
+    public Optional<AbstractEntity> doService(long id, String role) throws ServiceException {
         DaoFactory factory = new DaoFactory();
         User user;
         try {
@@ -39,28 +39,28 @@ public class RoleService implements Serviceable {
                 if (!userDao.update(user)) {
                     switch (role) {
                         case "admin":
-                            return user;
+                            return Optional.of(user);
                         case "client":
                             ClientDao clientDao = factory.createClientDao();
                             Client client = new Client();
                             client.setIdUser(id);
-                            return clientDao.create(client) ? null : user;
+                            return clientDao.create(client) ? Optional.empty() : Optional.of(user);
                         case "cleaner":
                             CleanerDao cleanerDao = factory.createCleanerDao();
                             Cleaner cleaner = new Cleaner();
                             cleaner.setIdUser(id);
-                            return cleanerDao.create(cleaner) ? null : user;
+                            return cleanerDao.create(cleaner) ? Optional.empty() : Optional.of(user);
                         default:
-                            return null;
+                            return Optional.empty();
                     }
                 }
             } else {
-                return null;
+                return Optional.empty();
             }
         } catch (DaoException | SQLException e) {
             LOGGER.log(Level.ERROR, "Exception while setting role has occurred. ", e);
             throw new ServiceException(e);
         }
-        return user;
+        return Optional.of(user);
     }
 }

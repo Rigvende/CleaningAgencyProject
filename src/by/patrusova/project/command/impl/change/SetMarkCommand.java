@@ -19,6 +19,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
+import java.util.Optional;
 
 public class SetMarkCommand implements ActionCommand {
 
@@ -26,7 +27,7 @@ public class SetMarkCommand implements ActionCommand {
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-        AbstractEntity entity;
+        Optional<AbstractEntity> optional;
         String requestId = request.getParameter(Parameters.ID.getValue());
         String requestMark = request.getParameter(Parameters.MARK.getValue());
         try {
@@ -40,12 +41,12 @@ public class SetMarkCommand implements ActionCommand {
             int mark = Integer.parseInt(requestMark);
             Client client = (Client) request.getSession().getAttribute(Attributes.CLIENT.getValue());
             long idClient = client.getId();
-            entity = service.doService(id, idClient, mark);
+            optional = service.doService(id, idClient, mark);
         } catch (ServiceException | DaoException | SQLException e) {
             LOGGER.log(Level.ERROR, "Exception has occurred while changing order was processing. ", e);
             throw new CommandException(e);
         }
-        if (entity == null) {
+        if (optional.isEmpty()) {
             request.getSession().setAttribute(Attributes.ERROR_CHANGE_ORDER.getValue(),
                     MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_ORDER.getValue()));
             return ConfigurationManager.getProperty(Pages.PAGE_ORDERLIST.getValue());

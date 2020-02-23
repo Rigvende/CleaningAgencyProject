@@ -41,12 +41,12 @@ public class ServiceInfoService implements Serviceable, EntityCreator {
         }
     }
 
-    public Service doServiceAdd(AbstractEntity entity) throws ServiceException {
+    public Optional<AbstractEntity>  doServiceAdd(AbstractEntity entity) throws ServiceException {
         DaoFactory factory = new DaoFactory();
         Service service = (Service) entity;
         try {
             ServiceDao dao = factory.createServiceDao();
-            return dao.create(service) ? null : service;
+            return dao.create(service) ? Optional.empty() : Optional.of(service);
         } catch (DaoException | SQLException e) {
             LOGGER.log(Level.ERROR, "Exception while updating service has occurred. ", e);
             throw new ServiceException(e);
@@ -71,7 +71,7 @@ public class ServiceInfoService implements Serviceable, EntityCreator {
     }
 
     //добавление новой услуги
-    public Service createNewEntity(HttpServletRequest request) {
+    public Optional<AbstractEntity> createNewEntity(HttpServletRequest request) {
         Service newService = new Service();
         if (!validate(request).containsValue(false)) {
             newService.setId(0);
@@ -80,9 +80,9 @@ public class ServiceInfoService implements Serviceable, EntityCreator {
             newService.setDiscount(BigDecimal.valueOf(Double.parseDouble
                     (request.getParameter(Parameters.DISCOUNT.getValue()))));
             newService.setService(request.getParameter(Parameters.SERVICECHANGE.getValue()));
-            return newService;
+            return Optional.of(newService);
         } else {
-            return null;
+            return Optional.empty();
         }
     }
 

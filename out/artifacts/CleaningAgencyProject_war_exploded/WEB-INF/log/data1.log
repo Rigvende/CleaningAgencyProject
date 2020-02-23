@@ -4447,3 +4447,28 @@ Caused by: java.sql.SQLException: Illegal operation on empty result set.
 23-02 18:21 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@2182ed99
 23-02 18:21 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@7877ce2c
 23-02 18:21 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+23-02 18:22 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+23-02 18:22 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 18:22 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 18:22 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 18:22 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 18:22 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 18:22 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 18:22 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 18:22 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 18:22 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 18:22 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 18:22 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 18:22 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 18:22 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 18:22 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 18:22 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 18:22 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 18:22 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 18:22 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 18:22 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 18:22 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 18:22 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+23-02 18:46 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@29e382bd
+23-02 18:46 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4744ceee
+23-02 18:46 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.

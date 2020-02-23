@@ -20,6 +20,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
+import java.util.Optional;
 
 public class SetNotesCommand implements ActionCommand {
 
@@ -27,7 +28,7 @@ public class SetNotesCommand implements ActionCommand {
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-        AbstractEntity entity;
+        Optional<AbstractEntity> optional;
         String requestId = request.getParameter(Parameters.ID.getValue());
         String requestNotes = request.getParameter(Parameters.NOTES.getValue());
         try {
@@ -41,12 +42,12 @@ public class SetNotesCommand implements ActionCommand {
             Cleaner cleaner = (Cleaner) request.getSession().getAttribute(Attributes.CLEANER.getValue());
             long idCleaner = cleaner.getId();
             ClientInfoService service = new ClientInfoService();
-            entity = service.doService(idOrder, idCleaner, requestNotes);
+            optional = service.doService(idOrder, idCleaner, requestNotes);
         } catch (ServiceException | DaoException | SQLException e) {
             LOGGER.log(Level.ERROR, "Exception has occurred while changing client was processing. ", e);
             throw new CommandException(e);
         }
-        if (entity == null) {
+        if (optional.isEmpty()) {
             request.getSession().setAttribute(Attributes.ERROR_CHANGE_CLIENT.getValue(),
                     MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_CLIENT.getValue()));
             return ConfigurationManager.getProperty(Pages.PAGE_ORDERLIST.getValue());

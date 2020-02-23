@@ -45,7 +45,7 @@ public class ClientInfoService implements Serviceable, EntityCreator {
     }
 
     //внесение изменений в данные клиента админом
-    public Client doServiceByAdmin(AbstractEntity entity) throws ServiceException {
+    public Optional<AbstractEntity> doServiceByAdmin(AbstractEntity entity) throws ServiceException {
         DaoFactory factory = new DaoFactory();
         Client client = (Client) entity;
         try {
@@ -57,11 +57,11 @@ public class ClientInfoService implements Serviceable, EntityCreator {
             LOGGER.log(Level.ERROR, "Exception while updating client's info has occurred. ", e);
             throw new ServiceException(e);
         }
-        return client;
+        return client != null ? Optional.of(client) : Optional.empty();
     }
 
     //внесение изменений в данные клиента клинером
-    public Client doService(long id, long idCleaner, String notes) throws ServiceException {
+    public Optional<AbstractEntity> doService(long id, long idCleaner, String notes) throws ServiceException {
         DaoFactory factory = new DaoFactory();
         try {
             OrderDao orderDao = factory.createOrderDao();
@@ -73,10 +73,10 @@ public class ClientInfoService implements Serviceable, EntityCreator {
                 if (idUser != 0) {
                     Client client = (Client) clientDao.findEntityById(idUser);
                     client.setNotes(notes);
-                    return clientDao.setNotes(client) ? client : null;
+                    return clientDao.setNotes(client) ? Optional.of(client) : Optional.empty();
                 }
             }
-            return null;
+            return Optional.empty();
         } catch (DaoException | SQLException e) {
             LOGGER.log(Level.ERROR, "Exception while updating client has occurred. ", e);
             throw new ServiceException(e);

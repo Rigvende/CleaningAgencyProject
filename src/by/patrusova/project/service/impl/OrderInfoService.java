@@ -38,7 +38,7 @@ public class OrderInfoService implements Serviceable, EntityCreator {
         }
     }
 
-    public Order doService(long id, long clientId, int mark) throws ServiceException {
+    public Optional<AbstractEntity> doService(long id, long clientId, int mark) throws ServiceException {
         DaoFactory factory = new DaoFactory();
         try {
             OrderDao dao = factory.createOrderDao();
@@ -46,10 +46,10 @@ public class OrderInfoService implements Serviceable, EntityCreator {
             if (order.getIdClient() == clientId) {
                 if (order.getOrderStatus().equals(Order.Status.DONE.getValue())) {
                     order.setMark(mark);
-                    return dao.setMark(order) ? order : null;
+                    return dao.setMark(order) ? Optional.of(order) : Optional.empty();
                 }
             }
-            return null;
+            return Optional.empty();
         } catch (DaoException | SQLException e) {
             LOGGER.log(Level.ERROR, "Exception while updating order has occurred. ", e);
             throw new ServiceException(e);

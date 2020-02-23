@@ -20,6 +20,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
+import java.util.Optional;
 
 public class ChangeGuestCommand implements ActionCommand {
 
@@ -41,19 +42,19 @@ public class ChangeGuestCommand implements ActionCommand {
         }
         RoleService roleService = new RoleService();
         long id = Long.parseLong(Id);
-        AbstractEntity entity;
+        Optional<AbstractEntity> optional;
         try {
-            entity = roleService.doService(id, role);
+            optional = roleService.doService(id, role);
         } catch (ServiceException e) {
             LOGGER.log(Level.ERROR, "Exception has occurred while changing role was processing. ", e);
             throw new CommandException(e);
         }
-        if (entity == null) {
+        if (optional.isEmpty()) {
             request.getSession().setAttribute(Attributes.ERROR_CHANGE_GUEST.getValue(),
                     MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_GUEST.getValue()));
             return ConfigurationManager.getProperty(Pages.PAGE_GUESTLIST.getValue());
         } else {
-            User user = (User) entity;
+            User user = (User) optional.get();
             request.getSession().setAttribute(Attributes.FORMERGUEST.getValue(), user);
             return ConfigurationManager.getProperty(Pages.PAGE_MAIL.getValue());
         }

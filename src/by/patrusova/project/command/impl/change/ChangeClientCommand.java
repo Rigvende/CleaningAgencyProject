@@ -34,7 +34,7 @@ public class ChangeClientCommand implements ActionCommand {
                 return page;
             } else {
                 Client client = (Client)optional.get();
-                if (clientInfoService.doServiceByAdmin(client) != null) {
+                if (clientInfoService.doServiceByAdmin(client).isPresent()) {
                     page = ConfigurationManager.getProperty(Pages.PAGE_CONFIRM.getValue());
                 } else {
                     request.getSession().setAttribute(Attributes.ERROR_CHANGE_CLIENT.getValue(),
