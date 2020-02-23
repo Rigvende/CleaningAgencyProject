@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class RegistrationService implements EntityCreator, Serviceable {
 
@@ -27,7 +28,7 @@ public class RegistrationService implements EntityCreator, Serviceable {
 
     //регистрация юзера
     @Override
-    public AbstractEntity doService(AbstractEntity entity) throws ServiceException, SQLException {
+    public Optional<AbstractEntity> doService(AbstractEntity entity) throws ServiceException, SQLException {
         DaoFactory factory = new DaoFactory();
         User user = (User) entity;
         try {
@@ -41,7 +42,7 @@ public class RegistrationService implements EntityCreator, Serviceable {
             LOGGER.log(Level.ERROR, "Cannot register user, exception has occurred. ", e);
             throw new ServiceException(e);
         }
-        return user;
+        return user != null ? Optional.of(user) : Optional.empty();
     }
 
     @Override

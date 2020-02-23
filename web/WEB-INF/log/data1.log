@@ -4418,3 +4418,29 @@ Caused by: java.sql.SQLException: Illegal operation on empty result set.
 22-02 17:09 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
 22-02 17:09 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
 22-02 17:09 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+22-02 19:25 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@5483a99e
+22-02 19:25 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@294c50cb
+22-02 19:25 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+23-02 17:57 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+23-02 17:57 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 17:57 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 17:57 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 17:57 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 17:57 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 17:57 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 17:57 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 17:57 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 17:57 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 17:57 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 17:57 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 17:57 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 17:57 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 17:57 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 17:57 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 17:57 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 17:57 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 17:57 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 17:57 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 17:57 INFO  project.connection.ProxyConnection - Proxy connection to DB has been created successful.
+23-02 17:57 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+23-02 18:03 INFO  command.impl.LocaleCommand - ru_RU

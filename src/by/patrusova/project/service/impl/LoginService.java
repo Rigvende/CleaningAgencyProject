@@ -11,12 +11,13 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.sql.SQLException;
+import java.util.Optional;
 
 public class LoginService implements Serviceable {
 
     private final static Logger LOGGER = LogManager.getLogger();
 
-    public User doService(AbstractEntity entity) throws ServiceException {
+    public Optional<AbstractEntity> doService(AbstractEntity entity) throws ServiceException {
         User user = (User) entity;
         DaoFactory factory = new DaoFactory();
         try {
@@ -26,6 +27,6 @@ public class LoginService implements Serviceable {
             LOGGER.log(Level.ERROR, "Cannot log in, exception has occurred. ", e);
             throw new ServiceException(e);
         }
-        return user;
+        return user != null ? Optional.of(user) : Optional.empty();
     }
 }

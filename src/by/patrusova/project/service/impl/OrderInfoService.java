@@ -19,18 +19,19 @@ import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class OrderInfoService implements Serviceable, EntityCreator {
 
     private final static Logger LOGGER = LogManager.getLogger();
 
     @Override
-    public Order doService(AbstractEntity entity) throws ServiceException {
+    public Optional<AbstractEntity> doService(AbstractEntity entity) throws ServiceException {
         DaoFactory factory = new DaoFactory();
         Order order = (Order) entity;
         try {
             OrderDao dao = factory.createOrderDao();
-            return dao.update(order) ? null : order;
+            return dao.update(order) ? Optional.empty() : Optional.of(order);
         } catch (DaoException | SQLException e) {
             LOGGER.log(Level.ERROR, "Exception while updating order has occurred. ", e);
             throw new ServiceException(e);

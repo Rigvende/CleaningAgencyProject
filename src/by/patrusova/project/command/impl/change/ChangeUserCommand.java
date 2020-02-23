@@ -1,6 +1,7 @@
 package by.patrusova.project.command.impl.change;
 
 import by.patrusova.project.command.ActionCommand;
+import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
@@ -15,6 +16,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
+import java.util.Optional;
 
 public class ChangeUserCommand implements ActionCommand {
 
@@ -32,8 +34,8 @@ public class ChangeUserCommand implements ActionCommand {
                 page = ConfigurationManager.getProperty(Pages.PAGE_CHANGE.getValue());
                 return page;
             } else {
-                user = userInfoService.doService(user);
-                if (user != null) {
+                Optional<AbstractEntity> optional = userInfoService.doService(user);
+                if (optional.isPresent()) {
                     page = ConfigurationManager.getProperty(Pages.PAGE_PROFILE.getValue());
                 } else {
                     request.getSession().setAttribute(Attributes.ERROR_CHANGE_USER.getValue(),

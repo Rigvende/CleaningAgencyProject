@@ -1,10 +1,8 @@
 package by.patrusova.project.service.impl;
 
-import by.patrusova.project.dao.AbstractDao;
 import by.patrusova.project.dao.DaoFactory;
 import by.patrusova.project.dao.impl.UserDao;
 import by.patrusova.project.entity.AbstractEntity;
-import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
@@ -21,13 +19,14 @@ import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class UserInfoService implements Serviceable, EntityCreator {
     private final static Logger LOGGER = LogManager.getLogger();
 
     //внесение изменений в юзер-инфо
     @Override
-    public User doService(AbstractEntity entity) throws ServiceException, SQLException {
+    public Optional<AbstractEntity> doService(AbstractEntity entity) throws ServiceException, SQLException {
         DaoFactory factory = new DaoFactory();
         User user = (User) entity;
         try {
@@ -39,7 +38,7 @@ public class UserInfoService implements Serviceable, EntityCreator {
             LOGGER.log(Level.ERROR, "Cannot update user's info, exception has occurred. ", e);
             throw new ServiceException(e);
         }
-        return user;
+        return user != null ? Optional.of(user) : Optional.empty();
     }
 
     //создание измененного юзера

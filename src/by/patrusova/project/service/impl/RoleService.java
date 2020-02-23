@@ -1,6 +1,5 @@
 package by.patrusova.project.service.impl;
 
-import by.patrusova.project.connection.ProxyConnection;
 import by.patrusova.project.dao.DaoFactory;
 import by.patrusova.project.dao.impl.CleanerDao;
 import by.patrusova.project.dao.impl.ClientDao;
@@ -12,22 +11,21 @@ import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.Serviceable;
-import by.patrusova.project.util.MessageManager;
 import by.patrusova.project.util.stringholder.Attributes;
-import by.patrusova.project.util.stringholder.Messages;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.sql.SQLException;
+import java.util.Optional;
 
 public class RoleService implements Serviceable {
 
     private final static Logger LOGGER = LogManager.getLogger();
 
     @Override
-    public AbstractEntity doService(AbstractEntity entity) throws ServiceException {
-        return entity;
+    public Optional<AbstractEntity> doService(AbstractEntity entity) {
+        return Optional.empty();
     }
 
     public AbstractEntity doService(long id, String role) throws ServiceException {

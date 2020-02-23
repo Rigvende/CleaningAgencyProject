@@ -15,43 +15,44 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.sql.SQLException;
+import java.util.Optional;
 
 public class DeleteEntityService implements Serviceable {
 
     private final static Logger LOGGER = LogManager.getLogger();
 
     @Override
-    public AbstractEntity doService(AbstractEntity entity) throws ServiceException {
+    public Optional<AbstractEntity> doService(AbstractEntity entity) throws ServiceException {
         DaoFactory factory = new DaoFactory();
         try {
             User user = new User();
             UserDao userDao = factory.createUserDao();
             if (entity instanceof User) {
                 if (userDao.delete(entity)) {
-                    return null;
+                    return Optional.empty();
                 }
             } else if (entity instanceof Cleaner) {
                 user.setId(((Cleaner) entity).getIdUser());
                 user.setRole(Attributes.CLEANER.getValue());
                 if (userDao.delete(user)) {                     //в бд удаляется и юзер, и клинер (каскадом)
-                    return null;
+                    return Optional.empty();
                 }
             } else if (entity instanceof Client) {
                 user.setId(((Client) entity).getIdUser());
                 user.setRole(Attributes.CLIENT.getValue());
                 if (userDao.delete(user)) {                     //в бд удаляется и юзер, и клиент (каскадом)
-                    return null;
+                    return Optional.empty();
                 }
             } else {
                 ServiceDao serviceDao = factory.createServiceDao();
                 if (serviceDao.delete(entity)) {
-                    return null;
+                    return Optional.empty();
                 }
             }
         } catch (SQLException | DaoException e) {
             LOGGER.log(Level.ERROR, "Cannot delete entity. Error has occurred. ", e);
             throw new ServiceException(e);
         }
-        return entity;
+        return Optional.of(entity);
     }
 }

@@ -43,7 +43,7 @@ public class DeleteEntityCommand implements ActionCommand {
                     User user = new User();
                     user.setId(id1);
                     user.setRole(Attributes.ADMIN.getValue());
-                    if (entityService.doService(user) == null) {
+                    if (entityService.doService(user).isEmpty()) {
                         return ConfigurationManager.getProperty(Pages.PAGE_CONFIRM.getValue());
                     } else {
                         return ConfigurationManager.getProperty(Pages.PAGE_CONFIRMFALSE.getValue());
@@ -55,7 +55,7 @@ public class DeleteEntityCommand implements ActionCommand {
                     long id2 = Long.parseLong(Id);
                     Client client = new Client();
                     client.setIdUser(id2);
-                    if (entityService.doService(client) == null) {
+                    if (entityService.doService(client).isEmpty()) {
                         return ConfigurationManager.getProperty(Pages.PAGE_CONFIRM.getValue());
                     } else {
                         return ConfigurationManager.getProperty(Pages.PAGE_CONFIRMFALSE.getValue());
@@ -67,7 +67,7 @@ public class DeleteEntityCommand implements ActionCommand {
                     long id3 = Long.parseLong(Id);
                     Cleaner cleaner = new Cleaner();
                     cleaner.setIdUser(id3);
-                    if (entityService.doService(cleaner) == null) {
+                    if (entityService.doService(cleaner).isEmpty()) {
                         return ConfigurationManager.getProperty(Pages.PAGE_CONFIRM.getValue());
                     } else {
                         return ConfigurationManager.getProperty(Pages.PAGE_CONFIRMFALSE.getValue());
@@ -79,7 +79,7 @@ public class DeleteEntityCommand implements ActionCommand {
                     long id4 = Long.parseLong(Id);
                     Service service = new Service();
                     service.setId(id4);
-                    if (entityService.doService(service) == null) {
+                    if (entityService.doService(service).isEmpty()) {
                         return ConfigurationManager.getProperty(Pages.PAGE_CONFIRM.getValue());
                     } else {
                         return ConfigurationManager.getProperty(Pages.PAGE_CONFIRMFALSE.getValue());

@@ -8,13 +8,15 @@ import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.service.Serviceable;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class ShowService implements Serviceable {
 
     @Override
-    public AbstractEntity doService(AbstractEntity entity) {
-        return null;
+    public Optional<AbstractEntity> doService(AbstractEntity entity) {
+        return Optional.empty();
     }
 
     public List<AbstractEntity> doService(String condition) throws DaoException, SQLException {
@@ -33,7 +35,7 @@ public class ShowService implements Serviceable {
                 ServiceDao serviceDao = factory.createServiceDao();
                 return serviceDao.findAll();
             default:
-                return null;
+                return new ArrayList<>();
         }
     }
 }

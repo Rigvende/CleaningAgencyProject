@@ -1,6 +1,5 @@
 package by.patrusova.project.service.impl;
 
-import by.patrusova.project.dao.AbstractDao;
 import by.patrusova.project.dao.DaoFactory;
 import by.patrusova.project.dao.impl.CleanerDao;
 import by.patrusova.project.entity.AbstractEntity;
@@ -21,13 +20,14 @@ import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class CleanerInfoService implements Serviceable, EntityCreator {
 
     private final static Logger LOGGER = LogManager.getLogger();
 
     //находим клинера в бд и возвращаем
-    public Cleaner doService(AbstractEntity entity) throws ServiceException {
+    public Optional<AbstractEntity> doService(AbstractEntity entity) throws ServiceException {
         DaoFactory factory = new DaoFactory();
         Cleaner cleaner = (Cleaner) entity;
         try {
@@ -39,7 +39,7 @@ public class CleanerInfoService implements Serviceable, EntityCreator {
             LOGGER.log(Level.ERROR, "Exception while updating client's info has occurred. ", e);
             throw new ServiceException(e);
         }
-        return cleaner;
+        return cleaner != null ? Optional.of(cleaner) : Optional.empty();
     }
 
     //создание экземпляра клинера с изменениями, внесёнными админом

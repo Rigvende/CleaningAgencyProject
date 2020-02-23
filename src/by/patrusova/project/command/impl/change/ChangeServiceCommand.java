@@ -1,6 +1,7 @@
 package by.patrusova.project.command.impl.change;
 
 import by.patrusova.project.command.ActionCommand;
+import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.impl.Service;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
@@ -14,6 +15,7 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
+import java.util.Optional;
 
 public class ChangeServiceCommand implements ActionCommand {
 
@@ -31,8 +33,8 @@ public class ChangeServiceCommand implements ActionCommand {
                 page = ConfigurationManager.getProperty(Pages.PAGE_CHANGE_SERVICE.getValue());
                 return page;
             } else {
-                service = infoService.doService(service);
-                if (service != null) {
+                Optional<AbstractEntity> optional = infoService.doService(service);
+                if (optional.isPresent()) {
                     page = ConfigurationManager.getProperty(Pages.PAGE_CONFIRM.getValue());
                 } else {
                     request.getSession().setAttribute(Attributes.ERROR_CHANGE_SERVICE.getValue(),

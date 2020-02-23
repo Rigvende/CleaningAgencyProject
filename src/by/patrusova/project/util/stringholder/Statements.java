@@ -2,9 +2,10 @@ package by.patrusova.project.util.stringholder;
 
 public enum Statements {
 
-    SQL_TOTAL_COST("SELECT SUM(cost) AS total_cost FROM services, basket_position " +
-                    "WHERE basket_position.id_order = ? AND basket_position.id_service = services.id_service"),
-    SQL_AVERAGE_MARK("SELECT AVG(mark) AS average_mark FROM orders, cleaners " +
+    SQL_TOTAL_COST("SELECT SUM(cost) - SUM(cost*discount) AS total_cost FROM services " +
+                    "JOIN basket_position ON basket_position.id_service = services.id_service " +
+                    "WHERE basket_position.id_order = ?"),
+    SQL_AVERAGE_MARK("SELECT id_cleaner, AVG(mark) AS average_mark FROM orders, cleaners " +
                     "WHERE id_cleaner = ? AND orders.id_cleaner = cleaners.id_cleaner"),
     SQL_FIND_ID_USER("SELECT id_user FROM clients WHERE id_client = ?"),
     SQL_SET_NOTES("UPDATE clients SET notes = ? WHERE id_client = ?"),

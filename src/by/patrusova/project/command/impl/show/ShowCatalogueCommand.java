@@ -30,7 +30,7 @@ public class ShowCatalogueCommand implements ActionCommand {
         ShowService service = new ShowService();
         try {
             List<AbstractEntity> list = service.doService(Attributes.CATALOGUE.getValue());
-            if (list.size() != 0) {
+            if (!list.isEmpty()) {
                 List<Service> services = new ArrayList<>();
                 for (AbstractEntity entity : list) {
                     services.add((Service) entity);

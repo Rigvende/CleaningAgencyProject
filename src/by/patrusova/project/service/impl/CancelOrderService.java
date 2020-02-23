@@ -11,13 +11,14 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.sql.SQLException;
+import java.util.Optional;
 
 public class CancelOrderService implements Serviceable {
 
     private final static Logger LOGGER = LogManager.getLogger();
 
     @Override
-    public AbstractEntity doService(AbstractEntity entity) throws ServiceException {
+    public Optional<AbstractEntity> doService(AbstractEntity entity) throws ServiceException {
         Order order;
         order = (Order) entity;
         DaoFactory factory = new DaoFactory();
@@ -27,9 +28,9 @@ public class CancelOrderService implements Serviceable {
             order = (Order) dao.findEntityById(order.getId());
             if ((order != null) && (order.getIdClient() == idClient)
                     && (order.getOrderStatus().equals(Order.Status.REGISTERED.getValue()))) {
-                return dao.cancelOrder(order) ? order : null;
+                return dao.cancelOrder(order) ? Optional.of(order) : Optional.empty();
             } else {
-                return null;
+                return Optional.empty();
             }
         } catch (SQLException | DaoException e) {
             LOGGER.log(Level.ERROR, "Exception while cancelling order has occurred. ", e);

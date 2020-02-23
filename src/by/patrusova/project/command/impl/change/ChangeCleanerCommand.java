@@ -31,7 +31,7 @@ public class ChangeCleanerCommand implements ActionCommand {
                 page = ConfigurationManager.getProperty(Pages.PAGE_CHANGE_CLEANER.getValue());
                 return page;
             } else {
-                if (cleanerInfoService.doService(cleaner) != null) {
+                if (cleanerInfoService.doService(cleaner).isPresent()) {
                     page = ConfigurationManager.getProperty(Pages.PAGE_CONFIRM.getValue());
                 } else {
                     request.getSession().setAttribute(Attributes.ERROR_CHANGE_CLEANER.getValue(),

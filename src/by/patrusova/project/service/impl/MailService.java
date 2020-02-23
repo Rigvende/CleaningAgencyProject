@@ -11,6 +11,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Optional;
 import java.util.Properties;
 
 public class MailService implements Serviceable {
@@ -58,7 +59,7 @@ public class MailService implements Serviceable {
     }
 
     @Override
-    public AbstractEntity doService(AbstractEntity entity) {
-        return null;
+    public Optional<AbstractEntity> doService(AbstractEntity entity) {
+        return Optional.empty();
     }
 }

@@ -40,7 +40,7 @@ public class CancelCommand implements ActionCommand {
             Order order = new Order();
             order.setId(id);
             order.setIdClient(clientId);
-            if (service.doService(order) != null) {
+            if (service.doService(order).isPresent()) {
                 return ConfigurationManager.getProperty(Pages.PAGE_CONFIRM.getValue());
             } else {
                 request.getSession().setAttribute(Attributes.ERROR_CHANGE_ORDER.getValue(),

@@ -22,18 +22,19 @@ import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class ServiceInfoService implements Serviceable, EntityCreator {
 
     private final static Logger LOGGER = LogManager.getLogger();
 
     @Override
-    public Service doService(AbstractEntity entity) throws ServiceException {
+    public Optional<AbstractEntity> doService(AbstractEntity entity) throws ServiceException {
         DaoFactory factory = new DaoFactory();
         Service service = (Service) entity;
         try {
             ServiceDao dao = factory.createServiceDao();
-            return dao.update(service) ? null : service;
+            return dao.update(service) ? Optional.empty() : Optional.of(service);
         } catch (DaoException | SQLException e) {
             LOGGER.log(Level.ERROR, "Exception while updating service has occurred. ", e);
             throw new ServiceException(e);

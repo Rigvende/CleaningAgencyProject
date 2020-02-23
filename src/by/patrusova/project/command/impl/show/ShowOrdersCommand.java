@@ -30,7 +30,7 @@ public class ShowOrdersCommand implements ActionCommand {
         ShowService service = new ShowService();
         try {
             List<AbstractEntity> list = service.doService(Attributes.ORDER.getValue());
-            if (list.size() != 0) {
+            if (!list.isEmpty()) {
                 List<Order> orders = new ArrayList<>();
                 for (AbstractEntity entity : list) {
                     orders.add((Order)entity);

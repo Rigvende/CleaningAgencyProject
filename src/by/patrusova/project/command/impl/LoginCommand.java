@@ -1,6 +1,7 @@
 package by.patrusova.project.command.impl;
 
 import by.patrusova.project.command.ActionCommand;
+import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.impl.Cleaner;
 import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.entity.impl.User;
@@ -20,6 +21,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.Optional;
 
 public class LoginCommand implements ActionCommand {
 
@@ -41,8 +43,9 @@ public class LoginCommand implements ActionCommand {
         user.setLogin(login);
         user.setPassword(pass);
         try {
-            user = loginService.doService(user);
-            if (user != null) {
+            Optional<AbstractEntity> optional = loginService.doService(user);
+            if (optional.isPresent()) {
+                user = (User) optional.get();
                 HttpSession session = request.getSession(true);
                 session.setAttribute(Attributes.USER.getValue(), user);
                 String role = user.getRole();

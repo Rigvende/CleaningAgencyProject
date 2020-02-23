@@ -36,7 +36,7 @@ public class ShowOrdersClientCommand implements ActionCommand {
         String role = (String) request.getSession().getAttribute(Attributes.ROLE.getValue());
         try {
             List<OrderComplex> list = service.doService(role, client);
-            if (list.size() != 0) {
+            if (!list.isEmpty()) {
                 request.getSession().setAttribute(Attributes.ORDER_LIST.getValue(), list);
                 page = ConfigurationManager.getProperty(Pages.PAGE_ORDERLIST.getValue());
             } else {

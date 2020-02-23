@@ -22,13 +22,14 @@ import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class ClientInfoService implements Serviceable, EntityCreator {
 
     private final static Logger LOGGER = LogManager.getLogger();
 
     //внесение изменений в данные клиента самим клиентом
-    public Client doService(AbstractEntity entity) throws ServiceException {
+    public Optional<AbstractEntity> doService(AbstractEntity entity) throws ServiceException {
         DaoFactory factory = new DaoFactory();
         Client client = (Client) entity;
         try {
@@ -40,7 +41,7 @@ public class ClientInfoService implements Serviceable, EntityCreator {
             LOGGER.log(Level.ERROR, "Exception while updating client's info has occurred. ", e);
             throw new ServiceException(e);
         }
-        return client;
+        return client != null ? Optional.of(client) : Optional.empty();
     }
 
     //внесение изменений в данные клиента админом

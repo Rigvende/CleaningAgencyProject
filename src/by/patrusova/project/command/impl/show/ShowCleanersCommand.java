@@ -29,7 +29,7 @@ public class ShowCleanersCommand implements ActionCommand {
         ShowService service = new ShowService();
         try {
             List<AbstractEntity> list = service.doService(Attributes.CLEANER.getValue());
-            if (list.size() != 0) {
+            if (!list.isEmpty()) {
                 List<User> users = new ArrayList<>();
                 for (AbstractEntity entity : list) {
                     users.add((User) entity);

@@ -1,6 +1,7 @@
 package by.patrusova.project.command.impl.change;
 
 import by.patrusova.project.command.ActionCommand;
+import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
@@ -14,6 +15,7 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
+import java.util.Optional;
 
 public class ChangeBurialCommand implements ActionCommand {
 
@@ -31,8 +33,8 @@ public class ChangeBurialCommand implements ActionCommand {
                 page = ConfigurationManager.getProperty(Pages.PAGE_CHANGE_BURIAL.getValue());
                 return page;
             } else {
-                client = clientInfoService.doService(client);
-                if (client != null) {
+                Optional<AbstractEntity> optional = clientInfoService.doService(client);
+                if (optional.isPresent()) {
                     page = ConfigurationManager.getProperty(Pages.PAGE_PROFILE.getValue());
                 } else {
                     request.getSession().setAttribute(Attributes.ERROR_CHANGE_BURIAL.getValue(),

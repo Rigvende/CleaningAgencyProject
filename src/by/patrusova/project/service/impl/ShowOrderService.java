@@ -13,15 +13,17 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class ShowOrderService implements Serviceable {
 
     private final static Logger LOGGER = LogManager.getLogger();
 
     @Override
-    public AbstractEntity doService(AbstractEntity entity) {
-        return null;
+    public Optional<AbstractEntity> doService(AbstractEntity entity) {
+        return Optional.empty();
     }
 
     public List<OrderComplex> doService(String role, AbstractEntity entity) throws ServiceException {
@@ -36,7 +38,7 @@ public class ShowOrderService implements Serviceable {
                     Cleaner cleaner = (Cleaner) entity;
                     return orderDao.findOrdersById(role, cleaner.getId());
                 default:
-                    return null;
+                    return new ArrayList<>();
             }
         } catch (SQLException | DaoException e) {
             LOGGER.log(Level.ERROR, "Exception has occurred while finding orders was processing. ", e);

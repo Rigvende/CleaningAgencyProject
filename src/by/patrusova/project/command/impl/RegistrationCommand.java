@@ -31,7 +31,7 @@ public class RegistrationCommand implements ActionCommand {
                 page = ConfigurationManager.getProperty(Pages.PAGE_REG.getValue());
                 return page;
             } else {
-                if (service.doService(user) != null) {
+                if (service.doService(user).isPresent()) {
                     request.getSession().setAttribute(Attributes.NEW_USER.getValue(), user);
                     page = ConfigurationManager.getProperty(Pages.PAGE_REG_TRUE.getValue());
                 } else {

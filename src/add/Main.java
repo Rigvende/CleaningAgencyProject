@@ -6,6 +6,8 @@ import by.patrusova.project.service.impl.*;
 
 import java.io.*;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Main {
@@ -30,8 +32,11 @@ public class Main {
 
     public static void main(String[] args) throws IOException, SQLException, DaoException, ServiceException {
 
-ClientInfoService service = new ClientInfoService();
-        System.out.println(service.doService(7, 3, "ok"));
+        List<String> list = new ArrayList<>();
+        System.out.println(list.isEmpty());
+
+//ClientInfoService service = new ClientInfoService();
+//        System.out.println(service.doService(7, 3, "ok"));
 
 
 
