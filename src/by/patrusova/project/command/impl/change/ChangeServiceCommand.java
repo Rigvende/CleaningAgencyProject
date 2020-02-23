@@ -26,13 +26,14 @@ public class ChangeServiceCommand implements ActionCommand {
         String page;
         ServiceInfoService infoService = new ServiceInfoService();
         try {
-            Service service = infoService.createEntity(request);
-            if (service == null) {
+            Optional<AbstractEntity> opt = infoService.createEntity(request);
+            if (opt.isEmpty()) {
                 request.getSession().setAttribute(Attributes.ERROR_CHANGE_SERVICE.getValue(),
                         MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_SERVICE.getValue()));
                 page = ConfigurationManager.getProperty(Pages.PAGE_CHANGE_SERVICE.getValue());
                 return page;
             } else {
+                Service service = (Service)opt.get();
                 Optional<AbstractEntity> optional = infoService.doService(service);
                 if (optional.isPresent()) {
                     page = ConfigurationManager.getProperty(Pages.PAGE_CONFIRM.getValue());

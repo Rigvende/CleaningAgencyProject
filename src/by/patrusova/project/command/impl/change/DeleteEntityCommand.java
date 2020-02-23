@@ -29,7 +29,6 @@ public class DeleteEntityCommand implements ActionCommand {
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-        String page;
         String Id = request.getParameter(Parameters.ID.getValue());
         DeleteEntityService entityService = new DeleteEntityService();
         String type = request.getParameter(Parameters.ENTITITYPE.getValue());

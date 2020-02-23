@@ -1,6 +1,7 @@
 package by.patrusova.project.command.impl.change;
 
 import by.patrusova.project.command.ActionCommand;
+import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.impl.Cleaner;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
@@ -14,6 +15,7 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
+import java.util.Optional;
 
 public class ChangeCleanerCommand implements ActionCommand {
 
@@ -24,13 +26,14 @@ public class ChangeCleanerCommand implements ActionCommand {
         String page;
         CleanerInfoService cleanerInfoService = new CleanerInfoService();
         try {
-            Cleaner cleaner = cleanerInfoService.createEntity(request);
-            if (cleaner == null) {
+            Optional<AbstractEntity> optional = cleanerInfoService.createEntity(request);
+            if (optional.isEmpty()) {
                 request.getSession().setAttribute(Attributes.ERROR_CHANGE_CLEANER.getValue(),
                         MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_CLEANER.getValue()));
                 page = ConfigurationManager.getProperty(Pages.PAGE_CHANGE_CLEANER.getValue());
                 return page;
             } else {
+                Cleaner cleaner = (Cleaner)optional.get();
                 if (cleanerInfoService.doService(cleaner).isPresent()) {
                     page = ConfigurationManager.getProperty(Pages.PAGE_CONFIRM.getValue());
                 } else {

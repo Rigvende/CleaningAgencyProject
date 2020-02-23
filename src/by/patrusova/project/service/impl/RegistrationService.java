@@ -46,7 +46,7 @@ public class RegistrationService implements EntityCreator, Serviceable {
     }
 
     @Override
-    public User createEntity(HttpServletRequest request) throws ServiceException {
+    public Optional<AbstractEntity> createEntity(HttpServletRequest request) throws ServiceException {
         User newUser = new User();
         if (!validate(request).containsValue(false)) {
             newUser.setId(0);
@@ -58,9 +58,9 @@ public class RegistrationService implements EntityCreator, Serviceable {
             newUser.setPhone(Long.parseLong(request.getParameter(Parameters.PHONE.getValue())));
             newUser.setEmail(request.getParameter(Parameters.EMAIL.getValue()));
             newUser.setAddress(request.getParameter(Parameters.ADDRESS.getValue()));
-            return newUser;
+            return Optional.of(newUser);
         } else {
-            return null;
+            return Optional.empty();
         }
     }
 

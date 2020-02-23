@@ -58,7 +58,7 @@ public class OrderInfoService implements Serviceable, EntityCreator {
 
     //создание экземпляра услуги с внесенными изменениями
     @Override
-    public Order createEntity(HttpServletRequest request) throws ServiceException {
+    public Optional<AbstractEntity> createEntity(HttpServletRequest request) throws ServiceException {
         Order updatedOrder = (Order) request.getSession()
                 .getAttribute(Attributes.ORDER.getValue());
         try {
@@ -67,13 +67,13 @@ public class OrderInfoService implements Serviceable, EntityCreator {
                         .getParameter(Parameters.ID_CLEANER.getValue())));
                 updatedOrder.setOrderStatus(request
                         .getParameter(Parameters.STATUS.getValue()));
-                return updatedOrder;
+                return Optional.of(updatedOrder);
             }
         } catch (SQLException | DaoException e) {
             LOGGER.log(Level.ERROR, "Cannot create entity(order).");
             throw new ServiceException(e);
         }
-        return null;
+        return Optional.empty();
     }
 
     //валидация введенных данных

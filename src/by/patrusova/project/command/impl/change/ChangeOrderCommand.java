@@ -26,13 +26,14 @@ public class ChangeOrderCommand implements ActionCommand {
         String page;
         OrderInfoService infoService = new OrderInfoService();
         try {
-            Order order = infoService.createEntity(request);
-            if (order == null) {
+            Optional<AbstractEntity> opt = infoService.createEntity(request);
+            if (opt.isEmpty()) {
                 request.getSession().setAttribute(Attributes.ERROR_CHANGE_ORDER.getValue(),
                         MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_ORDER.getValue()));
                 page = ConfigurationManager.getProperty(Pages.PAGE_CHANGE_ORDER.getValue());
                 return page;
             } else {
+                Order order = (Order)opt.get();
                 Optional<AbstractEntity> optional = infoService.doService(order);
                 if (optional.isPresent()) {
                     page = ConfigurationManager.getProperty(Pages.PAGE_CONFIRM.getValue());

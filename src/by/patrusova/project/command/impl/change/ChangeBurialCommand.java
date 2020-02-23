@@ -2,6 +2,7 @@ package by.patrusova.project.command.impl.change;
 
 import by.patrusova.project.command.ActionCommand;
 import by.patrusova.project.entity.AbstractEntity;
+import by.patrusova.project.entity.impl.Cleaner;
 import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
@@ -26,13 +27,14 @@ public class ChangeBurialCommand implements ActionCommand {
         String page;
         ClientInfoService clientInfoService = new ClientInfoService();
         try {
-            Client client = clientInfoService.createEntity(request);
-            if (client == null) {
+            Optional<AbstractEntity> opt = clientInfoService.createEntity(request);
+            if (opt.isEmpty()) {
                 request.getSession().setAttribute(Attributes.ERROR_CHANGE_BURIAL.getValue(),
                         MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_BURIAL.getValue()));
                 page = ConfigurationManager.getProperty(Pages.PAGE_CHANGE_BURIAL.getValue());
                 return page;
             } else {
+                Client client = (Client)opt.get();
                 Optional<AbstractEntity> optional = clientInfoService.doService(client);
                 if (optional.isPresent()) {
                     page = ConfigurationManager.getProperty(Pages.PAGE_PROFILE.getValue());

@@ -213,7 +213,7 @@
         <label>
             <input style="margin-left: 50px" type="text" name="notes" value=""/>
         </label>
-        <br/>
+        <br/><br/>
 
         <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 250px; font-size: 15px;
             height: 25px; margin-left: 50px" type="submit" value="<fmt:message key="button.setnotes"/>"/>

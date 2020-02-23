@@ -43,7 +43,7 @@ public class UserInfoService implements Serviceable, EntityCreator {
 
     //создание измененного юзера
     @Override
-    public User createEntity(HttpServletRequest request) {
+    public Optional<AbstractEntity> createEntity(HttpServletRequest request) {
         User updatedUser = (User)request.getSession().getAttribute(Attributes.USER.getValue());
         if (!validate(request).containsValue(false)) {
             updatedUser.setName(request.getParameter(Parameters.FIRSTNAME.getValue()));
@@ -52,9 +52,9 @@ public class UserInfoService implements Serviceable, EntityCreator {
             updatedUser.setPhone(Long.parseLong(request.getParameter(Parameters.PHONE.getValue())));
             updatedUser.setAddress(request.getParameter(Parameters.ADDRESS.getValue()));
             updatedUser.setEmail(request.getParameter(Parameters.EMAIL.getValue()));
-            return updatedUser;
+            return Optional.of(updatedUser);
         } else {
-            return null;
+            return Optional.empty();
         }
     }
 

@@ -85,7 +85,7 @@ public class ClientInfoService implements Serviceable, EntityCreator {
 
     //создание экземпляра клиента с изменениями
     @Override
-    public Client createEntity(HttpServletRequest request) {
+    public Optional<AbstractEntity> createEntity(HttpServletRequest request) {
         if (request.getSession().getAttribute(Attributes.ROLE.getValue()) //сам клиент вносит изменения
                 .equals(Attributes.CLIENT.getValue())) {
             Client updatedClient = (Client) request.getSession()
@@ -93,9 +93,9 @@ public class ClientInfoService implements Serviceable, EntityCreator {
             if (!validate(request).containsValue(false)) {
                 updatedClient.setLocation(request.getParameter(Parameters.LOCATION.getValue()));
                 updatedClient.setRelative(request.getParameter(Parameters.RELATIVE.getValue()));
-                return updatedClient;
+                return Optional.of(updatedClient);
             } else {
-                return null;
+                return Optional.empty();
             }
         } else {                                                            //изменения вносит админ
             Client updatedClient = (Client) request.getSession()
@@ -104,9 +104,9 @@ public class ClientInfoService implements Serviceable, EntityCreator {
                 String discount = request.getParameter(Parameters.DISCOUNT.getValue());
                 updatedClient.setDiscount(BigDecimal.valueOf(Double.parseDouble(discount)));
                 updatedClient.setNotes(request.getParameter(Parameters.NOTES.getValue()));
-                return updatedClient;
+                return Optional.of(updatedClient);
             } else {
-                return null;
+                return Optional.empty();
             }
         }
     }

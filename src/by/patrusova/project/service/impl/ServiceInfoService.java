@@ -53,15 +53,9 @@ public class ServiceInfoService implements Serviceable, EntityCreator {
         }
     }
 
-    public boolean isExist(AbstractEntity entity, AbstractDao<AbstractEntity> dao)
-            throws SQLException, DaoException {
-        Service service = (Service) entity;
-        return dao.findEntityById(service.getId()) != null;
-    }
-
     //создание экземпляра услуги с внесенными изменениями
     @Override
-    public Service createEntity(HttpServletRequest request) {
+    public Optional<AbstractEntity> createEntity(HttpServletRequest request) {
         Service updatedService = (Service) request.getSession()
                 .getAttribute(Attributes.SERVICE.getValue());
         if (!validate(request).containsValue(false)) {
@@ -70,9 +64,9 @@ public class ServiceInfoService implements Serviceable, EntityCreator {
             updatedService.setDiscount(BigDecimal.valueOf(Double.parseDouble
                     (request.getParameter(Parameters.DISCOUNT.getValue()))));
             updatedService.setService(request.getParameter(Parameters.SERVICECHANGE.getValue()));
-            return updatedService;
+            return Optional.of(updatedService);
         } else {
-            return null;
+            return Optional.empty();
         }
     }
 

@@ -27,13 +27,14 @@ public class ChangeUserCommand implements ActionCommand {
         String page;
         UserInfoService userInfoService = new UserInfoService();
         try {
-            User user = userInfoService.createEntity(request);
-            if (user == null) {
+            Optional<AbstractEntity> opt = userInfoService.createEntity(request);
+            if (opt.isEmpty()) {
                 request.getSession().setAttribute(Attributes.ERROR_CHANGE_USER.getValue(),
                         MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_USER.getValue()));
                 page = ConfigurationManager.getProperty(Pages.PAGE_CHANGE.getValue());
                 return page;
             } else {
+                User user = (User)opt.get();
                 Optional<AbstractEntity> optional = userInfoService.doService(user);
                 if (optional.isPresent()) {
                     page = ConfigurationManager.getProperty(Pages.PAGE_PROFILE.getValue());
