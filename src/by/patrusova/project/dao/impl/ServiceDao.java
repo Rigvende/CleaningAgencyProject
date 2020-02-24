@@ -6,7 +6,7 @@ import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.dao.EntityFactory;
 import by.patrusova.project.entity.impl.Service;
 import by.patrusova.project.exception.DaoException;
-import by.patrusova.project.util.stringholder.Statements;
+import by.patrusova.project.util.stringholder.Statement;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,23 +26,33 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public boolean create(AbstractEntity entity) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
+    public boolean create(AbstractEntity entity) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in ServiceDao create method. ", e);
+            throw new DaoException(e);
+        }
         Service service = (Service)entity;
         boolean isAdded;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement
-                    (Statements.SQL_ADD_SERVICE.getValue());
+                    (Statement.SQL_ADD_SERVICE.getValue());
             preparedStatement.setLong(1, 0);
             preparedStatement.setString(2, service.getService());
             preparedStatement.setBigDecimal(3, service.getCost());
-            preparedStatement.setBigDecimal(4, service.getDiscount());
+            preparedStatement.setBigDecimal(4, service.getSales());
             isAdded = preparedStatement.execute();
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in ServiceDao create method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot add service. Request to table failed. ", e);
             throw new DaoException(e);
@@ -53,14 +63,19 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public boolean delete(AbstractEntity entity) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
+    public boolean delete(AbstractEntity entity) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in ServiceDao delete method. ", e);
+            throw new DaoException(e);
+        }
         boolean isDeleted;
         Service service = (Service)entity;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement
-                    (Statements.SQL_DELETE_SERVICE.getValue());
+                    (Statement.SQL_DELETE_SERVICE.getValue());
             preparedStatement.setLong(1, service.getId());
             isDeleted = preparedStatement.execute();
             if (!findId(service.getId())) {
@@ -69,7 +84,12 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in ServiceDao delete method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot delete service. Request to table failed. ", e);
             throw new DaoException(e);
@@ -80,23 +100,33 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public boolean update(AbstractEntity entity) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
+    public boolean update(AbstractEntity entity) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in ServiceDao update method. ", e);
+            throw new DaoException(e);
+        }
         boolean isUpdated;
         Service service = (Service)entity;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement
-                    (Statements.SQL_UPDATE_SERVICE.getValue());
+                    (Statement.SQL_UPDATE_SERVICE.getValue());
             preparedStatement.setString(1, service.getService());
             preparedStatement.setBigDecimal(2, service.getCost());
-            preparedStatement.setBigDecimal(3, service.getDiscount());
+            preparedStatement.setBigDecimal(3, service.getSales());
             preparedStatement.setLong(4, service.getId());
             isUpdated = preparedStatement.execute();
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in ServiceDao update method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot update service. Request to table failed. ", e);
             throw new DaoException(e);
@@ -107,10 +137,15 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public List<AbstractEntity> findAll() throws DaoException, SQLException {
-        connection.setAutoCommit(false);
+    public List<AbstractEntity> findAll() throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in ServiceDao findAll method. ", e);
+            throw new DaoException(e);
+        }
         List<AbstractEntity> services = new ArrayList<>();
-        Statement statement = null;
+        java.sql.Statement statement = null;
         try {
             statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(SQL_SELECT_ALL_SERVICES);
@@ -121,7 +156,12 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in ServiceDao findAll method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot find all services. Request to table failed. ", e);
             throw new DaoException(e);
@@ -132,13 +172,18 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public AbstractEntity findEntityById(long id) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
+    public AbstractEntity findEntityById(long id) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in ServiceDao findEntityById method. ", e);
+            throw new DaoException(e);
+        }
         Service service;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement
-                    (Statements.SQL_SELECT_SERVICE_BY_ID.getValue());
+                    (Statement.SQL_SELECT_SERVICE_BY_ID.getValue());
             preparedStatement.setLong(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
@@ -146,7 +191,12 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in ServiceDao findEntityById method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot find service by ID. Request to table failed. ", e);
             throw new DaoException(e);
@@ -156,9 +206,14 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
         return service;
     }
 
-    public boolean findId(long id) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
-        Statement statement = connection.createStatement();
+    public boolean findId(long id) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in ServiceDao findId method. ", e);
+            throw new DaoException(e);
+        }
+        java.sql.Statement statement = connection.createStatement();
         try {
             ResultSet resultSet = statement.executeQuery(SQL_SELECT_ID);
             while (resultSet.next()) {
@@ -169,7 +224,12 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
             }
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in ServiceDao findId method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot find id_service in DB. Request to table failed.", e);
             throw new DaoException(e);

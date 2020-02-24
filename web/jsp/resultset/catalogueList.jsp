@@ -102,7 +102,7 @@ ${pageStart + 1} - ${pageStart + perPage}
             <td><c:out value="${catalogue.id}" /></td>
             <td><c:out value="${catalogue.service}" /></td>
             <td><c:out value="${catalogue.cost}" /></td>
-            <td><c:out value="${catalogue.discount}" /></td>
+            <td><c:out value="${catalogue.sales}" /></td>
         </tr>
     </c:forEach>
     </table>

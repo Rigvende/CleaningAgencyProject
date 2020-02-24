@@ -3,7 +3,6 @@ package by.patrusova.project.entity.impl;
 import by.patrusova.project.entity.AbstractEntity;
 
 import java.math.BigDecimal;
-import java.util.Objects;
 
 public class Service extends AbstractEntity {
 
@@ -11,14 +10,14 @@ public class Service extends AbstractEntity {
     private long id;
     private String service;
     private BigDecimal cost;
-    private BigDecimal discount;
+    private BigDecimal sales;
 
     public Service() {}
-    public Service(long id, String service, BigDecimal cost, BigDecimal discount) {
+    public Service(long id, String service, BigDecimal cost, BigDecimal sales) {
         this.id = id;
         this.service = service;
         this.cost = cost;
-        this.discount = discount;
+        this.sales = sales;
     }
 
     public static long getSerialVersionUID() {
@@ -42,11 +41,11 @@ public class Service extends AbstractEntity {
     public void setCost(BigDecimal cost) {
         this.cost = cost;
     }
-    public BigDecimal getDiscount() {
-        return discount;
+    public BigDecimal getSales() {
+        return sales;
     }
-    public void setDiscount(BigDecimal discount) {
-        this.discount = discount;
+    public void setSales(BigDecimal sales) {
+        this.sales = sales;
     }
 
     @Override
@@ -60,7 +59,7 @@ public class Service extends AbstractEntity {
         Service services = (Service) o;
         return (id == services.id
                 && cost != null && cost.equals(services.cost)
-                && discount != null && discount.equals(services.discount)
+                && sales != null && sales.equals(services.sales)
                 && service != null && service.equals(services.service));
     }
     @Override
@@ -69,7 +68,7 @@ public class Service extends AbstractEntity {
         int result = 1;
         result = prime * result + ((cost == null) ? 0 : cost.hashCode());
         result = (int)(prime * result + id);
-        result = prime * result + ((discount == null) ? 0 : discount.hashCode());
+        result = prime * result + ((sales == null) ? 0 : sales.hashCode());
         result = prime * result + ((service == null) ? 0 : service.hashCode());
         return result;
     }
@@ -78,7 +77,7 @@ public class Service extends AbstractEntity {
         StringBuilder builder = new StringBuilder("Service{");
         builder.append("id=").append(id).append(", service='")
                 .append(service).append('\'').append(", cost=")
-                .append(cost).append(", discount=").append(discount).append('}');
+                .append(cost).append(", discount=").append(sales).append('}');
         return builder.toString();
     }
     @Override

@@ -8,9 +8,9 @@ import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.ShowOrderService;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.util.MessageManager;
-import by.patrusova.project.util.stringholder.Attributes;
-import by.patrusova.project.util.stringholder.Messages;
-import by.patrusova.project.util.stringholder.Pages;
+import by.patrusova.project.util.stringholder.Attribute;
+import by.patrusova.project.util.stringholder.Message;
+import by.patrusova.project.util.stringholder.Page;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -25,17 +25,17 @@ public class ShowOrdersClientCommand implements ActionCommand {
     public String execute(HttpServletRequest request) throws CommandException {
         String page;
         ShowOrderService service = new ShowOrderService();
-        Client client = (Client) request.getSession().getAttribute(Attributes.CLIENT.getValue());
-        String role = (String) request.getSession().getAttribute(Attributes.ROLE.getValue());
+        Client client = (Client) request.getSession().getAttribute(Attribute.CLIENT.getValue());
+        String role = (String) request.getSession().getAttribute(Attribute.ROLE.getValue());
         try {
             List<OrderComplex> list = service.doService(role, client);      //without orders with "new" status
             if (!list.isEmpty()) {
-                request.getSession().setAttribute(Attributes.ORDER_LIST.getValue(), list);
-                page = ConfigurationManager.getProperty(Pages.PAGE_ORDERLIST.getValue());
+                request.getSession().setAttribute(Attribute.ORDER_LIST.getValue(), list);
+                page = ConfigurationManager.getProperty(Page.PAGE_ORDERLIST.getValue());
             } else {
-                request.getSession().setAttribute(Attributes.EMPTY_LIST.getValue(),
-                        MessageManager.getProperty(Messages.MESSAGE_ERROR_LIST.getValue()));
-                page = ConfigurationManager.getProperty(Pages.PAGE_MAIN_CLIENT.getValue());
+                request.getSession().setAttribute(Attribute.EMPTY_LIST.getValue(),
+                        MessageManager.getProperty(Message.MESSAGE_ERROR_LIST.getValue()));
+                page = ConfigurationManager.getProperty(Page.PAGE_MAIN_CLIENT.getValue());
             }
         } catch (ServiceException e) {
             LOGGER.log(Level.ERROR, "Exception has occurred while finding orders was processing. ", e);

@@ -29,7 +29,7 @@ public class ConnectionPool {
 
     private ConnectionPool() throws DaoException {
         if (instance != null) {
-            LOGGER.log(Level.ERROR, "Attempt to create one more class instance. ");
+            LOGGER.log(Level.FATAL, "Attempt to create one more class instance. ");
             throw new RuntimeException("Cannot create another pool's instance.");
         }
         try {
@@ -37,16 +37,14 @@ public class ConnectionPool {
             LOGGER.log(Level.INFO, "Registering jdbc driver.");
             init();
         } catch (SQLException e) {
-            throw new DaoException(e);
+            LOGGER.log(Level.FATAL, "Cannot create Connection pool's instance", e);
+            throw new ExceptionInInitializerError(e);
         }
     }
 
     private void init() throws DaoException {
         for (int i = 0; i < MAX_POOL_SIZE; i++) {
             pool.offer(ProxyConnection.createProxyConnection());
-        }
-        if (pool.size() == 0) {
-            throw new RuntimeException("Connection pool is empty");
         }
     }
 

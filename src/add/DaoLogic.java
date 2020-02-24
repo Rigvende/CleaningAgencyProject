@@ -66,8 +66,8 @@
 //        ResultSet resultSet = statement.executeQuery();
 //        while (resultSet.next()) {
 //        cleaner.setCommission(commission);
-//        cleaner.setId(resultSet.getLong(String.valueOf(CleanerColumns.ID_CLEANER)));
-//        cleaner.setIdUser(resultSet.getLong(String.valueOf(CleanerColumns.ID_USER)));
+//        cleaner.setId(resultSet.getLong(String.valueOf(CleanerColumn.ID_CLEANER)));
+//        cleaner.setIdUser(resultSet.getLong(String.valueOf(CleanerColumn.ID_USER)));
 //        list.add(cleaner);
 //        }
 //        } catch (SQLException | InterruptedException e) {
@@ -164,10 +164,10 @@
 //import by.patrusova.project.service.impl.RoleService;
 //import by.patrusova.project.util.ConfigurationManager;
 //import by.patrusova.project.util.MessageManager;
-//import by.patrusova.project.util.stringholder.Attributes;
-//import by.patrusova.project.util.stringholder.Messages;
-//import by.patrusova.project.util.stringholder.Pages;
-//import by.patrusova.project.util.stringholder.Parameters;
+//import by.patrusova.project.util.stringholder.Attribute;
+//import by.patrusova.project.util.stringholder.Message;
+//import by.patrusova.project.util.stringholder.Page;
+//import by.patrusova.project.util.stringholder.Parameter;
 //import by.patrusova.project.validator.NumberValidator;
 //import org.apache.logging.log4j.Level;
 //import org.apache.logging.log4j.LogManager;
@@ -183,16 +183,16 @@
 //    @Override
 //    public String execute(HttpServletRequest request) throws CommandException {
 //        AbstractEntity entity = null;
-//        String Id = request.getParameter(Parameters.ID.getValue());
+//        String Id = request.getParameter(Parameter.ID.getValue());
 //        try {
 //            if (!NumberValidator.isValidUserID(Id)) {
-//                request.getSession().setAttribute(Attributes.ERROR_CHANGE_GUEST.getValue(),
-//                        MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_GUEST.getValue()));
-//                return ConfigurationManager.getProperty(Pages.PAGE_GUESTLIST.getValue());
+//                request.getSession().setAttribute(Attribute.ERROR_CHANGE_GUEST.getValue(),
+//                        MessageManager.getProperty(Message.MESSAGE_ERROR_CHANGE_GUEST.getValue()));
+//                return ConfigurationManager.getProperty(Page.PAGE_GUESTLIST.getValue());
 //            }
 //            RoleService roleService = new RoleService();
 //            long id = Long.parseLong(Id);
-//            String role = request.getParameter(Attributes.ROLE.getValue());
+//            String role = request.getParameter(Attribute.ROLE.getValue());
 //            for (Role role1 : Role.values()) {
 //                if (role.equals(role1.getValue())) {
 //                    entity = roleService.doService(id, role);
@@ -207,11 +207,11 @@
 //        if (entity != null) {
 //            User user = (User) entity;
 //            request.getSession().setAttribute("formerguest", user);
-//            return ConfigurationManager.getProperty(Pages.PAGE_MAIL.getValue());
+//            return ConfigurationManager.getProperty(Page.PAGE_MAIL.getValue());
 //        } else {
-//            request.getSession().setAttribute(Attributes.ERROR_CHANGE_GUEST.getValue(),
-//                    MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_GUEST.getValue()));
-//            return ConfigurationManager.getProperty(Pages.PAGE_GUESTLIST.getValue());
+//            request.getSession().setAttribute(Attribute.ERROR_CHANGE_GUEST.getValue(),
+//                    MessageManager.getProperty(Message.MESSAGE_ERROR_CHANGE_GUEST.getValue()));
+//            return ConfigurationManager.getProperty(Page.PAGE_GUESTLIST.getValue());
 //        }
 //    }
 //}
@@ -231,8 +231,8 @@
 //import by.patrusova.project.exception.ServiceException;
 //import by.patrusova.project.service.Serviceable;
 //import by.patrusova.project.util.MessageManager;
-//import by.patrusova.project.util.stringholder.Attributes;
-//import by.patrusova.project.util.stringholder.Messages;
+//import by.patrusova.project.util.stringholder.Attribute;
+//import by.patrusova.project.util.stringholder.Message;
 //import org.apache.logging.log4j.Level;
 //import org.apache.logging.log4j.LogManager;
 //import org.apache.logging.log4j.Logger;
@@ -254,7 +254,7 @@
 //        try {
 //            UserDao userDao = factory.createUserDao();
 //            user = (User) userDao.findEntityById(id);
-//            if (user.getRole().equals(Attributes.GUEST.getValue())) {
+//            if (user.getRole().equals(Attribute.GUEST.getValue())) {
 //                user.setRole(role);
 //                if (!userDao.update(user)) {
 //                    switch (role) {

@@ -9,7 +9,7 @@
     <uri>customtags</uri>
     <tag>
         <name>remove-attr</name>
-        <tag-class>by.patrusova.project.util.RemoveAttrTag</tag-class>
+        <tag-class>by.patrusova.project.tag.RemoveAttrTag</tag-class>
         <body-content>empty</body-content>
     </tag>
 </taglib>

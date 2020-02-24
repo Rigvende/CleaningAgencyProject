@@ -41,7 +41,7 @@
     <fmt:message key="field.discount2"/>
     <br/>
     <label>
-        <input style="width: 250px" type="text" name="discount" value=""/>
+        <input style="width: 250px" type="text" name="sales" value=""/>
     </label>
     </b>
 

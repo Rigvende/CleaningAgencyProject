@@ -9,7 +9,7 @@
     <uri>customtags</uri>
     <tag>
         <name>info-time</name>
-        <tag-class>by.patrusova.project.util.InfoTimeTag</tag-class>
+        <tag-class>by.patrusova.project.tag.InfoTimeTag</tag-class>
         <body-content>empty</body-content>
     </tag>
 </taglib>

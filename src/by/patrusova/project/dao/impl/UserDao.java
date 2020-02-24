@@ -1,11 +1,11 @@
 package by.patrusova.project.dao.impl;
 
-import by.patrusova.project.util.column.CleanerColumns;
-import by.patrusova.project.util.column.ClientColumns;
-import by.patrusova.project.util.column.UserColumns;
+import by.patrusova.project.util.column.CleanerColumn;
+import by.patrusova.project.util.column.ClientColumn;
+import by.patrusova.project.util.column.UserColumn;
 import by.patrusova.project.entity.impl.Cleaner;
 import by.patrusova.project.entity.impl.Client;
-import by.patrusova.project.util.stringholder.Statements;
+import by.patrusova.project.util.stringholder.Statement;
 import by.patrusova.project.connection.ProxyConnection;
 import by.patrusova.project.dao.AbstractDao;
 import by.patrusova.project.entity.AbstractEntity;
@@ -34,14 +34,19 @@ public class UserDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public boolean create(AbstractEntity entity) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
+    public boolean create(AbstractEntity entity) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in UserDao create method. ", e);
+            throw new DaoException(e);
+        }
         User user = (User) entity;
         boolean isAdded;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement
-                    (Statements.SQL_ADD_USER.getValue());
+                    (Statement.SQL_ADD_USER.getValue());
             preparedStatement.setLong(1, 0);
             preparedStatement.setString(2, user.getLogin());
             preparedStatement.setString(3, user.getPassword());
@@ -56,7 +61,12 @@ public class UserDao extends AbstractDao<AbstractEntity> {
         } catch (SQLException e) {
             LOGGER.log(Level.ERROR, "Cannot add user. Request to table failed. ", e);
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in UserDao create method. ", e);
+                    throw new DaoException(e);
+                }
             }
             throw new DaoException(e);
         } finally {
@@ -66,14 +76,19 @@ public class UserDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public boolean delete(AbstractEntity entity) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
+    public boolean delete(AbstractEntity entity) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in UserDao delete method. ", e);
+            throw new DaoException(e);
+        }
         boolean isDeleted;
         User user = (User) entity;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement
-                    (Statements.SQL_DELETE_USER.getValue());
+                    (by.patrusova.project.util.stringholder.Statement.SQL_DELETE_USER.getValue());
             preparedStatement.setLong(1, user.getId());
             preparedStatement.setString(2, user.getRole());
             isDeleted = preparedStatement.execute();
@@ -83,7 +98,12 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in UserDao delete method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot delete user. Request to table failed. ", e);
             throw new DaoException(e);
@@ -94,14 +114,19 @@ public class UserDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public boolean update(AbstractEntity entity) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
+    public boolean update(AbstractEntity entity) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in UserDao update method. ", e);
+            throw new DaoException(e);
+        }
         boolean isUpdated;
         User user = (User) entity;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement
-                    (Statements.SQL_UPDATE_USER.getValue());
+                    (by.patrusova.project.util.stringholder.Statement.SQL_UPDATE_USER.getValue());
             preparedStatement.setString(1, user.getName());
             preparedStatement.setString(2, user.getLastname());
             preparedStatement.setString(3, user.getRole());
@@ -113,7 +138,12 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in UserDao update method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot update user. Request to table failed. ", e);
             throw new DaoException(e);
@@ -124,10 +154,15 @@ public class UserDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public List<AbstractEntity> findAll() throws DaoException, SQLException {
-        connection.setAutoCommit(false);
+    public List<AbstractEntity> findAll() throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in UserDao findAll method. ", e);
+            throw new DaoException(e);
+        }
         List<AbstractEntity> users = new ArrayList<>();
-        Statement statement = null;
+        java.sql.Statement statement = null;
         try {
             statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(SQL_SELECT_ALL_USERS);
@@ -138,7 +173,12 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in UserDao findAll method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot find all users. Request to table failed. ", e);
             throw new DaoException(e);
@@ -149,13 +189,18 @@ public class UserDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public AbstractEntity findEntityById(long id) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
+    public AbstractEntity findEntityById(long id) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in UserDao findEntityById method. ", e);
+            throw new DaoException(e);
+        }
         User user = null;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement
-                    (Statements.SQL_SELECT_USER_BY_ID.getValue());
+                    (by.patrusova.project.util.stringholder.Statement.SQL_SELECT_USER_BY_ID.getValue());
             preparedStatement.setLong(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
@@ -164,7 +209,12 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in UserDao findEntityById method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot find user by ID. Request to table failed. ", e);
             throw new DaoException(e);
@@ -174,13 +224,18 @@ public class UserDao extends AbstractDao<AbstractEntity> {
         return user;
     }
 
-    public AbstractEntity findEntityByLoginPass(String login, String pass) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
+    public AbstractEntity findEntityByLoginPass(String login, String pass) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in UserDao findEntityByLoginPass method. ", e);
+            throw new DaoException(e);
+        }
         User user = null;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement
-                    (Statements.SQL_SELECT_USER_BY_LOGIN_PASS.getValue());
+                    (by.patrusova.project.util.stringholder.Statement.SQL_SELECT_USER_BY_LOGIN_PASS.getValue());
             preparedStatement.setString(1, login);
             preparedStatement.setString(2, pass);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -190,7 +245,12 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             connection.commit();
         } catch (SQLException | DaoException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in UserDao findEntityByLoginPass method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot find user by login/password. Request to table failed. ", e);
             throw new DaoException(e);
@@ -200,9 +260,14 @@ public class UserDao extends AbstractDao<AbstractEntity> {
         return user;
     }
 
-    public boolean findLogin(String login) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
-        Statement statement = connection.createStatement();
+    public boolean findLogin(String login) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in UserDao findLogin method. ", e);
+            throw new DaoException(e);
+        }
+        java.sql.Statement statement = connection.createStatement();
         try {
             ResultSet resultSet = statement.executeQuery(SQL_SELECT_LOGIN); //проверка при регистрации
             while (resultSet.next()) {
@@ -213,7 +278,12 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             }
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in UserDao findLogin method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot find login in DB. Request to table failed.", e);
             throw new DaoException(e);
@@ -223,55 +293,60 @@ public class UserDao extends AbstractDao<AbstractEntity> {
         return false;
     }
 
-    public List<AbstractEntity> findUsersByRole(String role) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
+    public List<AbstractEntity> findUsersByRole(String role) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in UserDao findUsersByRole method. ", e);
+            throw new DaoException(e);
+        }
         List<AbstractEntity> users = new ArrayList<>();
         PreparedStatement preparedStatement = null;
         try {
             switch (role) {
                 case "cleaner":
                     preparedStatement = connection.prepareStatement
-                            (Statements.SQL_FIND_CLEANERS_BY_ROLE.getValue());
+                            (by.patrusova.project.util.stringholder.Statement.SQL_FIND_CLEANERS_BY_ROLE.getValue());
                     preparedStatement.setString(1, role);
                     ResultSet resultSet1 = preparedStatement.executeQuery();
                     while (resultSet1.next()) {
-                        User user = new User(resultSet1.getLong(UserColumns.ID_USER.getValue()),
-                                resultSet1.getString(UserColumns.LOGIN.getValue()),
-                                resultSet1.getString(UserColumns.PASSWORD.getValue()),
-                                resultSet1.getString(UserColumns.ROLE.getValue()),
-                                resultSet1.getString(UserColumns.NAME.getValue()),
-                                resultSet1.getString(UserColumns.LASTNAME.getValue()),
-                                resultSet1.getLong(UserColumns.PHONE.getValue()),
-                                resultSet1.getString(UserColumns.ADDRESS.getValue()),
-                                resultSet1.getString(UserColumns.EMAIL.getValue()),
-                                new Cleaner(resultSet1.getLong(CleanerColumns.ID_CLEANER.getValue()),
-                                        resultSet1.getBigDecimal(CleanerColumns.COMMISSION.getValue()),
-                                        resultSet1.getString(CleanerColumns.NOTES.getValue()),
-                                        resultSet1.getLong(CleanerColumns.ID_USER.getValue())));
+                        User user = new User(resultSet1.getLong(UserColumn.ID_USER.getValue()),
+                                resultSet1.getString(UserColumn.LOGIN.getValue()),
+                                resultSet1.getString(UserColumn.PASSWORD.getValue()),
+                                resultSet1.getString(UserColumn.ROLE.getValue()),
+                                resultSet1.getString(UserColumn.NAME.getValue()),
+                                resultSet1.getString(UserColumn.LASTNAME.getValue()),
+                                resultSet1.getLong(UserColumn.PHONE.getValue()),
+                                resultSet1.getString(UserColumn.ADDRESS.getValue()),
+                                resultSet1.getString(UserColumn.EMAIL.getValue()),
+                                new Cleaner(resultSet1.getLong(CleanerColumn.ID_CLEANER.getValue()),
+                                        resultSet1.getBigDecimal(CleanerColumn.COMMISSION.getValue()),
+                                        resultSet1.getString(CleanerColumn.NOTES.getValue()),
+                                        resultSet1.getLong(CleanerColumn.ID_USER.getValue())));
                         users.add(user);
                     }
                     break;
                 case "client":
                     preparedStatement = connection.prepareStatement
-                            (Statements.SQL_FIND_CLIENTS_BY_ROLE.getValue());
+                            (by.patrusova.project.util.stringholder.Statement.SQL_FIND_CLIENTS_BY_ROLE.getValue());
                     preparedStatement.setString(1, role);
                     ResultSet resultSet2 = preparedStatement.executeQuery();
                     while (resultSet2.next()) {
-                        User user = new User(resultSet2.getLong(UserColumns.ID_USER.getValue()),
-                                resultSet2.getString(UserColumns.LOGIN.getValue()),
-                                resultSet2.getString(UserColumns.PASSWORD.getValue()),
-                                resultSet2.getString(UserColumns.ROLE.getValue()),
-                                resultSet2.getString(UserColumns.NAME.getValue()),
-                                resultSet2.getString(UserColumns.LASTNAME.getValue()),
-                                resultSet2.getLong(UserColumns.PHONE.getValue()),
-                                resultSet2.getString(UserColumns.ADDRESS.getValue()),
-                                resultSet2.getString(UserColumns.EMAIL.getValue()),
-                                new Client(resultSet2.getLong(ClientColumns.ID_CLIENT.getValue()),
-                                        resultSet2.getLong(ClientColumns.ID_USER.getValue()),
-                                        resultSet2.getBigDecimal(ClientColumns.DISCOUNT.getValue()),
-                                        resultSet2.getString(ClientColumns.LOCATION.getValue()),
-                                        resultSet2.getString(ClientColumns.RELATIVE.getValue()),
-                                        resultSet2.getString(ClientColumns.NOTES.getValue())));
+                        User user = new User(resultSet2.getLong(UserColumn.ID_USER.getValue()),
+                                resultSet2.getString(UserColumn.LOGIN.getValue()),
+                                resultSet2.getString(UserColumn.PASSWORD.getValue()),
+                                resultSet2.getString(UserColumn.ROLE.getValue()),
+                                resultSet2.getString(UserColumn.NAME.getValue()),
+                                resultSet2.getString(UserColumn.LASTNAME.getValue()),
+                                resultSet2.getLong(UserColumn.PHONE.getValue()),
+                                resultSet2.getString(UserColumn.ADDRESS.getValue()),
+                                resultSet2.getString(UserColumn.EMAIL.getValue()),
+                                new Client(resultSet2.getLong(ClientColumn.ID_CLIENT.getValue()),
+                                        resultSet2.getLong(ClientColumn.ID_USER.getValue()),
+                                        resultSet2.getBigDecimal(ClientColumn.DISCOUNT.getValue()),
+                                        resultSet2.getString(ClientColumn.LOCATION.getValue()),
+                                        resultSet2.getString(ClientColumn.RELATIVE.getValue()),
+                                        resultSet2.getString(ClientColumn.NOTES.getValue())));
                         users.add(user);
                     }
                     break;
@@ -279,7 +354,7 @@ public class UserDao extends AbstractDao<AbstractEntity> {
                 case "admin":
                 default:
                     preparedStatement = connection.prepareStatement
-                            (Statements.SQL_FIND_USERS_BY_ROLE.getValue());
+                            (by.patrusova.project.util.stringholder.Statement.SQL_FIND_USERS_BY_ROLE.getValue());
                     preparedStatement.setString(1, role);
                     ResultSet resultSet3 = preparedStatement.executeQuery();
                     while (resultSet3.next()) {
@@ -291,7 +366,12 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in UserDao findUsersByRole method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot find users by role. Request to table failed. ", e);
             throw new DaoException(e);
@@ -301,9 +381,14 @@ public class UserDao extends AbstractDao<AbstractEntity> {
         return users;
     }
 
-    public boolean findId(long id) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
-        Statement statement = connection.createStatement();
+    public boolean findId(long id) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in UserDao findId method. ", e);
+            throw new DaoException(e);
+        }
+        java.sql.Statement statement = connection.createStatement();
         try {
             ResultSet resultSet = statement.executeQuery(SQL_SELECT_ID);
             while (resultSet.next()) {
@@ -314,7 +399,12 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             }
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in UserDao findId method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot find id_user in DB. Request to table failed.", e);
             throw new DaoException(e);

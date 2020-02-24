@@ -16,7 +16,6 @@ public abstract class AbstractDao<T extends AbstractEntity> {
     private final static Logger LOGGER = LogManager.getLogger();
     protected ProxyConnection connection;
 
-    public AbstractDao() {}
     public AbstractDao(ProxyConnection connection) {
         this.connection = connection;
     }
@@ -25,11 +24,11 @@ public abstract class AbstractDao<T extends AbstractEntity> {
         return connection;
     }
 
-    public abstract boolean create(T entity) throws DaoException, SQLException;
-    public abstract boolean delete(T entity) throws DaoException, SQLException;
-    public abstract boolean update(T entity) throws DaoException, SQLException;
-    public abstract List<T> findAll() throws DaoException, SQLException;
-    public abstract T findEntityById(long id) throws DaoException, SQLException;
+    public abstract boolean create(T entity) throws DaoException;
+    public abstract boolean delete(T entity) throws DaoException;
+    public abstract boolean update(T entity) throws DaoException;
+    public abstract List<T> findAll() throws DaoException;
+    public abstract T findEntityById(long id) throws DaoException;
 
     public void closeStatement(Statement statement) throws DaoException {
         if (statement != null) {

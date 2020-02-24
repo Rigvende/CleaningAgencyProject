@@ -2,10 +2,10 @@ package by.patrusova.project.command;
 
 import by.patrusova.project.command.impl.EmptyCommand;
 import by.patrusova.project.exception.CommandException;
-import by.patrusova.project.util.stringholder.Attributes;
+import by.patrusova.project.util.stringholder.Attribute;
 import by.patrusova.project.util.MessageManager;
-import by.patrusova.project.util.stringholder.Messages;
-import by.patrusova.project.util.stringholder.Parameters;
+import by.patrusova.project.util.stringholder.Message;
+import by.patrusova.project.util.stringholder.Parameter;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,7 +17,7 @@ public class CommandProvider {
 
     public ActionCommand defineCommand(HttpServletRequest request) throws CommandException {
         ActionCommand current = new EmptyCommand();
-        String action = request.getParameter(Parameters.COMMAND.getValue());
+        String action = request.getParameter(Parameter.COMMAND.getValue());
         if (action == null || action.isEmpty()) {
             return current;
         }
@@ -25,8 +25,8 @@ public class CommandProvider {
             CommandEnum currentEnum = CommandEnum.valueOf(action.toUpperCase());
             current = currentEnum.getCurrentCommand();
         } catch (IllegalArgumentException e) {
-            request.setAttribute(Attributes.WRONG_ACTION.getValue(), action
-                    + MessageManager.getProperty(Messages.MESSAGE_WRONG.getValue()));
+            request.setAttribute(Attribute.WRONG_ACTION.getValue(), action
+                    + MessageManager.getProperty(Message.MESSAGE_WRONG.getValue()));
             LOGGER.log(Level.ERROR, "Cannot define current command. ", e);
             throw new CommandException(e);
         }

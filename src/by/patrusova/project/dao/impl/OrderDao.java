@@ -6,8 +6,8 @@ import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.dao.EntityFactory;
 import by.patrusova.project.entity.impl.*;
 import by.patrusova.project.exception.DaoException;
-import by.patrusova.project.util.column.OrderColumns;
-import by.patrusova.project.util.stringholder.Statements;
+import by.patrusova.project.util.column.OrderColumn;
+import by.patrusova.project.util.stringholder.Statement;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -28,14 +28,19 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public boolean create(AbstractEntity entity) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
+    public boolean create(AbstractEntity entity) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in OrderDao create method. ", e);
+            throw new DaoException(e);
+        }
         Order order = (Order) entity;
         boolean isAdded;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement
-                    (Statements.SQL_ADD_ORDER.getValue());
+                    (Statement.SQL_ADD_ORDER.getValue());
             preparedStatement.setLong(1, 0);
             preparedStatement.setDate(2, Date.valueOf(order.getOrderTime()));
             preparedStatement.setDate(3, Date.valueOf(order.getDeadline()));
@@ -46,7 +51,12 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in OrderDao create method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot add order. Request to table failed. ", e);
             throw new DaoException(e);
@@ -56,14 +66,19 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
         return isAdded;
     }
 
-    public boolean createNew(AbstractEntity entity) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
+    public boolean createNew(AbstractEntity entity) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in OrderDao createNew method. ", e);
+            throw new DaoException(e);
+        }
         Order order = (Order) entity;
         boolean isAdded;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement
-                    (Statements.SQL_ADD_ORDER.getValue());
+                    (Statement.SQL_ADD_ORDER.getValue());
             preparedStatement.setLong(1, 0);
             preparedStatement.setDate(2, null);
             preparedStatement.setDate(3, null);
@@ -74,7 +89,12 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in OrderDao createNew method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot add order. Request to table failed. ", e);
             throw new DaoException(e);
@@ -85,14 +105,19 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public boolean delete(AbstractEntity entity) throws SQLException, DaoException {
-        connection.setAutoCommit(false);
+    public boolean delete(AbstractEntity entity) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in OrderDao delete method. ", e);
+            throw new DaoException(e);
+        }
         boolean isDeleted;
         Order order = (Order)entity;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement
-                    (Statements.SQL_DELETE_ORDER.getValue());
+                    (Statement.SQL_DELETE_ORDER.getValue());
             preparedStatement.setLong(1, order.getId());
             isDeleted = preparedStatement.execute();
             if (!findId(order.getId())) {
@@ -101,7 +126,12 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in OrderDao delete method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot delete service. Request to table failed. ", e);
             throw new DaoException(e);
@@ -112,14 +142,19 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public boolean update(AbstractEntity entity) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
+    public boolean update(AbstractEntity entity) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in OrderDao update method. ", e);
+            throw new DaoException(e);
+        }
         boolean isUpdated;
         Order order = (Order) entity;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement
-                    (Statements.SQL_UPDATE_ORDER.getValue());
+                    (Statement.SQL_UPDATE_ORDER.getValue());
             preparedStatement.setString(1, order.getOrderStatus());
             preparedStatement.setLong(2, order.getIdCleaner());
             preparedStatement.setLong(3, order.getId());
@@ -127,7 +162,12 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in OrderDao update method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot update order. Request to table failed. ", e);
             throw new DaoException(e);
@@ -138,10 +178,15 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public List<AbstractEntity> findAll() throws DaoException, SQLException {
-        connection.setAutoCommit(false);
+    public List<AbstractEntity> findAll() throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in OrderDao findAll method. ", e);
+            throw new DaoException(e);
+        }
         List<AbstractEntity> orders = new ArrayList<>();
-        Statement statement = null;
+        java.sql.Statement statement = null;
         try {
             statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(SQL_SELECT_ALL_ORDERS);
@@ -152,7 +197,12 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in OrderDao findAll method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot find all orders. Request to table failed. ", e);
             throw new DaoException(e);
@@ -163,20 +213,30 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public AbstractEntity findEntityById(long id) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
+    public AbstractEntity findEntityById(long id) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in OrderDao findEntityById method. ", e);
+            throw new DaoException(e);
+        }
         Order order;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement
-                    (Statements.SQL_SELECT_ORDER_BY_ID.getValue());
+                    (Statement.SQL_SELECT_ORDER_BY_ID.getValue());
             preparedStatement.setLong(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             order = resultSet.next() ? EntityFactory.createOrder(resultSet) : null;
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in OrderDao findEntityById method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot find order by ID. Request to table failed. ", e);
             throw new DaoException(e);
@@ -186,15 +246,20 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
         return order;
     }
 
-    public List<OrderComplex> findOrdersById(String role, long id) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
+    public List<OrderComplex> findOrdersById(String role, long id) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in OrderDao findOrdersById method. ", e);
+            throw new DaoException(e);
+        }
         PreparedStatement preparedStatement = null;
         List<OrderComplex> result = new ArrayList<>();
         try {
             switch (role) {
                 case "cleaner":
                     preparedStatement = connection.prepareStatement
-                            (Statements.SQL_FIND_ORDERS_BY_CLEANER.getValue());
+                            (Statement.SQL_FIND_ORDERS_BY_CLEANER.getValue());
                     preparedStatement.setLong(1, id);
                     ResultSet resultSet1 = preparedStatement.executeQuery();
                     while (resultSet1.next()) {
@@ -203,7 +268,7 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
                     break;
                 case "client":
                     preparedStatement = connection.prepareStatement
-                            (Statements.SQL_FIND_ORDERS_BY_CLIENT.getValue());
+                            (Statement.SQL_FIND_ORDERS_BY_CLIENT.getValue());
                     preparedStatement.setLong(1, id);
                     ResultSet resultSet2 = preparedStatement.executeQuery();
                     while (resultSet2.next()) {
@@ -214,7 +279,12 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in OrderDao findOrdersById method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot find all orders. Request to table failed. ", e);
             throw new DaoException(e);
@@ -224,14 +294,19 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
         return result;
     }
 
-    public boolean cancelOrder(AbstractEntity entity) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
+    public boolean cancelOrder(AbstractEntity entity) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in OrderDao cancelOrder method. ", e);
+            throw new DaoException(e);
+        }
         boolean isUpdated;
         Order order = (Order) entity;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement
-                    (Statements.SQL_CANCEL_ORDER.getValue());
+                    (Statement.SQL_CANCEL_ORDER.getValue());
             preparedStatement.setLong(1, order.getId());
             isUpdated = preparedStatement.execute();
             Order order1 = (Order) findEntityById(order.getId());
@@ -241,7 +316,12 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in OrderDao cancelOrder method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot update order. Request to table failed. ", e);
             throw new DaoException(e);
@@ -251,9 +331,14 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
         return isUpdated;
     }
 
-    public boolean findId(long id) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
-        Statement statement = connection.createStatement();
+    public boolean findId(long id) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in OrderDao findId method. ", e);
+            throw new DaoException(e);
+        }
+        java.sql.Statement statement = connection.createStatement();
         try {
             ResultSet resultSet = statement.executeQuery(SQL_SELECT_ID);
             while (resultSet.next()) {
@@ -264,7 +349,12 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             }
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in OrderDao findId method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot find id_order in DB. Request to table failed.", e);
             throw new DaoException(e);
@@ -274,15 +364,20 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
         return false;
     }
 
-    public boolean setMark(AbstractEntity entity) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
+    public boolean setMark(AbstractEntity entity) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in OrderDao setMark method. ", e);
+            throw new DaoException(e);
+        }
         boolean isUpdated;
         Order order = (Order) entity;
         int mark = order.getMark();
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement
-                    (Statements.SQL_SET_MARK.getValue());
+                    (Statement.SQL_SET_MARK.getValue());
             preparedStatement.setInt(1, order.getMark());
             preparedStatement.setLong(2, order.getId());
             preparedStatement.setLong(3, order.getIdClient());
@@ -294,7 +389,12 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in OrderDao setMark method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot update order. Request to table failed. ", e);
             throw new DaoException(e);
@@ -304,24 +404,34 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
         return isUpdated;
     }
 
-    public AbstractEntity findNew(AbstractEntity entity) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
+    public AbstractEntity findNew(AbstractEntity entity) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in OrderDao findNew method. ", e);
+            throw new DaoException(e);
+        }
         Order order = (Order) entity;
         PreparedStatement preparedStatement = null;
         try {
             if (order.getOrderStatus().equals(Order.Status.NEW.getValue())) {
                 preparedStatement = connection.prepareStatement
-                        (Statements.SQL_FIND_NEW_ORDER.getValue());
+                        (Statement.SQL_FIND_NEW_ORDER.getValue());
                 preparedStatement.setLong(1, order.getIdClient());
                 ResultSet resultSet = preparedStatement.executeQuery();
                 if (resultSet.next()) {
-                    order.setId(resultSet.getLong(OrderColumns.ID_ORDER.getValue()));
+                    order.setId(resultSet.getLong(OrderColumn.ID_ORDER.getValue()));
                 }
                 connection.commit();
             }
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in OrderDao findNew method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot find order by ID. Request to table failed. ", e);
             throw new DaoException(e);

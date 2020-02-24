@@ -10,8 +10,8 @@ import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.EntityCreator;
 import by.patrusova.project.service.Serviceable;
-import by.patrusova.project.util.stringholder.Attributes;
-import by.patrusova.project.util.stringholder.Parameters;
+import by.patrusova.project.util.stringholder.Attribute;
+import by.patrusova.project.util.stringholder.Parameter;
 import by.patrusova.project.validator.NumberValidator;
 import by.patrusova.project.validator.StringValidator;
 import org.apache.logging.log4j.Level;
@@ -19,7 +19,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -28,44 +27,45 @@ public class ClientInfoService implements Serviceable, EntityCreator {
 
     private final static Logger LOGGER = LogManager.getLogger();
 
-    //внесение изменений в данные клиента самим клиентом
+    //update client by client himself
     public Optional<AbstractEntity> doService(AbstractEntity entity) throws ServiceException {
-        DaoFactory factory = new DaoFactory();
         Client client = (Client) entity;
         try {
-            ClientDao dao = factory.createClientDao();
+            ClientDao dao = DaoFactory.createClientDao();
             if (dao.updateByUser(client)) {
                 client = null;
             }
-        } catch (DaoException | SQLException e) {
+        } catch (DaoException e) {
+            LOGGER.log(Level.ERROR,
+                    "Exception in ClientInfoService while updating client has occurred. ", e);
             throw new ServiceException(e);
         }
         return client != null ? Optional.of(client) : Optional.empty();
     }
 
-    //внесение изменений в данные клиента админом
+    //update client by admin
     public Optional<AbstractEntity> doServiceByAdmin(AbstractEntity entity) throws ServiceException {
-        DaoFactory factory = new DaoFactory();
         Client client = (Client) entity;
         try {
-            ClientDao dao = factory.createClientDao();
+            ClientDao dao = DaoFactory.createClientDao();
             if (dao.update(client)) {
                 client = null;
             }
-        } catch (DaoException | SQLException e) {
+        } catch (DaoException e) {
+            LOGGER.log(Level.ERROR,
+                    "Exception in CleanerInfoService while updating cleaner has occurred. ", e);
             throw new ServiceException(e);
         }
         return client != null ? Optional.of(client) : Optional.empty();
     }
 
-    //внесение изменений в данные клиента клинером
+    //update client by cleaner
     public Optional<AbstractEntity> doService(long id, long idCleaner, String notes) throws ServiceException {
-        DaoFactory factory = new DaoFactory();
         try {
-            OrderDao orderDao = factory.createOrderDao();
+            OrderDao orderDao = DaoFactory.createOrderDao();
             Order order = (Order) orderDao.findEntityById(id);
             if (order.getIdCleaner() == idCleaner) {
-                ClientDao clientDao = factory.createClientDao();
+                ClientDao clientDao = DaoFactory.createClientDao();
                 long idClient = order.getIdClient();
                 long idUser = clientDao.findIdUser(idClient);
                 if (idUser != 0) {
@@ -75,32 +75,34 @@ public class ClientInfoService implements Serviceable, EntityCreator {
                 }
             }
             return Optional.empty();
-        } catch (DaoException | SQLException e) {
+        } catch (DaoException e) {
+            LOGGER.log(Level.ERROR,
+                    "Exception in CleanerInfoService while updating cleaner has occurred. ", e);
             throw new ServiceException(e);
         }
     }
 
-    //создание экземпляра клиента с изменениями
+    //create instance of client with changes
     @Override
     public Optional<AbstractEntity> createEntity(HttpServletRequest request) {
-        if (request.getSession().getAttribute(Attributes.ROLE.getValue()) //сам клиент вносит изменения
-                .equals(Attributes.CLIENT.getValue())) {
+        if (request.getSession().getAttribute(Attribute.ROLE.getValue()) //changes made by client
+                .equals(Attribute.CLIENT.getValue())) {
             Client updatedClient = (Client) request.getSession()
-                    .getAttribute(Attributes.CLIENT.getValue());
+                    .getAttribute(Attribute.CLIENT.getValue());
             if (!validate(request).containsValue(false)) {
-                updatedClient.setLocation(request.getParameter(Parameters.LOCATION.getValue()));
-                updatedClient.setRelative(request.getParameter(Parameters.RELATIVE.getValue()));
+                updatedClient.setLocation(request.getParameter(Parameter.LOCATION.getValue()));
+                updatedClient.setRelative(request.getParameter(Parameter.RELATIVE.getValue()));
                 return Optional.of(updatedClient);
             } else {
                 return Optional.empty();
             }
-        } else {                                                            //изменения вносит админ
+        } else {                                                            //changes made by admin
             Client updatedClient = (Client) request.getSession()
-                    .getAttribute(Attributes.CLIENT.getValue());
+                    .getAttribute(Attribute.CLIENT.getValue());
             if (!validate(request).containsValue(false)) {
-                String discount = request.getParameter(Parameters.DISCOUNT.getValue());
+                String discount = request.getParameter(Parameter.DISCOUNT.getValue());
                 updatedClient.setDiscount(BigDecimal.valueOf(Double.parseDouble(discount)));
-                updatedClient.setNotes(request.getParameter(Parameters.NOTES.getValue()));
+                updatedClient.setNotes(request.getParameter(Parameter.NOTES.getValue()));
                 return Optional.of(updatedClient);
             } else {
                 return Optional.empty();
@@ -108,36 +110,35 @@ public class ClientInfoService implements Serviceable, EntityCreator {
         }
     }
 
-    //валидация введенных данных
+    //validation
     private Map<String, Boolean> validate(HttpServletRequest request) {
-        Map<String, Boolean> validationMap = new HashMap<>();                 //сам клиент вносит изменения
-        if (request.getSession().getAttribute(Attributes.ROLE.getValue())
-                .equals(Attributes.CLIENT.getValue())) {
-            String location = request.getParameter(Parameters.LOCATION.getValue());
-            String relative = request.getParameter(Parameters.RELATIVE.getValue());
-            validationMap.put(Parameters.LOCATION.getValue(),
-                    StringValidator.isValidStringSize(Parameters.LOCATION.getValue(), location));
-            validationMap.put(Parameters.RELATIVE.getValue(),
-                    StringValidator.isValidStringSize(Parameters.RELATIVE.getValue(), relative));
-        } else {                                                                //изменения вносит админ
-            String discount = request.getParameter(Parameters.DISCOUNT.getValue());
-            String notes = request.getParameter(Parameters.NOTES.getValue());
-            validationMap.put(Parameters.DISCOUNT.getValue(),
+        Map<String, Boolean> validationMap = new HashMap<>();                 //changes made by client
+        if (request.getSession().getAttribute(Attribute.ROLE.getValue())
+                .equals(Attribute.CLIENT.getValue())) {
+            String location = request.getParameter(Parameter.LOCATION.getValue());
+            String relative = request.getParameter(Parameter.RELATIVE.getValue());
+            validationMap.put(Parameter.LOCATION.getValue(),
+                    StringValidator.isValidStringSize(Parameter.LOCATION.getValue(), location));
+            validationMap.put(Parameter.RELATIVE.getValue(),
+                    StringValidator.isValidStringSize(Parameter.RELATIVE.getValue(), relative));
+        } else {                                                                //changes made by admin
+            String discount = request.getParameter(Parameter.DISCOUNT.getValue());
+            String notes = request.getParameter(Parameter.NOTES.getValue());
+            validationMap.put(Parameter.DISCOUNT.getValue(),
                     NumberValidator.isValidDecimal(discount));
-            validationMap.put(Parameters.NOTES.getValue(),
-                    StringValidator.isValidStringSize(Parameters.NOTES.getValue(), notes));
+            validationMap.put(Parameter.NOTES.getValue(),
+                    StringValidator.isValidStringSize(Parameter.NOTES.getValue(), notes));
         }
         return validationMap;
     }
 
-    //получить клиента из бд по данным из пришедшего экземпляра клиента
+    //get client from DB
     public Client getClient(AbstractEntity entity) throws ServiceException {
-        DaoFactory factory = new DaoFactory();
         Client client = (Client) entity;
         try {
-            ClientDao dao = factory.createClientDao();
+            ClientDao dao = DaoFactory.createClientDao();
             client = (Client) dao.findEntityById(client.getIdUser());
-        } catch (DaoException | SQLException e) {
+        } catch (DaoException e) {
             LOGGER.log(Level.ERROR, "Exception while finding client has occurred.");
             throw new ServiceException(e);
         }

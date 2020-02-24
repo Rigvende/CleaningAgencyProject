@@ -2,13 +2,20 @@ package by.patrusova.project.validator;
 
 import by.patrusova.project.dao.DaoFactory;
 import by.patrusova.project.dao.impl.*;
+import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.DaoException;
+import by.patrusova.project.exception.ServiceException;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.sql.SQLException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class NumberValidator {
 
+    private final static Logger LOGGER = LogManager.getLogger();
     private final static String CHECK_DECIMAL = "^0.[\\d]{1,2}$";
     private final static String CHECK_ID = "^[\\d]{1,18}$";
     private final static String CHECK_COST = "^[\\d]{1,3}((.[\\d]{1,2})?)$";
@@ -23,62 +30,92 @@ public class NumberValidator {
         return matcher.find();
     }
 
-    public static boolean isValidCleanerID(String id) throws DaoException, SQLException {
-        DaoFactory factory = new DaoFactory();
-        CleanerDao dao = factory.createCleanerDao();
+    public static boolean isValidCleanerID(String id) throws ServiceException {
         boolean check = false;
-        if(isValidID(id) ) {
-            check = dao.findId(Long.parseLong(id));
+        try {
+            CleanerDao dao = DaoFactory.createCleanerDao();
+            if (isValidID(id)) {
+                check = dao.findId(Long.parseLong(id));
+            }
+        } catch (DaoException e) {
+            LOGGER.log(Level.ERROR,
+                    "Exception has occurred while validating cleaner ID was processing. ", e);
+            throw new ServiceException(e);
         }
         return check;
     }
 
-    public static boolean isValidClientID(String id) throws DaoException, SQLException {
-        DaoFactory factory = new DaoFactory();
-        ClientDao dao = factory.createClientDao();
+    public static boolean isValidClientID(String id) throws ServiceException {
         boolean check = false;
-        if (isValidID(id)) {
-            check = dao.findId(Long.parseLong(id));
+        try {
+            ClientDao dao = DaoFactory.createClientDao();
+            if (isValidID(id)) {
+                check = dao.findId(Long.parseLong(id));
+            }
+        } catch (DaoException e) {
+            LOGGER.log(Level.ERROR,
+                    "Exception has occurred while validating client ID was processing. ", e);
+            throw new ServiceException(e);
         }
         return check;
     }
 
-    public static boolean isValidUserID(String id) throws DaoException, SQLException {
-        DaoFactory factory = new DaoFactory();
-        UserDao dao = factory.createUserDao();
+    public static boolean isValidUserID(String id) throws ServiceException {
         boolean check = false;
-        if (isValidID(id)) {
-            check = dao.findId(Long.parseLong(id));
+        try {
+            UserDao dao = DaoFactory.createUserDao();
+            if (isValidID(id)) {
+                check = dao.findId(Long.parseLong(id));
+            }
+        } catch (DaoException e) {
+            LOGGER.log(Level.ERROR,
+                    "Exception has occurred while validating user ID was processing. ", e);
+            throw new ServiceException(e);
         }
         return check;
     }
 
-    public static boolean isValidOrderID(String id) throws DaoException, SQLException {
-        DaoFactory factory = new DaoFactory();
-        OrderDao dao = factory.createOrderDao();
+    public static boolean isValidOrderID(String id) throws ServiceException {
         boolean check = false;
-        if(isValidID(id) ) {
-            check = dao.findId(Long.parseLong(id));
+        try {
+            OrderDao dao = DaoFactory.createOrderDao();
+            if (isValidID(id)) {
+                check = dao.findId(Long.parseLong(id));
+            }
+        } catch (DaoException e) {
+            LOGGER.log(Level.ERROR,
+                    "Exception has occurred while validating order ID was processing. ", e);
+            throw new ServiceException(e);
         }
         return check;
     }
 
-    public static boolean isValidServiceID(String id) throws DaoException, SQLException {
-        DaoFactory factory = new DaoFactory();
-        ServiceDao dao = factory.createServiceDao();
+    public static boolean isValidServiceID(String id) throws ServiceException {
         boolean check = false;
-        if(isValidID(id) ) {
-            check = dao.findId(Long.parseLong(id));
+        try {
+            ServiceDao dao = DaoFactory.createServiceDao();
+            if (isValidID(id)) {
+                check = dao.findId(Long.parseLong(id));
+            }
+        } catch (DaoException e) {
+            LOGGER.log(Level.ERROR,
+                    "Exception has occurred while validating service ID was processing. ", e);
+            throw new ServiceException(e);
         }
         return check;
     }
 
-    public static boolean isValidBasketID(String id) throws DaoException, SQLException {
-        DaoFactory factory = new DaoFactory();
-        BasketDao dao = factory.createBasketDao();
+    public static boolean isValidBasketID(String id) throws ServiceException {
         boolean check = false;
-        if(isValidID(id) ) {
-            check = dao.findId(Long.parseLong(id));
+        try {
+            BasketDao dao = DaoFactory.createBasketDao();
+            if (isValidID(id)) {
+                check = dao.findId(Long.parseLong(id));
+            }
+        } catch (DaoException e) {
+            LOGGER.log(Level.ERROR,
+                    "Exception has occurred while validating basket ID was processing. ", e);
+            throw new ServiceException(e);
         }
         return check;
     }

@@ -8,9 +8,9 @@ import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.ServiceInfoService;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.util.MessageManager;
-import by.patrusova.project.util.stringholder.Attributes;
-import by.patrusova.project.util.stringholder.Messages;
-import by.patrusova.project.util.stringholder.Pages;
+import by.patrusova.project.util.stringholder.Attribute;
+import by.patrusova.project.util.stringholder.Message;
+import by.patrusova.project.util.stringholder.Page;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -28,23 +28,24 @@ public class ChangeServiceCommand implements ActionCommand {
         try {
             Optional<AbstractEntity> opt = infoService.createEntity(request);
             if (opt.isEmpty()) {
-                request.getSession().setAttribute(Attributes.ERROR_CHANGE_SERVICE.getValue(),
-                        MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_SERVICE.getValue()));
-                page = ConfigurationManager.getProperty(Pages.PAGE_CHANGE_SERVICE.getValue());
+                request.getSession().setAttribute(Attribute.ERROR_CHANGE_SERVICE.getValue(),
+                        MessageManager.getProperty(Message.MESSAGE_ERROR_CHANGE_SERVICE.getValue()));
+                page = ConfigurationManager.getProperty(Page.PAGE_CHANGE_SERVICE.getValue());
                 return page;
             } else {
                 Service service = (Service)opt.get();
                 Optional<AbstractEntity> optional = infoService.doService(service);
                 if (optional.isPresent()) {
-                    page = ConfigurationManager.getProperty(Pages.PAGE_CONFIRM.getValue());
+                    page = ConfigurationManager.getProperty(Page.PAGE_CONFIRM.getValue());
                 } else {
-                    request.getSession().setAttribute(Attributes.ERROR_CHANGE_SERVICE.getValue(),
-                            MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_SERVICE.getValue()));
-                    page = ConfigurationManager.getProperty(Pages.PAGE_CHANGE_SERVICE.getValue());
+                    request.getSession().setAttribute(Attribute.ERROR_CHANGE_SERVICE.getValue(),
+                            MessageManager.getProperty(Message.MESSAGE_ERROR_CHANGE_SERVICE.getValue()));
+                    page = ConfigurationManager.getProperty(Page.PAGE_CHANGE_SERVICE.getValue());
                 }
             }
         } catch (ServiceException e) {
-            LOGGER.log(Level.ERROR, "Exception has occurred while changing service info was processing. ", e);
+            LOGGER.log(Level.ERROR,
+                    "Exception has occurred while changing service info was processing. ", e);
             throw new CommandException(e);
         }
         return page;

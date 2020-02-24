@@ -8,32 +8,34 @@ import java.sql.Connection;
 
 public class DaoFactory {
 
-    public BasketDao createBasketDao() throws DaoException {
+    private DaoFactory(){}
+
+    public static BasketDao createBasketDao() throws DaoException {
         Connection connection = ConnectionPool.getInstance().takeConnection();
         return new BasketDao((ProxyConnection) connection);
     }
 
-    public CleanerDao createCleanerDao() throws DaoException {
+    public static CleanerDao createCleanerDao() throws DaoException {
         Connection connection = ConnectionPool.getInstance().takeConnection();
         return new CleanerDao((ProxyConnection) connection);
     }
 
-    public OrderDao createOrderDao() throws DaoException {
+    public static OrderDao createOrderDao() throws DaoException {
         Connection connection = ConnectionPool.getInstance().takeConnection();
         return new OrderDao((ProxyConnection) connection);
     }
 
-    public ClientDao createClientDao() throws DaoException {
+    public static ClientDao createClientDao() throws DaoException {
         Connection connection = ConnectionPool.getInstance().takeConnection();
         return new ClientDao((ProxyConnection) connection);
     }
 
-    public ServiceDao createServiceDao() throws DaoException {
+    public static ServiceDao createServiceDao() throws DaoException {
         Connection connection = ConnectionPool.getInstance().takeConnection();
         return new ServiceDao((ProxyConnection) connection);
     }
 
-    public UserDao createUserDao() throws DaoException {
+    public static UserDao createUserDao() throws DaoException {
         Connection connection = ConnectionPool.getInstance().takeConnection();
         return new UserDao((ProxyConnection) connection);
     }

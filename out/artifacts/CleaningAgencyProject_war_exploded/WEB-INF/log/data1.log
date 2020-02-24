@@ -5382,3 +5382,17 @@ Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or u
 24-02 12:25 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4ae8ee92
 24-02 12:25 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@2d37de07
 24-02 12:25 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+24-02 12:36 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+24-02 12:36 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+24-02 12:57 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+24-02 12:57 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+24-02 15:58 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@61e264b9
+24-02 15:58 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@6f426ce6
+24-02 15:58 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+24-02 15:59 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+24-02 15:59 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+24-02 18:21 INFO  command.impl.LocaleCommand - ru_RU
+24-02 18:21 INFO  command.impl.LocaleCommand - en_EN
+24-02 23:52 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@6a28e4b5
+24-02 23:52 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@139b48ad
+24-02 23:52 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.

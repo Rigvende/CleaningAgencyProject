@@ -6,16 +6,15 @@ import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.RegistrationService;
-import by.patrusova.project.util.stringholder.Attributes;
+import by.patrusova.project.util.stringholder.Attribute;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.util.MessageManager;
-import by.patrusova.project.util.stringholder.Messages;
-import by.patrusova.project.util.stringholder.Pages;
+import by.patrusova.project.util.stringholder.Message;
+import by.patrusova.project.util.stringholder.Page;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
-import java.sql.SQLException;
 import java.util.Optional;
 
 public class RegistrationCommand implements ActionCommand {
@@ -28,22 +27,22 @@ public class RegistrationCommand implements ActionCommand {
         try {
             Optional<AbstractEntity> optional = service.createEntity(request);
             if (optional.isEmpty()) {
-                request.getSession().setAttribute(Attributes.ERROR_REG.getValue(),
-                        MessageManager.getProperty(Messages.MESSAGE_ERROR_REG.getValue()));
-                page = ConfigurationManager.getProperty(Pages.PAGE_REG.getValue());
+                request.getSession().setAttribute(Attribute.ERROR_REG.getValue(),
+                        MessageManager.getProperty(Message.MESSAGE_ERROR_REG.getValue()));
+                page = ConfigurationManager.getProperty(Page.PAGE_REG.getValue());
                 return page;
             } else {
                 User user = (User) optional.get();
                 if (service.doService(user).isPresent()) {
-                    request.getSession().setAttribute(Attributes.NEW_USER.getValue(), user);
-                    page = ConfigurationManager.getProperty(Pages.PAGE_REG_TRUE.getValue());
+                    request.getSession().setAttribute(Attribute.NEW_USER.getValue(), user);
+                    page = ConfigurationManager.getProperty(Page.PAGE_REG_TRUE.getValue());
                 } else {
-                    request.getSession().setAttribute(Attributes.ERROR_REG.getValue(),
-                            MessageManager.getProperty(Messages.MESSAGE_ERROR_REG.getValue()));
-                    page = ConfigurationManager.getProperty(Pages.PAGE_REG.getValue());
+                    request.getSession().setAttribute(Attribute.ERROR_REG.getValue(),
+                            MessageManager.getProperty(Message.MESSAGE_ERROR_REG.getValue()));
+                    page = ConfigurationManager.getProperty(Page.PAGE_REG.getValue());
                 }
             }
-        } catch (ServiceException | SQLException e) {
+        } catch (ServiceException e) {
             LOGGER.log(Level.ERROR, "Exception has occurred while registration was processing. ", e);
             throw new CommandException(e);
         }

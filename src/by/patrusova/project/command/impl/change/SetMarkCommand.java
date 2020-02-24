@@ -4,21 +4,19 @@ import by.patrusova.project.command.ActionCommand;
 import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.exception.CommandException;
-import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.OrderInfoService;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.util.MessageManager;
-import by.patrusova.project.util.stringholder.Attributes;
-import by.patrusova.project.util.stringholder.Messages;
-import by.patrusova.project.util.stringholder.Pages;
-import by.patrusova.project.util.stringholder.Parameters;
+import by.patrusova.project.util.stringholder.Attribute;
+import by.patrusova.project.util.stringholder.Message;
+import by.patrusova.project.util.stringholder.Page;
+import by.patrusova.project.util.stringholder.Parameter;
 import by.patrusova.project.validator.NumberValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
-import java.sql.SQLException;
 import java.util.Optional;
 
 public class SetMarkCommand implements ActionCommand {
@@ -28,30 +26,30 @@ public class SetMarkCommand implements ActionCommand {
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
         Optional<AbstractEntity> optional;
-        String requestId = request.getParameter(Parameters.ID.getValue());
-        String requestMark = request.getParameter(Parameters.MARK.getValue());
+        String requestId = request.getParameter(Parameter.ID.getValue());
+        String requestMark = request.getParameter(Parameter.MARK.getValue());
         try {
             if (!NumberValidator.isValidOrderID(requestId) || !NumberValidator.isValidMark(requestMark)) {
-                request.getSession().setAttribute(Attributes.ERROR_CHANGE_ORDER.getValue(),
-                        MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_ORDER.getValue()));
-                return ConfigurationManager.getProperty(Pages.PAGE_ORDERLIST.getValue());
+                request.getSession().setAttribute(Attribute.ERROR_CHANGE_ORDER.getValue(),
+                        MessageManager.getProperty(Message.MESSAGE_ERROR_CHANGE_ORDER.getValue()));
+                return ConfigurationManager.getProperty(Page.PAGE_ORDERLIST.getValue());
             }
             OrderInfoService service = new OrderInfoService();
             long id = Long.parseLong(requestId);
             int mark = Integer.parseInt(requestMark);
-            Client client = (Client) request.getSession().getAttribute(Attributes.CLIENT.getValue());
+            Client client = (Client) request.getSession().getAttribute(Attribute.CLIENT.getValue());
             long idClient = client.getId();
             optional = service.doService(id, idClient, mark);
-        } catch (ServiceException | DaoException | SQLException e) {
+        } catch (ServiceException e) {
             LOGGER.log(Level.ERROR, "Exception has occurred while changing order was processing. ", e);
             throw new CommandException(e);
         }
         if (optional.isEmpty()) {
-            request.getSession().setAttribute(Attributes.ERROR_CHANGE_ORDER.getValue(),
-                    MessageManager.getProperty(Messages.MESSAGE_ERROR_CHANGE_ORDER.getValue()));
-            return ConfigurationManager.getProperty(Pages.PAGE_ORDERLIST.getValue());
+            request.getSession().setAttribute(Attribute.ERROR_CHANGE_ORDER.getValue(),
+                    MessageManager.getProperty(Message.MESSAGE_ERROR_CHANGE_ORDER.getValue()));
+            return ConfigurationManager.getProperty(Page.PAGE_ORDERLIST.getValue());
         } else {
-            return ConfigurationManager.getProperty(Pages.PAGE_CONFIRM.getValue());
+            return ConfigurationManager.getProperty(Page.PAGE_CONFIRM.getValue());
         }
     }
 }

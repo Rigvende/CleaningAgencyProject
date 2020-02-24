@@ -5,7 +5,7 @@ import by.patrusova.project.connection.ConnectionPool;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.command.CommandProvider;
 import by.patrusova.project.exception.CommandException;
-import by.patrusova.project.util.stringholder.Parameters;
+import by.patrusova.project.util.stringholder.Parameter;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,8 +26,8 @@ public class ControlServlet extends HttpServlet {
         try {
             ConnectionPool.getInstance();
         } catch (DaoException e) {
-            LOGGER.log(Level.ERROR, "Cannot get instance of connection pool.");
-            e.printStackTrace();
+            LOGGER.log(Level.FATAL, "Cannot get instance of connection pool.");
+            throw new RuntimeException(e);
         }
     }
 
@@ -45,25 +45,28 @@ public class ControlServlet extends HttpServlet {
         try {
             ActionCommand command = provider.defineCommand(request);
             String page = command.execute(request);
-            if (request.getMethod().toLowerCase().equals(Parameters.POST.getValue())) {
+            if (request.getMethod().toLowerCase().equals(Parameter.POST.getValue())) {
                 response.sendRedirect(request.getContextPath() + page);
             } else {
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
                 dispatcher.forward(request, response);
             }
-        } catch (IOException | CommandException | ServletException e) {
+        } catch (IOException e) {
+            LOGGER.log(Level.ERROR, "Requested page not found.");
+            response.sendError(404);
+        } catch (CommandException | ServletException e) {
             LOGGER.log(Level.ERROR, "Processing request failed.");
             response.sendError(500);
         }
     }
 
     public void destroy() {
-        try { //todo это надо или автоматом?
+        try {
             ConnectionPool.getInstance().closeAllConnections();
             LOGGER.log(Level.INFO, "All connections has been closed and drivers has been deregistered.");
         } catch (DaoException e) {
             LOGGER.log(Level.ERROR, "Cannot close all connections in connection pool.");
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
         super.destroy();
     }

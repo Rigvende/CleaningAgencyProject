@@ -1,6 +1,5 @@
 package by.patrusova.project.connection;
 
-import by.patrusova.project.util.stringholder.Statements;
 import by.patrusova.project.exception.DaoException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -9,7 +8,6 @@ import java.sql.*;
 import java.util.Map;
 import java.util.Properties;
 import java.util.ResourceBundle;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
 
 public class ProxyConnection implements Connection {

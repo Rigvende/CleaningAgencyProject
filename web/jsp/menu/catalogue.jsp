@@ -17,6 +17,7 @@
     <jsp:include page="/WEB-INF/view/backToMain.jsp"/>
     </div>
 
+    <c:if test="${ not empty user and user.role eq 'client' }">
     <br/>
     <div style="margin-left: 50px">
     <form name="basketForm" method="post" action="${pageContext.request.contextPath}/controller">
@@ -25,6 +26,7 @@
     height: 30px" type="submit" value="<fmt:message key="button.tobasket"/>"/>
     </form>
     </div>
+    </c:if>
 
     <c:set var="services" scope="session" value="${catalogueList}"/>
     <c:set var="totalCount" scope="session" value="${catalogueList.size()}"/>
@@ -45,6 +47,7 @@
     </u></h5>
     </div>
 
+    <c:if test="${ not empty user and user.role eq 'client' }">
     <div style="color: #0c4f5b; font-size: 16px; font-family: 'Palatino Linotype', serif; margin-left: 50px">
     <fmt:message key="text.catalogue2"/>
     </div>
@@ -52,6 +55,7 @@
     <fmt:message key="text.catalogue3"/>
     </div>
     <br/>
+    </c:if>
 
     <div style="text-align: center">
     <a href="?start=${pageStart - perPage}"><<</a>
@@ -67,7 +71,9 @@
     <th><fmt:message key="field.service"/></th>
     <th><fmt:message key="field.cost"/></th>
     <th><fmt:message key="field.discount2"/></th>
+    <c:if test="${ not empty user and user.role eq 'client' }">
     <th><fmt:message key="field.check"/></th>
+    </c:if>
     </tr>
 
     <c:forEach var="catalogue" items="${catalogueList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
@@ -75,7 +81,8 @@
         <td><c:out value="${catalogue.id}" /></td>
         <td><c:out value="${catalogue.service}" /></td>
         <td><c:out value="${catalogue.cost}" /></td>
-        <td><c:out value="${catalogue.discount}" /></td>
+        <td><c:out value="${catalogue.sales}" /></td>
+        <c:if test="${ not empty user and user.role eq 'client' }">
         <td>
         <form name="positionForm" method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="select" />
@@ -86,6 +93,7 @@
         <input type="submit" value="<fmt:message key="button.confirm"/>" />
         </form>
         </td>
+        </c:if>
         </tr>
     </c:forEach>
     </table>

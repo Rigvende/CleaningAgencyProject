@@ -6,7 +6,7 @@ import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.dao.EntityFactory;
 import by.patrusova.project.entity.impl.BasketPosition;
 import by.patrusova.project.exception.DaoException;
-import by.patrusova.project.util.stringholder.Statements;
+import by.patrusova.project.util.stringholder.Statement;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -27,24 +27,33 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public boolean create(AbstractEntity entity) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
+    public boolean create(AbstractEntity entity) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in BasketDao create method. ", e);
+            throw new DaoException(e);
+        }
         BasketPosition position = (BasketPosition) entity;
         boolean isAdded;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement
-                    (Statements.SQL_ADD_POSITION.getValue());
+                    (Statement.SQL_ADD_POSITION.getValue());
             preparedStatement.setLong(1, position.getIdOrder());
             preparedStatement.setLong(2, position.getIdService());
             isAdded = preparedStatement.execute();
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in BasketDao create method. ", e);
+                    throw new DaoException(e);
+                }
             }
-            LOGGER.log(Level.ERROR,
-                    "Cannot add position to the basket. Request to table failed. ", e);
+            LOGGER.log(Level.ERROR,"Cannot add position to the basket. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
@@ -53,19 +62,29 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public boolean delete(AbstractEntity entity) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
+    public boolean delete(AbstractEntity entity) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in BasketDao delete method. ", e);
+            throw new DaoException(e);
+        }
         boolean isDeleted;
         BasketPosition position = (BasketPosition) entity;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = connection.prepareStatement(Statements.SQL_DELETE_POSITION.getValue());
+            preparedStatement = connection.prepareStatement(Statement.SQL_DELETE_POSITION.getValue());
             preparedStatement.setLong(1, position.getIdService());
             isDeleted = preparedStatement.execute();
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in BasketDao delete method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot delete position to the basket. Request to table failed. ", e);
             throw new DaoException(e);
@@ -77,14 +96,19 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
 
     @Override
     public boolean update(AbstractEntity entity) {
-        return false;
+        throw new UnsupportedOperationException();
     }
 
     @Override
-    public List<AbstractEntity> findAll() throws DaoException, SQLException {
-        connection.setAutoCommit(false);
+    public List<AbstractEntity> findAll() throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in BasketDao findAll method. ", e);
+            throw new DaoException(e);
+        }
         List<AbstractEntity> positions = new ArrayList<>();
-        Statement statement = null;
+        java.sql.Statement statement = null;
         try {
             statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(SQL_SELECT_ALL_BASKET_POSITIONS);
@@ -95,7 +119,12 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in BasketDao findAll method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR,
                     "Cannot find all positions of the basket. Request to table failed. ", e);
@@ -107,13 +136,18 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public AbstractEntity findEntityById(long id) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
+    public AbstractEntity findEntityById(long id) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in BasketDao findEntityById method. ", e);
+            throw new DaoException(e);
+        }
         BasketPosition position;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement
-                    (Statements.SQL_SELECT_BASKET_POSITION_BY_ID.getValue());
+                    (Statement.SQL_SELECT_BASKET_POSITION_BY_ID.getValue());
             preparedStatement.setLong(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
@@ -121,7 +155,12 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in BasketDao findEntityById method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR,
                     "Cannot find basket position by ID. Request to table failed. ", e);
@@ -132,9 +171,14 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
         return position;
     }
 
-    public boolean findId(long id) throws DaoException, SQLException {
-        connection.setAutoCommit(false);
-        Statement statement = connection.createStatement();
+    public boolean findId(long id) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in BasketDao findId method. ", e);
+            throw new DaoException(e);
+        }
+        java.sql.Statement statement = connection.createStatement();
         try {
             ResultSet resultSet = statement.executeQuery(SQL_SELECT_ID);
             while (resultSet.next()) {
@@ -145,7 +189,12 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
             }
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in BasketDao findId method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot find id_basket in DB. Request to table failed.", e);
             throw new DaoException(e);
@@ -155,13 +204,18 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
         return false;
     }
 
-    public List<BasketPosition> findAllByOrderId(long id) throws SQLException, DaoException {
-        connection.setAutoCommit(false);
+    public List<BasketPosition> findAllByOrderId(long id) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in BasketDao findAllByOrderId method. ", e);
+            throw new DaoException(e);
+        }
         List<BasketPosition> positions = new ArrayList<>();
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement
-                    (Statements.SQL_SELECT_BASKET_POSITION_BY_ID.getValue());
+                    (Statement.SQL_SELECT_BASKET_POSITION_BY_ID.getValue());
             preparedStatement.setLong(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
@@ -171,7 +225,12 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
             connection.commit();
         } catch (SQLException | DaoException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in BasketDao findAllByOrderId method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR,
                     "Cannot find all positions of the basket. Request to table failed. ", e);
@@ -182,14 +241,19 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
         return positions;
     }
 
-    public boolean deleteAllByOrderId(long id) throws SQLException, DaoException {
-        connection.setAutoCommit(false);
+    public boolean deleteAllByOrderId(long id) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,"Cannot set autocommit false in BasketDao deleteAllByOrderId method. ", e);
+            throw new DaoException(e);
+        }
         List<BasketPosition> list = findAllByOrderId(id);
         int count = 0;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement
-                    (Statements.SQL_DELETE_POSITION_ORDER.getValue());
+                    (by.patrusova.project.util.stringholder.Statement.SQL_DELETE_POSITION_ORDER.getValue());
             for (BasketPosition position : list) {
                 preparedStatement.setLong(1, id);
                 preparedStatement.setLong(2, position.getId());
@@ -207,7 +271,12 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
             }
         } catch (SQLException e) {
             if (connection != null) {
-                connection.rollback();
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,"Cannot do rollback in BasketDao deleteAllByOrderId method. ", e);
+                    throw new DaoException(e);
+                }
             }
             LOGGER.log(Level.ERROR, "Cannot delete position to the basket. Request to table failed. ", e);
             throw new DaoException(e);

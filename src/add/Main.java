@@ -147,23 +147,23 @@ public class Main {
 //        PreparedStatement preparedStatement = null;
 //        ProxyConnection conn = ProxyConnection.createProxyConnection();
 //        preparedStatement = conn.prepareStatement
-//                (Statements.SQL_FIND_CLEANERS_BY_ROLE.getValue());
+//                (Statement.SQL_FIND_CLEANERS_BY_ROLE.getValue());
 //        preparedStatement.setString(1, "cleaner");
 //        ResultSet resultSet1 = preparedStatement.executeQuery();
 //        while (resultSet1.next()) {
-//            User user = new User(resultSet1.getLong(UserColumns.ID_USER.getValue()),
-//                    resultSet1.getString(UserColumns.LOGIN.getValue()),
-//                    resultSet1.getString(UserColumns.PASSWORD.getValue()),
-//                    resultSet1.getString(UserColumns.ROLE.getValue()),
-//                    resultSet1.getString(UserColumns.NAME.getValue()),
-//                    resultSet1.getString(UserColumns.LASTNAME.getValue()),
-//                    resultSet1.getLong(UserColumns.PHONE.getValue()),
-//                    resultSet1.getString(UserColumns.ADDRESS.getValue()),
-//                    resultSet1.getString(UserColumns.EMAIL.getValue()),
-//                    new Cleaner(resultSet1.getLong(CleanerColumns.ID_CLEANER.getValue()),
-//                            resultSet1.getBigDecimal(CleanerColumns.COMMISSION.getValue()),
-//                            resultSet1.getString(CleanerColumns.NOTES.getValue()),
-//                            resultSet1.getLong(CleanerColumns.ID_USER.getValue())));
+//            User user = new User(resultSet1.getLong(UserColumn.ID_USER.getValue()),
+//                    resultSet1.getString(UserColumn.LOGIN.getValue()),
+//                    resultSet1.getString(UserColumn.PASSWORD.getValue()),
+//                    resultSet1.getString(UserColumn.ROLE.getValue()),
+//                    resultSet1.getString(UserColumn.NAME.getValue()),
+//                    resultSet1.getString(UserColumn.LASTNAME.getValue()),
+//                    resultSet1.getLong(UserColumn.PHONE.getValue()),
+//                    resultSet1.getString(UserColumn.ADDRESS.getValue()),
+//                    resultSet1.getString(UserColumn.EMAIL.getValue()),
+//                    new Cleaner(resultSet1.getLong(CleanerColumn.ID_CLEANER.getValue()),
+//                            resultSet1.getBigDecimal(CleanerColumn.COMMISSION.getValue()),
+//                            resultSet1.getString(CleanerColumn.NOTES.getValue()),
+//                            resultSet1.getLong(CleanerColumn.ID_USER.getValue())));
 //            users.add(user);
 //        }
 //        System.out.println(users);
@@ -172,8 +172,8 @@ public class Main {
 //        Map<String, Boolean> validationMap = new HashMap<>();
 //        String id = "0";
 //        String status = "done";
-//        validationMap.put(Parameters.ID_CLEANER.getValue(), NumberValidator.isValidExistedID(id));
-//        validationMap.put(Parameters.STATUS.getValue(), StringValidator.isValidStatus(status));
+//        validationMap.put(Parameter.ID_CLEANER.getValue(), NumberValidator.isValidExistedID(id));
+//        validationMap.put(Parameter.STATUS.getValue(), StringValidator.isValidStatus(status));
 //        System.out.println(validationMap);
 
 
@@ -185,10 +185,10 @@ public class Main {
 //        Map<String, Boolean> validationMap = new HashMap<>();
 //        double discount = 0.05;
 //        String notes = "";
-//        validationMap.put(Parameters.DISCOUNT.getValue(),
-//                NumberValidator.isValidDecimal(Parameters.DISCOUNT.getValue(), discount));
-//        validationMap.put(Parameters.NOTES.getValue(),
-//                StringValidator.isValidStringSize(Parameters.NOTES.getValue(), notes));
+//        validationMap.put(Parameter.DISCOUNT.getValue(),
+//                NumberValidator.isValidDecimal(Parameter.DISCOUNT.getValue(), discount));
+//        validationMap.put(Parameter.NOTES.getValue(),
+//                StringValidator.isValidStringSize(Parameter.NOTES.getValue(), notes));
 //        System.out.println(validationMap);
 //
 //        CleanerInfoService cleanerInfoService = new CleanerInfoService();
@@ -228,22 +228,22 @@ public class Main {
 //        String phone = "1111111111";
 //        String email = "ivanov@tut.by";
 //        String address = "";
-//        validationMap.put(Parameters.LOGINREG.getValue(),
+//        validationMap.put(Parameter.LOGINREG.getValue(),
 //                RegistrationDataValidator.isValidLogin(login));
-//        validationMap.put(Parameters.PASSWORDREG.getValue(),
+//        validationMap.put(Parameter.PASSWORDREG.getValue(),
 //                (RegistrationDataValidator.isValidPassword(password)
 //                        && RegistrationDataValidator.isPasswordRepeated(password, passwordRepeated)));
-//        validationMap.put(Parameters.FIRSTNAME.getValue(),
-//                StringValidator.isValidStringSize(Parameters.NAME.getValue(), name));
-//        validationMap.put(Parameters.LASTNAME.getValue(),
-//                StringValidator.isValidStringSize(Parameters.LASTNAME.getValue(), lastname));
-//        validationMap.put(Parameters.PHONE.getValue(),
+//        validationMap.put(Parameter.FIRSTNAME.getValue(),
+//                StringValidator.isValidStringSize(Parameter.NAME.getValue(), name));
+//        validationMap.put(Parameter.LASTNAME.getValue(),
+//                StringValidator.isValidStringSize(Parameter.LASTNAME.getValue(), lastname));
+//        validationMap.put(Parameter.PHONE.getValue(),
 //                RegistrationDataValidator.isValidPhone(phone));
-//        validationMap.put(Parameters.EMAIL.getValue(),
+//        validationMap.put(Parameter.EMAIL.getValue(),
 //                RegistrationDataValidator.isValidEmail(email)
-//                        && StringValidator.isValidStringSize(Parameters.EMAIL.getValue(), email));
-//        validationMap.put(Parameters.ADDRESS.getValue(),
-//                StringValidator.isValidStringSize(Parameters.ADDRESS.getValue(), address));
+//                        && StringValidator.isValidStringSize(Parameter.EMAIL.getValue(), email));
+//        validationMap.put(Parameter.ADDRESS.getValue(),
+//                StringValidator.isValidStringSize(Parameter.ADDRESS.getValue(), address));
 //        System.out.println(new Main().createEntity(validationMap));
 //
 //List<User> list = new ArrayList<>();

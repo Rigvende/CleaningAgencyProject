@@ -4,7 +4,8 @@ import java.util.ResourceBundle;
 
 public class ConfigurationManager {
 
-    private static ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle("resources.configurationPages");
+    private static ResourceBundle RESOURCE_BUNDLE
+            = ResourceBundle.getBundle("resources.configurationPages");
 
     private ConfigurationManager() { }
 

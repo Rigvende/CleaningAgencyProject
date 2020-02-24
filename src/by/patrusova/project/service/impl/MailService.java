@@ -1,8 +1,6 @@
 package by.patrusova.project.service.impl;
 
-import by.patrusova.project.entity.AbstractEntity;
-import by.patrusova.project.exception.CommandException;
-import by.patrusova.project.service.Serviceable;
+import by.patrusova.project.exception.ServiceException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,18 +9,16 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Optional;
 import java.util.Properties;
 
-public class MailService implements Serviceable {
+public class MailService {
 
     private final static Logger LOGGER = LogManager.getLogger();
     private static final String PATH_CONFIG = "mail.properties";
     private static final String USER = "mail.user";
     private static final String PASSWORD = "mail.password";
 
-    public boolean doService(String sendTo, String subject, String messageToSend) throws CommandException {
-
+    public boolean doService(String sendTo, String subject, String messageToSend) throws ServiceException {
         Properties properties = loadProperties();
         final String user = properties.getProperty(USER);
         final String password = properties.getProperty(PASSWORD);
@@ -41,10 +37,11 @@ public class MailService implements Serviceable {
             Transport.send(message);
         } catch (MessagingException e) {
             LOGGER.log(Level.ERROR, "Error while sending e-mail has occurred. ", e);
-            throw new CommandException(e);
+            throw new ServiceException(e);
         }
         return true;
     }
+
     private Properties loadProperties(){
         Properties properties = new Properties();
         try (InputStream inputStream = getClass().getClassLoader()
@@ -56,10 +53,5 @@ public class MailService implements Serviceable {
             throw new RuntimeException(e);
         }
         return properties;
-    }
-
-    @Override
-    public Optional<AbstractEntity> doService(AbstractEntity entity) {
-        return Optional.empty();
     }
 }

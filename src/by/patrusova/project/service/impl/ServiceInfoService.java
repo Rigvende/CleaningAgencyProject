@@ -8,8 +8,8 @@ import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.EntityCreator;
 import by.patrusova.project.service.Serviceable;
-import by.patrusova.project.util.stringholder.Attributes;
-import by.patrusova.project.util.stringholder.Parameters;
+import by.patrusova.project.util.stringholder.Attribute;
+import by.patrusova.project.util.stringholder.Parameter;
 import by.patrusova.project.validator.NumberValidator;
 import by.patrusova.project.validator.StringValidator;
 import org.apache.logging.log4j.Level;
@@ -17,7 +17,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -28,83 +27,83 @@ public class ServiceInfoService implements Serviceable, EntityCreator {
 
     @Override
     public Optional<AbstractEntity> doService(AbstractEntity entity) throws ServiceException {
-        DaoFactory factory = new DaoFactory();
         Service service = (Service) entity;
         try {
-            ServiceDao dao = factory.createServiceDao();
+            ServiceDao dao = DaoFactory.createServiceDao();
             return dao.update(service) ? Optional.empty() : Optional.of(service);
-        } catch (DaoException | SQLException e) {
+        } catch (DaoException e) {
+            LOGGER.log(Level.ERROR,
+                    "Exception in ServiceInfoService while updating service has occurred. ", e);
             throw new ServiceException(e);
         }
     }
 
+    //add service
     public Optional<AbstractEntity> doServiceAdd(AbstractEntity entity) throws ServiceException {
-        DaoFactory factory = new DaoFactory();
         Service service = (Service) entity;
         try {
-            ServiceDao dao = factory.createServiceDao();
+            ServiceDao dao = DaoFactory.createServiceDao();
             return dao.create(service) ? Optional.empty() : Optional.of(service);
-        } catch (DaoException | SQLException e) {
+        } catch (DaoException e) {
             throw new ServiceException(e);
         }
     }
 
-    //создание экземпляра услуги с внесенными изменениями
+    //create instance of service with changes
     @Override
     public Optional<AbstractEntity> createEntity(HttpServletRequest request) {
         Service updatedService = (Service) request.getSession()
-                .getAttribute(Attributes.SERVICE.getValue());
+                .getAttribute(Attribute.SERVICE.getValue());
         if (!validate(request).containsValue(false)) {
             updatedService.setCost(BigDecimal.valueOf(Double.parseDouble
-                    (request.getParameter(Parameters.COST.getValue()))));
-            updatedService.setDiscount(BigDecimal.valueOf(Double.parseDouble
-                    (request.getParameter(Parameters.DISCOUNT.getValue()))));
-            updatedService.setService(request.getParameter(Parameters.SERVICECHANGE.getValue()));
+                    (request.getParameter(Parameter.COST.getValue()))));
+            updatedService.setSales(BigDecimal.valueOf(Double.parseDouble
+                    (request.getParameter(Parameter.SALES.getValue()))));
+            updatedService.setService(request.getParameter(Parameter.SERVICECHANGE.getValue()));
             return Optional.of(updatedService);
         } else {
             return Optional.empty();
         }
     }
 
-    //добавление новой услуги
+    //create new service in DB
     public Optional<AbstractEntity> createNewEntity(HttpServletRequest request) {
         Service newService = new Service();
         if (!validate(request).containsValue(false)) {
             newService.setId(0);
             newService.setCost(BigDecimal.valueOf(Double.parseDouble
-                    (request.getParameter(Parameters.COST.getValue()))));
-            newService.setDiscount(BigDecimal.valueOf(Double.parseDouble
-                    (request.getParameter(Parameters.DISCOUNT.getValue()))));
-            newService.setService(request.getParameter(Parameters.SERVICECHANGE.getValue()));
+                    (request.getParameter(Parameter.COST.getValue()))));
+            newService.setSales(BigDecimal.valueOf(Double.parseDouble
+                    (request.getParameter(Parameter.SALES.getValue()))));
+            newService.setService(request.getParameter(Parameter.SERVICECHANGE.getValue()));
             return Optional.of(newService);
         } else {
             return Optional.empty();
         }
     }
 
-    //валидация введенных данных
+    //validation
     private Map<String, Boolean> validate(HttpServletRequest request) {
         Map<String, Boolean> validationMap = new HashMap<>();
-        String service = request.getParameter(Parameters.SERVICECHANGE.getValue());
-        String cost = request.getParameter(Parameters.COST.getValue());
-        String discount = request.getParameter(Parameters.DISCOUNT.getValue());
-        validationMap.put(Parameters.SERVICECHANGE.getValue(),
-                StringValidator.isValidStringSize(Parameters.SERVICE.getValue(), service));
-        validationMap.put(Parameters.DISCOUNT.getValue(),
-                NumberValidator.isValidDecimal(discount));
-        validationMap.put(Parameters.COST.getValue(),
+        String service = request.getParameter(Parameter.SERVICECHANGE.getValue());
+        String cost = request.getParameter(Parameter.COST.getValue());
+        String sales = request.getParameter(Parameter.SALES.getValue());
+        validationMap.put(Parameter.SERVICECHANGE.getValue(),
+                StringValidator.isValidStringSize(Parameter.SERVICE.getValue(), service));
+        validationMap.put(Parameter.SALES.getValue(),
+                NumberValidator.isValidDecimal(sales));
+        validationMap.put(Parameter.COST.getValue(),
                 NumberValidator.isValidCost(cost));
         return validationMap;
     }
 
-    //находим услугу в бд и возвращаем
+    //get existing service from DB
     public Service getService(AbstractEntity entity) throws ServiceException {
-        DaoFactory factory = new DaoFactory();
         Service service = (Service) entity;
         try {
-            ServiceDao dao = factory.createServiceDao();
+            ServiceDao dao = DaoFactory.createServiceDao();
             service = (Service) dao.findEntityById(service.getId());
-        } catch (DaoException | SQLException e) {
+        } catch (DaoException e) {
             LOGGER.log(Level.ERROR, "Exception while finding service has occurred. ", e);
             throw new ServiceException(e);
         }

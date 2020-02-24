@@ -7,18 +7,24 @@ import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.Serviceable;
-import java.sql.SQLException;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.Optional;
 
 public class LoginService implements Serviceable {
 
+    private final static Logger LOGGER = LogManager.getLogger();
+
+    @Override
     public Optional<AbstractEntity> doService(AbstractEntity entity) throws ServiceException {
         User user = (User) entity;
-        DaoFactory factory = new DaoFactory();
         try {
-            UserDao dao = factory.createUserDao();
+            UserDao dao = DaoFactory.createUserDao();
             user = (User) dao.findEntityByLoginPass(user.getLogin(), user.getPassword());
-        } catch (SQLException | DaoException e) {
+        } catch (DaoException e) {
+            LOGGER.log(Level.ERROR,
+                    "Exception in LoginService while logging in has occurred. ", e);
             throw new ServiceException(e);
         }
         return user != null ? Optional.of(user) : Optional.empty();

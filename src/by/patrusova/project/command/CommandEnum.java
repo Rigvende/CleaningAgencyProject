@@ -197,6 +197,11 @@ public enum CommandEnum {
             this.command = new SelectCommand();
         }
     },
+    MAKEORDER {
+        {
+            this.command = new MakeOrderCommand();
+        }
+    },
     MAIL {
         {
             this.command = new MailCommand();

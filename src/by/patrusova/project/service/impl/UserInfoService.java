@@ -8,10 +8,14 @@ import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.EntityCreator;
 import by.patrusova.project.service.Serviceable;
-import by.patrusova.project.util.stringholder.Attributes;
-import by.patrusova.project.util.stringholder.Parameters;
+import by.patrusova.project.util.stringholder.Attribute;
+import by.patrusova.project.util.stringholder.Parameter;
 import by.patrusova.project.validator.RegistrationDataValidator;
 import by.patrusova.project.validator.StringValidator;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -20,33 +24,36 @@ import java.util.Optional;
 
 public class UserInfoService implements Serviceable, EntityCreator {
 
-    //внесение изменений в юзер-инфо
+    private final static Logger LOGGER = LogManager.getLogger();
+
+    //update user
     @Override
-    public Optional<AbstractEntity> doService(AbstractEntity entity) throws ServiceException, SQLException {
-        DaoFactory factory = new DaoFactory();
+    public Optional<AbstractEntity> doService(AbstractEntity entity) throws ServiceException {
         User user = (User) entity;
         try {
-            UserDao dao = factory.createUserDao();
+            UserDao dao = DaoFactory.createUserDao();
             if (dao.update(user)) {
                 user = null;
             }
         } catch (DaoException e) {
+            LOGGER.log(Level.ERROR,
+                    "Exception in UserInfoService while updating user has occurred. ", e);
             throw new ServiceException(e);
         }
         return user != null ? Optional.of(user) : Optional.empty();
     }
 
-    //создание измененного юзера
+    //create instance of user with changes
     @Override
     public Optional<AbstractEntity> createEntity(HttpServletRequest request) {
-        User updatedUser = (User)request.getSession().getAttribute(Attributes.USER.getValue());
+        User updatedUser = (User)request.getSession().getAttribute(Attribute.USER.getValue());
         if (!validate(request).containsValue(false)) {
-            updatedUser.setName(request.getParameter(Parameters.FIRSTNAME.getValue()));
-            updatedUser.setLastname(request.getParameter(Parameters.LASTNAME.getValue()));
+            updatedUser.setName(request.getParameter(Parameter.FIRSTNAME.getValue()));
+            updatedUser.setLastname(request.getParameter(Parameter.LASTNAME.getValue()));
             updatedUser.setRole(updatedUser.getRole());
-            updatedUser.setPhone(Long.parseLong(request.getParameter(Parameters.PHONE.getValue())));
-            updatedUser.setAddress(request.getParameter(Parameters.ADDRESS.getValue()));
-            updatedUser.setEmail(request.getParameter(Parameters.EMAIL.getValue()));
+            updatedUser.setPhone(Long.parseLong(request.getParameter(Parameter.PHONE.getValue())));
+            updatedUser.setAddress(request.getParameter(Parameter.ADDRESS.getValue()));
+            updatedUser.setEmail(request.getParameter(Parameter.EMAIL.getValue()));
             return Optional.of(updatedUser);
         } else {
             return Optional.empty();
@@ -55,22 +62,22 @@ public class UserInfoService implements Serviceable, EntityCreator {
 
     private Map<String, Boolean> validate(HttpServletRequest request) {
         Map<String, Boolean> validationMap = new HashMap<>();
-        String name = request.getParameter(Parameters.FIRSTNAME.getValue());
-        String lastname = request.getParameter(Parameters.LASTNAME.getValue());
-        String phone = request.getParameter(Parameters.PHONE.getValue());
-        String email = request.getParameter(Parameters.EMAIL.getValue());
-        String address = request.getParameter(Parameters.ADDRESS.getValue());
-        validationMap.put(Parameters.FIRSTNAME.getValue(),
-                StringValidator.isValidStringSize(Parameters.NAME.getValue(), name));
-        validationMap.put(Parameters.LASTNAME.getValue(),
-                StringValidator.isValidStringSize(Parameters.LASTNAME.getValue(), lastname));
-        validationMap.put(Parameters.PHONE.getValue(),
+        String name = request.getParameter(Parameter.FIRSTNAME.getValue());
+        String lastname = request.getParameter(Parameter.LASTNAME.getValue());
+        String phone = request.getParameter(Parameter.PHONE.getValue());
+        String email = request.getParameter(Parameter.EMAIL.getValue());
+        String address = request.getParameter(Parameter.ADDRESS.getValue());
+        validationMap.put(Parameter.FIRSTNAME.getValue(),
+                StringValidator.isValidStringSize(Parameter.NAME.getValue(), name));
+        validationMap.put(Parameter.LASTNAME.getValue(),
+                StringValidator.isValidStringSize(Parameter.LASTNAME.getValue(), lastname));
+        validationMap.put(Parameter.PHONE.getValue(),
                 RegistrationDataValidator.isValidPhone(phone));
-        validationMap.put(Parameters.EMAIL.getValue(),
+        validationMap.put(Parameter.EMAIL.getValue(),
                 RegistrationDataValidator.isValidEmail(email)
-                        && StringValidator.isValidStringSize(Parameters.EMAIL.getValue(), email));
-        validationMap.put(Parameters.ADDRESS.getValue(),
-                StringValidator.isValidStringSize(Parameters.ADDRESS.getValue(), address));
+                        && StringValidator.isValidStringSize(Parameter.EMAIL.getValue(), email));
+        validationMap.put(Parameter.ADDRESS.getValue(),
+                StringValidator.isValidStringSize(Parameter.ADDRESS.getValue(), address));
         return validationMap;
     }
 }

@@ -10,37 +10,34 @@ import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
-import by.patrusova.project.service.Serviceable;
-import by.patrusova.project.util.stringholder.Attributes;
-import java.sql.SQLException;
+import by.patrusova.project.util.stringholder.Attribute;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.Optional;
 
-public class RoleService implements Serviceable {
+public class RoleService {
 
-    @Override
-    public Optional<AbstractEntity> doService(AbstractEntity entity) {
-        return Optional.empty();
-    }
+    private final static Logger LOGGER = LogManager.getLogger();
 
     public Optional<AbstractEntity> doService(long id, String role) throws ServiceException {
-        DaoFactory factory = new DaoFactory();
         User user;
         try {
-            UserDao userDao = factory.createUserDao();
+            UserDao userDao = DaoFactory.createUserDao();
             user = (User) userDao.findEntityById(id);
-            if (user.getRole().equals(Attributes.GUEST.getValue())) {
+            if (user.getRole().equals(Attribute.GUEST.getValue())) {
                 user.setRole(role);
                 if (!userDao.update(user)) {
                     switch (role) {
                         case "admin":
                             return Optional.of(user);
                         case "client":
-                            ClientDao clientDao = factory.createClientDao();
+                            ClientDao clientDao = DaoFactory.createClientDao();
                             Client client = new Client();
                             client.setIdUser(id);
                             return clientDao.create(client) ? Optional.empty() : Optional.of(user);
                         case "cleaner":
-                            CleanerDao cleanerDao = factory.createCleanerDao();
+                            CleanerDao cleanerDao = DaoFactory.createCleanerDao();
                             Cleaner cleaner = new Cleaner();
                             cleaner.setIdUser(id);
                             return cleanerDao.create(cleaner) ? Optional.empty() : Optional.of(user);
@@ -51,7 +48,9 @@ public class RoleService implements Serviceable {
             } else {
                 return Optional.empty();
             }
-        } catch (DaoException | SQLException e) {
+        } catch (DaoException e) {
+            LOGGER.log(Level.ERROR,
+                    "Exception in RoleService while changing role has occurred. ", e);
             throw new ServiceException(e);
         }
         return Optional.of(user);

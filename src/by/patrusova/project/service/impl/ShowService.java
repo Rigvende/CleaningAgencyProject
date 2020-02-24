@@ -6,36 +6,40 @@ import by.patrusova.project.dao.impl.ServiceDao;
 import by.patrusova.project.dao.impl.UserDao;
 import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.exception.DaoException;
-import by.patrusova.project.service.Serviceable;
-import java.sql.SQLException;
+import by.patrusova.project.exception.ServiceException;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
-public class ShowService implements Serviceable {
+public class ShowService {
 
-    @Override
-    public Optional<AbstractEntity> doService(AbstractEntity entity) {
-        return Optional.empty();
-    }
+    private final static Logger LOGGER = LogManager.getLogger();
 
-    public List<AbstractEntity> doService(String condition) throws DaoException, SQLException {
-        DaoFactory factory = new DaoFactory();
-        switch (condition) {
-            case "guest":
-            case "admin":
-            case "client":
-            case "cleaner":
-                UserDao userDao = factory.createUserDao();
-                return userDao.findUsersByRole(condition);
-            case "order":
-                OrderDao orderDao = factory.createOrderDao();
-                return orderDao.findAll();
-            case "catalogue":
-                ServiceDao serviceDao = factory.createServiceDao();
-                return serviceDao.findAll();
-            default:
-                return new ArrayList<>();
+    //find entity lists in DB
+    public List<AbstractEntity> doService(String condition) throws ServiceException {
+        try {
+            switch (condition) {
+                case "guest":
+                case "admin":
+                case "client":
+                case "cleaner":
+                    UserDao userDao = DaoFactory.createUserDao();
+                    return userDao.findUsersByRole(condition);
+                case "order":
+                    OrderDao orderDao = DaoFactory.createOrderDao();
+                    return orderDao.findAll();
+                case "catalogue":
+                    ServiceDao serviceDao = DaoFactory.createServiceDao();
+                    return serviceDao.findAll();
+                default:
+                    return new ArrayList<>();
+            }
+        } catch (DaoException e) {
+            LOGGER.log(Level.ERROR,
+                    "Exception in ShowService while finding entities has occurred. ", e);
+            throw new ServiceException(e);
         }
     }
 }
