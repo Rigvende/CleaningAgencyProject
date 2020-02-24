@@ -2,10 +2,7 @@ package by.patrusova.project.command;
 
 import by.patrusova.project.command.impl.*;
 import by.patrusova.project.command.impl.change.*;
-import by.patrusova.project.command.impl.menu.BasketCommand;
-import by.patrusova.project.command.impl.menu.CatalogueCommand;
-import by.patrusova.project.command.impl.menu.InfoCommand;
-import by.patrusova.project.command.impl.menu.ProfileCommand;
+import by.patrusova.project.command.impl.menu.*;
 import by.patrusova.project.command.impl.show.*;
 
 public enum CommandEnum {
@@ -193,6 +190,11 @@ public enum CommandEnum {
     CANCEL {
         {
             this.command = new CancelCommand();
+        }
+    },
+    SELECT {
+        {
+            this.command = new SelectCommand();
         }
     },
     MAIL {

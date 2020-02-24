@@ -38,7 +38,6 @@ public class ClientInfoService implements Serviceable, EntityCreator {
                 client = null;
             }
         } catch (DaoException | SQLException e) {
-            LOGGER.log(Level.ERROR, "Exception while updating client's info has occurred. ", e);
             throw new ServiceException(e);
         }
         return client != null ? Optional.of(client) : Optional.empty();
@@ -54,7 +53,6 @@ public class ClientInfoService implements Serviceable, EntityCreator {
                 client = null;
             }
         } catch (DaoException | SQLException e) {
-            LOGGER.log(Level.ERROR, "Exception while updating client's info has occurred. ", e);
             throw new ServiceException(e);
         }
         return client != null ? Optional.of(client) : Optional.empty();
@@ -78,7 +76,6 @@ public class ClientInfoService implements Serviceable, EntityCreator {
             }
             return Optional.empty();
         } catch (DaoException | SQLException e) {
-            LOGGER.log(Level.ERROR, "Exception while updating client has occurred. ", e);
             throw new ServiceException(e);
         }
     }

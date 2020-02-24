@@ -12,16 +12,10 @@ import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.Serviceable;
 import by.patrusova.project.util.stringholder.Attributes;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import java.sql.SQLException;
 import java.util.Optional;
 
 public class RoleService implements Serviceable {
-
-    private final static Logger LOGGER = LogManager.getLogger();
 
     @Override
     public Optional<AbstractEntity> doService(AbstractEntity entity) {
@@ -58,7 +52,6 @@ public class RoleService implements Serviceable {
                 return Optional.empty();
             }
         } catch (DaoException | SQLException e) {
-            LOGGER.log(Level.ERROR, "Exception while setting role has occurred. ", e);
             throw new ServiceException(e);
         }
         return Optional.of(user);

@@ -7,15 +7,10 @@ import by.patrusova.project.entity.impl.Order;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.Serviceable;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import java.sql.SQLException;
 import java.util.Optional;
 
 public class CancelOrderService implements Serviceable {
-
-    private final static Logger LOGGER = LogManager.getLogger();
 
     @Override
     public Optional<AbstractEntity> doService(AbstractEntity entity) throws ServiceException {
@@ -33,7 +28,6 @@ public class CancelOrderService implements Serviceable {
                 return Optional.empty();
             }
         } catch (SQLException | DaoException e) {
-            LOGGER.log(Level.ERROR, "Exception while cancelling order has occurred. ", e);
             throw new ServiceException(e);
         }
     }

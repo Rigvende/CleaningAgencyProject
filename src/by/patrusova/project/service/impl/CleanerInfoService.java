@@ -36,7 +36,6 @@ public class CleanerInfoService implements Serviceable, EntityCreator {
                 cleaner = null;
             }
         } catch (DaoException | SQLException e) {
-            LOGGER.log(Level.ERROR, "Exception while updating client's info has occurred. ", e);
             throw new ServiceException(e);
         }
         return cleaner != null ? Optional.of(cleaner) : Optional.empty();

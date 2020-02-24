@@ -1,6 +1,5 @@
 package by.patrusova.project.service.impl;
 
-import by.patrusova.project.dao.AbstractDao;
 import by.patrusova.project.dao.DaoFactory;
 import by.patrusova.project.dao.impl.ServiceDao;
 import by.patrusova.project.entity.AbstractEntity;
@@ -16,7 +15,6 @@ import by.patrusova.project.validator.StringValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
 import java.sql.SQLException;
@@ -36,19 +34,17 @@ public class ServiceInfoService implements Serviceable, EntityCreator {
             ServiceDao dao = factory.createServiceDao();
             return dao.update(service) ? Optional.empty() : Optional.of(service);
         } catch (DaoException | SQLException e) {
-            LOGGER.log(Level.ERROR, "Exception while updating service has occurred. ", e);
             throw new ServiceException(e);
         }
     }
 
-    public Optional<AbstractEntity>  doServiceAdd(AbstractEntity entity) throws ServiceException {
+    public Optional<AbstractEntity> doServiceAdd(AbstractEntity entity) throws ServiceException {
         DaoFactory factory = new DaoFactory();
         Service service = (Service) entity;
         try {
             ServiceDao dao = factory.createServiceDao();
             return dao.create(service) ? Optional.empty() : Optional.of(service);
         } catch (DaoException | SQLException e) {
-            LOGGER.log(Level.ERROR, "Exception while updating service has occurred. ", e);
             throw new ServiceException(e);
         }
     }

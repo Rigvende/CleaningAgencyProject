@@ -6,6 +6,7 @@ import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.dao.EntityFactory;
 import by.patrusova.project.entity.impl.*;
 import by.patrusova.project.exception.DaoException;
+import by.patrusova.project.util.column.OrderColumns;
 import by.patrusova.project.util.stringholder.Statements;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -41,7 +42,34 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             preparedStatement.setString(4, "registered");
             preparedStatement.setString(5, null);
             preparedStatement.setLong(6, order.getIdClient());
-            preparedStatement.setLong(6, 0);
+            isAdded = preparedStatement.execute();
+            connection.commit();
+        } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
+            LOGGER.log(Level.ERROR, "Cannot add order. Request to table failed. ", e);
+            throw new DaoException(e);
+        } finally {
+            closeStatement(preparedStatement);
+        }
+        return isAdded;
+    }
+
+    public boolean createNew(AbstractEntity entity) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
+        Order order = (Order) entity;
+        boolean isAdded;
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_ADD_ORDER.getValue());
+            preparedStatement.setLong(1, 0);
+            preparedStatement.setDate(2, null);
+            preparedStatement.setDate(3, null);
+            preparedStatement.setString(4, "new");
+            preparedStatement.setString(5, null);
+            preparedStatement.setLong(6, order.getIdClient());
             isAdded = preparedStatement.execute();
             connection.commit();
         } catch (SQLException e) {
@@ -57,8 +85,30 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
     }
 
     @Override
-    public boolean delete(AbstractEntity entity) {
-        return false;
+    public boolean delete(AbstractEntity entity) throws SQLException, DaoException {
+        connection.setAutoCommit(false);
+        boolean isDeleted;
+        Order order = (Order)entity;
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_DELETE_ORDER.getValue());
+            preparedStatement.setLong(1, order.getId());
+            isDeleted = preparedStatement.execute();
+            if (!findId(order.getId())) {
+                isDeleted = true;
+            }
+            connection.commit();
+        } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
+            LOGGER.log(Level.ERROR, "Cannot delete service. Request to table failed. ", e);
+            throw new DaoException(e);
+        } finally {
+            closeStatement(preparedStatement);
+        }
+        return isDeleted;
     }
 
     @Override
@@ -252,5 +302,32 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             closeStatement(preparedStatement);
         }
         return isUpdated;
+    }
+
+    public AbstractEntity findNew(AbstractEntity entity) throws DaoException, SQLException {
+        connection.setAutoCommit(false);
+        Order order = (Order) entity;
+        PreparedStatement preparedStatement = null;
+        try {
+            if (order.getOrderStatus().equals(Order.Status.NEW.getValue())) {
+                preparedStatement = connection.prepareStatement
+                        (Statements.SQL_FIND_NEW_ORDER.getValue());
+                preparedStatement.setLong(1, order.getIdClient());
+                ResultSet resultSet = preparedStatement.executeQuery();
+                if (resultSet.next()) {
+                    order.setId(resultSet.getLong(OrderColumns.ID_ORDER.getValue()));
+                }
+                connection.commit();
+            }
+        } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
+            LOGGER.log(Level.ERROR, "Cannot find order by ID. Request to table failed. ", e);
+            throw new DaoException(e);
+        } finally {
+            closeStatement(preparedStatement);
+        }
+        return order;
     }
 }

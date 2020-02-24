@@ -10,6 +10,7 @@ import by.patrusova.project.util.stringholder.Statements;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,7 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
 
     private final static Logger LOGGER = LogManager.getLogger();
     private static final String SQL_SELECT_ALL_BASKET_POSITIONS =
-                    "SELECT id_basket, id_order, id_service FROM basket_position";
+            "SELECT id_basket, id_order, id_service FROM basket_position";
     private final static String SQL_SELECT_ID = "SELECT id_basket FROM basket_position";
 
     public BasketDao(ProxyConnection connection) {
@@ -34,9 +35,8 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
         try {
             preparedStatement = connection.prepareStatement
                     (Statements.SQL_ADD_POSITION.getValue());
-            preparedStatement.setLong(1, 0);
-            preparedStatement.setLong(2, position.getIdOrder());
-            preparedStatement.setLong(3, position.getIdService());
+            preparedStatement.setLong(1, position.getIdOrder());
+            preparedStatement.setLong(2, position.getIdService());
             isAdded = preparedStatement.execute();
             connection.commit();
         } catch (SQLException e) {
@@ -153,5 +153,66 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
             closeStatement(statement);
         }
         return false;
+    }
+
+    public List<BasketPosition> findAllByOrderId(long id) throws SQLException, DaoException {
+        connection.setAutoCommit(false);
+        List<BasketPosition> positions = new ArrayList<>();
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_SELECT_BASKET_POSITION_BY_ID.getValue());
+            preparedStatement.setLong(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                BasketPosition position = EntityFactory.createBasketPosition(resultSet);
+                positions.add(position);
+            }
+            connection.commit();
+        } catch (SQLException | DaoException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
+            LOGGER.log(Level.ERROR,
+                    "Cannot find all positions of the basket. Request to table failed. ", e);
+            throw new DaoException(e);
+        } finally {
+            closeStatement(preparedStatement);
+        }
+        return positions;
+    }
+
+    public boolean deleteAllByOrderId(long id) throws SQLException, DaoException {
+        connection.setAutoCommit(false);
+        List<BasketPosition> list = findAllByOrderId(id);
+        int count = 0;
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement
+                    (Statements.SQL_DELETE_POSITION_ORDER.getValue());
+            for (BasketPosition position : list) {
+                preparedStatement.setLong(1, id);
+                preparedStatement.setLong(2, position.getId());
+                preparedStatement.execute();
+                if (!findId(position.getId())) {
+                    ++count;
+                }
+            }
+            if (list.size() == count) {
+                connection.commit();
+                return true;
+            } else {
+                connection.rollback();
+                return false;
+            }
+        } catch (SQLException e) {
+            if (connection != null) {
+                connection.rollback();
+            }
+            LOGGER.log(Level.ERROR, "Cannot delete position to the basket. Request to table failed. ", e);
+            throw new DaoException(e);
+        } finally {
+            closeStatement(preparedStatement);
+        }
     }
 }

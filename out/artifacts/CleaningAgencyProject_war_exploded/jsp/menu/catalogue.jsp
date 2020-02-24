@@ -22,7 +22,7 @@
     <form name="basketForm" method="post" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="basket" />
     <input style="color: sienna; font-family: 'Book Antiqua',Serif; width: 200px; font-size: 18px;
-    height: 30px" type="submit" value="<fmt:message key="button.makeorder"/>"/>
+    height: 30px" type="submit" value="<fmt:message key="button.tobasket"/>"/>
     </form>
     </div>
 
@@ -67,6 +67,7 @@
     <th><fmt:message key="field.service"/></th>
     <th><fmt:message key="field.cost"/></th>
     <th><fmt:message key="field.discount2"/></th>
+    <th><fmt:message key="field.check"/></th>
     </tr>
 
     <c:forEach var="catalogue" items="${catalogueList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
@@ -75,6 +76,16 @@
         <td><c:out value="${catalogue.service}" /></td>
         <td><c:out value="${catalogue.cost}" /></td>
         <td><c:out value="${catalogue.discount}" /></td>
+        <td>
+        <form name="positionForm" method="post" action="${pageContext.request.contextPath}/controller">
+        <input type="hidden" name="command" value="select" />
+        <input type="hidden" name="position" value="${catalogue.id}" />
+        <label>
+        <input type="checkbox" name="choice" value="choice" />
+        </label>
+        <input type="submit" value="<fmt:message key="button.confirm"/>" />
+        </form>
+        </td>
         </tr>
     </c:forEach>
     </table>

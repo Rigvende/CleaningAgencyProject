@@ -2,9 +2,14 @@ package by.patrusova.project.util.stringholder;
 
 public enum Statements {
 
-    SQL_TOTAL_COST("SELECT SUM(cost) - SUM(cost*discount) AS total_cost FROM services " +
-                    "JOIN basket_position ON basket_position.id_service = services.id_service " +
-                    "WHERE basket_position.id_order = ?"),
+    SQL_TOTAL_COST("SELECT SUM(cost) AS total_cost FROM services JOIN basket_position " +
+            "ON basket_position.id_service = services.id_service WHERE id_order = ?"),
+    SQL_TOTAL_SALE("SELECT SUM(cost * sales) AS total_sale FROM services JOIN basket_position " +
+            "ON basket_position.id_service = services.id_service WHERE id_order = ?"),
+    SQL_TOTAL_DISCOUNT("SELECT SUM(cost * discount) AS total_discount " +
+            "FROM (services JOIN basket_position ON basket_position.id_service = services.id_service) " +
+            "JOIN (orders JOIN clients ON orders.id_client = clients.id_client) " +
+            "ON basket_position.id_order = orders.id_order WHERE orders.id_order = ?"),
     SQL_AVERAGE_MARK("SELECT id_cleaner, AVG(mark) AS average_mark FROM orders, cleaners " +
                     "WHERE id_cleaner = ? AND orders.id_cleaner = cleaners.id_cleaner"),
     SQL_FIND_ID_USER("SELECT id_user FROM clients WHERE id_client = ?"),
@@ -31,17 +36,20 @@ public enum Statements {
     SQL_UPDATE_CLEANER_BY_ADMIN("UPDATE cleaners SET commission = ?, notes = ? WHERE id_user = ?"),
     SQL_UPDATE_CLIENT_BY_ADMIN("UPDATE clients SET discount = ?, notes = ? WHERE id_user = ?"),
     SQL_SELECT_BASKET_POSITION_BY_ID("SELECT id_basket, id_order, id_service " +
-                    "FROM basket_position WHERE id_basket = ?"),
-    SQL_ADD_POSITION("INSERT INTO basket_position VALUES (?, ?, ?)"),
+                    "FROM basket_position WHERE id_order = ?"),
+    SQL_ADD_POSITION("INSERT INTO basket_position VALUES (null, ?, ?)"),
     SQL_DELETE_POSITION("DELETE FROM basket_position WHERE id_service = ?"),
-    SQL_SELECT_SERVICE_BY_ID("SELECT id_service, service, cost, discount FROM services WHERE id_service = ?"),
+    SQL_DELETE_POSITION_ORDER("DELETE FROM basket_position WHERE id_order = ? AND id_basket = ?"),
+    SQL_SELECT_SERVICE_BY_ID("SELECT id_service, service, cost, sales FROM services WHERE id_service = ?"),
     SQL_ADD_SERVICE("INSERT INTO services VALUES (?, ?, ?, ?)"),
     SQL_DELETE_SERVICE("DELETE FROM services WHERE id_service = ?"),
-    SQL_UPDATE_SERVICE("UPDATE services SET service = ?, cost = ?, discount = ? WHERE id_service = ?"),
+    SQL_UPDATE_SERVICE("UPDATE services SET service = ?, cost = ?, sales = ? WHERE id_service = ?"),
     SQL_SELECT_ORDER_BY_ID("SELECT id_order, order_time, deadline, order_status, " +
                     "mark, id_client, id_cleaner FROM orders WHERE id_order = ?"),
-    SQL_ADD_ORDER("INSERT INTO orders VALUES (?, ?, ?, ?, ?, ?, ?)"),
+    SQL_ADD_ORDER("INSERT INTO orders VALUES (?, ?, ?, ?, ?, ?, null)"),
+    SQL_DELETE_ORDER("DELETE FROM orders WHERE id_order = ?"),
     SQL_UPDATE_ORDER("UPDATE orders SET order_status = ?, id_cleaner = ? WHERE id_order = ?"),
+    SQL_FIND_NEW_ORDER("SELECT id_order FROM orders WHERE order_status = 'new' AND id_client = ?"),
     SQL_FIND_USERS_BY_ROLE("SELECT id_user, login, password, role, name, lastname, " +
                     "phone, address, email FROM users WHERE role = ?"),
     SQL_FIND_CLEANERS_BY_ROLE("SELECT users.id_user, users.login, users.password, users.role, users.name, " +

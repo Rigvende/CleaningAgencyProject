@@ -1,5 +1,11 @@
 package add;
 
+import by.patrusova.project.dao.DaoFactory;
+import by.patrusova.project.dao.impl.OrderDao;
+import by.patrusova.project.entity.AbstractEntity;
+import by.patrusova.project.entity.impl.BasketPosition;
+import by.patrusova.project.entity.impl.Order;
+import by.patrusova.project.entity.impl.Service;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.*;
@@ -8,6 +14,7 @@ import java.io.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 public class Main {
@@ -32,8 +39,39 @@ public class Main {
 
     public static void main(String[] args) throws IOException, SQLException, DaoException, ServiceException {
 
-        List<String> list = new ArrayList<>();
-        System.out.println(list.isEmpty());
+
+//        Order order = new Order();
+//        order.setIdClient(2);
+//        order.setOrderStatus("new");
+//        order.setId(20);
+//        DeleteEntityService service = new DeleteEntityService();
+//        System.out.println(service.doService(order));
+
+//        DaoFactory factory = new DaoFactory();
+//        OrderDao dao = factory.createOrderDao();
+//        Order order = new Order();
+//        order.setIdClient(2);
+//        order.setOrderStatus("new");
+//        System.out.println(  dao.findNew(order));
+
+
+       BasketService service = new BasketService();
+        BasketPosition position = new BasketPosition();
+        position.setIdOrder(22);
+        position.setIdService(70);
+        System.out.println(service.doService(position));
+//        BasketPosition position2 = new BasketPosition();
+//        position2.setIdService(85);
+//        System.out.println(service.doService(position2));
+
+
+//        DaoFactory factory = new DaoFactory();
+//        OrderDao dao = factory.createOrderDao();
+//        Order order = new Order();
+//        order.setOrderStatus("new");
+//        order.setIdClient(2);
+//        System.out.println(dao.createNew(order));
+
 
 //ClientInfoService service = new ClientInfoService();
 //        System.out.println(service.doService(7, 3, "ok"));

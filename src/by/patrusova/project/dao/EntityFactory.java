@@ -6,7 +6,6 @@ import by.patrusova.project.exception.DaoException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -83,7 +82,7 @@ public class EntityFactory {
             service.setId(resultSet.getLong(ServiceColumns.ID_SERVICE.getValue()));
             service.setService(resultSet.getString(ServiceColumns.SERVICE.getValue()));
             service.setCost(resultSet.getBigDecimal(ServiceColumns.COST.getValue()));
-            service.setDiscount(resultSet.getBigDecimal(ServiceColumns.DISCOUNT.getValue()));
+            service.setDiscount(resultSet.getBigDecimal(ServiceColumns.SALES.getValue()));
         } catch (SQLException e) {
             LOGGER.log(Level.ERROR, "Cannot create service. Error has occurred. ", e);
             throw new DaoException(e);
@@ -118,13 +117,3 @@ public class EntityFactory {
         return new OrderComplex(user, cleaner, client, order);
     }
 }
-
-//                        User user = new User(resultSet1.getLong(UserColumns.ID_USER.getValue()),
-//                                resultSet1.getString(UserColumns.LOGIN.getValue()),
-//                                resultSet1.getString(UserColumns.PASSWORD.getValue()),
-//                                resultSet1.getString(UserColumns.ROLE.getValue()),
-//                                resultSet1.getString(UserColumns.NAME.getValue()),
-//                                resultSet1.getString(UserColumns.LASTNAME.getValue()),
-//                                resultSet1.getLong(UserColumns.PHONE.getValue()),
-//                                resultSet1.getString(UserColumns.ADDRESS.getValue()),
-//                                resultSet1.getString(UserColumns.EMAIL.getValue()));

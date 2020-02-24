@@ -18,7 +18,7 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
 
     private final static Logger LOGGER = LogManager.getLogger();
     private static final String SQL_SELECT_ALL_SERVICES =
-                    "SELECT id_service, service, cost, discount FROM services";
+                    "SELECT id_service, service, cost, sales FROM services";
     private final static String SQL_SELECT_ID = "SELECT id_service FROM services";
 
     public ServiceDao(ProxyConnection connection) {

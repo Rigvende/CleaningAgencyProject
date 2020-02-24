@@ -39,7 +39,6 @@ public class RegistrationService implements EntityCreator, Serviceable {
                 }
             }
         } catch (DaoException e) {
-            LOGGER.log(Level.ERROR, "Cannot register user, exception has occurred. ", e);
             throw new ServiceException(e);
         }
         return user != null ? Optional.of(user) : Optional.empty();
@@ -65,7 +64,7 @@ public class RegistrationService implements EntityCreator, Serviceable {
             newUser.setId(0);
             newUser.setLogin(request.getParameter(Parameters.LOGINREG.getValue()));
             newUser.setPassword(request.getParameter(Parameters.PASSWORDREG.getValue()));
-            newUser.setRole(String.valueOf(Role.GUEST)); //пока админ не подтвердит регистрацию
+            newUser.setRole(String.valueOf(Role.GUEST));            //пока админ не подтвердит регистрацию
             newUser.setName(request.getParameter(Parameters.FIRSTNAME.getValue()));
             newUser.setLastname(request.getParameter(Parameters.LASTNAME.getValue()));
             newUser.setPhone(Long.parseLong(request.getParameter(Parameters.PHONE.getValue())));

@@ -12,9 +12,6 @@ import by.patrusova.project.util.stringholder.Attributes;
 import by.patrusova.project.util.stringholder.Parameters;
 import by.patrusova.project.validator.RegistrationDataValidator;
 import by.patrusova.project.validator.StringValidator;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -22,7 +19,6 @@ import java.util.Map;
 import java.util.Optional;
 
 public class UserInfoService implements Serviceable, EntityCreator {
-    private final static Logger LOGGER = LogManager.getLogger();
 
     //внесение изменений в юзер-инфо
     @Override
@@ -35,7 +31,6 @@ public class UserInfoService implements Serviceable, EntityCreator {
                 user = null;
             }
         } catch (DaoException e) {
-            LOGGER.log(Level.ERROR, "Cannot update user's info, exception has occurred. ", e);
             throw new ServiceException(e);
         }
         return user != null ? Optional.of(user) : Optional.empty();

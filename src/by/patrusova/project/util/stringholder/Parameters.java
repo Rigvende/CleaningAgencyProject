@@ -33,6 +33,8 @@ public enum Parameters {
     MARK("mark"),
     SERVICE("service"),
     SERVICECHANGE("servicechange"),
+    POSITION("position"),
+    CHOICE("choice"),
     LOCATION("location"),
     RELATIVE("relative");
 

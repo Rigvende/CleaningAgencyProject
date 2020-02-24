@@ -2,13 +2,12 @@ package by.patrusova.project.command.impl;
 
 import by.patrusova.project.command.ActionCommand;
 import by.patrusova.project.entity.AbstractEntity;
-import by.patrusova.project.entity.impl.Cleaner;
-import by.patrusova.project.entity.impl.Client;
-import by.patrusova.project.entity.impl.User;
+import by.patrusova.project.entity.impl.*;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.CleanerInfoService;
 import by.patrusova.project.service.impl.ClientInfoService;
+import by.patrusova.project.service.impl.OrderInfoService;
 import by.patrusova.project.util.stringholder.Attributes;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.service.impl.LoginService;
@@ -59,7 +58,7 @@ public class LoginCommand implements ActionCommand {
                         CleanerInfoService cleanerInfoService = new CleanerInfoService();
                         Cleaner cleaner = new Cleaner();
                         cleaner.setIdUser(user.getId());
-                        cleaner = cleanerInfoService.getCleaner(cleaner);
+                        cleaner = cleanerInfoService.getCleaner(cleaner); //extracting cleaner from DB by ID
                         session.setAttribute(Attributes.CLEANER.getValue(), cleaner);
                         page = ConfigurationManager.getProperty(Pages.PAGE_MAIN_CLEANER.getValue());
                         break;
@@ -68,8 +67,17 @@ public class LoginCommand implements ActionCommand {
                         ClientInfoService clientInfoService = new ClientInfoService();
                         Client client = new Client();
                         client.setIdUser(user.getId());
-                        client = clientInfoService.getClient(client); //ищем по айди клиента в бд
+                        client = clientInfoService.getClient(client);   //extracting client from DB by ID
                         session.setAttribute(Attributes.CLIENT.getValue(), client);
+                        Order order = new Order();                      //create order with status "new"
+                        order.setIdClient(client.getId());
+                        order.setOrderStatus(Order.Status.NEW.getValue());
+                        OrderInfoService infoService = new OrderInfoService();
+                        Optional<AbstractEntity> opt = infoService.doService(order);
+                        if (opt.isPresent()) {
+                            order = (Order) opt.get();
+                            session.setAttribute(Attributes.ORDER.getValue(), order);
+                        }
                         page = ConfigurationManager.getProperty(Pages.PAGE_MAIN_CLIENT.getValue());
                         break;
                     case "guest":

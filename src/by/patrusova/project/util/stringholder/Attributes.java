@@ -22,6 +22,7 @@ public enum Attributes {
     RU_RU("ru_RU"),
     CATALOGUE("catalogue"),
     SERVICE("service"),
+    BASKET("basket"),
     ERROR_REG("errorRegistrationMessage"),
     ERROR_ADD_SERVICE("errorAddServiceMessage"),
     ERROR_CHANGE_CLIENT_ID("errorChangeClientIdMessage"),
@@ -44,6 +45,7 @@ public enum Attributes {
     CLEANER_LIST("cleanerList"),
     ORDER_LIST("orderList"),
     LOCALE("locale"),
+    ERROR_SELECT("errorSelect"),
     FORMERGUEST("formerguest"),
     CATALOGUE_LIST("catalogueList");
 

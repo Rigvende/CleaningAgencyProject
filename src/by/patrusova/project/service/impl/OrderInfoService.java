@@ -31,13 +31,22 @@ public class OrderInfoService implements Serviceable, EntityCreator {
         Order order = (Order) entity;
         try {
             OrderDao dao = factory.createOrderDao();
-            return dao.update(order) ? Optional.empty() : Optional.of(order);
+            if (order.getOrderStatus().equals(Order.Status.NEW.getValue())) {       //create order in DB
+                if (!dao.createNew(order)) {
+                    order = (Order) dao.findNew(order);
+                    return Optional.of(order);
+                } else {
+                    return Optional.empty();
+                }
+            } else {
+                return dao.update(order) ? Optional.empty() : Optional.of(order);   //update order in DB
+            }
         } catch (DaoException | SQLException e) {
-            LOGGER.log(Level.ERROR, "Exception while updating order has occurred. ", e);
             throw new ServiceException(e);
         }
     }
 
+    //if we need to set mark to order
     public Optional<AbstractEntity> doService(long id, long clientId, int mark) throws ServiceException {
         DaoFactory factory = new DaoFactory();
         try {
@@ -51,12 +60,11 @@ public class OrderInfoService implements Serviceable, EntityCreator {
             }
             return Optional.empty();
         } catch (DaoException | SQLException e) {
-            LOGGER.log(Level.ERROR, "Exception while updating order has occurred. ", e);
             throw new ServiceException(e);
         }
     }
 
-    //создание экземпляра услуги с внесенными изменениями
+    //create instance of order with changes
     @Override
     public Optional<AbstractEntity> createEntity(HttpServletRequest request) throws ServiceException {
         Order updatedOrder = (Order) request.getSession()
@@ -76,7 +84,7 @@ public class OrderInfoService implements Serviceable, EntityCreator {
         return Optional.empty();
     }
 
-    //валидация введенных данных
+    //validation while creating
     private Map<String, Boolean> validate(HttpServletRequest request) throws SQLException, DaoException {
         Map<String, Boolean> validationMap = new HashMap<>();
         String id = request.getParameter(Parameters.ID_CLEANER.getValue());
@@ -86,7 +94,7 @@ public class OrderInfoService implements Serviceable, EntityCreator {
         return validationMap;
     }
 
-    //находим заказ в бд и возвращаем
+    //find existing order in DB
     public Order getOrder(AbstractEntity entity) throws ServiceException {
         DaoFactory factory = new DaoFactory();
         Order order = (Order) entity;

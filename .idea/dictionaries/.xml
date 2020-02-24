@@ -91,6 +91,7 @@
       <w>regproposal</w>
       <w>regredirect</w>
       <w>resultset</w>
+      <w>selecterror</w>
       <w>sendto</w>
       <w>servicechange</w>
       <w>servicenew</w>
@@ -109,6 +110,7 @@
       <w>showservices</w>
       <w>smtp</w>
       <w>starttls</w>
+      <w>tobasket</w>
       <w>wrongaction</w>
     </words>
   </dictionary>

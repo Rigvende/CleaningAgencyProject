@@ -15,9 +15,10 @@ public class Order extends AbstractEntity {
     private long idCleaner;
 
     public enum Status {
+        NEW("new"),
         REGISTERED("registered"),
-        DONE("done"),
         IN_PROCESS("in process"),
+        DONE("done"),
         DECLINED("declined");
         private String value;
         Status(String value) {

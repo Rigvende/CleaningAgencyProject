@@ -5,7 +5,7 @@ public enum  ServiceColumns {
     ID_SERVICE("id_service"),
     SERVICE("service"),
     COST("cost"),
-    DISCOUNT("discount");
+    SALES("sales");
 
     private String value;
 

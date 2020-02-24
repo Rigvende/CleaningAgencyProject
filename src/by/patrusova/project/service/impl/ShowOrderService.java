@@ -9,17 +9,12 @@ import by.patrusova.project.entity.impl.OrderComplex;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.Serviceable;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 public class ShowOrderService implements Serviceable {
-
-    private final static Logger LOGGER = LogManager.getLogger();
 
     @Override
     public Optional<AbstractEntity> doService(AbstractEntity entity) {
@@ -41,7 +36,6 @@ public class ShowOrderService implements Serviceable {
                     return new ArrayList<>();
             }
         } catch (SQLException | DaoException e) {
-            LOGGER.log(Level.ERROR, "Exception has occurred while finding orders was processing. ", e);
             throw new ServiceException(e);
         }
     }
