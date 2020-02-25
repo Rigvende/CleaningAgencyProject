@@ -12,35 +12,30 @@ public class LocaleCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();
     private final static String LOCALE = "locale";
-    private final static String EN1 = "EN";
-    private final static String EN2 = "en";
     private final static String EN_EN = "en_EN";
-    private final static String RU2 = "ru";
-    private final static String RU1 = "RU";
     private final static String RU_RU = "ru_RU";
     private final static String PAGE_LOGIN = "page.login";
+    private Locale localeEn = new Locale("en", "EN");
+    private Locale localeRu = new Locale("ru", "RU");
 
     @Override
     public String execute(HttpServletRequest request) {
         String language;
-        Locale locale;
         if (request.getSession().getAttribute(LOCALE) != null) {
             language = (String) request.getSession().getAttribute(LOCALE);
             LOGGER.log(Level.INFO, language);
             switch (language) {
                 case "ru_RU":
-                    locale = new Locale(EN2, EN1);
-                    Locale.setDefault(locale);
+                    Locale.setDefault(localeEn);
                     language = EN_EN;
                     break;
                 case "en_EN":
-                    locale = new Locale(RU2, RU1);
-                    Locale.setDefault(locale);
+                    Locale.setDefault(localeRu);
                     language = RU_RU;
                     break;
             }
         } else {
-            locale = Locale.getDefault();
+            Locale locale = Locale.getDefault();
             language = locale.toString();
         }
         request.getSession().setAttribute(LOCALE, language);

@@ -21,11 +21,11 @@ public class MailCommand implements ActionCommand {
     private final static String ERROR_MAIL = "errorMail";
     private final static String MESSAGE_ERROR_MAIL = "message.mailerror";
     private final static String PAGE_MAIL = "page.mail";
+    private MailService sender = new MailService();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
         String page;
-        MailService sender = new MailService();
         try {
             if (sender.doService(request.getParameter(TO),
                                  request.getParameter(SUBJECT),

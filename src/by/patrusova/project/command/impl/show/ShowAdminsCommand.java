@@ -24,30 +24,28 @@ public class ShowAdminsCommand implements ActionCommand {
     private final static String EMPTY_LIST = "emptyList";
     private final static String MESSAGE_ERROR_LIST = "message.listerror";
     private final static String PAGE_MAIN_ADMIN = "page.mainadmin";
+    private ShowService service = new ShowService();
+    private List<User> users = new ArrayList<>();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-        String page;
-        ShowService service = new ShowService();
         try {
             List<AbstractEntity> list = service.doService(Role.ADMIN.getValue());
             if (!list.isEmpty()) {
-                List<User> users = new ArrayList<>();
                 for (AbstractEntity entity : list) {
                     users.add((User) entity);
                 }
                 request.getSession().setAttribute(ADMIN_LIST, users);
-                page = ConfigurationManager.getProperty(PAGE_ADMINLIST);
+                return ConfigurationManager.getProperty(PAGE_ADMINLIST);
             } else {
                 request.getSession().setAttribute(EMPTY_LIST,
                         MessageManager.getProperty(MESSAGE_ERROR_LIST));
-                page = ConfigurationManager.getProperty(PAGE_MAIN_ADMIN);
+                return ConfigurationManager.getProperty(PAGE_MAIN_ADMIN);
             }
         } catch (ServiceException e) {
             LOGGER.log(Level.ERROR,
                     "Exception has occurred while finding admins was processing. ", e);
             throw new CommandException(e);
         }
-        return page;
     }
 }

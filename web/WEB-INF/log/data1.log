@@ -5515,3 +5515,15 @@ Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot add or upda
 25-02 22:43 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
 25-02 22:44 INFO  project.connection.ConnectionPool - Registering jdbc driver.
 25-02 22:44 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+25-02 23:27 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@1fb3820c
+25-02 23:27 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@537bdd87
+25-02 23:27 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+25-02 23:27 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+25-02 23:27 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+25-02 23:27 INFO  command.impl.LocaleCommand - ru_RU
+25-02 23:27 INFO  command.impl.LocaleCommand - en_EN
+25-02 23:27 INFO  command.impl.LocaleCommand - ru_RU
+25-02 23:28 INFO  command.impl.LocaleCommand - en_EN
+25-02 23:28 INFO  command.impl.LocaleCommand - ru_RU
+25-02 23:28 INFO  command.impl.LocaleCommand - en_EN
+25-02 23:28 INFO  command.impl.LocaleCommand - ru_RU

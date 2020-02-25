@@ -65,6 +65,7 @@ public class MailService implements Serviceable {
         return properties;
     }
 
+    //get data for e-mailing confirmation
     @Override
     public Optional<AbstractEntity> doService(AbstractEntity entity) throws ServiceException {
         Client client = (Client) entity;

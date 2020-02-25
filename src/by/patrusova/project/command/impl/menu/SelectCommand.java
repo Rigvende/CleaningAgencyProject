@@ -26,6 +26,8 @@ public class SelectCommand implements ActionCommand {
     private final static String PAGE_CATALOGUE = "page.catalogue";
     private final static String ERROR_SELECT = "errorSelect";
     private final static String MESSAGE_ERROR_SELECT = "message.selecterror";
+    private BasketService service = new BasketService();
+    private BasketPosition position = new BasketPosition();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
@@ -41,8 +43,6 @@ public class SelectCommand implements ActionCommand {
                         MessageManager.getProperty(MESSAGE_ERROR_SELECT));
                 return ConfigurationManager.getProperty(PAGE_CATALOGUE);
             }
-            BasketService service = new BasketService();
-            BasketPosition position = new BasketPosition();
             position.setIdService(Long.parseLong(idService));
             position.setIdOrder(order.getId());
             Optional<AbstractEntity> optional = service.doService(position);

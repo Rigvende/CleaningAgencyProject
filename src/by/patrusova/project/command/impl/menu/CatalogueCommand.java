@@ -28,36 +28,32 @@ public class CatalogueCommand implements ActionCommand {
     private final static String PAGE_MAIN_CLIENT = "page.mainclient";
     private final static String PAGE_MAIN_CLEANER = "page.maincleaner";
     private final static String PAGE_LOGIN = "page.login";
+    private ShowService service = new ShowService();
+    private  List<Service> services = new ArrayList<>();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-        String page;
         String role = (String) request.getSession().getAttribute(ROLE);
-        ShowService service = new ShowService();
         try {
             List<AbstractEntity> list = service.doService(CATALOGUE);
-            if (list.size() != 0) {
-                List<Service> services = new ArrayList<>();
+            if (!list.isEmpty()) {
                 for (AbstractEntity entity : list) {
                     services.add((Service) entity);
                 }
                 request.getSession().setAttribute(CATALOGUE_LIST, services);
-                page = ConfigurationManager.getProperty(PAGE_CATALOGUE);
+                return ConfigurationManager.getProperty(PAGE_CATALOGUE);
             } else {
                 request.getSession().setAttribute(EMPTY_LIST,
                         MessageManager.getProperty(MESSAGE_ERROR_LIST));
                 switch (role) {
                     case "admin":
-                        page = ConfigurationManager.getProperty(PAGE_MAIN_ADMIN);
-                        break;
+                        return ConfigurationManager.getProperty(PAGE_MAIN_ADMIN);
                     case "client":
-                        page = ConfigurationManager.getProperty(PAGE_MAIN_CLIENT);
-                        break;
+                        return ConfigurationManager.getProperty(PAGE_MAIN_CLIENT);
                     case "cleaner":
-                        page = ConfigurationManager.getProperty(PAGE_MAIN_CLEANER);
-                        break;
+                        return ConfigurationManager.getProperty(PAGE_MAIN_CLEANER);
                     default:
-                        page = ConfigurationManager.getProperty(PAGE_LOGIN);
+                        return ConfigurationManager.getProperty(PAGE_LOGIN);
                 }
             }
         } catch (ServiceException e) {
@@ -65,6 +61,5 @@ public class CatalogueCommand implements ActionCommand {
                     "Exception has occurred while finding catalogue was processing. ", e);
             throw new CommandException(e);
         }
-        return page;
     }
 }

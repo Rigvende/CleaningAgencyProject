@@ -12,10 +12,10 @@
 <body>
 <jsp:include page="/WEB-INF/view/header.jsp"/>
 
-<h2 style="color: #0c4f5b; margin-left: 50px">
+<h2 style="color: #0c4f5b; text-align: center">
     <fmt:message key="text.main1"/> ${user.name}!
 </h2>
-<h3 style="color: #0c4f5b; font-family: 'Palatino Linotype',serif; margin-left: 200px">
+<h3 style="color: #0c4f5b; font-family: 'Palatino Linotype',serif; text-align: center">
     <fmt:message key="text.main2"/>
 </h3>
 

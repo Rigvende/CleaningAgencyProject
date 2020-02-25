@@ -24,29 +24,27 @@ public class ShowOrdersCommand implements ActionCommand {
     private final static String EMPTY_LIST = "emptyList";
     private final static String MESSAGE_ERROR_LIST = "message.listerror";
     private final static String PAGE_MAIN_ADMIN = "page.mainadmin";
+    private ShowService service = new ShowService();
+    private List<Order> orders = new ArrayList<>();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-        String page;
-        ShowService service = new ShowService();
         try {
             List<AbstractEntity> list = service.doService(ORDER);
             if (!list.isEmpty()) {
-                List<Order> orders = new ArrayList<>();
                 for (AbstractEntity entity : list) {
                     orders.add((Order)entity);
                 }
                 request.getSession().setAttribute(ORDER_LIST, orders);
-                page = ConfigurationManager.getProperty(PAGE_ORDERLIST);
+                return ConfigurationManager.getProperty(PAGE_ORDERLIST);
             } else {
                 request.getSession().setAttribute(EMPTY_LIST,
                         MessageManager.getProperty(MESSAGE_ERROR_LIST));
-                page = ConfigurationManager.getProperty(PAGE_MAIN_ADMIN);
+                return ConfigurationManager.getProperty(PAGE_MAIN_ADMIN);
             }
         } catch (ServiceException e) {
             LOGGER.log(Level.ERROR, "Exception has occurred while finding orders was processing. ", e);
             throw new CommandException(e);
         }
-        return page;
     }
 }

@@ -24,27 +24,25 @@ public class ShowOrdersClientCommand implements ActionCommand {
     private final static String EMPTY_LIST = "emptyList";
     private final static String MESSAGE_ERROR_LIST = "message.listerror";
     private final static String PAGE_MAIN_CLIENT = "page.mainclient";
+    private ShowOrderService service = new ShowOrderService();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-        String page;
-        ShowOrderService service = new ShowOrderService();
         Client client = (Client) request.getSession().getAttribute(Role.CLIENT.getValue());
         String role = (String) request.getSession().getAttribute(ROLE);
         try {
             List<OrderComplex> list = service.doService(role, client);      //without orders with "new" status
             if (!list.isEmpty()) {
                 request.getSession().setAttribute(ORDER_LIST, list);
-                page = ConfigurationManager.getProperty(PAGE_ORDERLIST);
+                return ConfigurationManager.getProperty(PAGE_ORDERLIST);
             } else {
                 request.getSession().setAttribute(EMPTY_LIST,
                         MessageManager.getProperty(MESSAGE_ERROR_LIST));
-                page = ConfigurationManager.getProperty(PAGE_MAIN_CLIENT);
+                return ConfigurationManager.getProperty(PAGE_MAIN_CLIENT);
             }
         } catch (ServiceException e) {
             LOGGER.log(Level.ERROR, "Exception has occurred while finding orders was processing. ", e);
             throw new CommandException(e);
         }
-        return page;
     }
 }

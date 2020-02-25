@@ -19,6 +19,8 @@
 </div>
 <br/><br/>
 
+<c:if test="${ not empty formerguest }">
+
 <form name="mailForm" method="POST" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="mail" />
 
@@ -28,7 +30,7 @@
                 <fmt:message key="field.sendto"/>
             </td>
             <td><label>
-                <input type ="text" name="to" value="${formerguest.email}"/>
+                <input style="width: 300px" type ="text" name="to" value="${formerguest.email}"/>
             </label></td>
         </tr>
 
@@ -37,7 +39,7 @@
                 <fmt:message key="field.subject"/>
             </td>
             <td><label>
-                <input type ="text" name="subject" value="<fmt:message key="text.mail"/>"/>
+                <input style="width: 300px" type ="text" name="subject" value="<fmt:message key="text.mail"/>"/>
             </label></td>
         </tr>
     </table>
@@ -50,11 +52,8 @@
 <fmt:message key="text.mail5"/>${formerguest.password}
 
             <fmt:message key="text.mail6"/>
-            <br/>
             <fmt:message key="text.info7"/>
-            <br/>
             <fmt:message key="text.info8"/>
-            <br/>
             <fmt:message key="text.info9"/>
         </textarea>
     </label>
@@ -68,6 +67,55 @@
     <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 250px; font-size: 20px;
             height: 40px; margin-left: 50px" type="submit" value="<fmt:message key="button.send"/>"/>
 </form>
+</c:if>
+
+<c:if test="${ not empty orderDone }">
+
+    <form name="mailForm" method="POST" action="${pageContext.request.contextPath}/controller">
+        <input type="hidden" name="command" value="mail" />
+
+        <table style="margin-left: 50px">
+            <tr>
+                <td style="color: #0c4f5b; font-size: 18px; font-family: 'Palatino Linotype', serif; margin-left: 50px">
+                    <fmt:message key="field.sendto"/>
+                </td>
+                <td><label>
+                    <input style="width: 300px" type ="text" name="to" value="${orderDone.email}"/>
+                </label></td>
+            </tr>
+
+            <tr>
+                <td style="color: #0c4f5b; font-size: 18px; font-family: 'Palatino Linotype', serif; margin-left: 50px">
+                    <fmt:message key="field.subject"/>
+                </td>
+                <td><label>
+                    <input style="width: 300px" type ="text" name="subject" value="<fmt:message key="text.mail9"/>"/>
+                </label></td>
+            </tr>
+        </table>
+        <hr/>
+
+        <label>
+        <textarea style="margin-left: 50px" name="body" rows="5" cols="100"><fmt:message key="text.mail7"/>${orderDone.name}!
+<fmt:message key="text.mail8"/>
+
+            <fmt:message key="text.mail6"/>
+            <fmt:message key="text.info7"/>
+            <fmt:message key="text.info8"/>
+            <fmt:message key="text.info9"/>
+        </textarea>
+        </label>
+        <br/><br/>
+
+        <div style="color: crimson">${errorMail}</div>
+            ${wrongAction}
+            ${nullPage}
+        <br/><br/><ctg:remove-attr/>
+
+        <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 250px; font-size: 20px;
+            height: 40px; margin-left: 50px" type="submit" value="<fmt:message key="button.send"/>"/>
+    </form>
+</c:if>
 
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>

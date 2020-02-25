@@ -24,30 +24,28 @@ public class BasketCommand implements ActionCommand {
     private final static String EMPTY_LIST = "emptyList";
     private final static String MESSAGE_ERROR_LIST = "message.listerror";
     private final static String PAGE_BASKET = "page.basket";
+    private List<Service> services = new ArrayList<>();
+    private ShowService service = new ShowService();
 
     @Override
-    public String execute(HttpServletRequest request) throws CommandException {//fixme начинка левая
-        String page;
-        ShowService service = new ShowService();
+    public String execute(HttpServletRequest request) throws CommandException {//fixme начинка пока что левая
         try {
             List<AbstractEntity> list = service.doService(BASKET);
             if (!list.isEmpty()) {
-                List<Service> services = new ArrayList<>();
                 for (AbstractEntity entity : list) {
                     services.add((Service) entity);
                 }
                 request.getSession().setAttribute(CATALOGUE_LIST, services);
-                page = ConfigurationManager.getProperty(PAGE_CATALOGUELIST);
+                return ConfigurationManager.getProperty(PAGE_CATALOGUELIST);
             } else {
                 request.getSession().setAttribute(EMPTY_LIST,
                         MessageManager.getProperty(MESSAGE_ERROR_LIST));
-                page = ConfigurationManager.getProperty(PAGE_BASKET);
+                return ConfigurationManager.getProperty(PAGE_BASKET);
             }
         } catch (ServiceException e) {
             LOGGER.log(Level.ERROR,
-                    "Exception has occurred while finding catalogue was processing. ", e);
+                    "Exception has occurred while assembling basket list was processing. ", e);
             throw new CommandException(e);
         }
-        return page;
     }
 }

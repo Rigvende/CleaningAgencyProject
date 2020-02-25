@@ -50,13 +50,17 @@
 
     <div style="float: right"><jsp:include page="/WEB-INF/view/locale.jsp"/></div>
 
-    <br/><br/><br/><br/><br/><b><p style="text-align: right; margin-right: 20px; font-family: 'Palatino Linotype',cursive; font-size: 18px"><fmt:message key="text.info2"/></p></b><hr/><br/>
-
+    <br/><br/><br/><br/><br/><b>
+        <p style="text-align: right; margin-right: 20px; font-family: 'Palatino Linotype',cursive; font-size: 18px">
+            <fmt:message key="text.info2"/>
+        </p>
+        <p style="text-align: right; margin-right: 20px; font-family: 'Palatino Linotype',cursive; font-size: 18px">
+        <fmt:message key="text.info22"/>
+        </p></b><hr/><br/>
 
 <form name="loginForm" method="POST" action="${pageContext.request.contextPath}/controller">
     <div id="log">
     <input type="hidden" name="command" value="login" />
-
 
         <div style="color: #0c4f5b; font-family: 'Palatino Linotype',serif; font-size: 18px;"><fmt:message key="field.login"/></div>
     <label>

@@ -20,14 +20,14 @@ public class LogoutCommand implements ActionCommand {
     private final static Logger LOGGER = LogManager.getLogger();
     private final static String PAGE_INDEX = "page.index";
     private final static String ORDER = "order";
+    private  DeleteEntityService service = new DeleteEntityService();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
         String page = ConfigurationManager.getProperty(PAGE_INDEX);
         Order order = (Order) request.getSession().getAttribute(ORDER);
-        try {                                           //delete not registered order from session
+        try {                                           //delete not registered order and basket from session
             if (order != null && order.getOrderStatus().equals(Order.Status.NEW.getValue())) {
-                DeleteEntityService service = new DeleteEntityService();
                 Optional<AbstractEntity> optional = service.doService(order);
                 if (optional.isPresent()) {
                     throw new ServiceException("Cannot delete order or basket positions.");

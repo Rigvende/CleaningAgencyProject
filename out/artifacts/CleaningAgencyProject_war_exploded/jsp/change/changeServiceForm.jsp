@@ -42,7 +42,7 @@
     <fmt:message key="field.discount2"/>
     <br/>
     <label>
-        <input style="width: 250px" type="text" name="discount" value="${not empty service.discount ? service.discount : '0.00'}"/>
+        <input style="width: 250px" type="text" name="sales" value="${not empty service.sales ? service.sales : '0.00'}"/>
     </label>
     </b>
 

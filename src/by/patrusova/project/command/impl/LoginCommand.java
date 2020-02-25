@@ -38,6 +38,14 @@ public class LoginCommand implements ActionCommand {
     private final static String ORDER = "order";
     private final static String PAGE_MAIN_CLIENT = "page.mainclient";
     private final static String MESSAGE_NOT_REG = "message.notregistered";
+    private LoginService loginService = new LoginService();
+    private CleanerInfoService cleanerInfoService = new CleanerInfoService();
+    private ClientInfoService clientInfoService = new ClientInfoService();
+    private OrderInfoService infoService = new OrderInfoService();
+    private User user = new User();
+    private Cleaner cleaner = new Cleaner();
+    private Client client = new Client();
+    private Order order = new Order();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
@@ -50,8 +58,6 @@ public class LoginCommand implements ActionCommand {
             page = ConfigurationManager.getProperty(PAGE_LOGIN);
             return page;
         }
-        LoginService loginService = new LoginService();
-        User user = new User();
         user.setLogin(login);
         user.setPassword(pass);
         try {
@@ -68,8 +74,6 @@ public class LoginCommand implements ActionCommand {
                         break;
                     case "cleaner":
                         session.setAttribute(ROLE, Role.CLEANER.getValue());
-                        CleanerInfoService cleanerInfoService = new CleanerInfoService();
-                        Cleaner cleaner = new Cleaner();
                         cleaner.setIdUser(user.getId());
                         cleaner = cleanerInfoService.getCleaner(cleaner); //extracting cleaner from DB by ID
                         session.setAttribute(Role.CLEANER.getValue(), cleaner);
@@ -77,15 +81,11 @@ public class LoginCommand implements ActionCommand {
                         break;
                     case "client":
                         session.setAttribute(ROLE, Role.CLIENT.getValue());
-                        ClientInfoService clientInfoService = new ClientInfoService();
-                        Client client = new Client();
                         client.setIdUser(user.getId());
-                        client = clientInfoService.getClient(client);   //extracting client from DB by ID
+                        client = clientInfoService.getClient(client);        //extracting client from DB by ID
                         session.setAttribute(Role.CLIENT.getValue(), client);
-                        Order order = new Order();                      //create order with status "new"
                         order.setIdClient(client.getId());
-                        order.setOrderStatus(Order.Status.NEW.getValue());
-                        OrderInfoService infoService = new OrderInfoService();
+                        order.setOrderStatus(Order.Status.NEW.getValue());   //create order with status "new"
                         Optional<AbstractEntity> opt = infoService.doService(order);
                         if (opt.isPresent()) {
                             order = (Order) opt.get();

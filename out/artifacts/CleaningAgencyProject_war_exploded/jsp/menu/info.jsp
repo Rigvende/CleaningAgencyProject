@@ -40,10 +40,6 @@
     <br/>
     <fmt:message key="text.info6"/>
     <br/><br>
-    <li style="background: royalblue; width: max-content"><fmt:message key="text.info5"/></li>
-    <br/>
-    <fmt:message key="text.info6"/>
-    <br/><br/>
     <li style="background: royalblue; width: max-content">
     <fmt:message key="text.info7"/></li>
     <br/>
