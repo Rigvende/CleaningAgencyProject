@@ -21,33 +21,25 @@ public class AddEntityCommand implements ActionCommand {
     private final static String MESSAGE_ERROR_ADD_SERVICE = "message.adderror";
     private final static String PAGE_ADD_SERVICE = "page.addservice";
     private final static String PAGE_CONFIRM = "page.confirm";
+    private ServiceInfoService infoService = new ServiceInfoService();
 
     public String execute(HttpServletRequest request) throws CommandException {
-        String page;
-        ServiceInfoService infoService = new ServiceInfoService();
         try {
             Optional<AbstractEntity> optional = infoService.createNewEntity(request);
-            if (optional.isEmpty()) {
-                request.getSession().setAttribute(ERROR_ADD_SERVICE,
-                        MessageManager.getProperty(MESSAGE_ERROR_ADD_SERVICE));
-                page = ConfigurationManager.getProperty(PAGE_ADD_SERVICE);
-                return page;
-            } else {
-                Service service = (Service)optional.get();
+            if (optional.isPresent()) {
+                Service service = (Service) optional.get();
                 Optional<AbstractEntity> opt = infoService.doServiceAdd(service);
                 if (opt.isPresent()) {
-                    page = ConfigurationManager.getProperty(PAGE_CONFIRM);
-                } else {
-                    request.getSession().setAttribute(ERROR_ADD_SERVICE,
-                            MessageManager.getProperty(MESSAGE_ERROR_ADD_SERVICE));
-                    page = ConfigurationManager.getProperty(PAGE_ADD_SERVICE);
+                    return ConfigurationManager.getProperty(PAGE_CONFIRM);
                 }
             }
+            request.getSession().setAttribute(ERROR_ADD_SERVICE,
+                    MessageManager.getProperty(MESSAGE_ERROR_ADD_SERVICE));
+            return ConfigurationManager.getProperty(PAGE_ADD_SERVICE);
         } catch (ServiceException e) {
             LOGGER.log(Level.ERROR,
                     "Exception has occurred while adding service was processing. ", e);
             throw new CommandException(e);
         }
-        return page;
     }
 }

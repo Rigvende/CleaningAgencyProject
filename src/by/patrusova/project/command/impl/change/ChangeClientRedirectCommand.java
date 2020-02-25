@@ -12,7 +12,6 @@ import by.patrusova.project.validator.NumberValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import javax.servlet.http.HttpServletRequest;
 
 public class ChangeClientRedirectCommand implements ActionCommand {
@@ -23,14 +22,14 @@ public class ChangeClientRedirectCommand implements ActionCommand {
     private final static String ERROR_CHANGE_CLIENT_ID = "errorChangeClientIdMessage";
     private final static String MESSAGE_ERROR_CHANGE_CLIENT_ID = "message.changeerrorid";
     private final static String PAGE_CLIENTLIST = "page.clientlist";
+    private ClientInfoService service = new ClientInfoService();
+    private Client client = new Client();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-        ClientInfoService service = new ClientInfoService();
-        Client client = new Client();
         String id = request.getParameter(ID);
         try {
-            if (NumberValidator.isValidUserID(id)) {
+            if (NumberValidator.isValidUserID(id)) {//fixme вставить проверку, что пользователь с таким айди - клиент
                 client.setIdUser(Long.parseLong(id));
                 client = service.getClient(client);
                 if (client != null) {
@@ -40,7 +39,7 @@ public class ChangeClientRedirectCommand implements ActionCommand {
             }
             request.getSession().setAttribute(ERROR_CHANGE_CLIENT_ID,
                     MessageManager.getProperty(MESSAGE_ERROR_CHANGE_CLIENT_ID));
-            return ConfigurationManager.getProperty(PAGE_CLIENTLIST);//fixme? 2 else
+            return ConfigurationManager.getProperty(PAGE_CLIENTLIST);
         } catch (ServiceException e) {
             LOGGER.log(Level.ERROR,
                     "Exception has occurred while redirecting client was processing. ", e);

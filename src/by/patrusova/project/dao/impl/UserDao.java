@@ -68,6 +68,10 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             "SELECT login FROM users;";
     private final static String SQL_SELECT_ID =
             "SELECT id_user FROM users;";
+    private final static String SQL_FIND_USER_BY_ID_CLIENT =
+            "SELECT users.name, users.email FROM (users JOIN clients ON " +
+                    "users.id_user = clients.id_user) JOIN orders ON " +
+                    "orders.id_client = clients.id_client WHERE orders.id_client = ?;";
 
     public UserDao(ProxyConnection connection) {
         super(connection);
@@ -471,5 +475,45 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             closeStatement(statement);
         }
         return false;
+    }
+
+    public AbstractEntity findUserByIdClient(long id) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,
+                    "Cannot set autocommit false in UserDao findUserByIdClient method. ", e);
+            throw new DaoException(e);
+        }
+        User user = new User();
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement(SQL_FIND_USER_BY_ID_CLIENT);
+            preparedStatement.setLong(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                user.setName(resultSet.getString(NAME));
+                user.setEmail(resultSet.getString(EMAIL));
+            } else {
+                user = null;
+            }
+            connection.commit();
+        } catch (SQLException e) {
+            if (connection != null) {
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,
+                            "Cannot do rollback in UserDao findUserByIdClient method. ", e);
+                    throw new DaoException(e);
+                }
+            }
+            LOGGER.log(Level.ERROR,
+                    "Cannot find user by login/password. Request to table failed. ", e);
+            throw new DaoException(e);
+        } finally {
+            closeStatement(preparedStatement);
+        }
+        return user;
     }
 }

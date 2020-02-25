@@ -22,14 +22,14 @@ public class ChangeCleanerRedirectCommand implements ActionCommand {
     private final static String ERROR_CHANGE_CLEANER_ID = "errorChangeCleanerIdMessage";
     private final static String MESSAGE_ERROR_CHANGE_CLEANER_ID = "message.changeerrorid";
     private final static String PAGE_CLEANERLIST = "page.cleanerlist";
+    private CleanerInfoService service = new CleanerInfoService();
+    private Cleaner cleaner = new Cleaner();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-        CleanerInfoService service = new CleanerInfoService();
-        Cleaner cleaner = new Cleaner();
         String id = request.getParameter(ID);
         try {
-            if (NumberValidator.isValidUserID(id)) {
+            if (NumberValidator.isValidUserID(id)) {//fixme вставить проверку, что пользователь с таким айди - клинер
                 cleaner.setIdUser(Long.parseLong(id));
                 cleaner = service.getCleaner(cleaner);
                 if (cleaner != null) {
@@ -39,7 +39,7 @@ public class ChangeCleanerRedirectCommand implements ActionCommand {
             }
             request.getSession().setAttribute(ERROR_CHANGE_CLEANER_ID,
                     MessageManager.getProperty(MESSAGE_ERROR_CHANGE_CLEANER_ID));
-            return ConfigurationManager.getProperty(PAGE_CLEANERLIST);//fixme?
+            return ConfigurationManager.getProperty(PAGE_CLEANERLIST);
         } catch (ServiceException e) {
             LOGGER.log(Level.ERROR,
                     "Exception has occurred while redirecting cleaner was processing. ", e);

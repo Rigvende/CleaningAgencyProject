@@ -25,35 +25,30 @@ public class SetMarkCommand implements ActionCommand {
     private final static String MESSAGE_ERROR_CHANGE_ORDER = "message.changeerror";
     private final static String PAGE_ORDERLIST = "page.orderlist";
     private final static String PAGE_CONFIRM = "page.confirm";
+    private OrderInfoService service = new OrderInfoService();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-        Optional<AbstractEntity> optional;
         String requestId = request.getParameter(ID);
         String requestMark = request.getParameter(MARK);
         try {
-            if (!NumberValidator.isValidOrderID(requestId) || !NumberValidator.isValidMark(requestMark)) {
-                request.getSession().setAttribute(ERROR_CHANGE_ORDER,
-                        MessageManager.getProperty(MESSAGE_ERROR_CHANGE_ORDER));
-                return ConfigurationManager.getProperty(PAGE_ORDERLIST);
+            if (NumberValidator.isValidOrderID(requestId) && NumberValidator.isValidMark(requestMark)) {
+                long id = Long.parseLong(requestId);
+                int mark = Integer.parseInt(requestMark);
+                Client client = (Client) request.getSession().getAttribute(Role.CLIENT.getValue());
+                long idClient = client.getId();
+                Optional<AbstractEntity> optional = service.doService(id, idClient, mark);
+                if (optional.isPresent()) {
+                    return ConfigurationManager.getProperty(PAGE_CONFIRM);
+                }
             }
-            OrderInfoService service = new OrderInfoService();
-            long id = Long.parseLong(requestId);
-            int mark = Integer.parseInt(requestMark);
-            Client client = (Client) request.getSession().getAttribute(Role.CLIENT.getValue());
-            long idClient = client.getId();
-            optional = service.doService(id, idClient, mark);
+            request.getSession().setAttribute(ERROR_CHANGE_ORDER,
+                    MessageManager.getProperty(MESSAGE_ERROR_CHANGE_ORDER));
+            return ConfigurationManager.getProperty(PAGE_ORDERLIST);
         } catch (ServiceException e) {
             LOGGER.log(Level.ERROR,
                     "Exception has occurred while changing order was processing. ", e);
             throw new CommandException(e);
-        }
-        if (optional.isEmpty()) {
-            request.getSession().setAttribute(ERROR_CHANGE_ORDER,
-                    MessageManager.getProperty(MESSAGE_ERROR_CHANGE_ORDER));
-            return ConfigurationManager.getProperty(PAGE_ORDERLIST);
-        } else {
-            return ConfigurationManager.getProperty(PAGE_CONFIRM);
         }
     }
 }

@@ -23,11 +23,15 @@ public class DeleteEntityCommand implements ActionCommand {
     private final static String ENTITITYPE = "entitytype";
     private final static String PAGE_CONFIRMFALSE = "page.confirmfalse";
     private final static String PAGE_CONFIRM = "page.confirm";
+    private DeleteEntityService entityService = new DeleteEntityService();
+    private User user = new User();
+    private Client client = new Client();
+    private Cleaner cleaner = new Cleaner();
+    private Service service = new Service();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
         String idEntity = request.getParameter(ID);
-        DeleteEntityService entityService = new DeleteEntityService();
         String type = request.getParameter(ENTITITYPE);
         try {
             switch (type) {
@@ -36,7 +40,6 @@ public class DeleteEntityCommand implements ActionCommand {
                         return ConfigurationManager.getProperty(PAGE_CONFIRMFALSE);
                     }
                     long id1 = Long.parseLong(idEntity);
-                    User user = new User();
                     user.setId(id1);
                     user.setRole(Role.ADMIN.getValue());
                     return entityService.doService(user).isEmpty() ?
@@ -47,7 +50,6 @@ public class DeleteEntityCommand implements ActionCommand {
                         return ConfigurationManager.getProperty(PAGE_CONFIRMFALSE);
                     }
                     long id2 = Long.parseLong(idEntity);
-                    Client client = new Client();
                     client.setIdUser(id2);
                     return entityService.doService(client).isEmpty() ?
                             ConfigurationManager.getProperty(PAGE_CONFIRM) :
@@ -57,7 +59,6 @@ public class DeleteEntityCommand implements ActionCommand {
                         return ConfigurationManager.getProperty(PAGE_CONFIRMFALSE);
                     }
                     long id3 = Long.parseLong(idEntity);
-                    Cleaner cleaner = new Cleaner();
                     cleaner.setIdUser(id3);
                     return entityService.doService(cleaner).isEmpty() ?
                             ConfigurationManager.getProperty(PAGE_CONFIRM) :
@@ -67,7 +68,6 @@ public class DeleteEntityCommand implements ActionCommand {
                         return ConfigurationManager.getProperty(PAGE_CONFIRMFALSE);
                     }
                     long id4 = Long.parseLong(idEntity);
-                    Service service = new Service();
                     service.setId(id4);
                     return entityService.doService(service).isEmpty() ?
                             ConfigurationManager.getProperty(PAGE_CONFIRM) :

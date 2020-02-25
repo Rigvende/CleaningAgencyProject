@@ -21,34 +21,26 @@ public class ChangeServiceCommand implements ActionCommand {
     private final static String MESSAGE_ERROR_CHANGE_SERVICE = "message.changeerror";
     private final static String PAGE_CHANGE_SERVICE = "page.changeservice";
     private final static String PAGE_CONFIRM = "page.confirm";
+    private ServiceInfoService infoService = new ServiceInfoService();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-        String page;
-        ServiceInfoService infoService = new ServiceInfoService();
         try {
             Optional<AbstractEntity> opt = infoService.createEntity(request);
-            if (opt.isEmpty()) {
-                request.getSession().setAttribute(ERROR_CHANGE_SERVICE,
-                        MessageManager.getProperty(MESSAGE_ERROR_CHANGE_SERVICE));
-                page = ConfigurationManager.getProperty(PAGE_CHANGE_SERVICE);
-                return page;
-            } else {
-                Service service = (Service)opt.get();
+            if (opt.isPresent()) {
+                Service service = (Service) opt.get();
                 Optional<AbstractEntity> optional = infoService.doService(service);
                 if (optional.isPresent()) {
-                    page = ConfigurationManager.getProperty(PAGE_CONFIRM);
-                } else {
-                    request.getSession().setAttribute(ERROR_CHANGE_SERVICE,
-                            MessageManager.getProperty(MESSAGE_ERROR_CHANGE_SERVICE));
-                    page = ConfigurationManager.getProperty(PAGE_CHANGE_SERVICE);
+                    return ConfigurationManager.getProperty(PAGE_CONFIRM);
                 }
             }
+            request.getSession().setAttribute(ERROR_CHANGE_SERVICE,
+                    MessageManager.getProperty(MESSAGE_ERROR_CHANGE_SERVICE));
+            return ConfigurationManager.getProperty(PAGE_CHANGE_SERVICE);
         } catch (ServiceException e) {
             LOGGER.log(Level.ERROR,
                     "Exception has occurred while changing service info was processing. ", e);
             throw new CommandException(e);
         }
-        return page;
     }
 }

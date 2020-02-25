@@ -127,6 +127,7 @@
     ${wrongAction}
     ${nullPage}
     <ctg:remove-attr/>
+    <br/>
 
     <form name="changeOrderForm" method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="cancel" />
@@ -154,7 +155,7 @@
             <fmt:message key="text.orders"/>
         </u></h5>
     </div>
-${order}
+
     <div style="text-align: center;">
         <table border="1" cellpadding="5" cellspacing="5" align="center">
             <tr style="background-color: royalblue">

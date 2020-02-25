@@ -25,6 +25,8 @@ public class RemoveAttrTag extends TagSupport {
     private final static String ERROR_CHANGE_USER = "errorChangeUserMessage";
     private final static String ERROR_MAIL = "errorMail";
     private final static String ERROR_SELECT= "errorSelect";
+    private final static String ORDER_DONE = "orderDone";
+    private final static String FORMER_GUEST = "formerguest";
 
     @Override
     public int doStartTag() {
@@ -47,6 +49,8 @@ public class RemoveAttrTag extends TagSupport {
         list.add(ERROR_CHANGE_USER);
         list.add(ERROR_MAIL);
         list.add(ERROR_SELECT);
+        list.add(FORMER_GUEST);
+        list.add(ORDER_DONE);
         for (String attr : list) {
             pageContext.getSession().removeAttribute(attr);
         }

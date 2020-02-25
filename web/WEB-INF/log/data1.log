@@ -5408,3 +5408,110 @@ Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or u
 25-02 14:21 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
 25-02 14:21 INFO  command.impl.LocaleCommand - ru_RU
 25-02 14:21 INFO  command.impl.LocaleCommand - en_EN
+25-02 18:45 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@5483a99e
+25-02 18:45 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@294c50cb
+25-02 18:45 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+25-02 18:46 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+25-02 18:46 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+25-02 18:46 INFO  command.impl.LocaleCommand - ru_RU
+25-02 18:51 INFO  command.impl.LocaleCommand - ru_RU
+25-02 18:51 INFO  command.impl.LocaleCommand - en_EN
+25-02 18:57 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@742be48f
+25-02 18:57 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@43ebbd09
+25-02 18:57 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+25-02 19:02 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+25-02 19:02 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+25-02 19:05 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@24a78038
+25-02 19:05 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@5b6af319
+25-02 19:05 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+25-02 19:08 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+25-02 19:08 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+25-02 19:11 INFO  command.impl.LocaleCommand - ru_RU
+25-02 19:24 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@52ffa795
+25-02 19:24 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@413f1d31
+25-02 19:24 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+25-02 19:25 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+25-02 19:25 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+25-02 20:32 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@2185aaca
+25-02 20:32 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@76251fb4
+25-02 20:32 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+25-02 20:33 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+25-02 20:33 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+25-02 20:43 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@2cedf8fd
+25-02 20:43 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@62d019ad
+25-02 20:43 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+25-02 20:49 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+25-02 20:49 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+25-02 21:44 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@7a27d346
+25-02 21:44 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@29fc28e3
+25-02 21:44 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+25-02 21:45 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+25-02 21:45 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+25-02 21:51 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+25-02 21:51 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+25-02 21:51 ERROR dao.impl.BasketDao - Cannot add position to the basket. Request to table failed. 
+java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`cleaning_agency`.`basket_position`, CONSTRAINT `order` FOREIGN KEY (`id_order`) REFERENCES `orders` (`id_order`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at by.patrusova.project.dao.impl.BasketDao.create(BasketDao.java:52) [CleaningAgencyProject/:?]
+	at by.patrusova.project.service.impl.BasketService.doService(BasketService.java:24) [CleaningAgencyProject/:?]
+	at add.Main.main(Main.java:74) [CleaningAgencyProject/:?]
+25-02 21:51 ERROR service.impl.BasketService - Exception in BasketService while creating basket position has occurred. 
+by.patrusova.project.exception.DaoException: java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`cleaning_agency`.`basket_position`, CONSTRAINT `order` FOREIGN KEY (`id_order`) REFERENCES `orders` (`id_order`))
+	at by.patrusova.project.dao.impl.BasketDao.create(BasketDao.java:66) ~[CleaningAgencyProject/:?]
+	at by.patrusova.project.service.impl.BasketService.doService(BasketService.java:24) [CleaningAgencyProject/:?]
+	at add.Main.main(Main.java:74) [CleaningAgencyProject/:?]
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`cleaning_agency`.`basket_position`, CONSTRAINT `order` FOREIGN KEY (`id_order`) REFERENCES `orders` (`id_order`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at by.patrusova.project.dao.impl.BasketDao.create(BasketDao.java:52) ~[CleaningAgencyProject/:?]
+	... 2 more
+25-02 21:53 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+25-02 21:53 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+25-02 21:58 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+25-02 21:58 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+25-02 21:58 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+25-02 21:58 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+25-02 22:07 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+25-02 22:07 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+25-02 22:14 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@6a28e4b5
+25-02 22:14 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@139b48ad
+25-02 22:14 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+25-02 22:15 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+25-02 22:15 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+25-02 22:18 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@34df2c25
+25-02 22:18 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@53844b56
+25-02 22:18 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+25-02 22:19 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+25-02 22:19 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+25-02 22:20 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@6a28e4b5
+25-02 22:20 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@139b48ad
+25-02 22:20 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+25-02 22:21 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+25-02 22:21 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+25-02 22:22 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@2648b27a
+25-02 22:22 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@aeef2ab
+25-02 22:22 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+25-02 22:23 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+25-02 22:23 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+25-02 22:27 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@9ac538f
+25-02 22:27 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@1cec2fa8
+25-02 22:27 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+25-02 22:28 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+25-02 22:28 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+25-02 22:36 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@2e1749b0
+25-02 22:36 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4b2e5b17
+25-02 22:36 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+25-02 22:36 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+25-02 22:36 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+25-02 22:43 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@23a9daf6
+25-02 22:43 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4eea5a53
+25-02 22:43 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+25-02 22:44 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+25-02 22:44 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.

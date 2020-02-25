@@ -13,6 +13,7 @@ import by.patrusova.project.validator.NumberValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import javax.servlet.http.HttpServletRequest;
 
 public class CancelCommand implements ActionCommand {
@@ -23,30 +24,26 @@ public class CancelCommand implements ActionCommand {
     private final static String MESSAGE_ERROR_CHANGE_ORDER = "message.changeerror";
     private final static String PAGE_ORDERLIST = "page.orderlist";
     private final static String PAGE_CONFIRM = "page.confirm";
+    private CancelOrderService service = new CancelOrderService();
+    private Order order = new Order();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
         String orderId = request.getParameter(ID);
         try {
-            if (!NumberValidator.isValidOrderID(orderId)) {
-                request.getSession().setAttribute(ERROR_CHANGE_ORDER,
-                        MessageManager.getProperty(MESSAGE_ERROR_CHANGE_ORDER));
-                return ConfigurationManager.getProperty(PAGE_ORDERLIST);
+            if (NumberValidator.isValidOrderID(orderId)) {
+                long id = Long.parseLong(orderId);
+                Client client = (Client) request.getSession().getAttribute(Role.CLIENT.getValue());
+                long clientId = client.getId();
+                order.setId(id);
+                order.setIdClient(clientId);
+                if (service.doService(order).isPresent()) {
+                    return ConfigurationManager.getProperty(PAGE_CONFIRM);
+                }
             }
-            long id = Long.parseLong(orderId);
-            Client client = (Client)request.getSession().getAttribute(Role.CLIENT.getValue());
-            long clientId = client.getId();
-            CancelOrderService service = new CancelOrderService();
-            Order order = new Order();
-            order.setId(id);
-            order.setIdClient(clientId);
-            if (service.doService(order).isPresent()) {
-                return ConfigurationManager.getProperty(PAGE_CONFIRM);
-            } else {
-                request.getSession().setAttribute(ERROR_CHANGE_ORDER,
-                        MessageManager.getProperty(MESSAGE_ERROR_CHANGE_ORDER));
-                return ConfigurationManager.getProperty(PAGE_ORDERLIST);
-            }
+            request.getSession().setAttribute(ERROR_CHANGE_ORDER,
+                    MessageManager.getProperty(MESSAGE_ERROR_CHANGE_ORDER));
+            return ConfigurationManager.getProperty(PAGE_ORDERLIST);
         } catch (ServiceException e) {
             LOGGER.log(Level.ERROR, "Exception while cancelling order has occurred. ", e);
             throw new CommandException(e);

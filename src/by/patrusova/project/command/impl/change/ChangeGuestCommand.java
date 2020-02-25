@@ -26,38 +26,29 @@ public class ChangeGuestCommand implements ActionCommand {
     private final static String PAGE_GUESTLIST = "page.guestlist";
     private final static String FORMERGUEST = "formerguest";
     private final static String PAGE_MAIL = "page.mail";
+    private RoleService roleService = new RoleService();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-        String Id = request.getParameter(ID);
+        String idUser = request.getParameter(ID);
         String role = request.getParameter(ROLE);
         try {
-            if (!NumberValidator.isValidUserID(Id) || !StringValidator.isValidRole(role)){
-                request.getSession().setAttribute(ERROR_CHANGE_GUEST,
-                        MessageManager.getProperty(MESSAGE_ERROR_CHANGE_GUEST));
-                return ConfigurationManager.getProperty(PAGE_GUESTLIST);
+            if (NumberValidator.isValidUserID(idUser) && StringValidator.isValidRole(role)) {
+                long id = Long.parseLong(idUser);
+                Optional<AbstractEntity> optional;
+                optional = roleService.doService(id, role);
+                if (optional.isPresent()) {
+                    User user = (User) optional.get();
+                    request.getSession().setAttribute(FORMERGUEST, user);
+                    return ConfigurationManager.getProperty(PAGE_MAIL);
+                }
             }
-        } catch (ServiceException e) {
-            LOGGER.log(Level.ERROR, "Exception has occurred while changing role was processing. ", e);
-            throw new CommandException(e);
-        }
-        RoleService roleService = new RoleService();
-        long id = Long.parseLong(Id);
-        Optional<AbstractEntity> optional;
-        try {
-            optional = roleService.doService(id, role);
-        } catch (ServiceException e) {
-            LOGGER.log(Level.ERROR, "Exception has occurred while changing role was processing. ", e);
-            throw new CommandException(e);
-        }
-        if (optional.isEmpty()) {
             request.getSession().setAttribute(ERROR_CHANGE_GUEST,
                     MessageManager.getProperty(MESSAGE_ERROR_CHANGE_GUEST));
             return ConfigurationManager.getProperty(PAGE_GUESTLIST);
-        } else {
-            User user = (User) optional.get();
-            request.getSession().setAttribute(FORMERGUEST, user);
-            return ConfigurationManager.getProperty(PAGE_MAIL);
+        } catch (ServiceException e) {
+            LOGGER.log(Level.ERROR, "Exception has occurred while changing role was processing. ", e);
+            throw new CommandException(e);
         }
     }
 }

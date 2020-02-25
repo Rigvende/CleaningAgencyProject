@@ -26,35 +26,30 @@ public class SetNotesCommand implements ActionCommand {
     private final static String MESSAGE_ERROR_CHANGE_CLIENT = "message.changeerror";
     private final static String PAGE_ORDERLIST = "page.orderlist";
     private final static String PAGE_CONFIRM = "page.confirm";
+    private ClientInfoService service = new ClientInfoService();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-        Optional<AbstractEntity> optional;
         String requestId = request.getParameter(ID);
         String requestNotes = request.getParameter(NOTES);
         try {
-            if (!NumberValidator.isValidOrderID(requestId)
-                    || !StringValidator.isValidStringSize(NOTES, requestNotes)) {
-                request.getSession().setAttribute(ERROR_CHANGE_CLIENT,
-                        MessageManager.getProperty(MESSAGE_ERROR_CHANGE_CLIENT));
-                return ConfigurationManager.getProperty(PAGE_ORDERLIST);
+            if (NumberValidator.isValidOrderID(requestId)
+                    && StringValidator.isValidStringSize(NOTES, requestNotes)) {
+                long idOrder = Long.parseLong(requestId);
+                Cleaner cleaner = (Cleaner) request.getSession().getAttribute(Role.CLEANER.getValue());
+                long idCleaner = cleaner.getId();
+                Optional<AbstractEntity> optional = service.doService(idOrder, idCleaner, requestNotes);
+                if (optional.isPresent()) {
+                    return ConfigurationManager.getProperty(PAGE_CONFIRM);
+                }
             }
-            long idOrder = Long.parseLong(requestId);
-            Cleaner cleaner = (Cleaner) request.getSession().getAttribute(Role.CLEANER.getValue());
-            long idCleaner = cleaner.getId();
-            ClientInfoService service = new ClientInfoService();
-            optional = service.doService(idOrder, idCleaner, requestNotes);
+            request.getSession().setAttribute(ERROR_CHANGE_CLIENT,
+                    MessageManager.getProperty(MESSAGE_ERROR_CHANGE_CLIENT));
+            return ConfigurationManager.getProperty(PAGE_ORDERLIST);
         } catch (ServiceException e) {
             LOGGER.log(Level.ERROR,
                     "Exception has occurred while changing client was processing. ", e);
             throw new CommandException(e);
-        }
-        if (optional.isEmpty()) {
-            request.getSession().setAttribute(ERROR_CHANGE_CLIENT,
-                    MessageManager.getProperty(MESSAGE_ERROR_CHANGE_CLIENT));
-            return ConfigurationManager.getProperty(PAGE_ORDERLIST);
-        } else {
-            return ConfigurationManager.getProperty(PAGE_CONFIRM);
         }
     }
 }

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/web/WEB-INF/doc" />
+    <option name="LOCALE" value="en_EN" />
+  </component>
   <component name="ProjectResources">
     <resource url="http://jakarta.apache.org/log4j/" location="$PROJECT_DIR$" />
   </component>
