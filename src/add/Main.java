@@ -3,16 +3,12 @@ package add;
 import by.patrusova.project.dao.DaoFactory;
 import by.patrusova.project.dao.impl.OrderDao;
 import by.patrusova.project.entity.AbstractEntity;
-import by.patrusova.project.entity.Role;
 import by.patrusova.project.entity.impl.BasketPosition;
-import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.entity.impl.Order;
 import by.patrusova.project.entity.impl.Service;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.*;
-import by.patrusova.project.util.ConfigurationManager;
-import by.patrusova.project.validator.NumberValidator;
 
 import java.io.*;
 import java.sql.SQLException;
@@ -54,14 +50,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException, SQLException, DaoException, ServiceException {
 
-//        String id = "1";
-//        Client client = new Client();
-//        ClientInfoService service = new ClientInfoService();
-//            if (NumberValidator.isValidUserID(id)) {
-//                client.setIdUser(Long.parseLong(id));
-//                client = service.getClient(client);
-//                System.out.println(client);
-//            }
+
 //        Order order = new Order();
 //        order.setIdClient(2);
 //        order.setOrderStatus("new");
@@ -77,11 +66,11 @@ public class Main {
 //        System.out.println(  dao.findNew(order));
 
 
-//       BasketService service = new BasketService();
-//        BasketPosition position = new BasketPosition();
-//        position.setIdOrder(22);
-//        position.setIdService(70);
-//        System.out.println(service.doService(position));
+       BasketService service = new BasketService();
+        BasketPosition position = new BasketPosition();
+        position.setIdOrder(22);
+        position.setIdService(70);
+        System.out.println(service.doService(position));
 //        BasketPosition position2 = new BasketPosition();
 //        position2.setIdService(85);
 //        System.out.println(service.doService(position2));
