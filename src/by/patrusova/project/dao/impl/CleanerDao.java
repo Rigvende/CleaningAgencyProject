@@ -6,7 +6,6 @@ import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.dao.EntityFactory;
 import by.patrusova.project.entity.impl.Cleaner;
 import by.patrusova.project.exception.DaoException;
-import by.patrusova.project.util.stringholder.Statement;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,9 +16,19 @@ import java.util.List;
 public class CleanerDao extends AbstractDao<AbstractEntity> {
 
     private final static Logger LOGGER = LogManager.getLogger();
+    private static final String SQL_CREATE_CLEANER_BY_ADMIN =
+            "INSERT INTO cleaners VALUES (?, ?, ?, ?);";
+    private static final String SQL_DELETE_CLEANER =
+            "DELETE FROM cleaners WHERE id_user = ?;";
+    private static final String SQL_UPDATE_CLEANER_BY_ADMIN =
+            "UPDATE cleaners SET commission = ?, notes = ? WHERE id_user = ?;";
+    private static final String SQL_SELECT_CLEANER_BY_ID =
+            "SELECT id_cleaner, id_user, commission, notes AS cleaner_notes " +
+                    "FROM cleaners WHERE id_user = ?;";
     private static final String SQL_SELECT_ALL_CLEANERS =
-            "SELECT id_cleaner, id_user, commission FROM cleaners";
-    private final static String SQL_SELECT_ID = "SELECT id_cleaner FROM cleaners";
+            "SELECT id_cleaner, id_user, commission FROM cleaners;";
+    private final static String SQL_SELECT_ID =
+            "SELECT id_cleaner FROM cleaners;";
 
     public CleanerDao(ProxyConnection connection) {
         super(connection);
@@ -30,15 +39,15 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
         try {
             connection.setAutoCommit(false);
         } catch (SQLException e) {
-            LOGGER.log(Level.ERROR,"Cannot set autocommit false in CleanerDao create method. ", e);
+            LOGGER.log(Level.ERROR,
+                    "Cannot set autocommit false in CleanerDao create method. ", e);
             throw new DaoException(e);
         }
         Cleaner cleaner = (Cleaner) entity;
         boolean isAdded;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = connection.prepareStatement
-                    (Statement.SQL_CREATE_CLEANER_BY_ADMIN.getValue());
+            preparedStatement = connection.prepareStatement(SQL_CREATE_CLEANER_BY_ADMIN);
             preparedStatement.setLong(1, 0);
             preparedStatement.setLong(2, cleaner.getIdUser());
             preparedStatement.setString(3, null);
@@ -50,11 +59,13 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
                 try {
                     connection.rollback();
                 } catch (SQLException ex) {
-                    LOGGER.log(Level.ERROR,"Cannot do rollback in CleanerDao create method. ", e);
+                    LOGGER.log(Level.ERROR,
+                            "Cannot do rollback in CleanerDao create method. ", e);
                     throw new DaoException(e);
                 }
             }
-            LOGGER.log(Level.ERROR, "Cannot add cleaner. Request to table failed. ", e);
+            LOGGER.log(Level.ERROR,
+                    "Cannot add cleaner. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
@@ -67,15 +78,15 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
         try {
             connection.setAutoCommit(false);
         } catch (SQLException e) {
-            LOGGER.log(Level.ERROR,"Cannot set autocommit false in CleanerDao delete method. ", e);
+            LOGGER.log(Level.ERROR,
+                    "Cannot set autocommit false in CleanerDao delete method. ", e);
             throw new DaoException(e);
         }
         boolean isDeleted;
         Cleaner cleaner = (Cleaner) entity;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = connection.prepareStatement
-                    (Statement.SQL_DELETE_CLEANER.getValue());
+            preparedStatement = connection.prepareStatement(SQL_DELETE_CLEANER);
             preparedStatement.setLong(1, cleaner.getIdUser());
             isDeleted = preparedStatement.execute();
             if (!findId(cleaner.getIdUser())) {
@@ -87,11 +98,13 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
                 try {
                     connection.rollback();
                 } catch (SQLException ex) {
-                    LOGGER.log(Level.ERROR,"Cannot do rollback in CleanerDao delete method. ", e);
+                    LOGGER.log(Level.ERROR,
+                            "Cannot do rollback in CleanerDao delete method. ", e);
                     throw new DaoException(e);
                 }
             }
-            LOGGER.log(Level.ERROR, "Cannot delete cleaner. Request to table failed. ", e);
+            LOGGER.log(Level.ERROR,
+                    "Cannot delete cleaner. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
@@ -104,15 +117,15 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
         try {
             connection.setAutoCommit(false);
         } catch (SQLException e) {
-            LOGGER.log(Level.ERROR,"Cannot set autocommit false in CleanerDao update method. ", e);
+            LOGGER.log(Level.ERROR,
+                    "Cannot set autocommit false in CleanerDao update method. ", e);
             throw new DaoException(e);
         }
         boolean isUpdated;
         Cleaner cleaner = (Cleaner) entity;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = connection.prepareStatement
-                    (Statement.SQL_UPDATE_CLEANER_BY_ADMIN.getValue());
+            preparedStatement = connection.prepareStatement(SQL_UPDATE_CLEANER_BY_ADMIN);
             preparedStatement.setBigDecimal(1, cleaner.getCommission());
             preparedStatement.setString(2, cleaner.getNotes());
             preparedStatement.setLong(3, cleaner.getIdUser());
@@ -123,11 +136,13 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
                 try {
                     connection.rollback();
                 } catch (SQLException ex) {
-                    LOGGER.log(Level.ERROR,"Cannot do rollback in CleanerDao update method. ", e);
+                    LOGGER.log(Level.ERROR,
+                            "Cannot do rollback in CleanerDao update method. ", e);
                     throw new DaoException(e);
                 }
             }
-            LOGGER.log(Level.ERROR, "Cannot update cleaner. Request to table failed. ", e);
+            LOGGER.log(Level.ERROR,
+                    "Cannot update cleaner. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(preparedStatement);
@@ -140,11 +155,12 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
         try {
             connection.setAutoCommit(false);
         } catch (SQLException e) {
-            LOGGER.log(Level.ERROR,"Cannot set autocommit false in CleanerDao findAll method. ", e);
+            LOGGER.log(Level.ERROR,
+                    "Cannot set autocommit false in CleanerDao findAll method. ", e);
             throw new DaoException(e);
         }
         List<AbstractEntity> cleaners = new ArrayList<>();
-        java.sql.Statement statement = null;
+        Statement statement = null;
         try {
             statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(SQL_SELECT_ALL_CLEANERS);
@@ -158,11 +174,13 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
                 try {
                     connection.rollback();
                 } catch (SQLException ex) {
-                    LOGGER.log(Level.ERROR,"Cannot do rollback in CleanerDao findAll method. ", e);
+                    LOGGER.log(Level.ERROR,
+                            "Cannot do rollback in CleanerDao findAll method. ", e);
                     throw new DaoException(e);
                 }
             }
-            LOGGER.log(Level.ERROR, "Cannot find all cleaners. Request to table failed. ", e);
+            LOGGER.log(Level.ERROR,
+                    "Cannot find all cleaners. Request to table failed. ", e);
             throw new DaoException(e);
         } finally {
             closeStatement(statement);
@@ -175,25 +193,27 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
         try {
             connection.setAutoCommit(false);
         } catch (SQLException e) {
-            LOGGER.log(Level.ERROR,"Cannot set autocommit false in CleanerDao findEntityById method. ", e);
+            LOGGER.log(Level.ERROR,
+                    "Cannot set autocommit false in CleanerDao findEntityById method. ", e);
             throw new DaoException(e);
         }
         Cleaner cleaner;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = connection.prepareStatement
-                    (by.patrusova.project.util.stringholder.Statement.SQL_SELECT_CLEANER_BY_ID.getValue());
+            preparedStatement = connection.prepareStatement(SQL_SELECT_CLEANER_BY_ID);
             preparedStatement.setLong(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             cleaner = resultSet.next() ? EntityFactory.createCleaner(resultSet) : null;
             connection.commit();
         } catch (SQLException e) {
-            LOGGER.log(Level.ERROR, "Cannot find cleaner by ID. Request to table failed. ", e);
+            LOGGER.log(Level.ERROR,
+                    "Cannot find cleaner by ID. Request to table failed. ", e);
             if (connection != null) {
                 try {
                     connection.rollback();
                 } catch (SQLException ex) {
-                    LOGGER.log(Level.ERROR,"Cannot do rollback in CleanerDao findEntityById method. ", e);
+                    LOGGER.log(Level.ERROR,
+                            "Cannot do rollback in CleanerDao findEntityById method. ", e);
                     throw new DaoException(e);
                 }
             }
@@ -208,10 +228,11 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
         try {
             connection.setAutoCommit(false);
         } catch (SQLException e) {
-            LOGGER.log(Level.ERROR,"Cannot set autocommit false in CleanerDao findId method. ", e);
+            LOGGER.log(Level.ERROR,
+                    "Cannot set autocommit false in CleanerDao findId method. ", e);
             throw new DaoException(e);
         }
-        java.sql.Statement statement = connection.createStatement();
+        Statement statement = connection.createStatement();
         try {
             ResultSet resultSet = statement.executeQuery(SQL_SELECT_ID); //проверка при регистрации
             while (resultSet.next()) {
@@ -225,11 +246,13 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
                 try {
                     connection.rollback();
                 } catch (SQLException ex) {
-                    LOGGER.log(Level.ERROR,"Cannot do rollback in CleanerDao findId method. ", e);
+                    LOGGER.log(Level.ERROR,
+                            "Cannot do rollback in CleanerDao findId method. ", e);
                     throw new DaoException(e);
                 }
             }
-            LOGGER.log(Level.ERROR, "Cannot find id_cleaner in DB. Request to table failed.", e);
+            LOGGER.log(Level.ERROR,
+                    "Cannot find id_cleaner in DB. Request to table failed.", e);
             throw new DaoException(e);
         } finally {
             closeStatement(statement);

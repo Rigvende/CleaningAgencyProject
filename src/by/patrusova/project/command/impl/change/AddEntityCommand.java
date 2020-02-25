@@ -8,9 +8,6 @@ import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.ServiceInfoService;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.util.MessageManager;
-import by.patrusova.project.util.stringholder.Attribute;
-import by.patrusova.project.util.stringholder.Message;
-import by.patrusova.project.util.stringholder.Page;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,6 +17,10 @@ import java.util.Optional;
 public class AddEntityCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();
+    private final static String ERROR_ADD_SERVICE = "errorAddServiceMessage";
+    private final static String MESSAGE_ERROR_ADD_SERVICE = "message.adderror";
+    private final static String PAGE_ADD_SERVICE = "page.addservice";
+    private final static String PAGE_CONFIRM = "page.confirm";
 
     public String execute(HttpServletRequest request) throws CommandException {
         String page;
@@ -27,19 +28,19 @@ public class AddEntityCommand implements ActionCommand {
         try {
             Optional<AbstractEntity> optional = infoService.createNewEntity(request);
             if (optional.isEmpty()) {
-                request.getSession().setAttribute(Attribute.ERROR_ADD_SERVICE.getValue(),
-                        MessageManager.getProperty(Message.MESSAGE_ERROR_ADD_SERVICE.getValue()));
-                page = ConfigurationManager.getProperty(Page.PAGE_ADD_SERVICE.getValue());
+                request.getSession().setAttribute(ERROR_ADD_SERVICE,
+                        MessageManager.getProperty(MESSAGE_ERROR_ADD_SERVICE));
+                page = ConfigurationManager.getProperty(PAGE_ADD_SERVICE);
                 return page;
             } else {
                 Service service = (Service)optional.get();
                 Optional<AbstractEntity> opt = infoService.doServiceAdd(service);
                 if (opt.isPresent()) {
-                    page = ConfigurationManager.getProperty(Page.PAGE_CONFIRM.getValue());
+                    page = ConfigurationManager.getProperty(PAGE_CONFIRM);
                 } else {
-                    request.getSession().setAttribute(Attribute.ERROR_ADD_SERVICE.getValue(),
-                            MessageManager.getProperty(Message.MESSAGE_ERROR_ADD_SERVICE.getValue()));
-                    page = ConfigurationManager.getProperty(Page.PAGE_ADD_SERVICE.getValue());
+                    request.getSession().setAttribute(ERROR_ADD_SERVICE,
+                            MessageManager.getProperty(MESSAGE_ERROR_ADD_SERVICE));
+                    page = ConfigurationManager.getProperty(PAGE_ADD_SERVICE);
                 }
             }
         } catch (ServiceException e) {

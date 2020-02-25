@@ -5,12 +5,12 @@ import by.patrusova.project.dao.impl.CleanerDao;
 import by.patrusova.project.dao.impl.ClientDao;
 import by.patrusova.project.dao.impl.UserDao;
 import by.patrusova.project.entity.AbstractEntity;
+import by.patrusova.project.entity.Role;
 import by.patrusova.project.entity.impl.Cleaner;
 import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
-import by.patrusova.project.util.stringholder.Attribute;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -25,7 +25,7 @@ public class RoleService {
         try {
             UserDao userDao = DaoFactory.createUserDao();
             user = (User) userDao.findEntityById(id);
-            if (user.getRole().equals(Attribute.GUEST.getValue())) {
+            if (user.getRole().equals(Role.GUEST.getValue())) {
                 user.setRole(role);
                 if (!userDao.update(user)) {
                     switch (role) {

@@ -8,8 +8,6 @@ import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.EntityCreator;
 import by.patrusova.project.service.Serviceable;
-import by.patrusova.project.util.stringholder.Attribute;
-import by.patrusova.project.util.stringholder.Parameter;
 import by.patrusova.project.validator.NumberValidator;
 import by.patrusova.project.validator.StringValidator;
 import org.apache.logging.log4j.Level;
@@ -23,6 +21,9 @@ import java.util.Optional;
 public class OrderInfoService implements Serviceable, EntityCreator {
 
     private final static Logger LOGGER = LogManager.getLogger();
+    private final static String ID_CLEANER = "id_cleaner";
+    private final static String ORDER = "order";
+    private final static String STATUS = "status";
 
     @Override
     public Optional<AbstractEntity> doService(AbstractEntity entity) throws ServiceException {
@@ -69,12 +70,10 @@ public class OrderInfoService implements Serviceable, EntityCreator {
     @Override
     public Optional<AbstractEntity> createEntity(HttpServletRequest request) throws ServiceException {
         Order updatedOrder = (Order) request.getSession()
-                .getAttribute(Attribute.ORDER.getValue());
+                .getAttribute(ORDER);
         if (!validate(request).containsValue(false)) {
-            updatedOrder.setIdCleaner(Long.parseLong(request
-                    .getParameter(Parameter.ID_CLEANER.getValue())));
-            updatedOrder.setOrderStatus(request
-                    .getParameter(Parameter.STATUS.getValue()));
+            updatedOrder.setIdCleaner(Long.parseLong(request.getParameter(ID_CLEANER)));
+            updatedOrder.setOrderStatus(request.getParameter(STATUS));
             return Optional.of(updatedOrder);
         }
         return Optional.empty();
@@ -83,10 +82,10 @@ public class OrderInfoService implements Serviceable, EntityCreator {
     //validation while creating
     private Map<String, Boolean> validate(HttpServletRequest request) throws ServiceException {
         Map<String, Boolean> validationMap = new HashMap<>();
-        String id = request.getParameter(Parameter.ID_CLEANER.getValue());
-        String status = request.getParameter(Parameter.STATUS.getValue());
-        validationMap.put(Parameter.ID_CLEANER.getValue(), NumberValidator.isValidCleanerID(id));
-        validationMap.put(Parameter.STATUS.getValue(), StringValidator.isValidStatus(status));
+        String id = request.getParameter(ID_CLEANER);
+        String status = request.getParameter(STATUS);
+        validationMap.put(ID_CLEANER, NumberValidator.isValidCleanerID(id));
+        validationMap.put(STATUS, StringValidator.isValidStatus(status));
         return validationMap;
     }
 

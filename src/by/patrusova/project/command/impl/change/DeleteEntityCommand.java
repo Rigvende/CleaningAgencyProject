@@ -1,6 +1,7 @@
 package by.patrusova.project.command.impl.change;
 
 import by.patrusova.project.command.ActionCommand;
+import by.patrusova.project.entity.Role;
 import by.patrusova.project.entity.impl.Cleaner;
 import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.entity.impl.Service;
@@ -9,9 +10,6 @@ import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.DeleteEntityService;
 import by.patrusova.project.util.ConfigurationManager;
-import by.patrusova.project.util.stringholder.Attribute;
-import by.patrusova.project.util.stringholder.Page;
-import by.patrusova.project.util.stringholder.Parameter;
 import by.patrusova.project.validator.NumberValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -21,68 +19,64 @@ import javax.servlet.http.HttpServletRequest;
 public class DeleteEntityCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();
+    private final static String ID = "id";
+    private final static String ENTITITYPE = "entitytype";
+    private final static String PAGE_CONFIRMFALSE = "page.confirmfalse";
+    private final static String PAGE_CONFIRM = "page.confirm";
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-        String Id = request.getParameter(Parameter.ID.getValue());
+        String idEntity = request.getParameter(ID);
         DeleteEntityService entityService = new DeleteEntityService();
-        String type = request.getParameter(Parameter.ENTITITYPE.getValue());
+        String type = request.getParameter(ENTITITYPE);
         try {
             switch (type) {
                 case "admin":
-                    if (!NumberValidator.isValidUserID(Id)) {
-                        return ConfigurationManager.getProperty(Page.PAGE_CONFIRMFALSE.getValue());
+                    if (!NumberValidator.isValidUserID(idEntity)) {
+                        return ConfigurationManager.getProperty(PAGE_CONFIRMFALSE);
                     }
-                    long id1 = Long.parseLong(Id);
+                    long id1 = Long.parseLong(idEntity);
                     User user = new User();
                     user.setId(id1);
-                    user.setRole(Attribute.ADMIN.getValue());
-                    if (entityService.doService(user).isEmpty()) {
-                        return ConfigurationManager.getProperty(Page.PAGE_CONFIRM.getValue());
-                    } else {
-                        return ConfigurationManager.getProperty(Page.PAGE_CONFIRMFALSE.getValue());
-                    }
+                    user.setRole(Role.ADMIN.getValue());
+                    return entityService.doService(user).isEmpty() ?
+                            ConfigurationManager.getProperty(PAGE_CONFIRM) :
+                            ConfigurationManager.getProperty(PAGE_CONFIRMFALSE);
                 case "client":
-                    if (!NumberValidator.isValidUserID(Id)) {
-                        return ConfigurationManager.getProperty(Page.PAGE_CONFIRMFALSE.getValue());
+                    if (!NumberValidator.isValidUserID(idEntity)) {
+                        return ConfigurationManager.getProperty(PAGE_CONFIRMFALSE);
                     }
-                    long id2 = Long.parseLong(Id);
+                    long id2 = Long.parseLong(idEntity);
                     Client client = new Client();
                     client.setIdUser(id2);
-                    if (entityService.doService(client).isEmpty()) {
-                        return ConfigurationManager.getProperty(Page.PAGE_CONFIRM.getValue());
-                    } else {
-                        return ConfigurationManager.getProperty(Page.PAGE_CONFIRMFALSE.getValue());
-                    }
+                    return entityService.doService(client).isEmpty() ?
+                            ConfigurationManager.getProperty(PAGE_CONFIRM) :
+                            ConfigurationManager.getProperty(PAGE_CONFIRMFALSE);
                 case "cleaner":
-                    if (!NumberValidator.isValidUserID(Id)) {
-                        return ConfigurationManager.getProperty(Page.PAGE_CONFIRMFALSE.getValue());
+                    if (!NumberValidator.isValidUserID(idEntity)) {
+                        return ConfigurationManager.getProperty(PAGE_CONFIRMFALSE);
                     }
-                    long id3 = Long.parseLong(Id);
+                    long id3 = Long.parseLong(idEntity);
                     Cleaner cleaner = new Cleaner();
                     cleaner.setIdUser(id3);
-                    if (entityService.doService(cleaner).isEmpty()) {
-                        return ConfigurationManager.getProperty(Page.PAGE_CONFIRM.getValue());
-                    } else {
-                        return ConfigurationManager.getProperty(Page.PAGE_CONFIRMFALSE.getValue());
-                    }
+                    return entityService.doService(cleaner).isEmpty() ?
+                            ConfigurationManager.getProperty(PAGE_CONFIRM) :
+                            ConfigurationManager.getProperty(PAGE_CONFIRMFALSE);
                 case "service":
-                    if (!NumberValidator.isValidServiceID(Id)) {
-                        return ConfigurationManager.getProperty(Page.PAGE_CONFIRMFALSE.getValue());
+                    if (!NumberValidator.isValidServiceID(idEntity)) {
+                        return ConfigurationManager.getProperty(PAGE_CONFIRMFALSE);
                     }
-                    long id4 = Long.parseLong(Id);
+                    long id4 = Long.parseLong(idEntity);
                     Service service = new Service();
                     service.setId(id4);
-                    if (entityService.doService(service).isEmpty()) {
-                        return ConfigurationManager.getProperty(Page.PAGE_CONFIRM.getValue());
-                    } else {
-                        return ConfigurationManager.getProperty(Page.PAGE_CONFIRMFALSE.getValue());
-                    }
+                    return entityService.doService(service).isEmpty() ?
+                            ConfigurationManager.getProperty(PAGE_CONFIRM) :
+                            ConfigurationManager.getProperty(PAGE_CONFIRMFALSE);
             }
         } catch (ServiceException e) {
             LOGGER.log(Level.ERROR, "Exception while deleting entity has occurred. ", e);
             throw new CommandException(e);
         }
-        return ConfigurationManager.getProperty(Page.PAGE_CONFIRMFALSE.getValue());
+        return ConfigurationManager.getProperty(PAGE_CONFIRMFALSE);
     }
 }

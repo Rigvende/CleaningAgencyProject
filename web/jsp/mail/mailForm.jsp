@@ -50,11 +50,8 @@
 <fmt:message key="text.mail5"/>${formerguest.password}
 
             <fmt:message key="text.mail6"/>
-            <br/>
             <fmt:message key="text.info7"/>
-            <br/>
             <fmt:message key="text.info8"/>
-            <br/>
             <fmt:message key="text.info9"/>
         </textarea>
     </label>

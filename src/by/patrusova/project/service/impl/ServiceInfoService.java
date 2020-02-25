@@ -8,8 +8,6 @@ import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.EntityCreator;
 import by.patrusova.project.service.Serviceable;
-import by.patrusova.project.util.stringholder.Attribute;
-import by.patrusova.project.util.stringholder.Parameter;
 import by.patrusova.project.validator.NumberValidator;
 import by.patrusova.project.validator.StringValidator;
 import org.apache.logging.log4j.Level;
@@ -24,6 +22,10 @@ import java.util.Optional;
 public class ServiceInfoService implements Serviceable, EntityCreator {
 
     private final static Logger LOGGER = LogManager.getLogger();
+    private final static String SERVICE_CHANGED = "servicechange";
+    private final static String SERVICE = "service";
+    private final static String COST = "cost";
+    private final static String SALES = "sales";
 
     @Override
     public Optional<AbstractEntity> doService(AbstractEntity entity) throws ServiceException {
@@ -53,13 +55,13 @@ public class ServiceInfoService implements Serviceable, EntityCreator {
     @Override
     public Optional<AbstractEntity> createEntity(HttpServletRequest request) {
         Service updatedService = (Service) request.getSession()
-                .getAttribute(Attribute.SERVICE.getValue());
+                .getAttribute(SERVICE);
         if (!validate(request).containsValue(false)) {
             updatedService.setCost(BigDecimal.valueOf(Double.parseDouble
-                    (request.getParameter(Parameter.COST.getValue()))));
+                    (request.getParameter(COST))));
             updatedService.setSales(BigDecimal.valueOf(Double.parseDouble
-                    (request.getParameter(Parameter.SALES.getValue()))));
-            updatedService.setService(request.getParameter(Parameter.SERVICECHANGE.getValue()));
+                    (request.getParameter(SALES))));
+            updatedService.setService(request.getParameter(SERVICE_CHANGED));
             return Optional.of(updatedService);
         } else {
             return Optional.empty();
@@ -72,10 +74,10 @@ public class ServiceInfoService implements Serviceable, EntityCreator {
         if (!validate(request).containsValue(false)) {
             newService.setId(0);
             newService.setCost(BigDecimal.valueOf(Double.parseDouble
-                    (request.getParameter(Parameter.COST.getValue()))));
+                    (request.getParameter(COST))));
             newService.setSales(BigDecimal.valueOf(Double.parseDouble
-                    (request.getParameter(Parameter.SALES.getValue()))));
-            newService.setService(request.getParameter(Parameter.SERVICECHANGE.getValue()));
+                    (request.getParameter(SALES))));
+            newService.setService(request.getParameter(SERVICE_CHANGED));
             return Optional.of(newService);
         } else {
             return Optional.empty();
@@ -85,15 +87,12 @@ public class ServiceInfoService implements Serviceable, EntityCreator {
     //validation
     private Map<String, Boolean> validate(HttpServletRequest request) {
         Map<String, Boolean> validationMap = new HashMap<>();
-        String service = request.getParameter(Parameter.SERVICECHANGE.getValue());
-        String cost = request.getParameter(Parameter.COST.getValue());
-        String sales = request.getParameter(Parameter.SALES.getValue());
-        validationMap.put(Parameter.SERVICECHANGE.getValue(),
-                StringValidator.isValidStringSize(Parameter.SERVICE.getValue(), service));
-        validationMap.put(Parameter.SALES.getValue(),
-                NumberValidator.isValidDecimal(sales));
-        validationMap.put(Parameter.COST.getValue(),
-                NumberValidator.isValidCost(cost));
+        String service = request.getParameter(SERVICE_CHANGED);
+        String cost = request.getParameter(COST);
+        String sales = request.getParameter(SALES);
+        validationMap.put(SERVICE_CHANGED, StringValidator.isValidStringSize(SERVICE, service));
+        validationMap.put(SALES, NumberValidator.isValidDecimal(sales));
+        validationMap.put(COST, NumberValidator.isValidCost(cost));
         return validationMap;
     }
 

@@ -6,11 +6,8 @@ import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.UserInfoService;
-import by.patrusova.project.util.MessageManager;
-import by.patrusova.project.util.stringholder.Attribute;
 import by.patrusova.project.util.ConfigurationManager;
-import by.patrusova.project.util.stringholder.Message;
-import by.patrusova.project.util.stringholder.Page;
+import by.patrusova.project.util.MessageManager;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,6 +17,10 @@ import java.util.Optional;
 public class ChangeUserCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();
+    private final static String ERROR_CHANGE_USER = "errorChangeUserMessage";
+    private final static String MESSAGE_ERROR_CHANGE_USER = "message.changeerror";
+    private final static String PAGE_CHANGE = "page.changeform";
+    private final static String PAGE_PROFILE = "page.profile";
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
@@ -28,19 +29,19 @@ public class ChangeUserCommand implements ActionCommand {
         try {
             Optional<AbstractEntity> opt = userInfoService.createEntity(request);
             if (opt.isEmpty()) {
-                request.getSession().setAttribute(Attribute.ERROR_CHANGE_USER.getValue(),
-                        MessageManager.getProperty(Message.MESSAGE_ERROR_CHANGE_USER.getValue()));
-                page = ConfigurationManager.getProperty(Page.PAGE_CHANGE.getValue());
+                request.getSession().setAttribute(ERROR_CHANGE_USER,
+                        MessageManager.getProperty(MESSAGE_ERROR_CHANGE_USER));
+                page = ConfigurationManager.getProperty(PAGE_CHANGE);
                 return page;
             } else {
                 User user = (User)opt.get();
                 Optional<AbstractEntity> optional = userInfoService.doService(user);
                 if (optional.isPresent()) {
-                    page = ConfigurationManager.getProperty(Page.PAGE_PROFILE.getValue());
+                    page = ConfigurationManager.getProperty(PAGE_PROFILE);
                 } else {
-                    request.getSession().setAttribute(Attribute.ERROR_CHANGE_USER.getValue(),
-                            MessageManager.getProperty(Message.MESSAGE_ERROR_CHANGE_USER.getValue()));
-                    page = ConfigurationManager.getProperty(Page.PAGE_CHANGE.getValue());
+                    request.getSession().setAttribute(ERROR_CHANGE_USER,
+                            MessageManager.getProperty(MESSAGE_ERROR_CHANGE_USER));
+                    page = ConfigurationManager.getProperty(PAGE_CHANGE);
                 }
             }
         } catch (ServiceException e) {

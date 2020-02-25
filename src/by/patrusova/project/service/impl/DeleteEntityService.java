@@ -6,6 +6,7 @@ import by.patrusova.project.dao.impl.OrderDao;
 import by.patrusova.project.dao.impl.ServiceDao;
 import by.patrusova.project.dao.impl.UserDao;
 import by.patrusova.project.entity.AbstractEntity;
+import by.patrusova.project.entity.Role;
 import by.patrusova.project.entity.impl.Cleaner;
 import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.entity.impl.Order;
@@ -13,7 +14,6 @@ import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.Serviceable;
-import by.patrusova.project.util.stringholder.Attribute;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -34,13 +34,13 @@ public class DeleteEntityService implements Serviceable {
                 }
             } else if (entity instanceof Cleaner) {
                 user.setId(((Cleaner) entity).getIdUser());
-                user.setRole(Attribute.CLEANER.getValue());
+                user.setRole(Role.CLEANER.getValue());
                 if (userDao.delete(user)) {                     //delete user and cleaner from DB (cascade)
                     return Optional.empty();
                 }
             } else if (entity instanceof Client) {
                 user.setId(((Client) entity).getIdUser());
-                user.setRole(Attribute.CLIENT.getValue());
+                user.setRole(Role.CLIENT.getValue());
                 if (userDao.delete(user)) {                     //delete user and client from DB (cascade)
                     return Optional.empty();
                 }

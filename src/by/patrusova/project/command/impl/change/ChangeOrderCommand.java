@@ -8,9 +8,6 @@ import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.OrderInfoService;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.util.MessageManager;
-import by.patrusova.project.util.stringholder.Attribute;
-import by.patrusova.project.util.stringholder.Message;
-import by.patrusova.project.util.stringholder.Page;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,6 +17,10 @@ import java.util.Optional;
 public class ChangeOrderCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();
+    private final static String ERROR_CHANGE_ORDER = "errorChangeOrderMessage";
+    private final static String MESSAGE_ERROR_CHANGE_ORDER = "message.changeerror";
+    private final static String PAGE_CHANGE_ORDER = "page.changeorder";
+    private final static String PAGE_CONFIRM = "page.confirm";
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
@@ -28,19 +29,19 @@ public class ChangeOrderCommand implements ActionCommand {
         try {
             Optional<AbstractEntity> opt = infoService.createEntity(request);
             if (opt.isEmpty()) {
-                request.getSession().setAttribute(Attribute.ERROR_CHANGE_ORDER.getValue(),
-                        MessageManager.getProperty(Message.MESSAGE_ERROR_CHANGE_ORDER.getValue()));
-                page = ConfigurationManager.getProperty(Page.PAGE_CHANGE_ORDER.getValue());
+                request.getSession().setAttribute(ERROR_CHANGE_ORDER,
+                        MessageManager.getProperty(MESSAGE_ERROR_CHANGE_ORDER));
+                page = ConfigurationManager.getProperty(PAGE_CHANGE_ORDER);
                 return page;
             } else {
                 Order order = (Order)opt.get();
                 Optional<AbstractEntity> optional = infoService.doService(order);
                 if (optional.isPresent()) {
-                    page = ConfigurationManager.getProperty(Page.PAGE_CONFIRM.getValue());
+                    page = ConfigurationManager.getProperty(PAGE_CONFIRM);
                 } else {
-                    request.getSession().setAttribute(Attribute.ERROR_CHANGE_ORDER.getValue(),
-                            MessageManager.getProperty(Message.MESSAGE_ERROR_CHANGE_ORDER.getValue()));
-                    page = ConfigurationManager.getProperty(Page.PAGE_CHANGE_ORDER.getValue());
+                    request.getSession().setAttribute(ERROR_CHANGE_ORDER,
+                            MessageManager.getProperty(MESSAGE_ERROR_CHANGE_ORDER));
+                    page = ConfigurationManager.getProperty(PAGE_CHANGE_ORDER);
                 }
             }
         } catch (ServiceException e) {

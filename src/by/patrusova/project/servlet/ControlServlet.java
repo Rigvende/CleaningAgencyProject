@@ -5,7 +5,6 @@ import by.patrusova.project.connection.ConnectionPool;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.command.CommandProvider;
 import by.patrusova.project.exception.CommandException;
-import by.patrusova.project.util.stringholder.Parameter;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,6 +20,7 @@ import java.io.IOException;
 public class ControlServlet extends HttpServlet {
 
     private final static Logger LOGGER = LogManager.getLogger();
+    private final static String POST = "post";
 
     public void init() {
         try {
@@ -45,7 +45,7 @@ public class ControlServlet extends HttpServlet {
         try {
             ActionCommand command = provider.defineCommand(request);
             String page = command.execute(request);
-            if (request.getMethod().toLowerCase().equals(Parameter.POST.getValue())) {
+            if (request.getMethod().toLowerCase().equals(POST)) {
                 response.sendRedirect(request.getContextPath() + page);
             } else {
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
@@ -63,7 +63,8 @@ public class ControlServlet extends HttpServlet {
     public void destroy() {
         try {
             ConnectionPool.getInstance().closeAllConnections();
-            LOGGER.log(Level.INFO, "All connections has been closed and drivers has been deregistered.");
+            LOGGER.log(Level.INFO,
+                    "All connections has been closed and drivers has been deregistered.");
         } catch (DaoException e) {
             LOGGER.log(Level.ERROR, "Cannot close all connections in connection pool.");
             throw new RuntimeException(e);

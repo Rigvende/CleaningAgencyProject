@@ -2,16 +2,13 @@ package by.patrusova.project.command.impl.change;
 
 import by.patrusova.project.command.ActionCommand;
 import by.patrusova.project.entity.AbstractEntity;
+import by.patrusova.project.entity.Role;
 import by.patrusova.project.entity.impl.Cleaner;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.ClientInfoService;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.util.MessageManager;
-import by.patrusova.project.util.stringholder.Attribute;
-import by.patrusova.project.util.stringholder.Message;
-import by.patrusova.project.util.stringholder.Page;
-import by.patrusova.project.util.stringholder.Parameter;
 import by.patrusova.project.validator.NumberValidator;
 import by.patrusova.project.validator.StringValidator;
 import org.apache.logging.log4j.Level;
@@ -23,21 +20,27 @@ import java.util.Optional;
 public class SetNotesCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();
+    private final static String ID = "id";
+    private final static String NOTES = "notes";
+    private final static String ERROR_CHANGE_CLIENT = "errorChangeClientMessage";
+    private final static String MESSAGE_ERROR_CHANGE_CLIENT = "message.changeerror";
+    private final static String PAGE_ORDERLIST = "page.orderlist";
+    private final static String PAGE_CONFIRM = "page.confirm";
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
         Optional<AbstractEntity> optional;
-        String requestId = request.getParameter(Parameter.ID.getValue());
-        String requestNotes = request.getParameter(Parameter.NOTES.getValue());
+        String requestId = request.getParameter(ID);
+        String requestNotes = request.getParameter(NOTES);
         try {
             if (!NumberValidator.isValidOrderID(requestId)
-                    || !StringValidator.isValidStringSize(Parameter.NOTES.getValue(), requestNotes)) {
-                request.getSession().setAttribute(Attribute.ERROR_CHANGE_CLIENT.getValue(),
-                        MessageManager.getProperty(Message.MESSAGE_ERROR_CHANGE_CLIENT.getValue()));
-                return ConfigurationManager.getProperty(Page.PAGE_ORDERLIST.getValue());
+                    || !StringValidator.isValidStringSize(NOTES, requestNotes)) {
+                request.getSession().setAttribute(ERROR_CHANGE_CLIENT,
+                        MessageManager.getProperty(MESSAGE_ERROR_CHANGE_CLIENT));
+                return ConfigurationManager.getProperty(PAGE_ORDERLIST);
             }
             long idOrder = Long.parseLong(requestId);
-            Cleaner cleaner = (Cleaner) request.getSession().getAttribute(Attribute.CLEANER.getValue());
+            Cleaner cleaner = (Cleaner) request.getSession().getAttribute(Role.CLEANER.getValue());
             long idCleaner = cleaner.getId();
             ClientInfoService service = new ClientInfoService();
             optional = service.doService(idOrder, idCleaner, requestNotes);
@@ -47,11 +50,11 @@ public class SetNotesCommand implements ActionCommand {
             throw new CommandException(e);
         }
         if (optional.isEmpty()) {
-            request.getSession().setAttribute(Attribute.ERROR_CHANGE_CLIENT.getValue(),
-                    MessageManager.getProperty(Message.MESSAGE_ERROR_CHANGE_CLIENT.getValue()));
-            return ConfigurationManager.getProperty(Page.PAGE_ORDERLIST.getValue());
+            request.getSession().setAttribute(ERROR_CHANGE_CLIENT,
+                    MessageManager.getProperty(MESSAGE_ERROR_CHANGE_CLIENT));
+            return ConfigurationManager.getProperty(PAGE_ORDERLIST);
         } else {
-            return ConfigurationManager.getProperty(Page.PAGE_CONFIRM.getValue());
+            return ConfigurationManager.getProperty(PAGE_CONFIRM);
         }
     }
 }

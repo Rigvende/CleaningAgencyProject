@@ -2,19 +2,19 @@ package by.patrusova.project.command.impl;
 
 import by.patrusova.project.command.ActionCommand;
 import by.patrusova.project.entity.AbstractEntity;
-import by.patrusova.project.entity.impl.*;
+import by.patrusova.project.entity.Role;
+import by.patrusova.project.entity.impl.Cleaner;
+import by.patrusova.project.entity.impl.Client;
+import by.patrusova.project.entity.impl.Order;
+import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.CleanerInfoService;
 import by.patrusova.project.service.impl.ClientInfoService;
-import by.patrusova.project.service.impl.OrderInfoService;
-import by.patrusova.project.util.stringholder.Attribute;
-import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.service.impl.LoginService;
+import by.patrusova.project.service.impl.OrderInfoService;
+import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.util.MessageManager;
-import by.patrusova.project.util.stringholder.Message;
-import by.patrusova.project.util.stringholder.Page;
-import by.patrusova.project.util.stringholder.Parameter;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -25,16 +25,29 @@ import java.util.Optional;
 public class LoginCommand implements ActionCommand {
 
     private static final Logger LOGGER = LogManager.getLogger();
+    private final static String LOGIN = "login";
+    private final static String PASSWORD = "password";
+    private final static String EMPTY = "";
+    private final static String ERROR_LOGIN = "errorLoginPassMessage";
+    private final static String MESSAGE_ERROR_LOGIN = "message.loginerror";
+    private final static String PAGE_LOGIN = "page.login";
+    private final static String USER = "user";
+    private final static String ROLE = "role";
+    private final static String PAGE_MAIN_ADMIN = "page.mainadmin";
+    private final static String PAGE_MAIN_CLEANER = "page.maincleaner";
+    private final static String ORDER = "order";
+    private final static String PAGE_MAIN_CLIENT = "page.mainclient";
+    private final static String MESSAGE_NOT_REG = "message.notregistered";
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
         String page;
-        String login = request.getParameter(Parameter.LOGIN.getValue());
-        String pass = request.getParameter(Parameter.PASSWORD.getValue());
-        if (login.equals(Parameter.EMPTY.getValue()) || pass.equals(Parameter.EMPTY.getValue())) {
-            request.getSession().setAttribute(Attribute.ERROR_LOGIN.getValue(),
-                    MessageManager.getProperty(Message.MESSAGE_ERROR_LOGIN.getValue()));
-            page = ConfigurationManager.getProperty(Page.PAGE_LOGIN.getValue());
+        String login = request.getParameter(LOGIN);
+        String pass = request.getParameter(PASSWORD);
+        if (login.equals(EMPTY) || pass.equals(EMPTY)) {
+            request.getSession().setAttribute(ERROR_LOGIN,
+                    MessageManager.getProperty(MESSAGE_ERROR_LOGIN));
+            page = ConfigurationManager.getProperty(PAGE_LOGIN);
             return page;
         }
         LoginService loginService = new LoginService();
@@ -46,29 +59,29 @@ public class LoginCommand implements ActionCommand {
             if (optional.isPresent()) {
                 user = (User) optional.get();
                 HttpSession session = request.getSession(true);
-                session.setAttribute(Attribute.USER.getValue(), user);
+                session.setAttribute(USER, user);
                 String role = user.getRole();
                 switch (role) {
                     case "admin":
-                        session.setAttribute(Attribute.ROLE.getValue(), Attribute.ADMIN.getValue());
-                        page = ConfigurationManager.getProperty(Page.PAGE_MAIN_ADMIN.getValue());
+                        session.setAttribute(ROLE, Role.ADMIN.getValue());
+                        page = ConfigurationManager.getProperty(PAGE_MAIN_ADMIN);
                         break;
                     case "cleaner":
-                        session.setAttribute(Attribute.ROLE.getValue(), Attribute.CLEANER.getValue());
+                        session.setAttribute(ROLE, Role.CLEANER.getValue());
                         CleanerInfoService cleanerInfoService = new CleanerInfoService();
                         Cleaner cleaner = new Cleaner();
                         cleaner.setIdUser(user.getId());
                         cleaner = cleanerInfoService.getCleaner(cleaner); //extracting cleaner from DB by ID
-                        session.setAttribute(Attribute.CLEANER.getValue(), cleaner);
-                        page = ConfigurationManager.getProperty(Page.PAGE_MAIN_CLEANER.getValue());
+                        session.setAttribute(Role.CLEANER.getValue(), cleaner);
+                        page = ConfigurationManager.getProperty(PAGE_MAIN_CLEANER);
                         break;
                     case "client":
-                        session.setAttribute(Attribute.ROLE.getValue(), Attribute.CLIENT.getValue());
+                        session.setAttribute(ROLE, Role.CLIENT.getValue());
                         ClientInfoService clientInfoService = new ClientInfoService();
                         Client client = new Client();
                         client.setIdUser(user.getId());
                         client = clientInfoService.getClient(client);   //extracting client from DB by ID
-                        session.setAttribute(Attribute.CLIENT.getValue(), client);
+                        session.setAttribute(Role.CLIENT.getValue(), client);
                         Order order = new Order();                      //create order with status "new"
                         order.setIdClient(client.getId());
                         order.setOrderStatus(Order.Status.NEW.getValue());
@@ -76,22 +89,22 @@ public class LoginCommand implements ActionCommand {
                         Optional<AbstractEntity> opt = infoService.doService(order);
                         if (opt.isPresent()) {
                             order = (Order) opt.get();
-                            session.setAttribute(Attribute.ORDER.getValue(), order);
+                            session.setAttribute(ORDER, order);
                         }
-                        page = ConfigurationManager.getProperty(Page.PAGE_MAIN_CLIENT.getValue());
+                        page = ConfigurationManager.getProperty(PAGE_MAIN_CLIENT);
                         break;
                     case "guest":
                     default:
-                        session.setAttribute(Attribute.ROLE.getValue(), Attribute.GUEST.getValue());
-                        session.setAttribute(Attribute.ERROR_LOGIN.getValue(),
-                                MessageManager.getProperty(Message.MESSAGE_NOT_REG.getValue()));
-                        page = ConfigurationManager.getProperty(Page.PAGE_LOGIN.getValue());
+                        session.setAttribute(ROLE, Role.GUEST.getValue());
+                        session.setAttribute(ERROR_LOGIN,
+                                MessageManager.getProperty(MESSAGE_NOT_REG));
+                        page = ConfigurationManager.getProperty(PAGE_LOGIN);
                         break;
                 }
             } else {
-                request.getSession().setAttribute(Attribute.ERROR_LOGIN.getValue(),
-                        MessageManager.getProperty(Message.MESSAGE_ERROR_LOGIN.getValue()));
-                page = ConfigurationManager.getProperty(Page.PAGE_LOGIN.getValue());
+                request.getSession().setAttribute(ERROR_LOGIN,
+                        MessageManager.getProperty(MESSAGE_ERROR_LOGIN));
+                page = ConfigurationManager.getProperty(PAGE_LOGIN);
             }
         } catch (ServiceException e) {
             LOGGER.log(Level.ERROR, "Exception while logging in has occurred. ", e);

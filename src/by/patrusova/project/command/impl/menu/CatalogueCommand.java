@@ -8,9 +8,6 @@ import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.ShowService;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.util.MessageManager;
-import by.patrusova.project.util.stringholder.Attribute;
-import by.patrusova.project.util.stringholder.Message;
-import by.patrusova.project.util.stringholder.Page;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,36 +18,46 @@ import java.util.List;
 public class CatalogueCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();
+    private final static String ROLE = "role";
+    private final static String CATALOGUE = "catalogue";
+    private final static String CATALOGUE_LIST = "catalogueList";
+    private final static String PAGE_CATALOGUE = "page.catalogue";
+    private final static String EMPTY_LIST = "emptyList";
+    private final static String MESSAGE_ERROR_LIST = "message.listerror";
+    private final static String PAGE_MAIN_ADMIN = "page.mainadmin";
+    private final static String PAGE_MAIN_CLIENT = "page.mainclient";
+    private final static String PAGE_MAIN_CLEANER = "page.maincleaner";
+    private final static String PAGE_LOGIN = "page.login";
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
         String page;
-        String role = (String) request.getSession().getAttribute(Attribute.ROLE.getValue());
+        String role = (String) request.getSession().getAttribute(ROLE);
         ShowService service = new ShowService();
         try {
-            List<AbstractEntity> list = service.doService(Attribute.CATALOGUE.getValue());
+            List<AbstractEntity> list = service.doService(CATALOGUE);
             if (list.size() != 0) {
                 List<Service> services = new ArrayList<>();
                 for (AbstractEntity entity : list) {
                     services.add((Service) entity);
                 }
-                request.getSession().setAttribute(Attribute.CATALOGUE_LIST.getValue(), services);
-                page = ConfigurationManager.getProperty(Page.PAGE_CATALOGUE.getValue());
+                request.getSession().setAttribute(CATALOGUE_LIST, services);
+                page = ConfigurationManager.getProperty(PAGE_CATALOGUE);
             } else {
-                request.getSession().setAttribute(Attribute.EMPTY_LIST.getValue(),
-                        MessageManager.getProperty(Message.MESSAGE_ERROR_LIST.getValue()));
+                request.getSession().setAttribute(EMPTY_LIST,
+                        MessageManager.getProperty(MESSAGE_ERROR_LIST));
                 switch (role) {
                     case "admin":
-                        page = ConfigurationManager.getProperty(Page.PAGE_MAIN_ADMIN.getValue());
+                        page = ConfigurationManager.getProperty(PAGE_MAIN_ADMIN);
                         break;
                     case "client":
-                        page = ConfigurationManager.getProperty(Page.PAGE_MAIN_CLIENT.getValue());
+                        page = ConfigurationManager.getProperty(PAGE_MAIN_CLIENT);
                         break;
                     case "cleaner":
-                        page = ConfigurationManager.getProperty(Page.PAGE_MAIN_CLEANER.getValue());
+                        page = ConfigurationManager.getProperty(PAGE_MAIN_CLEANER);
                         break;
                     default:
-                        page = ConfigurationManager.getProperty(Page.PAGE_LOGIN.getValue());
+                        page = ConfigurationManager.getProperty(PAGE_LOGIN);
                 }
             }
         } catch (ServiceException e) {

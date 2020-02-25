@@ -35,7 +35,7 @@ public abstract class AbstractDao<T extends AbstractEntity> {
             try {
                 statement.close();
             } catch (SQLException e) {
-                LOGGER.log(Level.ERROR, "Statement closing failed. ", e);
+                LOGGER.log(Level.ERROR, "Statements closing failed. ", e);
                 throw new DaoException(e);
             } finally {
                 if (connection != null) {

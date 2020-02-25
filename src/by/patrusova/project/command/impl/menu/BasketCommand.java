@@ -8,9 +8,6 @@ import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.ShowService;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.util.MessageManager;
-import by.patrusova.project.util.stringholder.Attribute;
-import by.patrusova.project.util.stringholder.Message;
-import by.patrusova.project.util.stringholder.Page;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,24 +18,30 @@ import java.util.List;
 public class BasketCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();
+    private final static String BASKET = "basket";
+    private final static String CATALOGUE_LIST = "catalogueList";
+    private final static String PAGE_CATALOGUELIST = "page.cataloguelist";
+    private final static String EMPTY_LIST = "emptyList";
+    private final static String MESSAGE_ERROR_LIST = "message.listerror";
+    private final static String PAGE_BASKET = "page.basket";
 
     @Override
-    public String execute(HttpServletRequest request) throws CommandException {
+    public String execute(HttpServletRequest request) throws CommandException {//fixme начинка левая
         String page;
         ShowService service = new ShowService();
         try {
-            List<AbstractEntity> list = service.doService(Attribute.BASKET.getValue());//fixme
+            List<AbstractEntity> list = service.doService(BASKET);
             if (!list.isEmpty()) {
                 List<Service> services = new ArrayList<>();
                 for (AbstractEntity entity : list) {
                     services.add((Service) entity);
                 }
-                request.getSession().setAttribute(Attribute.CATALOGUE_LIST.getValue(), services);
-                page = ConfigurationManager.getProperty(Page.PAGE_CATALOGUELIST.getValue());
+                request.getSession().setAttribute(CATALOGUE_LIST, services);
+                page = ConfigurationManager.getProperty(PAGE_CATALOGUELIST);
             } else {
-                request.getSession().setAttribute(Attribute.EMPTY_LIST.getValue(),
-                        MessageManager.getProperty(Message.MESSAGE_ERROR_LIST.getValue()));
-                page = ConfigurationManager.getProperty(Page.PAGE_MAIN_ADMIN.getValue());
+                request.getSession().setAttribute(EMPTY_LIST,
+                        MessageManager.getProperty(MESSAGE_ERROR_LIST));
+                page = ConfigurationManager.getProperty(PAGE_BASKET);
             }
         } catch (ServiceException e) {
             LOGGER.log(Level.ERROR,

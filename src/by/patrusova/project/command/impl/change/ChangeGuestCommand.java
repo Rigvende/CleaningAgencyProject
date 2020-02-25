@@ -8,10 +8,6 @@ import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.RoleService;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.util.MessageManager;
-import by.patrusova.project.util.stringholder.Attribute;
-import by.patrusova.project.util.stringholder.Message;
-import by.patrusova.project.util.stringholder.Page;
-import by.patrusova.project.util.stringholder.Parameter;
 import by.patrusova.project.validator.NumberValidator;
 import by.patrusova.project.validator.StringValidator;
 import org.apache.logging.log4j.Level;
@@ -23,16 +19,23 @@ import java.util.Optional;
 public class ChangeGuestCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();
+    private final static String ID = "id";
+    private final static String ROLE = "role";
+    private final static String ERROR_CHANGE_GUEST = "errorChangeGuestMessage";
+    private final static String MESSAGE_ERROR_CHANGE_GUEST = "message.changeerror";
+    private final static String PAGE_GUESTLIST = "page.guestlist";
+    private final static String FORMERGUEST = "formerguest";
+    private final static String PAGE_MAIL = "page.mail";
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-        String Id = request.getParameter(Parameter.ID.getValue());
-        String role = request.getParameter(Attribute.ROLE.getValue());
+        String Id = request.getParameter(ID);
+        String role = request.getParameter(ROLE);
         try {
             if (!NumberValidator.isValidUserID(Id) || !StringValidator.isValidRole(role)){
-                request.getSession().setAttribute(Attribute.ERROR_CHANGE_GUEST.getValue(),
-                        MessageManager.getProperty(Message.MESSAGE_ERROR_CHANGE_GUEST.getValue()));
-                return ConfigurationManager.getProperty(Page.PAGE_GUESTLIST.getValue());
+                request.getSession().setAttribute(ERROR_CHANGE_GUEST,
+                        MessageManager.getProperty(MESSAGE_ERROR_CHANGE_GUEST));
+                return ConfigurationManager.getProperty(PAGE_GUESTLIST);
             }
         } catch (ServiceException e) {
             LOGGER.log(Level.ERROR, "Exception has occurred while changing role was processing. ", e);
@@ -48,13 +51,13 @@ public class ChangeGuestCommand implements ActionCommand {
             throw new CommandException(e);
         }
         if (optional.isEmpty()) {
-            request.getSession().setAttribute(Attribute.ERROR_CHANGE_GUEST.getValue(),
-                    MessageManager.getProperty(Message.MESSAGE_ERROR_CHANGE_GUEST.getValue()));
-            return ConfigurationManager.getProperty(Page.PAGE_GUESTLIST.getValue());
+            request.getSession().setAttribute(ERROR_CHANGE_GUEST,
+                    MessageManager.getProperty(MESSAGE_ERROR_CHANGE_GUEST));
+            return ConfigurationManager.getProperty(PAGE_GUESTLIST);
         } else {
             User user = (User) optional.get();
-            request.getSession().setAttribute(Attribute.FORMERGUEST.getValue(), user);
-            return ConfigurationManager.getProperty(Page.PAGE_MAIL.getValue());
+            request.getSession().setAttribute(FORMERGUEST, user);
+            return ConfigurationManager.getProperty(PAGE_MAIL);
         }
     }
 }

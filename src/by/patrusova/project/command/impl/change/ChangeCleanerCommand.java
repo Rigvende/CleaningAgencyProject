@@ -8,9 +8,6 @@ import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.CleanerInfoService;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.util.MessageManager;
-import by.patrusova.project.util.stringholder.Attribute;
-import by.patrusova.project.util.stringholder.Message;
-import by.patrusova.project.util.stringholder.Page;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,6 +17,10 @@ import java.util.Optional;
 public class ChangeCleanerCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();
+    private final static String ERROR_CHANGE_CLEANER = "errorChangeCleanerMessage";
+    private final static String MESSAGE_ERROR_CHANGE_CLEANER = "message.changeerror";
+    private final static String PAGE_CHANGE_CLEANER = "page.changecleaner";
+    private final static String PAGE_CONFIRM = "page.confirm";
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
@@ -28,18 +29,18 @@ public class ChangeCleanerCommand implements ActionCommand {
         try {
             Optional<AbstractEntity> optional = cleanerInfoService.createEntity(request);
             if (optional.isEmpty()) {
-                request.getSession().setAttribute(Attribute.ERROR_CHANGE_CLEANER.getValue(),
-                        MessageManager.getProperty(Message.MESSAGE_ERROR_CHANGE_CLEANER.getValue()));
-                page = ConfigurationManager.getProperty(Page.PAGE_CHANGE_CLEANER.getValue());
+                request.getSession().setAttribute(ERROR_CHANGE_CLEANER,
+                        MessageManager.getProperty(MESSAGE_ERROR_CHANGE_CLEANER));
+                page = ConfigurationManager.getProperty(PAGE_CHANGE_CLEANER);
                 return page;
             } else {
                 Cleaner cleaner = (Cleaner)optional.get();
                 if (cleanerInfoService.doService(cleaner).isPresent()) {
-                    page = ConfigurationManager.getProperty(Page.PAGE_CONFIRM.getValue());
+                    page = ConfigurationManager.getProperty(PAGE_CONFIRM);
                 } else {
-                    request.getSession().setAttribute(Attribute.ERROR_CHANGE_CLEANER.getValue(),
-                            MessageManager.getProperty(Message.MESSAGE_ERROR_CHANGE_CLEANER.getValue()));
-                    page = ConfigurationManager.getProperty(Page.PAGE_CHANGE_CLEANER.getValue());
+                    request.getSession().setAttribute(ERROR_CHANGE_CLEANER,
+                            MessageManager.getProperty(MESSAGE_ERROR_CHANGE_CLEANER));
+                    page = ConfigurationManager.getProperty(PAGE_CHANGE_CLEANER);
                 }
             }
         } catch (ServiceException e) {

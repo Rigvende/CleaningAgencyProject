@@ -19,6 +19,17 @@ import java.util.Optional;
 
 public class Main {
 
+//    SQL_TOTAL_COST("SELECT SUM(cost) AS total_cost FROM services JOIN basket_position " +
+//                           "ON basket_position.id_service = services.id_service WHERE id_order = ?"),
+//    SQL_TOTAL_SALE("SELECT SUM(cost * sales) AS total_sale FROM services JOIN basket_position " +
+//                           "ON basket_position.id_service = services.id_service WHERE id_order = ?"),
+//    SQL_TOTAL_DISCOUNT("SELECT SUM(cost * discount) AS total_discount " +
+//                               "FROM (services JOIN basket_position ON basket_position.id_service = services.id_service) " +
+//                               "JOIN (orders JOIN clients ON orders.id_client = clients.id_client) " +
+//                               "ON basket_position.id_order = orders.id_order WHERE orders.id_order = ?"),
+//    SQL_AVERAGE_MARK("SELECT id_cleaner, AVG(mark) AS average_mark FROM orders, cleaners " +
+//                             "WHERE id_cleaner = ? AND orders.id_cleaner = cleaners.id_cleaner"),
+
 //    public User createEntity(Map<String, Boolean> map) {
 //        User newUser = new User();
 //        if (!map.containsValue(false)) {
@@ -147,7 +158,7 @@ public class Main {
 //        PreparedStatement preparedStatement = null;
 //        ProxyConnection conn = ProxyConnection.createProxyConnection();
 //        preparedStatement = conn.prepareStatement
-//                (Statement.SQL_FIND_CLEANERS_BY_ROLE.getValue());
+//                (Statements.SQL_FIND_CLEANERS_BY_ROLE.getValue());
 //        preparedStatement.setString(1, "cleaner");
 //        ResultSet resultSet1 = preparedStatement.executeQuery();
 //        while (resultSet1.next()) {

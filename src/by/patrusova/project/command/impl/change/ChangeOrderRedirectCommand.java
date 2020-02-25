@@ -7,9 +7,6 @@ import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.OrderInfoService;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.util.MessageManager;
-import by.patrusova.project.util.stringholder.Attribute;
-import by.patrusova.project.util.stringholder.Message;
-import by.patrusova.project.util.stringholder.Page;
 import by.patrusova.project.validator.NumberValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -19,22 +16,28 @@ import javax.servlet.http.HttpServletRequest;
 public class ChangeOrderRedirectCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();
+    private final static String ID = "id";
+    private final static String ORDER = "order";
+    private final static String PAGE_CHANGE_ORDER = "page.changeorder";
+    private final static String ERROR_CHANGE_ORDER_ID = "errorChangeOrderIdMessage";
+    private final static String MESSAGE_ERROR_CHANGE_ORDER_ID = "message.changeerrorid";
+    private final static String PAGE_ORDERLIST = "page.orderlist";
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
         OrderInfoService infoService = new OrderInfoService();
         Order order = new Order();
-        String id = request.getParameter(Attribute.ID.getValue());
+        String id = request.getParameter(ID);
         try {
             if (NumberValidator.isValidOrderID(id)) {
                 order.setId(Long.parseLong(id));
                 order = infoService.getOrder(order);
-                request.getSession().setAttribute(Attribute.ORDER.getValue(), order);
-                return ConfigurationManager.getProperty(Page.PAGE_CHANGE_ORDER.getValue());
+                request.getSession().setAttribute(ORDER, order);
+                return ConfigurationManager.getProperty(PAGE_CHANGE_ORDER);
             } else {
-                request.getSession().setAttribute(Attribute.ERROR_CHANGE_ORDER_ID.getValue(),
-                        MessageManager.getProperty(Message.MESSAGE_ERROR_CHANGE_ORDER_ID.getValue()));
-                return ConfigurationManager.getProperty(Page.PAGE_ORDERLIST.getValue());
+                request.getSession().setAttribute(ERROR_CHANGE_ORDER_ID,
+                        MessageManager.getProperty(MESSAGE_ERROR_CHANGE_ORDER_ID));
+                return ConfigurationManager.getProperty(PAGE_ORDERLIST);
             }
         } catch (ServiceException e) {
             LOGGER.log(Level.ERROR,

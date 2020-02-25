@@ -7,8 +7,6 @@ import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.DeleteEntityService;
 import by.patrusova.project.util.ConfigurationManager;
-import by.patrusova.project.util.stringholder.Attribute;
-import by.patrusova.project.util.stringholder.Page;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,14 +17,16 @@ import java.util.Optional;
 
 public class LogoutCommand implements ActionCommand {
 
-    private static final Logger LOGGER = LogManager.getLogger();
+    private final static Logger LOGGER = LogManager.getLogger();
+    private final static String PAGE_INDEX = "page.index";
+    private final static String ORDER = "order";
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-        String page = ConfigurationManager.getProperty(Page.PAGE_INDEX.getValue());
-        Order order = (Order) request.getSession().getAttribute(Attribute.ORDER.getValue());
+        String page = ConfigurationManager.getProperty(PAGE_INDEX);
+        Order order = (Order) request.getSession().getAttribute(ORDER);
         try {                                           //delete not registered order from session
-            if (order != null) {
+            if (order != null && order.getOrderStatus().equals(Order.Status.NEW.getValue())) {
                 DeleteEntityService service = new DeleteEntityService();
                 Optional<AbstractEntity> optional = service.doService(order);
                 if (optional.isPresent()) {

@@ -13,6 +13,10 @@ import java.util.concurrent.Executor;
 public class ProxyConnection implements Connection {
 
     private final static Logger LOGGER = LogManager.getLogger();
+    private final static String USER = "user";
+    private final static String PASS = "pass";
+    private final static String URL = "url";
+    private final static String BUNDLE = "resources.connectionDB";
     private Connection connection;
 
     protected ProxyConnection(Connection connection) {
@@ -22,10 +26,10 @@ public class ProxyConnection implements Connection {
     public static Connection createConnection() throws DaoException {
         Connection connection;
         try {
-            ResourceBundle bundle = ResourceBundle.getBundle("resources.connectionDB");
-            String user = bundle.getString("user");
-            String pass = bundle.getString("pass");
-            String url = bundle.getString("url");
+            ResourceBundle bundle = ResourceBundle.getBundle(BUNDLE);
+            String user = bundle.getString(USER);
+            String pass = bundle.getString(PASS);
+            String url = bundle.getString(URL);
             connection = DriverManager.getConnection(url, user, pass);
         } catch (SQLException e) {
             LOGGER.log(Level.ERROR, "Connection's creation failed. ", e);

@@ -15,7 +15,7 @@ public class User extends AbstractEntity {
     private long phone;
     private String address;
     private String email;
-    private transient Client client;
+    private transient Client client;//fixme
     private transient Cleaner cleaner;
 
     public User() {}
