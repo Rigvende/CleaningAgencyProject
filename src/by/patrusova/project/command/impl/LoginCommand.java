@@ -9,10 +9,7 @@ import by.patrusova.project.entity.impl.Order;
 import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
-import by.patrusova.project.service.impl.CleanerInfoService;
-import by.patrusova.project.service.impl.ClientInfoService;
-import by.patrusova.project.service.impl.LoginService;
-import by.patrusova.project.service.impl.OrderInfoService;
+import by.patrusova.project.service.impl.*;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.util.MessageManager;
 import org.apache.logging.log4j.Level;
@@ -35,13 +32,14 @@ public class LoginCommand implements ActionCommand {
     private final static String ROLE = "role";
     private final static String PAGE_MAIN_ADMIN = "page.mainadmin";
     private final static String PAGE_MAIN_CLEANER = "page.maincleaner";
-    private final static String ORDER = "order";
+    private final static String ORDER_NEW = "orderNew";
     private final static String PAGE_MAIN_CLIENT = "page.mainclient";
     private final static String MESSAGE_NOT_REG = "message.notregistered";
     private LoginService loginService = new LoginService();
     private CleanerInfoService cleanerInfoService = new CleanerInfoService();
     private ClientInfoService clientInfoService = new ClientInfoService();
     private OrderInfoService infoService = new OrderInfoService();
+    private DeleteEntityService deleteService = new DeleteEntityService();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
@@ -83,13 +81,14 @@ public class LoginCommand implements ActionCommand {
                         client.setIdUser(user.getId());
                         client = clientInfoService.getClient(client);        //extracting client from DB by ID
                         session.setAttribute(Role.CLIENT.getValue(), client);
-                        Order order = new Order();
+                        deleteService.doService(client.getId()); //delete previous "new" order of the same client
+                        Order order = new Order(); //create order with status "new"
                         order.setIdClient(client.getId());
-                        order.setOrderStatus(Order.Status.NEW.getValue());   //create order with status "new"
+                        order.setOrderStatus(Order.Status.NEW.getValue());
                         Optional<AbstractEntity> opt = infoService.doService(order);
                         if (opt.isPresent()) {
                             order = (Order) opt.get();
-                            session.setAttribute(ORDER, order);
+                            session.setAttribute(ORDER_NEW, order);
                         }
                         page = ConfigurationManager.getProperty(PAGE_MAIN_CLIENT);
                         break;

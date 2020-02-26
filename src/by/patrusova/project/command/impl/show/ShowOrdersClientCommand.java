@@ -3,7 +3,7 @@ package by.patrusova.project.command.impl.show;
 import by.patrusova.project.command.ActionCommand;
 import by.patrusova.project.entity.Role;
 import by.patrusova.project.entity.impl.Client;
-import by.patrusova.project.entity.impl.OrderComplex;
+import by.patrusova.project.entity.impl.ComplexOrder;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.ShowOrderService;
@@ -31,7 +31,7 @@ public class ShowOrdersClientCommand implements ActionCommand {
         Client client = (Client) request.getSession().getAttribute(Role.CLIENT.getValue());
         String role = (String) request.getSession().getAttribute(ROLE);
         try {
-            List<OrderComplex> list = service.doService(role, client);      //without orders with "new" status
+            List<ComplexOrder> list = service.doService(role, client);      //without orders with "new" status
             if (!list.isEmpty()) {
                 request.getSession().setAttribute(ORDER_LIST, list);
                 return ConfigurationManager.getProperty(PAGE_ORDERLIST);

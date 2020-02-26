@@ -7,6 +7,7 @@ import by.patrusova.project.dao.impl.ServiceDao;
 import by.patrusova.project.dao.impl.UserDao;
 import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.impl.BasketPosition;
+import by.patrusova.project.entity.impl.ComplexPosition;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.Serviceable;
@@ -47,21 +48,15 @@ public class ShowService {
         }
     }
 
-    public List<BasketPosition> doService(long id) throws ServiceException {
+    //find all positions considering order
+    public List<ComplexPosition> doService(long id) throws ServiceException {
         try {
             BasketDao basketDao = DaoFactory.createBasketDao();
-            return basketDao.findAllByOrderId(id);
+            return basketDao.findBasketByOrderId(id);
         } catch (DaoException e) {
             LOGGER.log(Level.ERROR,
                     "Exception in ShowService while finding positions has occurred. ", e);
             throw new ServiceException(e);
         }
-    }
-
-//    @Override
-//    public Optional<AbstractEntity> doService(AbstractEntity entity) throws ServiceException {
-//        BasketDao basketDao = DaoFactory.createBasketDao();
-//        return basketDao.findAllByOrderId()
-//        return Optional.empty();
     }
 }

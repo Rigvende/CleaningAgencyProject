@@ -2,10 +2,7 @@ package by.patrusova.project.command.impl.change;
 
 import by.patrusova.project.command.ActionCommand;
 import by.patrusova.project.entity.Role;
-import by.patrusova.project.entity.impl.Cleaner;
-import by.patrusova.project.entity.impl.Client;
-import by.patrusova.project.entity.impl.Service;
-import by.patrusova.project.entity.impl.User;
+import by.patrusova.project.entity.impl.*;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.DeleteEntityService;
@@ -70,6 +67,16 @@ public class DeleteEntityCommand implements ActionCommand {
                     Service service = new Service();
                     service.setId(id4);
                     return entityService.doService(service).isEmpty() ?
+                            ConfigurationManager.getProperty(PAGE_CONFIRM) :
+                            ConfigurationManager.getProperty(PAGE_CONFIRMFALSE);
+                case "position":
+                    if (!NumberValidator.isValidBasketID(idEntity)) {
+                        return ConfigurationManager.getProperty(PAGE_CONFIRMFALSE);
+                    }
+                    long id5 = Long.parseLong(idEntity);
+                    BasketPosition position = new BasketPosition();
+                    position.setId(id5);
+                    return entityService.doService(position).isEmpty() ?
                             ConfigurationManager.getProperty(PAGE_CONFIRM) :
                             ConfigurationManager.getProperty(PAGE_CONFIRMFALSE);
             }

@@ -79,13 +79,13 @@ public class ProxyConnection implements Connection {
     }
 
     @Override
-    public CallableStatement prepareCall(String s) throws SQLException {
-        return connection.prepareCall(s);
-    }
-
-    @Override
-    public String nativeSQL(String s) throws SQLException {
-        return connection.nativeSQL(s);
+    public void close() {
+        try {
+            ConnectionPool.getInstance().releaseConnection(this);
+        } catch (DaoException e) {
+            LOGGER.log(Level.ERROR, "Connection's releasing failed");
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -109,13 +109,13 @@ public class ProxyConnection implements Connection {
     }
 
     @Override
-    public void close() {
-        try {
-            ConnectionPool.getInstance().releaseConnection(this);
-        } catch (DaoException e) {
-            LOGGER.log(Level.ERROR, "Connection's closing failed");
-            e.printStackTrace();
-        }
+    public CallableStatement prepareCall(String s) throws SQLException {
+        return connection.prepareCall(s);
+    }
+
+    @Override
+    public String nativeSQL(String s) throws SQLException {
+        return connection.nativeSQL(s);
     }
 
     @Override

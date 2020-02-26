@@ -37,8 +37,8 @@ public class ChangeOrderCommand implements ActionCommand {
                 Order order = (Order) optional1.get();
                 Optional<AbstractEntity> optional2 = infoService.doService(order);
                 if (optional2.isPresent()) {
-                    if (order.getOrderStatus().equals(Order.Status.DONE.getValue())) {
-                        Client client = new Client();
+                    if (order.getOrderStatus().equals(Order.Status.DONE.getValue())) {      //if work is done
+                        Client client = new Client();                                       //then send mail
                         client.setId(order.getIdClient());
                         Optional<AbstractEntity> optional3 = mailService.doService(client);
                         if (optional3.isPresent()) {

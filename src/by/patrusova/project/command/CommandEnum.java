@@ -52,11 +52,6 @@ public enum CommandEnum {
             this.command = new BackToMainCommand();
         }
     },
-    BACKTOCATALOGUE {
-        {
-            this.command = new BackToCatalogueCommand();
-        }
-    },
     CHANGEREDIRECT {
         {
             this.command = new ChangeRedirectCommand();

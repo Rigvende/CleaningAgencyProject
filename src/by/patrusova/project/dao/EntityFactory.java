@@ -135,11 +135,17 @@ public class EntityFactory {
         return user;
     }
 
-    public static OrderComplex createOrderComplex(ResultSet resultSet) throws DaoException {
+    public static ComplexOrder createOrderComplex(ResultSet resultSet) throws DaoException {
         User user = createUser(resultSet);
         Client client = createClient(resultSet);
         Cleaner cleaner = createCleaner(resultSet);
         Order order = createOrder(resultSet);
-        return new OrderComplex(user, cleaner, client, order);
+        return new ComplexOrder(user, cleaner, client, order);
+    }
+
+    public static ComplexPosition createPositionComplex(ResultSet resultSet) throws DaoException {
+        BasketPosition position = createBasketPosition(resultSet);
+        Service service = createService(resultSet);
+        return new ComplexPosition(position, service);
     }
 }

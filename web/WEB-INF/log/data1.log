@@ -5532,3 +5532,96 @@ Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot add or upda
 26-02 12:46 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
 26-02 12:52 INFO  project.connection.ConnectionPool - Registering jdbc driver.
 26-02 12:52 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+26-02 17:12 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@5db3971c
+26-02 17:12 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@8def98e
+26-02 17:12 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+26-02 17:13 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+26-02 17:13 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+26-02 17:13 INFO  command.impl.LocaleCommand - ru_RU
+26-02 17:13 INFO  command.impl.LocaleCommand - en_EN
+26-02 18:57 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@208150a8
+26-02 18:57 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@349e2f68
+26-02 18:57 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+26-02 18:57 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+26-02 18:57 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+26-02 18:57 INFO  command.impl.LocaleCommand - ru_RU
+26-02 19:45 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@341afbb9
+26-02 19:45 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@15ae405d
+26-02 19:45 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+26-02 19:46 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+26-02 19:46 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+26-02 19:48 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@1240ffba
+26-02 19:48 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@59f4ca8d
+26-02 19:48 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+26-02 19:48 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+26-02 19:48 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+26-02 20:00 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@124172a9
+26-02 20:00 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@6bb9e96
+26-02 20:00 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+26-02 20:00 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+26-02 20:00 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+26-02 20:13 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4a2e56ad
+26-02 20:13 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@6bc87bb3
+26-02 20:13 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+26-02 20:14 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+26-02 20:14 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+26-02 20:16 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@10cd7320
+26-02 20:16 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@48d3ac78
+26-02 20:16 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+26-02 20:17 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+26-02 20:17 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+26-02 20:31 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@6bf34691
+26-02 20:31 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@6c87ab05
+26-02 20:31 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+26-02 20:31 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+26-02 20:31 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+26-02 21:06 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@73983242
+26-02 21:06 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4a6337dd
+26-02 21:06 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+26-02 21:08 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+26-02 21:08 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+26-02 22:46 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@5f1296b
+26-02 22:46 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@1c1434be
+26-02 22:46 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+26-02 22:46 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+26-02 22:46 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+26-02 22:47 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@1da934fe
+26-02 22:47 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@6af2c1df
+26-02 22:47 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+26-02 22:48 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+26-02 22:48 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+26-02 22:48 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@6e9911e
+26-02 22:48 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@38f7af6b
+26-02 22:48 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+26-02 22:49 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+26-02 22:49 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+26-02 22:50 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@267364d4
+26-02 22:50 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@2b4bbab4
+26-02 22:50 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+26-02 22:50 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+26-02 22:50 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+26-02 23:04 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@124172a9
+26-02 23:04 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@6bb9e96
+26-02 23:04 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+26-02 23:05 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+26-02 23:05 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+26-02 23:06 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@73983242
+26-02 23:06 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4a6337dd
+26-02 23:06 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+26-02 23:07 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+26-02 23:07 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+26-02 23:08 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@e27a70
+26-02 23:08 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@74d602a2
+26-02 23:08 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+26-02 23:09 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+26-02 23:09 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+26-02 23:16 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@73983242
+26-02 23:16 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4a6337dd
+26-02 23:16 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+26-02 23:17 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+26-02 23:17 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+26-02 23:30 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@81f76fd
+26-02 23:30 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@13e499ed
+26-02 23:30 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+26-02 23:31 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+26-02 23:31 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.

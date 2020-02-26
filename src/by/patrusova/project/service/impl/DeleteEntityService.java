@@ -7,16 +7,14 @@ import by.patrusova.project.dao.impl.ServiceDao;
 import by.patrusova.project.dao.impl.UserDao;
 import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.Role;
-import by.patrusova.project.entity.impl.Cleaner;
-import by.patrusova.project.entity.impl.Client;
-import by.patrusova.project.entity.impl.Order;
-import by.patrusova.project.entity.impl.User;
+import by.patrusova.project.entity.impl.*;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.Serviceable;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import java.util.Optional;
 
 public class DeleteEntityService implements Serviceable {
@@ -28,6 +26,7 @@ public class DeleteEntityService implements Serviceable {
         try {
             User user = new User();
             UserDao userDao = DaoFactory.createUserDao();
+            BasketDao basketDao = DaoFactory.createBasketDao();
             if (entity instanceof User) {
                 if (userDao.delete(entity)) {                   //delete user from DB
                     return Optional.empty();
@@ -45,12 +44,15 @@ public class DeleteEntityService implements Serviceable {
                     return Optional.empty();
                 }
             } else if (entity instanceof Order) {
-                    BasketDao basketDao = DaoFactory.createBasketDao();
-                    if (basketDao.deleteAllByOrderId(((Order) entity).getId())) {
-                        OrderDao orderDao = DaoFactory.createOrderDao();
-                        if (orderDao.delete(entity)) {           //delete order and basket positions from DB both
-                            return Optional.empty();
+                if (basketDao.deleteAllByOrderId(((Order) entity).getId())) {
+                    OrderDao orderDao = DaoFactory.createOrderDao();
+                    if (orderDao.delete(entity)) {              //delete order and basket positions from DB both
+                        return Optional.empty();
                     }
+                }
+            } else if (entity instanceof BasketPosition) {
+                if (basketDao.delete(entity)) {                 //delete basket position from DB
+                    return Optional.empty();
                 }
             } else {
                 ServiceDao serviceDao = DaoFactory.createServiceDao();
@@ -64,5 +66,24 @@ public class DeleteEntityService implements Serviceable {
             throw new ServiceException(e);
         }
         return Optional.of(entity);
+    }
+
+    public boolean doService(long idClient) throws ServiceException {
+        try {
+            OrderDao orderDao = DaoFactory.createOrderDao();
+            long id = orderDao.findNew(idClient);
+            if (id != 0) {
+                Order order = new Order();
+                order.setId(id);
+                BasketDao basketDao = DaoFactory.createBasketDao();
+                if (basketDao.deleteAllByOrderId(id)) {
+                    return orderDao.delete(order);
+                }
+                return false;
+            }
+            return true;
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
     }
 }

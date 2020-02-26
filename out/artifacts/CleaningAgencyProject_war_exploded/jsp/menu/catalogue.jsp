@@ -41,6 +41,7 @@
         <c:set var="pageStart" value="${pageStart - perPage}"/>
     </c:if>
 
+    <br/><br/><br/>
     <div style="text-align: center">
     <h5><u style="color: #0c4f5b; font-size: 16px; font-family: 'Palatino Linotype', serif">
     <fmt:message key="text.catalogue"/>
@@ -57,11 +58,13 @@
     <br/>
     </c:if>
 
+    <c:if test="${ not empty user and user.role eq 'client' or 'admin' or 'cleaner'}">
     <div style="text-align: center">
     <a href="?start=${pageStart - perPage}"><<</a>
     ${pageStart + 1} - ${pageStart + perPage}
     <a href="?start=${pageStart + perPage}">>></a>
     </div>
+    </c:if>
     <br/>
 
     <div style="text-align: center">
@@ -99,10 +102,12 @@
     </table>
     <br/>
 
+    <c:if test="${ not empty user and user.role eq 'client' or 'admin' or 'cleaner'}">
     <a href="?start=${pageStart - perPage}"><<</a>
     ${pageStart + 1} - ${pageStart + perPage}
     <a href="?start=${pageStart + perPage}">>></a>
     </div>
+    </c:if>
     <br/>
 
    <jsp:include page="/WEB-INF/view/footer.jsp"/>

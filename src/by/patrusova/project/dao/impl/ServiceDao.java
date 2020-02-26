@@ -2,14 +2,17 @@ package by.patrusova.project.dao.impl;
 
 import by.patrusova.project.connection.ProxyConnection;
 import by.patrusova.project.dao.AbstractDao;
-import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.dao.EntityFactory;
+import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.impl.Service;
 import by.patrusova.project.exception.DaoException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import java.sql.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +28,7 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
     private final static String SQL_SELECT_SERVICE_BY_ID =
             "SELECT id_service, service, cost, sales FROM services WHERE id_service = ?;";
     private static final String SQL_SELECT_ALL_SERVICES =
-                    "SELECT id_service, service, cost, sales FROM services;";
+            "SELECT id_service, service, cost, sales FROM services;";
     private final static String SQL_SELECT_ID =
             "SELECT id_service FROM services;";
 
@@ -260,4 +263,6 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
         }
         return false;
     }
+
+
 }

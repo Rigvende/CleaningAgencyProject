@@ -56,7 +56,10 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
     private static final String SQL_SELECT_ALL_ORDERS =
             "SELECT id_order, order_time, deadline, order_status, " +
                     "mark, id_client, id_cleaner FROM orders;";
-    private final static String SQL_SELECT_ID = "SELECT id_order FROM orders;";
+    private final static String SQL_SELECT_ID =
+            "SELECT id_order FROM orders;";
+    private final static String SQL_FIND_NEW =
+            "SELECT id_order FROM orders WHERE order_status = 'new' AND id_client = ?;";
 
     public OrderDao(ProxyConnection connection) {
         super(connection);
@@ -294,7 +297,7 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
         return order;
     }
 
-    public List<OrderComplex> findOrdersById(String role, long id) throws DaoException {
+    public List<ComplexOrder> findOrdersById(String role, long id) throws DaoException {
         try {
             connection.setAutoCommit(false);
         } catch (SQLException e) {
@@ -303,7 +306,7 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             throw new DaoException(e);
         }
         PreparedStatement preparedStatement = null;
-        List<OrderComplex> result = new ArrayList<>();
+        List<ComplexOrder> result = new ArrayList<>();
         try {
             switch (role) {
                 case "cleaner":
@@ -497,5 +500,41 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             closeStatement(preparedStatement);
         }
         return order;
+    }
+
+    public long findNew(long idClient) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,
+                    "Cannot set autocommit false in OrderDao deleteNew method. ", e);
+            throw new DaoException(e);
+        }
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement(SQL_FIND_NEW);
+            preparedStatement.setLong(1, idClient);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (!resultSet.next()) {
+                return 0;
+            } else {
+                return resultSet.getLong(ID_ORDER);
+            }
+        } catch (SQLException e) {
+            if (connection != null) {
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,
+                            "Cannot do rollback in OrderDao findId method. ", e);
+                    throw new DaoException(e);
+                }
+            }
+            LOGGER.log(Level.ERROR,
+                    "Cannot find id_order in DB. Request to table failed.", e);
+            throw new DaoException(e);
+        } finally {
+            closeStatement(preparedStatement);
+        }
     }
 }

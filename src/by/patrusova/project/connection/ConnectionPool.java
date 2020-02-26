@@ -86,20 +86,6 @@ public class ConnectionPool {
         }
     }
 
-    public void closeConnection(Connection connection) throws DaoException {
-        if (connection != null) {
-            try {
-                if (!connection.getAutoCommit()) {
-                    connection.commit();
-                }
-                connection.close();
-            } catch (SQLException e) {
-                LOGGER.log(Level.ERROR, "Connection closing failed. ", e);
-                throw new DaoException(e);
-            }
-        }
-    }
-
     public void closeAllConnections() throws DaoException {
         try {
             for (int i = 0; i < MAX_POOL_SIZE; i++) {
@@ -110,6 +96,20 @@ public class ConnectionPool {
         } catch (InterruptedException e) {
             LOGGER.log(Level.ERROR, "Connections' closing failed. ", e);
             throw new DaoException(e);
+        }
+    }
+
+    private void closeConnection(Connection connection) throws DaoException {
+        if (connection != null) {
+            try {
+                if (!connection.getAutoCommit()) {
+                    connection.commit();
+                }
+                connection.close(); //close Connection, not ProxyConnection
+            } catch (SQLException e) {
+                LOGGER.log(Level.ERROR, "Connection closing failed. ", e);
+                throw new DaoException(e);
+            }
         }
     }
 

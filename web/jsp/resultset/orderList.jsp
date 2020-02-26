@@ -71,15 +71,15 @@
             <th><fmt:message key="field.idcleaner2"/></th>
         </tr>
 
-    <c:forEach var="order" items="${orderList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
+    <c:forEach var="orderlist" items="${orderList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
         <tr>
-            <td><c:out value="${order.id}" /></td>
-            <td><c:out value="${order.orderTime}" /></td>
-            <td><c:out value="${order.deadline}" /></td>
-            <td><c:out value="${order.orderStatus}" /></td>
-            <td><c:out value="${order.mark}" /></td>
-            <td><c:out value="${order.idClient}" /></td>
-            <td><c:out value="${order.idCleaner}" /></td>
+            <td><c:out value="${orderlist.id}" /></td>
+            <td><c:out value="${orderlist.orderTime}" /></td>
+            <td><c:out value="${orderlist.deadline}" /></td>
+            <td><c:out value="${orderlist.orderStatus}" /></td>
+            <td><c:out value="${orderlist.mark}" /></td>
+            <td><c:out value="${orderlist.idClient}" /></td>
+            <td><c:out value="${orderlist.idCleaner}" /></td>
         </tr>
     </c:forEach>
     </table>
@@ -169,16 +169,16 @@
                 <th><fmt:message key="field.phone1"/></th>
             </tr>
 
-            <c:forEach var="order" items="${orderList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
+            <c:forEach var="orderlist" items="${orderList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
                 <tr>
-                    <td><c:out value="${order.order.id}" /></td>
-                    <td><c:out value="${order.order.orderTime}" /></td>
-                    <td><c:out value="${order.order.deadline}" /></td>
-                    <td><c:out value="${order.order.orderStatus}" /></td>
-                    <td><c:out value="${order.order.mark}" /></td>
-                    <td><c:out value="${order.user.name}" /></td>
-                    <td><c:out value="${order.user.lastname}" /></td>
-                    <td><c:out value="${order.user.phone}" /></td>
+                    <td><c:out value="${orderlist.order.id}" /></td>
+                    <td><c:out value="${orderlist.order.orderTime}" /></td>
+                    <td><c:out value="${orderlist.order.deadline}" /></td>
+                    <td><c:out value="${orderlist.order.orderStatus}" /></td>
+                    <td><c:out value="${orderlist.order.mark}" /></td>
+                    <td><c:out value="${orderlist.user.name}" /></td>
+                    <td><c:out value="${orderlist.user.lastname}" /></td>
+                    <td><c:out value="${orderlist.user.phone}" /></td>
                 </tr>
             </c:forEach>
         </table>
@@ -248,19 +248,19 @@
 
             </tr>
 
-            <c:forEach var="order" items="${orderList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
+            <c:forEach var="orderlist" items="${orderList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
                 <tr>
-                    <td><c:out value="${order.order.id}" /></td>
-                    <td><c:out value="${order.order.orderTime}" /></td>
-                    <td><c:out value="${order.order.deadline}" /></td>
-                    <td><c:out value="${order.order.orderStatus}" /></td>
-                    <td><c:out value="${order.order.mark}" /></td>
-                    <td><c:out value="${order.user.name}" /></td>
-                    <td><c:out value="${order.user.lastname}" /></td>
-                    <td><c:out value="${order.user.phone}" /></td>
-                    <td><c:out value="${order.client.location}" /></td>
-                    <td><c:out value="${order.client.relative}" /></td>
-                    <td><c:out value="${order.client.notes}" /></td>
+                    <td><c:out value="${orderlist.order.id}" /></td>
+                    <td><c:out value="${orderlist.order.orderTime}" /></td>
+                    <td><c:out value="${orderlist.order.deadline}" /></td>
+                    <td><c:out value="${orderlist.order.orderStatus}" /></td>
+                    <td><c:out value="${orderlist.order.mark}" /></td>
+                    <td><c:out value="${orderlist.user.name}" /></td>
+                    <td><c:out value="${orderlist.user.lastname}" /></td>
+                    <td><c:out value="${orderlist.user.phone}" /></td>
+                    <td><c:out value="${orderlist.client.location}" /></td>
+                    <td><c:out value="${orderlist.client.relative}" /></td>
+                    <td><c:out value="${orderlist.client.notes}" /></td>
                 </tr>
             </c:forEach>
         </table>

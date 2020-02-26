@@ -1,7 +1,7 @@
 package by.patrusova.project.command.impl.menu;
 
 import by.patrusova.project.command.ActionCommand;
-import by.patrusova.project.entity.impl.BasketPosition;
+import by.patrusova.project.entity.impl.ComplexPosition;
 import by.patrusova.project.entity.impl.Order;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
@@ -17,17 +17,19 @@ public class BasketCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();
     private final static String BASKET_LIST = "basketList";
-    private final static String ORDER = "order";
+    private final static String ORDER_NEW = "orderNew";
     private final static String PAGE_BASKET = "page.basket";
     private ShowService service = new ShowService();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
         try {
-            Order order = (Order) request.getSession().getAttribute(ORDER);
-            List<BasketPosition> positions = service.doService(order.getId());
-            if (!positions.isEmpty()) {
-                request.getSession().setAttribute(BASKET_LIST, positions);
+            Order order = (Order) request.getSession().getAttribute(ORDER_NEW);
+            if (order != null) {
+                List<ComplexPosition> positions = service.doService(order.getId());
+                if (!positions.isEmpty()) {
+                    request.getSession().setAttribute(BASKET_LIST, positions);
+                }
             }
             return ConfigurationManager.getProperty(PAGE_BASKET);
         } catch (ServiceException e) {

@@ -5,6 +5,7 @@ import by.patrusova.project.dao.AbstractDao;
 import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.dao.EntityFactory;
 import by.patrusova.project.entity.impl.BasketPosition;
+import by.patrusova.project.entity.impl.ComplexPosition;
 import by.patrusova.project.exception.DaoException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -20,7 +21,7 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
     private final static String SQL_ADD_POSITION =
             "INSERT INTO basket_position VALUES (null, ?, ?);";
     private final static String SQL_DELETE_POSITION =
-            "DELETE FROM basket_position WHERE id_service = ?;";
+            "DELETE FROM basket_position WHERE id_basket = ?;";
     private final static String SQL_SELECT_BASKET_POSITION_BY_ID =
             "SELECT id_basket, id_order, id_service FROM basket_position WHERE id_order = ?;";
     private final static String SQL_DELETE_POSITION_ORDER =
@@ -28,6 +29,10 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
     private static final String SQL_SELECT_ALL_BASKET_POSITIONS =
             "SELECT id_basket, id_order, id_service FROM basket_position;";
     private final static String SQL_SELECT_ID = "SELECT id_basket FROM basket_position;";
+    private final static String SQL_SELECT_POSITION_BY_ORDER_ID =
+            "SELECT id_basket, basket_position.id_order, basket_position.id_service, service, " +
+                    "cost, sales FROM basket_position JOIN services ON basket_position.id_service " +
+                    "= services.id_service WHERE basket_position.id_order = ?;";
 
     public BasketDao(ProxyConnection connection) {
         super(connection);
@@ -84,8 +89,11 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement(SQL_DELETE_POSITION);
-            preparedStatement.setLong(1, position.getIdService());
+            preparedStatement.setLong(1, position.getId());
             isDeleted = preparedStatement.execute();
+            if (!findId(position.getId())) {
+                isDeleted = true;
+            }
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
@@ -304,5 +312,43 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
         } finally {
             closeStatement(preparedStatement);
         }
+    }
+
+    public List<ComplexPosition> findBasketByOrderId(long id) throws DaoException {
+        try {
+            connection.setAutoCommit(false);
+        } catch (SQLException e) {
+            LOGGER.log(Level.ERROR,
+                    "Cannot set autocommit false in BasketDao findAllByOrderId method. ", e);
+            throw new DaoException(e);
+        }
+        List<ComplexPosition> positions = new ArrayList<>();
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_POSITION_BY_ORDER_ID);
+            preparedStatement.setLong(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                ComplexPosition position = EntityFactory.createPositionComplex(resultSet);
+                positions.add(position);
+            }
+            connection.commit();
+        } catch (SQLException | DaoException e) {
+            if (connection != null) {
+                try {
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    LOGGER.log(Level.ERROR,
+                            "Cannot do rollback in BasketDao findAllByOrderId method. ", e);
+                    throw new DaoException(e);
+                }
+            }
+            LOGGER.log(Level.ERROR,
+                    "Cannot find all positions of the basket. Request to table failed. ", e);
+            throw new DaoException(e);
+        } finally {
+            closeStatement(preparedStatement);
+        }
+        return positions;
     }
 }

@@ -19,15 +19,15 @@ import java.util.Optional;
 public class SelectCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();
-    private final static String ORDER = "order";
+    private final static String ORDER = "orderNew";
     private final static String POSITION = "position";
     private final static String CHOICE = "choice";
     private final static String EMPTY = "";
     private final static String PAGE_CATALOGUE = "page.catalogue";
     private final static String ERROR_SELECT = "errorSelect";
     private final static String MESSAGE_ERROR_SELECT = "message.selecterror";
+    private final static String MESSAGE_ERROR_EMPTY = "message.emptychoice";
     private BasketService service = new BasketService();
-    private BasketPosition position = new BasketPosition();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
@@ -35,24 +35,26 @@ public class SelectCommand implements ActionCommand {
         String idService = request.getParameter(POSITION);
         String choice = request.getParameter(CHOICE);
         if (choice.equals(EMPTY)){
+            request.getSession().setAttribute(ERROR_SELECT,
+                    MessageManager.getProperty(MESSAGE_ERROR_EMPTY));
             return ConfigurationManager.getProperty(PAGE_CATALOGUE);
         }
         try {
-            if (!NumberValidator.isValidServiceID(idService)) {
-                request.getSession().setAttribute(ERROR_SELECT,
-                        MessageManager.getProperty(MESSAGE_ERROR_SELECT));
-                return ConfigurationManager.getProperty(PAGE_CATALOGUE);
+            if (NumberValidator.isValidServiceID(idService)) {
+                BasketPosition position = new BasketPosition();
+                position.setIdService(Long.parseLong(idService));
+                position.setIdOrder(order.getId());
+                Optional<AbstractEntity> optional = service.doService(position);
+                if (optional.isPresent()) {
+                    return ConfigurationManager.getProperty(PAGE_CATALOGUE);
+                }
             }
-            position.setIdService(Long.parseLong(idService));
-            position.setIdOrder(order.getId());
-            Optional<AbstractEntity> optional = service.doService(position);
-            if (optional.isEmpty()) {
-                request.getSession().setAttribute(ERROR_SELECT,
-                        MessageManager.getProperty(MESSAGE_ERROR_SELECT));
-            }
+            request.getSession().setAttribute(ERROR_SELECT,
+                    MessageManager.getProperty(MESSAGE_ERROR_SELECT));
+            return ConfigurationManager.getProperty(PAGE_CATALOGUE);
         } catch (ServiceException e) {
             LOGGER.log(Level.ERROR, "Exception while selecting service has occurred.", e);
+            throw new CommandException(e);
         }
-        return ConfigurationManager.getProperty(PAGE_CATALOGUE);
     }
 }

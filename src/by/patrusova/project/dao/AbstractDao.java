@@ -47,7 +47,8 @@ public abstract class AbstractDao<T extends AbstractEntity> {
         }
     }
 
-    public void returnConnectionInPool() throws DaoException {
-        ConnectionPool.getInstance().releaseConnection(connection);
+    private void returnConnectionInPool() throws DaoException {
+//        ConnectionPool.getInstance().releaseConnection(connection);
+        connection.close(); //releasing ProxyConnection, not closing
     }
 }

@@ -5,7 +5,7 @@ import by.patrusova.project.dao.impl.OrderDao;
 import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.impl.Cleaner;
 import by.patrusova.project.entity.impl.Client;
-import by.patrusova.project.entity.impl.OrderComplex;
+import by.patrusova.project.entity.impl.ComplexOrder;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
 import org.apache.logging.log4j.Level;
@@ -18,7 +18,7 @@ public class ShowOrderService {
 
     private final static Logger LOGGER = LogManager.getLogger();
 
-    public List<OrderComplex> doService(String role, AbstractEntity entity) throws ServiceException {
+    public List<ComplexOrder> doService(String role, AbstractEntity entity) throws ServiceException {
         try {
             OrderDao orderDao = DaoFactory.createOrderDao();
             switch (role) {
