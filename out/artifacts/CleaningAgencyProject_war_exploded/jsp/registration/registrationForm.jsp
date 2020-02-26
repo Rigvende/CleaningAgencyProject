@@ -47,9 +47,9 @@
         </div><br/><br/><br/>
 
         <div style="text-align: center; color: #0c4f5b; font-family: 'Palatino Linotype', serif;
-        font-size: 18px; margin-left: 50px"><b>
-            <br/><fmt:message key="text.registration"/>
-            <br/><br/><hr/>
+        font-size: 18px;"><b>
+            <br/><div style="padding: 30px; background: #4f90ff; color: #0d3e4b">
+            <fmt:message key="text.registration"/></div>
 
             <div style="color: crimson; font-size: 14px">${errorRegistrationMessage}</div>
             ${wrongAction}

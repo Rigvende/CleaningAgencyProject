@@ -25,13 +25,13 @@ public class ShowAdminsCommand implements ActionCommand {
     private final static String MESSAGE_ERROR_LIST = "message.listerror";
     private final static String PAGE_MAIN_ADMIN = "page.mainadmin";
     private ShowService service = new ShowService();
-    private List<User> users = new ArrayList<>();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
         try {
             List<AbstractEntity> list = service.doService(Role.ADMIN.getValue());
             if (!list.isEmpty()) {
+                List<User> users = new ArrayList<>();
                 for (AbstractEntity entity : list) {
                     users.add((User) entity);
                 }

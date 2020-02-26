@@ -25,7 +25,6 @@ public class CancelCommand implements ActionCommand {
     private final static String PAGE_ORDERLIST = "page.orderlist";
     private final static String PAGE_CONFIRM = "page.confirm";
     private CancelOrderService service = new CancelOrderService();
-    private Order order = new Order();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
@@ -35,6 +34,7 @@ public class CancelCommand implements ActionCommand {
                 long id = Long.parseLong(orderId);
                 Client client = (Client) request.getSession().getAttribute(Role.CLIENT.getValue());
                 long clientId = client.getId();
+                Order order = new Order();
                 order.setId(id);
                 order.setIdClient(clientId);
                 if (service.doService(order).isPresent()) {

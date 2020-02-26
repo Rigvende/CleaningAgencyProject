@@ -9,7 +9,9 @@
       <w>addserviceredirect</w>
       <w>adminlist</w>
       <w>antiqua</w>
+      <w>backtocatalogue</w>
       <w>backtomain</w>
+      <w>basketlist</w>
       <w>cancelorder</w>
       <w>cancelorderid</w>
       <w>cataloguelist</w>
@@ -44,6 +46,7 @@
       <w>deleteclient</w>
       <w>deleteentity</w>
       <w>deleteerror</w>
+      <w>deleteposition</w>
       <w>deletservice</w>
       <w>deregistered</w>
       <w>deregistering</w>

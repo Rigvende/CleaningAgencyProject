@@ -29,7 +29,6 @@ public class CatalogueCommand implements ActionCommand {
     private final static String PAGE_MAIN_CLEANER = "page.maincleaner";
     private final static String PAGE_LOGIN = "page.login";
     private ShowService service = new ShowService();
-    private  List<Service> services = new ArrayList<>();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
@@ -37,6 +36,7 @@ public class CatalogueCommand implements ActionCommand {
         try {
             List<AbstractEntity> list = service.doService(CATALOGUE);
             if (!list.isEmpty()) {
+                List<Service> services = new ArrayList<>();
                 for (AbstractEntity entity : list) {
                     services.add((Service) entity);
                 }

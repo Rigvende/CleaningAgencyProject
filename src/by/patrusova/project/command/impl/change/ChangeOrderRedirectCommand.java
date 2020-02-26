@@ -23,13 +23,13 @@ public class ChangeOrderRedirectCommand implements ActionCommand {
     private final static String MESSAGE_ERROR_CHANGE_ORDER_ID = "message.changeerrorid";
     private final static String PAGE_ORDERLIST = "page.orderlist";
     private OrderInfoService infoService = new OrderInfoService();
-    private Order order = new Order();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
         String id = request.getParameter(ID);
         try {
             if (NumberValidator.isValidOrderID(id)) {
+                Order order = new Order();
                 order.setId(Long.parseLong(id));
                 order = infoService.getOrder(order);
                 request.getSession().setAttribute(ORDER, order);

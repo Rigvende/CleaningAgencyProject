@@ -23,13 +23,13 @@ public class ChangeServiceRedirectCommand implements ActionCommand {
     private final static String MESSAGE_ERROR_CHANGE_SERVICE_ID = "message.changeerrorid";
     private final static String PAGE_CATALOGUELIST = "page.cataloguelist";
     private ServiceInfoService infoService = new ServiceInfoService();
-    private Service service = new Service();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
         String id = request.getParameter(ID);
         try {
             if (NumberValidator.isValidServiceID(id)) {
+                Service service = new Service();
                 service.setId(Long.parseLong(id));
                 service = infoService.getService(service);
                 request.getSession().setAttribute(SERVICE, service);

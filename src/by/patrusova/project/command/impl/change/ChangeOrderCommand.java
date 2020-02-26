@@ -28,7 +28,6 @@ public class ChangeOrderCommand implements ActionCommand {
     private final static String ORDER_DONE = "orderDone";
     private OrderInfoService infoService = new OrderInfoService();
     private MailService mailService = new MailService();
-    private Client client = new Client();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
@@ -39,11 +38,11 @@ public class ChangeOrderCommand implements ActionCommand {
                 Optional<AbstractEntity> optional2 = infoService.doService(order);
                 if (optional2.isPresent()) {
                     if (order.getOrderStatus().equals(Order.Status.DONE.getValue())) {
-                        User user;
+                        Client client = new Client();
                         client.setId(order.getIdClient());
                         Optional<AbstractEntity> optional3 = mailService.doService(client);
                         if (optional3.isPresent()) {
-                            user = (User) optional3.get();
+                            User user = (User) optional3.get();
                             request.getSession().setAttribute(ORDER_DONE, user);
                             return ConfigurationManager.getProperty(PAGE_MAIL);
                         }

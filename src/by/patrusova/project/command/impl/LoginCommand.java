@@ -42,10 +42,6 @@ public class LoginCommand implements ActionCommand {
     private CleanerInfoService cleanerInfoService = new CleanerInfoService();
     private ClientInfoService clientInfoService = new ClientInfoService();
     private OrderInfoService infoService = new OrderInfoService();
-    private User user = new User();
-    private Cleaner cleaner = new Cleaner();
-    private Client client = new Client();
-    private Order order = new Order();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
@@ -58,6 +54,7 @@ public class LoginCommand implements ActionCommand {
             page = ConfigurationManager.getProperty(PAGE_LOGIN);
             return page;
         }
+        User user = new User();
         user.setLogin(login);
         user.setPassword(pass);
         try {
@@ -74,6 +71,7 @@ public class LoginCommand implements ActionCommand {
                         break;
                     case "cleaner":
                         session.setAttribute(ROLE, Role.CLEANER.getValue());
+                        Cleaner cleaner = new Cleaner();
                         cleaner.setIdUser(user.getId());
                         cleaner = cleanerInfoService.getCleaner(cleaner); //extracting cleaner from DB by ID
                         session.setAttribute(Role.CLEANER.getValue(), cleaner);
@@ -81,9 +79,11 @@ public class LoginCommand implements ActionCommand {
                         break;
                     case "client":
                         session.setAttribute(ROLE, Role.CLIENT.getValue());
+                        Client client = new Client();
                         client.setIdUser(user.getId());
                         client = clientInfoService.getClient(client);        //extracting client from DB by ID
                         session.setAttribute(Role.CLIENT.getValue(), client);
+                        Order order = new Order();
                         order.setIdClient(client.getId());
                         order.setOrderStatus(Order.Status.NEW.getValue());   //create order with status "new"
                         Optional<AbstractEntity> opt = infoService.doService(order);

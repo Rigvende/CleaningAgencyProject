@@ -23,13 +23,14 @@ public class ChangeCleanerRedirectCommand implements ActionCommand {
     private final static String MESSAGE_ERROR_CHANGE_CLEANER_ID = "message.changeerrorid";
     private final static String PAGE_CLEANERLIST = "page.cleanerlist";
     private CleanerInfoService service = new CleanerInfoService();
-    private Cleaner cleaner = new Cleaner();
+
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
         String id = request.getParameter(ID);
         try {
-            if (NumberValidator.isValidUserID(id)) {//fixme вставить проверку, что пользователь с таким айди - клинер
+            if (NumberValidator.isValidUserID(id)) {
+                Cleaner cleaner = new Cleaner();
                 cleaner.setIdUser(Long.parseLong(id));
                 cleaner = service.getCleaner(cleaner);
                 if (cleaner != null) {

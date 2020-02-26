@@ -5527,3 +5527,8 @@ Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot add or upda
 25-02 23:28 INFO  command.impl.LocaleCommand - ru_RU
 25-02 23:28 INFO  command.impl.LocaleCommand - en_EN
 25-02 23:28 INFO  command.impl.LocaleCommand - ru_RU
+26-02 12:46 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@7d0beb3e
+26-02 12:46 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4fd2162f
+26-02 12:46 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+26-02 12:52 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+26-02 12:52 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.

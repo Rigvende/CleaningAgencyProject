@@ -23,13 +23,13 @@ public class ChangeClientRedirectCommand implements ActionCommand {
     private final static String MESSAGE_ERROR_CHANGE_CLIENT_ID = "message.changeerrorid";
     private final static String PAGE_CLIENTLIST = "page.clientlist";
     private ClientInfoService service = new ClientInfoService();
-    private Client client = new Client();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
         String id = request.getParameter(ID);
         try {
-            if (NumberValidator.isValidUserID(id)) {//fixme вставить проверку, что пользователь с таким айди - клиент
+            if (NumberValidator.isValidUserID(id)) {
+                Client client = new Client();
                 client.setIdUser(Long.parseLong(id));
                 client = service.getClient(client);
                 if (client != null) {

@@ -25,13 +25,13 @@ public class ShowCatalogueCommand implements ActionCommand {
     private final static String MESSAGE_ERROR_LIST = "message.listerror";
     private final static String PAGE_MAIN_ADMIN = "page.mainadmin";
     private ShowService service = new ShowService();
-    private List<Service> services = new ArrayList<>();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
         try {
             List<AbstractEntity> list = service.doService(CATALOGUE);
             if (!list.isEmpty()) {
+                List<Service> services = new ArrayList<>();
                 for (AbstractEntity entity : list) {
                     services.add((Service) entity);
                 }
