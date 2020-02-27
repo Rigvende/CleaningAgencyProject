@@ -14,6 +14,7 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -66,6 +67,18 @@ public class OrderInfoService implements Serviceable, EntityCreator {
         }
     }
 
+    //count total cost for order
+    public BigDecimal doService(long id) throws ServiceException {
+        try {
+            OrderDao dao = DaoFactory.createOrderDao();
+            return dao.findCost(id);
+        } catch (DaoException e) {
+            LOGGER.log(Level.ERROR,
+                    "Exception in OrderInfoService while counting total cost has occurred. ", e);
+            throw new ServiceException(e);
+        }
+    }
+
     //create instance of order with changes
     @Override
     public Optional<AbstractEntity> createEntity(HttpServletRequest request) throws ServiceException {
@@ -100,5 +113,16 @@ public class OrderInfoService implements Serviceable, EntityCreator {
             throw new ServiceException(e);
         }
         return order;
+    }
+
+    public Optional<AbstractEntity> placeOrder(AbstractEntity entity) throws ServiceException {
+        Order order = (Order) entity;
+        try {
+            OrderDao dao = DaoFactory.createOrderDao();
+            return dao.place(order) ? Optional.empty() : Optional.of(order);
+        } catch (DaoException e) {
+            LOGGER.log(Level.ERROR, "Exception while placing order has occurred. ", e);
+            throw new ServiceException(e);
+        }
     }
 }

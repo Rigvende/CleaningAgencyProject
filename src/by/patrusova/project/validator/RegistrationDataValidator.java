@@ -12,6 +12,8 @@ public class RegistrationDataValidator {
     private final static String CHECK_PASSWORD = "^[A-z0-9_]{5,15}$";
     private final static String CHECK_EMAIL = "^[-\\w.]+@([A-z0-9][-A-z0-9]+\\.)+[A-z]{2,4}$";
     private final static String CHECK_PHONE = "^[\\d]{5,20}$";
+    private final static String CHECK_NAME = "^[A-ZА-Я]([a-zа-я]){2,20}";
+    private final static String CHECK_LASTNAME = "^[A-ZА-Я]([a-zа-я]){1,40}";
 
     public static boolean isValidLogin(String login) throws DaoException {
         Pattern pattern = Pattern.compile(CHECK_LOGIN);
@@ -40,6 +42,18 @@ public class RegistrationDataValidator {
     public static boolean isValidEmail(String email) {
         Pattern pattern = Pattern.compile(CHECK_EMAIL);
         Matcher matcher = pattern.matcher(email);
+        return matcher.find();
+    }
+
+    public static boolean isValidName(String name) {
+        Pattern pattern = Pattern.compile(CHECK_NAME);
+        Matcher matcher = pattern.matcher(name);
+        return matcher.find();
+    }
+
+    public static boolean isValidLastname(String lastname) {
+        Pattern pattern = Pattern.compile(CHECK_LASTNAME);
+        Matcher matcher = pattern.matcher(lastname);
         return matcher.find();
     }
 }

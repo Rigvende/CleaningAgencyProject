@@ -1,4 +1,4 @@
-package by.patrusova.project.command.impl;
+package by.patrusova.project.command.impl.registration;
 
 import by.patrusova.project.command.ActionCommand;
 import by.patrusova.project.util.ConfigurationManager;

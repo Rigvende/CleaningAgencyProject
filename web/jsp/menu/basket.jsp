@@ -11,6 +11,10 @@
     </head>
 
     <body>
+    <c:if test="${empty user}">
+        <jsp:forward page="/jsp/login.jsp"/>
+    </c:if>
+
     <jsp:include page="/WEB-INF/view/header.jsp"/>
 
     <div style="float: right">
@@ -61,10 +65,10 @@
 
         <div style="text-align: right; margin-right: 50px">
         <form name="confirmOrderForm" method="post" action="${pageContext.request.contextPath}/controller">
-        <input type="hidden" name="command" value="makeorder" />
+        <input type="hidden" name="command" value="orderredirect" />
 
         <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 250px; font-size: 20px;
-        height: 40px;" type="submit" value="<fmt:message key="button.makeorder"/>"/>
+        height: 40px;" type="submit" value="<fmt:message key="button.confirm"/>"/>
         </form>
         </div>
         <br/>
@@ -108,7 +112,7 @@
     <br/>
 
         <div style="color: #0c4f5b; font-size: 20px; font-family: 'Palatino Linotype', serif; margin-left: 50px">
-        <fmt:message key="text.positions2"/><%--        totalCost--%>
+        <fmt:message key="text.positions2"/> ${totalCost}
         </div>
 
 

@@ -27,7 +27,6 @@ public class UserInfoService implements Serviceable, EntityCreator {
     private final static String PHONE = "phone";
     private final static String ADDRESS = "address";
     private final static String EMAIL = "email";
-    private final static String NAME = "name";
 
     //update user
     @Override
@@ -71,8 +70,8 @@ public class UserInfoService implements Serviceable, EntityCreator {
         String phone = request.getParameter(PHONE);
         String email = request.getParameter(EMAIL);
         String address = request.getParameter(ADDRESS);
-        validationMap.put(FIRSTNAME, StringValidator.isValidStringSize(NAME, name));
-        validationMap.put(LASTNAME, StringValidator.isValidStringSize(LASTNAME, lastname));
+        validationMap.put(FIRSTNAME, RegistrationDataValidator.isValidName(name));
+        validationMap.put(LASTNAME, RegistrationDataValidator.isValidLastname(lastname));
         validationMap.put(PHONE, RegistrationDataValidator.isValidPhone(phone));
         validationMap.put(EMAIL, RegistrationDataValidator.isValidEmail(email)
                                  && StringValidator.isValidStringSize(EMAIL, email));

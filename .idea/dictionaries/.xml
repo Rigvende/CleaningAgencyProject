@@ -5,6 +5,7 @@
       <w>adddiscount</w>
       <w>addentity</w>
       <w>adderror</w>
+      <w>addorder</w>
       <w>addservice</w>
       <w>addserviceredirect</w>
       <w>adminlist</w>
@@ -80,12 +81,16 @@
       <w>notconfirm</w>
       <w>notregistered</w>
       <w>nullpage</w>
+      <w>orderconfirm</w>
       <w>orderlist</w>
+      <w>orderredirect</w>
       <w>ordertime</w>
       <w>palatino</w>
       <w>passwordagain</w>
       <w>passwordreg</w>
       <w>patrusova</w>
+      <w>placeorder</w>
+      <w>placeordererror</w>
       <w>quitwait</w>
       <w>reginfo</w>
       <w>registrationerror</w>

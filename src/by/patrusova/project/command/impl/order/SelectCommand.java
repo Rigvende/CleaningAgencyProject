@@ -1,4 +1,4 @@
-package by.patrusova.project.command.impl.menu;
+package by.patrusova.project.command.impl.order;
 
 import by.patrusova.project.command.ActionCommand;
 import by.patrusova.project.entity.AbstractEntity;

@@ -11,6 +11,8 @@ import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.*;
 
 import java.io.*;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -65,12 +67,17 @@ public class Main {
 //        order.setOrderStatus("new");
 //        System.out.println(  dao.findNew(order));
 
+        OrderInfoService infoService = new OrderInfoService();
 
-       BasketService service = new BasketService();
-        BasketPosition position = new BasketPosition();
-        position.setIdOrder(22);
-        position.setIdService(70);
-        System.out.println(service.doService(position));
+        BigDecimal totalCost =
+                infoService.doService(6).setScale(2, RoundingMode.HALF_UP);
+        System.out.println(totalCost);
+
+//       BasketService service = new BasketService();
+//        BasketPosition position = new BasketPosition();
+//        position.setIdOrder(22);
+//        position.setIdService(70);
+//        System.out.println(service.doService(position));
 //        BasketPosition position2 = new BasketPosition();
 //        position2.setIdService(85);
 //        System.out.println(service.doService(position2));

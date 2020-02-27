@@ -89,7 +89,7 @@ public class ClientInfoService implements Serviceable, EntityCreator {
     //create instance of client with changes
     @Override
     public Optional<AbstractEntity> createEntity(HttpServletRequest request) {
-        if (request.getSession().getAttribute(ROLE) //changes made by client
+        if (request.getSession().getAttribute(ROLE)                         //changes made by client
                 .equals(Role.CLIENT.getValue())) {
             Client updatedClient = (Client) request.getSession()
                     .getAttribute(Role.CLIENT.getValue());

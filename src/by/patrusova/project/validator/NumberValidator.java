@@ -24,6 +24,10 @@ public class NumberValidator {
     private NumberValidator() {
     }
 
+    public static boolean isValidDays(int days) {
+        return days >= 2 && days <= 30;
+    }
+
     public static boolean isValidDecimal(String decimal) {
         Pattern pattern = Pattern.compile(CHECK_DECIMAL);
         Matcher matcher = pattern.matcher(decimal);

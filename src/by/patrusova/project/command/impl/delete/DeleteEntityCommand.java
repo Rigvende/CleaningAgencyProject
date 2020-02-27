@@ -1,4 +1,4 @@
-package by.patrusova.project.command.impl.change;
+package by.patrusova.project.command.impl.delete;
 
 import by.patrusova.project.command.ActionCommand;
 import by.patrusova.project.entity.Role;

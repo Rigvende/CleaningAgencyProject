@@ -1,4 +1,4 @@
-package by.patrusova.project.command.impl.change;
+package by.patrusova.project.command.impl.add;
 
 import by.patrusova.project.command.ActionCommand;
 import by.patrusova.project.entity.AbstractEntity;
@@ -14,7 +14,7 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
-public class AddEntityCommand implements ActionCommand {
+public class AddServiceCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();
     private final static String ERROR_ADD_SERVICE = "errorAddServiceMessage";

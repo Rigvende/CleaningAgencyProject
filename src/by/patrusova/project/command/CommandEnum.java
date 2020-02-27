@@ -1,8 +1,17 @@
 package by.patrusova.project.command;
 
 import by.patrusova.project.command.impl.*;
+import by.patrusova.project.command.impl.add.AddServiceCommand;
+import by.patrusova.project.command.impl.add.AddOrderCommand;
+import by.patrusova.project.command.impl.add.AddServiceRedirectCommand;
 import by.patrusova.project.command.impl.change.*;
+import by.patrusova.project.command.impl.delete.DeleteEntityCommand;
 import by.patrusova.project.command.impl.menu.*;
+import by.patrusova.project.command.impl.order.OrderRedirectCommand;
+import by.patrusova.project.command.impl.order.PlaceOrderCommand;
+import by.patrusova.project.command.impl.order.SelectCommand;
+import by.patrusova.project.command.impl.registration.RegistrationCommand;
+import by.patrusova.project.command.impl.registration.RegistrationRedirectCommand;
 import by.patrusova.project.command.impl.show.*;
 
 public enum CommandEnum {
@@ -50,6 +59,11 @@ public enum CommandEnum {
     BACKTOMAIN {
         {
             this.command = new BackToMainCommand();
+        }
+    },
+    ADDORDER {
+        {
+            this.command = new AddOrderCommand();
         }
     },
     CHANGEREDIRECT {
@@ -172,9 +186,9 @@ public enum CommandEnum {
             this.command = new DeleteEntityCommand();
         }
     },
-    ADDENTITY {
+    ADDSERVICE {
         {
-            this.command = new AddEntityCommand();
+            this.command = new AddServiceCommand();
         }
     },
     SETMARK {
@@ -197,9 +211,14 @@ public enum CommandEnum {
             this.command = new SelectCommand();
         }
     },
-    MAKEORDER {
+    PLACEORDER {
         {
-            this.command = new MakeOrderCommand();
+            this.command = new PlaceOrderCommand();
+        }
+    },
+    ORDERREDIRECT {
+        {
+            this.command = new OrderRedirectCommand();
         }
     },
     MAIL {
