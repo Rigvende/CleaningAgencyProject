@@ -31,7 +31,6 @@ public class RegistrationService implements EntityCreator, Serviceable {
     private final static String PHONE = "phone";
     private final static String ADDRESS = "address";
     private final static String EMAIL = "email";
-    private final static String NAME = "name";
 
     //register user
     @Override
@@ -103,8 +102,10 @@ public class RegistrationService implements EntityCreator, Serviceable {
         validationMap.put(PASSWORDREG,
                 (RegistrationDataValidator.isValidPassword(password)
                 && RegistrationDataValidator.isPasswordRepeated(password, passwordRepeated)));
-        validationMap.put(FIRSTNAME, StringValidator.isValidStringSize(NAME, name));
-        validationMap.put(LASTNAME, StringValidator.isValidStringSize(LASTNAME, lastname));
+        validationMap.put(FIRSTNAME, RegistrationDataValidator.isValidName(name));
+        validationMap.put(LASTNAME,
+                RegistrationDataValidator.isValidLastname(lastname)
+                && StringValidator.isValidStringSize(LASTNAME, lastname));
         validationMap.put(PHONE, RegistrationDataValidator.isValidPhone(phone));
         validationMap.put(EMAIL,
                 RegistrationDataValidator.isValidEmail(email)

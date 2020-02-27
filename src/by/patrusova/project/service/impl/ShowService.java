@@ -32,7 +32,7 @@ public class ShowService {
                 case "cleaner":
                     UserDao userDao = DaoFactory.createUserDao();
                     return userDao.findUsersByRole(condition);
-                case "order":
+                case "orders":
                     OrderDao orderDao = DaoFactory.createOrderDao();
                     return orderDao.findAll();
                 case "catalogue":

@@ -37,9 +37,21 @@ public class StringValidatorTest {
                                 "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff" +
                                 "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff" +
                                 "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff")},
-                {false, StringValidator.isValidStringSize("location", "adjfdfdggg")},
-                {false, StringValidator.isValidStringSize("address", "adjfd")},
-                {false, StringValidator.isValidStringSize("relative", "a")},
+                {false, StringValidator.isValidStringSize("location",
+                        "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff" +
+                        "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff" +
+                        "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff" +
+                        "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff" +
+                        "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff")},
+                {false, StringValidator.isValidStringSize("address",
+                        "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff" +
+                        "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff" +
+                        "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff" +
+                        "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff" +
+                        "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff")},
+                {false, StringValidator.isValidStringSize("relative",
+                        "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff" +
+                        "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff")},
                 {false, StringValidator.isValidStringSize("service",
                         "adjfkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkdf")},
                 {false, StringValidator.isValidStringSize("name", "adhhhhhhhhhhhhhhhhhhhhhhhh")},

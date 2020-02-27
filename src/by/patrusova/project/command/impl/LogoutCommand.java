@@ -12,6 +12,8 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
+import java.util.Enumeration;
+import java.util.Iterator;
 import java.util.Optional;
 
 public class LogoutCommand implements ActionCommand {
@@ -42,6 +44,11 @@ public class LogoutCommand implements ActionCommand {
                 LOGGER.log(Level.ERROR, "Exception while deleting new order has occurred.", e);
                 throw new CommandException(e);
             } finally {
+                Enumeration<String> enumeration = request.getSession().getAttributeNames();
+                Iterator<String> iterator = enumeration.asIterator();
+                while (iterator.hasNext()) {
+                    request.getSession().removeAttribute(iterator.next());
+                }
                 request.getSession().invalidate();
             }
         }

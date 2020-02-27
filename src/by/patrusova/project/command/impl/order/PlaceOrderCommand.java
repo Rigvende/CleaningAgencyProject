@@ -66,11 +66,11 @@ public class PlaceOrderCommand implements ActionCommand {
                     && StringValidator.isValidStringSize(RELATIVE, relative)) {
                 user.setEmail(email);
                 user.setPhone(Long.parseLong(phone));
-                user.setName(request.getParameter(name));
-                user.setLastname(request.getParameter(lastname));
+                user.setName(name);
+                user.setLastname(lastname);
                 Optional<AbstractEntity> optional1 = userInfoService.doService(user);
-                client.setRelative(request.getParameter(RELATIVE));
-                client.setLocation(request.getParameter(LOCATION));
+                client.setRelative(relative);
+                client.setLocation(location);
                 Optional<AbstractEntity> optional2 = clientInfoService.doService(client);
                 if (optional1.isPresent() && optional2.isPresent()) {
                     order.setOrderStatus(Order.Status.REGISTERED.getValue());
@@ -78,6 +78,9 @@ public class PlaceOrderCommand implements ActionCommand {
                     order.setDeadline(LocalDate.now().plusDays(days));
                     Optional<AbstractEntity> optional3 = orderInfoService.placeOrder(order);
                     if (optional3.isPresent()) {
+                        request.getSession().setAttribute(USER, user);
+                        request.getSession().setAttribute(Role.CLIENT.getValue(), client);
+                        request.getSession().setAttribute(ORDER_NEW, order);
                         return ConfigurationManager.getProperty(PAGE_ORDER_CONFIRM);
                     }
                 }

@@ -18,7 +18,7 @@ import java.util.List;
 public class ShowOrdersCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();
-    private final static String ORDER = "order";
+    private final static String ORDERS = "orders";
     private final static String ORDER_LIST = "orderList";
     private final static String PAGE_ORDERLIST = "page.orderlist";
     private final static String EMPTY_LIST = "emptyList";
@@ -29,7 +29,7 @@ public class ShowOrdersCommand implements ActionCommand {
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
         try {
-            List<AbstractEntity> list = service.doService(ORDER);
+            List<AbstractEntity> list = service.doService(ORDERS);
             if (!list.isEmpty()) {
                 List<Order> orders = new ArrayList<>();
                 for (AbstractEntity entity : list) {

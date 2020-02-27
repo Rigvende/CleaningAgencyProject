@@ -7,6 +7,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.Date;
 
 public class EntityFactory {
 
@@ -75,7 +77,7 @@ public class EntityFactory {
             client.setDiscount(resultSet.getBigDecimal(DISCOUNT));
             client.setLocation(resultSet.getString(LOCATION));
             client.setRelative(resultSet.getString(RELATIVE));
-            client.setNotes(resultSet.getString(CLIENT_NOTES));//fixme
+            client.setNotes(resultSet.getString(CLIENT_NOTES));
         } catch (SQLException e) {
             LOGGER.log(Level.ERROR, "Cannot create client. Error has occurred. ", e);
             throw new DaoException(e);
@@ -87,10 +89,16 @@ public class EntityFactory {
         Order order = new Order();
         try {
             order.setId(resultSet.getLong(ID_ORDER));
-            order.setOrderTime(new java.sql.Date(resultSet.getDate
-                    (ORDER_TIME).getTime()).toLocalDate());
-            order.setDeadline(new java.sql.Date(resultSet.getDate
-                    (DEADLINE).getTime()).toLocalDate());
+            if (resultSet.getDate(ORDER_TIME) != null) {
+                order.setOrderTime(resultSet.getDate(ORDER_TIME).toLocalDate());
+            } else {
+                order.setOrderTime(null);
+            }
+            if (resultSet.getDate(DEADLINE) != null) {
+                order.setDeadline(resultSet.getDate(DEADLINE).toLocalDate());
+            } else {
+                order.setDeadline(null);
+            }
             order.setOrderStatus(resultSet.getString(ORDER_STATUS));
             order.setMark(resultSet.getInt(MARK));
             order.setIdCleaner(resultSet.getLong(ID_CLEANER));

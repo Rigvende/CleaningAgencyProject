@@ -22,7 +22,7 @@
 <br/><br/><br/><br/>
 
 <form name="addServiceForm" method="post" action="${pageContext.request.contextPath}/controller">
-    <input type="hidden" name="command" value="addentity" />
+    <input type="hidden" name="command" value="addservice" />
 
     <div style="text-align: center; color: #0c4f5b; font-family: 'Palatino Linotype', serif; font-size: 18px; margin-left: 50px"><b>
     <fmt:message key="text.add"/>

@@ -16,7 +16,7 @@ public class DateValidatorTest {
     }
     @Test
     public void testIsValidOrderDateNegative() {
-        LocalDate date = LocalDate.of(2020,02, 12);
+        LocalDate date = LocalDate.of(2020,01, 12);
         boolean expected = DateValidator.isValidOrderDate(date);
         assertFalse(expected);
     }
@@ -29,7 +29,7 @@ public class DateValidatorTest {
     }
     @Test
     public void testIsValidDeadlineDateNegative() {
-        LocalDate date = LocalDate.of(2020,02,10);
+        LocalDate date = LocalDate.of(2020,01,29);
         boolean expected = DateValidator.isValidDeadlineDate(date);
         assertFalse(expected);
     }

@@ -10,12 +10,12 @@ import static org.testng.Assert.*;
 public class RegistrationDataValidatorTest {
 
     @Test
-    public void testIsValidLogin() throws SQLException, DaoException {
+    public void testIsValidLogin() throws DaoException {
         boolean actual = RegistrationDataValidator.isValidLogin("qwerty");
         assertTrue(actual);
     }
     @Test
-    public void testIsValidLoginNegative() throws SQLException, DaoException {
+    public void testIsValidLoginNegative() throws DaoException {
         boolean actual = RegistrationDataValidator.isValidLogin("qwek");
         assertFalse(actual);
     }
@@ -61,6 +61,30 @@ public class RegistrationDataValidatorTest {
     @Test
     public void testIsValidEmailNegative() {
         boolean actual = RegistrationDataValidator.isValidEmail("blinov");
+        assertFalse(actual);
+    }
+
+    @Test
+    public void testIsValidName() {
+        boolean actual = RegistrationDataValidator.isValidName("Ольга");
+        assertTrue(actual);
+    }
+
+    @Test
+    public void testIsValidNameNegative() {
+        boolean actual = RegistrationDataValidator.isValidName("blinov");
+        assertFalse(actual);
+    }
+
+    @Test
+    public void testIsValidLastname() {
+        boolean actual = RegistrationDataValidator.isValidLastname("Петров-Водкин");
+        assertTrue(actual);
+    }
+
+    @Test
+    public void testIsValidLastnameNegative() {
+        boolean actual = RegistrationDataValidator.isValidLastname("12345");
         assertFalse(actual);
     }
 }

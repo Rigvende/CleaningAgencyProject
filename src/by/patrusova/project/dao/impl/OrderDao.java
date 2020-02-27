@@ -9,7 +9,6 @@ import by.patrusova.project.exception.DaoException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
@@ -49,8 +48,8 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
                     "AS client_notes, cleaners.id_cleaner, cleaners.id_user, cleaners.commission, " +
                     "cleaners.notes AS cleaner_notes, orders.id_order, orders.order_time, " +
                     "orders.deadline, orders.order_status, orders.mark, orders.id_client, " +
-                    "orders.id_cleaner FROM (cleaners JOIN users ON cleaners.id_user = users.id_user) " +
-                    "JOIN (orders JOIN clients ON orders.id_client = clients.id_client ) " +
+                    "orders.id_cleaner FROM  (orders JOIN clients ON orders.id_client = clients.id_client ) " +
+                    "LEFT OUTER JOIN (cleaners JOIN users ON cleaners.id_user = users.id_user) " +
                     "ON cleaners.id_cleaner = orders.id_cleaner WHERE orders.id_client = ?;";
     private final static String SQL_CANCEL_ORDER =
             "UPDATE orders SET order_status = 'declined' WHERE id_order = ?;";

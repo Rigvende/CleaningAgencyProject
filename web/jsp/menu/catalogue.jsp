@@ -11,8 +11,8 @@
     </head>
 
     <body>
-    <c:if test="${empty user}">
-        <jsp:forward page="/jsp/login.jsp"/>
+    <c:if test="${not empty user and user.role eq 'admin'}">
+        <jsp:forward page="/jsp/resultset/catalogueList.jsp"/>
     </c:if>
 
     <jsp:include page="/WEB-INF/view/header.jsp"/>
@@ -62,7 +62,7 @@
     <br/>
     </c:if>
 
-    <c:if test="${ not empty user and user.role eq 'client' or 'admin' or 'cleaner'}">
+    <c:if test="${ not empty user and user.role eq 'client' or user.role eq 'cleaner'}">
     <div style="text-align: center">
     <a href="?start=${pageStart - perPage}"><<</a>
     ${pageStart + 1} - ${pageStart + perPage}
@@ -106,7 +106,7 @@
     </table>
     <br/>
 
-    <c:if test="${ not empty user and user.role eq 'client' or 'admin' or 'cleaner'}">
+    <c:if test="${ not empty user and user.role eq 'client' or user.role eq 'cleaner'}">
     <a href="?start=${pageStart - perPage}"><<</a>
     ${pageStart + 1} - ${pageStart + perPage}
     <a href="?start=${pageStart + perPage}">>></a>

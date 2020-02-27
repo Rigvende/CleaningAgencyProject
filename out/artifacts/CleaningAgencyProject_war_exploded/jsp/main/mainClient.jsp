@@ -10,6 +10,10 @@
 </head>
 
 <body>
+<c:if test="${empty user}">
+    <jsp:forward page="/jsp/login.jsp"/>
+</c:if>
+
 <jsp:include page="/WEB-INF/view/header.jsp"/>
 
 <h2 style="color: #0c4f5b; text-align: center">

@@ -23,8 +23,6 @@ public class CatalogueCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();
     private final static String ROLE = "role";
-    private final static String ORDER_NEW = "orderNew";
-    private final static String TOTAL_COST = "totalCost";
     private final static String CATALOGUE = "catalogue";
     private final static String CATALOGUE_LIST = "catalogueList";
     private final static String PAGE_CATALOGUE = "page.catalogue";
@@ -35,7 +33,7 @@ public class CatalogueCommand implements ActionCommand {
     private final static String PAGE_MAIN_CLEANER = "page.maincleaner";
     private final static String PAGE_LOGIN = "page.login";
     private ShowService showService = new ShowService();
-    private OrderInfoService infoService = new OrderInfoService();
+
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
@@ -48,10 +46,6 @@ public class CatalogueCommand implements ActionCommand {
                     services.add((Service) entity);
                 }
                 request.getSession().setAttribute(CATALOGUE_LIST, services);
-                Order order = (Order)request.getSession().getAttribute(ORDER_NEW);
-                BigDecimal totalCost =                                      //show total cost with discount
-                        infoService.doService(order.getId()).setScale(2, RoundingMode.HALF_UP);
-                request.getSession().setAttribute(TOTAL_COST, totalCost);
                 return ConfigurationManager.getProperty(PAGE_CATALOGUE);
             } else {
                 request.getSession().setAttribute(EMPTY_LIST,

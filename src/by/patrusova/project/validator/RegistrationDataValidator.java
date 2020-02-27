@@ -12,8 +12,8 @@ public class RegistrationDataValidator {
     private final static String CHECK_PASSWORD = "^[A-z0-9_]{5,15}$";
     private final static String CHECK_EMAIL = "^[-\\w.]+@([A-z0-9][-A-z0-9]+\\.)+[A-z]{2,4}$";
     private final static String CHECK_PHONE = "^[\\d]{5,20}$";
-    private final static String CHECK_NAME = "^[A-ZА-Я]([a-zа-я]){2,20}";
-    private final static String CHECK_LASTNAME = "^[A-ZА-Я]([a-zа-я]){1,40}";
+    private final static String CHECK_NAME = "^[A-ZА-Я]([a-zа-я]){1,20}$";
+    private final static String CHECK_LASTNAME = "^[А-ЯA-Z]([а-яa-z]*)([-]?[А-ЯA-Z]?([а-яa-z]*)?)$";
 
     public static boolean isValidLogin(String login) throws DaoException {
         Pattern pattern = Pattern.compile(CHECK_LOGIN);

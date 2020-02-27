@@ -13,6 +13,7 @@ import by.patrusova.project.validator.StringValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
@@ -48,7 +49,7 @@ public class UserInfoService implements Serviceable, EntityCreator {
     //create instance of user with changes
     @Override
     public Optional<AbstractEntity> createEntity(HttpServletRequest request) {
-        User updatedUser = (User)request.getSession().getAttribute(USER);
+        User updatedUser = (User) request.getSession().getAttribute(USER);
         if (!validate(request).containsValue(false)) {
             updatedUser.setName(request.getParameter(FIRSTNAME));
             updatedUser.setLastname(request.getParameter(LASTNAME));
@@ -71,10 +72,12 @@ public class UserInfoService implements Serviceable, EntityCreator {
         String email = request.getParameter(EMAIL);
         String address = request.getParameter(ADDRESS);
         validationMap.put(FIRSTNAME, RegistrationDataValidator.isValidName(name));
-        validationMap.put(LASTNAME, RegistrationDataValidator.isValidLastname(lastname));
+        validationMap.put(LASTNAME,
+                RegistrationDataValidator.isValidLastname(lastname)
+                && StringValidator.isValidStringSize(LASTNAME, lastname));
         validationMap.put(PHONE, RegistrationDataValidator.isValidPhone(phone));
         validationMap.put(EMAIL, RegistrationDataValidator.isValidEmail(email)
-                                 && StringValidator.isValidStringSize(EMAIL, email));
+                && StringValidator.isValidStringSize(EMAIL, email));
         validationMap.put(ADDRESS, StringValidator.isValidStringSize(ADDRESS, address));
         return validationMap;
     }
