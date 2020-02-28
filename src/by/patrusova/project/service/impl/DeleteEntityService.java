@@ -83,6 +83,8 @@ public class DeleteEntityService implements Serviceable {
             }
             return true;
         } catch (DaoException e) {
+            LOGGER.log(Level.ERROR,
+                    "Exception in DeleteEntityService while deleting new order has occurred. ", e);
             throw new ServiceException(e);
         }
     }

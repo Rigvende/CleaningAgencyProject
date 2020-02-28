@@ -369,19 +369,6 @@ public class UserDao extends AbstractDao<AbstractEntity> {
                     ResultSet resultSet1 = preparedStatement.executeQuery();
                     while (resultSet1.next()) {
                         ComplexCleaner cleaner = EntityFactory.createCleanerComplex(resultSet1);
-//                        User cleaner = new User(resultSet1.getLong(ID_USER),
-//                                resultSet1.getString(LOGIN),
-//                                resultSet1.getString(PASSWORD),
-//                                resultSet1.getString(ROLE),
-//                                resultSet1.getString(NAME),
-//                                resultSet1.getString(LASTNAME),
-//                                resultSet1.getLong(PHONE),
-//                                resultSet1.getString(ADDRESS),
-//                                resultSet1.getString(EMAIL),
-//                                new Cleaner(resultSet1.getLong(ID_CLEANER),
-//                                        resultSet1.getBigDecimal(COMMISSION),
-//                                        resultSet1.getString(NOTES),
-//                                        resultSet1.getLong(ID_USER)));
                         users.add(cleaner);
                     }
                     break;
@@ -391,21 +378,6 @@ public class UserDao extends AbstractDao<AbstractEntity> {
                     ResultSet resultSet2 = preparedStatement.executeQuery();
                     while (resultSet2.next()) {
                         ComplexClient client = EntityFactory.createClientComplex(resultSet2);
-//                        User client = new User(resultSet2.getLong(ID_USER),
-//                                resultSet2.getString(LOGIN),
-//                                resultSet2.getString(PASSWORD),
-//                                resultSet2.getString(ROLE),
-//                                resultSet2.getString(NAME),
-//                                resultSet2.getString(LASTNAME),
-//                                resultSet2.getLong(PHONE),
-//                                resultSet2.getString(ADDRESS),
-//                                resultSet2.getString(EMAIL),
-//                                new Client(resultSet2.getLong(ID_CLIENT),
-//                                        resultSet2.getLong(ID_USER),
-//                                        resultSet2.getBigDecimal(DISCOUNT),
-//                                        resultSet2.getString(LOCATION),
-//                                        resultSet2.getString(RELATIVE),
-//                                        resultSet2.getString(NOTES)));
                         users.add(client);
                     }
                     break;

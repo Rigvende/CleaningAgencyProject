@@ -34,7 +34,7 @@ public class SelectCommand implements ActionCommand {
         Order order = (Order) request.getSession().getAttribute(ORDER);
         String idService = request.getParameter(POSITION);
         String choice = request.getParameter(CHOICE);
-        if (choice.equals(EMPTY)){
+        if (choice == null){ //fixme
             request.getSession().setAttribute(ERROR_SELECT,
                     MessageManager.getProperty(MESSAGE_ERROR_EMPTY));
             return ConfigurationManager.getProperty(PAGE_CATALOGUE);

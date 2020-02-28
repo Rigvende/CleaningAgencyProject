@@ -83,7 +83,7 @@ public class RegistrationService implements EntityCreator, Serviceable {
         }
     }
 
-    public Map<String, Boolean> validate(HttpServletRequest request) throws ServiceException {
+    private Map<String, Boolean> validate(HttpServletRequest request) throws ServiceException {
         Map<String, Boolean> validationMap = new HashMap<>();
         String login = request.getParameter(LOGINREG);
         String password = request.getParameter(PASSWORDREG);

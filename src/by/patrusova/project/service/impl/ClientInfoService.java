@@ -64,10 +64,10 @@ public class ClientInfoService implements Serviceable, EntityCreator {
     }
 
     //update client by cleaner
-    public Optional<AbstractEntity> doService(long id, long idCleaner, String notes) throws ServiceException {
+    public Optional<AbstractEntity> doService(long idOrder, long idCleaner, String notes) throws ServiceException {
         try {
             OrderDao orderDao = DaoFactory.createOrderDao();
-            Order order = (Order) orderDao.findEntityById(id);
+            Order order = (Order) orderDao.findEntityById(idOrder);
             if (order.getIdCleaner() == idCleaner) {
                 ClientDao clientDao = DaoFactory.createClientDao();
                 long idClient = order.getIdClient();

@@ -8798,3 +8798,380 @@ Caused by: java.sql.SQLException: Column 'client_notes' not found.
 28-02 10:18 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
 28-02 10:20 INFO  project.connection.ConnectionPool - Registering jdbc driver.
 28-02 10:20 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 14:59 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 14:59 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 15:00 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 15:00 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 15:01 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 15:01 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 15:05 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 15:05 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 15:06 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 15:06 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 15:11 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 15:11 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 15:17 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 15:17 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 15:22 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 15:22 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 15:35 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 15:35 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 15:38 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 15:38 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 15:39 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 15:39 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 15:40 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 15:40 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 15:40 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 15:40 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 15:44 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 15:44 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 15:45 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 15:45 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 15:47 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 15:47 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 15:48 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 15:48 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 15:48 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 15:48 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 15:49 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 15:49 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 15:54 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 15:54 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 15:55 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 15:55 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 15:56 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 15:56 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 15:57 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 15:57 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 16:11 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 16:11 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 16:11 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 16:11 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 16:19 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 16:19 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 16:20 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 16:20 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 16:22 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 16:22 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 16:26 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 16:26 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 16:27 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 16:27 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 18:39 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 18:39 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 18:57 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 18:57 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 19:00 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 19:00 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 19:04 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 19:04 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 19:05 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 19:05 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 19:07 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 19:07 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 19:09 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 19:09 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 19:21 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 19:21 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 19:22 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 19:22 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 20:34 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 20:34 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 20:41 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 20:41 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 20:41 ERROR dao.impl.OrderDao - Cannot update order. Request to table failed. 
+java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`cleaning_agency`.`orders`, CONSTRAINT `cleaner` FOREIGN KEY (`id_cleaner`) REFERENCES `cleaners` (`id_cleaner`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at by.patrusova.project.dao.impl.OrderDao.update(OrderDao.java:222) [CleaningAgencyProject/:?]
+	at by.patrusova.project.service.impl.OrderInfoService.doService(OrderInfoService.java:42) [CleaningAgencyProject/:?]
+	at by.patrusova.project.service.impl.OrderInfoServiceTest.testDoService(OrderInfoServiceTest.java:26) [CleaningAgencyProject/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104) [testng-6.10.jar:?]
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645) [testng-6.10.jar:?]
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851) [testng-6.10.jar:?]
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177) [testng-6.10.jar:?]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129) [testng-6.10.jar:?]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112) [testng-6.10.jar:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:756) [testng-6.10.jar:?]
+	at org.testng.TestRunner.run(TestRunner.java:610) [testng-6.10.jar:?]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387) [testng-6.10.jar:?]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382) [testng-6.10.jar:?]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340) [testng-6.10.jar:?]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289) [testng-6.10.jar:?]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-6.10.jar:?]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86) [testng-6.10.jar:?]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293) [testng-6.10.jar:?]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218) [testng-6.10.jar:?]
+	at org.testng.TestNG.runSuites(TestNG.java:1133) [testng-6.10.jar:?]
+	at org.testng.TestNG.run(TestNG.java:1104) [testng-6.10.jar:?]
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66) [testng-rt.jar:?]
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:110) [testng-rt.jar:?]
+28-02 20:41 ERROR service.impl.OrderInfoService - Exception in OrderInfoService while operating with order has occurred. 
+by.patrusova.project.exception.DaoException: java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`cleaning_agency`.`orders`, CONSTRAINT `cleaner` FOREIGN KEY (`id_cleaner`) REFERENCES `cleaners` (`id_cleaner`))
+	at by.patrusova.project.dao.impl.OrderDao.update(OrderDao.java:236) ~[CleaningAgencyProject/:?]
+	at by.patrusova.project.service.impl.OrderInfoService.doService(OrderInfoService.java:42) [CleaningAgencyProject/:?]
+	at by.patrusova.project.service.impl.OrderInfoServiceTest.testDoService(OrderInfoServiceTest.java:26) [CleaningAgencyProject/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104) [testng-6.10.jar:?]
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645) [testng-6.10.jar:?]
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851) [testng-6.10.jar:?]
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177) [testng-6.10.jar:?]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129) [testng-6.10.jar:?]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112) [testng-6.10.jar:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:756) [testng-6.10.jar:?]
+	at org.testng.TestRunner.run(TestRunner.java:610) [testng-6.10.jar:?]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387) [testng-6.10.jar:?]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382) [testng-6.10.jar:?]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340) [testng-6.10.jar:?]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289) [testng-6.10.jar:?]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-6.10.jar:?]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86) [testng-6.10.jar:?]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293) [testng-6.10.jar:?]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218) [testng-6.10.jar:?]
+	at org.testng.TestNG.runSuites(TestNG.java:1133) [testng-6.10.jar:?]
+	at org.testng.TestNG.run(TestNG.java:1104) [testng-6.10.jar:?]
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66) [testng-rt.jar:?]
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:110) [testng-rt.jar:?]
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`cleaning_agency`.`orders`, CONSTRAINT `cleaner` FOREIGN KEY (`id_cleaner`) REFERENCES `cleaners` (`id_cleaner`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at by.patrusova.project.dao.impl.OrderDao.update(OrderDao.java:222) ~[CleaningAgencyProject/:?]
+	... 26 more
+28-02 20:42 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 20:42 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 20:42 ERROR dao.impl.OrderDao - Cannot update order. Request to table failed. 
+java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`cleaning_agency`.`orders`, CONSTRAINT `cleaner` FOREIGN KEY (`id_cleaner`) REFERENCES `cleaners` (`id_cleaner`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at by.patrusova.project.dao.impl.OrderDao.update(OrderDao.java:222) [CleaningAgencyProject/:?]
+	at by.patrusova.project.service.impl.OrderInfoService.doService(OrderInfoService.java:42) [CleaningAgencyProject/:?]
+	at by.patrusova.project.service.impl.OrderInfoServiceTest.testDoService(OrderInfoServiceTest.java:27) [CleaningAgencyProject/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104) [testng-6.10.jar:?]
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645) [testng-6.10.jar:?]
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851) [testng-6.10.jar:?]
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177) [testng-6.10.jar:?]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129) [testng-6.10.jar:?]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112) [testng-6.10.jar:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:756) [testng-6.10.jar:?]
+	at org.testng.TestRunner.run(TestRunner.java:610) [testng-6.10.jar:?]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387) [testng-6.10.jar:?]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382) [testng-6.10.jar:?]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340) [testng-6.10.jar:?]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289) [testng-6.10.jar:?]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-6.10.jar:?]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86) [testng-6.10.jar:?]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293) [testng-6.10.jar:?]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218) [testng-6.10.jar:?]
+	at org.testng.TestNG.runSuites(TestNG.java:1133) [testng-6.10.jar:?]
+	at org.testng.TestNG.run(TestNG.java:1104) [testng-6.10.jar:?]
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66) [testng-rt.jar:?]
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:110) [testng-rt.jar:?]
+28-02 20:42 ERROR service.impl.OrderInfoService - Exception in OrderInfoService while operating with order has occurred. 
+by.patrusova.project.exception.DaoException: java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`cleaning_agency`.`orders`, CONSTRAINT `cleaner` FOREIGN KEY (`id_cleaner`) REFERENCES `cleaners` (`id_cleaner`))
+	at by.patrusova.project.dao.impl.OrderDao.update(OrderDao.java:236) ~[CleaningAgencyProject/:?]
+	at by.patrusova.project.service.impl.OrderInfoService.doService(OrderInfoService.java:42) [CleaningAgencyProject/:?]
+	at by.patrusova.project.service.impl.OrderInfoServiceTest.testDoService(OrderInfoServiceTest.java:27) [CleaningAgencyProject/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104) [testng-6.10.jar:?]
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645) [testng-6.10.jar:?]
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851) [testng-6.10.jar:?]
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177) [testng-6.10.jar:?]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129) [testng-6.10.jar:?]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112) [testng-6.10.jar:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:756) [testng-6.10.jar:?]
+	at org.testng.TestRunner.run(TestRunner.java:610) [testng-6.10.jar:?]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387) [testng-6.10.jar:?]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382) [testng-6.10.jar:?]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340) [testng-6.10.jar:?]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289) [testng-6.10.jar:?]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-6.10.jar:?]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86) [testng-6.10.jar:?]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293) [testng-6.10.jar:?]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218) [testng-6.10.jar:?]
+	at org.testng.TestNG.runSuites(TestNG.java:1133) [testng-6.10.jar:?]
+	at org.testng.TestNG.run(TestNG.java:1104) [testng-6.10.jar:?]
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66) [testng-rt.jar:?]
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:110) [testng-rt.jar:?]
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`cleaning_agency`.`orders`, CONSTRAINT `cleaner` FOREIGN KEY (`id_cleaner`) REFERENCES `cleaners` (`id_cleaner`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at by.patrusova.project.dao.impl.OrderDao.update(OrderDao.java:222) ~[CleaningAgencyProject/:?]
+	... 26 more
+28-02 20:45 ERROR project.connection.ConnectionPool - Connection closing failed. 
+com.mysql.cj.jdbc.exceptions.CommunicationsException: The last packet successfully received from the server was 37 482 308 milliseconds ago. The last packet sent successfully to the server was 37 482 308 milliseconds ago. is longer than the server configured value of 'wait_timeout'. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property 'autoReconnect=true' to avoid this problem.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ConnectionImpl.commit(ConnectionImpl.java:814) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at by.patrusova.project.connection.ProxyConnection.commit(ProxyConnection.java:103) ~[classes/:?]
+	at by.patrusova.project.connection.ConnectionPool.closeConnection(ConnectionPool.java:106) [classes/:?]
+	at by.patrusova.project.connection.ConnectionPool.closeAllConnections(ConnectionPool.java:93) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.destroy(ControlServlet.java:69) [classes/:?]
+	at org.apache.catalina.core.StandardWrapper.unload(StandardWrapper.java:1280) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardWrapper.stopInternal(StandardWrapper.java:1581) [catalina.jar:9.0.17]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5376) [catalina.jar:9.0.17]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1393) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1382) [catalina.jar:9.0.17]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) [tomcat-util.jar:9.0.17]
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) [?:?]
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:969) [catalina.jar:9.0.17]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1393) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1382) [catalina.jar:9.0.17]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) [tomcat-util.jar:9.0.17]
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) [?:?]
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:969) [catalina.jar:9.0.17]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:475) [catalina.jar:9.0.17]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:990) [catalina.jar:9.0.17]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) [catalina.jar:9.0.17]
+	at org.apache.catalina.startup.Catalina.stop(Catalina.java:707) [catalina.jar:9.0.17]
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:669) [catalina.jar:9.0.17]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:350) [bootstrap.jar:9.0.17]
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:492) [bootstrap.jar:9.0.17]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: The last packet successfully received from the server was 37 482 308 milliseconds ago. The last packet sent successfully to the server was 37 482 308 milliseconds ago. is longer than the server configured value of 'wait_timeout'. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property 'autoReconnect=true' to avoid this problem.
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[?:?]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.protocol.a.NativeProtocol.send(NativeProtocol.java:570) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.protocol.a.NativeProtocol.sendCommand(NativeProtocol.java:625) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.protocol.a.NativeProtocol.sendQueryPacket(NativeProtocol.java:941) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.protocol.a.NativeProtocol.sendQueryString(NativeProtocol.java:887) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.NativeSession.execSQL(NativeSession.java:1073) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ConnectionImpl.commit(ConnectionImpl.java:802) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	... 35 more
+Caused by: java.net.SocketException: Software caused connection abort: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method) ~[?:?]
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:110) ~[?:?]
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:150) ~[?:?]
+	at java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81) ~[?:?]
+	at java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142) ~[?:?]
+	at com.mysql.cj.protocol.a.SimplePacketSender.send(SimplePacketSender.java:55) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.protocol.a.TimeTrackingPacketSender.send(TimeTrackingPacketSender.java:50) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.protocol.a.NativeProtocol.send(NativeProtocol.java:561) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.protocol.a.NativeProtocol.sendCommand(NativeProtocol.java:625) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.protocol.a.NativeProtocol.sendQueryPacket(NativeProtocol.java:941) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.protocol.a.NativeProtocol.sendQueryString(NativeProtocol.java:887) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.NativeSession.execSQL(NativeSession.java:1073) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ConnectionImpl.commit(ConnectionImpl.java:802) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	... 35 more
+28-02 20:45 ERROR project.servlet.ControlServlet - Cannot close all connections in connection pool.
+28-02 20:46 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 20:46 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 20:47 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 20:47 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 20:56 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 20:56 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 20:59 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 20:59 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 21:03 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 21:03 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 21:06 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 21:06 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 21:19 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 21:19 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 21:26 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 21:26 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 21:28 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 21:28 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 21:31 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 21:31 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 21:35 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 21:35 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 21:39 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 21:39 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 21:52 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 21:52 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 22:17 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 22:17 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 22:19 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 22:19 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 22:26 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 22:26 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 22:31 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 22:31 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 22:37 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 22:37 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 22:37 ERROR dao.impl.ClientDao - Cannot add client. Request to table failed. 
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '1' for key 'id_user_UNIQUE'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at by.patrusova.project.dao.impl.ClientDao.create(ClientDao.java:65) [CleaningAgencyProject/:?]
+	at by.patrusova.project.exception.DaoExceptionTest.TestDaoException(DaoExceptionTest.java:18) [CleaningAgencyProject/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104) [testng-6.10.jar:?]
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645) [testng-6.10.jar:?]
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851) [testng-6.10.jar:?]
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177) [testng-6.10.jar:?]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129) [testng-6.10.jar:?]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112) [testng-6.10.jar:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:756) [testng-6.10.jar:?]
+	at org.testng.TestRunner.run(TestRunner.java:610) [testng-6.10.jar:?]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387) [testng-6.10.jar:?]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382) [testng-6.10.jar:?]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340) [testng-6.10.jar:?]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289) [testng-6.10.jar:?]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-6.10.jar:?]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86) [testng-6.10.jar:?]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293) [testng-6.10.jar:?]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218) [testng-6.10.jar:?]
+	at org.testng.TestNG.runSuites(TestNG.java:1133) [testng-6.10.jar:?]
+	at org.testng.TestNG.run(TestNG.java:1104) [testng-6.10.jar:?]
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66) [testng-rt.jar:?]
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:110) [testng-rt.jar:?]
+28-02 22:42 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 22:42 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 22:44 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 22:44 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 22:51 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@1240ffba
+28-02 22:51 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@59f4ca8d
+28-02 22:51 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+28-02 22:52 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 22:52 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
