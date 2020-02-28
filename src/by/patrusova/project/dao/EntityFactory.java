@@ -61,7 +61,7 @@ public class EntityFactory {
             cleaner.setId(resultSet.getLong(ID_CLEANER));
             cleaner.setIdUser(resultSet.getLong(ID_USER));
             cleaner.setCommission(resultSet.getBigDecimal(COMMISSION));
-            cleaner.setNotes(resultSet.getString(CLEANER_NOTES));//fixme
+            cleaner.setNotes(resultSet.getString(CLEANER_NOTES));
         } catch (SQLException e) {
             LOGGER.log(Level.ERROR, "Cannot create cleaner. Error has occurred. ", e);
             throw new DaoException(e);
@@ -155,5 +155,17 @@ public class EntityFactory {
         BasketPosition position = createBasketPosition(resultSet);
         Service service = createService(resultSet);
         return new ComplexPosition(position, service);
+    }
+
+    public static ComplexClient createClientComplex(ResultSet resultSet) throws DaoException {
+        User user = createUser(resultSet);
+        Client client = createClient(resultSet);
+        return new ComplexClient(user, client);
+    }
+
+    public static ComplexCleaner createCleanerComplex(ResultSet resultSet) throws DaoException {
+        User user = createUser(resultSet);
+        Cleaner cleaner = createCleaner(resultSet);
+        return new ComplexCleaner(user, cleaner);
     }
 }

@@ -12,7 +12,7 @@
 
 <body>
 <c:if test="${empty user}">
-    <jsp:forward page="/jsp/login.jsp"/>
+    <jsp:forward page="/index.jsp"/>
 </c:if>
 
 <jsp:include page="/WEB-INF/view/header.jsp"/>

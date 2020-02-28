@@ -1,12 +1,10 @@
 package by.patrusova.project.dao.impl;
 
-import by.patrusova.project.entity.impl.Cleaner;
-import by.patrusova.project.entity.impl.Client;
+import by.patrusova.project.entity.impl.*;
 import by.patrusova.project.connection.ProxyConnection;
 import by.patrusova.project.dao.AbstractDao;
 import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.dao.EntityFactory;
-import by.patrusova.project.entity.impl.User;
 import by.patrusova.project.exception.DaoException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -50,13 +48,13 @@ public class UserDao extends AbstractDao<AbstractEntity> {
     private final static String SQL_FIND_CLEANERS_BY_ROLE =
             "SELECT users.id_user, users.login, users.password, users.role, users.name, " +
                     "users.lastname, users.phone, users.address, users.email, cleaners.id_cleaner, " +
-                    "cleaners.id_user, cleaners.commission, cleaners.notes FROM cleaners " +
+                    "cleaners.id_user, cleaners.commission, cleaners.notes AS cleaner_notes FROM cleaners " +
                     "JOIN users ON cleaners.id_user = users.id_user WHERE users.role = ?;";
     private final static String SQL_FIND_CLIENTS_BY_ROLE =
             "SELECT users.id_user, users.login, users.password, users.role, users.name, " +
                     "users.lastname, users.phone, users.address, users.email, clients.id_client, " +
                     "clients.id_user, clients.discount, clients.location, clients.relative, " +
-                    "clients.notes FROM clients JOIN users ON clients.id_user = users.id_user " +
+                    "clients.notes AS client_notes FROM clients JOIN users ON clients.id_user = users.id_user " +
                     "WHERE users.role = ?;";
     private final static String SQL_FIND_USERS_BY_ROLE =
             "SELECT id_user, login, password, role, name, lastname, phone, address, " +
@@ -370,19 +368,20 @@ public class UserDao extends AbstractDao<AbstractEntity> {
                     preparedStatement.setString(1, role);
                     ResultSet resultSet1 = preparedStatement.executeQuery();
                     while (resultSet1.next()) {
-                        User cleaner = new User(resultSet1.getLong(ID_USER),
-                                resultSet1.getString(LOGIN),
-                                resultSet1.getString(PASSWORD),
-                                resultSet1.getString(ROLE),
-                                resultSet1.getString(NAME),
-                                resultSet1.getString(LASTNAME),
-                                resultSet1.getLong(PHONE),
-                                resultSet1.getString(ADDRESS),
-                                resultSet1.getString(EMAIL),
-                                new Cleaner(resultSet1.getLong(ID_CLEANER),
-                                        resultSet1.getBigDecimal(COMMISSION),
-                                        resultSet1.getString(NOTES),
-                                        resultSet1.getLong(ID_USER)));
+                        ComplexCleaner cleaner = EntityFactory.createCleanerComplex(resultSet1);
+//                        User cleaner = new User(resultSet1.getLong(ID_USER),
+//                                resultSet1.getString(LOGIN),
+//                                resultSet1.getString(PASSWORD),
+//                                resultSet1.getString(ROLE),
+//                                resultSet1.getString(NAME),
+//                                resultSet1.getString(LASTNAME),
+//                                resultSet1.getLong(PHONE),
+//                                resultSet1.getString(ADDRESS),
+//                                resultSet1.getString(EMAIL),
+//                                new Cleaner(resultSet1.getLong(ID_CLEANER),
+//                                        resultSet1.getBigDecimal(COMMISSION),
+//                                        resultSet1.getString(NOTES),
+//                                        resultSet1.getLong(ID_USER)));
                         users.add(cleaner);
                     }
                     break;
@@ -391,21 +390,22 @@ public class UserDao extends AbstractDao<AbstractEntity> {
                     preparedStatement.setString(1, role);
                     ResultSet resultSet2 = preparedStatement.executeQuery();
                     while (resultSet2.next()) {
-                        User client = new User(resultSet2.getLong(ID_USER),
-                                resultSet2.getString(LOGIN),
-                                resultSet2.getString(PASSWORD),
-                                resultSet2.getString(ROLE),
-                                resultSet2.getString(NAME),
-                                resultSet2.getString(LASTNAME),
-                                resultSet2.getLong(PHONE),
-                                resultSet2.getString(ADDRESS),
-                                resultSet2.getString(EMAIL),
-                                new Client(resultSet2.getLong(ID_CLIENT),
-                                        resultSet2.getLong(ID_USER),
-                                        resultSet2.getBigDecimal(DISCOUNT),
-                                        resultSet2.getString(LOCATION),
-                                        resultSet2.getString(RELATIVE),
-                                        resultSet2.getString(NOTES)));
+                        ComplexClient client = EntityFactory.createClientComplex(resultSet2);
+//                        User client = new User(resultSet2.getLong(ID_USER),
+//                                resultSet2.getString(LOGIN),
+//                                resultSet2.getString(PASSWORD),
+//                                resultSet2.getString(ROLE),
+//                                resultSet2.getString(NAME),
+//                                resultSet2.getString(LASTNAME),
+//                                resultSet2.getLong(PHONE),
+//                                resultSet2.getString(ADDRESS),
+//                                resultSet2.getString(EMAIL),
+//                                new Client(resultSet2.getLong(ID_CLIENT),
+//                                        resultSet2.getLong(ID_USER),
+//                                        resultSet2.getBigDecimal(DISCOUNT),
+//                                        resultSet2.getString(LOCATION),
+//                                        resultSet2.getString(RELATIVE),
+//                                        resultSet2.getString(NOTES)));
                         users.add(client);
                     }
                     break;

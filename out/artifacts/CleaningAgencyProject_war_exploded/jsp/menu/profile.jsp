@@ -11,7 +11,11 @@
 </head>
 
 <body>
-<jsp:include page="/WEB-INF/view/header.jsp"/>
+    <c:if test="${empty user}">
+        <jsp:forward page="/jsp/login.jsp"/>
+    </c:if>
+
+    <jsp:include page="/WEB-INF/view/header.jsp"/>
 
     <jsp:include page="/WEB-INF/view/backToMain.jsp"/>
 

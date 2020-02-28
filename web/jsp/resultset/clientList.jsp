@@ -94,11 +94,11 @@
 
     <c:forEach var="client" items="${clientList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
         <tr>
-            <td><c:out value="${client.id}" /></td>
-            <td><c:out value="${client.name}" /></td>
-            <td><c:out value="${client.lastname}" /></td>
-            <td><c:out value="${client.phone}" /></td>
-            <td><c:out value="${client.email}" /></td>
+            <td><c:out value="${client.user.id}" /></td>
+            <td><c:out value="${client.user.name}" /></td>
+            <td><c:out value="${client.user.lastname}" /></td>
+            <td><c:out value="${client.user.phone}" /></td>
+            <td><c:out value="${client.user.email}" /></td>
             <td><c:out value="${client.client.discount}" /></td>
             <td><c:out value="${client.client.location}" /></td>
             <td><c:out value="${client.client.relative}" /></td>

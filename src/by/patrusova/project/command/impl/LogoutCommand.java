@@ -12,8 +12,6 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
-import java.util.Enumeration;
-import java.util.Iterator;
 import java.util.Optional;
 
 public class LogoutCommand implements ActionCommand {
@@ -23,15 +21,19 @@ public class LogoutCommand implements ActionCommand {
     private final static String ORDER = "orderNew";
     private final static String CLIENT = "client";
     private final static String ROLE = "role";
+    private final static String USER = "user";
     private DeleteEntityService service = new DeleteEntityService();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
+        request.getSession().removeAttribute(USER);             //prevent to go back
         String page = ConfigurationManager.getProperty(PAGE_INDEX);
         if (request.getSession().getAttribute(ROLE).equals(CLIENT)) {
             Order order = (Order) request.getSession().getAttribute(ORDER);
             Client client = (Client) request.getSession().getAttribute(CLIENT);
-            try {                                       //delete not registered client's order from session
+            request.getSession().invalidate();
+            request.getSession(false);
+            try {                                               //delete not registered client's order from session
                 if (order != null && client != null
                         && order.getIdClient() == client.getId()
                         && order.getOrderStatus().equals(Order.Status.NEW.getValue())) {
@@ -43,13 +45,6 @@ public class LogoutCommand implements ActionCommand {
             } catch (ServiceException e) {
                 LOGGER.log(Level.ERROR, "Exception while deleting new order has occurred.", e);
                 throw new CommandException(e);
-            } finally {
-                Enumeration<String> enumeration = request.getSession().getAttributeNames();
-                Iterator<String> iterator = enumeration.asIterator();
-                while (iterator.hasNext()) {
-                    request.getSession().removeAttribute(iterator.next());
-                }
-                request.getSession().invalidate();
             }
         }
         return page;

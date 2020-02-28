@@ -3,7 +3,7 @@ package by.patrusova.project.command.impl.show;
 import by.patrusova.project.command.ActionCommand;
 import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.Role;
-import by.patrusova.project.entity.impl.User;
+import by.patrusova.project.entity.impl.ComplexCleaner;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.ShowService;
@@ -31,9 +31,9 @@ public class ShowCleanersCommand implements ActionCommand {
         try {
             List<AbstractEntity> list = service.doService(Role.CLEANER.getValue());
             if (!list.isEmpty()) {
-                List<User> users = new ArrayList<>();
+                List<ComplexCleaner> users = new ArrayList<>();
                 for (AbstractEntity entity : list) {
-                    users.add((User) entity);
+                    users.add((ComplexCleaner) entity);
                 }
                 request.getSession().setAttribute(CLEANER_LIST, users);
                 return ConfigurationManager.getProperty(PAGE_CLEANERLIST);

@@ -12,6 +12,10 @@
 </head>
 
 <body>
+<c:if test="${empty user}">
+    <jsp:forward page="/jsp/login.jsp"/>
+</c:if>
+
 <jsp:include page="/WEB-INF/view/header.jsp"/>
 <br/>
 
@@ -88,11 +92,11 @@
 
     <c:forEach var="cleaner" items="${cleanerList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
         <tr>
-            <td><c:out value="${cleaner.id}" /></td>
-            <td><c:out value="${cleaner.name}" /></td>
-            <td><c:out value="${cleaner.lastname}" /></td>
-            <td><c:out value="${cleaner.phone}" /></td>
-            <td><c:out value="${cleaner.email}" /></td>
+            <td><c:out value="${cleaner.user.id}" /></td>
+            <td><c:out value="${cleaner.user.name}" /></td>
+            <td><c:out value="${cleaner.user.lastname}" /></td>
+            <td><c:out value="${cleaner.user.phone}" /></td>
+            <td><c:out value="${cleaner.user.email}" /></td>
             <td><c:out value="${cleaner.cleaner.commission}" /></td>
             <td><c:out value="${cleaner.cleaner.notes}" /></td>
             <td><c:out value="${cleaner.cleaner.id}" /></td>

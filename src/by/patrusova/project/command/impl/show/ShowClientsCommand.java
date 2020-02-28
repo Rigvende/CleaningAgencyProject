@@ -3,7 +3,7 @@ package by.patrusova.project.command.impl.show;
 import by.patrusova.project.command.ActionCommand;
 import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.Role;
-import by.patrusova.project.entity.impl.User;
+import by.patrusova.project.entity.impl.ComplexClient;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.impl.ShowService;
@@ -31,9 +31,9 @@ public class ShowClientsCommand implements ActionCommand {
         try {
             List<AbstractEntity> list = service.doService(Role.CLIENT.getValue());
             if (!list.isEmpty()) {
-                List<User> users = new ArrayList<>();
+                List<ComplexClient> users = new ArrayList<>();
                 for (AbstractEntity entity : list) {
-                    users.add((User) entity);
+                    users.add((ComplexClient) entity);
                 }
                 request.getSession().setAttribute(CLIENT_LIST, users);
                 return ConfigurationManager.getProperty(PAGE_CLIENTLIST);

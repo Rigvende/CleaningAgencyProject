@@ -12,6 +12,10 @@
 
 
 <body>
+<c:if test="${empty user}">
+    <jsp:forward page="/jsp/login.jsp"/>
+</c:if>
+
 <jsp:include page="/WEB-INF/view/header.jsp"/>
 
 <div style="float: right">
