@@ -7,9 +7,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
-import java.util.Date;
 
+/**
+ * Class for creating entities' instances using {@link ResultSet} different sets.
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class EntityFactory {
 
     private final static Logger LOGGER = LogManager.getLogger();

@@ -1,5 +1,10 @@
 package by.patrusova.project.exception;
 
+/**
+ * Class for handling exceptions on command level.
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class CommandException extends Exception {
 
     public CommandException() {}

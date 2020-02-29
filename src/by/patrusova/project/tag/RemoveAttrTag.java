@@ -4,6 +4,11 @@ import javax.servlet.jsp.tagext.TagSupport;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class for customer tag which helps to remove useless attributes from session.
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 @SuppressWarnings("serial")
 public class RemoveAttrTag extends TagSupport {
 

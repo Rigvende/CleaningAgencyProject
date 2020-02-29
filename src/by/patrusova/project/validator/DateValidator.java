@@ -2,6 +2,11 @@ package by.patrusova.project.validator;
 
 import java.time.LocalDate;
 
+/**
+ * Class for validating dates from requests.
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class DateValidator {
 
     private DateValidator(){}

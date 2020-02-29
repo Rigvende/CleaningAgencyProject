@@ -8,6 +8,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * Class for defining type of command
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class CommandProvider {
 
     private final static Logger LOGGER = LogManager.getLogger();
@@ -15,6 +20,11 @@ public class CommandProvider {
     private final static String WRONG_ACTION = "wrongAction";
     private final static String MESSAGE_WRONG = "message.wrongaction";
 
+    /**
+     * Method: define type of command depending on incoming request.
+     * @param request is incoming request
+     * @return type of {@link ActionCommand}
+     */
     public ActionCommand defineCommand(HttpServletRequest request) throws CommandException {
         ActionCommand current = new EmptyCommand();
         String action = request.getParameter(COMMAND);

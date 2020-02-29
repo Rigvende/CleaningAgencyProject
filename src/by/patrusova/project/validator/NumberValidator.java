@@ -2,17 +2,19 @@ package by.patrusova.project.validator;
 
 import by.patrusova.project.dao.DaoFactory;
 import by.patrusova.project.dao.impl.*;
-import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.sql.SQLException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Class for validating number data from requests.
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class NumberValidator {
 
     private final static Logger LOGGER = LogManager.getLogger();

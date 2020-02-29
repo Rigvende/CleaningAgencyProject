@@ -1,5 +1,10 @@
 package by.patrusova.project.exception;
 
+/**
+ * Class for handling exceptions on service level.
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class ServiceException extends Exception {
 
     public ServiceException() {}

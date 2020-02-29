@@ -6,6 +6,11 @@ import by.patrusova.project.dao.impl.*;
 import by.patrusova.project.exception.DaoException;
 import java.sql.Connection;
 
+/**
+ * Class for creating instances of DAOs.
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class DaoFactory {
 
     private DaoFactory(){}

@@ -3,6 +3,11 @@ package by.patrusova.project.validator;
 import by.patrusova.project.entity.Role;
 import by.patrusova.project.entity.impl.Order;
 
+/**
+ * Class for validating String data from requests.
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class StringValidator {
 
     private StringValidator() {}

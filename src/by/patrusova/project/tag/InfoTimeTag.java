@@ -6,6 +6,11 @@ import java.time.LocalDateTime;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 
+/**
+ * Class for customer tag which places Date-Time info on jsp.
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 @SuppressWarnings("serial")
 public class InfoTimeTag extends TagSupport {
     @Override

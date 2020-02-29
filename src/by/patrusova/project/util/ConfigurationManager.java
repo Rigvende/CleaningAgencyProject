@@ -2,6 +2,11 @@ package by.patrusova.project.util;
 
 import java.util.ResourceBundle;
 
+/**
+ * Class for accessing to pages' configuration.
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class ConfigurationManager {
 
     private static ResourceBundle RESOURCE_BUNDLE

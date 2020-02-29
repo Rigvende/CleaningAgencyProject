@@ -15,6 +15,11 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * Class for operations with connection pool instance.
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class ConnectionPool {
 
     private final static Logger LOGGER = LogManager.getLogger();
@@ -48,6 +53,11 @@ public class ConnectionPool {
         }
     }
 
+    /**
+     * Method: get (or create and get) instance of ConnectionPool.
+     * @throws DaoException object
+     * @return instance of ConnectionPool
+     */
     public static ConnectionPool getInstance() throws DaoException {
         if (!flag.get()) {
             try {
@@ -64,6 +74,10 @@ public class ConnectionPool {
         return instance;
     }
 
+    /**
+     * Method: take connection from connection pool.
+     * @return instance of {@link ProxyConnection} (as {@link Connection})
+     */
     public Connection takeConnection() {
         ProxyConnection connection = null;
         try {
@@ -76,6 +90,11 @@ public class ConnectionPool {
         return connection;
     }
 
+    /**
+     * Method: take connection from connection pool.
+     * @throws DaoException object
+     * @param connection - instance of {@link Connection} (in program's logic - {@link ProxyConnection})
+     */
     public void releaseConnection(Connection connection) throws DaoException {
         if (connection instanceof ProxyConnection) {
             usedConnections.remove(connection);
@@ -86,6 +105,10 @@ public class ConnectionPool {
         }
     }
 
+    /**
+     * Method: close all connections in connection pool and deregister drivers at the end of work.
+     * @throws DaoException object
+     */
     public void closeAllConnections() throws DaoException {
         try {
             for (int i = 0; i < MAX_POOL_SIZE; i++) {
@@ -105,7 +128,7 @@ public class ConnectionPool {
                 if (!connection.getAutoCommit()) {
                     connection.commit();
                 }
-                connection.close(); //close Connection, not ProxyConnection
+                connection.close(); //here: close Connection, not ProxyConnection
             } catch (SQLException e) {
                 LOGGER.log(Level.ERROR, "Connection closing failed. ", e);
                 throw new DaoException(e);
@@ -126,6 +149,11 @@ public class ConnectionPool {
         }
     }
 
+    /**
+     * Method: clone object.
+     * @throws CloneNotSupportedException object if trying to clone instance of ConnectionPool (singleton)
+     * @return Object (in theory)
+     */
     public final Object clone() throws CloneNotSupportedException {
         throw new CloneNotSupportedException();
     }

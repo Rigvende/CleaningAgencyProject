@@ -10,6 +10,11 @@ import java.util.Properties;
 import java.util.ResourceBundle;
 import java.util.concurrent.Executor;
 
+/**
+ * Class for safely wrapping Connection instance for storing in connection pool.
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class ProxyConnection implements Connection {
 
     private final static Logger LOGGER = LogManager.getLogger();
@@ -23,6 +28,11 @@ public class ProxyConnection implements Connection {
         this.connection = connection;
     }
 
+    /**
+     * Method: create instance of Connection using {@link DriverManager}
+     * @throws DaoException object
+     * @return instance of {@link Connection}
+     */
     public static Connection createConnection() throws DaoException {
         Connection connection;
         try {
@@ -38,10 +48,19 @@ public class ProxyConnection implements Connection {
         return connection;
     }
 
+    /**
+     * Method: create instance of ProxyConnection by wrapping {@link Connection}
+     * @throws DaoException object
+     * @return instance of ProxyConnection
+     */
     public static ProxyConnection createProxyConnection() throws DaoException {
         return new ProxyConnection(createConnection());
     }
 
+    /**
+     * Method: create instance of Statement
+     * @return instance of {@link Statement}
+     */
     @Override
     public Statement createStatement() {
         Statement statement = null;
@@ -60,6 +79,11 @@ public class ProxyConnection implements Connection {
         return statement;
     }
 
+    /**
+     * Method: prepare Statement for executing
+     * @param s is String value of SQL query
+     * @return instance of {@link PreparedStatement}
+     */
     @Override
     public PreparedStatement prepareStatement(String s) {
         PreparedStatement statement = null;
@@ -78,6 +102,9 @@ public class ProxyConnection implements Connection {
         return statement;
     }
 
+    /**
+    * Method: releasing connection (back in pool)
+    */
     @Override
     public void close() {
         try {

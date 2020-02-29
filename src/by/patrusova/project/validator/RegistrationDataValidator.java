@@ -6,6 +6,11 @@ import by.patrusova.project.exception.DaoException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Class for validating Registration data from request.
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class RegistrationDataValidator {
 
     private final static String CHECK_LOGIN = "^[A-z0-9_]{5,15}$";

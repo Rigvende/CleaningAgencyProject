@@ -4,8 +4,13 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
+/**
+ * Class for filtering data's encoding during request/response data sending.
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 @WebFilter("/*")
-public class CharsetFilter implements Filter {
+public class EncodingFilter implements Filter {
 
     private final static String UTF_8 = "UTF-8";
 

@@ -14,6 +14,11 @@ import by.patrusova.project.command.impl.registration.RegistrationCommand;
 import by.patrusova.project.command.impl.registration.RegistrationRedirectCommand;
 import by.patrusova.project.command.impl.show.*;
 
+/**
+ * Enum for storing command types
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public enum CommandEnum {
 
     LOGIN {
@@ -227,8 +232,14 @@ public enum CommandEnum {
         }
     };
 
+
+    /** Field: command */
     ActionCommand command;
 
+    /**
+     * Method: get command depending on parameters from request
+     * @return type of {@link CommandEnum#command}
+     * */
     public ActionCommand getCurrentCommand() {
         return command;
     }
