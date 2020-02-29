@@ -16,6 +16,11 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.List;
 
+/**
+ * Class for command to show basket
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class BasketCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();

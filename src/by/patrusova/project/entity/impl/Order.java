@@ -3,6 +3,11 @@ package by.patrusova.project.entity.impl;
 import by.patrusova.project.entity.AbstractEntity;
 import java.time.LocalDate;
 
+/**
+ * Class of entity-type for storing order's data
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class Order extends AbstractEntity {
 
     private static final long serialVersionUID = 5L;
@@ -41,9 +46,6 @@ public class Order extends AbstractEntity {
         this.idCleaner = idCleaner;
     }
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
     public long getId() {
         return id;
     }

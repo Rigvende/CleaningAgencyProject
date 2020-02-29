@@ -17,6 +17,11 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
+/**
+ * Class for command to change client's notes by cleaner
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class SetNotesCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();

@@ -1,10 +1,7 @@
 package by.patrusova.project.service.impl;
 
 import by.patrusova.project.dao.DaoFactory;
-import by.patrusova.project.dao.impl.BasketDao;
-import by.patrusova.project.dao.impl.OrderDao;
-import by.patrusova.project.dao.impl.ServiceDao;
-import by.patrusova.project.dao.impl.UserDao;
+import by.patrusova.project.dao.impl.*;
 import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.Role;
 import by.patrusova.project.entity.impl.*;
@@ -14,9 +11,14 @@ import by.patrusova.project.service.Serviceable;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.util.Optional;
 
+/**
+ * Class for implementation of service logic concerning deleting entities
+ * using operations with {@link UserDao}, {@link OrderDao}, {@link BasketDao}, {@link ServiceDao}
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class DeleteEntityService implements Serviceable {
 
     private final static Logger LOGGER = LogManager.getLogger();

@@ -1,8 +1,12 @@
 package by.patrusova.project.entity.impl;
 
 import by.patrusova.project.entity.AbstractEntity;
-import java.util.Objects;
 
+/**
+ * Class of entity-type for storing user's data
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class User extends AbstractEntity {
 
     private static final long serialVersionUID = 1L;

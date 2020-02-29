@@ -17,6 +17,11 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
+/**
+ * Class for command to change order's info by admin
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class ChangeOrderCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();

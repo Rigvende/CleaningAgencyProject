@@ -12,6 +12,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.util.Optional;
 
+/**
+ * Class for implementation of service logic concerning creation of basket positions
+ * using operations with {@link BasketDao}
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class BasketService implements Serviceable {
 
     private final static Logger LOGGER = LogManager.getLogger();

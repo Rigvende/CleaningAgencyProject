@@ -16,6 +16,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class for actions mostly with {@link Service} using connections, statements and queries
+ * according DAO and database data
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class ServiceDao extends AbstractDao<AbstractEntity> {
 
     private final static Logger LOGGER = LogManager.getLogger();

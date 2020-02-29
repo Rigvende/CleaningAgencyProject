@@ -1,6 +1,7 @@
 package by.patrusova.project.service.impl;
 
 import by.patrusova.project.dao.DaoFactory;
+import by.patrusova.project.dao.impl.BasketDao;
 import by.patrusova.project.dao.impl.CleanerDao;
 import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.Role;
@@ -20,6 +21,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * Class for implementation of service logic concerning cleaner's info
+ * using operations with {@link CleanerDao}
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class CleanerInfoService implements Serviceable, EntityCreator {
 
     private final static Logger LOGGER = LogManager.getLogger();

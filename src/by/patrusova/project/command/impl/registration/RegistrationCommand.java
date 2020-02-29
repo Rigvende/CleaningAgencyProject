@@ -14,6 +14,11 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
+/**
+ * Class for command to register new user
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class RegistrationCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();

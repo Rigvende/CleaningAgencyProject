@@ -1,9 +1,13 @@
 package by.patrusova.project.entity.impl;
 
 import by.patrusova.project.entity.AbstractEntity;
-
 import java.math.BigDecimal;
 
+/**
+ * Class of entity-type for storing service's data
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class Service extends AbstractEntity {
 
     private static final long serialVersionUID = 6L;
@@ -20,9 +24,6 @@ public class Service extends AbstractEntity {
         this.sales = sales;
     }
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
     public long getId() {
         return id;
     }

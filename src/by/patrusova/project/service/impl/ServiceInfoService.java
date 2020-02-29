@@ -19,6 +19,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * Class for implementation of service logic concerning service's info
+ * using operations with {@link ServiceDao}
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class ServiceInfoService implements Serviceable, EntityCreator {
 
     private final static Logger LOGGER = LogManager.getLogger();

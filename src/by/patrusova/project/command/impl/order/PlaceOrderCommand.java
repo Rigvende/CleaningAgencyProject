@@ -23,6 +23,11 @@ import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDate;
 import java.util.Optional;
 
+/**
+ * Class for command to check order's info and place order
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class PlaceOrderCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();

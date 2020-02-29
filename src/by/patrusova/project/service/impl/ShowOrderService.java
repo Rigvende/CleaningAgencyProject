@@ -14,6 +14,12 @@ import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class for implementation of service logic concerning order's info
+ * using operations with {@link OrderDao}
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class ShowOrderService {
 
     private final static Logger LOGGER = LogManager.getLogger();

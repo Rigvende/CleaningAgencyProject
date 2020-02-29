@@ -20,6 +20,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * Class for implementation of service logic concerning registration
+ * using operations with {@link UserDao}
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class RegistrationService implements EntityCreator, Serviceable {
 
     private final static Logger LOGGER = LogManager.getLogger();

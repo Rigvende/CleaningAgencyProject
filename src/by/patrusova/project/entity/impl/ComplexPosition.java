@@ -1,10 +1,15 @@
 package by.patrusova.project.entity.impl;
 
 import by.patrusova.project.entity.AbstractEntity;
-import java.util.Objects;
 
+/**
+ * Class of entity-type for storing complex basket position's and service's data
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class ComplexPosition extends AbstractEntity {
 
+    private static final long serialVersionUID = 10L;
     private BasketPosition position;
     private Service service;
 
@@ -47,5 +52,9 @@ public class ComplexPosition extends AbstractEntity {
         builder.append("position ID=").append(position.getId())
                 .append(", service ID=").append(service.getId()).append('}');
         return builder.toString();
+    }
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

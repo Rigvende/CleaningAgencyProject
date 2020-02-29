@@ -16,6 +16,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.util.Optional;
 
+/**
+ * Class for implementation of service logic concerning user's role setting
+ * using operations with {@link ClientDao}, {@link CleanerDao}, {@link UserDao}
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class RoleService {
 
     private final static Logger LOGGER = LogManager.getLogger();

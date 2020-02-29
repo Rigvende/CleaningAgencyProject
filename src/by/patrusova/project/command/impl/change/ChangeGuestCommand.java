@@ -16,6 +16,11 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
+/**
+ * Class for command to change guest's info by admin
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class ChangeGuestCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();

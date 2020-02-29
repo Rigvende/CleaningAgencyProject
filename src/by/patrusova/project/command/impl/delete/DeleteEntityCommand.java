@@ -13,6 +13,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * Class for command to delete type of {@link by.patrusova.project.entity.AbstractEntity} object
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class DeleteEntityCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();

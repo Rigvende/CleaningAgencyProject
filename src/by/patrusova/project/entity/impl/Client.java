@@ -1,10 +1,13 @@
 package by.patrusova.project.entity.impl;
 
 import by.patrusova.project.entity.AbstractEntity;
-
 import java.math.BigDecimal;
-import java.util.Objects;
 
+/**
+ * Class of entity-type for storing client's data
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class Client extends AbstractEntity {
 
     private static final long serialVersionUID = 2L;
@@ -26,9 +29,6 @@ public class Client extends AbstractEntity {
         this.notes = notes;
     }
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
     public long getId() {
         return id;
     }

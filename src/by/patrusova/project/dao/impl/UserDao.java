@@ -13,24 +13,16 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class for actions mostly with {@link User} using connections, statements and queries
+ * according DAO and database data
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class UserDao extends AbstractDao<AbstractEntity> {
 
     private final static Logger LOGGER = LogManager.getLogger();
-    private final static String ID_CLIENT = "id_client";
-    private final static String DISCOUNT = "discount";
-    private final static String LOCATION = "location";
-    private final static String RELATIVE = "relative";
-    private final static String ID_CLEANER = "id_cleaner";
-    private final static String ID_USER = "id_user";
-    private final static String COMMISSION = "commission";
-    private final static String NOTES = "notes";
-    private final static String LOGIN = "login";
-    private final static String PASSWORD = "password";
-    private final static String ROLE = "role";
     private final static String NAME = "name";
-    private final static String LASTNAME = "lastname";
-    private final static String PHONE = "phone";
-    private final static String ADDRESS = "address";
     private final static String EMAIL = "email";
     private final static String SQL_ADD_USER =
             "INSERT INTO users VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";

@@ -14,6 +14,11 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
+/**
+ * Class for command to change user's info
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class ChangeUserCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();

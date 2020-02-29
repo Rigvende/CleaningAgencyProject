@@ -1,10 +1,15 @@
 package by.patrusova.project.entity.impl;
 
 import by.patrusova.project.entity.AbstractEntity;
-import java.util.Objects;
 
+/**
+ * Class of entity-type for storing complex order's, cleaner's, client's and user's data
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class ComplexOrder extends AbstractEntity {
 
+    private static final long serialVersionUID = 9L;
     private User user;
     private Cleaner cleaner;
     private Client client;
@@ -63,5 +68,9 @@ public class ComplexOrder extends AbstractEntity {
                 .append("client ID=").append(client.getId())
                 .append(", order ID=").append(order.getId()).append('}');
         return builder.toString();
+    }
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

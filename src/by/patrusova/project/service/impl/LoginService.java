@@ -12,6 +12,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.util.Optional;
 
+/**
+ * Class for implementation of service logic concerning login actions
+ * using operations with {@link UserDao}
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class LoginService implements Serviceable {
 
     private final static Logger LOGGER = LogManager.getLogger();

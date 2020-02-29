@@ -11,10 +11,14 @@ import by.patrusova.project.util.MessageManager;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
+/**
+ * Class for command to change burial info by client
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class ChangeBurialCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();

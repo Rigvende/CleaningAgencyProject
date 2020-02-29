@@ -2,11 +2,9 @@ package by.patrusova.project.command.impl.menu;
 
 import by.patrusova.project.command.ActionCommand;
 import by.patrusova.project.entity.AbstractEntity;
-import by.patrusova.project.entity.impl.Order;
 import by.patrusova.project.entity.impl.Service;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
-import by.patrusova.project.service.impl.OrderInfoService;
 import by.patrusova.project.service.impl.ShowService;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.util.MessageManager;
@@ -14,11 +12,14 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class for command to show catalogue and make choice accordingly with user's role
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class CatalogueCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();

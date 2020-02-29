@@ -16,6 +16,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
+/**
+ * Class for command to add new order
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class AddOrderCommand implements ActionCommand {
 
     private static final Logger LOGGER = LogManager.getLogger();

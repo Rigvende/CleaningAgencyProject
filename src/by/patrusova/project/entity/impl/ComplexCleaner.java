@@ -1,10 +1,15 @@
 package by.patrusova.project.entity.impl;
 
 import by.patrusova.project.entity.AbstractEntity;
-import java.util.Objects;
 
+/**
+ * Class of entity-type for storing complex cleaner's and user's data
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class ComplexCleaner extends AbstractEntity {
 
+    private static final long serialVersionUID = 7L;
     private User user;
     private Cleaner cleaner;
 
@@ -49,5 +54,9 @@ public class ComplexCleaner extends AbstractEntity {
         builder.append("user ID=").append(user.getId())
                 .append(", cleaner ID=").append(cleaner.getId()).append('}');
         return builder.toString();
+    }
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

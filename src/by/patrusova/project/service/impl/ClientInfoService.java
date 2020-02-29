@@ -1,6 +1,7 @@
 package by.patrusova.project.service.impl;
 
 import by.patrusova.project.dao.DaoFactory;
+import by.patrusova.project.dao.impl.CleanerDao;
 import by.patrusova.project.dao.impl.ClientDao;
 import by.patrusova.project.dao.impl.OrderDao;
 import by.patrusova.project.entity.AbstractEntity;
@@ -22,6 +23,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * Class for implementation of service logic concerning clients's info
+ * using operations with {@link ClientDao}
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class ClientInfoService implements Serviceable, EntityCreator {
 
     private final static Logger LOGGER = LogManager.getLogger();

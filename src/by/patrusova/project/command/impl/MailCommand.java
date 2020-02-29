@@ -11,6 +11,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * Class for command to send mail
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class MailCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();

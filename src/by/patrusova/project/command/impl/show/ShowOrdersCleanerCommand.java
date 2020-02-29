@@ -15,6 +15,11 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
+/**
+ * Class for command to show orders list for cleaner
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class ShowOrdersCleanerCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();

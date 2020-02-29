@@ -15,6 +15,11 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class for command to show services list for admin
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class ShowCatalogueCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();

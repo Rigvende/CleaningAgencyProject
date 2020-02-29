@@ -13,6 +13,12 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class for actions mostly with {@link Cleaner} using connections, statements and queries
+ * according DAO and database data
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class CleanerDao extends AbstractDao<AbstractEntity> {
 
     private final static Logger LOGGER = LogManager.getLogger();

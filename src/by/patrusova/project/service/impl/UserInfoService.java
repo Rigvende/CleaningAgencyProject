@@ -13,12 +13,17 @@ import by.patrusova.project.validator.StringValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * Class for implementation of service logic concerning user's info
+ * using operations with {@link UserDao}
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class UserInfoService implements Serviceable, EntityCreator {
 
     private final static Logger LOGGER = LogManager.getLogger();

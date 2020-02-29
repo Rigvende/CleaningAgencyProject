@@ -13,9 +13,13 @@ import by.patrusova.project.validator.NumberValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * Class for command to cancel order
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class CancelCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();

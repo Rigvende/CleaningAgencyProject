@@ -5,6 +5,11 @@ import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.util.MessageManager;
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * Class for action in case of missing command in {@link by.patrusova.project.command.CommandEnum}
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class EmptyCommand implements ActionCommand {
 
     private final static String NULLPAGE = "nullpage";

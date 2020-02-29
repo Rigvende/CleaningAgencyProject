@@ -16,6 +16,11 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class for command to show cleaners list for admin
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class ShowCleanersCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();

@@ -1,12 +1,10 @@
 package by.patrusova.project.service.impl;
 
 import by.patrusova.project.dao.DaoFactory;
-import by.patrusova.project.dao.impl.OrderDao;
 import by.patrusova.project.dao.impl.UserDao;
 import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.impl.Client;
 import by.patrusova.project.entity.impl.User;
-import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;
 import by.patrusova.project.service.Serviceable;
@@ -21,6 +19,12 @@ import java.io.InputStream;
 import java.util.Optional;
 import java.util.Properties;
 
+/**
+ * Class for implementation of service logic concerning sending mails
+ * using operations with {@link UserDao}
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class MailService implements Serviceable {
 
     private final static Logger LOGGER = LogManager.getLogger();

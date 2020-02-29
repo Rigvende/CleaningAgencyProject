@@ -1,10 +1,13 @@
 package by.patrusova.project.entity.impl;
 
 import by.patrusova.project.entity.AbstractEntity;
-
 import java.math.BigDecimal;
-import java.util.Objects;
 
+/**
+ * Class of entity-type for storing cleaner's data
+ * @autor Marianna Patrusova
+ * @version 1.0
+ */
 public class Cleaner extends AbstractEntity {
 
     private static final long serialVersionUID = 3L;
@@ -21,9 +24,6 @@ public class Cleaner extends AbstractEntity {
         this.idUser = idUser;
     }
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
     public long getId() {
         return id;
     }
