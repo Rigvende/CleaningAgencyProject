@@ -38,7 +38,7 @@ public class LogoutCommand implements ActionCommand {
         if (request.getSession().getAttribute(ROLE).equals(CLIENT)) {
             Order order = (Order) request.getSession().getAttribute(ORDER_NEW);
             Client client = (Client) request.getSession().getAttribute(CLIENT);
-            Enumeration<String> enumeration = request.getSession().getAttributeNames();//fixme
+            Enumeration<String> enumeration = request.getSession().getAttributeNames();
             Iterator<String> iterator = enumeration.asIterator();
             while (iterator.hasNext()) {
                 request.getSession().removeAttribute(iterator.next());

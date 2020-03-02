@@ -31,8 +31,8 @@ public class AddOrderCommand implements ActionCommand {
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-        request.getSession().removeAttribute(ORDER_NEW); //fixme
-        request.getSession().removeAttribute(BASKET_LIST);//fixme
+        request.getSession().removeAttribute(ORDER_NEW);
+        request.getSession().removeAttribute(BASKET_LIST);
         Client client = (Client) request.getSession().getAttribute(Role.CLIENT.getValue());
         Order order = new Order();
         order.setIdClient(client.getId());
