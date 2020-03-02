@@ -44,13 +44,13 @@ public class NumberValidatorTest {
 
     @Test
     public void testIsValidDays() {
-        boolean actual = NumberValidator.isValidDays(9);
+        boolean actual = NumberValidator.isValidDays("5");
         assertTrue(actual);
     }
 
     @Test
     public void testIsValidDaysNegative() {
-        boolean actual = NumberValidator.isValidDays(39);
+        boolean actual = NumberValidator.isValidDays("-2");
         assertFalse(actual);
     }
 

@@ -23,12 +23,11 @@ import java.util.List;
 public class BasketDao extends AbstractDao<AbstractEntity> {
 
     private final static Logger LOGGER = LogManager.getLogger();
-
     private final static String SQL_ADD_POSITION =
             "INSERT INTO basket_position VALUES (null, ?, ?);";
-    private final static String SQL_DELETE_POSITION =
-            "DELETE FROM basket_position WHERE id_basket = ?;";
-    private final static String SQL_SELECT_BASKET_POSITION_BY_ID =
+    private final static String SQL_SELECT_BASKET_POSITION =
+            "SELECT id_basket, id_order, id_service FROM basket_position WHERE id_basket = ?;";
+    private final static String SQL_SELECT_BASKET_POSITION_BY_ORDER_ID =
             "SELECT id_basket, id_order, id_service FROM basket_position WHERE id_order = ?;";
     private final static String SQL_DELETE_POSITION_ORDER =
             "DELETE FROM basket_position WHERE id_order = ? AND id_basket = ?;";
@@ -36,9 +35,10 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
             "SELECT id_basket, id_order, id_service FROM basket_position;";
     private final static String SQL_SELECT_ID = "SELECT id_basket FROM basket_position;";
     private final static String SQL_SELECT_POSITION_BY_ORDER_ID =
-            "SELECT id_basket, basket_position.id_order, basket_position.id_service, service, " +
-                    "cost, sales FROM basket_position JOIN services ON basket_position.id_service " +
-                    "= services.id_service WHERE basket_position.id_order = ?;";
+            "SELECT basket_position.id_basket, basket_position.id_order, basket_position.id_service, " +
+                    "services.service, services.cost, services.sales FROM basket_position " +
+                    "JOIN services ON basket_position.id_service = services.id_service\n" +
+                    "WHERE basket_position.id_order = ?;";
 
     public BasketDao(ProxyConnection connection) {
         super(connection);
@@ -94,8 +94,10 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
         BasketPosition position = (BasketPosition) entity;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = connection.prepareStatement(SQL_DELETE_POSITION);
-            preparedStatement.setLong(1, position.getId());
+            preparedStatement = connection.prepareStatement(SQL_DELETE_POSITION_ORDER);
+            preparedStatement.setLong(1, position.getIdOrder());
+            preparedStatement.setLong(2, position.getId());
+            preparedStatement.execute();
             isDeleted = preparedStatement.execute();
             if (!findId(position.getId())) {
                 isDeleted = true;
@@ -175,7 +177,7 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
         BasketPosition position;
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = connection.prepareStatement(SQL_SELECT_BASKET_POSITION_BY_ID);
+            preparedStatement = connection.prepareStatement(SQL_SELECT_BASKET_POSITION);
             preparedStatement.setLong(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
@@ -247,7 +249,7 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
         List<BasketPosition> positions = new ArrayList<>();
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = connection.prepareStatement(SQL_SELECT_BASKET_POSITION_BY_ID);
+            preparedStatement = connection.prepareStatement(SQL_SELECT_BASKET_POSITION_BY_ORDER_ID);
             preparedStatement.setLong(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {

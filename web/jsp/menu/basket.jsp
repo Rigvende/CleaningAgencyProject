@@ -26,7 +26,7 @@
     </div>
     <br/><br/><br/><br/>
 
-    <c:set var="admins" scope="session" value="${basketList}"/>
+    <c:set var="positions" scope="session" value="${basketList}"/>
     <c:set var="totalCount" scope="session" value="${basketList.size()}"/>
     <c:set var="perPage" scope="session" value="${10}"/>
     <c:set var="pageStart" value="${param.start}"/>
@@ -49,7 +49,7 @@
 
         <form name="deletePositionForm" method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="deleteentity" />
-        <input type="hidden" name="entitytype" value="position" />
+        <input type="hidden" name="entitytype" value="position_basket" />
 
         <b style="color: #0c4f5b; font-size: 16px; font-family: 'Palatino Linotype', serif; margin-left: 50px">
         <fmt:message key="field.id"/>
@@ -68,7 +68,7 @@
         <input type="hidden" name="command" value="orderredirect" />
 
         <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 250px; font-size: 20px;
-        height: 40px;" type="submit" value="<fmt:message key="button.confirm"/>"/>
+        height: 40px;" type="submit" value="<fmt:message key="button.makeorder"/>"/>
         </form>
         </div>
         <br/>
@@ -100,12 +100,12 @@
         <th><fmt:message key="field.discount2"/></th>
     </tr>
 
-    <c:forEach var="position" items="${basketList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
+    <c:forEach var="basket_position" items="${basketList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
         <tr>
-        <td><c:out value="${position.position.id}" /></td>
-        <td><c:out value="${position.service.service}" /></td>
-        <td><c:out value="${position.service.cost}" /></td>
-        <td><c:out value="${position.service.sales}" /></td>
+        <td><c:out value="${basket_position.position.id}" /></td>
+        <td><c:out value="${basket_position.service.service}" /></td>
+        <td><c:out value="${basket_position.service.cost}" /></td>
+        <td><c:out value="${basket_position.service.sales}" /></td>
         </tr>
     </c:forEach>
     </table>

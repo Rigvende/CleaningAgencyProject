@@ -61,15 +61,13 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             "UPDATE orders SET order_status = 'declined' WHERE id_order = ?;";
     private final static String SQL_SET_MARK =
             "UPDATE orders SET mark = ? WHERE id_order = ? AND id_client = ?;";
-    private final static String SQL_FIND_NEW_ORDER =
+    private final static String SQL_FIND_NEW =
             "SELECT id_order FROM orders WHERE order_status = 'new' AND id_client = ?;";
     private static final String SQL_SELECT_ALL_ORDERS =
             "SELECT id_order, order_time, deadline, order_status, " +
                     "mark, id_client, id_cleaner FROM orders;";
     private final static String SQL_SELECT_ID =
             "SELECT id_order FROM orders;";
-    private final static String SQL_FIND_NEW =
-            "SELECT id_order FROM orders WHERE order_status = 'new' AND id_client = ?;";
     private final static String SQL_TOTAL_COST =
             "SELECT SUM(cost) AS total_cost FROM services JOIN basket_position " +
                     "ON basket_position.id_service = services.id_service WHERE id_order = ?;";
@@ -498,7 +496,7 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
         PreparedStatement preparedStatement = null;
         try {
             if (order.getOrderStatus().equals(Order.Status.NEW.getValue())) {
-                preparedStatement = connection.prepareStatement(SQL_FIND_NEW_ORDER);
+                preparedStatement = connection.prepareStatement(SQL_FIND_NEW);
                 preparedStatement.setLong(1, order.getIdClient());
                 ResultSet resultSet = preparedStatement.executeQuery();
                 if (resultSet.next()) {

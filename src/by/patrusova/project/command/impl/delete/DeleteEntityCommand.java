@@ -5,6 +5,7 @@ import by.patrusova.project.entity.Role;
 import by.patrusova.project.entity.impl.*;
 import by.patrusova.project.exception.CommandException;
 import by.patrusova.project.exception.ServiceException;
+import by.patrusova.project.service.impl.BasketService;
 import by.patrusova.project.service.impl.DeleteEntityService;
 import by.patrusova.project.util.ConfigurationManager;
 import by.patrusova.project.validator.NumberValidator;
@@ -21,6 +22,7 @@ import javax.servlet.http.HttpServletRequest;
 public class DeleteEntityCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();
+    private final static String ORDER_NEW = "orderNew";
     private final static String ID = "id";
     private final static String ENTITITYPE = "entitytype";
     private final static String PAGE_CONFIRMFALSE = "page.confirmfalse";
@@ -74,13 +76,16 @@ public class DeleteEntityCommand implements ActionCommand {
                     return entityService.doService(service).isEmpty() ?
                             ConfigurationManager.getProperty(PAGE_CONFIRM) :
                             ConfigurationManager.getProperty(PAGE_CONFIRMFALSE);
-                case "position":
+                case "position_basket":
                     if (!NumberValidator.isValidBasketID(idEntity)) {
                         return ConfigurationManager.getProperty(PAGE_CONFIRMFALSE);
                     }
                     long id5 = Long.parseLong(idEntity);
+                    Order order = (Order) request.getSession().getAttribute(ORDER_NEW);
+                    long idOrder = order.getId();
                     BasketPosition position = new BasketPosition();
                     position.setId(id5);
+                    position.setIdOrder(idOrder);
                     return entityService.doService(position).isEmpty() ?
                             ConfigurationManager.getProperty(PAGE_CONFIRM) :
                             ConfigurationManager.getProperty(PAGE_CONFIRMFALSE);

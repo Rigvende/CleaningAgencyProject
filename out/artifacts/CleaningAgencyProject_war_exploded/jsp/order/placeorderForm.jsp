@@ -21,9 +21,9 @@
 <div style="float: right">
     <jsp:include page="/WEB-INF/view/backToMain.jsp"/>
 </div>
-<br/><br/>
+<br/><br/><br/><br/>
 
-<div style="text-align: center">
+<div style="text-align: center; margin-right: 50px; margin-left: 50px">
 <p style="font-size: 16px; font-family: 'Palatino Linotype', sans-serif"><fmt:message key="text.order6"/> </p>
 <p style="font-size: 16px; font-family: 'Palatino Linotype', sans-serif"><fmt:message key="text.order7"/> </p>
 </div>

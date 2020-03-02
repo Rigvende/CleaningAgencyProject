@@ -24,14 +24,13 @@ public class ConnectionPool {
 
     private final static Logger LOGGER = LogManager.getLogger();
     private final static int MAX_POOL_SIZE = 20;
-    private static BlockingQueue<ProxyConnection> pool
-            = new LinkedBlockingQueue<>(MAX_POOL_SIZE);
-    private static BlockingQueue<ProxyConnection> usedConnections
-            = new LinkedBlockingQueue<>();
+    private static BlockingQueue<ProxyConnection> pool = new LinkedBlockingQueue<>(MAX_POOL_SIZE);
+    private static BlockingQueue<ProxyConnection> usedConnections = new LinkedBlockingQueue<>();
     private static Lock lock = new ReentrantLock();
     private static AtomicBoolean flag = new AtomicBoolean(false);
     private static ConnectionPool instance;
 
+    //private constructor for singleton instance
     private ConnectionPool() throws DaoException {
         if (instance != null) {
             LOGGER.log(Level.FATAL, "Attempt to create one more class instance. ");
@@ -47,6 +46,7 @@ public class ConnectionPool {
         }
     }
 
+    //fill connection pool by proxy connections
     private void init() throws DaoException {
         for (int i = 0; i < MAX_POOL_SIZE; i++) {
             pool.offer(ProxyConnection.createProxyConnection());
@@ -136,6 +136,7 @@ public class ConnectionPool {
         }
     }
 
+    //deregister all drivers while closing connection
     private void deregisterDrivers() {
         Enumeration<Driver> drivers = DriverManager.getDrivers();
         while (drivers.hasMoreElements()) {

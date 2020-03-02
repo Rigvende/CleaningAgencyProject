@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf8" pageEncoding="utf8"%>
     <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    <%@ taglib prefix="ctg" uri="/WEB-INF/tld/removeattr.tld" %>
 
     <fmt:setBundle basename="message"/>
 
@@ -14,7 +15,10 @@
     <c:if test="${not empty user and user.role eq 'admin'}">
         <jsp:forward page="/jsp/resultset/catalogueList.jsp"/>
     </c:if>
-
+${orderNew}
+    ${user}
+    ${client}
+    ${basketList}
     <jsp:include page="/WEB-INF/view/header.jsp"/>
 
     <div style="float: right">
@@ -71,6 +75,11 @@
     </c:if>
     <br/>
 
+    <div style="color: crimson; margin-left: 50px">${errorSelect}</div>
+    ${wrongAction}
+    ${nullPage}
+    <br/><ctg:remove-attr/>
+
     <div style="text-align: center">
     <table border="1" cellpadding="5" cellspacing="5" align="center">
     <tr style="background-color: royalblue">
@@ -100,6 +109,7 @@
         <input type="submit" value="<fmt:message key="button.confirm"/>" />
         </form>
         </td>
+
         </c:if>
         </tr>
     </c:forEach>

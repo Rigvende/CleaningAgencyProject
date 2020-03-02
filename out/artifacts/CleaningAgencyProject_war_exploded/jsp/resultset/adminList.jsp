@@ -18,7 +18,7 @@
 <jsp:include page="/WEB-INF/view/header.jsp"/>
 <br/>
 
-<c:set var="admins" scope="session" value="${adminList}"/>
+<c:set var="positions" scope="session" value="${adminList}"/>
 <c:set var="totalCount" scope="session" value="${adminList.size()}"/>
 <c:set var="perPage" scope="session" value="${5}"/>
 <c:set var="pageStart" value="${param.start}"/>

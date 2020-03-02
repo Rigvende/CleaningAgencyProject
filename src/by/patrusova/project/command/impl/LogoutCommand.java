@@ -12,6 +12,8 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
+import java.util.Enumeration;
+import java.util.Iterator;
 import java.util.Optional;
 
 /**
@@ -23,7 +25,7 @@ public class LogoutCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();
     private final static String PAGE_INDEX = "page.index";
-    private final static String ORDER = "orderNew";
+    private final static String ORDER_NEW = "orderNew";
     private final static String CLIENT = "client";
     private final static String ROLE = "role";
     private final static String USER = "user";
@@ -34,8 +36,13 @@ public class LogoutCommand implements ActionCommand {
         request.getSession().removeAttribute(USER);             //prevent to go back
         String page = ConfigurationManager.getProperty(PAGE_INDEX);
         if (request.getSession().getAttribute(ROLE).equals(CLIENT)) {
-            Order order = (Order) request.getSession().getAttribute(ORDER);
+            Order order = (Order) request.getSession().getAttribute(ORDER_NEW);
             Client client = (Client) request.getSession().getAttribute(CLIENT);
+            Enumeration<String> enumeration = request.getSession().getAttributeNames();//fixme
+            Iterator<String> iterator = enumeration.asIterator();
+            while (iterator.hasNext()) {
+                request.getSession().removeAttribute(iterator.next());
+            }
             request.getSession().invalidate();
             request.getSession(false);
             try {                                               //delete not registered client's order from session

@@ -24,19 +24,18 @@ import java.util.Optional;
 public class SelectCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();
-    private final static String ORDER = "orderNew";
+    private final static String ORDER_NEW = "orderNew";
     private final static String POSITION = "position";
     private final static String CHOICE = "choice";
-    private final static String EMPTY = "";
     private final static String PAGE_CATALOGUE = "page.catalogue";
     private final static String ERROR_SELECT = "errorSelect";
     private final static String MESSAGE_ERROR_SELECT = "message.selecterror";
     private final static String MESSAGE_ERROR_EMPTY = "message.emptychoice";
-    private BasketService service = new BasketService();
+    private BasketService basketService = new BasketService();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-        Order order = (Order) request.getSession().getAttribute(ORDER);
+        Order order = (Order) request.getSession().getAttribute(ORDER_NEW);
         String idService = request.getParameter(POSITION);
         String choice = request.getParameter(CHOICE);
         if (choice == null){ //fixme
@@ -46,10 +45,10 @@ public class SelectCommand implements ActionCommand {
         }
         try {
             if (NumberValidator.isValidServiceID(idService)) {
-                BasketPosition position = new BasketPosition();
-                position.setIdService(Long.parseLong(idService));
-                position.setIdOrder(order.getId());
-                Optional<AbstractEntity> optional = service.doService(position);
+                BasketPosition basketPosition = new BasketPosition();
+                basketPosition.setIdService(Long.parseLong(idService));
+                basketPosition.setIdOrder(order.getId());
+                Optional<AbstractEntity> optional = basketService.doService(basketPosition);
                 if (optional.isPresent()) {
                     return ConfigurationManager.getProperty(PAGE_CATALOGUE);
                 }

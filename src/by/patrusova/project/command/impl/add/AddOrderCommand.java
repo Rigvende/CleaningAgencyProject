@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
 /**
- * Class for command to add new order
+ * Class for command to add new order after placing previous
  * @autor Marianna Patrusova
  * @version 1.0
  */
@@ -25,21 +25,23 @@ public class AddOrderCommand implements ActionCommand {
 
     private static final Logger LOGGER = LogManager.getLogger();
     private final static String ORDER_NEW = "orderNew";
+    private final static String BASKET_LIST = "basketList";
     private final static String PAGE_MAIN_CLIENT = "page.mainclient";
     private OrderInfoService infoService = new OrderInfoService();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
+        request.getSession().removeAttribute(ORDER_NEW); //fixme
+        request.getSession().removeAttribute(BASKET_LIST);//fixme
         Client client = (Client) request.getSession().getAttribute(Role.CLIENT.getValue());
         Order order = new Order();
         order.setIdClient(client.getId());
         order.setOrderStatus(Order.Status.NEW.getValue());
-        HttpSession session = request.getSession(true);
         try {
             Optional<AbstractEntity> opt = infoService.doService(order);
             if (opt.isPresent()) {
                 order = (Order) opt.get();
-                session.setAttribute(ORDER_NEW, order);
+                request.getSession().setAttribute(ORDER_NEW, order);
             }
         } catch (ServiceException e) {
             LOGGER.log(Level.ERROR, "Exception while creating new order has occurred. ", e);

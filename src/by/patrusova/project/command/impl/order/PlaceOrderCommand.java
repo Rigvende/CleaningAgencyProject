@@ -54,7 +54,7 @@ public class PlaceOrderCommand implements ActionCommand {
             User user = (User) request.getSession().getAttribute(USER);
             Client client = (Client) request.getSession().getAttribute(Role.CLIENT.getValue());
             Order order = (Order)request.getSession().getAttribute(ORDER_NEW);
-            int days = Integer.parseInt(request.getParameter(DAYS));
+            String days = request.getParameter(DAYS);
             String name = request.getParameter(FIRSTNAME);
             String lastname = request.getParameter(LASTNAME);
             String phone = request.getParameter(PHONE);
@@ -80,12 +80,11 @@ public class PlaceOrderCommand implements ActionCommand {
                 if (optional1.isPresent() && optional2.isPresent()) {
                     order.setOrderStatus(Order.Status.REGISTERED.getValue());
                     order.setOrderTime(LocalDate.now());
-                    order.setDeadline(LocalDate.now().plusDays(days));
+                    order.setDeadline(LocalDate.now().plusDays(Integer.parseInt(days)));
                     Optional<AbstractEntity> optional3 = orderInfoService.placeOrder(order);
                     if (optional3.isPresent()) {
                         request.getSession().setAttribute(USER, user);
                         request.getSession().setAttribute(Role.CLIENT.getValue(), client);
-                        request.getSession().setAttribute(ORDER_NEW, order);
                         return ConfigurationManager.getProperty(PAGE_ORDER_CONFIRM);
                     }
                 }

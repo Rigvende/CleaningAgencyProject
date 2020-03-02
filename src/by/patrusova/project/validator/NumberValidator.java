@@ -26,8 +26,13 @@ public class NumberValidator {
     private NumberValidator() {
     }
 
-    public static boolean isValidDays(int days) {
-        return days >= 2 && days <= 30;
+    public static boolean isValidDays(String days) {
+        if (days.isEmpty()) {
+            return false;
+        } else {
+            int day = Integer.parseInt(days);
+            return day >= 2 && day <= 30;
+        }
     }
 
     public static boolean isValidDecimal(String decimal) {

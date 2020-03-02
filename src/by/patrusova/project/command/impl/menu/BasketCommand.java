@@ -28,7 +28,7 @@ public class BasketCommand implements ActionCommand {
     private final static String ORDER_NEW = "orderNew";
     private final static String TOTAL_COST = "totalCost";
     private final static String PAGE_BASKET = "page.basket";
-    private ShowService service = new ShowService();
+    private ShowService showService = new ShowService();
     private OrderInfoService infoService = new OrderInfoService();
 
     @Override
@@ -36,7 +36,7 @@ public class BasketCommand implements ActionCommand {
         try {
             Order order = (Order) request.getSession().getAttribute(ORDER_NEW);
             if (order != null) {
-                List<ComplexPosition> positions = service.doService(order.getId());
+                List<ComplexPosition> positions = showService.doService(order.getId());
                 if (!positions.isEmpty()) {
                     request.getSession().setAttribute(BASKET_LIST, positions);
                     BigDecimal totalCost =                                      //show total cost with discount
