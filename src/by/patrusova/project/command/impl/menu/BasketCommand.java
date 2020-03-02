@@ -34,6 +34,7 @@ public class BasketCommand implements ActionCommand {
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
         try {
+            request.getSession().removeAttribute(BASKET_LIST);//fixme
             Order order = (Order) request.getSession().getAttribute(ORDER_NEW);
             if (order != null) {
                 List<ComplexPosition> positions = showService.doService(order.getId());
