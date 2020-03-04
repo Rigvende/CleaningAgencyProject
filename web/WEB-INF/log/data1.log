@@ -10764,3 +10764,10 @@ Caused by: java.net.SocketException: Software caused connection abort: socket wr
 04-03 19:58 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
 04-03 19:58 INFO  project.connection.ConnectionPool - Registering jdbc driver.
 04-03 19:58 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+04-03 20:17 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@328a8cde
+04-03 20:17 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@1b1cb536
+04-03 20:17 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+04-03 20:18 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+04-03 20:18 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+04-03 20:18 INFO  command.impl.LocaleCommand - ru_RU
+04-03 20:18 INFO  command.impl.LocaleCommand - en_EN

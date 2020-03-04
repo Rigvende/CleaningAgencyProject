@@ -56,9 +56,9 @@ public class RemoveAttrTag extends TagSupport {
         list.add(ERROR_SELECT);
         list.add(FORMER_GUEST);
         list.add(ORDER_DONE);
-        for (String attr : list) {
-            pageContext.getSession().removeAttribute(attr);
-        }
+        list.stream()
+                .filter(x -> !(pageContext.getSession().getAttribute(x) == null))
+                .forEach(pageContext.getSession()::removeAttribute);
         return SKIP_BODY;
     }
 

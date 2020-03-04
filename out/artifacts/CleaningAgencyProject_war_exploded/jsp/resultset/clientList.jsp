@@ -21,7 +21,7 @@
 
 <c:set var="clients" scope="session" value="${clientList}"/>
 <c:set var="totalCount" scope="session" value="${clientList.size()}"/>
-<c:set var="perPage" scope="session" value="${5}"/>
+<c:set var="perPage" scope="session" value="${10}"/>
 <c:set var="pageStart" value="${param.start}"/>
 
 <c:if test="${empty pageStart or pageStart < 0}">
