@@ -8,7 +8,7 @@
     <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
 
     <div style="margin-left: 30px">
-    <form name="profileForm" method="get" action="${pageContext.request.contextPath}/controller">
+    <form name="profileForm" method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="profile" />
 
         <input style="color: sienna; font-family: 'Book Antiqua',Serif; width: 150px; font-size: 18px;
@@ -19,7 +19,7 @@
     <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
 
     <div style="margin-left: 30px">
-    <form name="catalogueForm" method="get" action="${pageContext.request.contextPath}/controller">
+    <form name="catalogueForm" method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="catalogue" />
 
         <input style="color: sienna; font-family: 'Book Antiqua',Serif; width: 150px; font-size: 18px;

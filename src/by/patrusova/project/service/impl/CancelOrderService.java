@@ -1,10 +1,8 @@
 package by.patrusova.project.service.impl;
 
 import by.patrusova.project.dao.DaoFactory;
-import by.patrusova.project.dao.impl.BasketDao;
 import by.patrusova.project.dao.impl.OrderDao;
 import by.patrusova.project.entity.AbstractEntity;
-import by.patrusova.project.entity.impl.BasketPosition;
 import by.patrusova.project.entity.impl.Order;
 import by.patrusova.project.exception.DaoException;
 import by.patrusova.project.exception.ServiceException;

@@ -20,7 +20,7 @@ import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
 /**
- * Class for command to log in and to do associated activities accordingly with user's role
+ * Class for command to log in with associated activities accordingly with user's role
  * @autor Marianna Patrusova
  * @version 1.0
  */
@@ -29,7 +29,6 @@ public class LoginCommand implements ActionCommand {
     private static final Logger LOGGER = LogManager.getLogger();
     private final static String LOGIN = "login";
     private final static String PASSWORD = "password";
-    private final static String EMPTY = "";
     private final static String ERROR_LOGIN = "errorLoginPassMessage";
     private final static String MESSAGE_ERROR_LOGIN = "message.loginerror";
     private final static String PAGE_LOGIN = "page.login";
@@ -51,12 +50,6 @@ public class LoginCommand implements ActionCommand {
         String page;
         String login = request.getParameter(LOGIN);
         String pass = request.getParameter(PASSWORD);
-        if (login.equals(EMPTY) || pass.equals(EMPTY)) {
-            request.getSession().setAttribute(ERROR_LOGIN,
-                    MessageManager.getProperty(MESSAGE_ERROR_LOGIN));
-            page = ConfigurationManager.getProperty(PAGE_LOGIN);
-            return page;
-        }
         User user = new User();
         user.setLogin(login);
         user.setPassword(pass);
@@ -86,8 +79,8 @@ public class LoginCommand implements ActionCommand {
                         client.setIdUser(user.getId());
                         client = clientInfoService.getClient(client);        //extracting client from DB by ID
                         session.setAttribute(Role.CLIENT.getValue(), client);
-                        deleteService.doService(client.getId()); //delete previous "new" order of the same client
-                        Order order = new Order(); //create order with status "new"
+                        deleteService.doService(client.getId());             //delete previous "new" order
+                        Order order = new Order();                           //create order with status "new"
                         order.setIdClient(client.getId());
                         order.setOrderStatus(Order.Status.NEW.getValue());
                         Optional<AbstractEntity> opt = infoService.doService(order);

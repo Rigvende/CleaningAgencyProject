@@ -10669,3 +10669,96 @@ Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or u
 02-03 13:11 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@31d26e92
 02-03 13:11 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4c9ff642
 02-03 13:11 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+02-03 13:17 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+02-03 13:17 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+04-03 09:07 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+04-03 09:07 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+04-03 09:08 INFO  command.impl.LocaleCommand - ru_RU
+04-03 17:29 ERROR project.connection.ConnectionPool - Connection closing failed. 
+com.mysql.cj.jdbc.exceptions.CommunicationsException: The last packet successfully received from the server was 30,112,002 milliseconds ago. The last packet sent successfully to the server was 30,112,002 milliseconds ago. is longer than the server configured value of 'wait_timeout'. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property 'autoReconnect=true' to avoid this problem.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ConnectionImpl.commit(ConnectionImpl.java:814) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at by.patrusova.project.connection.ProxyConnection.commit(ProxyConnection.java:130) ~[classes/:?]
+	at by.patrusova.project.connection.ConnectionPool.closeConnection(ConnectionPool.java:129) [classes/:?]
+	at by.patrusova.project.connection.ConnectionPool.closeAllConnections(ConnectionPool.java:116) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.destroy(ControlServlet.java:82) [classes/:?]
+	at org.apache.catalina.core.StandardWrapper.unload(StandardWrapper.java:1280) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardWrapper.stopInternal(StandardWrapper.java:1581) [catalina.jar:9.0.17]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5376) [catalina.jar:9.0.17]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1393) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1382) [catalina.jar:9.0.17]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) [tomcat-util.jar:9.0.17]
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) [?:?]
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:969) [catalina.jar:9.0.17]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1393) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1382) [catalina.jar:9.0.17]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) [tomcat-util.jar:9.0.17]
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) [?:?]
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:969) [catalina.jar:9.0.17]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:475) [catalina.jar:9.0.17]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:990) [catalina.jar:9.0.17]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) [catalina.jar:9.0.17]
+	at org.apache.catalina.startup.Catalina.stop(Catalina.java:707) [catalina.jar:9.0.17]
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:669) [catalina.jar:9.0.17]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:350) [bootstrap.jar:9.0.17]
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:492) [bootstrap.jar:9.0.17]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: The last packet successfully received from the server was 30,112,002 milliseconds ago. The last packet sent successfully to the server was 30,112,002 milliseconds ago. is longer than the server configured value of 'wait_timeout'. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property 'autoReconnect=true' to avoid this problem.
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[?:?]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.protocol.a.NativeProtocol.send(NativeProtocol.java:570) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.protocol.a.NativeProtocol.sendCommand(NativeProtocol.java:625) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.protocol.a.NativeProtocol.sendQueryPacket(NativeProtocol.java:941) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.protocol.a.NativeProtocol.sendQueryString(NativeProtocol.java:887) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.NativeSession.execSQL(NativeSession.java:1073) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ConnectionImpl.commit(ConnectionImpl.java:802) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	... 35 more
+Caused by: java.net.SocketException: Software caused connection abort: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method) ~[?:?]
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:110) ~[?:?]
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:150) ~[?:?]
+	at java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81) ~[?:?]
+	at java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142) ~[?:?]
+	at com.mysql.cj.protocol.a.SimplePacketSender.send(SimplePacketSender.java:55) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.protocol.a.TimeTrackingPacketSender.send(TimeTrackingPacketSender.java:50) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.protocol.a.NativeProtocol.send(NativeProtocol.java:561) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.protocol.a.NativeProtocol.sendCommand(NativeProtocol.java:625) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.protocol.a.NativeProtocol.sendQueryPacket(NativeProtocol.java:941) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.protocol.a.NativeProtocol.sendQueryString(NativeProtocol.java:887) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.NativeSession.execSQL(NativeSession.java:1073) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ConnectionImpl.commit(ConnectionImpl.java:802) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	... 35 more
+04-03 17:29 ERROR project.servlet.ControlServlet - Cannot close all connections in connection pool.
+04-03 17:29 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+04-03 17:29 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+04-03 17:34 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@323dad53
+04-03 17:34 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@5c4afbd0
+04-03 17:34 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+04-03 17:36 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+04-03 17:36 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+04-03 19:47 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@541bc7f4
+04-03 19:47 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@45888e1f
+04-03 19:47 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+04-03 19:48 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+04-03 19:48 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+04-03 19:58 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@2acb1037
+04-03 19:58 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@51dfb5ed
+04-03 19:58 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.

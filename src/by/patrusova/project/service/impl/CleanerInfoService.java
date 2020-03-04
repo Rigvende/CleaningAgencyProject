@@ -1,7 +1,6 @@
 package by.patrusova.project.service.impl;
 
 import by.patrusova.project.dao.DaoFactory;
-import by.patrusova.project.dao.impl.BasketDao;
 import by.patrusova.project.dao.impl.CleanerDao;
 import by.patrusova.project.entity.AbstractEntity;
 import by.patrusova.project.entity.Role;
@@ -17,8 +16,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -54,7 +51,7 @@ public class CleanerInfoService implements Serviceable, EntityCreator {
     public Optional<AbstractEntity> createEntity(HttpServletRequest request) {
         Cleaner updatedCleaner = (Cleaner) request.getSession()
                 .getAttribute(Role.CLEANER.getValue());
-        if (!validate(request).containsValue(false)) {
+        if (isValidData(request)) {
             String commission = request.getParameter(COMMISSION);
             updatedCleaner.setCommission(BigDecimal.valueOf(Double.parseDouble(commission)));
             updatedCleaner.setNotes(request.getParameter(NOTES));
@@ -65,13 +62,12 @@ public class CleanerInfoService implements Serviceable, EntityCreator {
     }
 
     //validation
-    private Map<String, Boolean> validate(HttpServletRequest request) {
-        Map<String, Boolean> validationMap = new HashMap<>();
+    private boolean isValidData(HttpServletRequest request) {
         String commission = request.getParameter(COMMISSION);
         String notes = request.getParameter(NOTES);
-        validationMap.put(COMMISSION, NumberValidator.isValidDecimal(commission));
-        validationMap.put(NOTES, StringValidator.isValidStringSize(NOTES, notes));
-        return validationMap;
+        boolean a = NumberValidator.isValidDecimal(commission);
+        boolean b = StringValidator.isValidStringSize(NOTES, notes);
+        return a && b;
     }
 
     //get cleaner from DB

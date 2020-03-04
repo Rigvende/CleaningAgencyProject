@@ -16,8 +16,6 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -73,7 +71,7 @@ public class RegistrationService implements EntityCreator, Serviceable {
     @Override
     public Optional<AbstractEntity> createEntity(HttpServletRequest request) throws ServiceException {
         User newUser = new User();
-        if (!validate(request).containsValue(false)) {
+        if (isValidData(request)) {
             newUser.setId(0);
             newUser.setLogin(request.getParameter(LOGINREG));
             newUser.setPassword(request.getParameter(PASSWORDREG));
@@ -89,8 +87,7 @@ public class RegistrationService implements EntityCreator, Serviceable {
         }
     }
 
-    private Map<String, Boolean> validate(HttpServletRequest request) throws ServiceException {
-        Map<String, Boolean> validationMap = new HashMap<>();
+    private boolean isValidData(HttpServletRequest request) throws ServiceException {
         String login = request.getParameter(LOGINREG);
         String password = request.getParameter(PASSWORDREG);
         String passwordRepeated = request.getParameter(PASSWORD_AGAIN);
@@ -99,24 +96,22 @@ public class RegistrationService implements EntityCreator, Serviceable {
         String phone = request.getParameter(PHONE);
         String email = request.getParameter(EMAIL);
         String address = request.getParameter(ADDRESS);
+        boolean a;
         try {
-            validationMap.put(LOGINREG, RegistrationDataValidator.isValidLogin(login));
+            a = RegistrationDataValidator.isValidLogin(login);
         } catch (DaoException e) {
             LOGGER.log(Level.ERROR, "Cannot validate user, exception has occurred. ", e);
             throw new ServiceException(e);
         }
-        validationMap.put(PASSWORDREG,
-                (RegistrationDataValidator.isValidPassword(password)
-                && RegistrationDataValidator.isPasswordRepeated(password, passwordRepeated)));
-        validationMap.put(FIRSTNAME, RegistrationDataValidator.isValidName(name));
-        validationMap.put(LASTNAME,
-                RegistrationDataValidator.isValidLastname(lastname)
-                && StringValidator.isValidStringSize(LASTNAME, lastname));
-        validationMap.put(PHONE, RegistrationDataValidator.isValidPhone(phone));
-        validationMap.put(EMAIL,
-                RegistrationDataValidator.isValidEmail(email)
-                && StringValidator.isValidStringSize(EMAIL, email));
-        validationMap.put(ADDRESS, StringValidator.isValidStringSize(ADDRESS, address));
-        return validationMap;
+        boolean b = (RegistrationDataValidator.isValidPassword(password)
+                && RegistrationDataValidator.isPasswordRepeated(password, passwordRepeated));
+        boolean c = RegistrationDataValidator.isValidName(name);
+        boolean d = RegistrationDataValidator.isValidLastname(lastname)
+                && StringValidator.isValidStringSize(LASTNAME, lastname);
+        boolean e = RegistrationDataValidator.isValidPhone(phone);
+        boolean f = RegistrationDataValidator.isValidEmail(email)
+                && StringValidator.isValidStringSize(EMAIL, email);
+        boolean g = StringValidator.isValidStringSize(ADDRESS, address);
+        return (a && b && c && d && f && g);
     }
 }

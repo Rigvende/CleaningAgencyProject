@@ -17,7 +17,7 @@ import java.util.Iterator;
 import java.util.Optional;
 
 /**
- * Class for command to log out and to do associated activities
+ * Class for command to log out with associated activities
  * @autor Marianna Patrusova
  * @version 1.0
  */

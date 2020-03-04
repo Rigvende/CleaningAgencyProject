@@ -1,7 +1,6 @@
 package by.patrusova.project.service.impl;
 
 import by.patrusova.project.dao.DaoFactory;
-import by.patrusova.project.dao.impl.CleanerDao;
 import by.patrusova.project.dao.impl.ClientDao;
 import by.patrusova.project.dao.impl.OrderDao;
 import by.patrusova.project.entity.AbstractEntity;
@@ -19,8 +18,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -100,7 +97,7 @@ public class ClientInfoService implements Serviceable, EntityCreator {
                 .equals(Role.CLIENT.getValue())) {
             Client updatedClient = (Client) request.getSession()
                     .getAttribute(Role.CLIENT.getValue());
-            if (!validate(request).containsValue(false)) {
+            if (isValidData(request)) {
                 updatedClient.setLocation(request.getParameter(LOCATION));
                 updatedClient.setRelative(request.getParameter(RELATIVE));
                 return Optional.of(updatedClient);
@@ -110,7 +107,7 @@ public class ClientInfoService implements Serviceable, EntityCreator {
         } else {                                                            //changes made by admin
             Client updatedClient = (Client) request.getSession()
                     .getAttribute(Role.CLIENT.getValue());
-            if (!validate(request).containsValue(false)) {
+            if (isValidData(request)) {
                 String discount = request.getParameter(DISCOUNT);
                 updatedClient.setDiscount(BigDecimal.valueOf(Double.parseDouble(discount)));
                 updatedClient.setNotes(request.getParameter(NOTES));
@@ -122,22 +119,20 @@ public class ClientInfoService implements Serviceable, EntityCreator {
     }
 
     //validation
-    private Map<String, Boolean> validate(HttpServletRequest request) {
-        Map<String, Boolean> validationMap = new HashMap<>();                 //changes made by client
-        if (request.getSession().getAttribute(ROLE).equals(Role.CLIENT.getValue())) {
+    private boolean isValidData(HttpServletRequest request) {
+        if (request.getSession().getAttribute(ROLE).equals(Role.CLIENT.getValue())) { //changes made by client
             String location = request.getParameter(LOCATION);
             String relative = request.getParameter(RELATIVE);
-            validationMap.put(LOCATION,
-                    StringValidator.isValidStringSize(LOCATION, location));
-            validationMap.put(RELATIVE,
-                    StringValidator.isValidStringSize(RELATIVE, relative));
-        } else {                                                                //changes made by admin
+            boolean a = StringValidator.isValidStringSize(LOCATION, location);
+            boolean b = StringValidator.isValidStringSize(RELATIVE, relative);
+            return a && b;
+        } else {                                                                      //changes made by admin
             String discount = request.getParameter(DISCOUNT);
             String notes = request.getParameter(NOTES);
-            validationMap.put(DISCOUNT, NumberValidator.isValidDecimal(discount));
-            validationMap.put(NOTES, StringValidator.isValidStringSize(NOTES, notes));
+            boolean c = NumberValidator.isValidDecimal(discount);
+            boolean d = StringValidator.isValidStringSize(NOTES, notes);
+            return c && d;
         }
-        return validationMap;
     }
 
     //get client from DB

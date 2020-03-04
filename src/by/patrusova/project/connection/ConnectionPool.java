@@ -138,16 +138,14 @@ public class ConnectionPool {
 
     //deregister all drivers while closing connection
     private void deregisterDrivers() {
-        Enumeration<Driver> drivers = DriverManager.getDrivers();
-        while (drivers.hasMoreElements()) {
-            Driver driver = drivers.nextElement();
+        DriverManager.getDrivers().asIterator().forEachRemaining(driver -> {
             try {
                 DriverManager.deregisterDriver(driver);
                 LOGGER.log(Level.INFO, String.format("Deregister of jdbc driver %s", driver));
             } catch (SQLException e) {
                 LOGGER.log(Level.ERROR, String.format("Error while deregistering driver %s", driver));
             }
-        }
+        });
     }
 
     /**

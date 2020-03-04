@@ -15,8 +15,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -90,7 +88,7 @@ public class OrderInfoService implements Serviceable, EntityCreator {
     public Optional<AbstractEntity> createEntity(HttpServletRequest request) throws ServiceException {
         Order updatedOrder = (Order) request.getSession()
                 .getAttribute(ORDER);
-        if (!validate(request).containsValue(false)) {
+        if (isValidData(request)) {
             updatedOrder.setIdCleaner(Long.parseLong(request.getParameter(ID_CLEANER)));
             updatedOrder.setOrderStatus(request.getParameter(STATUS));
             return Optional.of(updatedOrder);
@@ -99,13 +97,12 @@ public class OrderInfoService implements Serviceable, EntityCreator {
     }
 
     //validation while creating
-    private Map<String, Boolean> validate(HttpServletRequest request) throws ServiceException {
-        Map<String, Boolean> validationMap = new HashMap<>();
+    private boolean isValidData(HttpServletRequest request) throws ServiceException {
         String id = request.getParameter(ID_CLEANER);
         String status = request.getParameter(STATUS);
-        validationMap.put(ID_CLEANER, NumberValidator.isValidCleanerID(id));
-        validationMap.put(STATUS, StringValidator.isValidStatus(status));
-        return validationMap;
+        boolean a = NumberValidator.isValidCleanerID(id);
+        boolean b = StringValidator.isValidStatus(status);
+        return a && b;
     }
 
     //get existing order in DB

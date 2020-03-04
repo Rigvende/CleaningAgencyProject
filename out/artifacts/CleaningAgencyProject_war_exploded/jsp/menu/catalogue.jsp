@@ -28,7 +28,7 @@ ${orderNew}
     <c:if test="${ not empty user and user.role eq 'client' }">
     <br/>
     <div style="margin-left: 50px">
-    <form name="basketForm" method="post" action="${pageContext.request.contextPath}/controller">
+    <form name="basketForm" method="get" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="basket" />
     <input style="color: sienna; font-family: 'Book Antiqua',Serif; width: 200px; font-size: 18px;
     height: 30px" type="submit" value="<fmt:message key="button.tobasket"/>"/>

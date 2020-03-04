@@ -15,8 +15,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -33,6 +31,7 @@ public class ServiceInfoService implements Serviceable, EntityCreator {
     private final static String COST = "cost";
     private final static String SALES = "sales";
 
+    //update existing service
     @Override
     public Optional<AbstractEntity> doService(AbstractEntity entity) throws ServiceException {
         Service service = (Service) entity;
@@ -46,7 +45,7 @@ public class ServiceInfoService implements Serviceable, EntityCreator {
         }
     }
 
-    //add service
+    //add new service
     public Optional<AbstractEntity> doServiceAdd(AbstractEntity entity) throws ServiceException {
         Service service = (Service) entity;
         try {
@@ -57,49 +56,33 @@ public class ServiceInfoService implements Serviceable, EntityCreator {
         }
     }
 
-    //create instance of service with changes
+    //create instance of service with changes or create new instance of service
     @Override
     public Optional<AbstractEntity> createEntity(HttpServletRequest request) {
-        Service updatedService = (Service) request.getSession()
-                .getAttribute(SERVICE);
-        if (!validate(request).containsValue(false)) {
-            updatedService.setCost(BigDecimal.valueOf(Double.parseDouble
+        Service service =
+                request.getSession().getAttribute(SERVICE) == null ?
+                new Service() : (Service) request.getSession().getAttribute(SERVICE);
+        if (isValidData(request)) {
+            service.setCost(BigDecimal.valueOf(Double.parseDouble
                     (request.getParameter(COST))));
-            updatedService.setSales(BigDecimal.valueOf(Double.parseDouble
+            service.setSales(BigDecimal.valueOf(Double.parseDouble
                     (request.getParameter(SALES))));
-            updatedService.setService(request.getParameter(SERVICE_CHANGED));
-            return Optional.of(updatedService);
-        } else {
-            return Optional.empty();
-        }
-    }
-
-    //create new service in DB
-    public Optional<AbstractEntity> createNewEntity(HttpServletRequest request) {
-        Service newService = new Service();
-        if (!validate(request).containsValue(false)) {
-            newService.setId(0);
-            newService.setCost(BigDecimal.valueOf(Double.parseDouble
-                    (request.getParameter(COST))));
-            newService.setSales(BigDecimal.valueOf(Double.parseDouble
-                    (request.getParameter(SALES))));
-            newService.setService(request.getParameter(SERVICE_CHANGED));
-            return Optional.of(newService);
+            service.setService(request.getParameter(SERVICE_CHANGED));
+            return Optional.of(service);
         } else {
             return Optional.empty();
         }
     }
 
     //validation
-    private Map<String, Boolean> validate(HttpServletRequest request) {
-        Map<String, Boolean> validationMap = new HashMap<>();
+    private boolean isValidData(HttpServletRequest request) {
         String service = request.getParameter(SERVICE_CHANGED);
         String cost = request.getParameter(COST);
         String sales = request.getParameter(SALES);
-        validationMap.put(SERVICE_CHANGED, StringValidator.isValidStringSize(SERVICE, service));
-        validationMap.put(SALES, NumberValidator.isValidDecimal(sales));
-        validationMap.put(COST, NumberValidator.isValidCost(cost));
-        return validationMap;
+        boolean a = StringValidator.isValidStringSize(SERVICE, service);
+        boolean b = NumberValidator.isValidDecimal(sales);
+        boolean c = NumberValidator.isValidCost(cost);
+        return a && b && c;
     }
 
     //get existing service from DB

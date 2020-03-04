@@ -30,7 +30,7 @@
     <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200">
 
     <div style="margin-left: 30px">
-    <form name="basketForm" method="post" action="${pageContext.request.contextPath}/controller">
+    <form name="basketForm" method="get" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="basket" />
 
         <input style="color: sienna; font-family: 'Book Antiqua',Serif; width: 150px; font-size: 18px;

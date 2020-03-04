@@ -22,6 +22,7 @@ import java.util.Optional;
 public class ChangeServiceCommand implements ActionCommand {
 
     private final static Logger LOGGER = LogManager.getLogger();
+    private final static String SERVICE = "service";
     private final static String ERROR_CHANGE_SERVICE = "errorChangeServiceMessage";
     private final static String MESSAGE_ERROR_CHANGE_SERVICE = "message.changeerror";
     private final static String PAGE_CHANGE_SERVICE = "page.changeservice";
@@ -35,6 +36,7 @@ public class ChangeServiceCommand implements ActionCommand {
             if (opt.isPresent()) {
                 Service service = (Service) opt.get();
                 Optional<AbstractEntity> optional = infoService.doService(service);
+                request.getSession().removeAttribute(SERVICE);
                 if (optional.isPresent()) {
                     return ConfigurationManager.getProperty(PAGE_CONFIRM);
                 }

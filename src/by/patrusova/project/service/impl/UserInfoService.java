@@ -14,8 +14,6 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -55,7 +53,7 @@ public class UserInfoService implements Serviceable, EntityCreator {
     @Override
     public Optional<AbstractEntity> createEntity(HttpServletRequest request) {
         User updatedUser = (User) request.getSession().getAttribute(USER);
-        if (!validate(request).containsValue(false)) {
+        if (isValidData(request)) {
             updatedUser.setName(request.getParameter(FIRSTNAME));
             updatedUser.setLastname(request.getParameter(LASTNAME));
             updatedUser.setRole(updatedUser.getRole());
@@ -69,21 +67,19 @@ public class UserInfoService implements Serviceable, EntityCreator {
     }
 
     //validation
-    private Map<String, Boolean> validate(HttpServletRequest request) {
-        Map<String, Boolean> validationMap = new HashMap<>();
+    private boolean isValidData(HttpServletRequest request) {
         String name = request.getParameter(FIRSTNAME);
         String lastname = request.getParameter(LASTNAME);
         String phone = request.getParameter(PHONE);
         String email = request.getParameter(EMAIL);
         String address = request.getParameter(ADDRESS);
-        validationMap.put(FIRSTNAME, RegistrationDataValidator.isValidName(name));
-        validationMap.put(LASTNAME,
-                RegistrationDataValidator.isValidLastname(lastname)
-                && StringValidator.isValidStringSize(LASTNAME, lastname));
-        validationMap.put(PHONE, RegistrationDataValidator.isValidPhone(phone));
-        validationMap.put(EMAIL, RegistrationDataValidator.isValidEmail(email)
-                && StringValidator.isValidStringSize(EMAIL, email));
-        validationMap.put(ADDRESS, StringValidator.isValidStringSize(ADDRESS, address));
-        return validationMap;
+        boolean a = RegistrationDataValidator.isValidName(name);
+        boolean b = RegistrationDataValidator.isValidLastname(lastname)
+                    && StringValidator.isValidStringSize(LASTNAME, lastname);
+        boolean c = RegistrationDataValidator.isValidPhone(phone);
+        boolean d = RegistrationDataValidator.isValidEmail(email)
+                    && StringValidator.isValidStringSize(EMAIL, email);
+        boolean e = StringValidator.isValidStringSize(ADDRESS, address);
+        return a && b && c && d && e;
     }
 }

@@ -7,7 +7,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Class for validating Registration data from request.
+ * Class for validating registration data from request.
  * @autor Marianna Patrusova
  * @version 1.0
  */

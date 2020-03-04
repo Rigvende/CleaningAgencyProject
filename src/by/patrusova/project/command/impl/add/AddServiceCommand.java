@@ -30,7 +30,7 @@ public class AddServiceCommand implements ActionCommand {
 
     public String execute(HttpServletRequest request) throws CommandException {
         try {
-            Optional<AbstractEntity> optional = infoService.createNewEntity(request);
+            Optional<AbstractEntity> optional = infoService.createEntity(request);
             if (optional.isPresent()) {
                 Service service = (Service) optional.get();
                 Optional<AbstractEntity> opt = infoService.doServiceAdd(service);
