@@ -33,7 +33,7 @@
 <br/><br/>
 
 <div style="float: right">
-    <form name="orderForm" method="post" action="${pageContext.request.contextPath}/controller">
+    <form name="orderForm" method="get" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="showordersclient" />
         <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 250px; font-size: 20px;
             height: 40px; margin-right: 50px" type="submit" value="<fmt:message key="button.showorders"/>"/>
