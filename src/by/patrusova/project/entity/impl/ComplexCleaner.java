@@ -1,13 +1,14 @@
 package by.patrusova.project.entity.impl;
 
 import by.patrusova.project.entity.AbstractEntity;
+import java.io.Serializable;
 
 /**
  * Class of entity-type for storing complex cleaner's and user's data
  * @autor Marianna Patrusova
  * @version 1.0
  */
-public class ComplexCleaner extends AbstractEntity {
+public class ComplexCleaner extends AbstractEntity implements Serializable, Cloneable {
 
     private static final long serialVersionUID = 7L;
     private User user;

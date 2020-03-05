@@ -1,6 +1,7 @@
 package by.patrusova.project.entity.impl;
 
 import by.patrusova.project.entity.AbstractEntity;
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
@@ -8,7 +9,7 @@ import java.time.LocalDate;
  * @autor Marianna Patrusova
  * @version 1.0
  */
-public class Order extends AbstractEntity {
+public class Order extends AbstractEntity implements Serializable, Cloneable {
 
     private static final long serialVersionUID = 5L;
     private long id;

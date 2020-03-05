@@ -1,13 +1,14 @@
 package by.patrusova.project.entity.impl;
 
 import by.patrusova.project.entity.AbstractEntity;
+import java.io.Serializable;
 
 /**
  * Class of entity-type for storing complex order's, cleaner's, client's and user's data
  * @autor Marianna Patrusova
  * @version 1.0
  */
-public class ComplexOrder extends AbstractEntity {
+public class ComplexOrder extends AbstractEntity implements Serializable, Cloneable {
 
     private static final long serialVersionUID = 9L;
     private User user;

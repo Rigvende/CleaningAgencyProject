@@ -1,6 +1,7 @@
 package by.patrusova.project.entity.impl;
 
 import by.patrusova.project.entity.AbstractEntity;
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
@@ -8,7 +9,7 @@ import java.math.BigDecimal;
  * @autor Marianna Patrusova
  * @version 1.0
  */
-public class Client extends AbstractEntity {
+public class Client extends AbstractEntity implements Serializable, Cloneable {
 
     private static final long serialVersionUID = 2L;
     private long id;

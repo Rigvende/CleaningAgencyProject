@@ -15,10 +15,7 @@
     <c:if test="${not empty user and user.role eq 'admin'}">
         <jsp:forward page="/jsp/resultset/catalogueList.jsp"/>
     </c:if>
-${orderNew}
-    ${user}
-    ${client}
-    ${basketList}
+
     <jsp:include page="/WEB-INF/view/header.jsp"/>
 
     <div style="float: right">

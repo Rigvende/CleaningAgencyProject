@@ -10771,3 +10771,5 @@ Caused by: java.net.SocketException: Software caused connection abort: socket wr
 04-03 20:18 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
 04-03 20:18 INFO  command.impl.LocaleCommand - ru_RU
 04-03 20:18 INFO  command.impl.LocaleCommand - en_EN
+05-03 10:31 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+05-03 10:31 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
