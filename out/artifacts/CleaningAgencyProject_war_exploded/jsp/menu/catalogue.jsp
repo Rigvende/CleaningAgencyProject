@@ -27,8 +27,8 @@
     <div style="margin-left: 50px">
     <form name="basketForm" method="get" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="basket" />
-    <input style="color: sienna; font-family: 'Book Antiqua',Serif; width: 200px; font-size: 18px;
-    height: 30px" type="submit" value="<fmt:message key="button.tobasket"/>"/>
+    <input style="color: sienna; font-family: 'Book Antiqua',Serif; width: 250px; font-size: 22px;
+    height: 40px" type="submit" value="<fmt:message key="button.tobasket"/>"/>
     </form>
     </div>
     </c:if>
@@ -87,7 +87,7 @@
     <c:if test="${ not empty user and user.role eq 'client' }">
     <th><fmt:message key="field.check"/></th>
     </c:if>
-    </tr>
+    </tr>d
 
     <c:forEach var="catalogue" items="${catalogueList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
         <tr>
@@ -100,13 +100,10 @@
         <form name="positionForm" method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="select" />
         <input type="hidden" name="position" value="${catalogue.id}" />
-        <label>
-        <input type="checkbox" name="choice" value="choice" />
-        </label>
-        <input type="submit" value="<fmt:message key="button.confirm"/>" />
+        <input style="color: darkblue; background-color: lightgoldenrodyellow; font-family: 'Palatino Linotype',Serif; width: 165px; font-size: 16px;
+            height: 30px" type="submit" value="<fmt:message key="button.choice"/>" />
         </form>
         </td>
-
         </c:if>
         </tr>
     </c:forEach>

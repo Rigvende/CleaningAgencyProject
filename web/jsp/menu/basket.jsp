@@ -26,19 +26,6 @@
     </div>
     <br/><br/><br/><br/>
 
-    <c:set var="positions" scope="session" value="${basketList}"/>
-    <c:set var="totalCount" scope="session" value="${basketList.size()}"/>
-    <c:set var="perPage" scope="session" value="${10}"/>
-    <c:set var="pageStart" value="${param.start}"/>
-
-    <c:if test="${empty pageStart or pageStart < 0}">
-        <c:set var="pageStart" value="0"/>
-    </c:if>
-
-    <c:if test="${totalCount < pageStart}">
-        <c:set var="pageStart" value="${pageStart - perPage}"/>
-    </c:if>
-
 
     <c:if test="${empty basketList}">
     <div style="color: #0c4f5b; margin-left: 50px"><h3> <fmt:message key="text.emptybasket"/></h3></div>
@@ -63,16 +50,6 @@
         </form>
         <br/>
 
-        <div style="text-align: right; margin-right: 50px">
-        <form name="confirmOrderForm" method="post" action="${pageContext.request.contextPath}/controller">
-        <input type="hidden" name="command" value="orderredirect" />
-
-        <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 250px; font-size: 20px;
-        height: 40px;" type="submit" value="<fmt:message key="button.makeorder"/>"/>
-        </form>
-        </div>
-        <br/>
-
         <div style="color: #0c4f5b; font-size: 16px; font-family: 'Palatino Linotype', serif; margin-left: 50px">
         <fmt:message key="text.positions3"/>
         <br/>
@@ -85,9 +62,6 @@
     <h5><u style="color: #0c4f5b; font-size: 16px; font-family: 'Palatino Linotype', serif">
     <fmt:message key="text.positions"/>
     </u></h5>
-        <a href="?start=${pageStart - perPage}"><<</a>
-        ${pageStart + 1} - ${pageStart + perPage}
-        <a href="?start=${pageStart + perPage}">>></a>
     </div>
     <br/>
 
@@ -114,10 +88,18 @@
         <div style="color: #0c4f5b; font-size: 20px; font-family: 'Palatino Linotype', serif; margin-left: 50px">
         <fmt:message key="text.positions2"/> ${totalCost}
         </div>
-
-
     </div>
     <br/>
+
+        <div style="text-align: center">
+        <form name="confirmOrderForm" method="post" action="${pageContext.request.contextPath}/controller">
+        <input type="hidden" name="command" value="orderredirect" />
+
+        <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 250px; font-size: 20px;
+        height: 40px;" type="submit" value="<fmt:message key="button.makeorder"/>"/>
+        </form>
+        </div>
+        <br/>
     </c:if>
 
     <jsp:include page="/WEB-INF/view/footer.jsp"/>

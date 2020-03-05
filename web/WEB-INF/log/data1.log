@@ -10773,3 +10773,31 @@ Caused by: java.net.SocketException: Software caused connection abort: socket wr
 04-03 20:18 INFO  command.impl.LocaleCommand - en_EN
 05-03 10:31 INFO  project.connection.ConnectionPool - Registering jdbc driver.
 05-03 10:31 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+05-03 18:10 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@81f76fd
+05-03 18:10 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@13e499ed
+05-03 18:10 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+05-03 18:11 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+05-03 18:11 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+05-03 18:27 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4f9d4aff
+05-03 18:27 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@3dbed27b
+05-03 18:27 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+05-03 18:27 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+05-03 18:27 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+05-03 20:03 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@63a2802a
+05-03 20:03 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@1054ff3c
+05-03 20:03 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+05-03 20:04 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+05-03 20:04 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+05-03 20:17 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@31d26e92
+05-03 20:17 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4c9ff642
+05-03 20:17 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+05-03 20:18 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+05-03 20:18 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+05-03 20:32 INFO  command.impl.LocaleCommand - ru_RU
+05-03 20:32 INFO  command.impl.LocaleCommand - en_EN
+05-03 20:32 INFO  command.impl.LocaleCommand - ru_RU
+05-03 20:32 INFO  command.impl.LocaleCommand - en_EN
+05-03 20:32 INFO  command.impl.LocaleCommand - ru_RU
+05-03 20:32 INFO  command.impl.LocaleCommand - en_EN
+05-03 20:32 INFO  command.impl.LocaleCommand - ru_RU
+05-03 20:32 INFO  command.impl.LocaleCommand - en_EN
