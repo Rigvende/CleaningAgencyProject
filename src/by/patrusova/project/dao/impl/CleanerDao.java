@@ -169,10 +169,11 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
         Statement statement = null;
         try {
             statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(SQL_SELECT_ALL_CLEANERS);
-            while (resultSet.next()) {
-                Cleaner cleaner = EntityFactory.createCleaner(resultSet);
-                cleaners.add(cleaner);
+            try(ResultSet resultSet = statement.executeQuery(SQL_SELECT_ALL_CLEANERS)) {
+                while (resultSet.next()) {
+                    Cleaner cleaner = EntityFactory.createCleaner(resultSet);
+                    cleaners.add(cleaner);
+                }
             }
             connection.commit();
         } catch (SQLException e) {
@@ -208,8 +209,9 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
         try {
             preparedStatement = connection.prepareStatement(SQL_SELECT_CLEANER_BY_ID);
             preparedStatement.setLong(1, id);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            cleaner = resultSet.next() ? EntityFactory.createCleaner(resultSet) : null;
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                cleaner = resultSet.next() ? EntityFactory.createCleaner(resultSet) : null;
+            }
             connection.commit();
         } catch (SQLException e) {
             LOGGER.log(Level.ERROR,
@@ -239,8 +241,7 @@ public class CleanerDao extends AbstractDao<AbstractEntity> {
             throw new DaoException(e);
         }
         Statement statement = connection.createStatement();
-        try {
-            ResultSet resultSet = statement.executeQuery(SQL_SELECT_ID); //проверка при регистрации
+        try (ResultSet resultSet = statement.executeQuery(SQL_SELECT_ID)) { //проверка при регистрации
             while (resultSet.next()) {
                 if (Long.parseLong(resultSet.getString(1)) == id) {
                     connection.commit();

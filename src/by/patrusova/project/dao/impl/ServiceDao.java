@@ -172,10 +172,11 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
         Statement statement = null;
         try {
             statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(SQL_SELECT_ALL_SERVICES);
-            while (resultSet.next()) {
-                Service service = EntityFactory.createService(resultSet);
-                services.add(service);
+            try (ResultSet resultSet = statement.executeQuery(SQL_SELECT_ALL_SERVICES)) {
+                while (resultSet.next()) {
+                    Service service = EntityFactory.createService(resultSet);
+                    services.add(service);
+                }
             }
             connection.commit();
         } catch (SQLException e) {
@@ -211,9 +212,10 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
         try {
             preparedStatement = connection.prepareStatement(SQL_SELECT_SERVICE_BY_ID);
             preparedStatement.setLong(1, id);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            resultSet.next();
-            service = EntityFactory.createService(resultSet);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                resultSet.next();
+                service = EntityFactory.createService(resultSet);
+            }
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
@@ -243,8 +245,7 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
             throw new DaoException(e);
         }
         Statement statement = connection.createStatement();
-        try {
-            ResultSet resultSet = statement.executeQuery(SQL_SELECT_ID);
+        try (ResultSet resultSet = statement.executeQuery(SQL_SELECT_ID)) {
             while (resultSet.next()) {
                 if (Long.parseLong(resultSet.getString(1)) == id) {
                     connection.commit();
@@ -269,6 +270,4 @@ public class ServiceDao extends AbstractDao<AbstractEntity> {
         }
         return false;
     }
-
-
 }

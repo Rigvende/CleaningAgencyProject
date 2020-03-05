@@ -206,10 +206,11 @@ public class UserDao extends AbstractDao<AbstractEntity> {
         Statement statement = null;
         try {
             statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(SQL_SELECT_ALL_USERS);
-            while (resultSet.next()) {
-                User user = EntityFactory.createUser(resultSet);
-                users.add(user);
+            try (ResultSet resultSet = statement.executeQuery(SQL_SELECT_ALL_USERS)) {
+                while (resultSet.next()) {
+                    User user = EntityFactory.createUser(resultSet);
+                    users.add(user);
+                }
             }
             connection.commit();
         } catch (SQLException e) {
@@ -245,9 +246,10 @@ public class UserDao extends AbstractDao<AbstractEntity> {
         try {
             preparedStatement = connection.prepareStatement(SQL_SELECT_USER_BY_ID);
             preparedStatement.setLong(1, id);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                user = EntityFactory.createUser(resultSet);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    user = EntityFactory.createUser(resultSet);
+                }
             }
             connection.commit();
         } catch (SQLException e) {
@@ -283,9 +285,10 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             preparedStatement = connection.prepareStatement(SQL_SELECT_USER_BY_LOGIN_PASS);
             preparedStatement.setString(1, login);
             preparedStatement.setString(2, pass);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                user = EntityFactory.createUser(resultSet);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    user = EntityFactory.createUser(resultSet);
+                }
             }
             connection.commit();
         } catch (SQLException | DaoException e) {
@@ -316,8 +319,7 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             throw new DaoException(e);
         }
         Statement statement = connection.createStatement();
-        try {
-            ResultSet resultSet = statement.executeQuery(SQL_SELECT_LOGIN); //проверка при регистрации
+        try (ResultSet resultSet = statement.executeQuery(SQL_SELECT_LOGIN)) { //проверка при регистрации
             while (resultSet.next()) {
                 if (resultSet.getString(1).equals(login)) {
                     connection.commit();
@@ -358,30 +360,32 @@ public class UserDao extends AbstractDao<AbstractEntity> {
                 case "cleaner":
                     preparedStatement = connection.prepareStatement(SQL_FIND_CLEANERS_BY_ROLE);
                     preparedStatement.setString(1, role);
-                    ResultSet resultSet1 = preparedStatement.executeQuery();
-                    while (resultSet1.next()) {
-                        ComplexCleaner cleaner = EntityFactory.createCleanerComplex(resultSet1);
-                        users.add(cleaner);
+                    try (ResultSet resultSet1 = preparedStatement.executeQuery()) {
+                        while (resultSet1.next()) {
+                            ComplexCleaner cleaner = EntityFactory.createCleanerComplex(resultSet1);
+                            users.add(cleaner);
+                        }
                     }
                     break;
                 case "client":
                     preparedStatement = connection.prepareStatement(SQL_FIND_CLIENTS_BY_ROLE);
                     preparedStatement.setString(1, role);
-                    ResultSet resultSet2 = preparedStatement.executeQuery();
-                    while (resultSet2.next()) {
-                        ComplexClient client = EntityFactory.createClientComplex(resultSet2);
-                        users.add(client);
+                    try (ResultSet resultSet2 = preparedStatement.executeQuery()) {
+                        while (resultSet2.next()) {
+                            ComplexClient client = EntityFactory.createClientComplex(resultSet2);
+                            users.add(client);
+                        }
                     }
                     break;
                 case "guest":
                 case "admin":
-                default:
                     preparedStatement = connection.prepareStatement(SQL_FIND_USERS_BY_ROLE);
                     preparedStatement.setString(1, role);
-                    ResultSet resultSet3 = preparedStatement.executeQuery();
-                    while (resultSet3.next()) {
-                        User user = EntityFactory.createUser(resultSet3);
-                        users.add(user);
+                    try (ResultSet resultSet3 = preparedStatement.executeQuery()) {
+                        while (resultSet3.next()) {
+                            User user = EntityFactory.createUser(resultSet3);
+                            users.add(user);
+                        }
                     }
                     break;
             }
@@ -414,8 +418,7 @@ public class UserDao extends AbstractDao<AbstractEntity> {
             throw new DaoException(e);
         }
         Statement statement = connection.createStatement();
-        try {
-            ResultSet resultSet = statement.executeQuery(SQL_SELECT_ID);
+        try (ResultSet resultSet = statement.executeQuery(SQL_SELECT_ID)) {
             while (resultSet.next()) {
                 if (Long.parseLong(resultSet.getString(1)) == id) {
                     connection.commit();
@@ -454,12 +457,13 @@ public class UserDao extends AbstractDao<AbstractEntity> {
         try {
             preparedStatement = connection.prepareStatement(SQL_FIND_USER_BY_ID_CLIENT);
             preparedStatement.setLong(1, id);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                user.setName(resultSet.getString(NAME));
-                user.setEmail(resultSet.getString(EMAIL));
-            } else {
-                user = null;
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    user.setName(resultSet.getString(NAME));
+                    user.setEmail(resultSet.getString(EMAIL));
+                } else {
+                    user = null;
+                }
             }
             connection.commit();
         } catch (SQLException e) {

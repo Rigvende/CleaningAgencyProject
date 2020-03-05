@@ -257,10 +257,11 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
         Statement statement = null;
         try {
             statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(SQL_SELECT_ALL_ORDERS);
-            while (resultSet.next()) {
-                Order order = EntityFactory.createOrder(resultSet);
-                orders.add(order);
+            try (ResultSet resultSet = statement.executeQuery(SQL_SELECT_ALL_ORDERS)) {
+                while (resultSet.next()) {
+                    Order order = EntityFactory.createOrder(resultSet);
+                    orders.add(order);
+                }
             }
             connection.commit();
         } catch (SQLException e) {
@@ -296,8 +297,9 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
         try {
             preparedStatement = connection.prepareStatement(SQL_SELECT_ORDER_BY_ID);
             preparedStatement.setLong(1, id);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            order = resultSet.next() ? EntityFactory.createOrder(resultSet) : null;
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                order = resultSet.next() ? EntityFactory.createOrder(resultSet) : null;
+            }
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
@@ -333,17 +335,19 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
                 case "cleaner":
                     preparedStatement = connection.prepareStatement(SQL_FIND_ORDERS_BY_CLEANER);
                     preparedStatement.setLong(1, id);
-                    ResultSet resultSet1 = preparedStatement.executeQuery();
-                    while (resultSet1.next()) {
-                        result.add(EntityFactory.createOrderComplex(resultSet1));
+                    try (ResultSet resultSet1 = preparedStatement.executeQuery()) {
+                        while (resultSet1.next()) {
+                            result.add(EntityFactory.createOrderComplex(resultSet1));
+                        }
                     }
                     break;
                 case "client":
                     preparedStatement = connection.prepareStatement(SQL_FIND_ORDERS_BY_CLIENT);
                     preparedStatement.setLong(1, id);
-                    ResultSet resultSet2 = preparedStatement.executeQuery();
-                    while (resultSet2.next()) {
-                        result.add(EntityFactory.createOrderComplex(resultSet2));
+                    try (ResultSet resultSet2 = preparedStatement.executeQuery()) {
+                        while (resultSet2.next()) {
+                            result.add(EntityFactory.createOrderComplex(resultSet2));
+                        }
                     }
                     break;
             }
@@ -415,8 +419,7 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             throw new DaoException(e);
         }
         Statement statement = connection.createStatement();
-        try {
-            ResultSet resultSet = statement.executeQuery(SQL_SELECT_ID);
+        try (ResultSet resultSet = statement.executeQuery(SQL_SELECT_ID)) {
             while (resultSet.next()) {
                 if (Long.parseLong(resultSet.getString(1)) == id) {
                     connection.commit();
@@ -498,9 +501,10 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             if (order.getOrderStatus().equals(Order.Status.NEW.getValue())) {
                 preparedStatement = connection.prepareStatement(SQL_FIND_NEW);
                 preparedStatement.setLong(1, order.getIdClient());
-                ResultSet resultSet = preparedStatement.executeQuery();
-                if (resultSet.next()) {
-                    order.setId(resultSet.getLong(ID_ORDER));
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        order.setId(resultSet.getLong(ID_ORDER));
+                    }
                 }
                 connection.commit();
             }
@@ -535,11 +539,12 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
         try {
             preparedStatement = connection.prepareStatement(SQL_FIND_NEW);
             preparedStatement.setLong(1, idClient);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (!resultSet.next()) {
-                return 0;
-            } else {
-                return resultSet.getLong(ID_ORDER);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (!resultSet.next()) {
+                    return 0;
+                } else {
+                    return resultSet.getLong(ID_ORDER);
+                }
             }
         } catch (SQLException e) {
             if (connection != null) {
@@ -577,21 +582,22 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             preparedStatement2.setLong(1, id);
             preparedStatement3 = connection.prepareStatement(SQL_TOTAL_DISCOUNT);
             preparedStatement3.setLong(1, id);
-            ResultSet resultSet1 = preparedStatement1.executeQuery();
-            ResultSet resultSet2 = preparedStatement2.executeQuery();
-            ResultSet resultSet3 = preparedStatement3.executeQuery();
-            BigDecimal totalCost;
-            BigDecimal totalSale;
-            BigDecimal totalDiscount;
-            if (!resultSet1.next()) {
-                return BigDecimal.valueOf(0.0);
-            } else {
-                totalCost = resultSet1.getBigDecimal(TOTAL_COST);
-                totalSale = resultSet2.next() ?
-                        resultSet2.getBigDecimal(TOTAL_SALE) : BigDecimal.valueOf(0.0);
-                totalDiscount = resultSet3.next() ?
-                        resultSet3.getBigDecimal(TOTAL_DISCOUNT) : BigDecimal.valueOf(0.0);
-                return totalCost.subtract(totalSale).subtract(totalDiscount);
+            try (ResultSet resultSet1 = preparedStatement1.executeQuery();
+                 ResultSet resultSet2 = preparedStatement2.executeQuery();
+                 ResultSet resultSet3 = preparedStatement3.executeQuery()) {
+                BigDecimal totalCost;
+                BigDecimal totalSale;
+                BigDecimal totalDiscount;
+                if (!resultSet1.next()) {
+                    return BigDecimal.valueOf(0.0);
+                } else {
+                    totalCost = resultSet1.getBigDecimal(TOTAL_COST);
+                    totalSale = resultSet2.next() ?
+                            resultSet2.getBigDecimal(TOTAL_SALE) : BigDecimal.valueOf(0.0);
+                    totalDiscount = resultSet3.next() ?
+                            resultSet3.getBigDecimal(TOTAL_DISCOUNT) : BigDecimal.valueOf(0.0);
+                    return totalCost.subtract(totalSale).subtract(totalDiscount);
+                }
             }
         } catch (SQLException e) {
             if (connection != null) {

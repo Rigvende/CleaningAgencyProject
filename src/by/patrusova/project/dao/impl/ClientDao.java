@@ -179,10 +179,11 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
         Statement statement = null;
         try {
             statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(SQL_SELECT_ALL_CLIENTS);
-            while (resultSet.next()) {
-                Client client = EntityFactory.createClient(resultSet);
-                clients.add(client);
+            try (ResultSet resultSet = statement.executeQuery(SQL_SELECT_ALL_CLIENTS)) {
+                while (resultSet.next()) {
+                    Client client = EntityFactory.createClient(resultSet);
+                    clients.add(client);
+                }
             }
             connection.commit();
         } catch (SQLException e) {
@@ -218,8 +219,9 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
         try {
             preparedStatement = connection.prepareStatement(SQL_SELECT_CLIENT_BY_ID);
             preparedStatement.setLong(1, id);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            client = resultSet.next() ? EntityFactory.createClient(resultSet) : null;
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                client = resultSet.next() ? EntityFactory.createClient(resultSet) : null;
+            }
             connection.commit();
         } catch (SQLException e) {
             LOGGER.log(Level.ERROR,
@@ -286,8 +288,7 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
             throw new DaoException(e);
         }
         Statement statement = connection.createStatement();
-        try {
-            ResultSet resultSet = statement.executeQuery(SQL_SELECT_ID);
+        try (ResultSet resultSet = statement.executeQuery(SQL_SELECT_ID)) {
             while (resultSet.next()) {
                 if (Long.parseLong(resultSet.getString(1)) == id) {
                     connection.commit();
@@ -325,11 +326,12 @@ public class ClientDao extends AbstractDao<AbstractEntity> {
         try {
             preparedStatement = connection.prepareStatement(SQL_FIND_ID_USER);
             preparedStatement.setLong(1, id);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
                     long idUser = resultSet.getLong(ID_USER);
                     connection.commit();
                     return idUser;
+                }
             }
         } catch (SQLException e) {
             if (connection != null) {

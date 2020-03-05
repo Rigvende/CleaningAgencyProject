@@ -10,6 +10,7 @@ import by.patrusova.project.exception.DaoException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +18,9 @@ import java.util.List;
 /**
  * Class for actions mostly with {@link BasketPosition} using connections, statements and queries
  * according DAO and database data
- * @autor Marianna Patrusova
+ *
  * @version 1.0
+ * @autor Marianna Patrusova
  */
 public class BasketDao extends AbstractDao<AbstractEntity> {
 
@@ -140,10 +142,11 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
         Statement statement = null;
         try {
             statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(SQL_SELECT_ALL_BASKET_POSITIONS);
-            while (resultSet.next()) {
-                BasketPosition position = EntityFactory.createBasketPosition(resultSet);
-                positions.add(position);
+            try (ResultSet resultSet = statement.executeQuery(SQL_SELECT_ALL_BASKET_POSITIONS)) {
+                while (resultSet.next()) {
+                    BasketPosition position = EntityFactory.createBasketPosition(resultSet);
+                    positions.add(position);
+                }
             }
             connection.commit();
         } catch (SQLException e) {
@@ -179,9 +182,10 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
         try {
             preparedStatement = connection.prepareStatement(SQL_SELECT_BASKET_POSITION);
             preparedStatement.setLong(1, id);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            resultSet.next();
-            position = EntityFactory.createBasketPosition(resultSet);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                resultSet.next();
+                position = EntityFactory.createBasketPosition(resultSet);
+            }
             connection.commit();
         } catch (SQLException e) {
             if (connection != null) {
@@ -211,8 +215,7 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
             throw new DaoException(e);
         }
         Statement statement = connection.createStatement();
-        try {
-            ResultSet resultSet = statement.executeQuery(SQL_SELECT_ID);
+        try (ResultSet resultSet = statement.executeQuery(SQL_SELECT_ID)) {
             while (resultSet.next()) {
                 if (Long.parseLong(resultSet.getString(1)) == id) {
                     connection.commit();
@@ -251,10 +254,11 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
         try {
             preparedStatement = connection.prepareStatement(SQL_SELECT_BASKET_POSITION_BY_ORDER_ID);
             preparedStatement.setLong(1, id);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                BasketPosition position = EntityFactory.createBasketPosition(resultSet);
-                positions.add(position);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    BasketPosition position = EntityFactory.createBasketPosition(resultSet);
+                    positions.add(position);
+                }
             }
             connection.commit();
         } catch (SQLException | DaoException e) {
@@ -335,10 +339,11 @@ public class BasketDao extends AbstractDao<AbstractEntity> {
         try {
             preparedStatement = connection.prepareStatement(SQL_SELECT_POSITION_BY_ORDER_ID);
             preparedStatement.setLong(1, id);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                ComplexPosition position = EntityFactory.createPositionComplex(resultSet);
-                positions.add(position);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    ComplexPosition position = EntityFactory.createPositionComplex(resultSet);
+                    positions.add(position);
+                }
             }
             connection.commit();
         } catch (SQLException | DaoException e) {
