@@ -53,6 +53,7 @@ public class ControlServlet extends HttpServlet {
         processRequest(request, response);
     }
 
+    //define concrete actions(command) for request according with post/get parameter
     private void processRequest(HttpServletRequest request,
                                 HttpServletResponse response) throws IOException {
         CommandProvider provider = new CommandProvider();
@@ -85,7 +86,8 @@ public class ControlServlet extends HttpServlet {
         } catch (DaoException e) {
             LOGGER.log(Level.ERROR, "Cannot close all connections in connection pool.");
             throw new RuntimeException(e);
+        } finally {
+            super.destroy();
         }
-        super.destroy();
     }
 }
