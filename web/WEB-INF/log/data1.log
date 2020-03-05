@@ -10801,3 +10801,17 @@ Caused by: java.net.SocketException: Software caused connection abort: socket wr
 05-03 20:32 INFO  command.impl.LocaleCommand - en_EN
 05-03 20:32 INFO  command.impl.LocaleCommand - ru_RU
 05-03 20:32 INFO  command.impl.LocaleCommand - en_EN
+06-03 00:53 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@636d9c8f
+06-03 00:53 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@29cb9595
+06-03 00:53 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+06-03 00:54 INFO  project.filter.UserSessionListener - Session Created:: ID=28C82EE79ADFA2E9061BEA0A4D5B4999
+06-03 00:54 INFO  project.filter.UserSessionListener - Session Created:: ID=BE184B6E7E140030273E59BA3308539E
+06-03 00:54 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+06-03 00:54 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+06-03 00:55 INFO  project.filter.UserSessionListener - Session Destroyed:: ID=BE184B6E7E140030273E59BA3308539E
+06-03 00:55 INFO  project.filter.UserSessionListener - Session Created:: ID=CD8296A092863A0C997A0196F04E47E5
+06-03 00:56 INFO  project.filter.UserSessionListener - Session Destroyed:: ID=CD8296A092863A0C997A0196F04E47E5
+06-03 00:56 INFO  project.filter.UserSessionListener - Session Created:: ID=E0147E46CD827083DD621AF579D1EA61
+06-03 00:57 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4262f28c
+06-03 00:57 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@83b475
+06-03 00:57 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.

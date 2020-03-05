@@ -27,7 +27,7 @@
     <div style="margin-left: 50px">
     <form name="basketForm" method="get" action="${pageContext.request.contextPath}/controller">
     <input type="hidden" name="command" value="basket" />
-    <input style="color: sienna; font-family: 'Book Antiqua',Serif; width: 250px; font-size: 22px;
+    <input style="color: sienna; font-family: 'Book Antiqua', serif; width: 250px; font-size: 22px;
     height: 40px" type="submit" value="<fmt:message key="button.tobasket"/>"/>
     </form>
     </div>
@@ -100,7 +100,8 @@
         <form name="positionForm" method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="select" />
         <input type="hidden" name="position" value="${catalogue.id}" />
-        <input style="color: darkblue; background-color: lightgoldenrodyellow; font-family: 'Palatino Linotype',Serif; width: 165px; font-size: 16px;
+        <input style="color: darkblue; background-color: lightgoldenrodyellow;
+            font-family: 'Palatino Linotype',serif; width: 150px; font-size: 16px;
             height: 30px" type="submit" value="<fmt:message key="button.choice"/>" />
         </form>
         </td>

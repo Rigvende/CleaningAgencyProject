@@ -10791,3 +10791,16 @@ Caused by: java.net.SocketException: Software caused connection abort: socket wr
 05-03 20:17 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@31d26e92
 05-03 20:17 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4c9ff642
 05-03 20:17 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+05-03 20:18 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+05-03 20:18 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+05-03 20:32 INFO  command.impl.LocaleCommand - ru_RU
+05-03 20:32 INFO  command.impl.LocaleCommand - en_EN
+05-03 20:32 INFO  command.impl.LocaleCommand - ru_RU
+05-03 20:32 INFO  command.impl.LocaleCommand - en_EN
+05-03 20:32 INFO  command.impl.LocaleCommand - ru_RU
+05-03 20:32 INFO  command.impl.LocaleCommand - en_EN
+05-03 20:32 INFO  command.impl.LocaleCommand - ru_RU
+05-03 20:32 INFO  command.impl.LocaleCommand - en_EN
+06-03 00:53 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@636d9c8f
+06-03 00:53 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@29cb9595
+06-03 00:53 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
