@@ -11,7 +11,7 @@ import java.time.LocalDate;
  */
 public class Order extends AbstractEntity implements Serializable, Cloneable {
 
-    private static final long serialVersionUID = 5L;
+    private static final long serialVersionUID = 1857426715206878839L;
     private long id;
     private LocalDate orderTime;
     private LocalDate deadline;

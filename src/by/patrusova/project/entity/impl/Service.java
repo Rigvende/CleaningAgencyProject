@@ -11,7 +11,7 @@ import java.math.BigDecimal;
  */
 public class Service extends AbstractEntity implements Serializable, Cloneable {
 
-    private static final long serialVersionUID = 6L;
+    private static final long serialVersionUID = -6977014642424364561L;
     private long id;
     private String service;
     private BigDecimal cost;

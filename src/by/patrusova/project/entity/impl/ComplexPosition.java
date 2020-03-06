@@ -10,7 +10,7 @@ import java.io.Serializable;
  */
 public class ComplexPosition extends AbstractEntity implements Serializable, Cloneable {
 
-    private static final long serialVersionUID = 10L;
+    private static final long serialVersionUID = -4413736620201927845L;
     private BasketPosition position;
     private Service service;
 

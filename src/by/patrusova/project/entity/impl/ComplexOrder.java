@@ -10,7 +10,7 @@ import java.io.Serializable;
  */
 public class ComplexOrder extends AbstractEntity implements Serializable, Cloneable {
 
-    private static final long serialVersionUID = 9L;
+    private static final long serialVersionUID = -4642107721250876993L;
     private User user;
     private Cleaner cleaner;
     private Client client;

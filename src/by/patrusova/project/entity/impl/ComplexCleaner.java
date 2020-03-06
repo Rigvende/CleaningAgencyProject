@@ -10,7 +10,7 @@ import java.io.Serializable;
  */
 public class ComplexCleaner extends AbstractEntity implements Serializable, Cloneable {
 
-    private static final long serialVersionUID = 7L;
+    private static final long serialVersionUID = 5710191304935155658L;
     private User user;
     private Cleaner cleaner;
 

@@ -10,7 +10,7 @@ import java.io.Serializable;
  */
 public class User extends AbstractEntity implements Serializable, Cloneable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = -7062066469946600238L;
     private long id;
     private String login;
     private String password;

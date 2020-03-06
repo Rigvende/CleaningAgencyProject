@@ -10,7 +10,7 @@ import java.io.Serializable;
  */
 public class ComplexClient extends AbstractEntity implements Serializable, Cloneable {
 
-    private static final long serialVersionUID = 8L;
+    private static final long serialVersionUID = -976819080018244948L;
     private User user;
     private Client client;
 

@@ -10,17 +10,12 @@ import java.io.Serializable;
  */
 public class BasketPosition extends AbstractEntity implements Serializable, Cloneable {
 
-    private static final long serialVersionUID = 4L;
+    private static final long serialVersionUID = 2160677855885140013L;
     private long id;
     private long idOrder;
     private long idService;
 
     public BasketPosition() {}
-    public BasketPosition(long id, long idOrder, long idService) {
-        this.id = id;
-        this.idOrder = idOrder;
-        this.idService = idService;
-    }
 
     public long getId() {
         return id;

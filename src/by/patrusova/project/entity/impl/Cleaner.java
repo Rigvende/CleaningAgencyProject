@@ -11,7 +11,7 @@ import java.math.BigDecimal;
  */
 public class Cleaner extends AbstractEntity implements Serializable, Cloneable {
 
-    private static final long serialVersionUID = 3L;
+    private static final long serialVersionUID = 7160632879057780533L;
     private long id;
     private long idUser;
     private BigDecimal commission;
