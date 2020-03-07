@@ -60,7 +60,7 @@ public class ControlServlet extends HttpServlet {
         try {
             ActionCommand command = provider.defineCommand(request);
             String page = command.execute(request);
-            if (request.getMethod().toLowerCase().equals(POST)) {
+            if (request.getMethod().toLowerCase().equals(POST)) {              //prevent f5 for filled forms
                 response.sendRedirect(request.getContextPath() + page);
             } else {
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);

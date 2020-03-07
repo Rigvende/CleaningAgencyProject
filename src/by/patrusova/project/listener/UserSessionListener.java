@@ -18,10 +18,10 @@ public class UserSessionListener implements HttpSessionListener {
     private final static Logger LOGGER = LogManager.getLogger();
 
     public void sessionCreated(HttpSessionEvent sessionEvent) {
-        LOGGER.log(Level.INFO, "Session created:: ID=" + sessionEvent.getSession().getId());
+        LOGGER.log(Level.INFO, "Session created: ID=" + sessionEvent.getSession().getId());
     }
 
     public void sessionDestroyed(HttpSessionEvent sessionEvent) {
-        LOGGER.log(Level.INFO, "Session destroyed:: ID=" + sessionEvent.getSession().getId());
+        LOGGER.log(Level.INFO, "Session invalided: ID=" + sessionEvent.getSession().getId());
     }
 }

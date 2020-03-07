@@ -28,7 +28,6 @@ public class LogoutCommand implements ActionCommand {
     private final static String ORDER_NEW = "orderNew";
     private final static String CLIENT = "client";
     private final static String ROLE = "role";
-    private final static String USER = "user";
     private DeleteEntityService service = new DeleteEntityService();
 
     @Override
