@@ -87,7 +87,7 @@
     <c:if test="${ not empty user and user.role eq 'client' }">
     <th><fmt:message key="field.check"/></th>
     </c:if>
-    </tr>d
+    </tr>
 
     <c:forEach var="catalogue" items="${catalogueList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
         <tr>
