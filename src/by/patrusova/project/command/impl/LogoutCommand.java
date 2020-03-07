@@ -33,20 +33,18 @@ public class LogoutCommand implements ActionCommand {
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-        request.getSession().removeAttribute(USER);             //prevent to go back
         String page = ConfigurationManager.getProperty(PAGE_INDEX);
         if (request.getSession().getAttribute(ROLE).equals(CLIENT)) {
             Order order = (Order) request.getSession().getAttribute(ORDER_NEW);
             Client client = (Client) request.getSession().getAttribute(CLIENT);
-            Enumeration<String> enumeration = request.getSession().getAttributeNames();
+            Enumeration<String> enumeration = request.getSession().getAttributeNames(); //prevent to go back
             Iterator<String> iterator = enumeration.asIterator();
             while (iterator.hasNext()) {
                 request.getSession().removeAttribute(iterator.next());
             }
             request.getSession().invalidate();
-            request.getSession(false);
-            try {                                               //delete not registered client's order from session
-                if (order != null && client != null
+            try {
+                if (order != null && client != null                    //delete not registered client's order
                         && order.getIdClient() == client.getId()
                         && order.getOrderStatus().equals(Order.Status.NEW.getValue())) {
                     Optional<AbstractEntity> optional = service.doService(order);
