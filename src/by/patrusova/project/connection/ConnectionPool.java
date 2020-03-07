@@ -122,13 +122,14 @@ public class ConnectionPool {
         }
     }
 
+    //close 1 connection from pool
     private void closeConnection(Connection connection) throws DaoException {
         if (connection != null) {
             try {
                 if (!connection.getAutoCommit()) {
                     connection.commit();
                 }
-                connection.close(); //here: close Connection, not ProxyConnection
+                connection.close();
             } catch (SQLException e) {
                 LOGGER.log(Level.ERROR, "Connection closing failed. ", e);
                 throw new DaoException(e);
@@ -136,7 +137,7 @@ public class ConnectionPool {
         }
     }
 
-    //deregister all drivers while closing connection
+    //deregister all drivers while closing connections
     private void deregisterDrivers() {
         DriverManager.getDrivers().asIterator().forEachRemaining(driver -> {
             try {

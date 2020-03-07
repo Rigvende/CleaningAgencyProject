@@ -98,6 +98,6 @@ public abstract class AbstractDao<T extends AbstractEntity> {
     }
 
     private void returnConnectionInPool() {
-        connection.close(); //here: releasing ProxyConnection, not closing
+        connection.close();
     }
 }

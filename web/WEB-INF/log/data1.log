@@ -12021,3 +12021,73 @@ Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or u
 07-03 22:12 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
 07-03 22:12 INFO  project.listener.UserSessionListener - Session destroyed:: ID=F1DEE1B510964E7D12382F67940DA217
 07-03 22:12 INFO  project.listener.UserSessionListener - Session created:: ID=5AC83277152223F4AB08284553BD8609
+07-03 22:30 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@139b48ad
+07-03 22:30 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@631479a4
+07-03 22:30 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+07-03 22:53 INFO  project.listener.UserSessionListener - Session created: ID=F241074C4C9AFE38046119D231089B6C
+07-03 22:54 INFO  project.listener.UserSessionListener - Session created: ID=B1C72DBCF5B3289FC04047FA6D4D10C1
+07-03 22:54 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+07-03 22:54 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+07-03 22:54 INFO  project.listener.UserSessionListener - Session invalided: ID=B1C72DBCF5B3289FC04047FA6D4D10C1
+07-03 22:54 INFO  project.listener.UserSessionListener - Session created: ID=6173F5D9ACBBFB3A1749F54F5DBC7C89
+07-03 22:54 INFO  command.impl.LocaleCommand - ru_RU
+07-03 22:54 ERROR project.connection.ConnectionPool - Connection closing failed. 
+java.sql.SQLNonTransientConnectionException: No operations allowed after connection closed.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:73) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ConnectionImpl.commit(ConnectionImpl.java:814) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at by.patrusova.project.connection.ProxyConnection.commit(ProxyConnection.java:137) ~[classes/:?]
+	at by.patrusova.project.connection.ConnectionPool.closeConnection(ConnectionPool.java:129) [classes/:?]
+	at by.patrusova.project.connection.ConnectionPool.closeAllConnections(ConnectionPool.java:116) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.destroy(ControlServlet.java:83) [classes/:?]
+	at org.apache.catalina.core.StandardWrapper.unload(StandardWrapper.java:1280) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardWrapper.stopInternal(StandardWrapper.java:1581) [catalina.jar:9.0.17]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5376) [catalina.jar:9.0.17]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1393) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1382) [catalina.jar:9.0.17]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) [tomcat-util.jar:9.0.17]
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) [?:?]
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:969) [catalina.jar:9.0.17]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1393) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1382) [catalina.jar:9.0.17]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) [tomcat-util.jar:9.0.17]
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) [?:?]
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:969) [catalina.jar:9.0.17]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:475) [catalina.jar:9.0.17]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:990) [catalina.jar:9.0.17]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:257) [catalina.jar:9.0.17]
+	at org.apache.catalina.startup.Catalina.stop(Catalina.java:707) [catalina.jar:9.0.17]
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:669) [catalina.jar:9.0.17]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:350) [bootstrap.jar:9.0.17]
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:492) [bootstrap.jar:9.0.17]
+Caused by: com.mysql.cj.exceptions.ConnectionIsClosedException: No operations allowed after connection closed.
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[?:?]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.NativeSession.checkClosed(NativeSession.java:1171) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ConnectionImpl.checkClosed(ConnectionImpl.java:576) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ConnectionImpl.commit(ConnectionImpl.java:771) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	... 35 more
+07-03 22:54 ERROR project.servlet.ControlServlet - Cannot close all connections in connection pool.
+07-03 22:59 INFO  project.listener.UserSessionListener - Session created: ID=93D55F3A4EF3E5086DF6C2BC622F6D86
+07-03 22:59 INFO  project.listener.UserSessionListener - Session created: ID=E637EF5A4E83819B0D8E3F09A7C451A0
