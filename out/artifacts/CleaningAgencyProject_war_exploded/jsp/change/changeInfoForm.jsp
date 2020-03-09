@@ -30,25 +30,25 @@
 
     <fmt:message key="field.name1"/><br/>
     <label>
-        <input style="width: 250px" type="text" name="firstname" value="${user.name}"/>
+        <input style="width: 250px" type="text" name="firstname" value="${user.name}" required/>
     </label>
         <br/>
 
     <br/><fmt:message key="field.lastname1"/><br/>
     <label>
-        <input style="width: 250px" type="text" name="lastname" value="${user.lastname}"/>
+        <input style="width: 250px" type="text" name="lastname" value="${user.lastname}" required/>
     </label>
         <br/>
 
     <br/><fmt:message key="field.phone1"/><br/>
     <label>
-        <input style="width: 250px" type="number" name="phone" value="${user.phone}"/>
+        <input style="width: 250px" type="number" name="phone" value="${user.phone}" required/>
     </label>
         <br/>
 
     <br/><fmt:message key="field.email1"/><br/>
     <label>
-        <input style="width: 250px" type="text" name="email" value="${user.email}"/>
+        <input style="width: 250px" type="text" name="email" value="${user.email}" required/>
     </label>
         <br/>
 

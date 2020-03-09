@@ -34,7 +34,9 @@
                 <fmt:message key="field.sendto"/>
             </td>
             <td><label>
-                <input style="width: 300px" type ="text" name="to" value="${formerguest.email}" required/>
+                <input style="width: 300px" type ="text" name="to" value="${formerguest.email}"
+                       required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')"
+                       oninput="setCustomValidity('')"/>
             </label></td>
         </tr>
 
@@ -43,7 +45,9 @@
                 <fmt:message key="field.subject"/>
             </td>
             <td><label>
-                <input style="width: 300px" type ="text" name="subject" value="<fmt:message key="text.mail"/>" required/>
+                <input style="width: 300px" type ="text" name="subject" value="<fmt:message key="text.mail"/>"
+                       required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')"
+                       oninput="setCustomValidity('')"/>
             </label></td>
         </tr>
     </table>

@@ -32,7 +32,8 @@
     <fmt:message key="field.commission"/>
     <br/>
     <label>
-        <input style="width: 250px" type="text" name="commission" value="${not empty cleaner.commission ? cleaner.commission : '0.00'}"/>
+        <input style="width: 250px" type="text" name="commission" value="${not empty cleaner.commission ? cleaner.commission : '0.00'}"
+               required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')" oninput="setCustomValidity('')"/>
     </label>
         <br/>
 

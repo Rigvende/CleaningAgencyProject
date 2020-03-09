@@ -64,12 +64,16 @@
 
         <div style="color: #0c4f5b; font-family: 'Palatino Linotype',serif; font-size: 18px;"><fmt:message key="field.login"/></div>
     <label>
-        <input type="text" name="login" value="" required/>
+        <input type="text" name="login" value=""
+               required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')"
+               oninput="setCustomValidity('')"/>
     </label>
 
         <div style="color: #0c4f5b; font-family: 'Palatino Linotype',serif; font-size: 18px;"><fmt:message key="field.password"/></div>
     <label>
-        <input type="password" name="password" value="" required/>
+        <input type="password" name="password" value=""
+               required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')"
+               oninput="setCustomValidity('')"/>
     </label>
 
     <div style="color: crimson; font-family: 'Palatino Linotype', sans-serif">${errorLoginPassMessage}</div>

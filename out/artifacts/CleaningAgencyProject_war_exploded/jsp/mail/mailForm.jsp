@@ -34,7 +34,7 @@
                 <fmt:message key="field.sendto"/>
             </td>
             <td><label>
-                <input style="width: 300px" type ="text" name="to" value="${formerguest.email}"/>
+                <input style="width: 300px" type ="text" name="to" value="${formerguest.email}" required/>
             </label></td>
         </tr>
 
@@ -43,7 +43,7 @@
                 <fmt:message key="field.subject"/>
             </td>
             <td><label>
-                <input style="width: 300px" type ="text" name="subject" value="<fmt:message key="text.mail"/>"/>
+                <input style="width: 300px" type ="text" name="subject" value="<fmt:message key="text.mail"/>" required/>
             </label></td>
         </tr>
     </table>

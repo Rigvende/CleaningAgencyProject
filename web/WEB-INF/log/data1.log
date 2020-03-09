@@ -12136,3 +12136,13 @@ Caused by: com.mysql.cj.exceptions.ConnectionIsClosedException: No operations al
 09-03 11:41 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
 09-03 11:41 INFO  command.impl.LocaleCommand - ru_RU
 09-03 11:41 INFO  command.impl.LocaleCommand - en_EN
+09-03 11:53 INFO  project.listener.UserSessionListener - Session invalided: ID=821BDC50D9A993BCCA9FC92070606155
+09-03 11:53 INFO  project.listener.UserSessionListener - Session created: ID=B1AC6F48E8B26CB9D2204BFFD64DA9C3
+09-03 11:57 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@631a17d5
+09-03 11:57 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@eaee666
+09-03 11:57 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+09-03 11:57 INFO  project.listener.UserSessionListener - Session created: ID=0CB1B2EFE903943BC1021DE473F39D04
+09-03 11:57 INFO  project.listener.UserSessionListener - Session created: ID=24B115BAE887C86E5DD5B746F67D41C7
+09-03 11:57 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+09-03 11:57 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+09-03 11:57 INFO  command.impl.LocaleCommand - ru_RU

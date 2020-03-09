@@ -59,49 +59,63 @@
             <br/><fmt:message key="field.loginreg"/>
             <br/>
             <label>
-            <input style="width: 250px" type="text" name="loginreg" value="" required/>
+            <input style="width: 250px" type="text" name="loginreg" value=""
+                   required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')"
+                   oninput="setCustomValidity('')"/>
             </label>
             <br/><br/>
 
             <fmt:message key="field.passwordreg"/>
             <br/>
             <label>
-            <input style="width: 250px" type="password" name="passwordreg" value="" required/>
+            <input style="width: 250px" type="password" name="passwordreg" value=""
+                   required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')"
+                   oninput="setCustomValidity('')"/>
             </label>
             <br/><br/>
 
             <fmt:message key="field.passwordagain"/>
             <br/>
             <label>
-            <input style="width: 250px" type="password" name="passwordagain" value="" required/>
+            <input style="width: 250px" type="password" name="passwordagain" value=""
+                   required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')"
+                   oninput="setCustomValidity('')"/>
             </label>
             <br/><br/>
 
             <fmt:message key="field.name"/>
             <br/>
             <label>
-            <input style="width: 250px" type="text" name="firstname" value="" required/>
+            <input style="width: 250px" type="text" name="firstname" value=""
+                   required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')"
+                   oninput="setCustomValidity('')"/>
             </label>
             <br/><br/>
 
             <fmt:message key="field.lastname"/>
             <br/>
             <label>
-            <input style="width: 250px" type="text" name="lastname" value="" required/>
+            <input style="width: 250px" type="text" name="lastname" value=""
+                   required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')"
+                   oninput="setCustomValidity('')"/>
             </label>
             <br/><br/>
 
             <fmt:message key="field.phone"/>
             <br/>
             <label>
-            <input style="width: 250px" type="text" name="phone" value="" required/>
+            <input style="width: 250px" type="text" name="phone" value=""
+                   required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')"
+                   oninput="setCustomValidity('')"/>
             </label>
             <br/><br/>
 
             <fmt:message key="field.email"/>
             <br/>
             <label>
-            <input style="width: 250px" type="text" name="email" value="" required/>
+            <input style="width: 250px" type="text" name="email" value=""
+                   required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')"
+                   oninput="setCustomValidity('')"/>
             </label>
             <br/><br/>
 

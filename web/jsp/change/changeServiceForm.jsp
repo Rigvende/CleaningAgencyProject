@@ -32,21 +32,27 @@
     <fmt:message key="field.service"/>
     <br/>
     <label>
-        <input style="width: 250px" type="text" name="servicechange" value="${not empty service.service ? service.service : ''}" required/>
+        <input style="width: 250px" type="text" name="servicechange" value="${not empty service.service ? service.service : ''}"
+               required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')"
+               oninput="setCustomValidity('')"/>
     </label>
     <br/> <br/>
 
     <fmt:message key="field.cost"/>
     <br/>
     <label>
-        <input style="width: 250px" type="text" name="cost" value="${not empty service.cost ? service.cost : '0.00'}" required/>
+        <input style="width: 250px" type="text" name="cost" value="${not empty service.cost ? service.cost : '0.00'}"
+               required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')"
+               oninput="setCustomValidity('')"/>
     </label>
     <br/> <br/>
 
     <fmt:message key="field.discount2"/>
     <br/>
     <label>
-        <input style="width: 250px" type="text" name="sales" value="${not empty service.sales ? service.sales : '0.00'}" required/>
+        <input style="width: 250px" type="text" name="sales" value="${not empty service.sales ? service.sales : '0.00'}"
+               required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')"
+               oninput="setCustomValidity('')"/>
     </label>
     </b>
 

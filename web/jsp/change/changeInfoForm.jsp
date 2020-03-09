@@ -30,25 +30,33 @@
 
     <fmt:message key="field.name1"/><br/>
     <label>
-        <input style="width: 250px" type="text" name="firstname" value="${user.name}" required/>
+        <input style="width: 250px" type="text" name="firstname" value="${user.name}"
+               required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')"
+               oninput="setCustomValidity('')"/>
     </label>
         <br/>
 
     <br/><fmt:message key="field.lastname1"/><br/>
     <label>
-        <input style="width: 250px" type="text" name="lastname" value="${user.lastname}" required/>
+        <input style="width: 250px" type="text" name="lastname" value="${user.lastname}"
+               required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')"
+               oninput="setCustomValidity('')"/>
     </label>
         <br/>
 
     <br/><fmt:message key="field.phone1"/><br/>
     <label>
-        <input style="width: 250px" type="number" name="phone" value="${user.phone}" required/>
+        <input style="width: 250px" type="number" name="phone" value="${user.phone}"
+               required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')"
+               oninput="setCustomValidity('')"/>
     </label>
         <br/>
 
     <br/><fmt:message key="field.email1"/><br/>
     <label>
-        <input style="width: 250px" type="text" name="email" value="${user.email}" required/>
+        <input style="width: 250px" type="text" name="email" value="${user.email}"
+               required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')"
+               oninput="setCustomValidity('')"/>
     </label>
         <br/>
 

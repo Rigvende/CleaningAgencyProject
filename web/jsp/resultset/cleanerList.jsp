@@ -63,7 +63,9 @@
     </b>
 
     <label>
-        <input type="text" name="id" value="" required/>
+        <input type="text" name="id" value=""
+               required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')"
+               oninput="setCustomValidity('')"/>
     </label>
 
     <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 150px; font-size: 15px;

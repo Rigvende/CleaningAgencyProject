@@ -12109,3 +12109,35 @@ Caused by: com.mysql.cj.exceptions.ConnectionIsClosedException: No operations al
 08-03 00:44 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@1cb498f
 08-03 00:44 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@5ad7cf4e
 08-03 00:44 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+08-03 00:44 INFO  project.listener.UserSessionListener - Session created: ID=147187D9C6D72ECEF23EA1D098CF307D
+08-03 00:44 INFO  project.listener.UserSessionListener - Session created: ID=3012106450B4FEE1A6FC245E756DAD7F
+08-03 00:44 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+08-03 00:44 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+08-03 00:45 INFO  project.listener.UserSessionListener - Session invalided: ID=3012106450B4FEE1A6FC245E756DAD7F
+08-03 00:45 INFO  project.listener.UserSessionListener - Session created: ID=D1A86B8C5E1191477437195417D067E2
+08-03 00:48 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@139b48ad
+08-03 00:48 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@631479a4
+08-03 00:48 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+09-03 00:35 INFO  project.listener.UserSessionListener - Session created: ID=E210482A7CD6D04CBE1A2808B6819F50
+09-03 00:35 INFO  project.listener.UserSessionListener - Session created: ID=ACE1A546546A6A34F162610128F1B7C1
+09-03 00:35 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+09-03 00:35 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+09-03 00:40 INFO  project.listener.UserSessionListener - Session invalided: ID=ACE1A546546A6A34F162610128F1B7C1
+09-03 00:40 INFO  project.listener.UserSessionListener - Session created: ID=D00E5C4FF54C5A8C3C9AFEFC1ADAEE10
+09-03 00:40 INFO  command.impl.LocaleCommand - ru_RU
+09-03 08:19 INFO  project.listener.UserSessionListener - Session invalided: ID=D00E5C4FF54C5A8C3C9AFEFC1ADAEE10
+09-03 08:19 INFO  project.listener.UserSessionListener - Session invalided: ID=E210482A7CD6D04CBE1A2808B6819F50
+09-03 08:26 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@5b8b0c1a
+09-03 08:26 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@32acfec1
+09-03 08:26 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+09-03 11:40 INFO  project.listener.UserSessionListener - Session created: ID=4BFAF2569AC259B51DD2264059EEA10D
+09-03 11:41 INFO  project.listener.UserSessionListener - Session created: ID=821BDC50D9A993BCCA9FC92070606155
+09-03 11:41 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+09-03 11:41 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+09-03 11:41 INFO  command.impl.LocaleCommand - ru_RU
+09-03 11:41 INFO  command.impl.LocaleCommand - en_EN
+09-03 11:53 INFO  project.listener.UserSessionListener - Session invalided: ID=821BDC50D9A993BCCA9FC92070606155
+09-03 11:53 INFO  project.listener.UserSessionListener - Session created: ID=B1AC6F48E8B26CB9D2204BFFD64DA9C3
+09-03 11:57 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@631a17d5
+09-03 11:57 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@eaee666
+09-03 11:57 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
