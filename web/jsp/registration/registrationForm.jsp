@@ -59,49 +59,49 @@
             <br/><fmt:message key="field.loginreg"/>
             <br/>
             <label>
-            <input style="width: 250px" type="text" name="loginreg" value=""/>
+            <input style="width: 250px" type="text" name="loginreg" value="" required/>
             </label>
             <br/><br/>
 
             <fmt:message key="field.passwordreg"/>
             <br/>
             <label>
-            <input style="width: 250px" type="password" name="passwordreg" value="" />
+            <input style="width: 250px" type="password" name="passwordreg" value="" required/>
             </label>
             <br/><br/>
 
             <fmt:message key="field.passwordagain"/>
             <br/>
             <label>
-            <input style="width: 250px" type="password" name="passwordagain" value=""/>
+            <input style="width: 250px" type="password" name="passwordagain" value="" required/>
             </label>
             <br/><br/>
 
             <fmt:message key="field.name"/>
             <br/>
             <label>
-            <input style="width: 250px" type="text" name="firstname" value=""/>
+            <input style="width: 250px" type="text" name="firstname" value="" required/>
             </label>
             <br/><br/>
 
             <fmt:message key="field.lastname"/>
             <br/>
             <label>
-            <input style="width: 250px" type="text" name="lastname" value=""/>
+            <input style="width: 250px" type="text" name="lastname" value="" required/>
             </label>
             <br/><br/>
 
             <fmt:message key="field.phone"/>
             <br/>
             <label>
-            <input style="width: 250px" type="text" name="phone" value=""/>
+            <input style="width: 250px" type="text" name="phone" value="" required/>
             </label>
             <br/><br/>
 
             <fmt:message key="field.email"/>
             <br/>
             <label>
-            <input style="width: 250px" type="text" name="email" value=""/>
+            <input style="width: 250px" type="text" name="email" value="" required/>
             </label>
             <br/><br/>
 

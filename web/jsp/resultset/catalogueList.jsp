@@ -63,7 +63,7 @@
     <fmt:message key="field.idservice"/>
     </b>
     <label>
-        <input type="text" name="id" value=""/>
+        <input type="text" name="id" value="" required/>
     </label>
 
     <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 150px; font-size: 15px;

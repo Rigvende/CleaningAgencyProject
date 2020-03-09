@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf8" pageEncoding="utf8"%>
     <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-    <%@ taglib prefix="ctg" uri="/WEB-INF/tld/removeattr.tld" %>
+    <%@taglib prefix="ctg" uri="/WEB-INF/tld/removeattr.tld" %>
 
     <fmt:setBundle basename="message"/>
 
@@ -87,7 +87,7 @@
     <c:if test="${ not empty user and user.role eq 'client' }">
     <th><fmt:message key="field.check"/></th>
     </c:if>
-    </tr>d
+    </tr>
 
     <c:forEach var="catalogue" items="${catalogueList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
         <tr>

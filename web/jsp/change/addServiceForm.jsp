@@ -31,21 +31,21 @@
     <fmt:message key="field.service"/>
     <br/>
     <label>
-        <input style="width: 250px" type="text" name="servicechange" value=""/>
+        <input style="width: 250px" type="text" name="servicechange" value="" required/>
     </label>
     <br/><br/>
 
     <fmt:message key="field.cost"/>
     <br/>
     <label>
-        <input style="width: 250px" type="text" name="cost" value=""/>
+        <input style="width: 250px" type="text" name="cost" value="" required/>
     </label>
     <br/><br/>
 
     <fmt:message key="field.discount2"/>
     <br/>
     <label>
-        <input style="width: 250px" type="text" name="sales" value=""/>
+        <input style="width: 250px" type="text" name="sales" value="" required />
     </label>
     </b>
 
