@@ -44,7 +44,9 @@
     </b>
     <br/>
     <label>
-        <input style="margin-left: 50px" type="text" name="id" value=""/>
+        <input style="margin-left: 50px" type="text" name="id" value=""
+               required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')"
+               oninput="setCustomValidity('')"/>
     </label>
     <br/>
 

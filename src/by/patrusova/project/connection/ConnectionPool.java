@@ -5,10 +5,8 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.sql.Connection;
-import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.*;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -96,7 +94,7 @@ public class ConnectionPool {
      * @param connection - instance of {@link Connection} (in program's logic - {@link ProxyConnection})
      */
     public void releaseConnection(Connection connection) throws DaoException {
-        if (connection instanceof ProxyConnection) {
+        if (connection instanceof ProxyConnection && usedConnections.contains(connection)) {
             usedConnections.remove(connection);
             pool.offer((ProxyConnection) connection);
         } else {
@@ -126,6 +124,7 @@ public class ConnectionPool {
     private void closeConnection(Connection connection) throws DaoException {
         if (connection != null) {
             try {
+                lock.lock();
                 if (!connection.getAutoCommit()) {
                     connection.commit();
                 }
@@ -133,6 +132,9 @@ public class ConnectionPool {
             } catch (SQLException e) {
                 LOGGER.log(Level.ERROR, "Connection closing failed. ", e);
                 throw new DaoException(e);
+            }
+            finally {
+                lock.unlock();
             }
         }
     }

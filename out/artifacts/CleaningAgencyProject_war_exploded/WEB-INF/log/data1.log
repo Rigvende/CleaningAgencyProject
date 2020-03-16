@@ -12141,3 +12141,132 @@ Caused by: com.mysql.cj.exceptions.ConnectionIsClosedException: No operations al
 09-03 11:57 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@631a17d5
 09-03 11:57 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@eaee666
 09-03 11:57 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+09-03 11:57 INFO  project.listener.UserSessionListener - Session created: ID=0CB1B2EFE903943BC1021DE473F39D04
+09-03 11:57 INFO  project.listener.UserSessionListener - Session created: ID=24B115BAE887C86E5DD5B746F67D41C7
+09-03 11:57 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+09-03 11:57 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+09-03 11:57 INFO  command.impl.LocaleCommand - ru_RU
+09-03 14:04 INFO  project.listener.UserSessionListener - Session invalided: ID=24B115BAE887C86E5DD5B746F67D41C7
+09-03 14:04 INFO  project.listener.UserSessionListener - Session invalided: ID=0CB1B2EFE903943BC1021DE473F39D04
+09-03 14:06 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@467bc70
+09-03 14:06 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@60d48d31
+09-03 14:06 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+09-03 14:06 INFO  project.listener.UserSessionListener - Session created: ID=FB291BD62F1443F95419E917BB1072A9
+09-03 14:06 INFO  project.listener.UserSessionListener - Session created: ID=F8C3CBA7E9572DF9B02CD6BB8D4955D7
+09-03 14:08 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+09-03 14:08 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+09-03 14:23 INFO  project.listener.UserSessionListener - Session invalided: ID=F8C3CBA7E9572DF9B02CD6BB8D4955D7
+09-03 14:23 INFO  project.listener.UserSessionListener - Session created: ID=37344EA7FBA87584F807546D19D565C8
+09-03 14:23 INFO  command.impl.LocaleCommand - ru_RU
+09-03 14:27 INFO  project.listener.UserSessionListener - Session invalided: ID=37344EA7FBA87584F807546D19D565C8
+09-03 14:27 INFO  project.listener.UserSessionListener - Session created: ID=D59BFC023AFF28BD537ABC402E6FD2D7
+09-03 16:07 INFO  project.listener.UserSessionListener - Session invalided: ID=FB291BD62F1443F95419E917BB1072A9
+09-03 16:30 INFO  project.listener.UserSessionListener - Session invalided: ID=D59BFC023AFF28BD537ABC402E6FD2D7
+09-03 19:14 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@207a23f6
+09-03 19:14 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@1da8b3da
+09-03 19:14 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+09-03 19:15 INFO  project.listener.UserSessionListener - Session created: ID=67F31ED5314EA788AB7B7F10A6ABB81D
+09-03 19:15 INFO  project.listener.UserSessionListener - Session created: ID=86C68BB7DE601C9377FB8D86239D08F4
+09-03 19:16 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+09-03 19:16 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+16-03 08:38 INFO  project.listener.UserSessionListener - Session created: ID=B97E13D1DECC5EA185FA5CB8688EFD27
+16-03 08:38 INFO  project.listener.UserSessionListener - Session created: ID=D559C2814EE186AF155D9167FB692C1F
+16-03 08:38 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+16-03 08:38 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+16-03 08:38 INFO  command.impl.LocaleCommand - ru_RU
+16-03 08:39 INFO  command.impl.LocaleCommand - en_EN
+16-03 08:39 INFO  command.impl.LocaleCommand - ru_RU
+16-03 08:43 INFO  command.impl.LocaleCommand - en_EN
+16-03 09:04 ERROR project.command.CommandProvider - Cannot define current command. 
+java.lang.IllegalArgumentException: No enum constant by.patrusova.project.command.CommandEnum.LOGIN?LOGIN=RIGVENDE
+	at java.lang.Enum.valueOf(Enum.java:264) ~[?:?]
+	at by.patrusova.project.command.CommandEnum.valueOf(CommandEnum.java:22) ~[classes/:?]
+	at by.patrusova.project.command.CommandProvider.defineCommand(CommandProvider.java:40) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.processRequest(ControlServlet.java:61) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.doGet(ControlServlet.java:46) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at by.patrusova.project.filter.EncodingFilter.doFilter(EncodingFilter.java:26) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at com.cj.xss.XSSFilter.doFilter(Unknown Source) [xssflt.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.12.1.jar:2.12.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.17]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:678) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.17]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.17]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.17]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.17]
+	at java.lang.Thread.run(Thread.java:835) [?:?]
+16-03 09:04 ERROR project.servlet.ControlServlet - Processing request failed.
+16-03 09:05 ERROR project.command.CommandProvider - Cannot define current command. 
+java.lang.IllegalArgumentException: No enum constant by.patrusova.project.command.CommandEnum.LOGIN?LOGIN=RIGVENDE
+	at java.lang.Enum.valueOf(Enum.java:264) ~[?:?]
+	at by.patrusova.project.command.CommandEnum.valueOf(CommandEnum.java:22) ~[classes/:?]
+	at by.patrusova.project.command.CommandProvider.defineCommand(CommandProvider.java:40) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.processRequest(ControlServlet.java:61) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.doGet(ControlServlet.java:46) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at by.patrusova.project.filter.EncodingFilter.doFilter(EncodingFilter.java:26) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at com.cj.xss.XSSFilter.doFilter(Unknown Source) [xssflt.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.12.1.jar:2.12.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.17]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:678) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.17]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.17]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.17]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.17]
+	at java.lang.Thread.run(Thread.java:835) [?:?]
+16-03 09:05 ERROR project.servlet.ControlServlet - Processing request failed.
+16-03 09:35 INFO  command.impl.LocaleCommand - ru_RU
+16-03 09:35 INFO  command.impl.LocaleCommand - en_EN
+16-03 09:35 INFO  command.impl.LocaleCommand - ru_RU
+16-03 09:35 INFO  command.impl.LocaleCommand - en_EN
+16-03 09:35 INFO  command.impl.LocaleCommand - ru_RU
+16-03 09:35 INFO  command.impl.LocaleCommand - en_EN
+16-03 10:51 INFO  project.listener.UserSessionListener - Session created: ID=E98FBF73D5DC274C4866C13BF057D988
+16-03 10:51 INFO  project.listener.UserSessionListener - Session created: ID=CFA4905BE935EA6568FA2043AC12F0F7
+16-03 11:00 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+16-03 11:00 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+16-03 11:01 INFO  command.impl.LocaleCommand - ru_RU

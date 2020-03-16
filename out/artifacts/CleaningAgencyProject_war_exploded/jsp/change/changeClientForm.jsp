@@ -30,7 +30,8 @@
 
     <br/><fmt:message key="field.discount"/><br/>
     <label>
-        <input style="width: 250px"  type="text" name="discount" value="${not empty client.discount ? client.discount : '0.00'}"/>
+        <input style="width: 250px"  type="text" name="discount" value="${not empty client.discount ? client.discount : '0.00'}"
+               required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')" oninput="setCustomValidity('')"/>
     </label>
         <br/>
 

@@ -101,5 +101,6 @@
     <br/>
 </form>
 
+<jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>
 </html>

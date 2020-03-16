@@ -31,21 +31,27 @@
     <fmt:message key="field.service"/>
     <br/>
     <label>
-        <input style="width: 250px" type="text" name="servicechange" value="" required/>
+        <input style="width: 250px" type="text" name="servicechange" value=""
+               required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')"
+               oninput="setCustomValidity('')"/>
     </label>
     <br/><br/>
 
     <fmt:message key="field.cost"/>
     <br/>
     <label>
-        <input style="width: 250px" type="text" name="cost" value="" required/>
+        <input style="width: 250px" type="text" name="cost" value=""
+               required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')"
+               oninput="setCustomValidity('')"/>
     </label>
     <br/><br/>
 
     <fmt:message key="field.discount2"/>
     <br/>
     <label>
-        <input style="width: 250px" type="text" name="sales" value="" required />
+        <input style="width: 250px" type="text" name="sales" value=""
+               required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')"
+               oninput="setCustomValidity('')"/>
     </label>
     </b>
 
