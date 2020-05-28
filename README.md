@@ -4,4 +4,4 @@ This is my non-commercial project, which is a Java-based web application. It's w
 The theme of the project is a "Cleaning agency". \
 In my implementation, this is an agency for cleaning and restoring burial sites called "Rest-in-Cleanliness". It's a pity but this fascinating idea has already existed :(
 ____
-java ee, sql, xml, html, css, jsp, jstl, log4j, testNG
+java 8, java ee, sql, xml, html, css, jsp, log4j, testNG
