@@ -40,11 +40,8 @@ public class BasketCommand implements ActionCommand {
                 List<ComplexPosition> positions = showService.doService(order.getId());
                 if (!positions.isEmpty()) {
                     request.getSession().setAttribute(BASKET_LIST, positions);
-                    BigDecimal totalCost =                                      //show total cost with discount
-                            infoService.doService(order.getId());
-                    System.out.println("ccc");
+                    BigDecimal totalCost = infoService.doService(order.getId());
                     request.getSession().setAttribute(TOTAL_COST, totalCost);
-                    System.out.println("ddd");
                 }
             }
             return ConfigurationManager.getProperty(PAGE_BASKET);

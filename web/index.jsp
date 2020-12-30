@@ -5,7 +5,9 @@
 <fmt:setBundle basename="message"/>
 
 <html>
-    <head><title><fmt:message key="title.index"/></title></head>
+    <head>
+        <title><fmt:message key="title.index"/></title>
+    </head>
 
     <body>
         <jsp:forward page="/jsp/login.jsp"/>

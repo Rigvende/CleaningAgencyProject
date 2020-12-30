@@ -26,7 +26,7 @@ public class Order extends AbstractEntity implements Serializable, Cloneable {
         IN_PROCESS("in process"),
         DONE("done"),
         DECLINED("declined");
-        private String value;
+        private final String value;
         Status(String value) {
             this.value = value;
         }

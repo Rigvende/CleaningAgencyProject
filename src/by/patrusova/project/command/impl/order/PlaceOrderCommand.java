@@ -44,9 +44,9 @@ public class PlaceOrderCommand implements ActionCommand {
     private final static String MESSAGE_ERROR_PLACE_ORDER = "message.placeordererror";
     private final static String PAGE_PLACE_ORDER = "page.placeorder";
     private final static String PAGE_ORDER_CONFIRM = "page.orderconfirm";
-    private ClientInfoService clientInfoService = new ClientInfoService();
-    private UserInfoService userInfoService = new UserInfoService();
-    private OrderInfoService orderInfoService = new OrderInfoService();
+    private final ClientInfoService clientInfoService = new ClientInfoService();
+    private final UserInfoService userInfoService = new UserInfoService();
+    private final OrderInfoService orderInfoService = new OrderInfoService();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {

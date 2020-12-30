@@ -13,7 +13,7 @@
 <html>
 <head>
     <title><fmt:message key="title.login"/></title>
-    <link rel="shortcut icon" href="<c:url value="../favicon.ico"/>" />
+    <link rel="shortcut icon" href="<c:url value="/WEB-INF/favicon.ico" />" />
     <link rel="stylesheet" type="text/css" href="<c:url value="/css/background.css"/>" />
     <link rel="stylesheet" type="text/css" href="<c:url value="/css/align.css"/>" />
 </head>

@@ -86,8 +86,7 @@ public class OrderInfoService implements Serviceable, EntityCreator {
     //create instance of order with changes
     @Override
     public Optional<AbstractEntity> createEntity(HttpServletRequest request) throws ServiceException {
-        Order updatedOrder = (Order) request.getSession()
-                .getAttribute(ORDER);
+        Order updatedOrder = (Order) request.getSession().getAttribute(ORDER);
         if (isValidData(request)) {
             updatedOrder.setIdCleaner(Long.parseLong(request.getParameter(ID_CLEANER)));
             updatedOrder.setOrderStatus(request.getParameter(STATUS));

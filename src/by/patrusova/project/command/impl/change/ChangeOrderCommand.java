@@ -31,8 +31,8 @@ public class ChangeOrderCommand implements ActionCommand {
     private final static String PAGE_CONFIRM = "page.confirm";
     private final static String PAGE_MAIL = "page.mail";
     private final static String ORDER_DONE = "orderDone";
-    private OrderInfoService infoService = new OrderInfoService();
-    private MailService mailService = new MailService();
+    private final OrderInfoService infoService = new OrderInfoService();
+    private final MailService mailService = new MailService();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
