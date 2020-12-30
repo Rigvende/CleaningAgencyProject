@@ -12270,3 +12270,232 @@ java.lang.IllegalArgumentException: No enum constant by.patrusova.project.comman
 16-03 11:00 INFO  project.connection.ConnectionPool - Registering jdbc driver.
 16-03 11:00 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
 16-03 11:01 INFO  command.impl.LocaleCommand - ru_RU
+16-03 13:07 INFO  project.listener.UserSessionListener - Session created: ID=0ABAD035921E4AA602C18C77D6C7CEE6
+16-03 13:07 INFO  project.listener.UserSessionListener - Session created: ID=A8C2DCAB873FD7CBC30568AC3779A0BF
+16-03 13:07 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+16-03 13:07 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+16-03 13:08 INFO  command.impl.LocaleCommand - ru_RU
+16-03 13:09 INFO  command.impl.LocaleCommand - en_EN
+29-03 16:16 INFO  project.listener.UserSessionListener - Session created: ID=CEE2B3B2837DDE47FD8826233F5C6574
+29-03 16:16 INFO  project.listener.UserSessionListener - Session created: ID=DB3B67BB29BB35E2281E4F467646F0A0
+29-03 16:16 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+29-03 16:16 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+29-03 16:16 INFO  command.impl.LocaleCommand - ru_RU
+29-03 16:16 INFO  command.impl.LocaleCommand - en_EN
+29-03 16:17 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:17 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:17 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:17 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:17 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:17 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:17 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:17 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:17 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:17 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:17 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:17 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:17 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:17 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:17 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:17 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:17 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:17 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:17 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:17 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:17 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:17 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:17 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:17 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:17 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:17 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:17 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:17 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:17 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:17 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:17 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:17 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:17 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:17 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:17 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:17 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:17 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:17 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:17 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:17 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:17 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@a3de3fc
+29-03 16:17 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@2630b6b7
+29-03 16:17 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+29-03 16:23 INFO  project.listener.UserSessionListener - Session created: ID=0D32D9A65842BDE581DDF64C0D7C25B5
+29-03 16:23 INFO  project.listener.UserSessionListener - Session created: ID=FE5177191A365C8959557395B9B76552
+29-03 16:26 INFO  project.listener.UserSessionListener - Session created: ID=4BD6F929A40459FEE92E2BAEF1313086
+29-03 16:26 INFO  project.listener.UserSessionListener - Session created: ID=76C56C0B803EF6C06C9E6928028A37BF
+29-03 16:26 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+29-03 16:26 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+29-03 16:26 INFO  command.impl.LocaleCommand - ru_RU
+29-03 16:26 INFO  command.impl.LocaleCommand - en_EN
+29-03 16:27 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:27 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:27 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:27 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:27 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:27 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:27 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:27 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:27 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:27 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:27 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:27 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:27 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:27 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:27 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:27 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:27 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:27 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:27 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:27 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:27 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:27 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:27 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:27 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:27 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:27 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:27 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:27 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:27 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:27 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:27 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:27 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:27 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:27 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:27 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:27 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:27 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:27 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:27 WARN  project.connection.ConnectionPool - Wrong type connection. 
+29-03 16:27 ERROR project.connection.ProxyConnection - Connection's releasing failed
+29-03 16:27 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@1c3a056b
+29-03 16:27 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4ac1333c
+29-03 16:27 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+29-03 16:34 INFO  project.listener.UserSessionListener - Session created: ID=E5CF7EA50D1625AE3E32AD854CC5BCD6
+29-03 16:34 INFO  project.listener.UserSessionListener - Session created: ID=6760D04EB925328713E9E2CEE702DB95
+29-03 16:34 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+29-03 16:34 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+30-04 08:21 INFO  project.listener.UserSessionListener - Session created: ID=0D5528B7D320E11B7E8D33474581DB35
+30-04 08:21 INFO  project.listener.UserSessionListener - Session created: ID=5F1239CA83AE4E0D51D57CB1099B3B36
+30-04 08:21 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+30-04 08:21 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+30-04 08:21 INFO  command.impl.LocaleCommand - ru_RU
+30-04 08:21 INFO  command.impl.LocaleCommand - en_EN
+30-04 10:21 INFO  project.listener.UserSessionListener - Session invalided: ID=0D5528B7D320E11B7E8D33474581DB35
+30-04 10:22 INFO  project.listener.UserSessionListener - Session invalided: ID=5F1239CA83AE4E0D51D57CB1099B3B36
+30-04 13:39 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@3d350172
+30-04 13:39 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@6e48f02e
+30-04 13:39 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+30-04 13:40 INFO  project.listener.UserSessionListener - Session created: ID=CABD780DC7CD1EE2EF95F56E2D9C2F70
+30-04 13:40 INFO  project.listener.UserSessionListener - Session created: ID=465D5AAF047B8283D5F3D94C16DB07DB
+07-06 17:32 INFO  project.listener.UserSessionListener - Session created: ID=9B749088F5CDE9B9BB5AF2A6FB7F13A8
+07-06 17:32 INFO  project.listener.UserSessionListener - Session created: ID=D2DBD65A71D218CCCC52C5D86D2ACAB0
+07-06 17:32 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+07-06 17:32 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+07-06 17:32 INFO  command.impl.LocaleCommand - ru_RU
+07-06 17:32 INFO  command.impl.LocaleCommand - en_EN
+07-06 17:33 INFO  command.impl.LocaleCommand - ru_RU
+07-06 17:36 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@5423697f
+07-06 17:36 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@58fb7241
+07-06 17:36 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+08-06 09:10 INFO  project.listener.UserSessionListener - Session created: ID=8A542116AA7F6AE125309A6CB925E3ED
+08-06 09:11 INFO  project.listener.UserSessionListener - Session created: ID=A04C1348A6873F4FE8A8E4A8487EB97A
+15-06 17:01 INFO  project.listener.UserSessionListener - Session created: ID=667B116F1A782758D04FC452469606AD
+15-06 17:01 INFO  project.listener.UserSessionListener - Session created: ID=573B6CDF72C04021F998E5209D4A2722
+15-06 17:01 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15-06 17:01 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+15-06 17:02 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@749d4cc0
+15-06 17:02 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@5a93cba1
+15-06 17:02 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+15-06 19:33 INFO  project.listener.UserSessionListener - Session created: ID=B915F43F5166E9528197FDEF8ED45DAD
+15-06 19:34 INFO  project.listener.UserSessionListener - Session created: ID=16905E5C05A9865E05A7007D7D01DA5D
+15-06 19:34 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+15-06 19:34 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+15-06 19:34 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@5266bfd1
+15-06 19:34 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4cc67e4c
+15-06 19:34 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+30-12 15:16 INFO  project.listener.UserSessionListener - Session created: ID=E8D326AEB3A87FA9496654C1306B8DBB
+30-12 15:16 INFO  project.listener.UserSessionListener - Session created: ID=818912A24B78D26C3C1882B3DAC17396
+30-12 15:17 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+30-12 15:17 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+30-12 15:24 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@2bcd23ba
+30-12 15:24 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@2a6399fa
+30-12 15:24 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+30-12 15:44 INFO  project.listener.UserSessionListener - Session created: ID=B88F3AE54F4A5168B39B73BB13DD4A82
+30-12 15:44 INFO  project.listener.UserSessionListener - Session created: ID=BCAEC0F1B93329C92A3D467F27D67F76
+30-12 15:44 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+30-12 15:44 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+30-12 15:49 INFO  project.listener.UserSessionListener - Session invalided: ID=BCAEC0F1B93329C92A3D467F27D67F76
+30-12 15:49 INFO  project.listener.UserSessionListener - Session created: ID=A38482C541FDDF3FAE35B2FBE5016E3D
+30-12 15:50 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@23a867d
+30-12 15:50 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@3dbc2d2e
+30-12 15:50 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+30-12 15:51 INFO  project.listener.UserSessionListener - Session created: ID=FBED3C6EEB7EDA7F453CD0FEA83F830E
+30-12 15:51 INFO  project.listener.UserSessionListener - Session created: ID=A45D085914D55D8CBD84423958F11F52
+30-12 15:51 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+30-12 15:51 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+30-12 15:54 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@2bcd23ba
+30-12 15:54 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@2a6399fa
+30-12 15:54 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+30-12 15:58 INFO  project.listener.UserSessionListener - Session created: ID=187A6E1B125EE64E5327D400F0D4AA35
+30-12 15:58 INFO  project.listener.UserSessionListener - Session created: ID=3E651F2A0365F63B40A1F5413623B99E
+30-12 15:58 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+30-12 15:58 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+30-12 16:00 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@6f4d59a5
+30-12 16:00 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@483b86f9
+30-12 16:00 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+30-12 16:01 INFO  project.listener.UserSessionListener - Session created: ID=7F8753E2BFE60CC37AA58F139ECEC83E
+30-12 16:01 INFO  project.listener.UserSessionListener - Session created: ID=E4A287ACDC9DCDAABC7BE3DDD0CABB8C
+30-12 16:01 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+30-12 16:01 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+30-12 16:05 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@28fa40d6
+30-12 16:05 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@391fac9a
+30-12 16:05 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+30-12 16:06 INFO  project.listener.UserSessionListener - Session created: ID=9B3185DCEB9CEBCF9A223101AE363526
+30-12 16:06 INFO  project.listener.UserSessionListener - Session created: ID=6C7C6ADD29C47C85A0C3C6B14F548CBD
+30-12 16:06 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+30-12 16:06 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+30-12 16:17 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@10e92199
+30-12 16:17 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@358388d0
+30-12 16:17 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+30-12 16:18 INFO  project.listener.UserSessionListener - Session created: ID=6137661C91CA30DBA31748A44B8DAD62
+30-12 16:18 INFO  project.listener.UserSessionListener - Session created: ID=5962CD11AA6311FCF28157D8AC95289C
+30-12 16:18 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+30-12 16:18 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+30-12 16:21 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@6218e358
+30-12 16:21 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@5ca8f71
+30-12 16:21 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+30-12 16:22 INFO  project.listener.UserSessionListener - Session created: ID=46CA7861E5FCA71FA6634C069F5C3B1F
+30-12 16:22 INFO  project.listener.UserSessionListener - Session created: ID=948802920977B46F31645C3A256571AF
+30-12 16:22 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+30-12 16:22 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+30-12 16:25 INFO  project.listener.UserSessionListener - Session created: ID=884317CA2B44BE8DAC70C7BE529A34DB
+30-12 16:25 INFO  project.listener.UserSessionListener - Session created: ID=C60AE13E5EA1EDB6C06751FF073E1AD5
+30-12 16:25 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+30-12 16:25 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+30-12 16:28 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@477f90e0
+30-12 16:28 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@5ff44fd2
+30-12 16:28 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+30-12 16:29 INFO  project.listener.UserSessionListener - Session created: ID=0972AF2122F9898352A4DFD3DDEFF0CC
+30-12 16:29 INFO  project.listener.UserSessionListener - Session created: ID=789BEFC8094C5B2C240722A571121526
+30-12 16:30 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+30-12 16:30 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+30-12 16:31 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@241c2e34
+30-12 16:31 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@23ce7a5d
+30-12 16:31 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+30-12 16:32 INFO  project.listener.UserSessionListener - Session created: ID=075A2500C54D57DE4A1DAFE6DEEEBE9E
+30-12 16:32 INFO  project.listener.UserSessionListener - Session created: ID=BDE07C7D4801E0401230034AE35E1A2F
+30-12 16:32 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+30-12 16:33 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+30-12 16:42 INFO  project.listener.UserSessionListener - Session created: ID=43B9705E2A2CAAA0613DC701B21D6D97
+30-12 16:43 INFO  project.listener.UserSessionListener - Session created: ID=9DEFE1E14D2B408931268F549B060035
+30-12 16:43 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+30-12 16:43 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+30-12 16:45 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@56bed120
+30-12 16:45 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@2b5ddad5
+30-12 16:45 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.

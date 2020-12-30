@@ -30,7 +30,6 @@
     <orderEntry type="library" name="el-api" level="project" />
     <orderEntry type="library" name="jsp-api" level="project" />
     <orderEntry type="library" name="mysql-connector-java-8.0.19" level="project" />
-    <orderEntry type="library" name="jstl-1.2" level="project" />
     <orderEntry type="library" name="javax.mail" level="project" />
     <orderEntry type="library" name="testng-6.10" level="project" />
     <orderEntry type="library" name="log4j-api-2.12.1" level="project" />
@@ -38,5 +37,7 @@
     <orderEntry type="library" name="log4j-web-2.12.1" level="project" />
     <orderEntry type="library" name="xssflt" level="project" />
     <orderEntry type="library" name="activation" level="project" />
+    <orderEntry type="library" name="jstl-1.2" level="project" />
+    <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
   </component>
 </module>

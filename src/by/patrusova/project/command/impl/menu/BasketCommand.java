@@ -28,8 +28,8 @@ public class BasketCommand implements ActionCommand {
     private final static String ORDER_NEW = "orderNew";
     private final static String TOTAL_COST = "totalCost";
     private final static String PAGE_BASKET = "page.basket";
-    private ShowService showService = new ShowService();
-    private OrderInfoService infoService = new OrderInfoService();
+    private final ShowService showService = new ShowService();
+    private final OrderInfoService infoService = new OrderInfoService();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
@@ -41,8 +41,10 @@ public class BasketCommand implements ActionCommand {
                 if (!positions.isEmpty()) {
                     request.getSession().setAttribute(BASKET_LIST, positions);
                     BigDecimal totalCost =                                      //show total cost with discount
-                            infoService.doService(order.getId()).setScale(2, RoundingMode.HALF_UP);
+                            infoService.doService(order.getId());
+                    System.out.println("ccc");
                     request.getSession().setAttribute(TOTAL_COST, totalCost);
+                    System.out.println("ddd");
                 }
             }
             return ConfigurationManager.getProperty(PAGE_BASKET);

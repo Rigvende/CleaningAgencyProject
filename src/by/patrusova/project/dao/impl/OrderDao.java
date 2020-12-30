@@ -9,7 +9,9 @@ import by.patrusova.project.exception.DaoException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +19,9 @@ import java.util.List;
 /**
  * Class for actions mostly with {@link Order} using connections, statements and queries
  * according DAO and database data
- * @autor Marianna Patrusova
+ *
  * @version 1.0
+ * @autor Marianna Patrusova
  */
 public class OrderDao extends AbstractDao<AbstractEntity> {
 
@@ -177,7 +180,7 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             throw new DaoException(e);
         }
         boolean isDeleted;
-        Order order = (Order)entity;
+        Order order = (Order) entity;
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement(SQL_DELETE_ORDER);
@@ -585,19 +588,18 @@ public class OrderDao extends AbstractDao<AbstractEntity> {
             try (ResultSet resultSet1 = preparedStatement1.executeQuery();
                  ResultSet resultSet2 = preparedStatement2.executeQuery();
                  ResultSet resultSet3 = preparedStatement3.executeQuery()) {
-                BigDecimal totalCost;
-                BigDecimal totalSale;
-                BigDecimal totalDiscount;
+
                 if (!resultSet1.next()) {
                     return BigDecimal.valueOf(0.0);
-                } else {
-                    totalCost = resultSet1.getBigDecimal(TOTAL_COST);
-                    totalSale = resultSet2.next() ?
-                            resultSet2.getBigDecimal(TOTAL_SALE) : BigDecimal.valueOf(0.0);
-                    totalDiscount = resultSet3.next() ?
-                            resultSet3.getBigDecimal(TOTAL_DISCOUNT) : BigDecimal.valueOf(0.0);
-                    return totalCost.subtract(totalSale).subtract(totalDiscount);
                 }
+                BigDecimal totalCost = resultSet1.getBigDecimal(TOTAL_COST);
+                BigDecimal totalSale = resultSet2.next() ?
+                        resultSet2.getBigDecimal(TOTAL_SALE) : BigDecimal.valueOf(0.0);
+                BigDecimal totalDiscount = resultSet3.next() ?
+                        resultSet3.getBigDecimal(TOTAL_DISCOUNT) : BigDecimal.valueOf(0.0);
+                return totalDiscount != null
+                    ? totalCost.subtract(totalSale).subtract(totalDiscount).setScale(2, RoundingMode.HALF_UP)
+                    : totalCost.subtract(totalSale).setScale(2, RoundingMode.HALF_UP);
             }
         } catch (SQLException e) {
             if (connection != null) {

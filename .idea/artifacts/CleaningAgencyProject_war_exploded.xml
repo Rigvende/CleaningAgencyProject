@@ -10,7 +10,6 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="el-api" />
           <element id="library" level="project" name="mysql-connector-java-8.0.19" />
-          <element id="library" level="project" name="jstl-1.2" />
           <element id="library" level="project" name="javax.mail" />
           <element id="library" level="project" name="log4j-api-2.12.1" />
           <element id="library" level="project" name="log4j-core-2.12.1" />
@@ -18,6 +17,7 @@
           <element id="library" level="project" name="testng-6.10" />
           <element id="library" level="project" name="xssflt" />
           <element id="library" level="project" name="activation" />
+          <element id="library" level="project" name="jstl-1.2" />
         </element>
       </element>
     </root>

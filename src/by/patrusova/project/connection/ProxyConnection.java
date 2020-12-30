@@ -22,7 +22,7 @@ public class ProxyConnection implements Connection {
     private final static String PASS = "pass";
     private final static String URL = "url";
     private final static String BUNDLE = "resources.connectionDB";
-    private Connection connection;
+    private final Connection connection;
 
     protected ProxyConnection(Connection connection) {
         this.connection = connection;
@@ -33,7 +33,7 @@ public class ProxyConnection implements Connection {
      * @throws DaoException object
      * @return instance of {@link Connection}
      */
-    public static Connection createConnection() throws DaoException {
+    private static Connection createConnection() throws DaoException {
         Connection connection;
         try {
             ResourceBundle bundle = ResourceBundle.getBundle(BUNDLE);
@@ -53,7 +53,7 @@ public class ProxyConnection implements Connection {
      * @throws DaoException object
      * @return instance of ProxyConnection
      */
-    public static ProxyConnection createProxyConnection() throws DaoException {
+    static ProxyConnection createProxyConnection() throws DaoException {
         return new ProxyConnection(createConnection());
     }
 

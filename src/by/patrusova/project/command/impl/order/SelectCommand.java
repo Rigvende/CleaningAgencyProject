@@ -29,7 +29,7 @@ public class SelectCommand implements ActionCommand {
     private final static String PAGE_CATALOGUE = "page.catalogue";
     private final static String ERROR_SELECT = "errorSelect";
     private final static String MESSAGE_ERROR_SELECT = "message.selecterror";
-    private BasketService basketService = new BasketService();
+    private final BasketService basketService = new BasketService();
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {

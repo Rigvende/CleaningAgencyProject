@@ -22,10 +22,10 @@ public class ConnectionPool {
 
     private final static Logger LOGGER = LogManager.getLogger();
     private final static int MAX_POOL_SIZE = 20;
-    private static BlockingQueue<ProxyConnection> pool = new LinkedBlockingQueue<>(MAX_POOL_SIZE);
-    private static BlockingQueue<ProxyConnection> usedConnections = new LinkedBlockingQueue<>();
-    private static Lock lock = new ReentrantLock();
-    private static AtomicBoolean flag = new AtomicBoolean(false);
+    private static final BlockingQueue<ProxyConnection> pool = new LinkedBlockingQueue<>(MAX_POOL_SIZE);
+    private static final BlockingQueue<ProxyConnection> usedConnections = new LinkedBlockingQueue<>();
+    private static final Lock lock = new ReentrantLock();
+    private static final AtomicBoolean flag = new AtomicBoolean(false);
     private static ConnectionPool instance;
 
     //private constructor for singleton instance
@@ -89,12 +89,12 @@ public class ConnectionPool {
     }
 
     /**
-     * Method: take connection from connection pool.
+     * Method: return connection to connection pool.
      * @throws DaoException object
      * @param connection - instance of {@link Connection} (in program's logic - {@link ProxyConnection})
      */
-    public void releaseConnection(Connection connection) throws DaoException {
-        if (connection instanceof ProxyConnection && usedConnections.contains(connection)) {
+    void releaseConnection(Connection connection) throws DaoException {
+        if (connection instanceof ProxyConnection) { //&& usedConnections.contains(connection)
             usedConnections.remove(connection);
             pool.offer((ProxyConnection) connection);
         } else {
