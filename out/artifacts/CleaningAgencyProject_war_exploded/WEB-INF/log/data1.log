@@ -12610,3 +12610,24 @@ java.lang.IllegalArgumentException: No enum constant by.patrusova.project.comman
 30-12 22:39 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@26b794c8
 30-12 22:39 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@abd44dc
 30-12 22:39 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+30-12 22:40 INFO  project.listener.UserSessionListener - Session created: ID=6F151F30AA168C081142BB3E4A8F3FBE
+30-12 22:40 INFO  project.listener.UserSessionListener - Session created: ID=E651A9E03F348F8EE9A29BF14F6DC6A4
+30-12 22:40 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+30-12 22:40 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+30-12 22:52 INFO  project.listener.UserSessionListener - Session created: ID=EBE9626913631CCEF3B11CD9307FDE87
+30-12 22:52 INFO  project.listener.UserSessionListener - Session created: ID=CA566FF397A46EF778FAA3E9C3A17E40
+30-12 22:53 INFO  project.listener.UserSessionListener - Session created: ID=4D0D5594CB8C911162BE1BBCC28CBD24
+30-12 22:53 INFO  project.listener.UserSessionListener - Session created: ID=A44F40EA4F86179882DFDAA52B2E60F1
+30-12 22:55 INFO  project.listener.UserSessionListener - Session created: ID=9A053B811E8CC0CF80BA253970BE6E66
+30-12 22:55 INFO  project.listener.UserSessionListener - Session created: ID=5819C9A2E1277A348DA40142CC34E6FF
+30-12 22:56 INFO  project.listener.UserSessionListener - Session created: ID=EA4511E9CB804AE8654D185C35CFC4D3
+30-12 22:56 INFO  project.listener.UserSessionListener - Session created: ID=7515F37003113A5DA3CAD2DACC2DE9AE
+30-12 22:59 INFO  project.listener.UserSessionListener - Session created: ID=ED8CD054DC9E769B8E06CDB3D41B15A2
+30-12 22:59 INFO  project.listener.UserSessionListener - Session created: ID=EE3D4E4E1ED9A68BDE96B7B44CD84460
+30-12 23:10 INFO  project.listener.UserSessionListener - Session created: ID=18C8ACF0EFA4DF14CB7B5256442C4174
+30-12 23:10 INFO  project.listener.UserSessionListener - Session created: ID=96C0FC8864292E98077254F440CE88F0
+30-12 23:14 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+30-12 23:14 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+30-12 23:14 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@3f6c154d
+30-12 23:14 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@aa09c30
+30-12 23:14 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.

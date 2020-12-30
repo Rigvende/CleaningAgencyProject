@@ -8,7 +8,8 @@
 <html>
     <head>
         <title><fmt:message key="title.catalogue"/></title>
-    <link rel="stylesheet" type="text/css" href="<c:url value="/css/background.css"/>" />
+        <link rel="icon" href="<c:url value="/data/favicon.ico"/>"/>
+        <link rel="stylesheet" type="text/css" href="<c:url value="/css/background.css"/>" />
     </head>
 
     <body>

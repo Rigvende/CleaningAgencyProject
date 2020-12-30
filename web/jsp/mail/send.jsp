@@ -7,6 +7,7 @@
 <html>
 <head>
     <title><fmt:message key="title.send"/></title>
+    <link rel="icon" href="<c:url value="/data/favicon.ico"/>"/>
     <link rel="stylesheet" type="text/css" href="<c:url value="/css/background.css"/>" />
 </head>
 
