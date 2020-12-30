@@ -12508,3 +12508,73 @@ java.lang.IllegalArgumentException: No enum constant by.patrusova.project.comman
 30-12 16:51 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@327682db
 30-12 16:51 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4e247b6a
 30-12 16:51 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+30-12 21:18 INFO  project.listener.UserSessionListener - Session created: ID=497C3EC657F649AC20562606024C5668
+30-12 21:18 INFO  project.listener.UserSessionListener - Session created: ID=CC6443EEED34483C2543668E22870F21
+30-12 21:19 INFO  project.listener.UserSessionListener - Session created: ID=518F396628F1C969791BF7F439DF3111
+30-12 21:19 INFO  project.listener.UserSessionListener - Session created: ID=3ABA692B29014AD5DD6E3F347AB866DC
+30-12 21:19 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+30-12 21:19 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+30-12 21:19 INFO  command.impl.LocaleCommand - ru_RU
+30-12 21:20 WARN  project.connection.ConnectionPool - Wrong type connection. 
+30-12 21:20 ERROR project.connection.ProxyConnection - Connection's releasing failed
+30-12 21:20 INFO  project.listener.UserSessionListener - Session invalided: ID=3ABA692B29014AD5DD6E3F347AB866DC
+30-12 21:20 WARN  project.connection.ConnectionPool - Wrong type connection. 
+30-12 21:20 ERROR project.connection.ProxyConnection - Connection's releasing failed
+30-12 21:20 WARN  project.connection.ConnectionPool - Wrong type connection. 
+30-12 21:20 ERROR project.connection.ProxyConnection - Connection's releasing failed
+30-12 21:20 INFO  project.listener.UserSessionListener - Session created: ID=9207A80B679A01A7706B3FF0606C0BA4
+30-12 21:21 WARN  project.connection.ConnectionPool - Wrong type connection. 
+30-12 21:21 ERROR project.connection.ProxyConnection - Connection's releasing failed
+30-12 21:21 WARN  project.connection.ConnectionPool - Wrong type connection. 
+30-12 21:21 ERROR project.connection.ProxyConnection - Connection's releasing failed
+30-12 21:21 WARN  project.connection.ConnectionPool - Wrong type connection. 
+30-12 21:21 ERROR project.connection.ProxyConnection - Connection's releasing failed
+30-12 21:21 WARN  project.connection.ConnectionPool - Wrong type connection. 
+30-12 21:21 ERROR project.connection.ProxyConnection - Connection's releasing failed
+30-12 21:21 WARN  project.connection.ConnectionPool - Wrong type connection. 
+30-12 21:21 ERROR project.connection.ProxyConnection - Connection's releasing failed
+30-12 21:21 WARN  project.connection.ConnectionPool - Wrong type connection. 
+30-12 21:21 ERROR project.connection.ProxyConnection - Connection's releasing failed
+30-12 21:21 WARN  project.connection.ConnectionPool - Wrong type connection. 
+30-12 21:21 ERROR project.connection.ProxyConnection - Connection's releasing failed
+30-12 21:21 WARN  project.connection.ConnectionPool - Wrong type connection. 
+30-12 21:21 ERROR project.connection.ProxyConnection - Connection's releasing failed
+30-12 21:21 WARN  project.connection.ConnectionPool - Wrong type connection. 
+30-12 21:21 ERROR project.connection.ProxyConnection - Connection's releasing failed
+30-12 21:21 WARN  project.connection.ConnectionPool - Wrong type connection. 
+30-12 21:21 ERROR project.connection.ProxyConnection - Connection's releasing failed
+30-12 21:21 WARN  project.connection.ConnectionPool - Wrong type connection. 
+30-12 21:21 ERROR project.connection.ProxyConnection - Connection's releasing failed
+30-12 21:21 WARN  project.connection.ConnectionPool - Wrong type connection. 
+30-12 21:21 ERROR project.connection.ProxyConnection - Connection's releasing failed
+30-12 21:21 WARN  project.connection.ConnectionPool - Wrong type connection. 
+30-12 21:21 ERROR project.connection.ProxyConnection - Connection's releasing failed
+30-12 21:21 WARN  project.connection.ConnectionPool - Wrong type connection. 
+30-12 21:21 ERROR project.connection.ProxyConnection - Connection's releasing failed
+30-12 21:21 WARN  project.connection.ConnectionPool - Wrong type connection. 
+30-12 21:21 ERROR project.connection.ProxyConnection - Connection's releasing failed
+30-12 21:21 WARN  project.connection.ConnectionPool - Wrong type connection. 
+30-12 21:21 ERROR project.connection.ProxyConnection - Connection's releasing failed
+30-12 21:21 WARN  project.connection.ConnectionPool - Wrong type connection. 
+30-12 21:21 ERROR project.connection.ProxyConnection - Connection's releasing failed
+30-12 21:21 WARN  project.connection.ConnectionPool - Wrong type connection. 
+30-12 21:21 ERROR project.connection.ProxyConnection - Connection's releasing failed
+30-12 21:21 WARN  project.connection.ConnectionPool - Wrong type connection. 
+30-12 21:21 ERROR project.connection.ProxyConnection - Connection's releasing failed
+30-12 21:22 INFO  project.listener.UserSessionListener - Session created: ID=28051E799A91520C6E200D314C60E83C
+30-12 21:22 INFO  project.listener.UserSessionListener - Session created: ID=99A468E20E8AF642AA523470BFA1401C
+30-12 21:23 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+30-12 21:23 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+30-12 21:23 INFO  project.listener.UserSessionListener - Session invalided: ID=99A468E20E8AF642AA523470BFA1401C
+30-12 21:23 INFO  project.listener.UserSessionListener - Session created: ID=06237E97245B05DF6443CB848970CC0A
+30-12 21:23 INFO  command.impl.LocaleCommand - ru_RU
+30-12 21:23 INFO  command.impl.LocaleCommand - en_EN
+30-12 21:30 INFO  project.listener.UserSessionListener - Session created: ID=A11361D82E06857FC8FB6F183FFDF71A
+30-12 21:31 INFO  project.listener.UserSessionListener - Session created: ID=74D2000222C75F8A1A6850F1CBF9D23F
+30-12 21:33 INFO  project.listener.UserSessionListener - Session created: ID=1E58500D70FF32E7356EF493223C6E97
+30-12 21:33 INFO  project.listener.UserSessionListener - Session created: ID=D853BD2DD3C6391A289B0AD9763659BC
+30-12 21:37 INFO  project.listener.UserSessionListener - Session created: ID=625D6D6C5F52D266BD92665470993910
+30-12 21:38 INFO  project.listener.UserSessionListener - Session created: ID=52F5CFCF8FE1CA5983CA1E35DCB259F0
+30-12 21:40 INFO  project.listener.UserSessionListener - Session created: ID=0AEB952DF994EF3BF34190DC36E59705
+30-12 21:40 INFO  project.listener.UserSessionListener - Session created: ID=0FB788FFE6297E8C9B1830A9BFD758BD
+30-12 21:41 INFO  project.listener.UserSessionListener - Session created: ID=804F7A8EFA51B99C074BED7429F8FDB5

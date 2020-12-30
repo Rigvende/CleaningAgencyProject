@@ -94,7 +94,7 @@ public class ConnectionPool {
      * @param connection - instance of {@link Connection} (in program's logic - {@link ProxyConnection})
      */
     void releaseConnection(Connection connection) throws DaoException {
-        if (connection instanceof ProxyConnection) { //&& usedConnections.contains(connection)
+        if (connection instanceof ProxyConnection) {
             usedConnections.remove(connection);
             pool.offer((ProxyConnection) connection);
         } else {

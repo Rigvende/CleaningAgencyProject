@@ -1,0 +1,6 @@
+.idea
+lib
+out
+test
+src/resources/mail.properties
+src/resources/connectionDB.properties
