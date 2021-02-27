@@ -13153,3 +13153,15 @@ Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or u
 27-02 16:43 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@18b8eaed
 27-02 16:43 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@295b2802
 27-02 16:43 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+27-02 16:44 INFO  project.listener.UserSessionListener - Session created: ID=A08EFDB756A118D9EA4C10917A81E205
+27-02 16:44 INFO  project.listener.UserSessionListener - Session created: ID=71EBBFE06DE70A7412F679DCAE869D2C
+27-02 16:44 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+27-02 16:44 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+27-02 16:56 INFO  project.listener.UserSessionListener - Session invalided: ID=71EBBFE06DE70A7412F679DCAE869D2C
+27-02 16:56 INFO  project.listener.UserSessionListener - Session created: ID=82712D12CFFD3D83390C14CCEA4DD7B3
+27-02 18:42 INFO  project.listener.UserSessionListener - Session invalided: ID=82712D12CFFD3D83390C14CCEA4DD7B3
+27-02 18:42 INFO  project.listener.UserSessionListener - Session created: ID=94367E5EEB88A36E3AEE504A95A618C1
+27-02 18:44 INFO  project.listener.UserSessionListener - Session invalided: ID=A08EFDB756A118D9EA4C10917A81E205
+27-02 18:54 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@477f90e0
+27-02 18:54 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@5ff44fd2
+27-02 18:54 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
