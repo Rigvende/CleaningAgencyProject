@@ -46,7 +46,8 @@ public class NumberValidator {
         try {
             CleanerDao dao = DaoFactory.createCleanerDao();
             if (isValidID(id)) {
-                check = dao.findId(Long.parseLong(id));
+                long numId = Long.parseLong(id);
+                check = numId == 0 || dao.findId(numId);
             }
         } catch (DaoException e) {
             LOGGER.log(Level.ERROR,

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf8" pageEncoding="utf8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="ctg" uri="/WEB-INF/tld/removeattr.tld" %>
@@ -181,6 +181,7 @@
             </tr>
 
             <c:forEach var="orderlist" items="${orderList}" begin="${pageStart}" end="${pageStart + perPage - 1}">
+                <c:if test="${ orderlist.order.orderStatus != 'new' }">
                 <tr>
                     <td><c:out value="${orderlist.order.id}" /></td>
                     <td><c:out value="${orderlist.order.orderTime}" /></td>
@@ -191,6 +192,7 @@
                     <td><c:out value="${orderlist.user.lastname}" /></td>
                     <td><c:out value="${orderlist.user.phone}" /></td>
                 </tr>
+                </c:if>
             </c:forEach>
         </table>
         <br/>

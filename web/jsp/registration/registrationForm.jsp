@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf8" pageEncoding="utf8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="ctg" uri="/WEB-INF/tld/removeattr.tld" %>
@@ -23,7 +23,7 @@
     </div>
 
     <div class="blr" style="padding: 30px; background: #E0E0E0; height: 140px; width: auto; font-size:18px;
-    font-family:'Papyrus', cursive; color: darkgoldenrod; margin-right:150px; min-width: 1920px">
+    font-family:'Papyrus', cursive; color: darkgoldenrod;">
         <u style="font-size: 50px"><fmt:message key="text.company"/></u>
         <br/>
         <b style="font-family: 'Palatino Linotype',serif; margin-left: 145px">

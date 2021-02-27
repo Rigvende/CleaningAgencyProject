@@ -12643,3 +12643,525 @@ java.lang.IllegalArgumentException: No enum constant by.patrusova.project.comman
 30-12 23:16 INFO  command.impl.LocaleCommand - en_EN
 30-12 23:16 INFO  command.impl.LocaleCommand - ru_RU
 30-12 23:16 INFO  command.impl.LocaleCommand - en_EN
+27-02 10:42 INFO  project.listener.UserSessionListener - Session created: ID=6E519518C75FD7CBC57A60722FA5179F
+27-02 10:42 INFO  project.listener.UserSessionListener - Session created: ID=CD11BCB5EFFCB7E4B68B0E565BE1F1D9
+27-02 10:43 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+27-02 10:43 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+27-02 10:43 INFO  command.impl.LocaleCommand - ru_RU
+27-02 10:43 INFO  command.impl.LocaleCommand - en_EN
+27-02 10:50 ERROR dao.impl.UserDao - Cannot delete user. Request to table failed. 
+java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`cleaning_agency`.`orders`, CONSTRAINT `cleaner` FOREIGN KEY (`id_cleaner`) REFERENCES `cleaners` (`id_cleaner`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at by.patrusova.project.dao.impl.UserDao.delete(UserDao.java:130) [classes/:?]
+	at by.patrusova.project.service.impl.DeleteEntityService.doService(DeleteEntityService.java:39) [classes/:?]
+	at by.patrusova.project.command.impl.delete.DeleteEntityCommand.execute(DeleteEntityCommand.java:66) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.processRequest(ControlServlet.java:62) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.doPost(ControlServlet.java:53) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at by.patrusova.project.filter.EncodingFilter.doFilter(EncodingFilter.java:26) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at com.cj.xss.XSSFilter.doFilter(Unknown Source) [xssflt.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.12.1.jar:2.12.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.17]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:678) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.17]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.17]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.17]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.17]
+	at java.lang.Thread.run(Thread.java:835) [?:?]
+27-02 10:50 ERROR service.impl.DeleteEntityService - Exception in DeleteEntityService while deleting entity has occurred. 
+by.patrusova.project.exception.DaoException: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`cleaning_agency`.`orders`, CONSTRAINT `cleaner` FOREIGN KEY (`id_cleaner`) REFERENCES `cleaners` (`id_cleaner`))
+	at by.patrusova.project.dao.impl.UserDao.delete(UserDao.java:147) ~[classes/:?]
+	at by.patrusova.project.service.impl.DeleteEntityService.doService(DeleteEntityService.java:39) [classes/:?]
+	at by.patrusova.project.command.impl.delete.DeleteEntityCommand.execute(DeleteEntityCommand.java:66) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.processRequest(ControlServlet.java:62) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.doPost(ControlServlet.java:53) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at by.patrusova.project.filter.EncodingFilter.doFilter(EncodingFilter.java:26) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at com.cj.xss.XSSFilter.doFilter(Unknown Source) [xssflt.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.12.1.jar:2.12.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.17]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:678) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.17]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.17]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.17]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.17]
+	at java.lang.Thread.run(Thread.java:835) [?:?]
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`cleaning_agency`.`orders`, CONSTRAINT `cleaner` FOREIGN KEY (`id_cleaner`) REFERENCES `cleaners` (`id_cleaner`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at by.patrusova.project.dao.impl.UserDao.delete(UserDao.java:130) ~[classes/:?]
+	... 37 more
+27-02 10:50 ERROR impl.delete.DeleteEntityCommand - Exception while deleting entity has occurred. 
+by.patrusova.project.exception.ServiceException: by.patrusova.project.exception.DaoException: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`cleaning_agency`.`orders`, CONSTRAINT `cleaner` FOREIGN KEY (`id_cleaner`) REFERENCES `cleaners` (`id_cleaner`))
+	at by.patrusova.project.service.impl.DeleteEntityService.doService(DeleteEntityService.java:68) ~[classes/:?]
+	at by.patrusova.project.command.impl.delete.DeleteEntityCommand.execute(DeleteEntityCommand.java:66) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.processRequest(ControlServlet.java:62) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.doPost(ControlServlet.java:53) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at by.patrusova.project.filter.EncodingFilter.doFilter(EncodingFilter.java:26) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at com.cj.xss.XSSFilter.doFilter(Unknown Source) [xssflt.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.12.1.jar:2.12.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.17]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:678) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.17]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.17]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.17]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.17]
+	at java.lang.Thread.run(Thread.java:835) [?:?]
+Caused by: by.patrusova.project.exception.DaoException: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`cleaning_agency`.`orders`, CONSTRAINT `cleaner` FOREIGN KEY (`id_cleaner`) REFERENCES `cleaners` (`id_cleaner`))
+	at by.patrusova.project.dao.impl.UserDao.delete(UserDao.java:147) ~[classes/:?]
+	at by.patrusova.project.service.impl.DeleteEntityService.doService(DeleteEntityService.java:39) ~[classes/:?]
+	... 36 more
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`cleaning_agency`.`orders`, CONSTRAINT `cleaner` FOREIGN KEY (`id_cleaner`) REFERENCES `cleaners` (`id_cleaner`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at by.patrusova.project.dao.impl.UserDao.delete(UserDao.java:130) ~[classes/:?]
+	at by.patrusova.project.service.impl.DeleteEntityService.doService(DeleteEntityService.java:39) ~[classes/:?]
+	... 36 more
+27-02 10:50 ERROR project.servlet.ControlServlet - Processing request failed.
+27-02 10:50 ERROR dao.impl.UserDao - Cannot delete user. Request to table failed. 
+java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`cleaning_agency`.`orders`, CONSTRAINT `cleaner` FOREIGN KEY (`id_cleaner`) REFERENCES `cleaners` (`id_cleaner`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at by.patrusova.project.dao.impl.UserDao.delete(UserDao.java:130) [classes/:?]
+	at by.patrusova.project.service.impl.DeleteEntityService.doService(DeleteEntityService.java:39) [classes/:?]
+	at by.patrusova.project.command.impl.delete.DeleteEntityCommand.execute(DeleteEntityCommand.java:66) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.processRequest(ControlServlet.java:62) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.doPost(ControlServlet.java:53) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at by.patrusova.project.filter.EncodingFilter.doFilter(EncodingFilter.java:26) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at com.cj.xss.XSSFilter.doFilter(Unknown Source) [xssflt.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.12.1.jar:2.12.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.17]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:678) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.17]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.17]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.17]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.17]
+	at java.lang.Thread.run(Thread.java:835) [?:?]
+27-02 10:50 ERROR service.impl.DeleteEntityService - Exception in DeleteEntityService while deleting entity has occurred. 
+by.patrusova.project.exception.DaoException: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`cleaning_agency`.`orders`, CONSTRAINT `cleaner` FOREIGN KEY (`id_cleaner`) REFERENCES `cleaners` (`id_cleaner`))
+	at by.patrusova.project.dao.impl.UserDao.delete(UserDao.java:147) ~[classes/:?]
+	at by.patrusova.project.service.impl.DeleteEntityService.doService(DeleteEntityService.java:39) [classes/:?]
+	at by.patrusova.project.command.impl.delete.DeleteEntityCommand.execute(DeleteEntityCommand.java:66) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.processRequest(ControlServlet.java:62) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.doPost(ControlServlet.java:53) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at by.patrusova.project.filter.EncodingFilter.doFilter(EncodingFilter.java:26) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at com.cj.xss.XSSFilter.doFilter(Unknown Source) [xssflt.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.12.1.jar:2.12.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.17]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:678) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.17]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.17]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.17]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.17]
+	at java.lang.Thread.run(Thread.java:835) [?:?]
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`cleaning_agency`.`orders`, CONSTRAINT `cleaner` FOREIGN KEY (`id_cleaner`) REFERENCES `cleaners` (`id_cleaner`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at by.patrusova.project.dao.impl.UserDao.delete(UserDao.java:130) ~[classes/:?]
+	... 37 more
+27-02 10:50 ERROR impl.delete.DeleteEntityCommand - Exception while deleting entity has occurred. 
+by.patrusova.project.exception.ServiceException: by.patrusova.project.exception.DaoException: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`cleaning_agency`.`orders`, CONSTRAINT `cleaner` FOREIGN KEY (`id_cleaner`) REFERENCES `cleaners` (`id_cleaner`))
+	at by.patrusova.project.service.impl.DeleteEntityService.doService(DeleteEntityService.java:68) ~[classes/:?]
+	at by.patrusova.project.command.impl.delete.DeleteEntityCommand.execute(DeleteEntityCommand.java:66) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.processRequest(ControlServlet.java:62) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.doPost(ControlServlet.java:53) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at by.patrusova.project.filter.EncodingFilter.doFilter(EncodingFilter.java:26) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at com.cj.xss.XSSFilter.doFilter(Unknown Source) [xssflt.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.12.1.jar:2.12.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.17]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:678) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.17]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.17]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.17]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.17]
+	at java.lang.Thread.run(Thread.java:835) [?:?]
+Caused by: by.patrusova.project.exception.DaoException: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`cleaning_agency`.`orders`, CONSTRAINT `cleaner` FOREIGN KEY (`id_cleaner`) REFERENCES `cleaners` (`id_cleaner`))
+	at by.patrusova.project.dao.impl.UserDao.delete(UserDao.java:147) ~[classes/:?]
+	at by.patrusova.project.service.impl.DeleteEntityService.doService(DeleteEntityService.java:39) ~[classes/:?]
+	... 36 more
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`cleaning_agency`.`orders`, CONSTRAINT `cleaner` FOREIGN KEY (`id_cleaner`) REFERENCES `cleaners` (`id_cleaner`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at by.patrusova.project.dao.impl.UserDao.delete(UserDao.java:130) ~[classes/:?]
+	at by.patrusova.project.service.impl.DeleteEntityService.doService(DeleteEntityService.java:39) ~[classes/:?]
+	... 36 more
+27-02 10:50 ERROR project.servlet.ControlServlet - Processing request failed.
+27-02 11:03 ERROR dao.impl.UserDao - Cannot delete user. Request to table failed. 
+java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`cleaning_agency`.`orders`, CONSTRAINT `cleaner` FOREIGN KEY (`id_cleaner`) REFERENCES `cleaners` (`id_cleaner`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at by.patrusova.project.dao.impl.UserDao.delete(UserDao.java:130) [classes/:?]
+	at by.patrusova.project.service.impl.DeleteEntityService.doService(DeleteEntityService.java:39) [classes/:?]
+	at by.patrusova.project.command.impl.delete.DeleteEntityCommand.execute(DeleteEntityCommand.java:66) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.processRequest(ControlServlet.java:62) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.doPost(ControlServlet.java:53) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at by.patrusova.project.filter.EncodingFilter.doFilter(EncodingFilter.java:26) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at com.cj.xss.XSSFilter.doFilter(Unknown Source) [xssflt.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.12.1.jar:2.12.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.17]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:678) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.17]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.17]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.17]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.17]
+	at java.lang.Thread.run(Thread.java:835) [?:?]
+27-02 11:03 ERROR service.impl.DeleteEntityService - Exception in DeleteEntityService while deleting entity has occurred. 
+by.patrusova.project.exception.DaoException: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`cleaning_agency`.`orders`, CONSTRAINT `cleaner` FOREIGN KEY (`id_cleaner`) REFERENCES `cleaners` (`id_cleaner`))
+	at by.patrusova.project.dao.impl.UserDao.delete(UserDao.java:147) ~[classes/:?]
+	at by.patrusova.project.service.impl.DeleteEntityService.doService(DeleteEntityService.java:39) [classes/:?]
+	at by.patrusova.project.command.impl.delete.DeleteEntityCommand.execute(DeleteEntityCommand.java:66) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.processRequest(ControlServlet.java:62) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.doPost(ControlServlet.java:53) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at by.patrusova.project.filter.EncodingFilter.doFilter(EncodingFilter.java:26) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at com.cj.xss.XSSFilter.doFilter(Unknown Source) [xssflt.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.12.1.jar:2.12.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.17]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:678) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.17]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.17]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.17]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.17]
+	at java.lang.Thread.run(Thread.java:835) [?:?]
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`cleaning_agency`.`orders`, CONSTRAINT `cleaner` FOREIGN KEY (`id_cleaner`) REFERENCES `cleaners` (`id_cleaner`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at by.patrusova.project.dao.impl.UserDao.delete(UserDao.java:130) ~[classes/:?]
+	... 37 more
+27-02 11:03 ERROR impl.delete.DeleteEntityCommand - Exception while deleting entity has occurred. 
+by.patrusova.project.exception.ServiceException: by.patrusova.project.exception.DaoException: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`cleaning_agency`.`orders`, CONSTRAINT `cleaner` FOREIGN KEY (`id_cleaner`) REFERENCES `cleaners` (`id_cleaner`))
+	at by.patrusova.project.service.impl.DeleteEntityService.doService(DeleteEntityService.java:68) ~[classes/:?]
+	at by.patrusova.project.command.impl.delete.DeleteEntityCommand.execute(DeleteEntityCommand.java:66) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.processRequest(ControlServlet.java:62) [classes/:?]
+	at by.patrusova.project.servlet.ControlServlet.doPost(ControlServlet.java:53) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at by.patrusova.project.filter.EncodingFilter.doFilter(EncodingFilter.java:26) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at com.cj.xss.XSSFilter.doFilter(Unknown Source) [xssflt.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71) [log4j-web-2.12.1.jar:2.12.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.17]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.17]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:678) [catalina.jar:9.0.17]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.17]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.17]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-coyote.jar:9.0.17]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-coyote.jar:9.0.17]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.17]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.17]
+	at java.lang.Thread.run(Thread.java:835) [?:?]
+Caused by: by.patrusova.project.exception.DaoException: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`cleaning_agency`.`orders`, CONSTRAINT `cleaner` FOREIGN KEY (`id_cleaner`) REFERENCES `cleaners` (`id_cleaner`))
+	at by.patrusova.project.dao.impl.UserDao.delete(UserDao.java:147) ~[classes/:?]
+	at by.patrusova.project.service.impl.DeleteEntityService.doService(DeleteEntityService.java:39) ~[classes/:?]
+	... 36 more
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`cleaning_agency`.`orders`, CONSTRAINT `cleaner` FOREIGN KEY (`id_cleaner`) REFERENCES `cleaners` (`id_cleaner`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at by.patrusova.project.dao.impl.UserDao.delete(UserDao.java:130) ~[classes/:?]
+	at by.patrusova.project.service.impl.DeleteEntityService.doService(DeleteEntityService.java:39) ~[classes/:?]
+	... 36 more
+27-02 11:03 ERROR project.servlet.ControlServlet - Processing request failed.
+27-02 11:12 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@ba93aba
+27-02 11:12 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4fb848ef
+27-02 11:12 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+27-02 11:24 INFO  project.listener.UserSessionListener - Session created: ID=BDEDDCF4ED8402860530EB1AA4CB50E9
+27-02 11:24 INFO  project.listener.UserSessionListener - Session created: ID=37953531ED419FD48FDD7DC14A6861FB
+27-02 11:24 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+27-02 11:24 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+27-02 11:38 INFO  project.listener.UserSessionListener - Session invalided: ID=37953531ED419FD48FDD7DC14A6861FB
+27-02 11:38 INFO  project.listener.UserSessionListener - Session created: ID=B87BB1D4495DE65BAE2E081AC7C2EB51
+27-02 11:42 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@52275ecd
+27-02 11:42 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@2a04c843
+27-02 11:42 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+27-02 11:43 INFO  project.listener.UserSessionListener - Session created: ID=FDDF93C90349E8098653D7CAE37F9170
+27-02 11:43 INFO  project.listener.UserSessionListener - Session created: ID=9115DAC55C609EFFA775FA7E10E361D9
+27-02 11:44 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+27-02 11:44 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+27-02 13:40 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@7fd09cfb
+27-02 13:40 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@3d2effea
+27-02 13:40 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+27-02 13:41 INFO  project.listener.UserSessionListener - Session created: ID=B99E86963537DC978FE454336BCF141A
+27-02 13:41 INFO  project.listener.UserSessionListener - Session created: ID=FEEE7F8016ED76CA3D2041438DC72D87
+27-02 13:43 INFO  project.listener.UserSessionListener - Session created: ID=369DAFC46780272DB69255362C22FC6E
+27-02 13:44 INFO  project.listener.UserSessionListener - Session created: ID=4CA8B3EAE125E09F9AA2D133DD7090DC
+27-02 13:45 INFO  project.listener.UserSessionListener - Session created: ID=E44EA455205F76DEB435D30220FE09CF
+27-02 13:46 INFO  project.listener.UserSessionListener - Session created: ID=0E5E4624001E0D0ABFD7A464705CD4A8
+27-02 13:46 INFO  project.listener.UserSessionListener - Session created: ID=F87CBDD8C0D130D4C50689FB1515D8A6
+27-02 13:47 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+27-02 13:47 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+27-02 13:47 INFO  command.impl.LocaleCommand - ru_RU
+27-02 13:47 INFO  command.impl.LocaleCommand - en_EN
+27-02 13:48 INFO  command.impl.LocaleCommand - ru_RU
+27-02 13:48 INFO  command.impl.LocaleCommand - en_EN
+27-02 13:49 INFO  command.impl.LocaleCommand - ru_RU
+27-02 13:49 INFO  command.impl.LocaleCommand - en_EN
+27-02 13:50 INFO  command.impl.LocaleCommand - ru_RU
+27-02 13:50 INFO  command.impl.LocaleCommand - en_EN
+27-02 13:50 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@7d16bc2a
+27-02 13:50 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@50c8bee2
+27-02 13:50 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+27-02 13:51 INFO  project.listener.UserSessionListener - Session created: ID=C466A4C024552B34FC30B2883F7292D3
+27-02 13:51 INFO  project.listener.UserSessionListener - Session created: ID=3B5B57012731985359C7D39F08010456
+27-02 13:53 INFO  project.listener.UserSessionListener - Session created: ID=4593923261552AD536BE6BA98CD896AC
+27-02 13:53 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+27-02 13:53 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+27-02 13:54 INFO  command.impl.LocaleCommand - ru_RU
+27-02 13:54 INFO  command.impl.LocaleCommand - en_EN
+27-02 13:56 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@6890db04
+27-02 13:56 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@2052b14e
+27-02 13:56 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+27-02 13:56 INFO  project.listener.UserSessionListener - Session created: ID=A7041D02DBBAA0949B0BD22BD062876E
+27-02 13:56 INFO  project.listener.UserSessionListener - Session created: ID=E2781688645FE4FDB20EFBEDD0A7464E
+27-02 13:56 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+27-02 13:56 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+27-02 13:57 INFO  project.listener.UserSessionListener - Session created: ID=5EA8E055A803AB5D56190A7FC43F9975
+27-02 16:29 INFO  project.listener.UserSessionListener - Session invalided: ID=A7041D02DBBAA0949B0BD22BD062876E
+27-02 16:29 INFO  project.listener.UserSessionListener - Session invalided: ID=5EA8E055A803AB5D56190A7FC43F9975
+27-02 16:30 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@158a6abc
+27-02 16:30 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@220fd16a
+27-02 16:30 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+27-02 16:31 INFO  project.listener.UserSessionListener - Session created: ID=6792E14AB57E5C7CB719187F5DA527B1
+27-02 16:32 INFO  project.listener.UserSessionListener - Session created: ID=3F2AFFAAE18B9980FA04251ADE6C74D1
+27-02 16:32 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+27-02 16:32 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+27-02 16:43 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@18b8eaed
+27-02 16:43 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@295b2802
+27-02 16:43 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+27-02 16:44 INFO  project.listener.UserSessionListener - Session created: ID=A08EFDB756A118D9EA4C10917A81E205
+27-02 16:44 INFO  project.listener.UserSessionListener - Session created: ID=71EBBFE06DE70A7412F679DCAE869D2C
+27-02 16:44 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+27-02 16:44 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+27-02 16:56 INFO  project.listener.UserSessionListener - Session invalided: ID=71EBBFE06DE70A7412F679DCAE869D2C
+27-02 16:56 INFO  project.listener.UserSessionListener - Session created: ID=82712D12CFFD3D83390C14CCEA4DD7B3
+27-02 18:42 INFO  project.listener.UserSessionListener - Session invalided: ID=82712D12CFFD3D83390C14CCEA4DD7B3
+27-02 18:42 INFO  project.listener.UserSessionListener - Session created: ID=94367E5EEB88A36E3AEE504A95A618C1
+27-02 18:44 INFO  project.listener.UserSessionListener - Session invalided: ID=A08EFDB756A118D9EA4C10917A81E205
+27-02 18:54 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@477f90e0
+27-02 18:54 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@5ff44fd2
+27-02 18:54 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.

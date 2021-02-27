@@ -9,7 +9,7 @@
 </div>
 
 <div class="blr" style="padding: 30px; background: #E0E0E0; height: 140px; width: auto; font-size:18px;
-    font-family:'Papyrus', cursive; color: darkgoldenrod; margin-right:150px; min-width: 1920px">
+    font-family:'Papyrus', cursive; color: darkgoldenrod;">
     <u style="font-size: 50px"><fmt:message key="text.company"/></u>
     <br/>
     <b style="font-family: 'Palatino Linotype',serif; margin-left: 120px"><u><fmt:message key="text.company2"/></u></b>
