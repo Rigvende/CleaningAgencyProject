@@ -1,0 +1,4 @@
+28-02 15:26 INFO  project.listener.UserSessionListener - Session created: ID=311672B503723F9B144029B9200885F5
+28-02 15:26 INFO  project.listener.UserSessionListener - Session created: ID=8558AF795D122BDA44489294F055A177
+28-02 15:26 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 15:26 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.

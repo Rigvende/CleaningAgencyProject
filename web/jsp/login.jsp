@@ -6,7 +6,6 @@
 <c:set var="locale"
        value="${not empty locale ? pageContext.session.getAttribute('locale') : 'ru_RU'}"
        scope="session"/>
-
 <fmt:setLocale value="${locale}" scope="session"/>
 <fmt:setBundle basename="message"/>
 
@@ -14,85 +13,61 @@
 <head>
     <title><fmt:message key="title.login"/></title>
     <link rel="icon" href="<c:url value="/data/favicon.ico"/>"/>
-    <link rel="stylesheet" type="text/css" href="<c:url value="/css/background.css"/>"/>
-    <link rel="stylesheet" type="text/css" href="<c:url value="/css/align.css"/>"/>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/css/styles.css"/>"/>
 </head>
-
 <body>
-<div style="float: right; padding: 10px; text-align: right;">
+<div class="up-link-float">
     <img src="${pageContext.request.contextPath}/data/line.png" alt="line" width="200px">
-    <div style="margin-right: 80px">
-        <a style="font-size: 20px; font-family: 'Book Antiqua',serif;"
-           href="${pageContext.request.contextPath}/controller?command=info">
+    <div class="up-link-margin">
+        <a class="up-link" href="${pageContext.request.contextPath}/controller?command=info">
             <fmt:message key="button.info"/>
         </a>
     </div>
 </div>
 
-<div class="blr" style="padding: 30px; background: #E0E0E0; height: 150px; width: auto; font-size:18px;
-    font-family:'Papyrus', cursive; color: darkgoldenrod;">
-    <u style="font-size: 50px"><fmt:message key="text.company"/></u>
-    <br/>
-    <b style="font-family: 'Palatino Linotype',serif; margin-left: 145px"><u><fmt:message key="text.company2"/></u></b>
-    <br/><br/>
-    <div style="text-align: left; margin-left: 30px; font-size: 15px; font-family: 'Palatino Linotype',sans-serif">
-        <b><fmt:message key="text.company3"/></b>
-    </div>
+<div class="blr header-text">
+    <u class="big-text"><fmt:message key="text.company"/></u><br/>
+    <b class="subheader-text"><u><fmt:message key="text.company2"/></u></b><br/><br/>
+    <div class="sub-text"><b><fmt:message key="text.company3"/></b></div>
 </div>
 
-<div style="float: left; padding: 30px">
+<div class="reg-btn">
     <form name="registration" method="post" action="${pageContext.request.contextPath}/controller">
         <input type="hidden" name="command" value="regredirect"/>
-        <input style="color: #0c4f5b; font-family: 'Monotype Corsiva', sans-serif; width: 200px;
-            font-size: 24px; background-color: lemonchiffon; height: 50px;"
-               type="submit" value="<fmt:message key="button.regproposal"/>"/>
+        <input class="reg-submit" type="submit" value="<fmt:message key="button.regproposal"/>"/>
     </form>
 </div>
-
-<div style="float: right">
+<div class="little-right">
     <jsp:include page="/WEB-INF/view/locale.jsp"/>
-</div>
+</div><br/><br/><br/><br/><br/><b>
 
-<br/><br/><br/><br/><br/><b>
-    <p style="text-align: right; margin-right: 20px; font-family: 'Palatino Linotype',cursive; font-size: 18px">
-        <fmt:message key="text.info2"/>
-    </p>
-    <p style="text-align: right; margin-right: 20px; font-family: 'Palatino Linotype',cursive; font-size: 18px">
-        <fmt:message key="text.info22"/>
-    </p></b>
-<hr/>
-<br/>
+    <p class="login-info"><fmt:message key="text.info2"/></p>
+    <p class="login-info"><fmt:message key="text.info22"/></p></b><hr/><br/>
 
 <form name="loginForm" method="POST" action="${pageContext.request.contextPath}/controller">
     <div id="log">
         <input type="hidden" name="command" value="login"/>
-
-        <div style="color: #0c4f5b; font-family: 'Palatino Linotype',serif; font-size: 18px;"><fmt:message
-                key="field.login"/></div>
+        <div class="positions"><fmt:message key="field.login"/></div>
         <label>
             <input type="text" name="login" value=""
                    required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')"
                    oninput="setCustomValidity('')"/>
         </label>
 
-        <div style="color: #0c4f5b; font-family: 'Palatino Linotype',serif; font-size: 18px;"><fmt:message
-                key="field.password"/></div>
+        <div class="positions"><fmt:message key="field.password"/></div>
         <label>
             <input type="password" name="password" value=""
                    required oninvalid="this.setCustomValidity('<fmt:message key="message.required"/>')"
                    oninput="setCustomValidity('')"/>
         </label>
 
-        <div style="color: crimson; font-family: 'Palatino Linotype', sans-serif">${errorLoginPassMessage}</div>
+        <div class="little-error little-font"> ${errorLoginPassMessage}</div>
         ${wrongAction}
         ${nullPage}
         <br/><ctg:remove-attr/>
-
-        <input style="color: #0c4f5b; font-family: 'Palatino Linotype', sans-serif; width: 170px;
-            font-size: 18px;  height: 30px" type="submit" value="<fmt:message key="button.login"/>"/>
+        <input class="menu-action-submit" type="submit" value="<fmt:message key="button.login"/>"/>
     </div>
 </form>
-
 <jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>
 </html>

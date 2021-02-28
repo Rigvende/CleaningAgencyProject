@@ -1,7 +1,6 @@
-27-02 21:50 INFO  project.listener.UserSessionListener - Session created: ID=603570624EFAF861898D093C4620C7FD
-27-02 21:51 INFO  project.listener.UserSessionListener - Session created: ID=D3A43BAA2634EA4FA71E07B1073C1065
-27-02 21:51 INFO  project.connection.ConnectionPool - Registering jdbc driver.
-27-02 21:51 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
-27-02 21:55 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@23a85052
-27-02 21:55 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@4493b9a0
-27-02 21:55 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
+28-02 15:28 INFO  project.listener.UserSessionListener - Session created: ID=715F6152C85F438F7BBF5FE9554F98A0
+28-02 15:28 INFO  project.listener.UserSessionListener - Session created: ID=44D5C888E2347E8EEB9CF24E8F733383
+28-02 15:30 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 15:30 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 15:32 INFO  command.impl.LocaleCommand - ru_RU
+28-02 15:32 INFO  command.impl.LocaleCommand - en_EN

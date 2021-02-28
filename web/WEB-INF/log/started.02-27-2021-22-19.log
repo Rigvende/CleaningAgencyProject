@@ -1,0 +1,7 @@
+27-02 22:19 INFO  project.listener.UserSessionListener - Session created: ID=D1719189AF569BA9EFAA7A9FD19820A0
+27-02 22:19 INFO  project.listener.UserSessionListener - Session created: ID=5DEB3120A1C9C7B224BD269034AB683E
+27-02 22:19 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+27-02 22:19 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+27-02 22:20 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@17e7c723
+27-02 22:20 INFO  project.connection.ConnectionPool - Deregister of jdbc driver com.mysql.cj.jdbc.Driver@cb2ac71
+27-02 22:20 INFO  project.servlet.ControlServlet - All connections has been closed and drivers has been deregistered.
