@@ -24,10 +24,9 @@ public class InfoTimeTag extends TagSupport {
     public int doStartTag() throws JspException {
         LocalDateTime dateTime = LocalDateTime.now();
         StringBuilder builder = new StringBuilder();
-        builder.append("<hr/><b> ").append(dateTime.getDayOfWeek()).append(" || ")
+        builder.append("<hr/><b>").append(dateTime.getDayOfWeek()).append(" || ")
                 .append(dateTime.getDayOfMonth()).append(" ").append(dateTime.getMonth()).append(" ")
-                .append(dateTime.getYear()).append(" || ").append(dateTime.getHour())
-                .append("h:").append(dateTime.getMinute()).append("min </b><hr/>");
+                .append(dateTime.getYear()).append("</b><hr/>");
         String time = builder.toString();
         try {
             JspWriter out = pageContext.getOut();

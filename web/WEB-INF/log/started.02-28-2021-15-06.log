@@ -1,0 +1,6 @@
+28-02 15:06 INFO  project.listener.UserSessionListener - Session created: ID=7EBA6C1B9D8DB47308FC3ED88DF856F5
+28-02 15:07 INFO  project.listener.UserSessionListener - Session created: ID=F34F56AE0DE5E44C9724B0F95A52F368
+28-02 15:07 INFO  project.connection.ConnectionPool - Registering jdbc driver.
+28-02 15:07 INFO  project.connection.ConnectionPool - Connection pool instance has been created successful.
+28-02 15:07 INFO  project.listener.UserSessionListener - Session invalided: ID=F34F56AE0DE5E44C9724B0F95A52F368
+28-02 15:07 INFO  project.listener.UserSessionListener - Session created: ID=7A1D9EC5C09756562DE989906378E8B9

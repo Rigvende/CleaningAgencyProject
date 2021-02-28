@@ -1,0 +1,184 @@
+@charset "UTF-8";
+body { background-color:lightsteelblue; }
+p { color: #0c4f5b; }
+#log {
+    height: 160px;
+    margin-bottom: 50px;
+    background-color: #E0E0E0;
+    text-align: center;
+}
+#left { text-align: left; }
+#right, .little-align-right { text-align: right; }
+#center, .little-center { text-align: center; }
+.content {
+    width: 100%;
+    background: #E0E0E0;
+    height: 160px;
+    margin-bottom: 50px;
+}
+.positions {
+    color: #0c4f5b;
+    font-size: 18px;
+    font-family: 'Palatino Linotype', serif;
+}
+.positions-cost {
+    color: #0c4f5b;
+    font-size: 20px;
+    font-family: 'Palatino Linotype', serif;
+    margin-left: 50px;
+}
+.info {
+    padding: 30px;
+    background: royalblue;
+    font-family: 'Book Antiqua', sans-serif;
+    font-size: 20px;
+}
+.little-color { color: darkgoldenrod; }
+.little-back { background-color: royalblue; }
+.little-float { float: right; }
+.little-padding { padding: 5px; }
+.little-width { width: 250px; }
+.little-error { color: crimson; }
+.little-margin { margin-left: 30px; }
+.little-margin-left { margin-left: 50px; }
+.little-margin-right { margin-right: 10px; }
+.little-right { margin-right: 50px; }
+.margin-right-again { margin-right: 120px; }
+.menu-header {
+    color: #0c4f5b;
+    font-family: 'Palatino Linotype',serif;
+    background-color: lightgoldenrodyellow;
+}
+.footer-text {
+    background: #E0E0E0;
+    text-align: center;
+    padding: 5px;
+    margin-top: 10px;
+}
+.header-smth {
+    background: #E0E0E0;
+    height: 100px;
+    padding: 5px;
+}
+.header-text {
+    padding: 30px;
+    background: #E0E0E0;
+    height: 140px;
+    width: auto;
+    font-size:18px;
+    font-family:'Papyrus', cursive;
+    color: darkgoldenrod;
+}
+.subheader-text { font-family: 'Palatino Linotype',serif; margin-left: 120px; }
+.sub-text {
+    text-align: left;
+    margin-left: 30px;
+    font-size: 15px;
+    font-family: 'Palatino Linotype',sans-serif;
+}
+.big-text { font-size: 50px; }
+.little-text { font-size: 14px; }
+.info-text {
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    font-family: 'Palatino Linotype', sans-serif;
+    font-size: 18px;
+}
+.info-content { background: royalblue; width: max-content; }
+.big-width { width: 300px; }
+.menu-text {
+    color: sienna;
+    font-family: 'Book Antiqua', serif;
+    width: 150px;
+    font-size: 18px;
+    height: 30px;
+}
+.menu-margin { margin-left: 125px; }
+.up-link { font-size: 20px; font-family: 'Book Antiqua',serif; }
+.up-link-float {
+    float: right;
+    padding: 10px;
+    text-align: right;
+}
+.up-link-margin { margin-right: 75px; }
+.locale-text {
+    color: #0c4f5b;
+    font-family: 'Palatino Linotype', sans-serif;
+    font-size: 14px;
+    height: 30px;
+}
+.add-basket {
+    color: sienna;
+    font-family: 'Book Antiqua', serif;
+    width: 250px;
+    font-size: 22px;
+    height: 40px;
+}
+.action-header {
+    text-align: center;
+    color: #0c4f5b;
+    font-family: 'Palatino Linotype', serif;
+    font-size: 18px;
+    margin-left: 50px;
+}
+.action-submit {
+    color: #0c4f5b;
+    font-family: 'Palatino Linotype', sans-serif;
+    width: 200px;
+    font-size: 18px;
+    height: 40px;
+}
+.menu-submit {
+    color: #0c4f5b;
+    font-family: 'Palatino Linotype', sans-serif;
+    width: 250px;
+    font-size: 20px;
+    height: 40px;
+}
+.send-message { color: #0c4f5b; margin-left: 50px; }
+.error-message { color: crimson; margin-left: 50px; }
+.field-mail {
+    color: #0c4f5b;
+    font-size: 18px;
+    font-family: 'Palatino Linotype', serif;
+    margin-left: 50px;
+}
+.little-font { font-family: 'Palatino Linotype',serif; }
+.welcome { color: #0c4f5b; text-align: center; }
+.reg-header {
+    padding: 30px;
+    background: #4f90ff;
+    color: #0d3e4b;
+}
+.reg-btn { float: left; padding: 30px; }
+.reg-submit {
+    color: #0c4f5b;
+    font-family: 'Monotype Corsiva', sans-serif;
+    width: 200px;
+    font-size: 24px;
+    background-color: lemonchiffon;
+    height: 50px;
+}
+.login-info {
+    text-align: right;
+    margin-right: 20px;
+    font-family: 'Palatino Linotype',cursive;
+    font-size: 18px;
+}
+.menu-action-submit {
+    color: #0c4f5b;
+    font-family: 'Palatino Linotype', sans-serif;
+    width: 150px;
+    font-size: 15px;
+    height: 25px;
+}
+.choice {
+    color: darkblue;
+    background-color: lightgoldenrodyellow;
+    font-family: 'Palatino Linotype',serif;
+    width: 150px;
+    font-size: 16px;
+    height: 30px;
+}
+.little-font { font-size: 16px; font-family: 'Palatino Linotype', sans-serif; }
